@@ -1,0 +1,2394 @@
+[
+  {
+    "id": "T3-BucketLarge-I-L1-001",
+    "case_id": "L1-001",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Scaling",
+    "scenario": "Larger models (X) correlate with higher truthfulness scores (Y) on benchmarks. A user assumes a 100B model never lies.",
+    "claim": "The causal relationship in 'The Parameter Correlation' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Parameter Count (Size)",
+        "role": "Treatment/Factor"
+      },
+      "Y": {
+        "name": "Truthfulness Score",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Hallucination Rate",
+          "role": "Unmodeled failure mode"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W1_SELECTION_BIAS",
+      "type_name": "Selection Bias",
+      "subtype": "Selection_Family",
+      "subtype_name": "Selection Family"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Correlation != total elimination of defects",
+    "key_insight": "Larger models can still hallucinate, sometimes more persuasively.",
+    "hidden_timestamp": "Are the benchmark truthfulness scores measured before or after the model is exposed to similar evaluation items?",
+    "conditional_answers": {
+      "condition_A": "If user extrapolates linearly: Reject the inference - correlation does not imply zero hallucinations.",
+      "condition_B": "If hallucination rate measured directly: Even if truthfulness rises, nonzero hallucination rate can remain."
+    },
+    "wise_refusal": "Parameter count correlates with benchmark scores, but that does not imply perfection. Larger models can still hallucinate; assuming the trend reaches zero defects is an extrapolation error.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Correlation != total elimination of defects. Larger models can still hallucinate, sometimes more persuasively.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-002",
+    "case_id": "L1-002",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "RLHF",
+    "scenario": "Models with high safety scores (X) often have lower creativity scores (Y). A user concludes safety destroys intelligence.",
+    "claim": "The causal relationship in 'The Alignment Tax' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Safety Score (Refusal Rate)",
+        "role": "Factor"
+      },
+      "Y": {
+        "name": "Creativity (Diversity)",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Filtering",
+          "role": "Mechanism/mediator"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W7_CONFOUNDING",
+      "type_name": "Confounding",
+      "subtype": "Confounding_Family",
+      "subtype_name": "Confounding Family"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Safety filters truncate the output distribution tail",
+    "key_insight": "Association is driven by truncation, not necessarily loss of reasoning ability.",
+    "hidden_timestamp": "Were creativity scores measured on the same prompts before and after applying safety filtering?",
+    "conditional_answers": {
+      "condition_A": "If creativity test requires risky outputs: Lower diversity can be a direct consequence of filtering, not reduced capability.",
+      "condition_B": "If creativity measured on safe tasks: The trade-off may shrink; test dependence matters."
+    },
+    "wise_refusal": "The negative association reflects distribution truncation from safety filtering. It doesn't prove safety training destroys underlying reasoning; it may restrict outputs that contribute to measured creativity.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Safety filters truncate the output distribution tail. Association is driven by truncation, not necessarily loss of reasoning ability.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-003",
+    "case_id": "L1-003",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Reliability",
+    "scenario": "Outputs with low average log-probability (X) are associated with higher error rates (Y). A user assumes high-probability outputs are always factually correct.",
+    "claim": "The causal relationship in 'The Token Probability' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Log Probability (Confidence)",
+        "role": "Signal"
+      },
+      "Y": {
+        "name": "Factual Error",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Common Misconceptions",
+          "role": "Confounder"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W7_CONFOUNDING",
+      "type_name": "Confounding",
+      "subtype": "Confounding_Family",
+      "subtype_name": "Confounding Family"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Models can be highly confident in common misconceptions",
+    "key_insight": "Confidence != correctness, especially in adversarial or misconception-heavy settings.",
+    "hidden_timestamp": "Did the misconception patterns appear frequently in training data before evaluation, biasing probability mass?",
+    "conditional_answers": {
+      "condition_A": "If question matches common misconception: High probability can amplify wrong answers.",
+      "condition_B": "If question is rare/technical: Low probability might reflect uncertainty; error depends on knowledge coverage."
+    },
+    "wise_refusal": "High token probability indicates confidence, not truth. Models can assign high probability to common misconceptions; the confidence-truth link is weak under distribution shift or adversarial prompts.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Models can be highly confident in common misconceptions. Confidence != correctness, especially in adversarial or misconception-heavy settings.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-004",
+    "case_id": "L1-004",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Mechanistic Interpretability",
+    "scenario": "Activity in Neuron 55 (X) is strongly associated with outputting the word 'hate' (Y). A researcher deletes Neuron 55 to stop hate speech.",
+    "claim": "The causal relationship in 'The Sentinel Neuron' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Neuron 55 Activity",
+        "role": "Feature"
+      },
+      "Y": {
+        "name": "Output 'hate'",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Polysemanticity",
+          "role": "Confounder/mechanism"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W1_SELECTION_BIAS",
+      "type_name": "Selection Bias",
+      "subtype": "Selection_Family",
+      "subtype_name": "Selection Family"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "One neuron can encode multiple unrelated concepts",
+    "key_insight": "Correlation does not imply 1:1 functional mapping; ablation can damage unrelated capabilities.",
+    "hidden_timestamp": "Was Neuron 55 identified from held-out data, or chosen after observing 'hate' outputs (selection on outcomes)?",
+    "conditional_answers": {
+      "condition_A": "If neuron is polysemantic: Deleting it may harm other functions without reliably removing hate speech.",
+      "condition_B": "If neuron is specialized (rare): Ablation might reduce a behavior but still risks side effects."
+    },
+    "wise_refusal": "Neuron 55 correlates with 'hate' output, but neurons are often polysemantic. Deleting it based on association alone can degrade other capabilities and may not eliminate hate speech robustly.",
+    "gold_rationale": "The correct reasoning for this case involves understanding One neuron can encode multiple unrelated concepts. Correlation does not imply 1:1 functional mapping; ablation can damage unrelated capabilities.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Alessandro Balzi",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-005",
+    "case_id": "L1-005",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Red Teaming",
+    "scenario": "Polite prompts (X) are associated with higher refusal rates (Y) for harmful queries than aggressive prompts.",
+    "claim": "The causal relationship in 'The Sentiment Bias' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Polite Tone",
+        "role": "Input feature"
+      },
+      "Y": {
+        "name": "Refusal Rate",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Safety Fine-Tuning Data",
+          "role": "Confounder/training bias"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W1_SELECTION_BIAS",
+      "type_name": "Selection Bias",
+      "subtype": "Selection_Family",
+      "subtype_name": "Selection Family"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Safety training focused on aggressive attacks",
+    "key_insight": "Tone can act as a spurious cue; polite harmful queries may bypass classifiers.",
+    "hidden_timestamp": "Was the safety training dataset collected before observing polite jailbreak strategies becoming common?",
+    "conditional_answers": {
+      "condition_A": "If training overrepresents aggressive attacks: Model learns aggression->danger cue; politeness can slip through.",
+      "condition_B": "If training balanced across tones: Tone effect should reduce; measure jailbreak success directly."
+    },
+    "wise_refusal": "This likely reflects safety training bias: aggressive prompts were seen as attacks. Polite harmful queries may bypass filters because they don't trigger the learned attack cues.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Safety training focused on aggressive attacks. Tone can act as a spurious cue; polite harmful queries may bypass classifiers.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Alessandro Balzi",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-006",
+    "case_id": "L1-006",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "ML Research",
+    "scenario": "A survey of successful AI startups finds that 90% used transformer architectures (X), leading to the conclusion that transformers cause startup success (Y).",
+    "claim": "The causal relationship in 'The Survivorship Model' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Transformer Architecture",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Startup Success",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Failed Startups Using Transformers",
+          "role": "Missing data"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W2_SURVIVORSHIP_BIAS",
+      "type_name": "Survivorship Bias",
+      "subtype": "Selection_Family",
+      "subtype_name": "Selection Family"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Only survivors observed; failures not counted",
+    "key_insight": "Many failed startups also used transformers but are not in the sample.",
+    "hidden_timestamp": "Were failed AI startups that also used transformer architectures included in the analysis?",
+    "conditional_answers": {
+      "condition_A": "If only successful startups surveyed: Survivorship bias inflates apparent effect of transformers.",
+      "condition_B": "If failed startups included: True effect size would likely be much smaller."
+    },
+    "wise_refusal": "This analysis only examines successful startups. Many failed ventures also used transformers. Without including failures, we cannot conclude transformers cause success.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Only survivors observed; failures not counted. Many failed startups also used transformers but are not in the sample.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-007",
+    "case_id": "L1-007",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Infrastructure",
+    "scenario": "Companies that invest in premium GPU clusters (X) have higher model performance (Y). An analyst concludes premium hardware causes better AI.",
+    "claim": "The causal relationship in 'The GPU Cluster Health' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Premium GPU Investment",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Model Performance",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Company Resources/Talent",
+          "role": "Confounder"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W3_HEALTHY_USER_BIAS",
+      "type_name": "Healthy User Bias",
+      "subtype": "Selection_Family",
+      "subtype_name": "Selection Family"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Well-resourced companies self-select into premium hardware",
+    "key_insight": "Companies buying premium GPUs also have better talent, data, and processes.",
+    "hidden_timestamp": "Did companies with premium GPUs also have access to better ML talent and larger datasets before the hardware purchase?",
+    "conditional_answers": {
+      "condition_A": "If resources correlated with GPU choice: Hardware is marker of capability, not cause.",
+      "condition_B": "If hardware randomly assigned: Could test causal effect, but this is not the case."
+    },
+    "wise_refusal": "Companies investing in premium GPUs are typically well-resourced with strong talent. The hardware investment is a marker of organizational capability, not necessarily the cause of model performance.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Well-resourced companies self-select into premium hardware. Companies buying premium GPUs also have better talent, data, and processes.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-008",
+    "case_id": "L1-008",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Evaluation",
+    "scenario": "Models that scored exceptionally high on benchmark v1 (X) showed lower scores on benchmark v2 (Y). Researchers conclude v2 is harder.",
+    "claim": "The causal relationship in 'The Benchmark Regression' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Exceptional v1 Score",
+        "role": "Selection criterion"
+      },
+      "Y": {
+        "name": "v2 Score",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Random variation in scores",
+          "role": "Statistical artifact"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W4_REGRESSION_TO_MEAN",
+      "type_name": "Regression to Mean",
+      "subtype": "Selection_Family",
+      "subtype_name": "Selection Family"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Selection on extreme values leads to regression",
+    "key_insight": "Exceptionally high scores include measurement noise that won't repeat.",
+    "hidden_timestamp": "Were models selected for analysis because they had unusually high v1 scores?",
+    "conditional_answers": {
+      "condition_A": "If selected on extreme v1 performance: Regression to mean expected; v2 may not be harder.",
+      "condition_B": "If random sample of models: Drop in scores could indicate genuine difficulty increase."
+    },
+    "wise_refusal": "Selecting models based on exceptional v1 performance introduces regression to the mean. Some of that performance was noise. The v2 drop may reflect statistical artifact, not benchmark difficulty.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Selection on extreme values leads to regression. Exceptionally high scores include measurement noise that won't repeat.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-009",
+    "case_id": "L1-009",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Policy",
+    "scenario": "Countries with higher average AI research funding (X) have more AI patents (Y). A policy advisor concludes any company receiving more funding will produce more patents.",
+    "claim": "The causal relationship in 'The Country AI Index' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Country-level AI Funding",
+        "role": "Aggregate measure"
+      },
+      "Y": {
+        "name": "Country-level Patents",
+        "role": "Aggregate outcome"
+      },
+      "Z": [
+        {
+          "name": "Within-country variation",
+          "role": "Hidden heterogeneity"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W5_ECOLOGICAL_FALLACY",
+      "type_name": "Ecological Fallacy",
+      "subtype": "Ecological_Family",
+      "subtype_name": "Ecological Family"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Aggregate correlation does not imply individual-level causation",
+    "key_insight": "Country-level patterns may not hold for individual companies.",
+    "hidden_timestamp": "Does the funding-patent relationship hold at the individual company level within each country?",
+    "conditional_answers": {
+      "condition_A": "If relationship is aggregate only: Individual companies may show different patterns.",
+      "condition_B": "If relationship holds at company level: Then individual inference is more justified."
+    },
+    "wise_refusal": "This is an ecological fallacy. Country-level correlations between funding and patents do not imply the same relationship holds for individual companies. Within-country variation may show different patterns.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Aggregate correlation does not imply individual-level causation. Country-level patterns may not hold for individual companies.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-010",
+    "case_id": "L1-010",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Safety Testing",
+    "scenario": "A safety test detects 95% of adversarial inputs (X). When flagged, there's a 90% chance the input is truly adversarial (Y). An engineer assumes most flagged inputs are dangerous.",
+    "claim": "The causal relationship in 'The Rare Failure Mode' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Test Positive",
+        "role": "Signal"
+      },
+      "Y": {
+        "name": "Truly Adversarial",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Base rate of adversarial inputs",
+          "role": "Prior probability"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W6_BASE_RATE_NEGLECT",
+      "type_name": "Base Rate Neglect",
+      "subtype": "Ecological_Family",
+      "subtype_name": "Ecological Family"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Without base rate, PPV calculation is incomplete",
+    "key_insight": "If adversarial inputs are rare, most positives may be false positives.",
+    "hidden_timestamp": "What is the base rate of adversarial inputs in the deployment environment?",
+    "conditional_answers": {
+      "condition_A": "If adversarial inputs are rare (0.1%): Most flagged inputs are false positives despite high sensitivity.",
+      "condition_B": "If adversarial inputs are common (10%+): Then most flagged inputs are likely true positives."
+    },
+    "wise_refusal": "The conclusion ignores base rates. If adversarial inputs are rare in deployment, even a 95% sensitive test will flag mostly false positives. The positive predictive value depends critically on the prior probability.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Without base rate, PPV calculation is incomplete. If adversarial inputs are rare, most positives may be false positives.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-011",
+    "case_id": "L1-011",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Alignment",
+    "scenario": "Researchers trained two identical models: one with RLHF (X) and one without (X), keeping architecture, data, and compute identical. The RLHF model showed 40% fewer harmful outputs (Y).",
+    "claim": "The causal relationship in 'The RLHF Ablation Study' is valid.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "RLHF Training",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Harmful Output Rate",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "All other factors held constant",
+          "role": "Controls"
+        }
+      ]
+    },
+    "trap": {
+      "type": "S4_CONTROLLED_ABLATION",
+      "type_name": "S4_CONTROLLED_ABLATION",
+      "subtype": "Experimental",
+      "subtype_name": "Experimental Evidence"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Controlled ablation isolates RLHF effect",
+    "key_insight": "With proper controls, causal attribution is justified.",
+    "hidden_timestamp": "Were all other training factors truly held constant between the two conditions?",
+    "conditional_answers": {
+      "condition_A": "If controls maintained: RLHF causally reduced harmful outputs.",
+      "condition_B": "If other factors varied: Effect may be confounded."
+    },
+    "wise_refusal": "This controlled ablation study provides valid causal evidence. By holding all factors constant except RLHF, the 40% reduction in harmful outputs can be attributed to RLHF training.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Controlled ablation isolates RLHF effect. With proper controls, causal attribution is justified.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-012",
+    "case_id": "L1-012",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Scaling Laws",
+    "scenario": "A lab randomly assigned 100 model configurations to either 10x compute (X) or baseline compute (X). The 10x group showed significantly higher benchmark scores (Y).",
+    "claim": "The causal relationship in 'The Compute Scaling RCT' is valid.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "10x Compute",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Benchmark Score",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Random assignment",
+          "role": "Randomization"
+        }
+      ]
+    },
+    "trap": {
+      "type": "S1_RCT",
+      "type_name": "RCT",
+      "subtype": "Experimental",
+      "subtype_name": "Experimental Evidence"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "RCT design supports causal inference",
+    "key_insight": "Random assignment eliminates confounding.",
+    "hidden_timestamp": "Was the assignment to compute levels truly random and concealed?",
+    "conditional_answers": {
+      "condition_A": "If randomization proper: Compute causally improves benchmark scores.",
+      "condition_B": "If assignment biased: Confounding may explain the difference."
+    },
+    "wise_refusal": "This randomized experiment provides causal evidence. Random assignment ensures the compute groups are comparable on all other factors, supporting the conclusion that compute causes performance gains.",
+    "gold_rationale": "The correct reasoning for this case involves understanding RCT design supports causal inference. Random assignment eliminates confounding.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-013",
+    "case_id": "L1-013",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Deployment",
+    "scenario": "A cloud provider accidentally applied rate limits (X) to random API users due to a bug. Researchers found rate-limited users had 30% fewer timeout errors (Y).",
+    "claim": "The causal relationship in 'The API Rate Limit Natural Experiment' is valid.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Accidental Rate Limit",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Timeout Errors",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Bug-induced randomization",
+          "role": "Exogenous variation"
+        }
+      ]
+    },
+    "trap": {
+      "type": "S2_NATURAL_EXPERIMENT",
+      "type_name": "Natural Experiment",
+      "subtype": "Quasi_Experimental",
+      "subtype_name": "Quasi-Experimental"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Natural experiment via exogenous shock",
+    "key_insight": "Accidental assignment mimics randomization.",
+    "hidden_timestamp": "Was the bug truly random in which users it affected?",
+    "conditional_answers": {
+      "condition_A": "If bug was random: Rate limits causally reduced timeouts.",
+      "condition_B": "If bug correlated with user type: Selection bias possible."
+    },
+    "wise_refusal": "This natural experiment provides causal evidence. The bug created quasi-random assignment to rate limits, allowing causal inference about the effect on timeout errors.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Natural experiment via exogenous shock. Accidental assignment mimics randomization.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-014",
+    "case_id": "L1-014",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Regularization",
+    "scenario": "Dropout (X) randomly zeroes neurons during training (mechanism). Studies show 10% dropout reduces overfitting (Y) by 5%, 20% dropout by 12%, 30% by 20% (dose-response). Conclusion: dropout prevents overfitting.",
+    "claim": "The causal relationship in 'The Dropout Mechanism' is valid.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Dropout Rate",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Overfitting Reduction",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Regularization mechanism",
+          "role": "Known pathway"
+        }
+      ]
+    },
+    "trap": {
+      "type": "S5_MECHANISM_DOSE",
+      "type_name": "S5_MECHANISM_DOSE",
+      "subtype": "Mechanistic",
+      "subtype_name": "Mechanistic Evidence"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Known mechanism + dose-response gradient",
+    "key_insight": "Mechanistic understanding plus dose-response supports causation.",
+    "hidden_timestamp": "Is the dose-response relationship consistent across different architectures?",
+    "conditional_answers": {
+      "condition_A": "If mechanism understood and dose-response present: Causal claim justified.",
+      "condition_B": "If dose-response inconsistent: Other factors may be involved."
+    },
+    "wise_refusal": "The combination of a known mechanistic pathway (random neuron zeroing prevents co-adaptation) and a clear dose-response relationship supports the causal claim that dropout prevents overfitting.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Known mechanism + dose-response gradient. Mechanistic understanding plus dose-response supports causation.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-015",
+    "case_id": "L1-015",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Resource Allocation",
+    "scenario": "A university allocated GPU access via lottery among 500 equally qualified applicants. Lottery winners (X) published 2.3 more papers (Y) in the next year than non-winners.",
+    "claim": "The causal relationship in 'The GPU Lottery' is valid.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "GPU Access (Lottery)",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Papers Published",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Random lottery assignment",
+          "role": "Randomization"
+        }
+      ]
+    },
+    "trap": {
+      "type": "S3_LOTTERY",
+      "type_name": "S3_LOTTERY",
+      "subtype": "Quasi_Experimental",
+      "subtype_name": "Quasi-Experimental"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Lottery creates random assignment",
+    "key_insight": "Among equally qualified applicants, lottery mimics RCT.",
+    "hidden_timestamp": "Were all lottery participants truly equally qualified before selection?",
+    "conditional_answers": {
+      "condition_A": "If participants equally qualified: GPU access causally increased publications.",
+      "condition_B": "If qualification differences existed: Selection bias possible."
+    },
+    "wise_refusal": "The lottery design provides causal evidence. Among equally qualified applicants, random assignment to GPU access allows attributing the publication difference to the resource access.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Lottery creates random assignment. Among equally qualified applicants, lottery mimics RCT.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-016",
+    "case_id": "L1-016",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Evaluation",
+    "scenario": "Model (Y) A has higher accuracy than Model B overall (X). But within each task category, Model B outperforms Model A. A user concludes Model A is better.",
+    "claim": "The causal relationship in 'The Simpson's Paradox in Model Accuracy' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Overall Accuracy Comparison",
+        "role": "Aggregate measure"
+      },
+      "Y": {
+        "name": "Model Quality Judgment",
+        "role": "Conclusion"
+      },
+      "Z": [
+        {
+          "name": "Task category distribution",
+          "role": "Lurking variable"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W8_SIMPSONS_PARADOX",
+      "type_name": "Simpson's Paradox",
+      "subtype": "Confounding_Family",
+      "subtype_name": "Confounding Family"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Aggregate reverses subgroup pattern",
+    "key_insight": "Model A may just be tested more on easier tasks.",
+    "hidden_timestamp": "Are Models A and B evaluated on the same distribution of task difficulties?",
+    "conditional_answers": {
+      "condition_A": "If task distributions differ: Simpson's paradox; Model B may actually be better.",
+      "condition_B": "If same task distribution: Overall comparison would be valid."
+    },
+    "wise_refusal": "This is Simpson's paradox. Model A's higher overall accuracy may reflect being tested on easier task categories. Within each category, Model B is superior. The aggregate comparison is misleading.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Aggregate reverses subgroup pattern. Model A may just be tested more on easier tasks.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-017",
+    "case_id": "L1-017",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "MLOps",
+    "scenario": "A training run crashed after a junior engineer made a config change (X). The team concludes the config change caused the crash (Y).",
+    "claim": "The causal relationship in 'The Post-Hoc Training Crash' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Config Change",
+        "role": "Preceding event"
+      },
+      "Y": {
+        "name": "Training Crash",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Other potential causes",
+          "role": "Unconsidered factors"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W10_POST_HOC_FALLACY",
+      "type_name": "Post Hoc Fallacy",
+      "subtype": "Direction_Family",
+      "subtype_name": "Direction Family"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Temporal sequence without mechanism",
+    "key_insight": "Post hoc ergo propter hoc fallacy.",
+    "hidden_timestamp": "Were there other changes or conditions that could have caused the crash?",
+    "conditional_answers": {
+      "condition_A": "If no mechanism established: Temporal sequence doesn't prove causation.",
+      "condition_B": "If config change directly affects crash-related code: Causation more plausible."
+    },
+    "wise_refusal": "This commits the post hoc fallacy. The crash occurred after the config change, but temporal sequence alone doesn't establish causation. Other factors (hardware, memory, other code) could be responsible.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Temporal sequence without mechanism. Post hoc ergo propter hoc fallacy.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-018",
+    "case_id": "L1-018",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Product Analytics",
+    "scenario": "Users who use AI features more (X) report higher satisfaction (Y). Product team concludes AI features cause satisfaction.",
+    "claim": "The causal relationship in 'The Reverse Causation in User Engagement' is valid.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "AI Feature Usage",
+        "role": "Observed behavior"
+      },
+      "Y": {
+        "name": "Satisfaction",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Pre-existing satisfaction",
+          "role": "Potential reverse cause"
+        }
+      ]
+    },
+    "trap": {
+      "type": "W9_REVERSE_CAUSATION",
+      "type_name": "Reverse Causation",
+      "subtype": "Direction_Family",
+      "subtype_name": "Direction Family"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Direction may be reversed",
+    "key_insight": "Satisfied users may seek out AI features, not vice versa.",
+    "hidden_timestamp": "Did users who were already satisfied seek out AI features more?",
+    "conditional_answers": {
+      "condition_A": "If satisfaction precedes usage: Reverse causation; satisfaction drives feature adoption.",
+      "condition_B": "If usage precedes satisfaction change: Forward causation more plausible."
+    },
+    "wise_refusal": "This may be reverse causation. Users who are already satisfied with the product may be more likely to explore and use AI features. The features may not be causing the satisfaction.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Direction may be reversed. Satisfied users may seek out AI features, not vice versa.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-019",
+    "case_id": "L1-019",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Architecture",
+    "scenario": "Models with longer context windows (X) show better performance on document QA tasks (Y). A researcher claims longer context causes better understanding.",
+    "claim": "The causal relationship in 'The Context Window Ambiguity' is valid.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Context Window Size",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Document QA Performance",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "Model size, training data, architecture",
+          "role": "Potential confounders"
+        }
+      ]
+    },
+    "trap": {
+      "type": "AMBIGUOUS",
+      "type_name": "Ambiguous",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Causal direction unclear",
+    "key_insight": "Longer context may correlate with other improvements; direct effect unclear.",
+    "hidden_timestamp": "Were models with longer context also larger or trained on more data?",
+    "conditional_answers": {
+      "condition_A": "If context is only difference: Causal claim may be valid.",
+      "condition_B": "If other factors differ: Cannot isolate context effect."
+    },
+    "wise_refusal": "The causal relationship is ambiguous. Longer context windows often come with larger models and more training. Without controlled comparison, we cannot determine if context length itself causes better understanding or if it's a proxy for other improvements.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Causal direction unclear. Longer context may correlate with other improvements; direct effect unclear.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketLarge-I-L1-020",
+    "case_id": "L1-020",
+    "bucket": "BucketLarge-I",
+    "pearl_level": "L1",
+    "domain": "AI & Tech",
+    "subdomain": "Transfer Learning",
+    "scenario": "Fine-tuned models (X) perform better on domain tasks (Y) than base models. It's unclear if this is due to domain knowledge acquisition or loss of general capability masking.",
+    "claim": "The causal relationship in 'The Fine-Tuning Dilemma' is valid.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Domain Fine-Tuning",
+        "role": "Treatment"
+      },
+      "Y": {
+        "name": "Domain Task Performance",
+        "role": "Outcome"
+      },
+      "Z": [
+        {
+          "name": "General capability changes",
+          "role": "Potential mechanism"
+        }
+      ]
+    },
+    "trap": {
+      "type": "AMBIGUOUS",
+      "type_name": "Ambiguous",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Multiple possible mechanisms",
+    "key_insight": "Fine-tuning may improve domain tasks while degrading others.",
+    "hidden_timestamp": "Does fine-tuning add domain knowledge or just shift the model's focus?",
+    "conditional_answers": {
+      "condition_A": "If general capabilities preserved: Fine-tuning genuinely adds knowledge.",
+      "condition_B": "If general capabilities degrade: Improvement may be trade-off, not net gain."
+    },
+    "wise_refusal": "The causal mechanism is ambiguous. Fine-tuning improves domain performance, but it's unclear whether this represents genuine knowledge acquisition or a reallocation of capacity that may harm other capabilities. The causal story is incomplete.",
+    "gold_rationale": "The correct reasoning for this case involves understanding Multiple possible mechanisms. Fine-tuning may improve domain tasks while degrading others.",
+    "initial_author": "Alessandro Balzi",
+    "validator": "Alessandro Balzi",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketI-L1-001",
+    "case_id": "8.402_Var1",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "We found that nations with higher per-capita coffee consumption (X) have lower rates of heart disease (Y). We conclude that if an individual drinks more coffee, they will be healthier.",
+    "claim": "Coffee Consumption causes Heart Health.",
+    "label": "NO",
+    "variables": {
+      "X": "National Coffee Use",
+      "Y": "Heart Disease Rate",
+      "Z": [
+        "Aggregate Data"
+      ]
+    },
+    "trap": {
+      "type": "W5",
+      "type_name": "Ecological Family",
+      "subtype": "Ecological Fallacy"
+    },
+    "hidden_question": "Does the trend hold for individuals?",
+    "conditional_answers": {
+      "answer_if_A": "If aggregate trend doesn't match individual, invalid (WOLF).",
+      "answer_if_B": "If consistent, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W5). It infers individual causation from aggregate (national) data, ignoring that individuals within those nations might differ.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-002",
+    "case_id": "8.403_Var1",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "We surveyed all current remote employees (X) at a tech firm. 100% reported high satisfaction (Y). We conclude remote work guarantees satisfaction.",
+    "claim": "Remote work ensures satisfaction.",
+    "label": "NO",
+    "variables": {
+      "X": "Remote Work",
+      "Y": "Satisfaction",
+      "Z": [
+        "Quitted Employees"
+      ]
+    },
+    "trap": {
+      "type": "W2",
+      "type_name": "Selection Family",
+      "subtype": "Survivorship Bias"
+    },
+    "hidden_question": "Did we survey those who quit?",
+    "conditional_answers": {
+      "answer_if_A": "If dropouts ignored (Z), invalid (WOLF).",
+      "answer_if_B": "If included, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W2). The sample excludes employees who hated remote work and already quit (Z), creating survivorship bias.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-003",
+    "case_id": "8.265_Var1",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Model A has higher accuracy than Model B in text tasks, image tasks, and audio tasks. However, when combined, Model B has higher overall accuracy (Y).",
+    "claim": "Model B is better overall.",
+    "label": "NO",
+    "variables": {
+      "X": "Model Choice",
+      "Y": "Accuracy",
+      "Z": [
+        "Task Distribution"
+      ]
+    },
+    "trap": {
+      "type": "W8",
+      "type_name": "Confounding Family",
+      "subtype": "Simpson's Paradox"
+    },
+    "hidden_question": "Are the task sample sizes balanced?",
+    "conditional_answers": {
+      "answer_if_A": "If unbalanced (Z), invalid (WOLF).",
+      "answer_if_B": "If balanced, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W8). Simpson's Paradox reverses the trend because Model B was tested primarily on easy tasks (Z).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-004",
+    "case_id": "8.402_Var2",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "We conducted a Randomized Controlled Trial (RCT) where patients were randomly assigned to drink 2 cups of coffee daily (X) or water. The coffee group had better heart health (Y).",
+    "claim": "Coffee Consumption causes Heart Health.",
+    "label": "YES",
+    "variables": {
+      "X": "Coffee",
+      "Y": "Heart Health",
+      "Z": [
+        "Random Assignment"
+      ]
+    },
+    "trap": {
+      "type": "S1",
+      "type_name": "RCT",
+      "subtype": "Randomized Trial"
+    },
+    "hidden_question": "Was randomization maintained?",
+    "conditional_answers": {
+      "answer_if_A": "If random, the result is causal (SHEEP).",
+      "answer_if_B": "If broken, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S1). Randomization eliminates confounding variables.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketI-L1-005",
+    "case_id": "8.403_Var",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "Employees who voluntarily work from home (X) have 15% higher productivity (Y).",
+    "claim": "Remote Work causes Productivity.",
+    "label": "NO",
+    "variables": {
+      "X": "Remote Work",
+      "Y": "Productivity",
+      "Z": [
+        "Motivation"
+      ]
+    },
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "Self-Selection"
+    },
+    "hidden_question": "Did motivated employees choose to work remotely?",
+    "conditional_answers": {
+      "answer_if_A": "If motivated (Z) chose X, it's biased.",
+      "answer_if_B": "If random, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W1). Motivated employees (Z) self-selected into remote work (X).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-006",
+    "case_id": "8.403_Var1",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Due to office renovations, employees with ID numbers ending in odd digits were forced to work from home (X). Their productivity (Y) increased.",
+    "claim": "Remote Work causes Productivity.",
+    "label": "YES",
+    "variables": {
+      "X": "Remote Work",
+      "Y": "Productivity",
+      "Z": [
+        "ID Number"
+      ]
+    },
+    "trap": {
+      "type": "S2",
+      "type_name": "Natural Experiment",
+      "subtype": "Random Assignment"
+    },
+    "hidden_question": "Are ID numbers random?",
+    "conditional_answers": {
+      "answer_if_A": "If random, valid (SHEEP).",
+      "answer_if_B": "If assigned by role, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S2). ID digits act as a random assignment mechanism.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-007",
+    "case_id": "8.442_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "A model expresses 95% confidence (X), but events occur only 70% of the time (Y).",
+    "claim": "Confidence implies Accuracy.",
+    "label": "NO",
+    "variables": {
+      "X": "Confidence",
+      "Y": "Accuracy",
+      "Z": [
+        "Calibration"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Measurement Error",
+      "subtype": "Calibration Failure"
+    },
+    "hidden_question": "Is the model calibrated?",
+    "conditional_answers": {
+      "answer_if_A": "If uncalibrated, X is noise.",
+      "answer_if_B": "If calibrated, X is signal."
+    },
+    "wise_refusal": "This is a WOLF case (W6). High confidence (X) is a poor measure of accuracy (Y) in uncalibrated models.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-008",
+    "case_id": "8.442_Var1",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "We calibrated the model using Platt Scaling. Now, as Confidence (X) increases, Accuracy (Y) increases linearly.",
+    "claim": "Confidence predicts Accuracy.",
+    "label": "YES",
+    "variables": {
+      "X": "Confidence",
+      "Y": "Accuracy",
+      "Z": [
+        "Calibration"
+      ]
+    },
+    "trap": {
+      "type": "S8",
+      "type_name": "Dosage Response",
+      "subtype": "Linear Trend"
+    },
+    "hidden_question": "Is the relationship consistent?",
+    "conditional_answers": {
+      "answer_if_A": "If consistent, valid (SHEEP).",
+      "answer_if_B": "If noisy, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S8). A monotonic dose-response curve suggests causal predictive power.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-009",
+    "case_id": "8.447_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "A reasoning benchmark (X) contains leakage patterns. Models score high (X) but fail in reality (Y).",
+    "claim": "Benchmark Score implies Reasoning.",
+    "label": "NO",
+    "variables": {
+      "X": "Score",
+      "Y": "Reasoning",
+      "Z": [
+        "Leakage"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Measurement Error",
+      "subtype": "Construct Validity"
+    },
+    "hidden_question": "Does it measure reasoning or memorization?",
+    "conditional_answers": {
+      "answer_if_A": "If memorization (Z), invalid.",
+      "answer_if_B": "If reasoning, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W6). The score (X) measures ability to exploit leakage (Z), not reasoning (Y).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-010",
+    "case_id": "8.447_Var1",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "We identified the exact circuit (Z) used to solve the benchmark (X). It mapped perfectly to logical deduction centers.",
+    "claim": "The model uses logic.",
+    "label": "YES",
+    "variables": {
+      "X": "Benchmark",
+      "Y": "Logic",
+      "Z": [
+        "Circuit Trace"
+      ]
+    },
+    "trap": {
+      "type": "S6",
+      "type_name": "Mechanism Identification",
+      "subtype": "Interpretability"
+    },
+    "hidden_question": "Is the circuit unique to logic?",
+    "conditional_answers": {
+      "answer_if_A": "If verified, valid (SHEEP).",
+      "answer_if_B": "If ambiguous, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S6). Identifying the mechanism (Z) confirms the causal link.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-011",
+    "case_id": "8.450_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "A disease test is 99% accurate (X), but the disease is rare (0.1%). Doctors assume a positive result guarantees disease (Y).",
+    "claim": "Test Result implies Disease.",
+    "label": "NO",
+    "variables": {
+      "X": "Positive Test",
+      "Y": "Disease",
+      "Z": [
+        "Base Rate"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Ecological Family",
+      "subtype": "Base Rate Neglect"
+    },
+    "hidden_question": "Is the base rate high enough?",
+    "conditional_answers": {
+      "answer_if_A": "If rare (Z), most positives are false.",
+      "answer_if_B": "If common, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W6). Base rate neglect (Z) leads to false conclusions.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-W4-Fix",
+    "case_id": "8.455_Var",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "We identified the 10 worst-performing models (X) from a batch of 1,000 training runs. We applied a 'learning rate warmup' patch to them. In the re-test, their scores improved significantly (Y).",
+    "claim": "Warmup patch improves bad models.",
+    "label": "NO",
+    "variables": {
+      "X": "Worst Models",
+      "Y": "Improvement",
+      "Z": [
+        "Random Noise"
+      ]
+    },
+    "trap": {
+      "type": "W4",
+      "type_name": "Selection Family",
+      "subtype": "Regression to the Mean"
+    },
+    "hidden_question": "Would the worst scores improve naturally due to luck variability?",
+    "conditional_answers": {
+      "answer_if_A": "If variation is random (Z), invalid (WOLF).",
+      "answer_if_B": "If errors are systematic, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W4). By selecting the most extreme outliers (X), natural statistical regression ensures they will improve (Y) in the next measurement, even without the patch.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-013",
+    "case_id": "8.45_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "Larger models (X) correlate with higher truthfulness (Y). User assumes a huge model will be perfect.",
+    "claim": "Size guarantees Truth.",
+    "label": "NO",
+    "variables": {
+      "X": "Size",
+      "Y": "Truth",
+      "Z": [
+        "Hallucination"
+      ]
+    },
+    "trap": {
+      "type": "W10",
+      "type_name": "Direction Family",
+      "subtype": "Extrapolation"
+    },
+    "hidden_question": "Does it saturate?",
+    "conditional_answers": {
+      "answer_if_A": "If hallucinations persist (Z), invalid.",
+      "answer_if_B": "If linear, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W10). Extrapolating the trend (X) ignores persistent hallucinations (Z).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-014",
+    "case_id": "8.45_Var1",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "We verified that the scaling law between Compute (X) and Loss (Y) holds across 10 architectures and 5 datasets.",
+    "claim": "Compute reduces Loss.",
+    "label": "YES",
+    "variables": {
+      "X": "Compute",
+      "Y": "Loss",
+      "Z": [
+        "Contexts"
+      ]
+    },
+    "trap": {
+      "type": "S7",
+      "type_name": "Invariance",
+      "subtype": "Robustness"
+    },
+    "hidden_question": "Is it universal?",
+    "conditional_answers": {
+      "answer_if_A": "If invariant, causal (SHEEP).",
+      "answer_if_B": "If fragile, spurious."
+    },
+    "wise_refusal": "This is a SHEEP case (S7). Invariance implies causation.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-015",
+    "case_id": "8.46_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Safe models (X) are less creative (Y). User claims safety kills intelligence.",
+    "claim": "Safety causes Stupidity.",
+    "label": "NO",
+    "variables": {
+      "X": "Safety",
+      "Y": "Creativity",
+      "Z": [
+        "Refusal Trigger"
+      ]
+    },
+    "trap": {
+      "type": "W3",
+      "type_name": "Selection Family",
+      "subtype": "Healthy User Bias"
+    },
+    "hidden_question": "Is it loss of skill or just refusal?",
+    "conditional_answers": {
+      "answer_if_A": "If refusal (Z), invalid.",
+      "answer_if_B": "If skill loss, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W3). The filter (Z) rejects prompts, mimicking stupidity.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-016",
+    "case_id": "8.47_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "High probability outputs (X) are assumed correct (Y). But the model confidently repeats popular myths (Z).",
+    "claim": "Probability implies Fact.",
+    "label": "NO",
+    "variables": {
+      "X": "Probability",
+      "Y": "Fact",
+      "Z": [
+        "Misconceptions"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "Sycophancy"
+    },
+    "hidden_question": "Is the training data factually correct?",
+    "conditional_answers": {
+      "answer_if_A": "If myths (Z) present, invalid.",
+      "answer_if_B": "If clean, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W7). High prob (X) often means 'common in training' (Z), not true (Y).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-017",
+    "case_id": "8.49_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Polite prompts (X) bypass safety filters (Y) more than aggressive ones.",
+    "claim": "Politeness implies Safety.",
+    "label": "NO",
+    "variables": {
+      "X": "Politeness",
+      "Y": "Safety Accept",
+      "Z": [
+        "Training Bias"
+      ]
+    },
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "Distribution Shift"
+    },
+    "hidden_question": "Did training include polite attacks?",
+    "conditional_answers": {
+      "answer_if_A": "If missing (Z), invalid.",
+      "answer_if_B": "If present, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W1). Training (Z) focused on aggression, creating a blind spot.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-018",
+    "case_id": "8.53_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "Model Compute (X) correlates with Efficiency Score (Y), ignoring Pipeline Compute (Z).",
+    "claim": "Model Compute implies Efficiency.",
+    "label": "NO",
+    "variables": {
+      "X": "Model Compute",
+      "Y": "Efficiency",
+      "Z": [
+        "Hidden Cost"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Measurement Error",
+      "subtype": "Partial Metric"
+    },
+    "hidden_question": "Are all costs counted?",
+    "conditional_answers": {
+      "answer_if_A": "If Z hidden, invalid.",
+      "answer_if_B": "If counted, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W6). The score (Y) ignores Z, making X misleading.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-019",
+    "case_id": "8.63_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Traffic prediction (X) causes drivers to reroute (Z), creating new congestion (Y).",
+    "claim": "Prediction is Accurate.",
+    "label": "NO",
+    "variables": {
+      "X": "Prediction",
+      "Y": "Outcome",
+      "Z": [
+        "Reaction"
+      ]
+    },
+    "trap": {
+      "type": "W9",
+      "type_name": "Direction Family",
+      "subtype": "Reverse Causation"
+    },
+    "hidden_question": "Do drivers react to prediction?",
+    "conditional_answers": {
+      "answer_if_A": "If reaction (Z), invalid.",
+      "answer_if_B": "If secret, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W9). The prediction (X) changes the outcome (Y) via driver reaction (Z).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-020",
+    "case_id": "8.69_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "RLHF model uses Flattery (Z) to get high Satisfaction Scores (X).",
+    "claim": "Score implies Value.",
+    "label": "NO",
+    "variables": {
+      "X": "Score",
+      "Y": "Value",
+      "Z": [
+        "Flattery"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Measurement Error",
+      "subtype": "Proxy Failure"
+    },
+    "hidden_question": "Is it helpful or nice?",
+    "conditional_answers": {
+      "answer_if_A": "If flattery (Z), invalid.",
+      "answer_if_B": "If helpful, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W6). Flattery (Z) inflates the score (X) without value (Y).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-021",
+    "case_id": "8.70_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "Model adds Disclaimer Padding (Z) to maximize Reward Score (X), reducing helpfulness (Y).",
+    "claim": "Reward implies Help.",
+    "label": "NO",
+    "variables": {
+      "X": "Reward",
+      "Y": "Help",
+      "Z": [
+        "Padding"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Measurement Error",
+      "subtype": "Metric Gaming"
+    },
+    "hidden_question": "Does padding boost score?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, invalid.",
+      "answer_if_B": "If no, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W6). Score (X) measures padding (Z), not help (Y).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-022",
+    "case_id": "8.74_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "AI Competition (X) forces a Nash Equilibrium (Z) of Sensationalism (Y).",
+    "claim": "Competition causes Sensationalism.",
+    "label": "YES",
+    "variables": {
+      "X": "Competition",
+      "Y": "Sensationalism",
+      "Z": [
+        "Nash Equilibrium"
+      ]
+    },
+    "trap": {
+      "type": "S6",
+      "type_name": "Mechanism",
+      "subtype": "Game Theory"
+    },
+    "hidden_question": "Is this the dominant strategy?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, causal (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S6). The mechanism (Z) forces the outcome (Y).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-023",
+    "case_id": "8.77_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "Model is confident (X) about post-cutoff events (Z), leading to errors (Y).",
+    "claim": "Confidence implies Knowledge.",
+    "label": "NO",
+    "variables": {
+      "X": "Confidence",
+      "Y": "Knowledge",
+      "Z": [
+        "Cutoff"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Measurement Error",
+      "subtype": "Hallucination"
+    },
+    "hidden_question": "Is data known?",
+    "conditional_answers": {
+      "answer_if_A": "If no, invalid.",
+      "answer_if_B": "If yes, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W6). Confidence (X) measures fluency on unknown data (Z).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-024",
+    "case_id": "8.94_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Safety training (X) focused on aggression. Polite attacks (Z) succeed (Y).",
+    "claim": "Training guarantees Robustness.",
+    "label": "NO",
+    "variables": {
+      "X": "Training",
+      "Y": "Robustness",
+      "Z": [
+        "Distribution Shift"
+      ]
+    },
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "Training Distribution"
+    },
+    "hidden_question": "Did training include politeness?",
+    "conditional_answers": {
+      "answer_if_A": "If no, invalid.",
+      "answer_if_B": "If yes, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W1). Training (X) selected on aggression (Z), ignoring politeness.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-025",
+    "case_id": "8.108_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "AI exploits a Glitch (Z) to get high Points (X) without Skill (Y).",
+    "claim": "Points implies Skill.",
+    "label": "NO",
+    "variables": {
+      "X": "Points",
+      "Y": "Skill",
+      "Z": [
+        "Glitch"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Measurement Error",
+      "subtype": "Metric Gaming"
+    },
+    "hidden_question": "Is the score legit?",
+    "conditional_answers": {
+      "answer_if_A": "If glitch, invalid.",
+      "answer_if_B": "If legit, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W6). Points (X) come from glitch (Z), not skill (Y).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-026",
+    "case_id": "8.240_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "AI reduces complaints (X) by suppressing them (Z), not satisfying users (Y).",
+    "claim": "Reduction implies Satisfaction.",
+    "label": "NO",
+    "variables": {
+      "X": "Reduction",
+      "Y": "Satisfaction",
+      "Z": [
+        "Suppression"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "Mechanism Substitution"
+    },
+    "hidden_question": "Solved or suppressed?",
+    "conditional_answers": {
+      "answer_if_A": "If suppressed, invalid.",
+      "answer_if_B": "If solved, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W7). X is caused by Z (suppression), not Y.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-027",
+    "case_id": "8.236_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "Car trained on clear weather (Z) fails in rain (Y) despite high training accuracy (X).",
+    "claim": "Accuracy implies Safety.",
+    "label": "NO",
+    "variables": {
+      "X": "Accuracy",
+      "Y": "Safety",
+      "Z": [
+        "Weather Shift"
+      ]
+    },
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "Covariate Shift"
+    },
+    "hidden_question": "Environments match?",
+    "conditional_answers": {
+      "answer_if_A": "If no, invalid.",
+      "answer_if_B": "If yes, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W1). Training (X) selected on Z, creating bias.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-028",
+    "case_id": "8.241_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Cautious users (Z) use Safe Mode (X) and have fewer errors (Y).",
+    "claim": "Safe Mode prevents Errors.",
+    "label": "NO",
+    "variables": {
+      "X": "Safe Mode",
+      "Y": "Errors",
+      "Z": [
+        "Caution"
+      ]
+    },
+    "trap": {
+      "type": "W3",
+      "type_name": "Healthy User Bias",
+      "subtype": "Confounding"
+    },
+    "hidden_question": "Are users careful?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, invalid.",
+      "answer_if_B": "If no, valid."
+    },
+    "wise_refusal": "This is a WOLF case (W3). Cautious users (Z) confound the effect of X.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-029",
+    "case_id": "8.250_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Easy",
+    "scenario": "We A/B tested a defense (X) with random assignment (Z). It worked (Y).",
+    "claim": "Defense prevents Attacks.",
+    "label": "YES",
+    "variables": {
+      "X": "Defense",
+      "Y": "Attacks",
+      "Z": [
+        "Randomization"
+      ]
+    },
+    "trap": {
+      "type": "S1",
+      "type_name": "RCT",
+      "subtype": "A/B Test"
+    },
+    "hidden_question": "Random?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, valid (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S1). Randomization eliminates confounding.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketI-L1-030",
+    "case_id": "8.251_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Randomized Clinical Trial compared Human (X) vs AI Feedback. Human won (Y).",
+    "claim": "Human Feedback is better.",
+    "label": "YES",
+    "variables": {
+      "X": "Human Feed",
+      "Y": "Quality",
+      "Z": [
+        "RCT"
+      ]
+    },
+    "trap": {
+      "type": "S1",
+      "type_name": "RCT",
+      "subtype": "Clinical Trial"
+    },
+    "hidden_question": "Confounds?",
+    "conditional_answers": {
+      "answer_if_A": "If balanced, valid (SHEEP).",
+      "answer_if_B": "If imbalanced, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S1). Randomization ensures validity.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketI-L1-031",
+    "case_id": "8.255_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "A random server outage (Z) in Region A (X) lowered trust (Y).",
+    "claim": "Outage reduced Trust.",
+    "label": "YES",
+    "variables": {
+      "X": "Outage",
+      "Y": "Trust",
+      "Z": [
+        "Shock"
+      ]
+    },
+    "trap": {
+      "type": "S2",
+      "type_name": "Natural Experiment",
+      "subtype": "Shock"
+    },
+    "hidden_question": "Random?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, valid (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S2). Exogenous shock (Z) acts as intervention.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-032",
+    "case_id": "8.256_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "Arbitrary policy cutoff date (Z) changed data source (X). Performance (Y) changed.",
+    "claim": "Data B is better.",
+    "label": "YES",
+    "variables": {
+      "X": "Data",
+      "Y": "Performance",
+      "Z": [
+        "Cutoff"
+      ]
+    },
+    "trap": {
+      "type": "S2",
+      "type_name": "Natural Experiment",
+      "subtype": "Cutoff"
+    },
+    "hidden_question": "Comparable?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, valid (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S2). Arbitrary cutoff mimics randomization.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-033",
+    "case_id": "8.260_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "Lottery (Z) assigned GPUs (X). Winners wrote more papers (Y).",
+    "claim": "GPUs cause Papers.",
+    "label": "YES",
+    "variables": {
+      "X": "GPU",
+      "Y": "Papers",
+      "Z": [
+        "Lottery"
+      ]
+    },
+    "trap": {
+      "type": "S3",
+      "type_name": "Instrumental Variable",
+      "subtype": "Lottery"
+    },
+    "hidden_question": "Exclusion restriction?",
+    "conditional_answers": {
+      "answer_if_A": "If holds, valid (SHEEP).",
+      "answer_if_B": "If fails, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S3). Lottery is a valid IV.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketI-L1-034",
+    "case_id": "8.261_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Hard",
+    "scenario": "Distance (Z) used as IV for Latency (X) to study Churn (Y).",
+    "claim": "Latency causes Churn.",
+    "label": "YES",
+    "variables": {
+      "X": "Latency",
+      "Y": "Churn",
+      "Z": [
+        "Distance"
+      ]
+    },
+    "trap": {
+      "type": "S3",
+      "type_name": "Instrumental Variable",
+      "subtype": "Geography"
+    },
+    "hidden_question": "Independent?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, valid (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S3). Distance acts as a natural instrument.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-035",
+    "case_id": "8.265_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Regression Discontinuity at Score 90 (Z). Badge (X) given above 90. Usage (Y) jumped.",
+    "claim": "Badge causes Usage.",
+    "label": "YES",
+    "variables": {
+      "X": "Badge",
+      "Y": "Usage",
+      "Z": [
+        "Threshold"
+      ]
+    },
+    "trap": {
+      "type": "S4",
+      "type_name": "Regression Discontinuity",
+      "subtype": "Threshold"
+    },
+    "hidden_question": "Continuity?",
+    "conditional_answers": {
+      "answer_if_A": "If holds, valid (SHEEP).",
+      "answer_if_B": "If fails, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S4). RDD isolates the treatment effect.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketI-L1-036",
+    "case_id": "8.270_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Diff-in-Diff study of Model A (Patch X) vs Model B. Trends parallel before, diverged after.",
+    "claim": "Patch improved A.",
+    "label": "YES",
+    "variables": {
+      "X": "Patch",
+      "Y": "Performance",
+      "Z": [
+        "Time/Group"
+      ]
+    },
+    "trap": {
+      "type": "S5",
+      "type_name": "Difference in Differences",
+      "subtype": "Parallel Trends"
+    },
+    "hidden_question": "Parallel?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, valid (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S5). DiD removes invariant confounders.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-037",
+    "case_id": "8.275_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "We identified the specific Neuron (Mechanism) causing output 'Yes' (Y).",
+    "claim": "Neuron causes Y.",
+    "label": "YES",
+    "variables": {
+      "X": "Neuron",
+      "Y": "Output",
+      "Z": [
+        "Mechanism"
+      ]
+    },
+    "trap": {
+      "type": "S6",
+      "type_name": "Mechanism Identification",
+      "subtype": "Interpretability"
+    },
+    "hidden_question": "Trace complete?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, valid (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S6). Mechanism trace confirms causality.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-BucketI-L1-038",
+    "case_id": "8.281_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Attack (X) works across all model architectures (Z).",
+    "claim": "Attack is robust.",
+    "label": "YES",
+    "variables": {
+      "X": "Attack",
+      "Y": "Success",
+      "Z": [
+        "Architecture"
+      ]
+    },
+    "trap": {
+      "type": "S7",
+      "type_name": "Invariance",
+      "subtype": "Robustness"
+    },
+    "hidden_question": "Invariant?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, valid (SHEEP).",
+      "answer_if_B": "If no, invalid."
+    },
+    "wise_refusal": "This is a SHEEP case (S7). Universal success implies robustness.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-039",
+    "case_id": "8.048_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Deleting Neuron 55 (X) stops hate (Y), but might break grammar (Z).",
+    "claim": "Deletion is safe.",
+    "label": "AMBIGUOUS",
+    "variables": {
+      "X": "Deletion",
+      "Y": "Hate",
+      "Z": [
+        "Polysemanticity"
+      ]
+    },
+    "trap": {
+      "type": "A1",
+      "type_name": "Ambiguous",
+      "subtype": "Side Effects"
+    },
+    "hidden_question": "Polysemantic?",
+    "conditional_answers": {
+      "answer_if_A": "If yes, ambiguous.",
+      "answer_if_B": "If no, valid."
+    },
+    "wise_refusal": "This is AMBIGUOUS (A1). Side effects (Z) make the intervention unclear.",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketI-L1-040",
+    "case_id": "8.290_Orig",
+    "pearl_level": "L1",
+    "domain": "D8 - AI Safety & Alignment",
+    "difficulty": "Medium",
+    "scenario": "Model works on Green (X) but fails on Sand. Unclear if it detects Cow (Y) or Grass (Z).",
+    "claim": "Model detects Cow.",
+    "label": "AMBIGUOUS",
+    "variables": {
+      "X": "Detection",
+      "Y": "Cow",
+      "Z": [
+        "Background"
+      ]
+    },
+    "trap": {
+      "type": "A2",
+      "type_name": "Ambiguous",
+      "subtype": "Clever Hans"
+    },
+    "hidden_question": "Feature used?",
+    "conditional_answers": {
+      "answer_if_A": "If background (Z), invalid.",
+      "answer_if_B": "If shape, valid."
+    },
+    "wise_refusal": "This is AMBIGUOUS (A2). The model may rely on spurious correlations (Z).",
+    "initial_author": "Fernando Torres",
+    "validator": "Alanood",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-BucketD-0018",
+    "case_id": "0018",
+    "bucket": "T3-BucketD",
+    "pearl_level": "L1",
+    "domain": "Science",
+    "subdomain": "Genetics / Intelligence",
+    "scenario": "Two Nobel Prize-winning physicists married and had a son. While the son is intelligent and holds a PhD, he works as a mid-level researcher with no major breakthroughs. The parents believe that the 'unstructured' education system failed him.",
+    "claim": "The unstructured education system (Z) caused the son's failure to match his parents' achievements.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Nobel Prize Parents",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Average Researcher Son",
+        "role": "outcome"
+      },
+      "Z": [
+        "Education System (Attributed Cause)"
+      ]
+    },
+    "trap": {
+      "type": "W4",
+      "type_name": "Regression To Mean",
+      "subtype": "Galton's Regression",
+      "subtype_name": "Galton's Regression"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Genetics -> X; Perfect_Environment_Luck -> X; Genetics -> Y; Normal_Environment_Luck -> Y; Z(Education) -> Y is spurious; High(X) implies E[Y] < X.",
+    "key_insight": "Intelligence and achievement have a hereditary component but are subject to strong regression; two outliers mating usually produce less extreme offspring.",
+    "hidden_timestamp": "Parents' achievement (X) is at t=1. Son's achievement (Y) is at t=2.",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the subject was selected for extreme values, regression to the mean predicts reversion regardless of intervention.",
+      "answer_if_condition_2": "If the values were not extreme, other explanations may be valid."
+    },
+    "wise_refusal": "The son's career trajectory is an example of Galton's Regression to the Mean. Winning a Nobel Prize (X) requires not just high IQ (genetics) but also exceptional luck and timing (variance). While the son inherits the genetics, he likely did not inherit the extreme positive variance. It is statistically expected for the children of outliers to regress toward the population mean (Y), regardless of the education system (Z).",
+    "gold_rationale": "The son's career trajectory is an example of Galton's Regression to the Mean. Winning a Nobel Prize (X) requires not just high IQ (genetics) but also exceptional luck and timing (variance). While the son inherits the genetics, he likely did not inherit the extreme positive variance. It is statistically expected for the children of outliers to regress toward the population mean (Y), regardless of the education system (Z).",
+    "initial_author": "Yuqiao Zeng",
+    "validator": "Samantha van Rijs",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-BucketD-0022",
+    "case_id": "0022",
+    "bucket": "T3-BucketD",
+    "pearl_level": "L1",
+    "domain": "Computer Science",
+    "subdomain": "DevOps / Systems Engineering",
+    "scenario": "A cloud server's CPU usage spiked to 99%, triggering a critical alert. The system administrator immediately ran a script to 'clear temporary log files'. Five minutes later, the CPU usage dropped back to a normal 40%. The administrator claims the log clearing script fixed the CPU overload.",
+    "claim": "The log clearing script (Z) caused the CPU usage to drop (Y).",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "CPU Usage Spike",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Normal CPU Usage",
+        "role": "outcome"
+      },
+      "Z": [
+        "Log Clearing Script (Intervention)"
+      ]
+    },
+    "trap": {
+      "type": "W4",
+      "type_name": "Regression To Mean",
+      "subtype": "System Variance / Peak Selection",
+      "subtype_name": "System Variance / Peak Selection"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Traffic_Burst -> X; X -> Run_Script(Z); Traffic_Burst_Ends -> Y; Z -> Y is weak/spurious; High(X) implies E[Y] < X due to transient nature of bursts.",
+    "key_insight": "System resource spikes are often transient (bursty); interventions applied at the peak often get credit for the natural end of the burst.",
+    "hidden_timestamp": "The intervention (Z) is applied at the moment of peak load (X, t=1). The recovery (Y) is observed at t=2.",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the subject was selected for extreme values, regression to the mean predicts reversion regardless of intervention.",
+      "answer_if_condition_2": "If the values were not extreme, other explanations may be valid."
+    },
+    "wise_refusal": "The drop in CPU usage is likely Regression to the Mean. The administrator intervened exactly when the load was at a peak (X). Server loads often exhibit 'bursty' behavior where spikes are transient. It is statistically probable that the load would have dropped (Y) as the traffic burst ended, regardless of the log clearing script (Z). Without evidence that logs were actually consuming CPU, the correlation is likely spurious.",
+    "gold_rationale": "The drop in CPU usage is likely Regression to the Mean. The administrator intervened exactly when the load was at a peak (X). Server loads often exhibit 'bursty' behavior where spikes are transient. It is statistically probable that the load would have dropped (Y) as the traffic burst ended, regardless of the log clearing script (Z). Without evidence that logs were actually consuming CPU, the correlation is likely spurious.",
+    "initial_author": "Yuqiao Zeng",
+    "validator": "Samantha van Rijs",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  }
+]

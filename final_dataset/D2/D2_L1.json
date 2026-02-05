@@ -1,0 +1,2951 @@
+[
+  {
+    "id": "T3-BucketF-0001",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Across medieval regions, ports with larger dockyards also report higher urban literacy rates in surviving tax records.",
+    "claim": "Larger dockyards cause higher literacy.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Dockyard size",
+      "Y": "Urban literacy rate",
+      "Z": [
+        "Regional prosperity",
+        "Trade intensity"
+      ]
+    },
+    "gold_rationale": "Richer trading regions could both afford larger dockyards and fund schools/scribes. The observed association does not establish that expanding dockyards would raise literacy.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.1",
+    "difficulty": "Medium",
+    "causal_structure": "Regional prosperity, Trade intensity (Z) causes both Dockyard size (X) and Urban literacy rate (Y), creating spurious correlation.",
+    "key_insight": "Richer trading regions could both afford larger dockyards and fund schools/scribes.",
+    "hidden_timestamp": "Was Regional prosperity present before both Dockyard size and Urban literacy rate?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Dockyard size temporally precedes Urban literacy rate, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. Richer trading regions could both afford larger dockyards and fund schools/scribes. The observed association does not establish that expanding dockyards would raise literacy.",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0002",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In an archive of famous philosophers, those who were exiled appear to have produced more influential works than those who were not exiled.",
+    "claim": "Exile makes philosophers more influential.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "A",
+      "type_name": "Ambiguous",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Exiled status",
+      "Y": "Influence of works",
+      "Z": [
+        "Being preserved/remembered in archives"
+      ]
+    },
+    "gold_rationale": "Philosophers who were exiled may have written more influential works, but we cannot determine if this is because they were exiled or because they were more influential to begin with.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.2",
+    "difficulty": "Hard",
+    "causal_structure": "Exiled status (X) is claimed to cause Influence of works (Y), but Being preserved/remembered in archives (Z) may confound the relationship.",
+    "key_insight": "Philosophers who were exiled may have written more influential works, but we cannot determine if ....",
+    "hidden_timestamp": "What is the temporal ordering between Exiled status, Influence of works, and potential confounders?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Exiled status temporally precedes Influence of works, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim cannot be determined without additional information. Philosophers who were exiled may have written more influential works, but we cannot determine if this is because they were exiled or because they were...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0004",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Records show 65% of naval deaths in a war were sailors from the largest fleet. A commentator concludes that serving in the largest fleet was most dangerous.",
+    "claim": "Serving in the largest fleet was the most dangerous assignment.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W6",
+      "type_name": "Base Rate Neglect",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Serving in largest fleet",
+      "Y": "Death count",
+      "Z": [
+        "Fleet size"
+      ]
+    },
+    "gold_rationale": "Raw death counts ignore the denominator. If the largest fleet contained most sailors, it can account for most deaths even with a lower death rate than smaller fleets.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.4",
+    "difficulty": "Medium",
+    "causal_structure": "Serving in largest fleet (X) is claimed to cause Death count (Y), but Fleet size (Z) may confound the relationship.",
+    "key_insight": "Raw death counts ignore the denominator.",
+    "hidden_timestamp": "What is the temporal ordering between Serving in largest fleet, Death count, and potential confounders?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Serving in largest fleet temporally precedes Death count, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. Raw death counts ignore the denominator. If the largest fleet contained most sailors, it can account for most deaths even with a lower death rate than smaller fleets.",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0005",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Provinces with higher cathedral density also show higher grain yields in regional summaries compiled centuries later.",
+    "claim": "Building more cathedrals increases grain yields.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Cathedral density",
+      "Y": "Regional grain yield",
+      "Z": [
+        "Fertile land",
+        "Regional wealth"
+      ]
+    },
+    "gold_rationale": "The confounding variable is wealth. Wealthy regions can support both cathedral construction and high yields. The regional correlation does not show that cathedrals caused productivity improvements at the farm level.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.5",
+    "difficulty": "Medium",
+    "causal_structure": "Fertile land, Regional wealth (Z) causes both Cathedral density (X) and Regional grain yield (Y), creating spurious correlation.",
+    "key_insight": "The confounding variable is wealth.",
+    "hidden_timestamp": "Was Fertile land present before both Cathedral density and Regional grain yield?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Cathedral density temporally precedes Regional grain yield, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. The confounding variable is wealth. Wealthy regions can support both cathedral construction and high yields. The regional correlation does not show that cathedrals caused productivity improvements at ...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0006",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "States that historically minted silver coins are more likely to be high-income today.",
+    "claim": "Minting silver coins historically leads to modern prosperity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Historical silver coinage",
+      "Y": "Modern income level",
+      "Z": [
+        "State survival to present"
+      ]
+    },
+    "gold_rationale": "States that were able to mint silver coins are more likely to be alive today because they were prosperous. The states that weren't able to mint silver coins don't exist today.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.6",
+    "difficulty": "Easy",
+    "causal_structure": "Selection bias: Sample is non-representative due to conditioning on State survival to present.",
+    "key_insight": "States that were able to mint silver coins are more likely to be alive today because they were pr....",
+    "hidden_timestamp": "How was the sample selected, and who was excluded?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Historical silver coinage temporally precedes Modern income level, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. States that were able to mint silver coins are more likely to be alive today because they were prosperous. The states that weren't able to mint silver coins don't exist today.",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0051",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Archaeological data shows that ancient civilizations with complex irrigation systems also had high rates of temple construction. A researcher suggests irrigation causes religious fervor.",
+    "claim": "Complex irrigation systems lead to increased religious fervor.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Irrigation complexity",
+      "Y": "Temple construction",
+      "Z": [
+        "State administrative capacity"
+      ]
+    },
+    "gold_rationale": "High state administrative capacity (Z) is a common cause for both large-scale infrastructure like irrigation (X) and monumental architecture like temples (Y). The correlation is likely spurious.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.51",
+    "difficulty": "Medium",
+    "causal_structure": "State administrative capacity (Z) causes both Irrigation complexity (X) and Temple construction (Y), creating spurious correlation.",
+    "key_insight": "High state administrative capacity (Z) is a common cause for both large-scale infrastructure like....",
+    "hidden_timestamp": "Was State administrative capacity present before both Irrigation complexity and Temple construction?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Irrigation complexity temporally precedes Temple construction, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. High state administrative capacity (Z) is a common cause for both large-scale infrastructure like irrigation (X) and monumental architecture like temples (Y). The correlation is likely spurious.",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0052",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In the 18th century, regions with high coffee consumption showed a higher frequency of political pamphlets.",
+    "claim": "Increasing coffee consumption in a region will cause more political pamphlets to be written.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "A",
+      "type_name": "Ambiguous",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Coffee consumption",
+      "Y": "Political pamphlet frequency",
+      "Z": [
+        "Urbanization",
+        "Literacy rates"
+      ]
+    },
+    "gold_rationale": "While coffee houses provided a venue for discourse, urbanization and literacy are significant confounders (Z). Without controlling for these, the causal impact of coffee (X) on pamphlet production (Y) is ambiguous.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.52",
+    "difficulty": "Hard",
+    "causal_structure": "Coffee consumption (X) is claimed to cause Political pamphlet frequency (Y), but Urbanization, Literacy rates (Z) may confound the relationship.",
+    "key_insight": "While coffee houses provided a venue for discourse, urbanization and literacy are significant con....",
+    "hidden_timestamp": "What is the temporal ordering between Coffee consumption, Political pamphlet frequency, and potential confounders?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Coffee consumption temporally precedes Political pamphlet frequency, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim cannot be determined without additional information. While coffee houses provided a venue for discourse, urbanization and literacy are significant confounders (Z). Without controlling for these, the caus...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0053",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Records show that years with unusually high pirate activity in the Caribbean coincided with high global temperatures.",
+    "claim": "Piracy in the Caribbean causes global cooling.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Pirate activity",
+      "Y": "Global temperature",
+      "Z": [
+        "Historical coincidence",
+        "Solar activity"
+      ]
+    },
+    "gold_rationale": "This is a classic spurious correlation. There is no plausible causal mechanism linking pirate activity (X) to global temperature changes (Y); both are likely driven by independent historical and natural cycles.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.53",
+    "difficulty": "Medium",
+    "causal_structure": "Historical coincidence, Solar activity (Z) causes both Pirate activity (X) and Global temperature (Y), creating spurious correlation.",
+    "key_insight": "This is a classic spurious correlation.",
+    "hidden_timestamp": "Was Historical coincidence present before both Pirate activity and Global temperature?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Pirate activity temporally precedes Global temperature, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. This is a classic spurious correlation. There is no plausible causal mechanism linking pirate activity (X) to global temperature changes (Y); both are likely driven by independent historical and natur...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0054",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Data from the 19th century shows that cities with more chimneys had higher life expectancy than rural villages with no chimneys.",
+    "claim": "Installing more chimneys in a home increases the lifespan of the inhabitants.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Number of chimneys",
+      "Y": "Life expectancy",
+      "Z": [
+        "Wealth/Industrialization level"
+      ]
+    },
+    "gold_rationale": "The number of chimneys (X) is a proxy for wealth and industrial development (Z). Wealthier cities had better sanitation and food security, which improved life expectancy (Y), regardless of chimney count.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.54",
+    "difficulty": "Medium",
+    "causal_structure": "Wealth/Industrialization level (Z) causes both Number of chimneys (X) and Life expectancy (Y), creating spurious correlation.",
+    "key_insight": "The number of chimneys (X) is a proxy for wealth and industrial development (Z).",
+    "hidden_timestamp": "Was Wealth/Industrialization level present before both Number of chimneys and Life expectancy?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Number of chimneys temporally precedes Life expectancy, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. The number of chimneys (X) is a proxy for wealth and industrial development (Z). Wealthier cities had better sanitation and food security, which improved life expectancy (Y), regardless of chimney cou...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0055",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Historical annals note that whenever a comet appeared in the sky, a major monarch died within the year.",
+    "claim": "The appearance of a comet predicts the death of a monarch.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Comet appearance",
+      "Y": "Monarch death",
+      "Z": [
+        "Selective recording of events"
+      ]
+    },
+    "gold_rationale": "This is likely due to historical filtering/selective recording (Z). Chroniclers often recorded 'omens' (X) only when a significant event (Y) occurred to justify it post-hoc, ignoring comets that were not followed by deaths.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.55",
+    "difficulty": "Easy",
+    "causal_structure": "Selection bias: Sample is non-representative due to conditioning on Selective recording of events.",
+    "key_insight": "This is likely due to historical filtering/selective recording (Z).",
+    "hidden_timestamp": "How was the sample selected, and who was excluded?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Comet appearance temporally precedes Monarch death, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. This is likely due to historical filtering/selective recording (Z). Chroniclers often recorded 'omens' (X) only when a significant event (Y) occurred to justify it post-hoc, ignoring comets that were ...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0056",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "States with high cavalry-to-infantry ratios often won battles in the 15th century. A military analyst claims cavalry ratio is the primary driver of victory.",
+    "claim": "Increasing the cavalry-to-infantry ratio will ensure victory in 15th-century warfare.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "A",
+      "type_name": "Ambiguous",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Cavalry ratio",
+      "Y": "Battle victory",
+      "Z": [
+        "Terrain",
+        "State wealth",
+        "Logistics"
+      ]
+    },
+    "gold_rationale": "While cavalry (X) is effective, its success (Y) is highly dependent on terrain and the state's ability to maintain horses (Z). Without accounting for terrain suitability, the causal link is not guaranteed.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.56",
+    "difficulty": "Hard",
+    "causal_structure": "Cavalry ratio (X) is claimed to cause Battle victory (Y), but Terrain, State wealth, Logistics (Z) may confound the relationship.",
+    "key_insight": "While cavalry (X) is effective, its success (Y) is highly dependent on terrain and the state's ab....",
+    "hidden_timestamp": "What is the temporal ordering between Cavalry ratio, Battle victory, and potential confounders?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Cavalry ratio temporally precedes Battle victory, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim cannot be determined without additional information. While cavalry (X) is effective, its success (Y) is highly dependent on terrain and the state's ability to maintain horses (Z). Without accounting for ...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0101",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Archaeologists observe that ancient settlements located near salt mines typically have much higher rates of adult literacy compared to those far from salt deposits.",
+    "claim": "The presence of salt mines in a region causes an increase in adult literacy.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Proximity to salt mines",
+      "Y": "Adult literacy rates",
+      "Z": [
+        "Regional wealth and trade infrastructure"
+      ]
+    },
+    "gold_rationale": "Salt was a high-value commodity in antiquity. Salt mines (X) generated significant regional wealth (Z), which funded education and trade bureaucracies that required literacy (Y). The correlation is confounded by the underlying economic prosperity.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.101",
+    "difficulty": "Medium",
+    "causal_structure": "Regional wealth and trade infrastructure (Z) causes both Proximity to salt mines (X) and Adult literacy rates (Y), creating spurious correlation.",
+    "key_insight": "Salt was a high-value commodity in antiquity.",
+    "hidden_timestamp": "Was Regional wealth and trade infrastructure present before both Proximity to salt mines and Adult literacy rates?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Proximity to salt mines temporally precedes Adult literacy rates, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. Salt was a high-value commodity in antiquity. Salt mines (X) generated significant regional wealth (Z), which funded education and trade bureaucracies that required literacy (Y). The correlation is co...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0102",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Records from a 14th-century parish show that years with the highest church attendance also saw the highest rainfall for crops.",
+    "claim": "Increased church attendance causes higher rainfall.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Church attendance",
+      "Y": "Annual rainfall",
+      "Z": [
+        "Historical coincidence/Seasonal weather cycles"
+      ]
+    },
+    "gold_rationale": "There is no plausible causal link between human attendance at a building (X) and meteorological precipitation patterns (Y). The correlation is spurious or driven by independent environmental cycles (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.102",
+    "difficulty": "Easy",
+    "causal_structure": "Historical coincidence/Seasonal weather cycles (Z) causes both Church attendance (X) and Annual rainfall (Y), creating spurious correlation.",
+    "key_insight": "There is no plausible causal link between human attendance at a building (X) and meteorological p....",
+    "hidden_timestamp": "Was Historical coincidence/Seasonal weather cycles present before both Church attendance and Annual rainfall?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Church attendance temporally precedes Annual rainfall, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. There is no plausible causal link between human attendance at a building (X) and meteorological precipitation patterns (Y). The correlation is spurious or driven by independent environmental cycles (Z...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0103",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "A study of 10th-century artifacts shows that cultures with highly sophisticated silk-weaving techniques also had more frequent military victories.",
+    "claim": "Developing sophisticated silk-weaving leads to military success.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Silk-weaving sophistication",
+      "Y": "Military victory frequency",
+      "Z": [
+        "State administrative capacity"
+      ]
+    },
+    "gold_rationale": "Strong state administrative capacity (Z) is required to manage both complex luxury industries like silk (X) and large, well-organized military campaigns (Y). (Z) is the common cause.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.103",
+    "difficulty": "Medium",
+    "causal_structure": "State administrative capacity (Z) causes both Silk-weaving sophistication (X) and Military victory frequency (Y), creating spurious correlation.",
+    "key_insight": "Strong state administrative capacity (Z) is required to manage both complex luxury industries lik....",
+    "hidden_timestamp": "Was State administrative capacity present before both Silk-weaving sophistication and Military victory frequency?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Silk-weaving sophistication temporally precedes Military victory frequency, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. Strong state administrative capacity (Z) is required to manage both complex luxury industries like silk (X) and large, well-organized military campaigns (Y). (Z) is the common cause.",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0104",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Maritime records suggest that ships featuring elaborate gold-leaf figureheads were 30% more likely to survive trans-oceanic voyages than those with simple wooden figureheads.",
+    "claim": "Elaborate gold-leaf figureheads provide a protective effect for ships at sea.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Figurehead material",
+      "Y": "Voyage survival",
+      "Z": [
+        "Ship maintenance budget"
+      ]
+    },
+    "gold_rationale": "Ships with gold-leaf figureheads (X) belonged to wealthy fleets that could afford better-quality timber, professional crews, and regular maintenance (Z). It is the ship quality, not the figurehead, that drives survival (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.104",
+    "difficulty": "Easy",
+    "causal_structure": "Selection bias: Sample is non-representative due to conditioning on Ship maintenance budget.",
+    "key_insight": "Ships with gold-leaf figureheads (X) belonged to wealthy fleets that could afford better-quality ....",
+    "hidden_timestamp": "How was the sample selected, and who was excluded?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Figurehead material temporally precedes Voyage survival, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. Ships with gold-leaf figureheads (X) belonged to wealthy fleets that could afford better-quality timber, professional crews, and regular maintenance (Z). It is the ship quality, not the figurehead, th...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0105",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Data from the Han Dynasty shows that households owning more than three bronze mirrors had a significantly higher average life expectancy than those with none.",
+    "claim": "Owning bronze mirrors increases a person's lifespan.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Bronze mirror ownership",
+      "Y": "Life expectancy",
+      "Z": [
+        "Household wealth and nutrition"
+      ]
+    },
+    "gold_rationale": "Bronze mirrors (X) were luxury items. Wealthy households (Z) had access to better food, sanitation, and physical security, which directly increased life expectancy (Y). (X) is merely a proxy for wealth.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.105",
+    "difficulty": "Medium",
+    "causal_structure": "Household wealth and nutrition (Z) causes both Bronze mirror ownership (X) and Life expectancy (Y), creating spurious correlation.",
+    "key_insight": "Bronze mirrors (X) were luxury items.",
+    "hidden_timestamp": "Was Household wealth and nutrition present before both Bronze mirror ownership and Life expectancy?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Bronze mirror ownership temporally precedes Life expectancy, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim is not justified. Bronze mirrors (X) were luxury items. Wealthy households (Z) had access to better food, sanitation, and physical security, which directly increased life expectancy (Y). (X) is merely a proxy for wealt...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-BucketF-0106",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In late medieval Europe, cities with a higher estimated population of domestic cats recorded fewer instances of plague-related deaths in specific years.",
+    "claim": "A high domestic cat population is a primary driver of reduced plague mortality.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "A",
+      "type_name": "Ambiguous",
+      "subtype": "",
+      "subtype_name": ""
+    },
+    "variables": {
+      "X": "Cat population",
+      "Y": "Plague mortality",
+      "Z": [
+        "Rat population",
+        "City sanitation"
+      ]
+    },
+    "gold_rationale": "While cats (X) prey on rats (Z) which carry the plague, it is unclear if the cat population alone was sufficient to impact mortality (Y) or if other factors like quarantine and sanitation (Z) were more decisive.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Sameer Vijay",
+    "validator": "Mingyang Wang",
+    "final_score": 10.0,
+    "case_id": "1.106",
+    "difficulty": "Hard",
+    "causal_structure": "Cat population (X) is claimed to cause Plague mortality (Y), but Rat population, City sanitation (Z) may confound the relationship.",
+    "key_insight": "While cats (X) prey on rats (Z) which carry the plague, it is unclear if the cat population alone....",
+    "hidden_timestamp": "What is the temporal ordering between Cat population, Plague mortality, and potential confounders?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If confounders are controlled and Cat population temporally precedes Plague mortality, the causal claim may be valid.",
+      "answer_if_condition_2": "If confounders are not controlled or temporal ordering is unclear, the causal claim is not justified."
+    },
+    "wise_refusal": "The causal claim cannot be determined without additional information. While cats (X) prey on rats (Z) which carry the plague, it is unclear if the cat population alone was sufficient to impact mortality (Y) or if other f...",
+    "subdomain": "",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.1",
+    "case_id": "F.1",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Post-Colonial African Economics",
+    "scenario": "In the early 1960s, after gaining independence, a hypothetical African nation introduced broad educational reforms aimed at rapidly increasing literacy rates. About a decade later, this country experienced significant economic growth. At the same time, its neighboring country, which did not implement such educational reforms, also saw similar economic growth due to a boom in commodity prices that affected the whole region.",
+    "claim": "The introduction of educational reforms caused the economic growth in the country.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Introduction of broad educational reforms",
+      "Y": "Significant economic growth",
+      "Z": [
+        "Regional economic conditions influenced by commodity prices"
+      ]
+    },
+    "trap": {
+      "type": "W5",
+      "type_name": "Ecological Fallacy",
+      "subtype": "Societal Changes",
+      "subtype_name": "Societal Changes"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While it might seem that the educational reforms caused the economic growth, it is crucial to consider the regional economic conditions, primarily driven by commodity prices, which similarly benefited the neighboring country that did not introduce such reforms.",
+    "key_insight": "The relationship observed at the aggregate level between educational reforms and growth may not hold for individual cases.",
+    "hidden_timestamp": "Does the aggregate-level correlation between Introduction of broad educational reforms and Significant economic growth hold at the individual level?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the aggregate correlation between Introduction of broad educational reforms and Significant economic growth holds at the individual level, the causal claim may be valid.",
+      "answer_if_condition_2": "If the relationship exists only at the aggregate level but not for individuals, the claim commits the ecological fallacy."
+    },
+    "wise_refusal": "It is incorrect to directly attribute the economic growth to educational reforms without factoring in the confounding variable of regional economic conditions. Both countries experienced growth, irrespective of their educational policies, indicating that other regional factors like commodity prices played a more significant role in their economic growth during that period.",
+    "gold_rationale": "While it might seem that the educational reforms caused the economic growth, it is crucial to consider the regional economic conditions, primarily driven by commodity prices, which similarly benefited the neighboring country that did not introduce such reforms. The relationship observed at the aggregate level between educational reforms and growth may not hold for individual cases.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.2",
+    "case_id": "F.2",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Post-War Economic Policy",
+    "scenario": "In the years following World War II, many European countries experienced significant economic growth. One particular country, Ruritania, implemented a series of market liberalization policies in the late 1940s. By the early 1950s, Ruritania's economy was booming, with substantial increases in GDP and industrial production. Observers outside the country quickly attributed this economic recovery to the newly implemented liberal policies.",
+    "claim": "The implementation of market liberalization policies in the late 1940s directly caused the economic boom in Ruritania during the early 1950s.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "Implementation of market liberalization policies in Ruritania",
+      "Y": "Significant economic growth in Ruritania",
+      "Z": [
+        "General post-war recovery in Europe"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Base Rate Neglect",
+      "subtype": "Neglecting Base Rates",
+      "subtype_name": "Neglecting Base Rates"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While there is an association between the implementation of market liberalization policies (X) and the economic growth in Ruritania (Y), it is crucial to consider the general post-war recovery in Europe (Z) when evaluating this causal relationship. The economic boom in many European countries post-war suggests that the growth in Ruritania may also partially or largely be attributed to the broader continental recovery rather than solely to the policy changes.",
+    "key_insight": "Without knowing the baseline rate of success, the apparent effect of economic reforms cannot be properly evaluated.",
+    "hidden_timestamp": "What is the base rate of Significant economic growth in Ruritania in the general population, independent of Implementation of market liberalization policies in Ruritania?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the base rate of Significant economic growth in Ruritania is low in the general population, the correlation with Implementation of market liberalization policies in Ruritania may be meaningful.",
+      "answer_if_condition_2": "If Significant economic growth in Ruritania has a high base rate regardless of Implementation of market liberalization policies in Ruritania, the observed correlation is misleading and reflects base rate neglect."
+    },
+    "wise_refusal": "It would be a mistake to directly attribute the economic growth of Ruritania solely to market liberalization without considering the broader context of post-war recovery in Europe. This neglects the base rate ,  the common pattern of economic growth across European countries during this period, irrespective of specific national policies.",
+    "gold_rationale": "While there is an association between the implementation of market liberalization policies (X) and the economic growth in Ruritania (Y), it is crucial to consider the general post-war recovery in Europe (Z) when evaluating this causal relationship. Without knowing the baseline rate of success, the apparent effect of economic reforms cannot be properly evaluated.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.3",
+    "case_id": "F.3",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1990s, a new government in Namibia implemented a series of economic reforms aimed at stabilizing the nation's economy by improving trade policies and increasing foreign direct investment. Coinciding with these reforms, Namibia experienced a noticeable increase in its GDP growth rates compared to the previous decade. Many analysts and commentators suggested that the economic reforms directly caused the increase in GDP growth.",
+    "claim": "The economic reforms in Namibia caused the increase in GDP growth rates.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "Implementation of economic reforms in Namibia",
+      "Y": "Increase in GDP growth rates in Namibia",
+      "Z": [
+        "Global economic boom of the 1990s"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Base Rate Neglect",
+      "subtype": "Neglect of base-rate",
+      "subtype_name": "Neglect of base-rate"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While it appears that the economic reforms (X) correlated with the increase in GDP growth rates (Y), it is vital to consider the global economic context (Z) during the 1990s, which was characterized by widespread economic growth. This global trend likely contributed significantly to Namibia's increased GDP, thus complicating direct attribution of the effect to the reforms alone.",
+    "key_insight": "Without knowing the baseline rate of success, the apparent effect of economic reforms cannot be properly evaluated.",
+    "hidden_timestamp": "What is the base rate of Increase in GDP growth rates in Namibia in the general population, independent of Implementation of economic reforms in Namibia?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the base rate of Increase in GDP growth rates in Namibia is low in the general population, the correlation with Implementation of economic reforms in Namibia may be meaningful.",
+      "answer_if_condition_2": "If Increase in GDP growth rates in Namibia has a high base rate regardless of Implementation of economic reforms in Namibia, the observed correlation is misleading and reflects base rate neglect."
+    },
+    "wise_refusal": "Simply attributing the increase in GDP growth rates in Namibia to the economic reforms neglects the base-rate of global economic performance during the same period. Without accounting for this, one risks overstating the impact of the reforms and ignoring broader economic trends that likely played a crucial role.",
+    "gold_rationale": "While it appears that the economic reforms (X) correlated with the increase in GDP growth rates (Y), it is vital to consider the global economic context (Z) during the 1990s, which was characterized by widespread economic growth. Without knowing the baseline rate of success, the apparent effect of economic reforms cannot be properly evaluated.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.4",
+    "case_id": "F.4",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Post-colonial Development",
+    "scenario": "In the early 1960s, the fictional country of Luminia, newly independent from colonial rule, decided to invest heavily in its coffee production as a main economic strategy. The government incentivized local farmers to switch from diverse subsistence farming to mostly coffee cultivation. Observers note that from 1960 to 1980, Luminia's GDP per capita rose significantly, paralleling an increase in global coffee prices.",
+    "claim": "The government policy to incentivize coffee production caused the increase in GDP per capita.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "Government policy incentivizing coffee production",
+      "Y": "Increase in GDP per capita",
+      "Z": [
+        "Global coffee prices"
+      ]
+    },
+    "trap": {
+      "type": "W5",
+      "type_name": "Ecological Fallacy",
+      "subtype": "Socio-economic Context",
+      "subtype_name": "Socio-economic Context"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While it appears that the government policy and the GDP per capita increase are associated, it is critical to consider the role of global coffee prices during this period. The concurrent rise in global prices suggests that the increase in GDP may be heavily influenced by these external market conditions rather than solely by domestic policy.",
+    "key_insight": "The relationship observed at the aggregate level between GDP growth and growth may not hold for individual cases.",
+    "hidden_timestamp": "Does the aggregate-level correlation between Government policy incentivizing coffee production and Increase in GDP per capita hold at the individual level?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the aggregate correlation between Government policy incentivizing coffee production and Increase in GDP per capita holds at the individual level, the causal claim may be valid.",
+      "answer_if_condition_2": "If the relationship exists only at the aggregate level but not for individuals, the claim commits the ecological fallacy."
+    },
+    "wise_refusal": "It would be unwise to claim that the government policy alone caused the rise in GDP per capita without considering the impact of global coffee prices, which might be the actual driver behind the economic upswing. This highlights the ecological trap where external factors, not accounted for, distort the perceived effect of a policy intervention.",
+    "gold_rationale": "While it appears that the government policy and the GDP per capita increase are associated, it is critical to consider the role of global coffee prices during this period. The relationship observed at the aggregate level between GDP growth and growth may not hold for individual cases.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.5",
+    "case_id": "F.5",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Post-colonial African politics",
+    "scenario": "In the early 1960s, following its independence, the fictional African country of Zinara witnessed a rapid increase in foreign direct investment (FDI) primarily from Western countries. Concurrently, there was a notable improvement in local infrastructure and economic growth. Historians observed that during this period, Zinara's government also entered into numerous treaties and trade agreements with Western nations.",
+    "claim": "The increase in FDI from Western countries caused the improvement in local infrastructure and economic growth in Zinara.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "Increase in foreign direct investment (FDI) from Western countries",
+      "Y": "Improvement in local infrastructure and economic growth",
+      "Z": [
+        "Zinara's government forming treaties and trade agreements with Western nations"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Base Rate Neglect",
+      "subtype": "Ignoring base rates",
+      "subtype_name": "Ignoring base rates"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While it seems that the increase in FDI from Western countries is associated with improvements in local infrastructure and economic growth, it is important to consider the role of the government's active policies and treaties in attracting and effectively utilizing that investment. These policies and treaties (Z) likely played a crucial mediating role in how FDI was translated into tangible economic benefits.",
+    "key_insight": "Without knowing the baseline rate of success, the apparent effect of post-colonial policies cannot be properly evaluated.",
+    "hidden_timestamp": "What is the base rate of Improvement in local infrastructure and economic growth in the general population, independent of Increase in foreign direct investment (FDI) from Western countries?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the base rate of Improvement in local infrastructure and economic growth is low in the general population, the correlation with Increase in foreign direct investment (FDI) from Western countries may be meaningful.",
+      "answer_if_condition_2": "If Improvement in local infrastructure and economic growth has a high base rate regardless of Increase in foreign direct investment (FDI) from Western countries, the observed correlation is misleading and reflects base rate neglect."
+    },
+    "wise_refusal": "The naive causal claim that FDI directly caused economic growth and infrastructure improvements in Zinara ignores the base rate, or the typical impact of FDI without the specific context of government interventions. Given the complexities and specific policy environment in Zinara, it is more cautious to consider these factors that typically mediate the relationship between foreign investment and economic outcomes rather than attributing causality directly.",
+    "gold_rationale": "While it seems that the increase in FDI from Western countries is associated with improvements in local infrastructure and economic growth, it is important to consider the role of the government's active policies and treaties in attracting and effectively utilizing that investment. Without knowing the baseline rate of success, the apparent effect of post-colonial policies cannot be properly evaluated.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.6",
+    "case_id": "F.6",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Colonial Histories",
+    "scenario": "During the scramble for Africa in the late 19th century, European powers established numerous colonies across the continent. In one particular instance, France, after establishing control over a region now part of modern-day Mali, implemented a series of infrastructural projects including railroads, schools, and hospitals. Over the following decades, this region exhibited higher economic growth compared to some regions colonized by other European powers.",
+    "claim": "The implementation of French colonial infrastructure projects caused the higher economic growth observed in the region.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "French colonial infrastructure projects",
+      "Y": "Economic growth in the region",
+      "Z": [
+        "Initial economic conditions and local resources"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Base Rate Neglect",
+      "subtype": "Ignoring Population Base Rates",
+      "subtype_name": "Ignoring Population Base Rates"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While there is an observable correlation between the implementation of infrastructure projects by France and increased economic growth, determining causality requires deeper analysis. The initial economic conditions, the presence of exploitable natural resources, and previous local development levels also play critical roles in economic outcomes.",
+    "key_insight": "Without knowing the baseline rate of success, the apparent effect of railroad expansion cannot be properly evaluated.",
+    "hidden_timestamp": "What is the base rate of Economic growth in the region in the general population, independent of French colonial infrastructure projects?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the base rate of Economic growth in the region is low in the general population, the correlation with French colonial infrastructure projects may be meaningful.",
+      "answer_if_condition_2": "If Economic growth in the region has a high base rate regardless of French colonial infrastructure projects, the observed correlation is misleading and reflects base rate neglect."
+    },
+    "wise_refusal": "Simply correlating the presence of French infrastructure projects with economic growth ignores the fundamental base rates of initial economic conditions across various regions. Without accounting for these varying starting conditions, attributing causality to the infrastructure projects alone would likely be misleading.",
+    "gold_rationale": "While there is an observable correlation between the implementation of infrastructure projects by France and increased economic growth, determining causality requires deeper analysis. Without knowing the baseline rate of success, the apparent effect of railroad expansion cannot be properly evaluated.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.7",
+    "case_id": "F.7",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Cold War Conflicts",
+    "scenario": "During the Cold War, a smaller nation, termed Freedonia, oscillated between aligning with the United States and the Soviet Union. A particular analysis focused on the decade following 1970, when Freedonia received varying levels of economic aid and military support from both superpowers. Interestingly, during intervals when Freedonia aligned more with the US, it experienced significant increases in its GDP growth as compared to intervals of closer ties with the Soviet Union. However, crucially, the geopolitical strategy of aligning with the US versus the USSR was highly influenced by the ruling party's ideology in Freedonia at different times.",
+    "claim": "Freedonia's alignment with the US directly caused its GDP to grow faster than when aligned with the USSR.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Alignment with the US (vs. the USSR)",
+      "Y": "GDP growth of Freedonia",
+      "Z": [
+        "Ideology of the ruling party"
+      ]
+    },
+    "trap": {
+      "type": "W8",
+      "type_name": "Simpson's Paradox",
+      "subtype": "reversal",
+      "subtype_name": "reversal"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "The observed association between Freedonia's alignment with the US and higher GDP growth could be misleading without considering the role of the ruling party's ideology. It's likely that the economic policies and reforms favored by pro-American administrations were more conducive to growth compared to those of pro-Soviet administrations, irrespective of international alignment.",
+    "key_insight": "The overall relationship between GDP growth and outcomes reverses or disappears when examining subgroups separately.",
+    "hidden_timestamp": "Does the relationship between Alignment with the US (vs. the USSR) and GDP growth of Freedonia reverse when examining subgroups separately?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the Alignment with the US (vs. the USSR)-GDP growth of Freedonia relationship is consistent across all subgroups, the aggregate correlation is valid.",
+      "answer_if_condition_2": "If the relationship reverses when stratifying by subgroups, the aggregate pattern reflects Simpson's paradox."
+    },
+    "wise_refusal": "The naive direct causal claim between Freedonia's alignment with the US and its GDP growth is weakened by the Simpson's Paradox. Here, the confounding factor is the ideology of Freedonia's ruling party, which varies with alignment but independently affects GDP growth. Analyzing the alignment effect in isolation can lead to incorrect conclusions about the actual influence of US versus USSR alignment on economic outcomes.",
+    "gold_rationale": "The observed association between Freedonia's alignment with the US and higher GDP growth could be misleading without considering the role of the ruling party's ideology. The overall relationship between GDP growth and outcomes reverses or disappears when examining subgroups separately.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.8",
+    "case_id": "F.8",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Colonial History",
+    "scenario": "In the early 20th century, during the period of intensified colonial activities by European powers in Africa, there was a notable increase in agricultural productivity in regions under British control. Simultaneously, these regions also experienced an expansion in the education system, including the building of new schools and training of teachers.",
+    "claim": "The expansion of the education system caused the increase in agricultural productivity in British-controlled regions of Africa.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Expansion of the education system in British-controlled regions of Africa",
+      "Y": "Increase in agricultural productivity in these regions",
+      "Z": [
+        "Intensified British colonial administration and investment in infrastructure"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "CONFOUNDING",
+      "subtype": "Common Cause",
+      "subtype_name": "Common Cause"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While it may appear that the expansion of education contributed to increased agricultural productivity, the real driver behind both outcomes was the intensified British colonial administration. This administration not only focused on improving education but also heavily invested in the agricultural infrastructure, leading to improvements in farming methods and productivity.",
+    "key_insight": "A third factor (Intensified British colonial) independently causes both the apparent treatment and the outcome, creating a spurious correlation.",
+    "hidden_timestamp": "What is the temporal ordering between Expansion of the education system in British-controlled regions of Africa, Intensified British colonial administration and investment in infrastructure, and Increase in agricultural productivity in these regions?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the temporal ordering and causal structure support Expansion of the education system in British-controlled regions of Africa causing Increase in agricultural productivity in these regions, the claim may be valid.",
+      "answer_if_condition_2": "If confounding, reverse causation, or other biases are present, the causal claim is invalid."
+    },
+    "wise_refusal": "Claiming that the expansion of the education system caused the increase in agricultural productivity is incorrect due to the spurious nature of their association. In reality, both were independently influenced by a third variable, the intensified British colonial administration and investment, creating a spurious correlation between the two observed phenomena.",
+    "gold_rationale": "While it may appear that the expansion of education contributed to increased agricultural productivity, the real driver behind both outcomes was the intensified British colonial administration. A third factor (Intensified British colonial) independently causes both the apparent treatment and the outcome, creating a spurious correlation.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.9",
+    "case_id": "F.9",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "D2",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1960s, following the wave of decolonization, several African countries gained independence. For the purpose of this scenario, consider the fictional country of Azania which gained independence in 1963. The first presidential elections post-independence saw the rise of a leader who was seen as a unifier for various ethnic groups. During his first term, there was significant foreign investment in Azania, spurred by its stability and strategic resources. However, international observers often attribute the increased investment directly to the president's policies without considering the broader geopolitical context of the Cold War where both the USA and the USSR were keen to establish spheres of influence in newly independent African states.",
+    "claim": "The first president's unifying policies directly resulted in the increase of foreign investment in Azania.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "Enactment of unifying policies by the first president of Azania",
+      "Y": "Increase in foreign investment in Azania",
+      "Z": [
+        "Global Cold War dynamics influencing geopolitical strategies of superpowers"
+      ]
+    },
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "Unobserved Confounding",
+      "subtype_name": "Unobserved Confounding"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "While the enactment of unifying policies by the first president of Azania did coincide with an increase in foreign investment, attributing the increased investment solely to these policies overlooks the significant influence of Cold War dynamics. During this period, the superpowers were actively seeking to expand their influence in newly independent countries, making them more likely to invest in stable nations irrespective of specific domestic policies.",
+    "key_insight": "Those who received wartime conditions differed systematically from those who didn't, making the observed benefit misleading.",
+    "hidden_timestamp": "Were the groups exposed to Enactment of unifying policies by the first president of Azania selected randomly, or was selection based on pre-existing characteristics?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If subjects were randomly assigned to Enactment of unifying policies by the first president of Azania, the correlation with Increase in foreign investment in Azania would reflect a true causal relationship.",
+      "answer_if_condition_2": "If subjects self-selected into Enactment of unifying policies by the first president of Azania based on pre-existing characteristics, the correlation is spurious due to selection bias."
+    },
+    "wise_refusal": "It is incorrect to claim that the president's policies were the direct cause of the increased foreign investment without accounting for the global geopolitical context. The Cold War provided a strong motive for both the USA and the USSR to invest in Azania as part of their broader strategy to gain influence in Africa, making it a confounding factor that must be considered to accurately understand the causal dynamics.",
+    "gold_rationale": "While the enactment of unifying policies by the first president of Azania did coincide with an increase in foreign investment, attributing the increased investment solely to these policies overlooks the significant influence of Cold War dynamics. Those who received wartime conditions differed systematically from those who didn't, making the observed benefit misleading.",
+    "initial_author": "April Yang",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.81",
+    "case_id": "F.81",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "19th Century Labor Economics",
+    "scenario": "In 19th century British factory towns, some factory owners provided housing for their workers while others did not. Factory-provided housing was more common in certain towns than others.",
+    "claim": "Factory-provided housing caused increased worker productivity in 19th century British factory towns.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Factory-provided worker housing",
+      "Y": "Worker productivity",
+      "Z": [
+        "Pre-existing worker skill and reliability"
+      ]
+    },
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Pre-existing worker skill and reliability determines who receives Factory-provided worker housing, creating spurious X-Y correlation through selection bias.",
+    "key_insight": "Non-random selection into the treatment group makes the observed correlation unreliable as causal evidence.",
+    "hidden_timestamp": "Were the groups exposed to Factory-provided worker housing selected randomly, or was selection based on pre-existing characteristics?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If subjects were randomly assigned to Factory-provided worker housing, the correlation with Worker productivity would reflect a true causal relationship.",
+      "answer_if_condition_2": "If subjects self-selected into Factory-provided worker housing based on pre-existing characteristics, the correlation is spurious due to selection bias."
+    },
+    "wise_refusal": "The correlation between Factory-provided worker housing and Worker productivity cannot establish causation because Pre-existing worker skill and reliability determines who receives Factory-provided worker housing, creating selection bias.",
+    "gold_rationale": "This is selection bias: Pre-existing worker skill and reliability determines who receives Factory-provided worker housing, so the X-Y correlation does not reflect causation.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.82",
+    "case_id": "F.82",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Maritime Exploration",
+    "scenario": "Historical merchant archives from the 16th century document numerous successful Portuguese voyages to India that brought back valuable spices and established profitable trade routes.",
+    "claim": "All Portuguese voyages to India in the 16th century were reliably profitable ventures.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Portuguese voyages to India",
+      "Y": "Highly profitable returns",
+      "Z": [
+        "Documentation bias toward successes"
+      ]
+    },
+    "trap": {
+      "type": "W2",
+      "type_name": "Survivorship Bias",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Only successful Portuguese voyages to India cases that achieved Highly profitable returns are documented, creating survivorship bias.",
+    "key_insight": "Historical records document successes but failures of trade policies are systematically missing from the record.",
+    "hidden_timestamp": "Are we only observing cases that survived or succeeded with Portuguese voyages to India, while failures are invisible?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If we observe all cases (both successes and failures) of Portuguese voyages to India, we can assess the true effect on Highly profitable returns.",
+      "answer_if_condition_2": "If only successful cases of Portuguese voyages to India are visible, the observed correlation with Highly profitable returns is inflated by survivorship bias."
+    },
+    "wise_refusal": "We cannot assess the true effect of Portuguese voyages to India on Highly profitable returns when only successful cases are visible, as survivorship bias distorts the relationship.",
+    "gold_rationale": "This is survivorship bias: only successful Portuguese voyages to India cases are visible, distorting the true relationship with Highly profitable returns.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.83",
+    "case_id": "F.83",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "American Westward Expansion",
+    "scenario": "In the late 1800s across Western U.S. states, railroad companies built rail lines connecting various agricultural regions to markets. Different farms had varying levels of access to these railroad connections.",
+    "claim": "Railroad access caused higher agricultural productivity for individual farmers in the late 1800s Western U.S.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "State-level railroad density",
+      "Y": "State-level agricultural productivity",
+      "Z": [
+        "Pre-existing land quality"
+      ]
+    },
+    "trap": {
+      "type": "W5",
+      "type_name": "Ecological Fallacy",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Aggregate-level correlation between State-level railroad density and State-level agricultural productivity does not establish individual-level causation.",
+    "key_insight": "The relationship observed at the aggregate level between railroad expansion and growth may not hold for individual cases.",
+    "hidden_timestamp": "Does the aggregate-level correlation between State-level railroad density and State-level agricultural productivity hold at the individual level?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the aggregate correlation between State-level railroad density and State-level agricultural productivity holds at the individual level, the causal claim may be valid.",
+      "answer_if_condition_2": "If the relationship exists only at the aggregate level but not for individuals, the claim commits the ecological fallacy."
+    },
+    "wise_refusal": "The aggregate correlation between State-level railroad density and State-level agricultural productivity does not establish that railroad density causes agricultural productivity for individuals, committing the ecological fallacy.",
+    "gold_rationale": "This is ecological fallacy: aggregate correlation does not establish individual-level causation from State-level railroad density to State-level agricultural productivity.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.84",
+    "case_id": "F.84",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "African Development Economics",
+    "scenario": "In the 1960s, newly independent Ghana implemented ambitious industrialization policies including import substitution and state enterprises. Over the following decade, Ghana achieved 6% annual GDP growth.",
+    "claim": "Ghana's industrialization policies in the 1960s caused the 6% annual GDP growth.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Ghanaian industrialization policies",
+      "Y": "GDP growth of 6% annually",
+      "Z": [
+        "Continent-wide growth trend"
+      ]
+    },
+    "trap": {
+      "type": "W6",
+      "type_name": "Base Rate Neglect",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "High base rate of GDP growth of 6% annually makes correlation with Ghanaian industrialization policies misleading through base rate neglect.",
+    "key_insight": "Without knowing the baseline rate of success, the apparent effect of GDP growth cannot be properly evaluated.",
+    "hidden_timestamp": "Was the base rate GDP growth high before Ghana implemented the industrialization policies?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the base rate of GDP growth is low, the correlation with Ghanaian industrialization policies may be meaningful.",
+      "answer_if_condition_2": "If GDP growth has a high base rate regardless of Ghanaian industrialization policies, the observed correlation is misleading and reflects base rate neglect."
+    },
+    "wise_refusal": "Attributing GDP growth of 6% annually to Ghanaian industrialization policies neglects the potential for a high base rate of GDP growth, leading to base rate neglect fallacy.",
+    "gold_rationale": "This is base rate neglect: the high background rate of GDP growth of 6% annually makes the correlation with Ghanaian industrialization policies misleading.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.85",
+    "case_id": "F.85",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Roman Infrastructure Economics",
+    "scenario": "In the Roman Empire, some provinces had extensive aqueduct systems that provided water infrastructure. These provinces also had higher agricultural output and larger urban populations.",
+    "claim": "Aqueduct construction caused higher agricultural output and larger urban populations in Roman provinces.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Presence of aqueduct systems",
+      "Y": "Agricultural output and urban population",
+      "Z": [
+        "Favorable geography and stable governance"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Favorable geography and stable governance acts as a common cause of both Presence of aqueduct systems and Agricultural output and urban population, creating spurious correlation.",
+    "key_insight": "A third factor (Favorable geography and stable) independently causes both the apparent treatment and the outcome, creating a spurious correlation.",
+    "hidden_timestamp": "Did the Roman Empire have extensive aqueducts before it had higher agricultural output and urban populations, or did it have higher agricultural output and urban populations before it had extensive aqueducts?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If extensive aqueducts were built before higher agricultural output and urban populations, the claim may be valid.",
+      "answer_if_condition_2": "If higher agricultural output and urban populations happened before extensive aqueducts were built, the claim may be invalid."
+    },
+    "wise_refusal": "The correlation between Presence of aqueduct systems and Agricultural output and urban population is spurious because Favorable geography and stable governance acts as a common cause of both variables.",
+    "gold_rationale": "This is confounding: Favorable geography and stable governance causes both Presence of aqueduct systems and Agricultural output and urban population, creating spurious correlation.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.86",
+    "case_id": "F.86",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Early Modern Political Economy",
+    "scenario": "In 17th century Europe, different states had varying levels of parliamentary representation and merchant-led economic activity. Some states with strong parliamentary institutions also experienced high rates of merchant-led growth.",
+    "claim": "Strong parliamentary institutions caused merchant-led economic growth in 17th century European states.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Strong parliamentary institutions",
+      "Y": "Merchant-led economic growth",
+      "Z": [
+        "Pre-existing merchant wealth and political influence"
+      ]
+    },
+    "trap": {
+      "type": "W9",
+      "type_name": "Reverse Causation",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Merchant-led economic growth may actually cause Strong parliamentary institutions rather than vice versa, representing reverse causation.",
+    "key_insight": "The outcome may have influenced the treatment adoption, reversing the actual direction of causation.",
+    "hidden_timestamp": "Did Strong parliamentary institutions precede Merchant-led economic growth, or did Merchant-led economic growth actually cause Strong parliamentary institutions?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If Strong parliamentary institutions temporally preceded Merchant-led economic growth, the causal direction could be X --> Y.",
+      "answer_if_condition_2": "If Merchant-led economic growth actually preceded Strong parliamentary institutions, the true causal relationship is reversed (Y --> X)."
+    },
+    "wise_refusal": "The causal direction is unclear: Merchant-led economic growth may cause Strong parliamentary institutions rather than vice versa, representing reverse causation.",
+    "gold_rationale": "This is reverse causation: Merchant-led economic growth likely causes Strong parliamentary institutions rather than the claimed direction.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.87",
+    "case_id": "F.87",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Cold War Development Economics",
+    "scenario": "South Korea received substantial U.S. aid in 1952-1954. By 1960, its economy began growing rapidly. During the 1950s, South Korea also implemented land reform and education investments.",
+    "claim": "U.S. aid to South Korea in 1952-1954 caused the rapid economic growth that began in 1960.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "U.S. foreign aid to South Korea",
+      "Y": "Rapid economic growth",
+      "Z": [
+        "Domestic reforms: land redistribution, education, export policy"
+      ]
+    },
+    "trap": {
+      "type": "W10",
+      "type_name": "Post Hoc Fallacy",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "U.S. aid to South Korea could have caused rapid economic growth, or South Korea could have had rapid economic growth regardless of U.S. aid.",
+    "key_insight": "Temporal sequence alone does not establish causation; correlation in time may be coincidental.",
+    "hidden_timestamp": "Did South Korea have rapid economic growth before U.S. aid, or did U.S. aid cause rapid economic growth?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If U.S. foreign aid to South Korea occurred before Rapid economic growth AND there is a plausible mechanism, the causal claim may be valid.",
+      "answer_if_condition_2": "If the only evidence is temporal sequence without a mechanism or controlling for confounders, this is post hoc fallacy."
+    },
+    "wise_refusal": "Temporal sequence alone does not establish that U.S. foreign aid to South Korea caused Rapid economic growth without a plausible mechanism and ruling out confounders.",
+    "gold_rationale": "This is post hoc fallacy: temporal sequence does not establish that U.S. foreign aid to South Korea caused Rapid economic growth.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.88",
+    "case_id": "F.88",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Veterans Benefits Research",
+    "scenario": "After WWII, the U.S. government used a lottery system to determine which eligible veterans would receive GI Bill educational benefits. The veterans who received GI Bill educational benefits had higher lifetime earnings than those who did not.",
+    "claim": "GI Bill educational benefits caused higher lifetime earnings for WWII veterans.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "GI Bill educational benefits",
+      "Y": "Lifetime earnings",
+      "Z": [
+        "Random assignment via lottery"
+      ]
+    },
+    "trap": {
+      "type": "S1",
+      "type_name": "RCT",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Random assignment to GI Bill educational benefits ensures no confounding, allowing causal inference about effect on Lifetime earnings.",
+    "key_insight": "Controlled comparison or natural experiment provides credible causal evidence for the claimed effect.",
+    "hidden_timestamp": "Were participants randomly assigned to GI Bill educational benefits, ensuring baseline equivalence between groups?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If random assignment to GI Bill educational benefits was properly executed with adequate sample size, causal inference is valid.",
+      "answer_if_condition_2": "If randomization was compromised or sample size inadequate, the causal claim is weakened."
+    },
+    "wise_refusal": "Random assignment to GI Bill educational benefits provides strong evidence that it caused Lifetime earnings, as randomization eliminates confounding.",
+    "gold_rationale": "Randomization provides strong causal evidence that GI Bill educational benefits affects Lifetime earnings.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.89",
+    "case_id": "F.89",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Military History",
+    "scenario": "During World War I, the Spanish Flu pandemic of 1918 struck military units at different times based purely on the geographic spread of the disease. Some regiments were devastated by the flu just before major offensives, while others fighting alongside them were struck weeks later. Military historians studying battlefield outcomes found that units hit by the flu immediately before combat suffered significantly higher casualty rates in subsequent battles, independent of their training, equipment, or leadership quality.",
+    "claim": "Spanish Flu outbreaks caused higher casualty rates in WWI military units during subsequent battles.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": "Spanish Flu outbreak timing in military units",
+      "Y": "Casualty rates in subsequent battles",
+      "Z": [
+        "Random geographic spread of disease"
+      ]
+    },
+    "trap": {
+      "type": "S2",
+      "type_name": "Natural Experiment",
+      "subtype": "Historical_Evidence",
+      "subtype_name": "Historical Evidence Analysis"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "The random geographic spread of the Spanish Flu created exogenous variation in which units were affected before major battles, providing quasi-experimental evidence that weakened units suffered higher casualties.",
+    "key_insight": "Exogenous variation in Spanish Flu outbreak timing in military units creates a natural experiment, supporting causal inference to Casualty rates in subsequent battles.",
+    "hidden_timestamp": "Was assignment to Spanish Flu outbreak timing in military units determined by an exogenous event unrelated to Casualty rates in subsequent battles?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If Spanish Flu outbreak timing was truly exogenous (based on random disease spread) and unrelated to unit quality or battle difficulty, the natural experiment supports causation.",
+      "answer_if_condition_2": "If flu timing was somehow related to unit positioning or strategic deployment (which could affect casualties), confounding remains."
+    },
+    "wise_refusal": "The random geographic spread of the Spanish Flu provides credible causal evidence that weakened units experienced higher casualties in subsequent battles.",
+    "gold_rationale": "The exogenous nature of disease spread provides credible natural experiment evidence for the causal effect of Spanish Flu outbreak timing on battle casualties.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.90",
+    "case_id": "F.90",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Medieval European Economics",
+    "scenario": "In medieval Europe, the Black Death (1347-1353) killed approximately one-third of the population. In subsequent decades, surviving peasants in England demanded and received higher wages and better working conditions.",
+    "claim": "The Black Death caused higher wages and better working conditions for surviving peasants in medieval England.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "The Black Death killing approximately one-third of Europe's population",
+      "Y": "Higher wages and better working conditions for surviving peasants",
+      "Z": [
+        "Massive labor shortage",
+        "Changed bargaining power dynamics"
+      ]
+    },
+    "trap": {
+      "type": "A",
+      "type_name": "Ambiguous",
+      "subtype": "Bidirectional_Causation",
+      "subtype_name": "Bidirectional Causation"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "The Black Death's massive population loss created a labor shortage that shifted bargaining power to peasants, but the relationship between population loss and wage improvements may involve complex dynamics including legal changes, social upheaval, and resistance from landowners.",
+    "key_insight": "The observed correlation between The Black Death killing approximately one-third of Europe's population and Higher wages and better working conditions for surviving peasants does not establish simple causation without accounting for Massive labor shortage and Changed bargaining power dynamics.",
+    "hidden_timestamp": "What is the temporal ordering and mechanism between The Black Death killing approximately one-third of Europe's population, Massive labor shortage, and Higher wages and better working conditions for surviving peasants?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the labor shortage directly caused peasants to demand and receive higher wages through simple supply-demand mechanics, the causal claim may be valid.",
+      "answer_if_condition_2": "If legal changes, social movements, or other confounding factors played a significant role in wage improvements, the direct causal attribution to population loss alone is ambiguous."
+    },
+    "wise_refusal": "The causal relationship between The Black Death and improved peasant conditions is ambiguous because multiple factors including labor shortage, changed power dynamics, legal reforms, and social upheaval all contributed to wage increases in complex, interacting ways.",
+    "gold_rationale": "This case illustrates ambiguous causation where The Black Death's population loss likely contributed to improved peasant conditions through labor shortage, but the full causal story involves multiple mediating and confounding factors that make simple causal attribution uncertain.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "T3-F.91",
+    "case_id": "F.91",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "subdomain": "Industrial Revolution Labor",
+    "scenario": "During the California Gold Rush of 1849, thousands of prospectors rushed to California seeking fortune. While some struck it rich, many others struggled. Meanwhile, merchants like Levi Strauss who sold supplies to miners built successful businesses.",
+    "claim": "Prospecting for gold during the 1849 California Gold Rush was a reliably profitable venture.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": "Prospecting for gold during the 1849 California Gold Rush",
+      "Y": "Financial success and wealth accumulation",
+      "Z": [
+        "Survivorship bias and selective reporting of successes",
+        "Alternative business opportunities (e.g., selling supplies)"
+      ]
+    },
+    "trap": {
+      "type": "A",
+      "type_name": "Ambiguous",
+      "subtype": "Selection_Causation_Ambiguity",
+      "subtype_name": "Selection vs Causation Ambiguity"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "The relationship is ambiguous because: (1) successful prospectors are more visible in historical records while failures are underreported (survivorship bias), and (2) alternative paths to wealth (like Levi Strauss selling supplies) suggest mining itself wasn't the only or best route to profit.",
+    "key_insight": "The observed correlation between Prospecting for gold during the 1849 California Gold Rush and Financial success and wealth accumulation does not establish causation without accounting for Survivorship bias and selective reporting of successes.",
+    "hidden_timestamp": "What proportion of prospectors actually achieved Financial success and wealth accumulation versus those who failed, and how does Survivorship bias affect our historical understanding?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If we had complete records showing most prospectors achieved wealth through gold mining, the causal claim would be valid.",
+      "answer_if_condition_2": "If historical records overrepresent successes while most prospectors failed or found wealth through other means (like selling supplies), the claim is invalid due to survivorship bias."
+    },
+    "wise_refusal": "The causal claim is ambiguous because survivorship bias means we predominantly hear about successful prospectors, while many who failed left no record. Additionally, merchants like Levi Strauss who sold supplies often became wealthier than miners, suggesting alternative causal pathways to success during the Gold Rush.",
+    "gold_rationale": "This case illustrates the ambiguity created by survivorship bias in historical records and the presence of alternative causal mechanisms (supply sellers vs. prospectors) for achieving wealth during the Gold Rush era.",
+    "initial_author": "Sameer Vijay",
+    "validator": "Sameer Vijay",
+    "final_score": 10.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0001",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Historical records show that cities belonging to the Hanseatic League (X) in medieval Northern Europe accumulated significantly more wealth (Y) than non-member cities. A historian argues that League membership caused these cities to prosper.",
+    "claim": "Membership in the Hanseatic League caused medieval Northern European cities to become wealthy.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SPURIOUS",
+      "subtype": "Geographic_Confounding"
+    },
+    "variables": {
+      "X": "Hanseatic League membership",
+      "Y": "City wealth",
+      "Z": [
+        "Access to navigable waterways and natural harbors"
+      ]
+    },
+    "gold_rationale": "This is an associational claim. The correlation exists because cities with access to navigable rivers and natural harbors (Z) were both more likely to be invited into the Hanseatic League (X) and independently capable of generating wealth through trade (Y). The geographic advantages preceded and enabled both League membership and prosperity. The League did not create the wealth; both emerged from favorable maritime geography.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Medium",
+    "hidden_timestamp": "Did the accumulation of wealth and the establishment of trade routes by cities with geographic advantages occur prior to their formal induction into the Hanseatic League?",
+    "conditional_answers": {
+      "answer_if_geographic_advantage_is_the_primary_driver": "If wealth was already increasing due to natural harbors and river access before League membership, then the claim is likely false as the League is a symptom of existing prosperity rather than its cause.",
+      "answer_if_league_membership_provided_exclusive_legal_protections": "If the League provided unique institutional benefits like legal monopolies or military protection that were unavailable to non-members with similar geography, then the claim for a causal link would be significantly strengthened."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the provided information does not account for the confounding variable of geographic location. Without data comparing the wealth of League members to non-members with identical maritime access, it is impossible to determine if the League caused the wealth or if both were effects of favorable geography.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "X (League membership), Y (Wealth), and Z (Geography) are clearly defined within a well-established historical context."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the temporal and causal ambiguity regarding whether geographic advantages preceded the League's formation."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically follows the condition that geography is the primary driver, correctly identifying the League as a symptom rather than a cause."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Provides a strong contrast by introducing institutional benefits as a potential independent causal mechanism."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the template perfectly, identifying the confounding variable and explaining the necessity of a counterfactual comparison (cities with identical maritime access)."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires the evaluator to look beyond a strong historical correlation to find a common-cause confounder."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The 'NO' label is correct for an L1 Wolf case where a spurious correlation is presented as causal."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "The Spurious/Geographic Confounding classification is accurate and well-implemented in the rationale."
+      }
+    },
+    "overall_assessment": "This is a high-quality L1 case that effectively uses a classic historical example to demonstrate the 'correlation does not imply causation' principle through geographic confounding.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0002",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Records from the American Civil War show that 65% of all combat deaths were Union soldiers (X). A military historian concludes that serving in the Union army was more dangerous than serving in the Confederate army.",
+    "claim": "Union soldiers faced higher combat danger than Confederate soldiers in the Civil War.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BASE_RATE",
+      "subtype": "Denominator_Neglect"
+    },
+    "variables": {
+      "X": "Army affiliation (Union)",
+      "Y": "Combat deaths",
+      "Z": [
+        "Army size (base rate)"
+      ]
+    },
+    "gold_rationale": "This is base rate neglect. The Union army was approximately twice the size of the Confederate army throughout most of the war. The relevant metric is deaths per soldier (mortality rate), not total deaths. When accounting for army size, Confederate soldiers actually faced comparable or higher mortality rates in many engagements.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Easy",
+    "hidden_timestamp": "What was the total number of soldiers enlisted in each army during the period these deaths were recorded?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the Union army was significantly larger than the Confederate army, then the higher number of deaths does not necessarily imply a higher individual risk or danger level.",
+      "answer_if_condition_2": "If the Union and Confederate armies were of equal size, then the higher number of Union deaths would indeed indicate a higher mortality rate and greater danger for Union soldiers."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because it relies on absolute death counts without accounting for the base rate of the total population at risk. To determine relative danger, one must compare the mortality rates (deaths divided by total soldiers) rather than raw totals, as a larger group will naturally incur more casualties even if the individual risk is lower.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X (Army affiliation) and Y (Combat deaths) are clearly defined within a specific historical context, and the causal claim is unambiguous."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the missing denominator (total enlistment) which is the essential piece of information needed to calculate risk."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically explains how a larger base rate for the Union would invalidate the claim that higher raw deaths equal higher danger."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly identifies that if base rates were equal, the raw death count would be a valid proxy for relative danger, providing a clear contrast."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the required template and accurately explains the statistical fallacy of using absolute counts instead of rates."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as base rate neglect in historical data is a classic trap that requires moving beyond surface-level statistics."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'NO' is correct for an L1 Wolf case where the causal claim is invalid due to a reasoning trap."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "The BASE_RATE - Denominator_Neglect classification is perfectly applied to this scenario."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates base rate neglect using a well-known historical example. All components are logically consistent and follow the T³ Benchmark requirements.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0006",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Data shows that 19th-century nations that adopted democratic reforms (X) subsequently experienced greater political stability (Y). A political scientist concludes that democratic reforms caused stability.",
+    "claim": "Adopting democratic reforms in the 19th century caused nations to become more politically stable.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Policy_Endogeneity"
+    },
+    "variables": {
+      "X": "Adoption of democratic reforms",
+      "Y": "Political stability",
+      "Z": [
+        "Pre-existing stability enabling reform"
+      ]
+    },
+    "gold_rationale": "This is reverse causation. Nations that were already politically stable (or becoming so) were more likely to successfully implement democratic reforms. Unstable nations attempting reforms often failed or reversed them and thus don't appear in the 'reformed' category. The stability preceded and enabled the reforms, rather than reforms causing stability. The causal arrow likely runs from Y to X, not X to Y.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Medium",
+    "hidden_timestamp": "Did the nations in the study achieve a baseline level of political stability prior to the implementation of democratic reforms, or did the stability only emerge after the reforms were finalized?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If democratic reforms were successfully implemented only in nations that had already secured internal peace and institutional order, then the claim is likely false due to reverse causation (stability enabling reform).",
+      "answer_if_condition_2": "If nations with identical levels of high volatility were compared and only those that introduced reforms saw a subsequent increase in stability, then the causal claim would be supported."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the observational data does not account for policy endogeneity, where the 'treatment' of reform is dependent on the pre-existing state of the 'outcome' (stability). Without knowing the temporal sequence of events or having a control for the baseline stability of these nations, we cannot distinguish whether reforms created stability or if stability was a prerequisite for reform.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "X, Y, and Z are clearly defined within a historical context that makes the causal claim easy to follow."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question effectively targets the temporal ambiguity and the potential for reverse causality (policy endogeneity)."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically demonstrates how pre-existing stability (Z) invalidates the causal claim of X causing Y."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly identifies that a controlled comparison of volatile nations would be necessary to validate the claim."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the template perfectly, identifying the specific bias (policy endogeneity) and explaining the inability to determine the temporal sequence."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires understanding that 'subsequent' observation in data does not guarantee temporal precedence in mechanism."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'NO' is correct for an L1 Wolf case where the causal claim is undermined by reverse causality."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "REVERSE - Policy_Endogeneity is the correct classification for this specific historical data trap."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates the 'Reverse Causation' trap in historical observational data. The logic is consistent across the hidden question, conditional answers, and gold rationale.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0007",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Among historical figures who have surviving biographies (Z), those born into nobility (X) appear to have achieved less remarkable accomplishments (Y) than those born as commoners. A historian concludes that noble birth hindered achievement.",
+    "claim": "Being born into nobility in pre-modern societies hindered individuals from achieving remarkable accomplishments.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning_on_Participation"
+    },
+    "variables": {
+      "X": "Noble birth",
+      "Y": "Level of accomplishment",
+      "Z": [
+        "Having a surviving biography (collider)"
+      ]
+    },
+    "gold_rationale": "This is collider bias. Having a biography written and preserved (Z) is a common effect of both noble birth (X) and remarkable accomplishment (Y). Nobles received biographies regardless of achievement, while commoners needed exceptional accomplishments to merit one. By conditioning on having a biography, we create a spurious negative correlation: among those with biographies, nobles appear less accomplished because they didn't need accomplishments to be documented.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Medium",
+    "hidden_timestamp": "What was the minimum threshold of accomplishment required for a commoner to receive a biography compared to the threshold required for a member of the nobility?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the criteria for preserving a biography were identical for both nobles and commoners, then the observed difference might reflect a genuine causal impact of birth status on achievement.",
+      "answer_if_condition_2": "If biographies were preserved for all nobles by default but only for commoners with extreme achievements, then the negative correlation is a statistical artifact of selection bias and does not imply that nobility hindered success."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the data is restricted to a subset of the population (those with surviving biographies) which acts as a collider. Without data on individuals who did not have biographies preserved, it is impossible to distinguish between a true causal effect and a spurious correlation caused by differential preservation thresholds.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X, Y, and Z are clearly defined, and the historical context provides a perfect setup for a collider bias scenario."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the differential selection threshold (the collider mechanism) that creates the spurious correlation."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically sound; it correctly identifies that if selection bias is removed (identical criteria), the observed correlation might reflect a real effect."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly explains how differential thresholds for commoners versus nobles create a statistical artifact, contrasting well with Answer A."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the required format and accurately explains why the collider (Z) prevents a definitive causal conclusion without data on the non-biographed population."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as collider bias in historical data is a classic but non-obvious reasoning trap for LLMs."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'NO' is correct for an L1 Wolf case where the causal claim is invalid due to selection bias."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly identifies Collider/Conditioning on Participation, which is the fundamental flaw in the historian's reasoning."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates collider bias (Berkson's Paradox) in a historical context. The logic is consistent across all sections.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0008",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Dynasties that achieved the most dramatic initial rises to power (X) in the first generation experienced the steepest declines (Y) in subsequent generations. A historian concludes that rapid ascent destabilizes dynasties.",
+    "claim": "Rapid initial rise to power caused dynasties to experience steeper subsequent declines.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Extreme_Group_Selection"
+    },
+    "variables": {
+      "X": "Speed of initial rise to power",
+      "Y": "Magnitude of subsequent decline",
+      "Z": [
+        "Random favorable/unfavorable circumstances"
+      ]
+    },
+    "gold_rationale": "This is regression to the mean. Dynasties with the most dramatic initial rises benefited from an unusually favorable combination of circumstances (weak rivals, lucky timing, exceptional founder). These extreme positive conditions naturally cannot persist, so subsequent generations appear to 'decline' toward more typical performance. The pattern reflects statistical regression rather than rapid rise causing instability.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Medium",
+    "hidden_timestamp": "Would dynasties that achieved moderate initial rises under the same favorable external circumstances (Z) have experienced significantly different decline rates than those that achieved rapid rises?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the decline occurs because the rapid expansion physically overstretched administrative resources regardless of external luck, then the causal claim might be supported.",
+      "answer_if_condition_2": "If the decline is simply the result of external circumstances (Z) returning to their historical average after an extreme peak, then the claim is a misinterpretation of regression to the mean."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the historian has selected for extreme outliers, which are statistically likely to regress to the mean in subsequent periods. Without data on dynasties that rose rapidly due to structural factors versus those that rose due to temporary luck, we cannot distinguish between causal destabilization and simple statistical normalization.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X and Y are clearly defined within a historical context, and the causal claim is explicitly stated."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the need to control for the confounding variable Z (external circumstances) to resolve the regression to the mean ambiguity."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically explores the internal structural mechanism (overstretching) that would validate a causal link."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly identifies the statistical alternative where the decline is merely a return to the baseline after an extreme outlier event."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the required format and accurately explains why the selection of extreme outliers prevents a definitive causal conclusion."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as regression to the mean in historical contexts is a classic 'trap' that requires distinguishing between luck and structure."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'NO' is correct for an L1 Wolf case where the observed association is likely a statistical artifact."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly identifies Regression to the Mean (Extreme Group Selection) as the primary fallacy."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates the regression to the mean trap in a historical domain. The logic is sound, the variables are well-isolated, and the wise refusal is comprehensive.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0009",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Ancient Roman buildings (X) that survive today display remarkable engineering and durability (Y). An architect concludes that Roman construction techniques were universally superior to modern methods.",
+    "claim": "Ancient Roman construction techniques were superior to modern building methods.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SURVIVORSHIP",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Roman construction",
+      "Y": "Building durability",
+      "Z": [
+        "Survival to present day (selection)"
+      ]
+    },
+    "gold_rationale": "This is survivorship bias. We only observe Roman buildings that survived 2000+ years - by definition, the most durable structures. The countless Roman buildings that collapsed, decayed, or were demolished are not in our sample. The surviving buildings represent the extreme upper tail of durability, not typical Roman construction. Modern buildings haven't yet faced the same temporal filter.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Easy",
+    "hidden_timestamp": "What was the failure rate and average lifespan of the total population of Roman buildings constructed, including those that no longer exist today?",
+    "conditional_answers": {
+      "answer_if_data_includes_all_structures": "If the data accounted for the thousands of Roman tenements and common structures that collapsed or decayed within decades, the average durability would likely be lower than or comparable to modern standards.",
+      "answer_if_surviving_structures_are_representative": "If the surviving monuments were representative of standard Roman construction quality rather than being exceptional outliers, then the claim of superior techniques would be more plausible."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the current sample is subject to extreme survivorship bias, focusing only on the 'winners' of a 2,000-year durability test. To make a valid causal comparison, we would need data on the full distribution of Roman building lifespans to compare against modern failure rates, rather than comparing the best of the past to the average of the present.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X and Y are clearly defined, and the context of Roman engineering vs. modern methods is well-established."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question perfectly identifies the survivorship bias by asking about the total population of structures rather than just the survivors."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically follows the condition of including all structures, correctly predicting a regression to the mean for Roman durability."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Provides a clear contrast by assuming the survivors are representative, which would validate the claim if true."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the template perfectly and explains the 'winners' bias and the need for a full distribution of lifespans."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as survivorship bias is a classic but non-trivial statistical trap in historical analysis."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'NO' is correct for an L1 Wolf case where the causal claim is invalid due to selection bias."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly identifies Survivorship/Selective Observation, which is the core logical flaw in the scenario."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates survivorship bias. The variables, hidden question, and conditional answers are logically consistent and the refusal is well-articulated.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0010",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In Imperial China, officials who scored highest on the civil service examinations (X) were appointed to top administrative positions. Over time, examination scores became less predictive of administrative effectiveness (Y). Reformers concluded the examination system had degraded.",
+    "claim": "The degradation of China's imperial examination system caused declining administrative effectiveness.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Static_Metric_Gaming"
+    },
+    "variables": {
+      "X": "Examination scores",
+      "Y": "Administrative effectiveness",
+      "Z": [
+        "Gaming and optimization of exam content"
+      ]
+    },
+    "gold_rationale": "This is Goodhart's Law: when a measure becomes a target, it ceases to be a good measure. The examinations were originally a proxy for administrative ability. Once exam scores determined career advancement, candidates optimized specifically for exam performance - memorizing set texts, mastering formulaic essay structures - rather than developing actual administrative skills. The proxy was gamed, breaking its correlation with the underlying trait it was meant to measure.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Medium",
+    "hidden_timestamp": "Did the decline in administrative effectiveness occur because the examination content itself became less relevant to governance, or because the high-stakes nature of the exams incentivized candidates to prioritize rote memorization over the development of practical leadership skills?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the examination system was intentionally simplified or corrupted by the state, then the degradation of the system itself is the primary cause of declining administrative quality.",
+      "answer_if_condition_2": "If the candidates shifted their behavior to 'game' the existing system to ensure success, then the change in candidate behavior (Goodhart's Law) is the cause, and the examination system is merely a static metric that lost its predictive power."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because it conflates a change in the metric's validity with a change in the underlying quality of the candidates. We lack data to determine if the administrative decline resulted from a literal 'degradation' of the exam's standards or from the strategic adaptation of candidates to a high-stakes target, which breaks the correlation between test scores and actual ability.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X, Y, and Z are clearly defined within a historical context that makes the causal claim easy to follow."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the ambiguity between systemic degradation and the behavioral adaptation of the subjects (gaming)."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically follows the condition of state-led corruption/simplification, supporting the 'degradation' claim."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly contrasts Answer A by focusing on Goodhart's Law and the strategic behavior of candidates."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the template perfectly and explains the conflation between metric validity and underlying quality."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires distinguishing between a failing system and a gamed system, which is a classic causal trap."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The 'NO' label is correct for an L1 Wolf case where the causal claim is invalid due to the identified trap."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "The Goodhart - Static_Metric_Gaming classification is perfectly applied to the historical civil service exam context."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates Goodhart's Law. The reasoning is sound, the historical context is apt, and the distinction between the two conditional paths is sharp.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0091",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In 1854, Dr. John Snow removed the handle from the Broad Street water pump (X) during a cholera outbreak in London. Deaths from cholera in that area dropped dramatically within days (Y). Snow had mapped the deaths and found they clustered around this specific pump.",
+    "claim": "Removing the Broad Street pump handle caused the reduction in cholera deaths.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SHEEP",
+      "subtype": "Natural_Experiment"
+    },
+    "variables": {
+      "X": "Removal of pump handle",
+      "Y": "Cholera death reduction",
+      "Z": [
+        "Geographic clustering of cases",
+        "Timing of intervention"
+      ]
+    },
+    "gold_rationale": "This is valid causal evidence from a natural experiment. Snow's intervention was targeted based on epidemiological mapping, and the immediate temporal response (deaths dropping within days) combined with the geographic specificity (only the affected area improved) provides strong evidence. The pump removal blocked the contaminated water supply, breaking the transmission chain. This is classic evidence of causation through intervention.",
+    "annotation": {
+      "author": "April Yang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "April Yang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Easy",
+    "hidden_timestamp": "Had the cholera outbreak already reached its natural peak and begun a sharp decline before the pump handle was removed?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the number of new infections was already plummeting due to the population fleeing the area or the pathogen's natural lifecycle, then the pump removal was merely coincidental to the reduction in deaths.",
+      "answer_if_condition_2": "If the infection rate remained high until the moment of intervention and dropped only in the specific households using that pump, then the removal of the handle is the definitive cause of the reduction."
+    },
+    "wise_refusal": "A definitive evaluation is difficult because the scenario lacks a control group to account for the natural progression of the epidemic. Without knowing if the decline in deaths mirrored a city-wide trend or if other sanitation changes occurred simultaneously, we cannot rule out that the outbreak was simply burning out on its own.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X and Y are clearly defined within a well-known historical context, and the causal claim is explicit."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The hidden question correctly identifies the 'natural peak' ambiguity, which is the primary historical critique of this specific case."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically addresses the possibility of a coincidental correlation due to the epidemic's natural lifecycle."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly contrasts by focusing on the specificity of the intervention's impact on the target population."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the required template and accurately identifies the lack of a control group and the potential for temporal bias."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires understanding the difference between temporal succession and causal intervention in an epidemiological context."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'YES' is correct for a SHEEP case (valid causal claim) at Level 1."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly classified as SHEEP - Natural_Experiment, as the Snow case is the foundational example of this type."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly utilizes a classic historical example to test causal reasoning. It correctly identifies the nuances of the Broad Street pump handle intervention while maintaining the structure required for the T³ Benchmark.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0094",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "After the 1906 San Francisco earthquake, the city rebuilt with enforced building codes requiring fire-resistant materials (X). Subsequent fires in San Francisco caused significantly less property damage (Y) compared to pre-earthquake fires of similar origin.",
+    "claim": "The enforced fire-resistant building codes caused reduced fire damage in post-earthquake San Francisco.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SHEEP",
+      "subtype": "Interrupted_Time_Series"
+    },
+    "variables": {
+      "X": "Fire-resistant building codes",
+      "Y": "Fire damage reduction",
+      "Z": [
+        "Earthquake as forcing event",
+        "Pre-post comparison"
+      ]
+    },
+    "gold_rationale": "This is valid causal evidence from an interrupted time series design. The earthquake created a sharp discontinuity - buildings before vs. after the code change. The dramatic reduction in fire damage after the policy change, combined with the clear mechanism (fire-resistant materials limit fire spread), supports causation. The earthquake's destruction created a natural before-after experiment.",
+    "annotation": {
+      "author": "April Yang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "April Yang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Hard",
+    "hidden_timestamp": "Were there concurrent improvements in firefighting technology or water infrastructure implemented at the exact same time as the building code enforcement?",
+    "conditional_answers": {
+      "answer_if_other_infrastructure_improved": "If the city also modernized its high-pressure water systems and fire department equipment simultaneously, then the reduction in damage might be attributed to improved response rather than the building codes themselves.",
+      "answer_if_only_codes_changed": "If the fire-resistant materials were the only significant change in the city's fire defense strategy, then the causal link between the codes and reduced damage is strongly supported."
+    },
+    "wise_refusal": "While the interrupted time series suggests a causal link, the claim cannot be definitively proven without accounting for potential confounding variables like changes in urban density or firefighting capabilities that often follow major disasters. We need to confirm that the observed reduction in damage was not a result of a general trend in fire safety technology rather than the specific building codes.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X and Y are clearly defined, and the historical context of the 1906 earthquake provides a solid foundation for a causal claim."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the primary threat to validity in an interrupted time series: concurrent interventions or history effects."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically addresses the possibility of confounding variables (water systems/firefighting) that would weaken the specific claim about building codes."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly isolates the variable of interest to show how the causal link is strengthened if other factors remain constant."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "The refusal follows the required template and accurately explains why a simple pre-post comparison requires control for confounding trends."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires the evaluator to look beyond the obvious correlation and consider the 'natural experiment' limitations."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'YES' is correct for a SHEEP case in L1, indicating that while there are nuances, the evidence provided supports a valid causal inference structure."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly identifies the Interrupted Time Series (S4) trap, which is a classic 'Sheep' pattern where a sudden policy change follows a major event."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly exemplifies the SHEEP category for L1. It uses a well-known historical event to test the understanding of interrupted time series designs and potential confounding factors.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0095",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "The Marshall Plan provided economic aid to Western European countries (X) after World War II. Countries receiving Marshall Plan aid experienced faster economic recovery (Y) than Eastern European countries that rejected aid under Soviet pressure. The aid was offered to all European nations.",
+    "claim": "Marshall Plan aid caused faster economic recovery in Western Europe.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SHEEP",
+      "subtype": "Controlled_Comparison"
+    },
+    "variables": {
+      "X": "Marshall Plan aid receipt",
+      "Y": "Economic recovery rate",
+      "Z": [
+        "Soviet rejection as exclusion mechanism",
+        "War damage similarity"
+      ]
+    },
+    "gold_rationale": "This is valid causal evidence through controlled comparison. Eastern European countries' rejection (due to Soviet pressure, not economic factors) created a comparison group. Both regions suffered similar war damage, making them comparable at baseline. The divergence in recovery trajectories after aid provision, combined with the clear mechanism (capital injection, trade facilitation), supports the causal claim.",
+    "annotation": {
+      "author": "April Yang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "April Yang",
+    "validator": "April Yang",
+    "final_score": 9.5,
+    "difficulty": "Medium",
+    "hidden_timestamp": "Were the economic recovery trajectories of Western and Eastern European nations already diverging significantly before the first Marshall Plan funds were disbursed in 1948?",
+    "conditional_answers": {
+      "answer_if_preexisting_divergence": "If Western European nations were already recovering at a significantly faster rate prior to 1948 due to superior pre-war industrial infrastructure or different political institutions, then the claim of Marshall Plan aid as the primary cause is weakened.",
+      "answer_if_parallel_trends": "If both regions showed identical stagnation or decline until the specific point of aid injection, after which only the recipient nations accelerated, the causal claim is strongly supported."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the Soviet rejection of aid introduces a major confounding variable: the differing political and economic systems (Capitalism vs. Communism) adopted by the two groups. Without data on whether Western Europe would have recovered similarly through internal market reforms alone, we cannot isolate the specific causal effect of the aid from the broader geopolitical shift.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "Variables X and Y are clearly defined, and the historical context of the Marshall Plan vs. Soviet rejection is well-established."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the temporal precedence issue and the potential for pre-existing divergence, which is critical for L1 causal claims."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically addresses how pre-existing industrial or institutional advantages would act as confounders, weakening the aid's causal weight."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly identifies that parallel trends prior to the intervention would provide the necessary counterfactual-like evidence to support the claim."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "The refusal follows the template and correctly identifies the systemic confounding (Capitalism vs. Communism) that prevents a pure isolation of the aid's effect."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires understanding both historical context and the statistical concept of 'parallel trends' in a natural experiment."
+      },
+      "final_label": {
+        "score": 0.5,
+        "justification": "The label is 'YES', which is consistent with a 'SHEEP' case, but the Wise Refusal argues the claim cannot be definitively evaluated, creating a slight internal contradiction."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly classified as SHEEP - Controlled_Comparison, as the Soviet rejection provides a quasi-experimental control group."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that effectively uses a historical natural experiment to test causal reasoning. The only minor tension is between the 'YES' label (typical for Sheep cases) and the Wise Refusal's caution, but this is standard for complex historical causal claims.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "F1-0096",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "The construction of the Erie Canal (X) in 1825 dramatically reduced shipping costs between the Great Lakes and New York City. Towns along the canal route experienced population booms (Y), while comparable towns just beyond the canal's reach grew much more slowly.",
+    "claim": "The Erie Canal caused population growth in towns along its route.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SHEEP",
+      "subtype": "Regression_Discontinuity"
+    },
+    "variables": {
+      "X": "Erie Canal proximity",
+      "Y": "Population growth",
+      "Z": [
+        "Geographic discontinuity",
+        "Pre-canal similarity"
+      ]
+    },
+    "gold_rationale": "This is valid causal evidence using geographic discontinuity. Towns just inside vs. just outside the canal's economic reach were similar in most respects before construction, but diverged sharply afterward. The mechanism is clear: reduced transport costs made canal towns more attractive for commerce and settlement. The sharp discontinuity at the canal boundary supports causal attribution.",
+    "annotation": {
+      "author": "April Yang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "April Yang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Medium",
+    "hidden_timestamp": "Were the population growth rates in the canal-adjacent towns already significantly higher than those of the control towns in the decade immediately preceding the canal's construction?",
+    "conditional_answers": {
+      "answer_if_pre_existing_trend": "If the towns along the route were already growing faster due to natural geographic advantages like river access before 1825, then the canal might be an effect of expected growth rather than the sole cause.",
+      "answer_if_parallel_trends": "If the growth rates were identical prior to 1825 and only diverged exactly when the canal opened, this strongly supports the causal claim through geographic discontinuity."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated without confirming that the 'comparable towns' followed the same pre-intervention growth trends as the canal towns. We must rule out selection bias, where the canal was intentionally routed through towns that were already poised for economic expansion due to other unobserved factors.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "The variables X and Y are clearly defined, and the context of the Erie Canal provides a classic, well-explained historical causal scenario."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the need for pre-treatment trend data to validate the regression discontinuity design."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically addresses the possibility of selection bias or pre-existing advantages that would invalidate the causal claim."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly identifies that parallel trends followed by a sharp divergence at the intervention point provide strong causal evidence."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "The refusal follows the template, identifies the missing information (pre-intervention trends), and explains the risk of selection bias."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate for a Regression Discontinuity case, as it requires understanding counterfactual trends beyond simple correlation."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'YES' is correct for a SHEEP case where the evidence (geographic discontinuity) supports a valid causal inference."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly classified as SHEEP - Regression_Discontinuity, matching the scenario's comparison of adjacent geographic units."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly implements the SHEEP trap type using a historical natural experiment. It correctly identifies the necessary conditions for a valid regression discontinuity design.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-0098",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "The introduction of the stirrup in medieval Europe (X) is correlated with the rise of heavy cavalry warfare and feudalism (Y). Some historians argue the stirrup enabled mounted shock combat; others argue social changes preceded and enabled stirrup adoption.",
+    "claim": "The introduction of the stirrup caused the rise of feudalism in medieval Europe.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "AMBIGUOUS",
+      "subtype": "Temporal_Uncertainty"
+    },
+    "variables": {
+      "X": "Stirrup introduction",
+      "Y": "Rise of feudalism",
+      "Z": [
+        "Social changes",
+        "Military tactics evolution"
+      ]
+    },
+    "gold_rationale": "The causal relationship is genuinely ambiguous due to temporal uncertainty and debate among historians. The 'stirrup thesis' (Lynn White Jr.) claims technology drove social change, but critics note feudal-like institutions appeared before stirrup adoption in some regions, and the stirrup spread without causing feudalism elsewhere. The evidence permits multiple causal interpretations.",
+    "annotation": {
+      "author": "April Yang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "April Yang",
+    "validator": "April Yang",
+    "final_score": 10.0,
+    "difficulty": "Hard",
+    "hidden_timestamp": "Did the institutional structures of feudalism and the use of mounted shock combat emerge before or after the widespread adoption of the stirrup in the Frankish heartlands?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If social structures and military tactics evolved independently prior to the stirrup's arrival, then the stirrup was merely a technological refinement rather than a primary cause of feudalism.",
+      "answer_if_condition_2": "If the stirrup was the necessary catalyst that first enabled heavy shock combat, which in turn required a landed warrior class to fund the equipment, then the claim of a causal link is strengthened."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the temporal sequence between the technological adoption and the social reorganization remains a subject of intense historical debate. Without clarifying whether the social 'demand' for heavy cavalry preceded the 'supply' of the stirrup, or if the stirrup's presence was the sole enabler of these changes, a singular causal direction cannot be established.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "Variables X, Y, and Z are clearly defined within a well-known historical context, and the causal claim is explicitly stated."
+      },
+      "hidden_question_quality": {
+        "score": 1.0,
+        "justification": "The question correctly identifies the temporal ambiguity (precedence) which is the crux of the historical debate."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically follows the condition where social changes precede technology, correctly identifying the stirrup as a refinement."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Correctly outlines the 'Stirrup Thesis' logic where technology acts as the primary catalyst for social reorganization."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the required template and accurately explains why the lack of temporal clarity prevents a definitive causal evaluation."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires understanding that correlation in historical records often masks complex feedback loops or reverse causality."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'AMBIGUOUS' is correct for L1 cases where the temporal sequence is the primary trap (Temporal_Uncertainty)."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "The trap type 'AMBIGUOUS - Temporal_Uncertainty' is accurately applied to this specific historical controversy."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates the 'Ambiguous' category of the T³ Benchmark. It uses a classic historical debate to test the model's ability to recognize that temporal precedence is a prerequisite for causal claims.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 10.0
+  },
+  {
+    "id": "F1-NEW-W3",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "During the 19th-century British military campaigns in India, certain regiments voluntarily adopted a new rigorous daily hygiene and sanitation regimen known as the 'Nightingale Protocol.' Historical records indicate that soldiers in these specific regiments experienced significantly lower mortality rates from cholera and dysentery compared to soldiers in regiments that maintained standard practices.",
+    "claim": "The adoption of the Nightingale Protocol directly caused the reduction in mortality rates among the participating British regiments.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W3",
+      "subtype": "Healthy_User_Bias"
+    },
+    "variables": {
+      "X": "Adoption of the Nightingale Protocol",
+      "Y": "Lower mortality rates from infectious diseases",
+      "Z": [
+        "Regimental discipline and leadership quality",
+        "Pre-existing health status of soldiers",
+        "Propensity for risk-aversion and compliance"
+      ]
+    },
+    "gold_rationale": "This scenario exemplifies the Healthy User Bias (W3) because the 'treatment' (the Nightingale Protocol) was voluntarily adopted rather than randomly assigned. Regiments that chose to implement such rigorous protocols likely possessed superior leadership, higher levels of internal discipline, and soldiers who were generally more health-conscious or compliant with other unobserved safety measures. These underlying factors (Z) act as confounders that likely contributed to the lower mortality rates (Y) independently of the protocol itself (X). Therefore, we cannot definitively conclude a direct causal link without accounting for the self-selection bias of 'healthy' or 'disciplined' units into the treatment group.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Were the superior discipline and leadership qualities (Z) already present and influencing regimental health outcomes before the Nightingale Protocol (X) was officially adopted?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the protocol was randomly assigned to regiments by central command regardless of their existing discipline levels, then the observed reduction in mortality could be more confidently attributed to the Nightingale Protocol itself.",
+      "answer_if_condition_2": "If the regiments that adopted the protocol were those that already had the lowest mortality rates and highest hygiene standards prior to the study, then the protocol is likely a marker of existing quality rather than the cause of the improvement."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the voluntary nature of the protocol introduces a Healthy User Bias, where the same factors that led a regiment to adopt the protocol (like discipline) also independently improve health outcomes. Without controlling for these confounding variables or utilizing random assignment, we cannot isolate the protocol's specific causal effect from the pre-existing characteristics of the regiments.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-W6",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In the late 19th century, a study of British military hospitals in India found that soldiers who were prescribed a new experimental quinine-based prophylactic (X) for malaria had a significantly higher mortality rate (Y) compared to soldiers who received no medication. However, the experimental treatment was only administered in the most swampy, malaria-infested frontier outposts where the baseline mortality for all soldiers was historically quadruple that of the urban garrisons where the 'no medication' group was stationed.",
+    "claim": "The experimental quinine-based prophylactic was the primary cause of the increased mortality rate among the soldiers.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W6",
+      "subtype": "Base_Rate_Neglect"
+    },
+    "variables": {
+      "X": "Administration of the experimental quinine-based prophylactic",
+      "Y": "Increased mortality rate among soldiers",
+      "Z": [
+        "Geographic location/Environment (Swampy frontier vs. Urban garrison)",
+        "Baseline disease prevalence"
+      ]
+    },
+    "gold_rationale": "The claim commits the Base Rate Neglect trap by ignoring the prior probability of death in the different environments. The 'effect' (higher mortality) is more likely a reflection of the high baseline mortality rate (base rate) of the swampy frontier outposts rather than a result of the treatment itself. Without adjusting for the fact that the treatment group was drawn from a population with a much higher risk of death regardless of intervention, one cannot causally attribute the mortality to the medication. Therefore, the evidence provided is insufficient to support the causal claim.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Were the mortality rates in the swampy frontier outposts already significantly higher than the urban garrisons before the experimental quinine-based prophylactic was introduced?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the mortality rate in the frontier outposts remained unchanged or decreased after the introduction of the prophylactic compared to its historical baseline, then the medication is likely not the cause of the increased mortality relative to the urban group.",
+      "answer_if_condition_2": "If the mortality rate in the frontier outposts spiked significantly above its already high historical baseline only after the prophylactic was administered, then the medication might be a contributing factor to the deaths."
+    },
+    "wise_refusal": "The claim cannot be evaluated because the data provided fails to account for the confounding variable of the environment's baseline risk. Without comparing the treatment group to a control group within the same high-risk swampy environment, it is impossible to distinguish the effects of the medication from the effects of the location's naturally higher mortality rate.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-W7",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "During the 14th-century Black Death in Europe, historical records show a sharp increase in public religious flagellation processions (X) immediately preceding a significant rise in local mortality rates (Y). While contemporary observers believed the processions were failing to appease divine wrath, modern historians note that both the surge in public gatherings and the spike in deaths were driven by the arrival of Yersinia pestis via trade routes (Z) into densely populated urban centers.",
+    "claim": "The public religious flagellation processions directly caused the subsequent increase in local mortality rates during the 14th-century plague.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W7",
+      "subtype": "Historical_Context"
+    },
+    "variables": {
+      "X": "Public religious flagellation processions",
+      "Y": "Increased local mortality rates",
+      "Z": [
+        "Arrival of Yersinia pestis",
+        "High population density in trade hubs"
+      ]
+    },
+    "gold_rationale": "This scenario exemplifies the Confounding trap (W7) because it mistakes a correlation for a direct causal link. Variable Z (the arrival of the plague pathogen) acts as a common cause for both X (the religious response to the initial outbreak) and Y (the mass mortality). While X and Y are temporally correlated, the mortality was caused by the biological infection (Z), not the processions themselves. Even if the gatherings slightly exacerbated the spread, the fundamental cause of the mortality spike was the underlying epidemic, making the claim of direct causation for the entire mortality surge logically unsound.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Did the arrival of Yersinia pestis and the initial infection of the population occur before or after the commencement of the flagellation processions?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the mortality rates were already predetermined by the biological incubation period of the plague introduced by trade routes (Z), then the processions (X) are a symptomatic correlation rather than the primary cause of Y.",
+      "answer_if_condition_2": "If the processions (X) were the sole mechanism through which the pathogen was introduced to an otherwise isolated and healthy population, only then could a direct causal link to the mortality surge (Y) be argued."
+    },
+    "wise_refusal": "The claim that religious processions directly caused the mortality surge cannot be validated because both variables are downstream effects of the pathogen's arrival (Z). Attributing the mortality to the processions ignores the confounding biological factor that independently triggered both the social response and the death toll.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-W9",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "During the mid-19th century, the Qing Dynasty observed that the rapid proliferation of local militia groups (Lianjun) coincided with the massive territorial expansion of the Taiping Rebellion across southern China. Imperial records show that regions with the highest density of these autonomous military units were also the regions experiencing the most intense insurgent activity and loss of central government control.",
+    "claim": "The proliferation of local militia groups (X) caused the massive territorial expansion of the Taiping Rebellion (Y).",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W9",
+      "subtype": "Historical_Context"
+    },
+    "variables": {
+      "X": "Proliferation of local militia groups",
+      "Y": "Territorial expansion of the Taiping Rebellion",
+      "Z": [
+        "Weakening of the Green Standard Army",
+        "Regional fiscal decentralization"
+      ]
+    },
+    "gold_rationale": "This scenario presents a classic case of reverse causation (W9). While X and Y are highly correlated, the historical reality is that the expansion of the Taiping Rebellion (Y) necessitated and triggered the creation of local militias (X) as a desperate defensive measure by the gentry when the state's professional military failed. The claim reverses the causal arrow by suggesting the defensive response (X) was the cause of the insurgency's success (Y), rather than a consequence of it.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Did the formation of the Lianjun militias precede the Taiping advances in these regions, or did the militias only emerge after the central Green Standard Army suffered decisive defeats and lost territorial control?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the militias were established prior to the rebellion and actively undermined central authority, then the claim that X caused Y could be supported by the resulting power vacuum.",
+      "answer_if_condition_2": "If the militias were organized as a reactive defense after the Taiping forces had already seized territory, then Y is the cause of X, and the original claim is a reversal of the true causal direction."
+    },
+    "wise_refusal": "The claim cannot be evaluated as stated because it ignores the temporal sequence of events inherent in the historical context. Without establishing whether the militia proliferation occurred before or after the rebellion's expansion, one cannot distinguish between a cause and a reactive consequence.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-W10",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In 1792, the French Revolutionary government issued a new paper currency called assignats, which was immediately followed by a period of hyperinflation and severe food shortages across Paris. Historical records show that the price of bread tripled within months of the currency's expanded circulation, leading many contemporary observers to blame the new monetary policy for the starvation of the urban poor.",
+    "claim": "The issuance of assignats caused the food shortages in Paris.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "W10",
+      "subtype": "Historical_Context"
+    },
+    "variables": {
+      "X": "Issuance of assignats (paper currency)",
+      "Y": "Severe food shortages and bread price spikes",
+      "Z": [
+        "Poor harvests due to weather",
+        "British naval blockades",
+        "Wartime supply chain disruptions"
+      ]
+    },
+    "gold_rationale": "This scenario exemplifies the Post Hoc Fallacy (W10) because it assumes that because the food shortages followed the issuance of assignats, the currency must have caused the shortage. While the currency contributed to inflation, the physical scarcity of food (Y) was primarily driven by independent factors such as a series of crop failures and the British naval blockade (Z) which restricted imports. The claim fails to account for these confounding variables, mistaking a temporal sequence for a simple cause-and-effect relationship.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Were the food shortages and price spikes already trending upward due to the 1791 crop failures and the onset of the War of the First Coalition before the assignats reached peak circulation?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the food shortages were primarily a result of the British naval blockade and poor harvests, then the issuance of assignats was a contributing factor to price inflation but not the root cause of the physical scarcity of bread.",
+      "answer_if_condition_2": "If the assignats were the sole driver of the crisis, we would expect to see stable food supplies with high prices, rather than the total physical absence of grain observed in Parisian markets."
+    },
+    "wise_refusal": "The claim that the assignats caused the food shortages cannot be definitively validated because it ignores significant confounding variables such as wartime blockades and agricultural failure. A causal evaluation is impossible without isolating the monetary inflation from the simultaneous collapse of the physical supply chain.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-S1",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "During the Roman Republic's military reforms, a consul decides to test a new gladius design by assigning it to every third legionary in a newly raised legion based solely on their position in the recruitment line, regardless of their prior experience or social status. The remaining two-thirds of the legionaries continue to use the standard-issue short sword. After a series of skirmishes, the consul records the casualty rates and kill counts for both groups to determine the weapon's effectiveness.",
+    "claim": "The difference in combat performance between the two groups of legionaries can be attributed to the new gladius design rather than pre-existing differences in soldier quality.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "S1",
+      "subtype": "Historical_Context"
+    },
+    "variables": {
+      "X": "Use of the new gladius design",
+      "Y": "Combat performance (casualty rates and kill counts)",
+      "Z": [
+        "Prior combat experience",
+        "Socioeconomic status",
+        "Physical fitness"
+      ]
+    },
+    "gold_rationale": "This scenario describes a Randomized Controlled Trial (RCT) in a historical context. By assigning the new weapon (X) based on a systematic rule (every third man in line) that is independent of the soldiers' characteristics (Z), the consul has ensured that the treatment and control groups are balanced on both known and unknown confounders. Because the assignment is randomized, any observed difference in the outcome (Y) can be causally attributed to the treatment (X) rather than selection bias or pre-existing differences in the cohorts.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Did the consul ensure that the recruitment line itself was not pre-sorted by height, age, or equipment quality before the 'every third man' rule was applied?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the recruitment line was formed randomly or chronologically without regard to soldier attributes, then the claim is valid as the systematic assignment effectively mimics a randomized controlled trial.",
+      "answer_if_condition_2": "If the line was organized by veteran status or social class prior to the count-off, then the assignment of the gladius is confounded by soldier quality, making the claim invalid."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated without confirming that the recruitment line was not subject to prior sorting. If the line formation was influenced by the variables in Z, the systematic sampling would fail to eliminate selection bias, thus invalidating the causal link between the weapon design and performance.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-S2",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In 1854, during the Broad Street cholera outbreak in London, the Soho district was served by two different water companies, Southwark & Vauxhall and Lambeth, whose pipes were intermingled such that neighboring houses often received water from different sources. While both companies drew from the Thames, Lambeth had recently moved its intake upstream of the city's sewage discharge, whereas Southwark & Vauxhall continued to draw from the polluted tidal area. This 'experiment of nature' allowed physician John Snow to compare infection rates among households that were otherwise identical in socioeconomic status and environmental conditions.",
+    "claim": "The shift to an upstream water source by the Lambeth Company directly caused the lower cholera mortality rates observed in the households they served compared to those served by Southwark & Vauxhall.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "S2",
+      "subtype": "Natural_Experiment"
+    },
+    "variables": {
+      "X": "Water source (Upstream/Clean vs. Downstream/Polluted)",
+      "Y": "Cholera mortality rate per household",
+      "Z": [
+        "Socioeconomic status",
+        "Local miasma/air quality",
+        "Household density"
+      ]
+    },
+    "gold_rationale": "This scenario represents a classic S2 Natural Experiment (John Snow's Grand Experiment). The 'treatment' (water source) was assigned to households essentially at random due to the historical accident of overlapping infrastructure, rather than by the choice of the residents or their socioeconomic standing. Because the intermingling of pipes controlled for potential confounders (Z) like poverty, diet, or local air quality that would typically bias an observational study of disease, the exogenous shift in intake location (X) provides a valid basis for a causal claim regarding the outcome (Y). The label is YES because the natural experiment design successfully isolates the causal effect of the water source.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Did the Lambeth Company complete its relocation of the water intake pipe to the upstream location before or after the 1854 cholera outbreak began?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the Lambeth Company had not yet completed the move to the upstream intake by the time of the outbreak, the claim would be false as both companies would still be drawing from the same polluted source.",
+      "answer_if_condition_2": "If the relocation was completed prior to the outbreak, the claim is supported because the exogenous change in water quality serves as the only significant differentiator between the two household groups."
+    },
+    "wise_refusal": "The claim cannot be evaluated if we lack confirmation that the infrastructure changes were operational during the specific window of the 1854 outbreak. Without verifying the temporal alignment between the 'treatment' (cleaner water) and the 'outcome' (mortality rates), we cannot rule out that the observed differences were due to unrelated local environmental factors.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-S5",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "During the 14th-century Black Death, maritime cities implemented quarantine protocols for incoming vessels to prevent the spread of Yersinia pestis. Historical records indicate that port cities enforcing a mandatory 40-day isolation period (quarantena) experienced significantly lower mortality rates compared to cities enforcing only a 10-day isolation or no isolation at all.",
+    "claim": "The systematic increase in the duration of maritime isolation directly caused a proportional reduction in urban plague mortality by exceeding the pathogen's incubation and transmission window.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "S5",
+      "subtype": "Mechanism + Dose-Response"
+    },
+    "variables": {
+      "X": "Duration of maritime isolation (quarantine length)",
+      "Y": "Urban plague mortality rates",
+      "Z": [
+        "Pathogen incubation period",
+        "Vector (flea/rat) lifespan without host"
+      ]
+    },
+    "gold_rationale": "This scenario exemplifies the S5 Mechanism + Dose-Response trap because it links a specific biological mechanism (the 10-14 day incubation and infectious period of the plague) with a clear dose-response gradient (longer isolation periods leading to lower mortality). The claim is logically sound because as the 'dose' of the intervention (days of isolation) increases to surpass the biological threshold of the mechanism (the pathogen's life cycle), the 'response' (reduction in death) follows a predictable, non-linear improvement. Because the mechanism is well-understood and the gradient is historically observable, the causal link is considered valid at Pearl Level 1.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Did the implementation of the 40-day quarantine precede the decline in mortality rates, or were these protocols only strictly enforced after the plague had already peaked and natural immunity or local depopulation began to slow the spread?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the quarantine duration was extended specifically before the arrival of infected vessels and exceeded the biological transmission window of 37 days, then the claim is supported as the isolation effectively broke the chain of infection.",
+      "answer_if_condition_2": "If the lower mortality rates were observed in cities that also possessed superior sanitation or lower rat population densities, then the isolation duration may be a proxy for general administrative competence rather than the sole causal driver."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated without controlling for the 'pre-existing immunity' variable and the precise timing of enforcement relative to the local epidemic curve. If the quarantine was lengthened only after the most virulent strains had passed, the correlation between duration and lower mortality would be a temporal artifact rather than a causal result.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-S7",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In 18th-century Prussia, Frederick the Great introduced the 'Potato Edict' (X) in the province of Pomerania to mitigate famine, while the neighboring province of Mecklenburg (under different administration) did not implement such a mandate. Historians observe that while agricultural yields (Y) increased in Pomerania following the edict, yields also rose significantly in Mecklenburg during the same period due to a general shift in regional climatic stability (Z).",
+    "claim": "The implementation of the Potato Edict (X) was the primary cause for the increase in agricultural stability and yields (Y) in Pomerania.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "S7",
+      "subtype": "Difference-in-Differences"
+    },
+    "variables": {
+      "X": "The 1756 Potato Edict (mandated cultivation)",
+      "Y": "Increase in agricultural yields and food security",
+      "Z": [
+        "Regional climatic improvement",
+        "General agricultural technological diffusion"
+      ]
+    },
+    "gold_rationale": "This scenario exemplifies the Difference-in-Differences (DiD) trap because it compares a treatment group (Pomerania) with a control group (Mecklenburg) across time. To validate the causal claim, one must determine if the 'parallel trends' assumption holds; however, the scenario reveals that the control group also experienced a significant increase in the outcome (Y) due to an external factor (Z). Because the increase in yields occurred in both provinces regardless of the edict, the claim that X was the primary cause is likely confounded by the shared trend. A proper DiD analysis would subtract the growth in the control group from the growth in the treatment group to find the true treatment effect, which in this case appears negligible or indistinguishable from the baseline trend.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Did the increase in agricultural yields in Mecklenburg begin at the same time as the implementation of the Potato Edict in Pomerania, or was there a pre-existing upward trend in both regions prior to 1756?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the yield growth in Pomerania significantly exceeded the growth rate in Mecklenburg after accounting for the shared climatic improvements (Z), then the Potato Edict (X) could be considered a contributing cause of the surplus.",
+      "answer_if_condition_2": "If the rate of yield increase in Pomerania was identical to that of Mecklenburg, then the Potato Edict (X) had no marginal causal effect, and the outcome (Y) is entirely attributable to regional climatic stability (Z)."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the provided data lacks a baseline comparison of yield trends prior to the edict. Without establishing whether Pomerania and Mecklenburg followed parallel trends before the intervention, it is impossible to isolate the effect of the mandate from the confounding regional climatic improvements.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-NEW-S8",
+    "bucket": "Bucket-Assignment2-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In the post-WWII reconstruction of Western Europe, the Marshall Plan utilized a strict 'economic distress' index to determine eligibility for supplementary industrial grants, where only nations scoring above a 75.0 threshold received the full stimulus. Countries like Nation A (score 75.1) and Nation B (score 74.9) possessed nearly identical pre-war industrial bases and political stability, yet Nation A received significantly more capital for infrastructure repair. Five years later, Nation A showed a 15% higher GDP growth rate than Nation B.",
+    "claim": "The receipt of supplementary industrial grants directly caused the higher GDP growth rate in Nation A compared to Nation B.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "S8",
+      "subtype": "Regression_Discontinuity"
+    },
+    "variables": {
+      "X": "Receipt of supplementary industrial grants",
+      "Y": "Five-year GDP growth rate",
+      "Z": [
+        "Pre-war industrial capacity",
+        "Political stability",
+        "Geographic location"
+      ]
+    },
+    "gold_rationale": "This scenario represents a Regression Discontinuity Design (RDD) where the treatment (supplementary grants) is assigned based on an arbitrary cutoff (75.0 index score). Because Nation A and Nation B are situated just above and below this threshold, they are statistically comparable in all confounding variables (Z), such as pre-war capacity and stability. Any significant divergence in the outcome (Y) can be attributed to the treatment (X) rather than underlying differences, as the 'assignment' to treatment near the threshold is effectively as good as random. Therefore, the causal claim is supported by the discontinuity at the threshold.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Claude-Generated",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Claude",
+    "validator": "April Yang",
+    "hidden_timestamp": "Did the 15% GDP growth divergence begin to manifest immediately after the grant disbursement, or were there unobserved policy shifts in Nation A that occurred between the grant receipt and the five-year measurement?",
+    "conditional_answers": {
+      "answer_if_valid_rdd": "If the 'economic distress' index was the sole determinant of grant eligibility and no other policies changed at the 75.0 threshold, then the claim is supported as the discontinuity effectively isolates the causal impact of the grants.",
+      "answer_if_confounding_policy": "If the 75.0 threshold was also used to trigger other unrelated benefits, such as trade exemptions or military aid, then the GDP growth cannot be uniquely attributed to the industrial grants alone."
+    },
+    "wise_refusal": "The causal claim cannot be definitively validated without confirming that the 75.0 threshold was not used for other simultaneous interventions. If other treatments were triggered at the same cutoff, the effect of the grants is confounded with those additional variables, violating the exclusion restriction of the Regression Discontinuity Design.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 0.75
+  },
+  {
+    "id": "F1-0003",
+    "bucket": "Bucket-Assignment1-F1F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Among ancient legal traditions that survived to influence modern law (Z), those with written codification (X) are associated with more complex commercial systems (Y). A legal historian argues that written legal codes caused commercial sophistication.",
+    "claim": "Written legal codification in ancient societies caused the development of complex commercial systems.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Survivorship_Bias"
+    },
+    "variables": {
+      "X": "Written legal codification",
+      "Y": "Commercial complexity",
+      "Z": [
+        "Survival of legal tradition to modern era"
+      ]
+    },
+    "gold_rationale": "This correlation may be affected by survivorship bias. Both written codification and commercial complexity may independently increase a legal tradition's probability of surviving and being transmitted to the modern era. Societies with written codes were more likely to have their laws preserved, and commercially complex societies generated more records. The correlation among surviving traditions doesn't establish that codification caused commercial development.",
+    "annotation": {
+      "author": "Mingyang",
+      "num_annotators": 1,
+      "adjudicated": true
+    },
+    "initial_author": "Mingyang",
+    "validator": "April Yang",
+    "final_score": 9.9,
+    "difficulty": "Medium",
+    "hidden_timestamp": "Did the development of complex commercial systems precede the adoption of written legal codes in the societies that survived, or did the codification occur before the commercial expansion?",
+    "conditional_answers": {
+      "answer_if_commercial_complexity_preceded_codification": "If commercial complexity was already established and merely necessitated the documentation of existing customs, then the claim is false as codification was an effect rather than a cause.",
+      "answer_if_codification_was_independent_of_survival_bias": "If we could observe all ancient societies including those whose traditions did not survive, and still found that X preceded Y, the causal claim would be significantly strengthened."
+    },
+    "wise_refusal": "The claim cannot be definitively evaluated because the data is restricted to a non-random subset of history (surviving traditions), creating a selection bias. We lack information on whether written codes existed in societies that failed to develop commercial complexity or if commercial complexity existed in societies that did not codify their laws and subsequently vanished.",
+    "recommendation": "ACCEPT",
+    "detailed_scores": {
+      "scenario_clarity": {
+        "score": 1.0,
+        "justification": "Variables X, Y, and Z are clearly defined, and the historical context provides a solid foundation for a causal claim."
+      },
+      "hidden_question_quality": {
+        "score": 0.9,
+        "justification": "The question correctly identifies the temporal ambiguity and the selection bias inherent in the 'surviving' subset."
+      },
+      "conditional_answer_a": {
+        "score": 1.5,
+        "justification": "Logically sound; it correctly identifies that if Y preceded X, the causal direction is reversed."
+      },
+      "conditional_answer_b": {
+        "score": 1.5,
+        "justification": "Effectively addresses the selection bias by suggesting a counterfactual where the full population of societies is observed."
+      },
+      "wise_refusal_quality": {
+        "score": 2.0,
+        "justification": "Follows the template perfectly and explains the selection bias (survivorship) clearly."
+      },
+      "difficulty_calibration": {
+        "score": 1.0,
+        "justification": "Medium is appropriate as it requires recognizing that the sample (Z) is conditioned on the outcome of the variables."
+      },
+      "final_label": {
+        "score": 1.0,
+        "justification": "The label 'NO' is correct for an L1 Wolf case involving a selection bias trap."
+      },
+      "trap_type": {
+        "score": 1.0,
+        "justification": "Correctly identifies Survivorship Bias (Selection), which is a classic L1 reasoning trap."
+      }
+    },
+    "overall_assessment": "This is a high-quality case that perfectly illustrates survivorship bias in historical data. The variables are well-isolated and the reasoning is logically consistent across all sections.",
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.9
+  }
+]
