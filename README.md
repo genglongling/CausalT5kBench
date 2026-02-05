@@ -10,7 +10,25 @@ CausalT5K is a comprehensive benchmark dataset designed to evaluate and diagnose
 
 ## Dataset Structure
 
-The dataset contains over 5,000 causal reasoning cases organized across multiple dimensions:
+The dataset contains over 6,000 causal reasoning cases organized across multiple dimensions:
+
+### Dataset Summary by Domain
+
+The dataset is organized into 10 main domains (D1-D10) with the following Pearl level distribution:
+
+| # | Domain | Pearl Levels | Cases |
+|---|--------|--------------|-------|
+| 1 | Daily Life (D1) | L1: 131, L2: 558, L3: 221 | 910 |
+| 2 | History (D2) | L1: 37, L2: 222, L3: 111 | 370 |
+| 3 | Markets & Finance (D3) | L1: 88, L2: 349, L3: 183 | 635 |
+| 4 | Medicine & Health (D4) | L1: 180, L2: 1001, L3: 341 | 1522 |
+| 5 | Economics (D5) | L1: 119, L2: 568, L3: 233 | 920 |
+| 6 | Environment & Climate (D6) | L1: 14, L2: 251, L3: 26 | 292 |
+| 7 | Law & Ethics (D7) | L1: 113, L2: 346, L3: 125 | 584 |
+| 8 | AI & Technology (D8) | L1: 61, L2: 368, L3: 186 | 615 |
+| 9 | Sports & Performance (D9) | L1: 70, L2: 322, L3: 153 | 545 |
+| 10 | Social Science (D10) | L1: 68, L2: 303, L3: 121 | 492 |
+| **Grand Total** | | **L1: 881, L2: 4288, L3: 1700** | **6885** |
 
 ### Pearl Hierarchy Levels
 - **L1 (Association)**: Observational data and correlations
@@ -198,48 +216,16 @@ The following table summarizes the dataset quality scores organized by domain:
 
 | Domain | Total Case Numbers | Case ID Range | Initial Author | Validator | Rule-based Score | Score from Other | LLM Score | Final Score |
 |--------|-------------------|---------------|----------------|-----------|------------------|------------------|-----------|-------------|
-| AI & Tech | 200 | T3-BucketLarge-I-L1-001-T3-BucketLarge-I-L3-060 | Alessandro Balzi, Arya Marwaha | Alessandro Balzi | 3.00 | N/A | 2.00 | 2.21 |
-| Agriculture | 1 | T3-BucketD-0165 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Arts | 9 | T3-BucketD-0013-T3-BucketD-0164 | Samantha Afra van Rijs, Yuqiao Zeng | Manolo Alvarez, Samantha Afra van Rijs | 4.50 | 0.85 | 5.25 | 4.17 |
-| Business | 48 | T3-BucketD-0006-T3-BucketD-0169 | Samantha Afra van Rijs, Yuqiao Zeng | Manolo Alvarez, Samantha Afra van Rijs | 4.50 | 0.85 | 5.25 | 4.17 |
-| Climate | 4 | T3-BucketH-885-T3-BucketH-887 |  |  | N/A | N/A | N/A | N/A |
-| Climate Science | 1 | T3-BucketH-884 |  |  | N/A | N/A | N/A | N/A |
-| Computer Science | 2 | T3-BucketD-0022-T3-BucketD-0037 | Yuqiao Zeng | Samantha Afra van Rijs | 5.00 | 0.85 | 6.00 | 4.51 |
-| Criminal Justice | 3 | T3-BucketD-0108-T3-BucketD-0136 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| D10 (Social Science) | 81 | T3-BucketJ-01-T3-BucketJ-81 | Daphne Barretto, Sreya Vangara | Daphne Barretto | 3.00 | N/A | 3.00 | 2.57 |
-| D2 | 79 | T3-F.1-T3-F.9 | April Yang | Sameer Vijay | 2.00 | 0.70 | 1.50 | 2.19 |
-| D8 - AI Safety & Alignment | 400 | T3-BucketI-L1-001-T3-BucketI-L3-120 | Fernando Torres Navarrete | Alanood | 4.00 | N/A | 4.50 | 3.61 |
-| D9 | 339 | T3-BucketLarge-D-9.110-T3-BucketLarge-D9-9.542 | Manolo Alvarez, Matt Wolfman, Yuqiao Zeng | Matt Wolfman, Yuqiao Zeng | 4.33 | 0.86 | 5.00 | 4.07 |
-| Daily Life | 910 | T3-A2-001-T3-BucketLarge-E-2.125 | Arya Marwaha, Chenyang Dai, Chinmay Pimpalkhare... | Arya Marwaha, Chenyang Dai, Chinmay Pimpalkhare... | 4.00 | 0.68 | 4.30 | 3.49 |
-| Economics | 507 | T1-BucketSmall-A-5.372-T3-BucketLarge-B-8.00 | Chris Philip James Pearce, Mason Hu, Samantha Afra van Rijs... | Chris Philip James Pearce, Mason Hu, Samantha Afra van Rijs... | 3.75 | 0.74 | 4.00 | 3.44 |
-| Education | 37 | T3-BucketD-0011-T3-BucketD-0164 | Samantha Afra van Rijs, Yuqiao Zeng | Manolo Alvarez, Samantha Afra van Rijs | 4.50 | 0.85 | 5.25 | 4.17 |
-| Employment | 2 | T3-BucketD-0061-T3-BucketD-0075 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Environment | 286 | T3-BucketD-0148-T3-BucketH-999 | Samantha Afra van Rijs, Veljko Skarich | NOT ASSIGNED, Samantha Afra van Rijs, Veljko Skarich | 3.00 | 0.41 | 3.00 | 2.40 |
-| Environmental Science | 1 | T3-BucketD-0097 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Epidemiology | 1 | T3-BucketD-0091 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Ethics | 2 | T3-BucketD-0143-T3-BucketD-0157 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Finance | 11 | T3-BucketD-0007-T3-BucketD-0115 | Samantha Afra van Rijs, Yuqiao Zeng | Manolo Alvarez, Samantha Afra van Rijs | 4.50 | 0.85 | 5.25 | 4.17 |
-| Health | 3 | T3-BucketD-0019-T3-BucketD-0047 | Samantha Afra van Rijs, Yuqiao Zeng | Manolo Alvarez, Samantha Afra van Rijs | 4.50 | 0.85 | 5.25 | 4.17 |
-| Healthcare | 25 | T3-BucketD-0056-T3-BucketD-0152 | Samantha Afra van Rijs | Manolo Alvarez, Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| History | 291 | T3-BucketF-0001-T3-F.99 | April Yang, Mingyang Wang, Sameer Vijay | Mingyang Wang, Sameer Vijay | 3.00 | 0.87 | 3.50 | 3.29 |
-| Law | 4 | T3-BucketD-0086-T3-BucketD-0172 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Law & Ethics | 577 | T3-BucketLarge-C-7.1-NC1-T3-BucketLarge-C-7171 | Andy Ouyang, Matthew John Hayes | Andy Ouyang, Matthew John Hayes | 5.00 | 0.91 | 6.00 | 4.62 |
-| Legal | 1 | T3-BucketD-0109 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Markets | 576 | G.2-G.10 | deveen@stanford.edu, julih@stanford.edu, lgren007@stanford.edu... | Deveen Manitha Harischandra, deveen@stanford.edu, julih@stanford.edu... | N/A | 0.75 | N/A | 3.76 |
-| Media | 1 | T3-BucketD-0053 | Samantha Afra van Rijs | Manolo Alvarez | 4.00 | N/A | 4.50 | 3.61 |
-| Medicine | 1477 | T3-BucketA-0001-T3-BucketLarge-J-A2.1.210 | 4, A2, Ankit Rai... | Ankit Rai, Daphne Barretto, Gia Ancone... | 3.80 | 0.91 | 4.10 | 3.75 |
-| Military | 1 | T3-BucketD-0149 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Philosophy | 1 | T3-BucketD-0154 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Physics | 2 | T3-BucketD-0139-T3-BucketD-0161 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Psychology | 22 | T3-BucketD-0052-T3-BucketD-0166 | Samantha Afra van Rijs | Manolo Alvarez, Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Public Health | 16 | T3-BucketD-0047-T3-BucketD-0173 | Samantha Afra van Rijs | Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Public Policy | 24 | T3-BucketD-0020-T3-BucketD-0166 | Samantha Afra van Rijs, Yuqiao Zeng | Manolo Alvarez, Samantha Afra van Rijs | 4.50 | 0.85 | 5.25 | 4.17 |
-| Science | 1 | T3-BucketD-0018 | Yuqiao Zeng | Samantha Afra van Rijs | 5.00 | 0.85 | 6.00 | 4.51 |
-| Social Science | 325 | T3-BucketD-0062-T3-BucketLarge-J-A2.1.9 | Gia Ancone, Kelvin Christian, Samantha Afra van Rijs... | Gia Ancone, Samantha Afra van Rijs, Sreya Vangara | 3.50 | 0.75 | 3.75 | 3.31 |
-| Sports | 206 | T3-BucketD-0001-T3-BucketLarge-D-f93e44bf | Manolo Alvarez, Matt Wolfman, Samantha Afra van Rijs... | Manolo Alvarez, Samantha Afra van Rijs, Yuqiao Zeng | 4.25 | 0.79 | 4.88 | 3.89 |
-| Technology | 13 | T3-BucketD-0033-T3-BucketD-0174 | Samantha Afra van Rijs, Yuqiao Zeng | Samantha Afra van Rijs | 4.50 | 0.85 | 5.25 | 4.17 |
-| Transportation | 3 | T3-BucketD-0054-T3-BucketD-0158 | Samantha Afra van Rijs | Manolo Alvarez, Samantha Afra van Rijs | 4.00 | N/A | 4.50 | 3.61 |
-| Unknown | 413 | T3-BucketLarge-B-1.10-T3-BucketLarge-B-D5-L3-topup-24 | Atanu Mukherjee, Chris Philip James Pearce | Atanu Mukherjee, Chris Philip James Pearce | 3.00 | 0.92 | 2.50 | 3.13 |
+| Daily Life (D1) | 910 | T3-A2-001-T3-BucketLarge-E-2.125 | Arya Marwaha, Chenyang Dai, Chinmay Pimpalkhare... | Arya Marwaha, Chenyang Dai, Chinmay Pimpalkhare... | 4.00 | 0.68 | 4.30 | 3.49 |
+| History (D2) | 370 | T3-BucketF-0001-T3-F.99 | April Yang, Mingyang Wang, Sameer Vijay | Mingyang Wang, Sameer Vijay | 3.00 | 0.84 | 3.50 | 3.23 |
+| Markets & Finance (D3) | 635 | G.2-G.10 | Samantha Afra van Rijs, Yuqiao Zeng, deveen@stanford.edu... | Deveen Manitha Harischandra, Manolo Alvarez, Samantha Afra van Rijs... | 4.50 | 0.77 | 5.25 | 4.03 |
+| Medicine & Health (D4) | 1522 | T3-BucketA-0001-T3-BucketLarge-J-A2.1.210 | 4, A2, Ankit Rai... | Ankit Rai, Daphne Barretto, Gia Ancone... | 4.00 | 0.91 | 4.42 | 3.90 |
+| Economics (D5) | 507 | T1-BucketSmall-A-5.372-T3-BucketLarge-B-8.00 | Chris Philip James Pearce, Mason Hu, Samantha Afra van Rijs... | Chris Philip James Pearce, Mason Hu, Samantha Afra van Rijs... | 3.75 | 0.74 | 4.00 | 3.44 |
+| Environment & Climate (D6) | 292 | T3-BucketD-0097-T3-BucketH-999 | Samantha Afra van Rijs, Veljko Skarich | NOT ASSIGNED, Samantha Afra van Rijs, Veljko Skarich | 3.00 | 0.41 | 3.00 | 2.40 |
+| Law & Ethics (D7) | 584 | T3-BucketD-0086-T3-BucketLarge-C-7171 | Andy Ouyang, Matthew John Hayes, Samantha Afra van Rijs | Andy Ouyang, Matthew John Hayes, Samantha Afra van Rijs | 4.67 | 0.91 | 5.50 | 4.39 |
+| AI & Technology (D8) | 615 | T3-BucketD-0022-T3-BucketLarge-I-L3-060 | Alessandro Balzi, Arya Marwaha, Fernando Torres Navarrete... | Alanood, Alessandro Balzi, Samantha Afra van Rijs | 4.00 | 0.85 | 4.25 | 3.76 |
+| Sports & Performance (D9) | 545 | T3-BucketD-0001-T3-BucketLarge-D9-9.542 | Manolo Alvarez, Matt Wolfman, Samantha Afra van Rijs... | Manolo Alvarez, Matt Wolfman, Samantha Afra van Rijs... | 4.25 | 0.84 | 4.88 | 3.97 |
+| Social Science (D10) | 492 | T3-BucketD-0011-T3-BucketLarge-J-A2.1.9 | Daphne Barretto, Gia Ancone, Kelvin Christian... | Daphne Barretto, Gia Ancone, Manolo Alvarez... | 4.00 | 0.75 | 4.50 | 3.66 |
 
 **Score Definitions:**
 - **Rule-based Score**: Average `final_score` from `assignment2.csv` (0-5 scale) for initial authors in this domain
