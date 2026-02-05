@@ -1,0 +1,4476 @@
+[
+  {
+    "id": "T3-BucketH-0001",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Conservation",
+    "scenario": "In areas where the Oriental stork has been reintroduced, surveys show an increase in local biodiversity.",
+    "claim": "The reintroduction of the Oriental stork caused an increase in local biodiversity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Oriental stork population increase",
+      "Y": "Local biodiversity levels",
+      "Z": [
+        "Organic agricultural practices"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Areas where Oriental storks were reintroduced also tended to adopt organic agricultural practices that independently increase biodiversity. Because these practices influence both stork presence and biodiversity levels, the observed association cannot be attributed to the reintroduction itself.",
+    "key_insight": "Apparent biodiversity gains may reflect pre-existing agricultural practices rather than effects of species reintroduction.",
+    "hidden_timestamp": "Did changes in farming practices occur before or after the stork reintroduction?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Areas with storks exhibit higher biodiversity."
+    },
+    "wise_refusal": "The causal effect of stork reintroduction cannot be isolated without controlling for concurrent agricultural interventions.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0002",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Conservation",
+    "scenario": "Participants in environmental education programs showed higher engagement in conservation activities.",
+    "claim": "Participation in environmental education programs increases conservation behavior.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Environmental education participation",
+      "Y": "Conservation behavior",
+      "Z": [
+        "Pre-existing environmental attitudes"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Individuals who choose to participate in environmental education programs often already hold strong pro-environmental attitudes. These prior attitudes increase both participation and conservation behavior, creating a selection effect that explains the observed association without requiring a causal effect of the program.",
+    "key_insight": "Observed effects may arise from self-selection rather than educational impact.",
+    "hidden_timestamp": "Were participants environmentally motivated before joining the education programs?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Education participants demonstrate stronger conservation behavior."
+    },
+    "wise_refusal": "Without random assignment or baseline attitude data, the causal impact of education programs cannot be established.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0003",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Wildlife Management",
+    "scenario": "The extinction of the Japanese wolf was followed by rapid increases in ungulate populations across Japan.",
+    "claim": "The extinction of the Japanese wolf caused the increase in sika deer and wild boar populations.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Multiple independent causes / omitted variable"
+    },
+    "variables": {
+      "X": "Extinction of Japanese wolf",
+      "Y": "Increase in sika deer and wild boar populations",
+      "Z": [
+        "Abandoned agricultural fields"
+      ]
+    },
+    "causal_structure": "X -> Y and Z -> Y",
+    "gold_rationale": "Although ungulate populations increased after the extinction of the Japanese wolf, land-use changes such as rural depopulation and abandoned fields also expanded available habitat. These changes can raise ungulate populations independently of predator loss, so the increase cannot be causally attributed to wolf extinction alone.",
+    "key_insight": "Ecological outcomes often result from multiple interacting causes rather than a single missing predator.",
+    "hidden_timestamp": "Did ungulate populations begin increasing before significant rural depopulation and land abandonment?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Ungulate populations rose after wolf extinction."
+    },
+    "wise_refusal": "The increase in ungulate populations cannot be causally attributed to wolf extinction alone without disentangling land-use changes.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0004",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Environmental Health",
+    "scenario": "Populations exposed to higher long-term levels of PM2.5 show higher prevalence of depression.",
+    "claim": "Long-term exposure to PM2.5 causes higher rates of depression.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Long-term PM2.5 exposure",
+      "Y": "Prevalence of depression",
+      "Z": [
+        "Socioeconomic status"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Populations with higher long-term PM2.5 exposure often live in areas with greater socioeconomic disadvantage. Socioeconomic factors can independently increase both pollution exposure and depression risk, making it unclear whether pollution itself is the causal driver.",
+    "key_insight": "Health associations may reflect shared socioeconomic drivers rather than direct causal effects.",
+    "hidden_timestamp": "Did socioeconomic disadvantage precede both higher pollution exposure and higher depression rates?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Higher PM2.5 exposure is associated with higher depression prevalence."
+    },
+    "wise_refusal": "This association does not establish causality because socioeconomic and urban factors may independently influence both pollution exposure and depression.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0005",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Species Introduction",
+    "scenario": "Introduced species establish more successfully in regions with high ecosystem productivity.",
+    "claim": "Introducing species into an ecosystem increases their likelihood of successful establishment.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Species introduction",
+      "Y": "Establishment success",
+      "Z": [
+        "Habitat quality",
+        "Human management intensity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Introduced species are more likely to be released into productive, well-managed habitats that already support high establishment success. Habitat quality and management intensity therefore influence both where introductions occur and whether species establish successfully.",
+    "key_insight": "Observed success may reflect where species are introduced rather than causal effects of introduction.",
+    "hidden_timestamp": "Were productive habitats selected before introductions occurred?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Introductions are associated with higher establishment success."
+    },
+    "wise_refusal": "Establishment success cannot be attributed to the introduction itself because site quality may drive both.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0006",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Risk Management",
+    "scenario": "After dams reduce frequent flooding, development intensifies in floodplains. When rare large floods occur, accumulated exposure leads to higher damages, and rebuilding/continued development sustains or amplifies exposure over time.",
+    "claim": "Building dams reduces long-term flood damage by protecting downstream areas.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Dam-based flood protection",
+      "Y": "Long-term flood damage",
+      "Z": [
+        "Increased floodplain development"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> Z",
+    "gold_rationale": "",
+    "key_insight": "Partial protection changes behavior and land use; increased exposure raises future losses, and post-flood rebuilding can reinforce exposure, creating a long-run risk compensation feedback.",
+    "hidden_timestamp": "Did development accelerate after protection reduced frequent floods, and did major flood losses then lead to rebuilding that sustained or increased floodplain exposure?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Flood damages rose despite flood-control infrastructure."
+    },
+    "wise_refusal": "Causal attribution requires a dynamic exposure model (development + rebuilding) alongside hydrology; otherwise rising damages may reflect induced settlement and accumulated assets rather than infrastructure failure.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0007",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Socio-hydrological Systems",
+    "scenario": "In response to warming, farmers increase groundwater pumping to maintain yields. Over decades, pumping lowers groundwater tables and degrades water quality, reducing irrigation capacity, which then prompts even greater dependence on pumping—accelerating depletion.",
+    "claim": "Climate warming directly causes long-term loss of irrigation capacity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Climate warming",
+      "Y": "Long-term loss of irrigation capacity",
+      "Z": [
+        "Increased groundwater extraction"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> Z",
+    "gold_rationale": "",
+    "key_insight": "Short-term adaptation (more pumping) can create a reinforcing socio-hydrological feedback that worsens long-term water scarcity and erodes resilience.",
+    "hidden_timestamp": "Does increased pumping today reduce irrigation capacity years to decades later, and does declining capacity then increase future pumping?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Warming is associated with declining irrigation capacity, but the decline may be driven by a delayed feedback where adaptation increases pumping, which progressively depletes the aquifer."
+    },
+    "wise_refusal": "Drawing policy conclusions requires a dynamic model (and/or long panel data) that captures delayed feedback between pumping decisions and aquifer response, not just short-term correlations.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0008",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Cryosphere",
+    "scenario": "Thaw damages roads and pipelines; repair activities disturb insulating surfaces, increasing heat penetration and further thaw.",
+    "claim": "Infrastructure stabilization prevents permafrost degradation.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Surface disturbance"
+    },
+    "variables": {
+      "X": "Permafrost thaw",
+      "Y": "Ground instability",
+      "Z": [
+        "Surface disturbance from repairs"
+      ]
+    },
+    "causal_structure": "X -> Y -> Z -> X",
+    "gold_rationale": "Repairs and ground disturbance expose soils, accelerating thaw.",
+    "key_insight": "Reactive fixes can worsen underlying physical processes.",
+    "hidden_timestamp": "Did thaw rates increase following repeated infrastructure repairs?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Infrastructure damage increased in thawing regions."
+    },
+    "wise_refusal": "Short-term stabilization cannot be evaluated without modeling disturbance–thaw coupling.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0009",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Coastal Ecology",
+    "scenario": "Clearing mangroves exposes coastlines to wave energy, accelerating erosion and storm damage that further undermines mangrove regeneration.",
+    "claim": "Mangrove removal increases coastal land availability without long-term risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Coastal protection loss"
+    },
+    "variables": {
+      "X": "Mangrove removal",
+      "Y": "Coastal erosion and storm damage",
+      "Z": [
+        "Wave energy exposure"
+      ]
+    },
+    "causal_structure": "X -> Y -> Z -> Y",
+    "gold_rationale": "Mangrove loss increases erosion and storm damage, which further degrades remaining mangroves.",
+    "key_insight": "Removing natural buffers initiates self-reinforcing coastal degradation.",
+    "hidden_timestamp": "Did erosion and storm impacts intensify after mangrove clearing?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Coastal damage increased following mangrove loss."
+    },
+    "wise_refusal": "Evaluating mangrove removal requires modeling long-term coastal feedbacks, not short-term land gains.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0010",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Landscape Ecology",
+    "scenario": "New roads fragment wildlife habitats, increasing animal crossings and collisions, which justify further road infrastructure.",
+    "claim": "Road expansion improves wild animal safety by reducing congestion.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Infrastructure-induced fragmentation"
+    },
+    "variables": {
+      "X": "Road expansion",
+      "Y": "Wildlife–vehicle collisions",
+      "Z": [
+        "Habitat fragmentation"
+      ]
+    },
+    "causal_structure": "X -> Y -> Z -> Y",
+    "gold_rationale": "Fragmentation of habitat increases wildlife collisions, prompting further road modifications and expansion.",
+    "key_insight": "Infrastructure growth can generate the risks it claims to mitigate.",
+    "hidden_timestamp": "Did animal collision rates rise after habitat fragmentation increased?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Animal collisions increased in road-dense areas."
+    },
+    "wise_refusal": "Animal road safety cannot be evaluated without accounting for induced fragmentation feedbacks.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0011",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Rangeland Management",
+    "scenario": "Heavy grazing reduces plant cover, lowering forage availability and prompting increased grazing pressure.",
+    "claim": "Increasing livestock density maximizes rangeland productivity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Vegetation depletion"
+    },
+    "variables": {
+      "X": "Livestock grazing intensity",
+      "Y": "Rangeland degradation",
+      "Z": [
+        "Vegetation cover loss"
+      ]
+    },
+    "causal_structure": "X -> Y -> Z -> Y",
+    "gold_rationale": "Vegetation loss reduces forage, driving further overgrazing.",
+    "key_insight": "Resource depletion feeds back into exploitation pressure.",
+    "hidden_timestamp": "Did forage decline follow increases in grazing intensity?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Degradation increased with grazing pressure."
+    },
+    "wise_refusal": "Productivity assessments must include vegetation recovery dynamics.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0012",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Mountain Hydrology",
+    "scenario": "Retreating glaciers form unstable lakes whose floods erode glacier fronts, accelerating retreat.",
+    "claim": "Glacier retreat only affects long-term water supply.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Glacial lake instability"
+    },
+    "variables": {
+      "X": "Glacier retreat",
+      "Y": "Outburst flood risk",
+      "Z": [
+        "Proglacial lake expansion"
+      ]
+    },
+    "causal_structure": "X -> Y -> Z -> X",
+    "gold_rationale": "Lake formation from unstable glaciers increases flood risk, destabilizing glaciers further.",
+    "key_insight": "Hydrological hazards reinforce cryospheric loss.",
+    "hidden_timestamp": "Did flood events occur after lake expansion?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Flood risk rose in retreating glacier regions."
+    },
+    "wise_refusal": "Risk attribution requires coupled glacier–lake dynamics.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0013",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Wetland Management",
+    "scenario": "Drained wetlands reduce storage, increasing floods that justify further drainage and levees.",
+    "claim": "Wetland drainage improves flood control.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Hydrological hardening"
+    },
+    "variables": {
+      "X": "Wetland drainage",
+      "Y": "Loss of natural water storage",
+      "Z": [
+        "Flood severity increases"
+      ]
+    },
+    "causal_structure": "X -> Y -> Z -> X",
+    "gold_rationale": "Drainage increases flood peaks, driving more hard infrastructure.",
+    "key_insight": "Removing buffers creates demand for engineered substitutes.",
+    "hidden_timestamp": "Did flood peaks rise after wetland loss?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Flood severity increased."
+    },
+    "wise_refusal": "Flood control assessment must include ecosystem services feedbacks.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0014",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Conservation Policy",
+    "scenario": "Legal protection raises perceived rarity and value of a species, increasing incentives for poaching that undermines protection.",
+    "claim": "Legal protection reduces long-term exploitation.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Scarcity signaling"
+    },
+    "variables": {
+      "X": "Species protection",
+      "Y": "Illegal exploitation",
+      "Z": [
+        "Perceived scarcity"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Protection increases perceived rarity and value, which can stimulate illegal exploitation.",
+    "key_insight": "Scarcity signals can reverse conservation gains.",
+    "hidden_timestamp": "Did illegal harvesting increase after protection was enacted?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Protected populations initially stabilized."
+    },
+    "wise_refusal": "Evaluating protection requires modeling market and behavioral responses to scarcity.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0015",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Conservation Incentives",
+    "scenario": "Compensation encourages compliance initially, but withdrawal leads to rapid behavioral reversal.",
+    "claim": "Compensation programs permanently align incentives with conservation.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Incentive dependence"
+    },
+    "variables": {
+      "X": "Compensation payments",
+      "Y": "Conservation compliance",
+      "Z": [
+        "Behavioral dependence on incentives"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Payments can crowd out intrinsic motivation, increasing reliance on continued compensation.",
+    "key_insight": "Short-term incentives can undermine long-term resilience.",
+    "hidden_timestamp": "Did compliance fall after payments were reduced or stopped?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Compliance increased during payments."
+    },
+    "wise_refusal": "Sustainability cannot be judged without post-incentive dynamics.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0016",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Conservation Markets",
+    "scenario": "Trade bans reduce legal supply, driving up prices and encouraging illegal harvesting.",
+    "claim": "Restricting trade reduces exploitation.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Price rebound"
+    },
+    "variables": {
+      "X": "Trade restriction",
+      "Y": "Illegal harvesting",
+      "Z": [
+        "Price increases"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Supply restriction raises prices, increasing incentives for illegal trade.",
+    "key_insight": "Price feedbacks can overwhelm regulatory intent.",
+    "hidden_timestamp": "Did prices rise before illegal harvesting increased?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Legal trade declined."
+    },
+    "wise_refusal": "Trade impacts must be evaluated across legal and illegal markets.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0017",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Resource Management",
+    "scenario": "More efficient harvesting reduces per-unit impact but increases total extraction effort.",
+    "claim": "Efficiency improvements reduce environmental pressure.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Efficiency rebound"
+    },
+    "variables": {
+      "X": "Technological efficiency",
+      "Y": "Total extraction",
+      "Z": [
+        "Lower operational costs"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Efficiency lowers costs, encouraging expanded effort.",
+    "key_insight": "Efficiency gains can backfire without caps.",
+    "hidden_timestamp": "Did effort expand after efficiency improved?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Per-unit impacts declined."
+    },
+    "wise_refusal": "Total impact must be evaluated, not unit efficiency.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0018",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Conservation Policy",
+    "scenario": "Recovery signals encourage renewed use, undermining conservation.",
+    "claim": "Effective conservation permanently reduces exploitation risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Risk compensation"
+    },
+    "variables": {
+      "X": "Conservation success",
+      "Y": "Resource exploitation",
+      "Z": [
+        "Reduced perceived scarcity"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Perceived recovery lowers vigilance, increasing exploitation that erodes gains.",
+    "key_insight": "Behavior responds to perceived safety.",
+    "hidden_timestamp": "Did exploitation rise after recovery signals?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Population indicators improved."
+    },
+    "wise_refusal": "Behavioral feedbacks must be modeled explicitly.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0019",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Adaptive Management",
+    "scenario": "Interventions create new system responses, prompting escalating management actions.",
+    "claim": "Adaptive management converges toward stable solutions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Management escalation"
+    },
+    "variables": {
+      "X": "Management intervention",
+      "Y": "System instability",
+      "Z": [
+        "Policy complexity"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Each intervention alters system dynamics, requiring further interventions.",
+    "key_insight": "Control efforts can generate perpetual intervention cycles.",
+    "hidden_timestamp": "Did policy complexity increase after successive interventions?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Management activity increased."
+    },
+    "wise_refusal": "Stability cannot be inferred without long-term system modeling.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0020",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Transportation",
+    "scenario": "Observed warming increases VMT across most temperature ranges, increasing transport emissions that feed back into climate change.",
+    "claim": "Rising temperatures reduce transportation emissions by discouraging travel.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Behavioral amplification"
+    },
+    "variables": {
+      "X": "Ambient temperature",
+      "Y": "Greenhouse gas emissions",
+      "Z": [
+        "Vehicle miles traveled"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Warmer temperatures increase vehicle miles traveled, raising emissions that further contribute to warming.",
+    "key_insight": "Human mobility responds positively to warming, reinforcing climate change.",
+    "hidden_timestamp": "Did increases in VMT follow temperature anomalies before emissions rose?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Transportation use increased during warmer periods."
+    },
+    "wise_refusal": "Causal attribution requires modeling emissions feedback, not just travel demand.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0021",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Urban Mobility",
+    "scenario": "Higher temperatures increase public transit demand, contributing additional emissions that reinforce warming.",
+    "claim": "Public transit use offsets warming-related emissions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Demand amplification"
+    },
+    "variables": {
+      "X": "Ambient temperature",
+      "Y": "Transport emissions",
+      "Z": [
+        "Public transit trips"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Warmer temperatures increase public transit trips, adding to total transport emissions rather than offsetting them.",
+    "key_insight": "Not all low-carbon modes eliminate feedback risk.",
+    "hidden_timestamp": "Did transit ridership rise during warming months before emissions increased?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Public transit usage rose with temperature."
+    },
+    "wise_refusal": "Net emissions effects must be evaluated dynamically.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0022",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Seasonal Dynamics",
+    "scenario": "Future warming raises transportation demand primarily in cooler months, reinforcing emissions growth.",
+    "claim": "Climate warming reduces transportation demand in cooler seasons.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Seasonal rebound"
+    },
+    "variables": {
+      "X": "Seasonal warming",
+      "Y": "Cumulative emissions",
+      "Z": [
+        "Cold-season mobility increase"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Warming increases mobility most strongly in historically cooler months, amplifying emissions.",
+    "key_insight": "Climate impacts depend on baseline conditions.",
+    "hidden_timestamp": "Did cold-season travel rise following warming trends?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Annual travel totals increased."
+    },
+    "wise_refusal": "Seasonal structure must be modeled to assess feedbacks.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0023",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Spatial Inequality",
+    "scenario": "High-VMT states see the largest warming-induced increases in travel, amplifying emissions.",
+    "claim": "Warming impacts transportation evenly across regions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Baseline amplification"
+    },
+    "variables": {
+      "X": "Regional warming",
+      "Y": "Regional emissions growth",
+      "Z": [
+        "High baseline mobility"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Regions with high baseline mobility experience the largest absolute increases, reinforcing emissions.",
+    "key_insight": "Feedback strength depends on initial conditions.",
+    "hidden_timestamp": "Did high-mobility regions amplify emissions faster after warming?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Mobility increased nationwide."
+    },
+    "wise_refusal": "Regional baselines must be accounted for.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0024",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Climate Modeling",
+    "scenario": "Omitting mobility feedback causes systematic underestimation of climate forcing.",
+    "claim": "Climate models fully capture anthropogenic feedbacks.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Model omission"
+    },
+    "variables": {
+      "X": "Climate warming",
+      "Y": "Projected climate risk",
+      "Z": [
+        "Behavioral feedback omission"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Linear models omit dynamic behavior-climate feedback, underestimating future warming.",
+    "key_insight": "Model structure shapes perceived risk.",
+    "hidden_timestamp": "Were feedbacks excluded before projections were finalized?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Model projections appear conservative."
+    },
+    "wise_refusal": "Validity requires dynamic human–climate coupling.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0025",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Human–Earth Systems",
+    "scenario": "Transportation feedback interacts with energy, health, and economic responses to warming.",
+    "claim": "Transportation is an isolated climate feedback.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Cross-sector amplification"
+    },
+    "variables": {
+      "X": "Climate warming",
+      "Y": "Aggregate anthropogenic forcing",
+      "Z": [
+        "Multiple behavior feedbacks"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Transportation feedbacks likely compound with other human behavioral responses to warming.",
+    "key_insight": "Single-sector feedbacks accumulate system-wide.",
+    "hidden_timestamp": "Did multiple behaviors respond after warming increased?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Climate impacts appear sector-specific."
+    },
+    "wise_refusal": "System-level modeling is required.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0026",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Human Adaptation",
+    "scenario": "Assumed adaptation may fail to counteract increased mobility demand.",
+    "claim": "Human adaptation will neutralize warming impacts on emissions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Adaptive uncertainty"
+    },
+    "variables": {
+      "X": "Climate warming",
+      "Y": "Transport emissions",
+      "Z": [
+        "Uncertain adaptation responses"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "No historical evidence shows adaptation reducing mobility-warming feedback.",
+    "key_insight": "Assumed adaptation is not evidence.",
+    "hidden_timestamp": "Did adaptation precede emission stabilization?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Mobility increased historically."
+    },
+    "wise_refusal": "Adaptation claims require empirical validation.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0027",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Resource Efficiency",
+    "scenario": "Energy efficiency gains spill over into emissions reductions, improving environmental efficiency, which reinforces green transition dynamics.",
+    "claim": "Improving energy efficiency has no dynamic effect on environmental efficiency.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Cross-efficiency spillover"
+    },
+    "variables": {
+      "X": "Energy efficiency",
+      "Y": "Environmental efficiency",
+      "Z": [
+        "Technological and operational spillovers"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Energy efficiency improvements feed back positively into environmental efficiency over time.",
+    "key_insight": "Efficiency measures interact dynamically rather than independently.",
+    "hidden_timestamp": "Did improvements in energy efficiency precede gains in environmental efficiency?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Both efficiencies improved concurrently."
+    },
+    "wise_refusal": "Causal interpretation requires modeling lagged spillovers, not static correlations.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0028",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Energy Policy",
+    "scenario": "Cheaper or cleaner energy leads to increased consumption, offsetting efficiency gains.",
+    "claim": "Renewable energy adoption always improves energy efficiency.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Rebound effect"
+    },
+    "variables": {
+      "X": "Renewable energy use",
+      "Y": "Energy efficiency",
+      "Z": [
+        "Increased energy demand"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Renewable energy use induces rebound effects that reduce energy efficiency.",
+    "key_insight": "Efficiency gains can stimulate compensating demand.",
+    "hidden_timestamp": "Did energy use rise after renewable deployment?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Renewable share increased."
+    },
+    "wise_refusal": "Ignoring rebound leads to overestimating efficiency benefits.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0029",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Eco-Innovation",
+    "scenario": "Innovation adoption improves efficiency, encouraging further innovation and efficiency gains.",
+    "claim": "Eco-innovation has only one-off effects on efficiency.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Innovation reinforcement"
+    },
+    "variables": {
+      "X": "Eco-innovation",
+      "Y": "Energy efficiency",
+      "Z": [
+        "Learning-by-doing"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Eco-innovation improves energy efficiency, which reinforces future innovation adoption.",
+    "key_insight": "Innovation and efficiency co-evolve.",
+    "hidden_timestamp": "Did efficiency gains follow innovation adoption?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Innovation scores increased."
+    },
+    "wise_refusal": "Static innovation metrics miss dynamic reinforcement.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0030",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Land Use Change",
+    "scenario": "As forests decline, scarcity perception increases short-term harvesting, worsening depletion.",
+    "claim": "Resource scarcity naturally triggers conservation behavior.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Scarcity perception"
+    },
+    "variables": {
+      "X": "Resource decline",
+      "Y": "Extraction pressure",
+      "Z": [
+        "Perceived scarcity"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Perceived scarcity can incentivize intensified extraction rather than conservation.",
+    "key_insight": "Scarcity signals can accelerate degradation.",
+    "hidden_timestamp": "Did extraction intensify after scarcity became salient?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Resources became scarcer."
+    },
+    "wise_refusal": "Behavioral responses to scarcity must be modeled dynamically.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0031",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Perception",
+    "scenario": "Incremental forest loss becomes normalized, postponing intervention until damage is severe.",
+    "claim": "Gradual environmental change is easily detected by local populations.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Shifting baseline"
+    },
+    "variables": {
+      "X": "Gradual environmental degradation",
+      "Y": "Delayed conservation response",
+      "Z": [
+        "Shifted environmental baseline"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Slow degradation resets perceived norms, delaying corrective action.",
+    "key_insight": "Perception adapts faster than ecosystems recover.",
+    "hidden_timestamp": "Did recognition lag behind degradation?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Forest cover declined steadily."
+    },
+    "wise_refusal": "Detection delay undermines simple cause–effect claims.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0032",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Knowledge Systems",
+    "scenario": "Agricultural intensification disrupts practices that transmit environmental knowledge.",
+    "claim": "Land-use change does not affect environmental knowledge.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Traditional knowledge loss"
+    },
+    "variables": {
+      "X": "Land-use change",
+      "Y": "Adaptive capacity",
+      "Z": [
+        "Loss of traditional ecological knowledge"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Land-use change erodes traditional knowledge, impairing adaptive responses.",
+    "key_insight": "Knowledge loss reinforces maladaptation.",
+    "hidden_timestamp": "Did adaptation decline after knowledge transmission weakened?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Practices changed."
+    },
+    "wise_refusal": "Adaptation depends on knowledge continuity.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0033",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Learning Dynamics",
+    "scenario": "Short-term yield gains are misattributed to sustainable practices, encouraging degradation.",
+    "claim": "Environmental feedback always improves future decisions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Mislearning"
+    },
+    "variables": {
+      "X": "Environmental outcome",
+      "Y": "Decision quality",
+      "Z": [
+        "Misattributed causation"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Incorrect attribution of causes leads to maladaptive learning.",
+    "key_insight": "Learning can reinforce error.",
+    "hidden_timestamp": "Were outcomes misinterpreted before practices changed?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Outcomes appeared positive."
+    },
+    "wise_refusal": "Learning quality matters as much as learning speed.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0034",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Social Norms",
+    "scenario": "Communities continue legacy practices despite declining ecosystem services.",
+    "claim": "Social norms adapt quickly to environmental change.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Norm reinforcement"
+    },
+    "variables": {
+      "X": "Environmental degradation",
+      "Y": "Unsustainable practices",
+      "Z": [
+        "Entrenched social norms"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Norms can lag behind ecological reality, reinforcing harmful practices.",
+    "key_insight": "Norm inertia sustains degradation.",
+    "hidden_timestamp": "Did norms persist after conditions worsened?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Practices continued."
+    },
+    "wise_refusal": "Norm change cannot be assumed.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0035",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Governance",
+    "scenario": "Policy failure leads to incremental adjustment rather than reform, sustaining degradation.",
+    "claim": "Institutions automatically correct ineffective policies.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Institutional lock-in"
+    },
+    "variables": {
+      "X": "Policy intervention",
+      "Y": "Environmental outcomes",
+      "Z": [
+        "Institutional inertia"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Institutions may reinforce failing policies through path dependence.",
+    "key_insight": "Governance can amplify failure.",
+    "hidden_timestamp": "Did policies persist despite poor outcomes?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Policies remained in place."
+    },
+    "wise_refusal": "Institutional dynamics must be modeled.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0036",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Attribution",
+    "scenario": "Farmers misattribute soil decline to weather rather than land use, reinforcing harmful practices.",
+    "claim": "Environmental decline is accurately attributed to its true causes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Misattribution"
+    },
+    "variables": {
+      "X": "Environmental degradation",
+      "Y": "Maladaptive practices",
+      "Z": [
+        "Misattributed causation"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Incorrect attribution leads to maladaptive responses that worsen degradation.",
+    "key_insight": "Wrong explanations create reinforcing failure.",
+    "hidden_timestamp": "Did practice changes follow incorrect attribution?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Soil quality declined."
+    },
+    "wise_refusal": "Causal claims require understanding attribution, not just outcomes.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0037",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Salience",
+    "scenario": "Frequent droughts become background noise, delaying adaptation.",
+    "claim": "Environmental signals remain salient over time.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Salience decay"
+    },
+    "variables": {
+      "X": "Repeated degradation events",
+      "Y": "Behavioral response",
+      "Z": [
+        "Signal fatigue"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Repeated exposure reduces salience, weakening response.",
+    "key_insight": "Attention is a finite resource.",
+    "hidden_timestamp": "Did response weaken after repeated exposure?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Droughts recurred."
+    },
+    "wise_refusal": "Salience decay must be modeled explicitly.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0038",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Temporal Perception",
+    "scenario": "Slow erosion is deprioritized until damage becomes severe.",
+    "claim": "Future environmental losses drive present action.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Temporal discounting"
+    },
+    "variables": {
+      "X": "Long-term degradation risk",
+      "Y": "Delayed mitigation",
+      "Z": [
+        "Temporal discounting"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Discounting delays action, worsening long-term outcomes.",
+    "key_insight": "Time perception shapes feedback strength.",
+    "hidden_timestamp": "Did action lag behind early warnings?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Risk increased over time."
+    },
+    "wise_refusal": "Time preferences must be modeled.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0039",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Loss Perception",
+    "scenario": "Gradual forest loss becomes accepted as inevitable.",
+    "claim": "Loss accumulation increases urgency.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Loss normalization"
+    },
+    "variables": {
+      "X": "Cumulative loss",
+      "Y": "Reduced intervention",
+      "Z": [
+        "Loss normalization"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Accumulated losses become normalized, reducing urgency.",
+    "key_insight": "Normalization erodes motivation.",
+    "hidden_timestamp": "Did intervention decline as losses accumulated?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Losses accumulated."
+    },
+    "wise_refusal": "Behavioral baselines matter.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0040",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Awareness",
+    "scenario": "Repeated messaging leads to disengagement rather than action.",
+    "claim": "Raising awareness always increases action.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Awareness saturation"
+    },
+    "variables": {
+      "X": "Awareness campaigns",
+      "Y": "Protective action",
+      "Z": [
+        "Cognitive overload"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Awareness saturation leads to disengagement.",
+    "key_insight": "Information has diminishing returns.",
+    "hidden_timestamp": "Did action plateau after campaigns intensified?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Awareness increased."
+    },
+    "wise_refusal": "Information effects are nonlinear.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0041",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Signal Detection",
+    "scenario": "Year-to-year variability hides long-term decline.",
+    "claim": "Environmental signals are clearly interpreted.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Noise masking"
+    },
+    "variables": {
+      "X": "Environmental variability",
+      "Y": "Delayed response",
+      "Z": [
+        "Signal-to-noise reduction"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Background variability masks signals, delaying response.",
+    "key_insight": "Noise suppresses feedback recognition.",
+    "hidden_timestamp": "Did recognition lag behind trend emergence?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Variability increased."
+    },
+    "wise_refusal": "Trend detection is required.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0042",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Expectation Formation",
+    "scenario": "Farmers expect rainfall to revert, delaying crop change.",
+    "claim": "Expectations adjust rapidly to new conditions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Expectation anchoring"
+    },
+    "variables": {
+      "X": "Environmental change",
+      "Y": "Adaptive delay",
+      "Z": [
+        "Anchored expectations"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Anchored expectations delay adaptation.",
+    "key_insight": "Expectations mediate feedback strength.",
+    "hidden_timestamp": "Did expectations persist after conditions changed?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Conditions changed."
+    },
+    "wise_refusal": "Expectation dynamics matter.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0043",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Social Learning",
+    "scenario": "Farmers copy neighbors despite declining yields.",
+    "claim": "Individuals independently adapt to environmental change.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Conformist imitation"
+    },
+    "variables": {
+      "X": "Observed practices",
+      "Y": "Practice persistence",
+      "Z": [
+        "Conformist learning"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Imitation reinforces dominant practices even when maladaptive.",
+    "key_insight": "Social learning can reinforce failure.",
+    "hidden_timestamp": "Did imitation increase before persistence?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Practices clustered."
+    },
+    "wise_refusal": "Individual rationality is insufficient.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0044",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Coordination",
+    "scenario": "Shared resource declines while coordination stalls.",
+    "claim": "Collective action emerges when needed.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Collective inertia"
+    },
+    "variables": {
+      "X": "Environmental stress",
+      "Y": "Delayed collective action",
+      "Z": [
+        "Coordination costs"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Coordination failure delays response, worsening conditions.",
+    "key_insight": "Coordination is endogenous.",
+    "hidden_timestamp": "Did stress rise before coordination emerged?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Stress increased."
+    },
+    "wise_refusal": "Collective dynamics must be modeled.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0045",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Norm Evolution",
+    "scenario": "Customary land use persists despite declining productivity.",
+    "claim": "Norms update with environmental conditions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Norm entrenchment"
+    },
+    "variables": {
+      "X": "Environmental change",
+      "Y": "Practice rigidity",
+      "Z": [
+        "Norm entrenchment"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Norms persist, reinforcing outdated practices.",
+    "key_insight": "Norms lag reality.",
+    "hidden_timestamp": "Did norms persist after change?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Practices remained stable."
+    },
+    "wise_refusal": "Norm inertia must be modeled.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0046",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Double-Loop Learning",
+    "scenario": "Disasters catalyze governance reform.",
+    "claim": "Environmental crises prevent learning.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Transformative learning"
+    },
+    "variables": {
+      "X": "Environmental crisis",
+      "Y": "Practice transformation",
+      "Z": [
+        "Belief revision"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Severe shocks can trigger belief revision and new practices.",
+    "key_insight": "Some feedbacks are corrective.",
+    "hidden_timestamp": "Did beliefs change after crisis?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Crisis occurred."
+    },
+    "wise_refusal": "Transformation is contingent.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0047",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Identity",
+    "scenario": "Degraded landscapes weaken attachment.",
+    "claim": "Environmental change does not affect identity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Place identity loss"
+    },
+    "variables": {
+      "X": "Landscape change",
+      "Y": "Reduced stewardship",
+      "Z": [
+        "Erosion of place identity"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Identity loss weakens stewardship.",
+    "key_insight": "Identity mediates care.",
+    "hidden_timestamp": "Did stewardship decline after identity weakened?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Landscape changed."
+    },
+    "wise_refusal": "Identity dynamics matter.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0048",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Expectation Coordination",
+    "scenario": "Perceived inevitability accelerates abandonment.",
+    "claim": "Expectations are independent across actors.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Expectation cascades"
+    },
+    "variables": {
+      "X": "Observed decline",
+      "Y": "Collective withdrawal",
+      "Z": [
+        "Expectation cascades"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Shared pessimism reinforces withdrawal.",
+    "key_insight": "Expectations synchronize behavior.",
+    "hidden_timestamp": "Did pessimism spread before withdrawal?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Decline observed."
+    },
+    "wise_refusal": "Expectations are endogenous.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0049",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Policy Feedback",
+    "scenario": "Repeated failures lower participation.",
+    "claim": "Repeated policy failure increases reform pressure.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy fatigue"
+    },
+    "variables": {
+      "X": "Policy failure",
+      "Y": "Reduced engagement",
+      "Z": [
+        "Policy fatigue"
+      ]
+    },
+    "causal_structure": "X -> Z -> Y -> X",
+    "gold_rationale": "Failure fatigue reduces engagement.",
+    "key_insight": "Failure discourages effort.",
+    "hidden_timestamp": "Did engagement decline after failures?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Policies failed."
+    },
+    "wise_refusal": "Fatigue must be modeled.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0050",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Environmental Epidemiology",
+    "scenario": "Children with higher blood lead levels score lower on IQ tests.",
+    "claim": "Child IQ deficits are caused by lead exposure.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Shared driver"
+    },
+    "variables": {
+      "X": "Child blood lead level",
+      "Y": "Child IQ",
+      "Z": [
+        "Maternal IQ"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Maternal IQ predicts both child IQ and residential lead exposure.",
+    "wise_refusal": "Without controlling for maternal IQ, causal attribution to lead is invalid.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0051",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Environmental Epidemiology",
+    "scenario": "Lower-IQ outcomes are observed among children with higher lead exposure.",
+    "claim": "Lead exposure directly reduces cognitive development.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic status"
+    },
+    "variables": {
+      "X": "Child blood lead level",
+      "Y": "Child IQ",
+      "Z": [
+        "Maternal education"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Maternal education affects both housing quality (lead risk) and cognitive stimulation.",
+    "wise_refusal": "Educational background must be accounted for before inferring causality.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0052",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Child Development",
+    "scenario": "Children in low-HOME-score households have higher lead levels and lower IQ.",
+    "claim": "Lead exposure lowers childhood intelligence.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Environmental enrichment"
+    },
+    "variables": {
+      "X": "Blood lead level",
+      "Y": "IQ score",
+      "Z": [
+        "HOME score"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "HOME score influences cognitive development and correlates with lead exposure risk.",
+    "wise_refusal": "Household stimulation is a key confounder.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0053",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Environmental Justice",
+    "scenario": "Minority children exhibit higher lead exposure and lower average IQ scores.",
+    "claim": "Racial IQ differences are caused by lead exposure.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Structural confounding"
+    },
+    "variables": {
+      "X": "Lead exposure",
+      "Y": "IQ score",
+      "Z": [
+        "Residential segregation"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Residential segregation affects both lead exposure and educational opportunity.",
+    "wise_refusal": "Structural variables confound individual-level inference.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0054",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Environmental Epidemiology",
+    "scenario": "Children living near high-voltage power lines show higher leukemia rates. These neighborhoods also differ systematically in income, access to healthcare, housing quality, and environmental co-exposures, all of which affect both exposure likelihood and health outcomes.",
+    "claim": "Higher residential magnetic-field exposure increases childhood leukemia risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Shared driver"
+    },
+    "variables": {
+      "X": "Residential ELF magnetic-field exposure",
+      "Y": "Childhood leukemia incidence",
+      "Z": [
+        "Socioeconomic status"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Socioeconomic status influences both housing near power infrastructure and childhood health outcomes.",
+    "wise_refusal": "Without controlling for socioeconomic context, the observed association cannot be interpreted causally.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0055",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Housing and Health",
+    "scenario": "Homes classified as high-exposure based on wire codes tend to be older. Older housing is also associated with other hazards such as lead paint, poorer insulation, and lower renovation rates, which independently affect child health.",
+    "claim": "Magnetic-field exposure from residential wiring causes leukemia.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Built-environment confounding"
+    },
+    "variables": {
+      "X": "Wiring-related magnetic-field exposure",
+      "Y": "Childhood leukemia risk",
+      "Z": [
+        "Housing age"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Older housing stock affects both wiring configuration (exposure proxy) and indoor environmental risks.",
+    "wise_refusal": "Housing characteristics must be separated from exposure effects.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0056",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Population Dynamics",
+    "scenario": "Families with frequent moves are more likely to have exposure misclassified and may also differ in healthcare access, stress levels, and detection timing of childhood disease.",
+    "claim": "Measured exposure at diagnosis reflects causal exposure history.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Mobility confounding"
+    },
+    "variables": {
+      "X": "Measured residential exposure",
+      "Y": "Leukemia diagnosis",
+      "Z": [
+        "Residential mobility"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Residential mobility affects both exposure misclassification and disease detection.",
+    "wise_refusal": "Exposure histories cannot be assumed static.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0057",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Spatial Epidemiology",
+    "scenario": "Power lines run disproportionately through specific neighborhoods that differ in pollution, traffic exposure, and population density, all of which affect childhood cancer risk.",
+    "claim": "Spatial clustering of leukemia near power lines indicates causation.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Geographic context"
+    },
+    "variables": {
+      "X": "Proximity-based exposure classification",
+      "Y": "Leukemia incidence",
+      "Z": [
+        "Neighborhood characteristics"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Neighborhood factors jointly influence exposure proxies and health risks.",
+    "wise_refusal": "Spatial correlation is not causal evidence.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0058",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Exposure Assessment",
+    "scenario": "Wire codes are used as a stand-in for exposure, but they also encode neighborhood age, infrastructure investment, and zoning history.",
+    "claim": "Wire codes accurately represent magnetic-field exposure.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Proxy confounding"
+    },
+    "variables": {
+      "X": "Wire-code classification",
+      "Y": "Leukemia risk",
+      "Z": [
+        "Housing and neighborhood factors"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Exposure proxies correlate with social and housing variables independent of true exposure.",
+    "wise_refusal": "Proxy variables can introduce confounding.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0059",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Study Participation",
+    "scenario": "Families with higher education and resources are more likely to participate in home measurements and medical follow-ups, altering observed exposure–outcome associations.",
+    "claim": "Study participants represent the target population.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Selection-related confounding"
+    },
+    "variables": {
+      "X": "Observed exposure in study sample",
+      "Y": "Observed disease rates",
+      "Z": [
+        "Participation likelihood"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Participation depends on SES, which also affects exposure and outcomes.",
+    "wise_refusal": "Selection must be causally modeled.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0060",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Healthcare Access",
+    "scenario": "Children in higher-resource neighborhoods are more likely to receive early diagnosis, affecting apparent incidence rates across exposure groups.",
+    "claim": "Observed disease rates reflect true incidence.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Detection bias"
+    },
+    "variables": {
+      "X": "Measured exposure group",
+      "Y": "Diagnosed leukemia cases",
+      "Z": [
+        "Healthcare access"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Healthcare access affects both diagnosis probability and residential patterns.",
+    "wise_refusal": "Diagnosis is not incidence.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0061",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Exposure Measurement",
+    "scenario": "Families with sick children or strong exposure concerns are more likely to allow long-term monitoring, distorting observed exposure distributions.",
+    "claim": "More precise exposure measurement reduces bias.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Measurement-induced collider"
+    },
+    "variables": {
+      "X": "True magnetic-field exposure",
+      "Y": "Health concern or disease",
+      "Z": [
+        "Measurement participation"
+      ]
+    },
+    "causal_structure": "X -> Z <- Y",
+    "gold_rationale": "Agreement to intensive measurement depends on both exposure concern and health awareness.",
+    "wise_refusal": "Measurement itself can induce bias.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0062",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Selection Bias",
+    "scenario": "Both families concerned about environmental exposure and families with ill children are more likely to participate, inducing a spurious exposure–disease association.",
+    "claim": "Selecting controls unrelated to exposure removes bias.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Collider bias"
+    },
+    "variables": {
+      "X": "Magnetic-field exposure",
+      "Y": "Leukemia status",
+      "Z": [
+        "Study participation"
+      ]
+    },
+    "causal_structure": "X -> Z <- Y",
+    "gold_rationale": "Selection depends on both exposure-related and health-related factors.",
+    "wise_refusal": "Conditioning on participation opens non-causal paths.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0063",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Multi-site Studies",
+    "scenario": "Exposure proxies correlate with SES in some regions but not others, causing pooled estimates to misrepresent any single population.",
+    "claim": "Pooled estimates reflect a universal causal effect.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Heterogeneity confounding"
+    },
+    "variables": {
+      "X": "Exposure classification",
+      "Y": "Leukemia risk",
+      "Z": [
+        "Study site"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Different sites exhibit different confounding structures.",
+    "wise_refusal": "Pooling hides causal structure.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0064",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Risk Assessment",
+    "scenario": "Observed relative risks near 1.2 are more plausibly explained by unmeasured confounding than by a true biological effect.",
+    "claim": "Small observed associations reflect weak causal effects.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Weak-signal domination"
+    },
+    "variables": {
+      "X": "Low-level magnetic-field exposure",
+      "Y": "Leukemia risk",
+      "Z": [
+        "Residual confounding"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "When causal effects are weak, confounding dominates observed associations.",
+    "wise_refusal": "Weak associations require stronger causal evidence.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0065",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Statistical Modeling",
+    "scenario": "Linear, categorical, and threshold models yield incompatible exposure–risk relationships.",
+    "claim": "Regression adjustment removes confounding.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Model-induced bias"
+    },
+    "variables": {
+      "X": "True exposure",
+      "Y": "True disease risk",
+      "Z": ["Model specification"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Different model choices produce different causal conclusions.",
+    "wise_refusal": "Statistical control is not causal control.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0066",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Causal Inference",
+    "scenario": "Studies report no identified confounders but rely on incomplete covariate sets.",
+    "claim": "Failure to identify confounders supports causality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "False reassurance"
+    },
+    "variables": {
+      "X": "Measured exposure",
+      "Y": "Observed outcome",
+      "Z": [
+        "Unmeasured confounders"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Unmeasured confounders cannot be ruled out by observed balance.",
+    "wise_refusal": "Absence of evidence is not evidence of absence.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0067",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Impact Assessment",
+    "scenario": "The paper analyzes sites exposed to an environmental stressor and compares them to control sites selected from the same region. Exposed sites exhibit greater ecological degradation. However, exposed sites were originally identified because they were already vulnerable or degraded, making them more likely to be selected for monitoring and classification as cases.",
+    "claim": "Exposure to the environmental stressor causes greater ecological degradation.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Baseline risk differences"
+    },
+    "variables": {
+      "X": "Exposure to environmental stressor",
+      "Y": "Observed ecological degradation",
+      "Z": [
+        "Initial ecosystem vulnerability"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Sites are classified as exposed because they were already more vulnerable or degraded, and this baseline vulnerability independently drives both exposure classification and worse ecological outcomes.",
+    "key_insight": "Sites are often labeled as exposed precisely because they were already at higher risk.",
+    "hidden_timestamp": "Was vulnerability assessed before exposure classification?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Exposure is linked to worse ecological condition."
+    },
+    "wise_refusal": "Without accounting for baseline vulnerability, exposure effects are inseparable from prior risk.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0068",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Monitoring",
+    "scenario": "Sites with conservation interventions report more ecological disturbances than non-intervention sites. The paper notes that intervention sites receive more frequent monitoring, surveys, and reporting, increasing the likelihood of detecting adverse outcomes that may go unnoticed elsewhere.",
+    "claim": "Conservation interventions lead to increased ecological harm.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Detection bias"
+    },
+    "variables": {
+      "X": "Reported incidence of ecological harm",
+      "Y": "Conservation intervention presence",
+      "Z": [
+        "Monitoring intensity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Monitoring intensity increases both the likelihood of detecting ecological harm and the presence of conservation interventions, creating a detection-driven association rather than a causal effect.",
+    "key_insight": "Observed harm may reflect where we look, not where harm is greatest.",
+    "hidden_timestamp": "Did monitoring increase after intervention implementation?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Intervention sites experience more ecological problems."
+    },
+    "wise_refusal": "Differences in detection effort must be separated from true ecological effects.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "trap_subtype": "Detection bias"
+  },
+  {
+    "id": "T3-BucketH-0069",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Governance",
+    "scenario": "Regions implementing environmental policies show better ecological outcomes. The paper notes that these regions also tend to be wealthier, with more resources for enforcement, infrastructure, and compliance, independently improving environmental conditions.",
+    "claim": "Environmental policy implementation causes ecological improvement.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic confounder"
+    },
+    "variables": {
+      "X": "Implementation of environmental policy",
+      "Y": "Observed environmental improvement",
+      "Z": [
+        "Local economic capacity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Local economic capacity independently enables both policy adoption and improved environmental outcomes, confounding the apparent policy effect.",
+    "key_insight": "Wealth enables both policy adoption and better outcomes.",
+    "hidden_timestamp": "Did economic capacity precede policy adoption?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Environmental policies improve outcomes."
+    },
+    "wise_refusal": "Policy effects cannot be isolated without controlling for economic capacity.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0070",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Impact Evaluation",
+    "scenario": "Impact sites are selected for study because they show visible signs of degradation. Subsequent analyses find that impact sites have worse ecological indicators than controls. The selection criterion itself guarantees this difference.",
+    "claim": "Designation as an impact site leads to greater ecological decline.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Non-random site selection"
+    },
+    "variables": {
+      "X": "Designation as impact site",
+      "Y": "Observed ecological decline",
+      "Z": [
+        "Pre-existing degradation"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Sites are designated as impact sites because they already exhibit degradation, and this pre-existing condition explains both designation and worse observed outcomes.",
+    "key_insight": "Selection rules can hard-code outcomes.",
+    "hidden_timestamp": "Were sites selected because degradation was already evident?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Impact sites are more degraded."
+    },
+    "wise_refusal": "Observed differences may be artifacts of selection rather than causal effects.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0071",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Land Management",
+    "scenario": "Sites under a current management regime show poorer ecological condition. The paper notes that these practices were often introduced on lands with a long history of intensive use, whose legacy effects persist independently of current management.",
+    "claim": "Current management practices cause poorer ecological condition.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Historical management confounding"
+    },
+    "variables": {
+      "X": "Current management practice",
+      "Y": "Ecological condition",
+      "Z": [
+        "Past land-use intensity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Past land-use intensity independently drives both the adoption of current management practices and degraded ecological condition, obscuring the causal effect of present management.",
+    "key_insight": "Historical legacies can dominate short-term interventions.",
+    "hidden_timestamp": "Did degradation precede the current management regime?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Current management is associated with worse outcomes."
+    },
+    "wise_refusal": "Legacy effects must be separated from contemporary management impacts.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0072",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Regulatory Enforcement",
+    "scenario": "Areas receiving regulatory intervention show higher counts of environmental violations. The paper explains that these areas are subject to more frequent inspections, increasing the likelihood of detecting violations that exist elsewhere but remain undocumented.",
+    "claim": "Regulatory intervention increases environmental violations.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Attention bias"
+    },
+    "variables": {
+      "X": "Regulatory intervention",
+      "Y": "Recorded environmental violations",
+      "Z": [
+        "Inspection frequency"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Inspection frequency increases both the likelihood of regulatory intervention and the detection of violations, making enforcement appear associated with higher violation rates.",
+    "key_insight": "Enforcement reveals problems rather than causing them.",
+    "hidden_timestamp": "Did inspection intensity increase after intervention?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Intervention areas have more violations."
+    },
+    "wise_refusal": "Violation counts cannot be compared without accounting for inspection effort.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0073",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Climate Policy",
+    "scenario": "A flood-resilience score correlates with reduced damage at moderate investment levels. When investment is aggressively scaled up, ecological disruption and induced development increase flood risk despite higher proxy scores.",
+    "claim": "Policies that improve proxy indicators will continue to improve outcomes at higher intensity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Extremal"
+    },
+    "variables": {
+      "X": "Policy proxy metric",
+      "Y": "True climate resilience",
+      "Z": ["Aggressive policy scaling / out-of-distribution intervention"]
+    },
+    "causal_structure": "X -> Y and Z -> Y",
+    "gold_rationale": "Proxy–target relationships break down outside the regime where they were learned.",
+    "key_insight": "Correlation is regime-dependent.",
+    "hidden_timestamp": "Did outcomes worsen after pushing policies beyond historical ranges?",
+    "wise_refusal": "Extrapolating proxy validity beyond its training domain is invalid.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0074",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Air Quality Regulation",
+    "scenario": "Cities suppress monitoring stations during peak pollution hours to improve reported air quality scores, while actual pollutant exposure and health outcomes remain unchanged.",
+    "claim": "Improving the air-quality index improves public health.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Causal"
+    },
+    "variables": {
+      "X": "Air quality index",
+      "Y": "Public health outcomes",
+      "Z": ["Regulatory gaming of monitoring"]
+    },
+    "causal_structure": "Z -> X and Z !-> Y",
+    "gold_rationale": "Directly intervening on the proxy bypasses the causal pathway to the target.",
+    "key_insight": "Manipulating indicators is not the same as improving reality.",
+    "hidden_timestamp": "Did reported air quality improve without health improvements?",
+    "wise_refusal": "Only interventions on causal drivers can improve the target.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0075",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Conservation Policy",
+    "scenario": "Protected-area managers focus on easily counted species to meet biodiversity targets while neglecting ecosystem function, leading to long-term degradation.",
+    "claim": "Performance-based conservation metrics ensure ecological protection.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Adversarial"
+    },
+    "variables": {
+      "X": "Reported conservation metrics",
+      "Y": "True conservation outcomes",
+      "Z": ["Strategic behavior"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Agents optimize behavior to satisfy metrics rather than ecological goals.",
+    "key_insight": "Metrics invite strategic distortion.",
+    "hidden_timestamp": "Did ecological quality decline while reported performance improved?",
+    "wise_refusal": "Metrics cannot substitute for causal understanding.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0076",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Assessment",
+    "scenario": "Only projects that score well on evaluation criteria are funded, causing future projects to be designed to score well rather than to solve environmental problems.",
+    "claim": "High-scoring projects are the most effective ones.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Selection"
+    },
+    "variables": {
+      "X": "Evaluation score",
+      "Y": "True project impact",
+      "Z": ["Funding selection pressure"]
+    },
+    "causal_structure": "Y -> X and Z -> X and Z -> Y",
+    "gold_rationale": "Selection on the proxy alters the population being evaluated.",
+    "key_insight": "Optimization reshapes the system.",
+    "hidden_timestamp": "Did project designs change after evaluation criteria were introduced?",
+    "wise_refusal": "Selection effects must be modeled dynamically.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0077",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Long-Term Monitoring",
+    "scenario": "A water-quality indicator originally correlated with ecosystem health becomes unreliable as industries adapt their discharges to pass the test while introducing new pollutants.",
+    "claim": "Long-standing indicators remain reliable targets.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Temporal drift"
+    },
+    "variables": {
+      "X": "Legacy indicator",
+      "Y": "True environmental quality",
+      "Z": ["System adaptation"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "System adaptation erodes proxy validity over time.",
+    "key_insight": "Indicators decay under sustained optimization.",
+    "hidden_timestamp": "Did the proxy-target correlation weaken over time?",
+    "wise_refusal": "Indicator validity is not static.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0078",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Sustainability Metrics",
+    "scenario": "Policies maximize renewable energy output while ignoring land-use impacts, reducing biodiversity and net sustainability.",
+    "claim": "Optimizing multiple sustainability indicators ensures overall sustainability.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Proxy competition"
+    },
+    "variables": {
+      "X": "Selected sustainability proxy metrics",
+      "Y": "True sustainability",
+      "Z": ["Trade-offs between proxy dimensions"]
+    },
+    "causal_structure": "X -> Y and Z -> Y",
+    "gold_rationale": "Optimizing one proxy degrades others that jointly determine the target.",
+    "key_insight": "Proxy bundles can be internally inconsistent.",
+    "hidden_timestamp": "Did gains in one metric coincide with losses in others?",
+    "wise_refusal": "Composite goals require causal integration.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0079",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Policy Evaluation",
+    "scenario": "Policies are judged by proxy outcomes that correlate with socioeconomic advantages, causing resources to flow toward already-advantaged regions and inflating apparent effectiveness.",
+    "claim": "Proxy-based evaluation isolates causal effects of policy.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Confounding amplification"
+    },
+    "variables": {
+      "X": "Proxy outcome measure",
+      "Y": "True policy impact",
+      "Z": ["Socioeconomic advantage"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Optimization on proxies amplifies confounding rather than reducing it.",
+    "key_insight": "Goodhart effects can magnify bias.",
+    "hidden_timestamp": "Did proxy-based success concentrate in advantaged areas?",
+    "wise_refusal": "Evaluation metrics can worsen causal error.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0080",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Epidemiology",
+    "scenario": "Crude statewide COVID-19 mortality rates suggest lower mortality among Black residents. However, Black Kentuckians are on average younger than White Kentuckians, and mortality risk increases sharply with age.",
+    "claim": "Black Kentuckians had lower COVID-19 mortality than White Kentuckians.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Aggregate reversal"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "COVID-19 mortality rate",
+      "Z": [
+        "Age distribution"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Differences in age distributions reverse the aggregate association.",
+    "key_insight": "Aggregated rates can reverse subgroup risks.",
+    "hidden_timestamp": "Does the association change when comparing within age strata?",
+    "wise_refusal": "Crude rates cannot be interpreted without age stratification.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0081",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Epidemiology",
+    "scenario": "When mortality is examined within age bands (e.g., 50–59, 60–69), Black residents show equal or higher death rates despite appearing protected in aggregate statistics.",
+    "claim": "Within age groups, COVID-19 mortality is similar across races.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Stratified reversal"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "Age-specific COVID-19 mortality",
+      "Z": [
+        "Age group"
+      ]
+    },
+    "causal_structure": "Z -> Y and X -> Y",
+    "gold_rationale": "Within most age strata, Black Kentuckians experienced higher mortality.",
+    "key_insight": "Subgroup analysis can contradict aggregate trends.",
+    "hidden_timestamp": "Are disparities consistent within age strata?",
+    "wise_refusal": "Aggregate comparisons mask within-group risk.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0082",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Public Health Statistics",
+    "scenario": "Crude rates suggest lower mortality among Black residents, but age-standardized rates reveal higher mortality once population structure is equalized.",
+    "claim": "Crude mortality rates accurately represent racial disparities.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Standardization reversal"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "COVID-19 mortality rate",
+      "Z": ["Age distribution"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+
+    "gold_rationale": "Age standardization reverses the apparent association.",
+    "key_insight": "How rates are computed determines the direction of association.",
+    "hidden_timestamp": "Does standardization change the ordering of groups?",
+    "wise_refusal": "Unstandardized comparisons are misleading.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0083",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Demography",
+    "scenario": "Using <60 vs ≥60 age groups produces different conclusions than decade-based age bins, altering the apparent racial mortality gap.",
+    "claim": "Mortality patterns are robust to how age is grouped.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Coarse stratification"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "Mortality rate",
+      "Z": ["Age"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Different age cutoffs can induce or eliminate the paradox.",
+    "key_insight": "Aggregation choices shape conclusions.",
+    "hidden_timestamp": "Does changing age bins change the sign of the association?",
+    "wise_refusal": "Statistical groupings are not neutral.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0084",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Spatial Epidemiology",
+    "scenario": "Urban counties with younger Black populations and rural counties with older White populations combine to reverse the statewide mortality association.",
+    "claim": "Statewide mortality comparisons reflect individual risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Geographic aggregation"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "COVID-19 mortality",
+      "Z": [
+        "County-level age structure"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "County-level age and race composition drive the aggregate pattern.",
+    "key_insight": "Spatial aggregation can induce Simpson’s paradox.",
+    "hidden_timestamp": "Do county-level patterns contradict the statewide result?",
+    "wise_refusal": "Individual risk cannot be inferred from aggregated geography.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0085",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Comparative Epidemiology",
+    "scenario": "Younger countries show lower crude mortality than older countries despite similar or worse age-specific outcomes.",
+    "claim": "Countries with lower crude COVID-19 mortality managed the pandemic better.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Cross-population reversal"
+    },
+    "variables": {
+      "X": "Country",
+      "Y": "COVID-19 mortality",
+      "Z": [
+        "Population age distribution"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Differences in population age structures drive crude mortality differences.",
+    "key_insight": "Cross-population comparisons are vulnerable to Simpson’s paradox.",
+    "hidden_timestamp": "Do age-specific rates tell a different story?",
+    "wise_refusal": "Crude international comparisons are not causal evidence.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0086",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Causal Inference",
+    "scenario": "A crude association is incorrectly interpreted as evidence of innate racial resilience, ignoring demographic structure and social determinants.",
+    "claim": "Race itself causally protects against COVID-19 mortality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Causal misattribution"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "Mortality risk",
+      "Z": [
+        "Age"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "The paradox arises from age structure, not biological protection.",
+    "key_insight": "Simpson’s paradox does not imply causal reversal.",
+    "hidden_timestamp": "Does controlling for age remove the apparent protection?",
+    "wise_refusal": "Race is not a causal treatment.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0087",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Resource Allocation",
+    "scenario": "Using crude mortality rates leads policymakers to under-allocate resources to Black communities despite higher age-specific risk.",
+    "claim": "Resources should target the group with higher crude mortality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Policy misinterpretation"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "Policy targeting decision",
+      "Z": [
+        "Age-stratified risk"
+      ]
+    },
+    "causal_structure": "Z -> Y and X -> Y",
+    "gold_rationale": "Crude rates misidentify high-risk subgroups.",
+    "key_insight": "Policy decisions require stratified risk assessment.",
+    "hidden_timestamp": "Do age-specific risks contradict the targeting strategy?",
+    "wise_refusal": "Policy based on aggregates can worsen inequity.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0088",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Statistical Reasoning",
+    "scenario": "Different standard populations yield different standardized rates, yet results are interpreted as definitive causal effects.",
+    "claim": "Age-standardized rates reveal the true causal effect.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Overinterpretation"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "Mortality rate",
+      "Z": ["Age"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Standardization is a descriptive adjustment, not a causal intervention.",
+    "key_insight": "Statistical corrections are not causal guarantees.",
+    "hidden_timestamp": "Would conclusions change under a different standard population?",
+    "wise_refusal": "Causality requires a causal model, not just adjustment.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0089",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Disparity Analysis",
+    "scenario": "Overall mortality rates appear similar across groups, while specific age cohorts experience persistent disadvantage.",
+    "claim": "Aggregate equality implies equity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Equity masking"
+    },
+    "variables": {
+      "X": "Population group",
+      "Y": "Observed equity outcome",
+      "Z": [
+        "Age composition"
+      ]
+    },
+    "causal_structure": "Z -> Y and X -> Y",
+    "gold_rationale": "Aggregation hides systematic within-group disadvantage.",
+    "key_insight": "Equity analysis must be stratified.",
+    "hidden_timestamp": "Do disparities reappear when stratified?",
+    "wise_refusal": "Aggregate parity is not equity.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0090",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Causal Modeling",
+    "scenario": "Analysts mechanically adjust for age without specifying whether the estimand concerns total or direct effects.",
+    "claim": "Adjusting for age always clarifies causality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Incorrect adjustment"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "Mortality",
+      "Z": [
+        "Age"
+      ]
+    },
+    "causal_structure": "X -> Y and Z -> Y",
+    "gold_rationale": "Age may act as both confounder and mediator depending on the causal question.",
+    "key_insight": "Simpson’s paradox forces explicit causal questions.",
+    "hidden_timestamp": "What causal effect is being estimated?",
+    "wise_refusal": "Adjustment choices must match the causal estimand.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0091",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Interpretation",
+    "scenario": "Once age explains the paradox, deeper questions about exposure, access to care, and structural inequality are ignored.",
+    "claim": "Explaining Simpson’s paradox resolves the causal question.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Premature closure"
+    },
+    "variables": {
+      "X": "Race",
+      "Y": "Mortality",
+      "Z": [
+        "Age distribution"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Identifying the stratifying variable does not explain underlying mechanisms.",
+    "key_insight": "Simpson’s paradox is a diagnostic, not an answer.",
+    "hidden_timestamp": "What mechanisms generate age-specific disparities?",
+    "wise_refusal": "Causal inquiry must go beyond statistical explanation.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0092",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Experimental Ecology",
+    "scenario": "The paper describes ecological experiments where treatments are applied to plots with differing initial population densities. Treated plots show lower subsequent growth rates than controls, leading to the appearance that the treatment suppresses growth. However, treated plots began with higher baseline densities, making density-dependent regulation a likely driver of the observed outcome rather than the treatment itself.",
+    "claim": "Applying the experimental treatment suppresses population growth.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Baseline ecological state"
+    },
+    "variables": {
+      "X": "Experimental treatment application",
+      "Y": "Observed population growth",
+      "Z": [
+        "Initial population density"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Plots receiving the treatment started with higher initial population density, which independently increases density-dependent regulation and reduces growth, confounding the apparent treatment effect.",
+    "key_insight": "Pre-treatment ecological states can jointly influence treatment assignment and outcomes.",
+    "hidden_timestamp": "Were population densities measured before treatment allocation?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Treatment reduced population growth."
+    },
+    "wise_refusal": "Without controlling for baseline density, treatment effects cannot be causally isolated.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0093",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Field Experiments",
+    "scenario": "The paper highlights field experiments where manipulated plots differ systematically along environmental gradients such as soil moisture or light availability. Treated plots exhibit poorer species performance, but these plots were located in drier microhabitats, which independently reduce growth and survival regardless of the manipulation.",
+    "claim": "The experimental manipulation reduces species performance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Unmeasured environmental gradient"
+    },
+    "variables": {
+      "X": "Experimental manipulation",
+      "Y": "Species performance",
+      "Z": [
+        "Soil moisture gradient"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Soil moisture gradients independently influence both treatment placement and species performance, making environmental conditions rather than the manipulation responsible for the observed decline.",
+    "key_insight": "Environmental gradients can masquerade as treatment effects if not explicitly modeled.",
+    "hidden_timestamp": "Was the environmental gradient present before treatment assignment?",
+    "conditional_answers": {
+      "answer_if_observational_only": "The manipulation decreased species performance."
+    },
+    "wise_refusal": "Treatment effects cannot be inferred without accounting for environmental covariates.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0094",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Observational Studies",
+    "scenario": "The paper discusses observational studies where disturbed sites are more intensively studied because they are accessible or visibly impacted. These sites show lower biodiversity than undisturbed controls, but accessibility influences both disturbance classification and biodiversity through human pressure and land use.",
+    "claim": "Ecological disturbance causes reduced community diversity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Non-random site selection"
+    },
+    "variables": {
+      "X": "Exposure to ecological disturbance",
+      "Y": "Community diversity",
+      "Z": [
+        "Habitat accessibility"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Habitat accessibility independently drives disturbance classification and biodiversity through human pressure, producing a spurious association between disturbance and diversity loss.",
+    "key_insight": "What gets studied is rarely random.",
+    "hidden_timestamp": "Did accessibility determine which sites were labeled as disturbed?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Disturbance reduces biodiversity."
+    },
+    "wise_refusal": "Observed differences may reflect site selection rather than disturbance effects.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0095",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Experimental Design",
+    "scenario": "The paper notes that higher treatment levels often involve more frequent handling or manipulation. Increased stress responses are observed in high-treatment groups, but these responses may be driven by handling disturbance rather than the experimental factor itself.",
+    "claim": "Higher experimental treatment levels increase physiological stress responses.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Treatment intensity bias"
+    },
+    "variables": {
+      "X": "Experimental treatment level",
+      "Y": "Physiological stress response",
+      "Z": [
+        "Handling and disturbance intensity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Greater handling and disturbance intensity accompanies higher treatment levels and independently elevates stress responses, confounding the effect of the treatment itself.",
+    "key_insight": "Procedural intensity can confound biological responses.",
+    "hidden_timestamp": "Did handling frequency increase with treatment level?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Higher treatment levels increase stress."
+    },
+    "wise_refusal": "Stress responses cannot be attributed to treatment without separating procedural effects.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0096",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Longitudinal Ecology",
+    "scenario": "The paper describes studies where interventions coincide with seasonal transitions. Ecological changes following intervention appear substantial, but seasonal shifts in temperature, productivity, or species behavior independently explain the observed patterns.",
+    "claim": "The experimental intervention caused the observed ecological change.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Temporal confounding"
+    },
+    "variables": {
+      "X": "Introduction of experimental intervention",
+      "Y": "Observed ecological change",
+      "Z": [
+        "Seasonal environmental variation"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Seasonal environmental variation independently drives both intervention timing and ecological dynamics, making temporal coincidence appear as a causal intervention effect.",
+    "key_insight": "Time itself is often a confounder.",
+    "hidden_timestamp": "Did environmental changes begin before intervention implementation?",
+    "conditional_answers": {
+      "answer_if_observational_only": "The intervention caused ecological change."
+    },
+    "wise_refusal": "Temporal alignment alone does not establish causality.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0097",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Research Practice",
+    "scenario": "The paper explains that datasets are often filtered based on quality thresholds such as sample size or variance. Higher-quality datasets are more likely to be included and also tend to show stronger or more stable effects, confounding inclusion with effect magnitude.",
+    "claim": "Inclusion in the analysis reveals strong ecological effects.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Analytical decision bias"
+    },
+    "variables": {
+      "X": "Inclusion in analysis",
+      "Y": "Estimated effect size",
+      "Z": [
+        "Data quality thresholds"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Data quality thresholds independently determine which studies are included and the magnitude of estimated effects, confounding analytical inclusion with effect strength.",
+    "key_insight": "Analytical choices can induce confounding even after data collection.",
+    "hidden_timestamp": "Were quality thresholds applied after outcomes were known?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Included studies show strong effects."
+    },
+    "wise_refusal": "Effect estimates depend on selection criteria, not just ecological processes.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0098",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Forest Ecology",
+    "scenario": "In a regional forest management program, thinning is preferentially implemented in productive stands with good soils and access roads. These stands already host more nesting habitat and food resources for songbirds prior to any intervention. Comparing thinned to unthinned stands therefore conflates thinning effects with underlying site quality.",
+    "claim": "Forest thinning operations cause increases in songbird abundance across managed stands.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Site quality"
+    },
+    "variables": {
+      "X": "Forest thinning",
+      "Y": "Songbird abundance",
+      "Z": [
+        "Soil fertility",
+        "Moisture availability",
+        "Stand structure"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Forest stands selected for thinning tend to have higher soil fertility, water availability, and structural diversity, which independently support higher songbird abundance.",
+    "wise_refusal": "Without controlling for baseline site quality, higher bird abundance cannot be attributed to thinning.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0099",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Conservation Planning",
+    "scenario": "National parks and reserves are often established in areas far from roads, cities, and intensive agriculture. These locations already support more intact ecosystems before protection. Comparing protected and unprotected areas therefore mixes the effect of protection with pre-existing differences in human disturbance.",
+    "claim": "Establishing protected areas leads to higher species richness than unprotected land.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Remoteness bias"
+    },
+    "variables": {
+      "X": "Protected-area designation",
+      "Y": "Species richness",
+      "Z": [
+        "Remoteness",
+        "Human accessibility"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Protected areas are disproportionately located in remote, mountainous, or agriculturally marginal regions that already experience lower human pressure and retain higher biodiversity.",
+    "wise_refusal": "Observed biodiversity differences may reflect where protection occurs, not what protection causes.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0100",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Landscape Ecology",
+    "scenario": "Highly fragmented agricultural landscapes often occur in drier or less fertile regions. These environmental constraints reduce vegetation productivity and insect availability regardless of fragmentation, creating a spurious association between fragmentation and bird decline.",
+    "claim": "Habitat fragmentation directly reduces bird abundance across landscapes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Climate–soil gradients"
+    },
+    "variables": {
+      "X": "Habitat fragmentation",
+      "Y": "Bird abundance",
+      "Z": [
+        "Soil fertility",
+        "Precipitation",
+        "Temperature"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Regions with greater fragmentation also differ systematically in climate and soil conditions that independently limit bird populations.",
+    "wise_refusal": "Fragmentation effects cannot be isolated without accounting for underlying environmental gradients.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0101",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Agricultural Ecology",
+    "scenario": "Large monoculture crops receive intensive pesticide treatments and simultaneously eliminate hedgerows and wildflowers. Pollinator declines observed in these fields may reflect habitat loss rather than pesticide toxicity alone.",
+    "claim": "Increased pesticide application causes pollinator population declines in farmland.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Crop-type confounding"
+    },
+    "variables": {
+      "X": "Pesticide application intensity",
+      "Y": "Pollinator abundance",
+      "Z": [
+        "Crop type",
+        "Habitat quality"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Crop types that require heavy pesticide use also provide poorer floral resources and nesting habitat for pollinators.",
+    "wise_refusal": "Crop composition and habitat structure must be disentangled from chemical effects.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0102",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Disease Ecology",
+    "scenario": "Suburban expansion into forested areas increases human exposure to ticks, but also increases healthcare access and disease reporting. Higher Lyme incidence may reflect surveillance intensity rather than ecological change.",
+    "claim": "Land-use change increases the risk of Lyme disease in affected regions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Human settlement bias"
+    },
+    "variables": {
+      "X": "Land-use change",
+      "Y": "Reported Lyme disease incidence",
+      "Z": [
+        "Human settlement density",
+        "Healthcare access"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Human settlement density influences both land-use patterns and disease detection, inflating reported case counts.",
+    "wise_refusal": "Reported disease rates conflate exposure, detection, and reporting.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0103",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Forest Dynamics",
+    "scenario": "Foresters preferentially thin younger, rapidly growing stands to optimize timber yield. Comparing these stands to older, slower-growing forests exaggerates the apparent benefit of thinning.",
+    "claim": "Tree thinning treatments increase forest growth rates.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Stand age"
+    },
+    "variables": {
+      "X": "Thinning treatment",
+      "Y": "Tree growth rate",
+      "Z": [
+        "Stand age"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Younger forest stands both grow faster and are more likely to be selected for thinning.",
+    "wise_refusal": "Growth differences may predate treatment.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0104",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Observational Studies",
+    "scenario": "Management is applied unevenly across landscapes with different physical and historical characteristics, making simple comparisons misleading.",
+    "claim": "Differences between managed and unmanaged sites reflect the causal impact of management.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Unmeasured site effects"
+    },
+    "variables": {
+      "X": "Management intervention",
+      "Y": "Ecological outcome",
+      "Z": [
+        "Site history",
+        "Topography",
+        "Soil type"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Sites differ in elevation, history, soil, and disturbance regimes that influence both management decisions and outcomes.",
+    "wise_refusal": "Unobserved heterogeneity undermines causal claims.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0105",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Forest Management",
+    "scenario": "Managers prioritize thinning in forests already known to support sensitive or high-value bird populations, reversing the apparent direction of causality.",
+    "claim": "Forest thinning causes increases in songbird abundance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-driven treatment"
+    },
+    "variables": {
+      "X": "Thinning treatment",
+      "Y": "Songbird abundance"
+    },
+    "causal_structure": "Y -> X",
+    "gold_rationale": "Areas with high songbird abundance are preferentially selected for thinning to protect habitat quality.",
+    "wise_refusal": "Treatment responds to the outcome.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0106",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Fire Ecology",
+    "scenario": "Regions experiencing frequent fires receive aggressive fuel management, creating the illusion that fuel treatments precede high fire risk.",
+    "claim": "Fuel reduction treatments lower wildfire risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Risk-driven intervention"
+    },
+    "variables": {
+      "X": "Fuel reduction",
+      "Y": "Fire risk"
+    },
+    "causal_structure": "Y -> X",
+    "gold_rationale": "Areas at highest wildfire risk are targeted first for fuel reduction.",
+    "wise_refusal": "Risk-driven targeting reverses causality.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0107",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Trophic Ecology",
+    "scenario": "High prey densities attract predators and support higher reproduction, making predator abundance as much a response as a cause.",
+    "claim": "Predator populations regulate prey abundance in ecosystems.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Coupled populations"
+    },
+    "variables": {
+      "X": "Predator abundance",
+      "Y": "Prey abundance"
+    },
+    "causal_structure": "X -> Y and Y -> X",
+    "gold_rationale": "Prey availability also drives predator population size.",
+    "wise_refusal": "Bidirectional dynamics must be explicitly modeled.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0108",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Disease Ecology",
+    "scenario": "Outbreaks lead to avoidance or abandonment of high-risk areas, making disease risk influence settlement rather than the reverse.",
+    "claim": "Human settlement patterns increase exposure to vector-borne disease.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Behavioral response"
+    },
+    "variables": {
+      "X": "Settlement density",
+      "Y": "Disease risk"
+    },
+    "causal_structure": "Y -> X",
+    "gold_rationale": "People avoid settling in areas perceived as disease-prone.",
+    "wise_refusal": "Behavioral adaptation induces reverse causation.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0109",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Impact Evaluation",
+    "scenario": "Restoration programs target visibly degraded wetlands and forests, making post-treatment comparisons misleading.",
+    "claim": "Restoration treatments improve ecosystem condition relative to untreated sites.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-driven targeting"
+    },
+    "variables": {
+      "X": "Treatment assignment",
+      "Y": "Ecosystem condition"
+    },
+    "causal_structure": "Y -> X",
+    "gold_rationale": "Treatments are deliberately applied to the most degraded ecosystems.",
+    "wise_refusal": "Non-random targeting biases effect estimates.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0110",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Observational Sampling",
+    "scenario": "Analyses restricted to treated locations implicitly condition on factors that jointly influence treatment and outcomes.",
+    "claim": "Differences observed among treated sites reflect the causal effect of management.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Targeted treatment"
+    },
+    "variables": {
+      "X": "Treatment",
+      "Y": "Outcome",
+      "Z": [
+        "Degradation severity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Conditioning on treatment status opens spurious associations.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0111",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Quasi-Experiments",
+    "scenario": "Sites just above and below policy cutoffs differ systematically in size, accessibility, or degradation.",
+    "claim": "Regression discontinuity designs identify causal ecological effects.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Threshold bias"
+    },
+    "variables": {
+      "X": "Policy treatment",
+      "Y": "Ecological outcome",
+      "Z": [
+        "Eligibility threshold"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Eligibility thresholds correlate with unmeasured ecological gradients.",
+    "wise_refusal": "Continuity assumptions must be justified.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0112",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Citizen Science",
+    "scenario": "Popular parks receive more observations regardless of true abundance, distorting inferred distributions.",
+    "claim": "Citizen-science observations accurately represent species distributions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Participation bias"
+    },
+    "variables": {
+      "X": "Observed species records",
+      "Y": "True species abundance",
+      "Z": [
+        "Observer effort"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Observer participation depends on accessibility, interest, and prior expectations.",
+    "wise_refusal": "Observation processes must be modeled explicitly.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0113",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Landscape Analysis",
+    "scenario": "Management improves biodiversity in forests but reduces it in grasslands; pooling masks these opposing effects.",
+    "claim": "Ecosystem management increases biodiversity when evaluated at regional scale.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Aggregation reversal"
+    },
+    "variables": {
+      "X": "Management intervention",
+      "Y": "Biodiversity",
+      "Z": [
+        "Landscape type"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Effects differ by landscape type and reverse when aggregated.",
+    "wise_refusal": "Aggregation hides subgroup effects.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0114",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Meta-analysis",
+    "scenario": "Across sites, high-intensity treatments occur in productive areas, masking negative within-site effects.",
+    "claim": "Pooled regression estimates reflect causal treatment effects.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Within–between reversal"
+    },
+    "variables": {
+      "X": "Treatment intensity",
+      "Y": "Outcome",
+      "Z": [
+        "Site identity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Between-site variation dominates pooled trends.",
+    "wise_refusal": "Pooling conflates distinct causal regimes.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0115",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Restoration Ecology",
+    "scenario": "Sites are selected for intervention at unusually low points, making subsequent improvement inevitable.",
+    "claim": "Restoration interventions cause rapid ecosystem recovery.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Extreme selection"
+    },
+    "variables": {
+      "X": "Restoration treatment",
+      "Y": "Ecosystem condition"
+    },
+    "causal_structure": "Selection on extreme Y",
+    "gold_rationale": "Extremely degraded systems tend to improve naturally over time.",
+    "wise_refusal": "Natural recovery must be distinguished from treatment effects.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0116",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L1",
+    "domain": "Environment",
+    "subdomain": "Fire Management",
+    "scenario": "Natural climate variability produces apparent suppression effects.",
+    "claim": "Fire suppression policies reduce wildfire frequency.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Natural variability"
+    },
+    "variables": {
+      "X": "Suppression effort",
+      "Y": "Fire frequency"
+    },
+    "causal_structure": "Selection on extreme Y",
+    "gold_rationale": "Extreme fire years are often followed by lower-activity years.",
+    "wise_refusal": "Temporal variability must be modeled.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0117",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Policy Metrics",
+    "scenario": "Managers prioritize easy-to-treat areas to maximize reported metrics.",
+    "claim": "Increasing the number of hectares treated improves ecosystem health.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Proxy optimization"
+    },
+    "variables": {
+      "X": "Area treated",
+      "Y": "True ecological improvement",
+      "Z": ["Manager incentives"]
+    },
+    "causal_structure": "Z -> X and X !-> Y",
+    "gold_rationale": "Optimizing treatment area ignores ecological relevance.",
+    "wise_refusal": "Proxies decouple from outcomes.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0118",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Conservation Metrics",
+    "scenario": "Effort shifts toward easily counted species at the expense of ecosystem resilience.",
+    "claim": "Meeting biodiversity indicator targets ensures conservation success.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Indicator gaming"
+    },
+    "variables": {
+      "X": "Indicator score",
+      "Y": "True biodiversity",
+      "Z": ["Management incentives"]
+    },
+    "causal_structure": "Z -> X and X !-> Y",
+    "gold_rationale": "Indicators are optimized rather than ecological function.",
+    "wise_refusal": "Indicators are not goals.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0119",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Policy Design",
+    "scenario": "Landowners alter reporting and land use to qualify for subsidies.",
+    "claim": "Eligibility rules ensure resources flow to high-impact conservation sites.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Eligibility distortion"
+    },
+    "variables": {
+      "X": "Eligibility status",
+      "Y": "True conservation impact",
+      "Z": ["Strategic reporting and land-use behavior"]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Threshold rules incentivize strategic behavior.",
+    "wise_refusal": "Incentives reshape behavior.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0120",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Fire Ecology",
+    "scenario": "Communities expand into treated areas, increasing long-term exposure.",
+    "claim": "Fuel reduction permanently lowers wildfire risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Risk compensation"
+    },
+    "variables": {
+      "X": "Fuel reduction",
+      "Y": "Fire risk"
+    },
+    "causal_structure": "X -> Y -> X",
+    "gold_rationale": "Reduced perceived risk increases development and fuel accumulation.",
+    "wise_refusal": "Dynamic responses negate static effects.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0121",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Trophic Dynamics",
+    "scenario": "Prey behavior and reproduction adapt to predator pressure.",
+    "claim": "Predator removal stabilizes prey populations.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Population coupling"
+    },
+    "variables": {
+      "X": "Predator control",
+      "Y": "Prey abundance"
+    },
+    "causal_structure": "X -> Y -> X",
+    "gold_rationale": "Predator and prey populations co-evolve.",
+    "wise_refusal": "Adaptive dynamics invalidate static models.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0122",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Human–Environment Systems",
+    "scenario": "Policy-induced incentives reshape land use, altering ecological trajectories.",
+    "claim": "Land-use regulations have a fixed effect on ecological condition.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Adaptive behavior"
+    },
+    "variables": {
+      "X": "Land-use regulation",
+      "Y": "Ecological condition"
+    },
+    "causal_structure": "X -> Y -> X",
+    "gold_rationale": "Human behavior adapts to policy outcomes.",
+    "wise_refusal": "Policies alter the system they act upon.",
+    "difficulty": "Hard",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0123",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Phenology",
+    "scenario": "Populations breeding earlier in the year are observed in regions with warmer spring temperatures. These populations are also located at lower latitudes, where both warmer temperatures and earlier breeding occur naturally. Latitude drives both temperature and phenology, creating a spurious association.",
+    "claim": "Warmer spring temperatures cause earlier breeding timing.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Earlier breeding timing",
+      "Y": "Warmer spring temperatures",
+      "Z": [
+        "Latitude"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Latitude influences both spring temperature and breeding phenology, creating a spurious association that does not isolate a causal temperature effect.",
+    "key_insight": "Geographic gradients can explain biological timing patterns.",
+    "hidden_timestamp": "Were breeding differences present before recent warming trends?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Warming causes earlier breeding."
+    },
+    "wise_refusal": "Causal claims require separating latitude effects from temperature effects.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0124",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Marine Ecology",
+    "scenario": "Regions with high fishing pressure also show higher fish abundance. These regions are highly productive due to nutrient-rich waters, which both support larger fish populations and attract intensive fishing activity.",
+    "claim": "High fishing pressure maintains or increases fish stock abundance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Fishing pressure",
+      "Y": "Fish stock abundance",
+      "Z": [
+        "Primary productivity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Primary productivity independently drives both fish abundance and fishing effort, confounding the relationship between fishing pressure and stock size.",
+    "key_insight": "Fishing effort follows productivity, not necessarily abundance decline.",
+    "hidden_timestamp": "Was productivity measured before fishing intensified?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Fishing pressure maintains high fish stocks."
+    },
+    "wise_refusal": "Stock impacts cannot be inferred without accounting for productivity gradients.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0125",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Forest Ecology",
+    "scenario": "Forests with faster-growing trees also sequester more carbon. These forests occur on fertile soils that independently drive both rapid growth and higher carbon uptake.",
+    "claim": "Faster tree growth directly increases carbon sequestration.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Tree growth rate",
+      "Y": "Carbon sequestration",
+      "Z": [
+        "Soil nutrient availability"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Soil nutrient availability drives both tree growth and carbon uptake, inflating the apparent causal effect of growth on sequestration.",
+    "key_insight": "Shared resource gradients can inflate ecological correlations.",
+    "hidden_timestamp": "Were soil nutrients assessed independently of growth rates?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Fast growth increases carbon storage."
+    },
+    "wise_refusal": "Carbon effects must be separated from soil fertility effects.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0126",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Fire Ecology",
+    "scenario": "Areas with frequent fires are dominated by fire-adapted vegetation. High fuel accumulation both increases fire frequency and favors fire-adapted species, confounding cause and effect.",
+    "claim": "Frequent fires cause vegetation to become fire-adapted.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Fire frequency",
+      "Y": "Vegetation composition",
+      "Z": [
+        "Fuel load"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Fuel load independently increases fire frequency and favors fire-adapted vegetation, confounding causal interpretation.",
+    "key_insight": "Fire regimes reflect underlying fuel dynamics.",
+    "hidden_timestamp": "Did fuel loads precede vegetation shifts?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Fires drive vegetation change."
+    },
+    "wise_refusal": "Vegetation–fire relationships require explicit fuel modeling.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0127",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Protected Areas",
+    "scenario": "Protected areas show higher wildlife abundance. These areas are often less accessible to humans due to rugged terrain or distance from roads, reducing hunting and disturbance regardless of legal protection.",
+    "claim": "Protected area designation increases wildlife abundance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Protected area designation",
+      "Y": "Wildlife abundance",
+      "Z": [
+        "Human accessibility"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Lower human accessibility both attracts protection status and reduces wildlife pressure, explaining higher abundance without invoking protection effects.",
+    "key_insight": "Protection often coincides with low-pressure landscapes.",
+    "hidden_timestamp": "Were sites inaccessible before designation?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Protected areas increase wildlife abundance."
+    },
+    "wise_refusal": "Legal protection effects cannot be inferred without accessibility controls.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0128",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Agroecology",
+    "scenario": "Farms using sustainable practices show more stable yields. These farms are typically operated by wealthier farmers who can invest in inputs, training, and risk management independent of practice choice.",
+    "claim": "Sustainable farming practices improve yield stability.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Adoption of sustainable farming practices",
+      "Y": "Yield stability",
+      "Z": [
+        "Farmer financial resources"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Farmer financial resources influence both adoption of sustainable practices and yield stability, confounding the observed relationship.",
+    "key_insight": "Socioeconomic capacity shapes both adoption and outcomes.",
+    "hidden_timestamp": "Were resource differences present before adoption?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Sustainable practices improve yields."
+    },
+    "wise_refusal": "Practice effects must be disentangled from farmer resources.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0129",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Environmental Regulation",
+    "scenario": "Regions adopting environmental regulations show lower pollution. These regions also have stronger institutions that independently reduce pollution through enforcement, infrastructure, and compliance.",
+    "claim": "Adopting environmental regulations reduces pollution.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Environmental regulation adoption",
+      "Y": "Pollution reduction",
+      "Z": [
+        "Governance capacity"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Governance capacity independently enables regulation adoption and pollution reduction, obscuring the causal effect of regulation itself.",
+    "key_insight": "Capacity enables both policy and outcomes.",
+    "hidden_timestamp": "Did governance strength precede regulation?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Regulation reduced pollution."
+    },
+    "wise_refusal": "Policy effectiveness cannot be inferred without governance controls.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0130",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Disease Ecology",
+    "scenario": "Cull programs are implemented where disease prevalence is high. High host density both increases disease transmission and triggers culling, making culling appear ineffective.",
+    "claim": "Culling interventions fail to reduce disease prevalence.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Culling intervention",
+      "Y": "Disease prevalence",
+      "Z": [
+        "Host population density"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "High host population density both increases disease prevalence and triggers culling, making the intervention appear ineffective.",
+    "key_insight": "Interventions target high-risk systems.",
+    "hidden_timestamp": "Was density high before culling?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Culling fails to reduce disease."
+    },
+    "wise_refusal": "Disease impacts require baseline density adjustment.",
+    "difficulty": "Medium",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0131",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Urban Ecology",
+    "scenario": "Neighborhoods with more green space support higher biodiversity. These neighborhoods are wealthier, enabling both green infrastructure investment and reduced environmental stress.",
+    "claim": "Urban green space increases biodiversity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Urban green space",
+      "Y": "Urban biodiversity",
+      "Z": [
+        "Neighborhood wealth"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Neighborhood wealth independently supports green space development and biodiversity, confounding causal inference.",
+    "key_insight": "Wealth structures urban ecological patterns.",
+    "hidden_timestamp": "Did wealth disparities precede green space development?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Green space increases biodiversity."
+    },
+    "wise_refusal": "Equity gradients must be addressed in urban ecology.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0132",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Pollination Ecology",
+    "scenario": "Plants receiving more pollinator visits also produce more seeds. These plants occur in patches with higher flower density, which independently attracts pollinators and increases reproduction.",
+    "claim": "Higher pollinator visitation increases plant reproductive success.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Pollinator visitation rate",
+      "Y": "Plant reproductive success",
+      "Z": [
+        "Flower abundance"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Flower abundance independently attracts pollinators and increases reproduction, inflating the apparent pollination effect.",
+    "key_insight": "Shared resource availability drives mutual success.",
+    "hidden_timestamp": "Was flower density measured independently?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Pollination increases seed set."
+    },
+    "wise_refusal": "Pollination effects must be separated from floral abundance.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "T3-BucketH-0133",
+    "bucket": "BucketLarge-H",
+    "pearl_level": "L2",
+    "domain": "Environment",
+    "subdomain": "Soil Ecology",
+    "scenario": "Soils with higher microbial activity show faster decomposition. These soils are wetter, which independently stimulates microbial metabolism and decomposition processes.",
+    "claim": "Higher microbial activity accelerates organic matter decomposition.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Microbial activity",
+      "Y": "Organic matter decomposition",
+      "Z": [
+        "Soil moisture"
+      ]
+    },
+    "causal_structure": "Z -> X and Z -> Y",
+    "gold_rationale": "Soil moisture independently increases microbial metabolism and decomposition rates, confounding the relationship.",
+    "key_insight": "Abiotic conditions often drive biotic correlations.",
+    "hidden_timestamp": "Was soil moisture stable over time?",
+    "conditional_answers": {
+      "answer_if_observational_only": "Microbes accelerate decomposition."
+    },
+    "wise_refusal": "Causal claims require moisture-controlled comparisons.",
+    "difficulty": "Easy",
+    "annotation": {
+      "author": "Veljko Skarich",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  }
+]

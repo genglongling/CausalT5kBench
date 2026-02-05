@@ -1,0 +1,2340 @@
+[
+  {
+    "case_id": "F.1",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "ECOLOGICAL",
+    "trap_subtype": "Societal Changes",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Economics",
+    "scenario": "In the early 1960s, after gaining independence, a hypothetical African nation introduced broad educational reforms aimed at rapidly increasing literacy rates. About a decade later, this country experienced significant economic growth. At the same time, its neighboring country, which did not implement such educational reforms, also saw similar economic growth due to a boom in commodity prices that affected the whole region.",
+    "variables": {
+      "X": "Introduction of broad educational reforms",
+      "Y": "Significant economic growth",
+      "Z": "Regional economic conditions influenced by commodity prices"
+    },
+    "user_question": "Did the introduction of educational reforms cause the economic growth in the country?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While it might seem that the educational reforms caused the economic growth, it is crucial to consider the regional economic conditions, primarily driven by commodity prices, which similarly benefited the neighboring country that did not introduce such reforms.",
+    "wise_refusal": "It is incorrect to directly attribute the economic growth to educational reforms without factoring in the confounding variable of regional economic conditions. Both countries experienced growth, irrespective of their educational policies, indicating that other regional factors like commodity prices played a more significant role in their economic growth during that period.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.2",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "BASE_RATE",
+    "trap_subtype": "Neglecting Base Rates",
+    "difficulty": "Medium",
+    "subdomain": "Post-War Economic Policy",
+    "scenario": "In the years following World War II, many European countries experienced significant economic growth. One particular country, Ruritania, implemented a series of market liberalization policies in the late 1940s. By the early 1950s, Ruritania's economy was booming, with substantial increases in GDP and industrial production. Observers outside the country quickly attributed this economic recovery to the newly implemented liberal policies.",
+    "variables": {
+      "X": "Implementation of market liberalization policies in Ruritania",
+      "Y": "Significant economic growth in Ruritania",
+      "Z": "General post-war recovery in Europe"
+    },
+    "user_question": "Did the implementation of market liberalization policies in the late 1940s directly cause the economic boom in Ruritania during the early 1950s?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While there is an association between the implementation of market liberalization policies (X) and the economic growth in Ruritania (Y), it is crucial to consider the general post-war recovery in Europe (Z) when evaluating this causal relationship. The economic boom in many European countries post-war suggests that the growth in Ruritania may also partially or largely be attributed to the broader continental recovery rather than solely to the policy changes.",
+    "wise_refusal": "It would be a mistake to directly attribute the economic growth of Ruritania solely to market liberalization without considering the broader context of post-war recovery in Europe. This neglects the base rate — the common pattern of economic growth across European countries during this period, irrespective of specific national policies.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.3",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "BASE_RATE",
+    "trap_subtype": "Neglect of base-rate",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1990s, a new government in Namibia implemented a series of economic reforms aimed at stabilizing the nation's economy by improving trade policies and increasing foreign direct investment. Coinciding with these reforms, Namibia experienced a noticeable increase in its GDP growth rates compared to the previous decade. Many analysts and commentators suggested that the economic reforms directly caused the increase in GDP growth.",
+    "variables": {
+      "X": "Implementation of economic reforms in Namibia",
+      "Y": "Increase in GDP growth rates in Namibia",
+      "Z": "Global economic boom of the 1990s"
+    },
+    "user_question": "Did the economic reforms in Namibia cause the increase in GDP growth rates?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While it appears that the economic reforms (X) correlated with the increase in GDP growth rates (Y), it is vital to consider the global economic context (Z) during the 1990s, which was characterized by widespread economic growth. This global trend likely contributed significantly to Namibia's increased GDP, thus complicating direct attribution of the effect to the reforms alone.",
+    "wise_refusal": "Simply attributing the increase in GDP growth rates in Namibia to the economic reforms neglects the base-rate of global economic performance during the same period. Without accounting for this, one risks overstating the impact of the reforms and ignoring broader economic trends that likely played a crucial role.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.4",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "ECOLOGICAL",
+    "trap_subtype": "Socio-economic Context",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial Development",
+    "scenario": "In the early 1960s, the fictional country of Luminia, newly independent from colonial rule, decided to invest heavily in its coffee production as a main economic strategy. The government incentivized local farmers to switch from diverse subsistence farming to mostly coffee cultivation. Observers note that from 1960 to 1980, Luminia's GDP per capita rose significantly, paralleling an increase in global coffee prices.",
+    "variables": {
+      "X": "Government policy incentivizing coffee production",
+      "Y": "Increase in GDP per capita",
+      "Z": "Global coffee prices"
+    },
+    "user_question": "Did the government policy to incentivize coffee production cause the increase in GDP per capita?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While it appears that the government policy and the GDP per capita increase are associated, it is critical to consider the role of global coffee prices during this period. The concurrent rise in global prices suggests that the increase in GDP may be heavily influenced by these external market conditions rather than solely by domestic policy.",
+    "wise_refusal": "It would be unwise to claim that the government policy alone caused the rise in GDP per capita without considering the impact of global coffee prices, which might be the actual driver behind the economic upswing. This highlights the ecological trap where external factors, not accounted for, distort the perceived effect of a policy intervention.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 3,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.5",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "BASE_RATE",
+    "trap_subtype": "Ignoring base rates",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African politics",
+    "scenario": "In the early 1960s, following its independence, the fictional African country of Zinara witnessed a rapid increase in foreign direct investment (FDI) primarily from Western countries. Concurrently, there was a notable improvement in local infrastructure and economic growth. Historians observed that during this period, Zinara's government also entered into numerous treaties and trade agreements with Western nations.",
+    "variables": {
+      "X": "Increase in foreign direct investment (FDI) from Western countries",
+      "Y": "Improvement in local infrastructure and economic growth",
+      "Z": "Zinara's government forming treaties and trade agreements with Western nations"
+    },
+    "user_question": "Did the increase in FDI from Western countries cause the improvement in local infrastructure and economic growth in Zinara?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While it seems that the increase in FDI from Western countries is associated with improvements in local infrastructure and economic growth, it is important to consider the role of the government's active policies and treaties in attracting and effectively utilizing that investment. These policies and treaties (Z) likely played a crucial mediating role in how FDI was translated into tangible economic benefits.",
+    "wise_refusal": "The naive causal claim that FDI directly caused economic growth and infrastructure improvements in Zinara ignores the base rate, or the typical impact of FDI without the specific context of government interventions. Given the complexities and specific policy environment in Zinara, it is more cautious to consider these factors that typically mediate the relationship between foreign investment and economic outcomes rather than attributing causality directly.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.6",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "BASE_RATE",
+    "trap_subtype": "Ignoring Population Base Rates",
+    "difficulty": "Medium",
+    "subdomain": "Colonial Histories",
+    "scenario": "During the scramble for Africa in the late 19th century, European powers established numerous colonies across the continent. In one particular instance, France, after establishing control over a region now part of modern-day Mali, implemented a series of infrastructural projects including railroads, schools, and hospitals. Over the following decades, this region exhibited higher economic growth compared to some regions colonized by other European powers.",
+    "variables": {
+      "X": "French colonial infrastructure projects",
+      "Y": "Economic growth in the region",
+      "Z": "Initial economic conditions and local resources"
+    },
+    "user_question": "Did the implementation of French colonial infrastructure projects cause the higher economic growth observed in the region?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While there is an observable correlation between the implementation of infrastructure projects by France and increased economic growth, determining causality requires deeper analysis. The initial economic conditions, the presence of exploitable natural resources, and previous local development levels also play critical roles in economic outcomes.",
+    "wise_refusal": "Simply correlating the presence of French infrastructure projects with economic growth ignores the fundamental base rates of initial economic conditions across various regions. Without accounting for these varying starting conditions, attributing causality to the infrastructure projects alone would likely be misleading.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 3,
+        "overall_quality": 3.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.7",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "SIMPSON",
+    "trap_subtype": "reversal",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Conflicts",
+    "scenario": "During the Cold War, a smaller nation, termed Freedonia, oscillated between aligning with the United States and the Soviet Union. A particular analysis focused on the decade following 1970, when Freedonia received varying levels of economic aid and military support from both superpowers. Interestingly, during intervals when Freedonia aligned more with the US, it experienced significant increases in its GDP growth as compared to intervals of closer ties with the Soviet Union. However, crucially, the geopolitical strategy of aligning with the US versus the USSR was highly influenced by the ruling party's ideology in Freedonia at different times.",
+    "variables": {
+      "X": "Alignment with the US (vs. the USSR)",
+      "Y": "GDP growth of Freedonia",
+      "Z": "Ideology of the ruling party"
+    },
+    "user_question": "Did Freedonia's alignment with the US directly cause its GDP to grow faster than when aligned with the USSR?",
+    "expected_reasoning": "Association",
+    "reference_answer": "The observed association between Freedonia's alignment with the US and higher GDP growth could be misleading without considering the role of the ruling party's ideology. It's likely that the economic policies and reforms favored by pro-American administrations were more conducive to growth compared to those of pro-Soviet administrations, irrespective of international alignment.",
+    "wise_refusal": "The naive direct causal claim between Freedonia's alignment with the US and its GDP growth is weakened by the Simpson’s Paradox. Here, the confounding factor is the ideology of Freedonia's ruling party, which varies with alignment but independently affects GDP growth. Analyzing the alignment effect in isolation can lead to incorrect conclusions about the actual influence of US versus USSR alignment on economic outcomes.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.8",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "SPURIOUS",
+    "trap_subtype": "Common Cause",
+    "difficulty": "Medium",
+    "subdomain": "Colonial History",
+    "scenario": "In the early 20th century, during the period of intensified colonial activities by European powers in Africa, there was a notable increase in agricultural productivity in regions under British control. Simultaneously, these regions also experienced an expansion in the education system, including the building of new schools and training of teachers.",
+    "variables": {
+      "X": "Expansion of the education system in British-controlled regions of Africa",
+      "Y": "Increase in agricultural productivity in these regions",
+      "Z": "Intensified British colonial administration and investment in infrastructure"
+    },
+    "user_question": "Did the expansion of the education system cause the increase in agricultural productivity in British-controlled regions of Africa?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While it may appear that the expansion of education contributed to increased agricultural productivity, the real driver behind both outcomes was the intensified British colonial administration. This administration not only focused on improving education but also heavily invested in the agricultural infrastructure, leading to improvements in farming methods and productivity.",
+    "wise_refusal": "Claiming that the expansion of the education system caused the increase in agricultural productivity is incorrect due to the spurious nature of their association. In reality, both were independently influenced by a third variable, the intensified British colonial administration and investment, creating a spurious correlation between the two observed phenomena.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 5,
+        "pearl_alignment": 5,
+        "overall_quality": 5.0
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.9",
+    "domain": "D2",
+    "pearl_level": "L1",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Unobserved Confounding",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1960s, following the wave of decolonization, several African countries gained independence. For the purpose of this scenario, consider the fictional country of Azania which gained independence in 1963. The first presidential elections post-independence saw the rise of a leader who was seen as a unifier for various ethnic groups. During his first term, there was significant foreign investment in Azania, spurred by its stability and strategic resources. However, international observers often attribute the increased investment directly to the president's policies without considering the broader geopolitical context of the Cold War where both the USA and the USSR were keen to establish spheres of influence in newly independent African states.",
+    "variables": {
+      "X": "Enactment of unifying policies by the first president of Azania",
+      "Y": "Increase in foreign investment in Azania",
+      "Z": "Global Cold War dynamics influencing geopolitical strategies of superpowers"
+    },
+    "user_question": "Did the first president's unifying policies directly result in the increase of foreign investment in Azania?",
+    "expected_reasoning": "Association",
+    "reference_answer": "While the enactment of unifying policies by the first president of Azania did coincide with an increase in foreign investment, attributing the increased investment solely to these policies overlooks the significant influence of Cold War dynamics. During this period, the superpowers were actively seeking to expand their influence in newly independent countries, making them more likely to invest in stable nations irrespective of specific domestic policies.",
+    "wise_refusal": "It is incorrect to claim that the president's policies were the direct cause of the increased foreign investment without accounting for the global geopolitical context. The Cold War provided a strong motive for both the USA and the USSR to invest in Azania as part of their broader strategy to gain influence in Africa, making it a confounding factor that must be considered to accurately understand the causal dynamics.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.10",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Sampling bias",
+    "difficulty": "Medium",
+    "subdomain": "Cold War politics",
+    "scenario": "During the Cold War era, a lesser-known initiative was launched by a neutral small European country to mediate peace talks between the U.S. and the USSR. However, despite its neutral status, this country had covertly taken financial aid from Western countries to bolster its economy. Consequently, the peace mediation seemed to favor Western perspectives slightly, leading to biased outcomes in the discussions. This event was not widely publicized and is commonly overlooked in larger analyses of Cold War diplomacy.",
+    "variables": {
+      "X": "Initiation of peace talks by the neutral country",
+      "Y": "Bias in the outcome of peace talks towards the Western view",
+      "Z": "Receiving financial aid from Western countries"
+    },
+    "user_question": "Did the initiation of peace talks by the neutral country cause the peace talk outcomes to be biased towards the Western view?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The apparent relationship between the initiation of peace talks (X) and the biased outcomes towards the Western view (Y) is confounded by the country's financial ties with Western nations (Z). It's these financial ties that likely influenced the bias in the talks, rather than the mere initiation of the talks themselves.",
+    "wise_refusal": "A naive causal claim might overlook the role of financial aid (Z) as a confounder, incorrectly attributing the causation of biased peace talk outcomes solely to the initiation of the talks (X). Proper causal analysis requires considering hidden factors like financial incentives that might skew the mediation process.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 5,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.11",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Variable Misinterpretation",
+    "difficulty": "Medium",
+    "subdomain": "Colonial South America",
+    "scenario": "In the mid-18th century, the Spanish Empire instituted a series of reforms named the Bourbon Reforms aimed at restructuring the governance of its American colonies. These reforms included increasing military presence and imposing stricter trade regulations. Concurrently, there was a notable increase in local insurrections and movements for autonomy within these colonies. As these two events coincided, a historian may explore the direct impact of the Bourbon Reforms on the rise of insurrectionist movements.",
+    "variables": {
+      "X": "Implementation of the Bourbon Reforms (e.g., military reinforcement and trade control)",
+      "Y": "Increase in insurrectionist movements in Spanish colonies",
+      "Z": "Colonial discontent due to prior exploitative practices"
+    },
+    "user_question": "Did the implementation of the Bourbon Reforms cause the increase in insurrectionist movements in the Spanish colonies?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it appears that the Bourbon Reforms (X) led to the increase in insurrectionist movements (Y), this relationship is confounded by the existing colonial discontent (Z). Prior exploitative practices had already laid the groundwork for rebellion, and the introduction of the reforms could have acted as a catalyst rather than a direct cause. Thus, to accurately assess the impact of the Bourbon Reforms, one must control for the level of pre-existing discontent within the colonies.",
+    "wise_refusal": "The naive causal claim that the Bourbon Reforms directly caused the insurrectionist movements is problematic due to the presence of a collider, 'colonial discontent' (Z). This variable, influenced by prior conditions and the Reforms, can correlate the timing of reforms with the rise in movements misleadingly. Analyzing without considering this collider risks attributing causality to correlation, ignoring that both X and Y are independently influenced by Z.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.12",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "20th-Century European Politics",
+    "scenario": "After World War I, several European nations experienced significant increases in political polarization. In Germany, political polarization increased dramatically during the Weimar Republic, followed by increased public discourse on national identity and sovereignty. This period saw a rise in both left-wing and right-wing extremist ideologies, culminating in the establishment of the Nazi regime under Adolf Hitler.",
+    "variables": {
+      "X": "Increase in political polarization",
+      "Y": "Rise of extremist ideologies",
+      "Z": "Public discourse on national identity and sovereignty"
+    },
+    "user_question": "Did the increase in political polarization (X) cause the rise of extremist ideologies (Y) during the Weimar Republic?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "Although it appears that the increase in political polarization (X) led directly to the rise of extremist ideologies (Y), this relationship is confounded by the increased public discourse on national identity and sovereignty (Z). The intensive discourse on national identity, fueled by post-war sentiments, independently influenced both the polarization and the rise of extremism. Hence, we cannot conclusively state that political polarization directly caused the rise of extremist ideologies without considering the impact of national discourse.",
+    "wise_refusal": "It would be incorrect to straightforwardly claim that increased political polarization directly caused the rise of extremist ideologies without considering the role of public discourse on national identity and sovereignty (Z). This is a case of the collider bias, where analyzing the relationship between X and Y without considering Z might lead to erroneous conclusions about the causal link, as Z is influencing both X and Y independently.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.13",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Unmeasured Confounding",
+    "difficulty": "Medium",
+    "subdomain": "Colonial Impacts",
+    "scenario": "In the early 20th century, during the colonial period in Southeast Asia, the European powers implemented extensive railroad projects in regions predominantly inhabited by ethnic minorities. Over the subsequent decades, these regions experienced significantly higher economic growth compared to areas without such infrastructure developments. This phenomenon has led many to speculate that the introduction of railroads directly caused economic upsurge in these regions.",
+    "variables": {
+      "X": "Implementation of railroad projects in ethnic minority regions by colonial powers",
+      "Y": "Economic growth in these regions over the subsequent decades",
+      "Z": "Pre-existing regional economic disparities and geographic advantages"
+    },
+    "user_question": "Did the implementation of railroad projects directly cause economic growth in the ethnic minority regions?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it may appear that the railroad projects led to economic growth, one must consider the role of pre-existing conditions such as regional economic disparities and geographic advantages. These areas might have already had the potential for higher economic growth due to their unique geographic or economic conditions, which were further amplified by additional infrastructure. Therefore, the direct causal impact of railroads on economic growth is confounded by these pre-existing conditions.",
+    "wise_refusal": "The naive causal claim that railroad implementation directly caused economic growth overlooks potential unmeasured confounding factors such as geographic advantages or initial economic conditions. These factors could independently influence economic growth, thereby confounding the relationship between railroad implementation and economic outcomes.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.14",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Unrepresentative sample",
+    "difficulty": "Medium",
+    "subdomain": "Colonial impacts",
+    "scenario": "In the mid-19th century, the British Empire initiated several infrastructural projects in India, such as railways, telegraphs, and postal services. During the same period, India experienced a substantial increase in its export of raw materials to Britain and other parts of the empire. This correlation led some contemporary analysts to conclude that the introduction of British infrastructure directly caused an increase in India's export capacity.",
+    "variables": {
+      "X": "Introduction of British infrastructural projects in India (mid-19th century)",
+      "Y": "Increase in India's export of raw materials",
+      "Z": "Underlying economic policies favoring colonial exploitation"
+    },
+    "user_question": "Did the introduction of British infrastructure in the mid-19th century cause an increase in India's export of raw materials?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it appears that the British infrastructure projects coincided with an increase in exports, a deeper analysis reveals that the critical factor was the economic policies implemented by the British which were explicitly designed to transform India into a supplier of raw materials for Britain's industries. These policies were more directly responsible for the increase in exports than the infrastructure itself.",
+    "wise_refusal": "The naive causal claim fails to account for the economic policies that were specifically tailored to increase colonial exploitation and exports. Simply observing the introduction of infrastructure alongside increased exports does not account for these underlying policies, leading to a misinterpretation influenced by the selection of an unrepresentative sample of causative factors.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.15",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Confounding",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 2000s, Country A experienced a significant increase in economic growth. This period also saw a new government taking power which had a strong anti-corruption stance. The government initiated numerous policies aimed at reducing corruption, which coincided with the economic boom. Many analysts attribute the economic growth to these anti-corruption measures.",
+    "variables": {
+      "X": "Implementation of anti-corruption policies by the government",
+      "Y": "Increase in economic growth",
+      "Z": "Global rise in commodity prices, which benefited Country A's export-heavy economy"
+    },
+    "user_question": "Did the implementation of anti-corruption measures cause the economic growth in Country A?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it is tempting to attribute the economic growth of Country A directly to the implementation of anti-corruption measures, there are other significant factors, notably the global rise in commodity prices at the same time which significantly benefited Country A's economy. These factors must be controlled for to accurately assess the impact of the anti-corruption policies.",
+    "wise_refusal": "A naive analysis might lead to the conclusion that the anti-corruption measures caused the economic growth because they coincided in time. However, this ignores the confounding factor of a global increase in commodity prices, which independently could drive economic growth and co-occurred with the implementation of these measures. To determine causality here, these confounding factors need to be controlled for.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.16",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Simpson's Paradox",
+    "difficulty": "Hard",
+    "subdomain": "European Political History",
+    "scenario": "In the early 1970s, the United Kingdom underwent significant economic policy shifts under the government. New policies focused on stabilizing inflation and reducing trade deficits were introduced. During this period, economic data suggested an increase in GDP growth rates. However, this was also a time of significant technological change, with the introduction and spread of computer technology in business practices becoming widespread across the country.",
+    "variables": {
+      "X": "Implementation of new economic policies by the government",
+      "Y": "Increase in GDP growth",
+      "Z": "Introduction and increase in usage of computer technologies in businesses"
+    },
+    "user_question": "Did the implementation of new economic policies by the government in the early 1970s cause the increase in GDP growth in the U.K.?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "Although it seems straightforward to attribute the GDP growth to economic policies, a deeper analysis reveals that the increase in GDP could significantly depend on the technological revolution of the time. The introduction of computers improved business efficiencies and productivity, which are critical drivers of GDP growth. To truly determine the impact of economic policies on GDP growth, one would need to control for the technological advancements occurring at the same time.",
+    "wise_refusal": "It would be a mistake to directly conclude that the economic policies alone caused the observed GDP growth without considering the simultaneous technological revolution. This misleading causal connection could be a case of Simpson's Paradox, where the confounding effect of technological advancement might reverse or negate the perceived effect of the economic policies when analyzed in isolation.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.17",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Causal Direction",
+    "difficulty": "Medium",
+    "subdomain": "Cold War diplomacy",
+    "scenario": "During the Cold War, the United States decided to engage more diplomatically with certain Latin American countries, promoting economic aid and political support in contrast to its earlier policies of direct intervention and support for military regimes. Following these changes, there was a notable reduction in anti-American sentiment in these countries.",
+    "variables": {
+      "X": "Change in US foreign policy to more diplomatic engagement with Latin American countries",
+      "Y": "Reduction in anti-American sentiment in these countries",
+      "Z": "Improvement in economic conditions in these Latin American countries independent of U.S. policy"
+    },
+    "user_question": "Did the change in US foreign policy cause the reduction in anti-American sentiment in Latin America?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it may seem that the US policy change caused a reduction in anti-American sentiment, it is important to consider the role of improved economic conditions in these countries, which occurred around the same time. These improvements can increase general national satisfaction, which in turn reduces anti-American sentiments, thereby acting as a confounder in the causal relationship between US policy and sentiment.",
+    "wise_refusal": "Attributing the decrease in anti-American sentiment directly to US policy changes ignores the significant impact of the economic improvements in these regions. This scenario likely demonstrates a reverse causation where better economic conditions led to both policy shifts and sentiment changes, rather than the policy change directly causing the sentiment shift.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.18",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Spurious Association",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African Politics",
+    "scenario": "In the early 1990s, Country A underwent significant economic reforms under a new government. During the same period, a notable decrease in armed conflicts was observed. Historical data shows that these reforms included liberalizing the economy with foreign investment and reducing governmental control over major industries.",
+    "variables": {
+      "X": "Economic reforms in Country A",
+      "Y": "Decrease in armed conflicts in Country A",
+      "Z": "Change in government in Country A"
+    },
+    "user_question": "Did the economic reforms in Country A cause the decrease in armed conflicts?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The observed association between the economic reforms (X) and the decrease in armed conflicts (Y) may appear causal. However, the change in government (Z), which accompanied both the economic reforms and the reduction in conflict, is likely the true driving factor. The new government may have pursued both peace-focused policies and economic reforms simultaneously, leading to these parallel but indirectly related outcomes. Analyzing the impact separately and considering the role of the government change is crucial.",
+    "wise_refusal": "It would be incorrect to directly attribute the decrease in armed conflicts to the economic reforms without considering the change in government. This scenario typically falls into a 'REVERSE' trap where a confounding factor, in this case the change in government, actually influences both the perceived cause and effect, creating a spurious association between them.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.19",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "temporal ambiguity",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African politics",
+    "scenario": "In the early 1960s, shortly after gaining independence, a small African nation experienced a significant increase in foreign aid from the United States and the Soviet Union. This period was also marked by a sharp rise in the nation's educational standards, including literacy rates and number of educational institutions. The apparent correlation between increased foreign aid and improved educational outcomes led some policymakers to conclude that the influx of aid was a causal factor in the educational improvements.",
+    "variables": {
+      "X": "Increase in foreign aid",
+      "Y": "Improvement in educational standards",
+      "Z": "Increase in national stability and governance post-independence"
+    },
+    "user_question": "Did the increase in foreign aid cause the improvement in educational standards?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "It is likely that the improvement in educational standards was not directly caused by the increase in foreign aid, but rather both were influenced by a common cause. After gaining independence, the nation likely prioritized the stabilization and restructuring of its political and social systems, which included an emphasis on education. This renewed focus and better governance provided a conducive environment for educational reforms and advancements, independently of the foreign aid received.",
+    "wise_refusal": "The naive causal claim that foreign aid directly improved educational outcomes fails to consider the underlying factor of improved national governance and stability, which is a more plausible explanation for the observed educational advancements. Without considering this confounding factor, one might inaccurately attribute the cause of educational improvements to the foreign aid rather than the internal policy changes and governance improvements.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.20",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Spurious Association via Mediator",
+    "difficulty": "Medium",
+    "subdomain": "Economic Sanctions",
+    "scenario": "In the early 20th century, a hypothetical scenario where Country A imposes economic sanctions on Country B due to its aggressive military expansions. Over a decade, Country B's economy shows growth instead of expected decline. Observers might hastily conclude that sanctions spurred economic development in Country B.",
+    "variables": {
+      "X": "Imposition of economic sanctions by Country A",
+      "Y": "Economic growth in Country B",
+      "Z": "Implementation of economic reforms in Country B"
+    },
+    "user_question": "Did the economic sanctions from Country A cause the economic growth in Country B?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The observed economic growth in Country B following the sanctions by Country A may seem causally attributed to the sanctions. However, the critical factor was the economic reforms (Z), implemented as a response to the sanctions and aiming to bolster the country’s resilience. These reforms, undertaken independently of the sanctions' pressure but catalyzed by them, are likely the true drivers of economic growth.",
+    "wise_refusal": "The naive causal claim is wrong because it ignores the potential role of economic reforms implemented by Country B (Z) as a mediator in the relationship between the sanctions (X) and economic growth (Y). Simply correlating X and Y without considering Z leads to a spurious association, where Z is the actual causal factor behind the observed changes in Y.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.21",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Spurious Association",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Era Policies",
+    "scenario": "During the Cold War, a significant increase in private funding for technological development in Country A was observed shortly after the initiation of more aggressive intelligence operations by Country A against Country B. Intelligence operations were assumed necessary by Country A to safeguard against technological espionage and potential military threats. The tech industry, on the other hand, aimed to capitalize on this perceived increased threat from Country B to secure more government and private investment.",
+    "variables": {
+      "X": "Increase in aggressive intelligence operations against Country B",
+      "Y": "Increase in private funding for technological development in Country A",
+      "Z": "Perceived increase in military and espionage threat from Country B"
+    },
+    "user_question": "Did the increase in intelligence operations against Country B directly cause the increase in private funding for technological development in Country A?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The observed increase in private funding for technological development may not be directly caused by increased intelligence operations. Rather, both increases could be driven by a third variable, Z - the perceived increase in threat from Country B, which acted as a collider. This perceived threat likely prompted both increased intelligence activities to safeguard national interests and inspired private companies to seek funding for technological advances as a defensive mechanism.",
+    "wise_refusal": "It would be a mistake to claim a direct causation between increased intelligence operations (X) and increased private funding for tech development (Y) without considering the impact of the perceived military and espionage threat (Z). Failing to account for Z can lead to a collider bias, where the causal connection between X and Y appears stronger due to their common dependence on Z, rather than a direct causal link.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.22",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Mediation",
+    "difficulty": "Medium",
+    "subdomain": "Colonial Histories",
+    "scenario": "In the early 20th century, during the Scramble for Africa, European colonial powers established numerous schools in their African colonies purportedly to 'educate' local populations. Over time, these educational institutions proliferated and became instrumental in forming a new class of educated Africans. Following eventual decolonization in the mid-20th century, several African nations experienced a surge in nationalistic movements, led predominantly by individuals who had been educated in these colonial schools.",
+    "variables": {
+      "X": "Establishment of colonial schools by European powers",
+      "Y": "Surge in nationalistic movements in African nations post-decolonization",
+      "Z": "Formation of a class of educated Africans through these schools"
+    },
+    "user_question": "Did the establishment of colonial schools by European powers directly cause the surge in nationalistic movements in African nations post-decolonization?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might seem that the establishment of colonial schools directly led to the rise in nationalist movements, the real causal relationship is mediated by the formation of an educated class. These schools equipped many Africans with political and leadership skills, which formed an intellectual foundation that later fueled nationalistic ideologies and movements. Thus, the direct impact of the schools is mediated through the educated classes they helped create.",
+    "wise_refusal": "It's incorrect to claim a direct causation between the establishment of colonial schools and the rise of nationalist movements without considering the pivotal mediating role played by the educated African class. Ignoring this mediator oversimplifies the causal structure and leads to incorrect conclusions about the effects and strategies of colonial education.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.23",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "International Relations during Cold War",
+    "scenario": "During the early stages of the Cold War, a particular Eastern European country (Country E) received substantial economic aid from the Soviet Union. This happened concurrently with a rising trend in anti-communist sentiment among the public of Country E. Both the aid and anti-communist sentiment were influenced by the geopolitical strategies of Country E, which was trying to balance its economic needs and political independence.",
+    "variables": {
+      "X": "Soviet economic aid to Country E",
+      "Y": "Increase in anti-communist sentiment in Country E",
+      "Z": "Geopolitical strategies of Country E"
+    },
+    "user_question": "Did Soviet economic aid to Country E cause the increase in anti-communist sentiment there?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "Country E's geopolitical strategy (Z) influenced both the reception of Soviet economic aid (X) and the rise of anti-communist sentiment (Y). This strategy, aimed at balancing economic needs and political independence, made the country accept Soviet aid while also fostering a political climate in which anti-communist sentiment could grow as a means of ensuring autonomy. Therefore, it is the geopolitical strategy that acts as a common cause ('confounder'), affecting both the aid and the sentiment, rather than aid directly causing the sentiment.",
+    "wise_refusal": "Accepting a direct causal relationship between Soviet economic aid (X) and increased anti-communist sentiment (Y) falls into the collider trap as it ignores the crucial role of Country E's geopolitical strategy (Z). This strategy is the underlying factor affecting both the acceptance of aid and the rise in anti-communist sentiment, misleadingly suggesting a direct causal link where there is none.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.24",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Spurious Association via Mediator",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1990s, following the end of the Cold War, several African countries experienced internal conflicts. During this period in the Democratic Republic of Congo (DRC), a significant increase in foreign aid was aimed at supporting democratic reforms. Concurrently, there was a rise in the number of non-governmental organizations (NGOs) operating in the region, which correlated with increased violence in some provinces.",
+    "variables": {
+      "X": "Increase in foreign aid to the DRC",
+      "Y": "Rise in violence in certain provinces",
+      "Z": "Increase in the number of NGOs operating in the region"
+    },
+    "user_question": "Did the increase in foreign aid cause the rise in violence in certain provinces of the DRC during the early 1990s?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it appears that the increase in foreign aid (X) might be related to the rise in violence (Y), this relationship is likely confounded by the increased presence of NGOs (Z). The influx of NGOs often comes with foreign aid, which means these organizations could have played a significant mediating role. NGOs can influence local power dynamics and resource distribution, potentially leading to conflicts or exacerbating existing tensions, thus impacting the level of violence.",
+    "wise_refusal": "The naive causal claim that the increase in foreign aid directly caused the rise in violence ignores the critical role of the increased number of NGOs. These organizations, funded by foreign aid, might have unintentionally altered local socio-political landscapes, contributing to conflict rather than the foreign aid itself being a direct cause. Thus, attributing the rise in violence directly to increased foreign aid is overly simplistic and misleading.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 3,
+        "overall_quality": 3.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.25",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Confounding",
+    "difficulty": "Medium",
+    "subdomain": "Colonial History",
+    "scenario": "In the early 20th century, British colonial administrators in East Africa introduced several policies aimed at modernizing agriculture. These policies included both educational programs and subsidies for modern farming equipment. Over the subsequent decades, regions with higher levels of educational attainment observed significantly increased political unrest, leading analysts at the time to speculate that the modernization policies directly fueled these political tensions.",
+    "variables": {
+      "X": "Introduction of agricultural modernization policies by British colonial administrators.",
+      "Y": "Increase in political unrest in East African regions.",
+      "Z": "Educational attainment levels in these regions"
+    },
+    "user_question": "Did the introduction of agricultural modernization policies cause an increase in political unrest in East African regions?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it appears that the agricultural modernization policies are associated with increased political unrest, a closer analysis reveals that higher educational attainment, which was also promoted by these policies, plays a crucial confounding role. Advanced education facilitated increased political awareness and activism among the populace, which contributed more directly to the unrest than the modernization of agriculture itself.",
+    "wise_refusal": "Accepting the causal link between the modernization policies and political unrest without considering the role of educational attainment would be a mistake. The increased education was a significant factor that, when accounted for, clarifies that the relationship between modernization policies and unrest is confounded and not direct.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.26",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Ignorance of Mediation",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1960s, the newly independent nation of Zamoria underwent a significant transformation when its government decided to invest heavily in education, specifically focusing on science and technology. This policy was prompted by a desire to modernize the nation and make it self-reliant in various technological fields. Over the next decade, Zamoria witnessed a noticeable increase in its technological industries and a rise in GDP. Many analysts and historians attribute the growth in technological industries and the economic boom in Zamoria to the government's investment in education.",
+    "variables": {
+      "X": "Government's investment in education in science and technology",
+      "Y": "Growth in technological industries and economic boom",
+      "Z": "Development of a skilled workforce capable of technological innovation and production"
+    },
+    "user_question": "Was the government's investment in education the direct cause of the economic boom and growth in technological industries in Zamoria?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might seem that the government's investment in education directly caused the economic boom and growth in technological industries, the situation is more complex when considering the mediating variable. The development of a skilled workforce, which was a direct result of the educational policy, played a crucial role as the mediator. This skilled workforce was essential in implementing and advancing technological projects that led to industrial growth and an economic boom.",
+    "wise_refusal": "It would be simplistic and misleading to claim that the government's investment in education was the direct cause of the economic boom and technological growth without acknowledging the crucial mediating role played by the development of a skilled workforce. Ignoring this mediator would overlook the essential steps in the causal chain that link education policy to economic outcomes.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.27",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Bias Due to Selecting on the Dependent Variable",
+    "difficulty": "Hard",
+    "subdomain": "Post-Cold War Conflicts",
+    "scenario": "In the early 1990s, following the breakup of Yugoslavia, Slovenia declared independence, leading to a brief 10-day conflict with Yugoslav forces. After the conflict, Slovenia experienced significant economic growth compared to other former Yugoslav republics. Many policymakers and observers speculated that the brief nature of Slovenia's conflict led directly to its rapid economic recovery, unlike the protracted conflicts seen in Bosnia and Croatia.",
+    "variables": {
+      "X": "Length of military conflict (brief vs. protracted)",
+      "Y": "Economic growth post-conflict",
+      "Z": "Initial economic conditions and international support"
+    },
+    "user_question": "Did the brief duration of Slovenia's conflict directly cause its rapid economic recovery?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might seem that the brief conflict in Slovenia directly contributed to its rapid economic recovery, this causal inference needs careful consideration of confounding factors. The initial economic conditions in Slovenia and the international support it received, both before and shortly after the conflict, are likely substantial contributors to the observed economic outcomes. Slovenia had a relatively developed economy and stronger ties to Western Europe, which facilitated rapid economic integration and growth after its brief conflict.",
+    "wise_refusal": "Simply correlating the brief conflict with economic recovery without considering confounding factors such as pre-existing economic conditions and levels of international support would lead to a naive causal claim. It would be incorrect to attribute the economic success solely to the duration of the conflict without analyzing these additional influences.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 3,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.28",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Confounding by Collider",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Conflicts",
+    "scenario": "In the late 1980s, as Perestroika was implemented in the Soviet Union, a noticeable increase in civil unrest emerged in various satellite states. During this period, economic performance in these regions also declined. Researchers are interested in analyzing whether the policy of Perestroika led to economic downturns directly or through its influence on civil unrest, which is used as a measure of political stability.",
+    "variables": {
+      "X": "Implementation of Perestroika (economic and political reform policy initiated by Mikhail Gorbachev in the Soviet Union)",
+      "Y": "Economic performance (measured through GDP growth rates and inflation levels)",
+      "Z": "Civil unrest (measured in terms of protests, strikes, and violent incidents)"
+    },
+    "user_question": "Did the implementation of Perestroika cause economic downturns in Soviet satellite states?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "Analyzing the direct effect of Perestroika on the economic performance of satellite states requires careful consideration of confounding variables such as civil unrest. Civil unrest acts as a collider since it is influenced by both the economic policies under Perestroika and can itself influence economic performance. To appropriately assess the impact, one should consider potential backdoor paths and control for civil unrest.",
+    "wise_refusal": "The naive causal claim that Perestroika directly led to economic downturns in Soviet satellite states without considering civil unrest is inappropriate. Civil unrest is a collider here, which is affected by both Perestroika and independently influences economic conditions. By conditioning on Z, or examining the effect of Perestroika on economic performance through civil unrest, one risks introducing bias into the analysis.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.29",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Mediation",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1960s, shortly after gaining independence, a fictional African country, Mwamba, implemented aggressive educational reforms aimed at rapidly increasing literacy rates. These reforms included building schools, training teachers, and subsidizing education costs for rural populations. Over the next decade, the country observed a dramatic increase in literacy rates, alongside a notable improvement in economic growth. Many attributed Mwamba's economic uplift to the increased literacy rates.",
+    "variables": {
+      "X": "Implementing aggressive educational reforms",
+      "Y": "Improvement in economic growth",
+      "Z": "Increase in literacy rates"
+    },
+    "user_question": "Did the aggressive educational reforms in Mwamba cause the economic growth observed in the subsequent decade?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might appear that educational reforms directly influenced economic growth, it is crucial to consider literacy as a mediating factor. The reforms increased literacy rates, which in turn may have enhanced the workforce's skill set, leading to economic growth. Thus, the impact of educational reforms on economic growth is mediated by the increase in literacy rates.",
+    "wise_refusal": "The naive causal claim that educational reforms directly led to economic growth without considering literacy rates as a mediator oversimplifies the causal pathway. It is essential to analyze how literacy rates, increased through educational reforms, may have played a key role in improving economic outcomes, thus acting as a mediator in this scenario.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.30",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Mediation",
+    "difficulty": "Hard",
+    "subdomain": "Post-colonial African Politics",
+    "scenario": "In the early 1960s, shortly after gaining independence, a fictional African country, Luminosa, implemented comprehensive land reform policies to redistribute land from colonial estates to native smallholder farmers. This policy was intended to enhance agricultural productivity and elevate the overall economy. Over the next decade, Luminosa noticed a significant rise in its GDP. At the same time, there was a notable improvement in national logistics and infrastructure under a separate development plan which improved transport and reduced costs for agricultural producers significantly.",
+    "variables": {
+      "X": "Implementation of comprehensive land reform policies",
+      "Y": "Increase in GDP",
+      "Z": "Improvement in national logistics and infrastructure"
+    },
+    "user_question": "Did the land reform policies directly cause the increase in GDP in Luminosa?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The causal relationship between the land reform policies (X) and the increase in GDP (Y) in Luminosa appears to be significantly influenced by the improvement in national logistics and infrastructure (Z). While X was targeted at enhancing agricultural productivity which should positively impact the GDP, it is crucial to consider that the enhanced infrastructure (Z) mediated this relationship by enabling more efficient production and transportation, thereby contributing extensively to the GDP increase. The impact of X on Y cannot be solely attributed without accounting for Z.",
+    "wise_refusal": "It is incorrect to directly attribute the increase in GDP solely to land reform policies without considering the significant role played by the improvements in logistics and infrastructure, which acted as a mediator. Ignoring the effect of improved infrastructure would result in a misestimation of the direct causal effect of land reform on GDP, falling into the mediation trap.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.31",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Confounding",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1960s, following the independence of a fictional African nation, 'Zarania', there was a notable increase in urban development primarily in its capital city, Zaran City. Simultaneously, the newly independent government embarked on a cultural revival program aimed at promoting and preserving traditional Zaranian art forms, which had been suppressed during colonial rule. Observers noted a surge in local economic activities following these cultural initiatives, leading some to conclude that the cultural revival directly boosted the city's economic growth.",
+    "variables": {
+      "X": "Government's cultural revival program",
+      "Y": "Increase in urban economic activities",
+      "Z": "Urban development projects"
+    },
+    "user_question": "Did the cultural revival program directly cause the increase in urban economic activities in Zaran City?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it may seem that the cultural revival program directly increased economic activities, it is crucial to consider the simultaneous urban development projects. These projects, which improved infrastructure and attracted investments, are likely the main drivers of economic growth, rather than the cultural programs alone.",
+    "wise_refusal": "It is erroneous to directly attribute the increase in urban economic activities to the cultural revival program without considering the role of substantial urban development during the same period. This exemplifies the REVERSE trap, where a confounder (urban development) is mistaken as an outcome of the supposed causal variable (cultural program) rather than being recognized as an independent cause of the observed economic growth.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.32",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Spurious association via mediator",
+    "difficulty": "Medium",
+    "subdomain": "Colonial Transitions",
+    "scenario": "In the early 20th century, the British Empire granted limited self-governance to India through the Government of India Act of 1919. This act aimed to quell rising nationalist sentiments and reduce revolutionary activities. Following this political change, there was a noticeable decline in violent revolts in India during the 1920s. However, the period also saw an increase in non-violent protests and organized civil disobedience led by figures like Mahatma Gandhi.",
+    "variables": {
+      "X": "Granting of limited self-governance in India (1919)",
+      "Y": "Decline in violent revolts in the 1920s",
+      "Z": "Rise of organized non-violent protests and civil disobedience"
+    },
+    "user_question": "Did the granting of limited self-governance to India in 1919 cause the decline in violent revolts during the 1920s?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The decline in violent revolts in the 1920s, following the 1919 governance changes, was influenced heavily by the rise in organized non-violent protests. This shift was mediated by strategic decisions from leaders like Gandhi to adopt non-violence as a more effective means of political demonstration and pressure. This strategic shift, rather than the governance change itself, more directly contributed to the reduction in violent activities.",
+    "wise_refusal": "It would be incorrect to directly attribute the decline in violent revolts to the 1919 self-governance act without acknowledging the critical mediating role of the rise in non-violent protests. The governance change provided a platform and perhaps encouragement for these non-violent movements, but it was the movements themselves, as a strategic choice by leaders and participants, that were directly responsible for the reduction in violence.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.33",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Neglecting Reverse Causation",
+    "difficulty": "Medium",
+    "subdomain": "Colonial History",
+    "scenario": "During the late 19th century, as European powers expanded their colonial empires in Africa, there was a noticeable increase in the volume of trade between the colonies and the colonizing European nations. Specifically, regions under the administrative oversight of particularly strict colonial governors saw a more pronounced increase in trade activities. This correlation leads to the analysis of the impact of administrative rigor on trade development.",
+    "variables": {
+      "X": "Strictness of colonial administration",
+      "Y": "Increase in trade activities",
+      "Z": "Economic demand back in European home countries"
+    },
+    "user_question": "Did the strictness of colonial administration cause an increase in trade activities?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "It might seem that the strictness of colonial administration directly led to increased trade activities. However, the economic demand in the European home countries likely drove the need for increased trade, which in turn may have influenced the appointment of stricter administrators to efficiently manage and maximize these economic opportunities.",
+    "wise_refusal": "The assumption that strict colonial administration caused the increase in trade might be incorrect due to potential reverse causation. Here, the increase in economic demand in the colonizers' home countries could have precipitated both the increase in trade and the appointment of strict administrators, not the other way around.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.34",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Post Hoc Ergo Propter Hoc",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1990s, a significant shift happened in the Republic of Nambalia, a fictional post-colonial African nation. The country saw a rapid decrease in violent crime rates which coincided with the election of a new president, President Afolabi, who implemented a series of economic reforms aimed specifically at improving local businesses and agriculture. These reforms led to notable economic growth and better job opportunities within the same timeframe as the reduction in crime.",
+    "variables": {
+      "X": "Economic reforms led by President Afolabi",
+      "Y": "Reduction in violent crime rates",
+      "Z": "Improvement in overall economic condition and job opportunities"
+    },
+    "user_question": "Did the economic reforms implemented by President Afolabi directly cause the reduction in violent crime rates in Nambalia?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might appear that President Afolabi's economic reforms directly caused the reduction in violent crime rates in Nambalia, a closer analysis indicates that the true causal factor lies in the improvement of the economic conditions and creation of job opportunities (Z). These factors, which are outcomes of the economic reforms (X), are actually responsible for reducing the motivations and necessities that often lead to criminal behavior, thus leading to a decrease in violent crime rates (Y). Therefore, the economic reforms indirectly influenced the reduction in crime through improvements in economic conditions.",
+    "wise_refusal": "Accepting that President Afolabi's economic reforms directly caused the reduction in crime without considering the intermediary economic improvements and job growth would fall into a 'Post Hoc Ergo Propter Hoc' causal trap. Just because the reforms and crime reduction occurred in the same timeframe, does not necessarily mean the reforms directly caused the reduction; the true causal path runs through the economic improvements facilitated by these reforms.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.35",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Decolonization Movements",
+    "scenario": "In the mid-20th century, several countries in Africa were engaged in processes of decolonization, striving for independence from European powers. In analyzing these historical events, a historian investigates the relationship between the intensity of nationalist movements (X) and the success in achieving political independence (Y). However, the international political climate (Z) during the Cold War era, which favored either the suppression or support of such movements depending on the strategic interests of the US and the USSR, played a crucial role. The historian may prematurely conclude a strong causal link between nationalist movements and successful independence without adequately considering the influence of this global geopolitical context.",
+    "variables": {
+      "X": "Intensity of nationalist movements in African countries",
+      "Y": "Success in achieving political independence",
+      "Z": "International political climate during the Cold War"
+    },
+    "user_question": "Did the intensity of nationalist movements directly cause the successful political independence in African countries during the mid-20th century?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might seem intuitive that more intense nationalist movements (X) directly lead to successful independence (Y), this analysis omits a critical factor: the international political climate (Z) during the Cold War. This variable acts as a collider, as both the intensity of nationalist movements and the success of independence drives could be influenced independently by the interests and interventions of global powers like the US and the USSR. Thus, the apparent correlation between X and Y may instead be confounded by Z, the geopolitical strategies shaped by Cold War dynamics.",
+    "wise_refusal": "The naive causal claim that nationalist movements directly led to successful independence is problematic because it ignores the potential collider bias introduced by the international political climate (Z). Analyzing X's impact on Y without considering Z's influence could lead to misleading conclusions about the true drivers of political independence.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.36",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Common cause",
+    "difficulty": "Medium",
+    "subdomain": "Cold War politics",
+    "scenario": "During the Cold War, the United States increased its economic aid to South American countries that showed strong anti-communist stances. This increase in aid is noted to have coincided with an increase in the economic stability of these nations. However, this period was also marked by a global economic boom, particularly in countries aligned against the Soviet Union due to various forms of support, including trade benefits and security guarantees from the US and its allies.",
+    "variables": {
+      "X": "Increase in US economic aid to South American countries",
+      "Y": "Economic stability in those countries",
+      "Z": "Global economic boom during Cold War"
+    },
+    "user_question": "Did the increase in US economic aid directly cause the economic stability in South American countries during the Cold War?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it appears that the increase in US aid might have contributed to economic stability, it is crucial to consider the global economic conditions of the time, which were also influenced by the geopolitical stances countries took during the Cold War. The global economic boom, which was partially a result of supportive policies from economically dominant anti-Soviet allies, acted as a significant contributor to the economic stability of South American countries. Hence, the causal relationship between US aid and economic stability is confounded by these broader economic conditions.",
+    "wise_refusal": "The naive causal claim that US aid directly led to economic stability overlooks the critical impact of the global economic boom during the Cold War, which is a confounding factor. This global economic trend, influenced by geopolitical alliances and support, is likely a substantial factor that also needs to be accounted for when evaluating the economic outcomes in South American countries",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.37",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Post-treatment Bias",
+    "difficulty": "Medium",
+    "subdomain": "Early 20th-century Asian Politics",
+    "scenario": "In the early 20th century, Japan embarked on a series of military and political maneuvers aimed at expanding its influence in East Asia, notably through the annexation of Korea in 1910. This period also saw a rapid increase in industrial output and economic growth within Japan, which many historians attribute to its aggressive foreign policy and expansionism. However, the scenario becomes complex when considering the role of international trade relationships, particularly with Western powers, which were significantly enhanced during this period due to diplomatic efforts and the global demand for Japanese goods.",
+    "variables": {
+      "X": "Japan's annexation of Korea in 1910",
+      "Y": "Increase in Japan's industrial output and economic growth",
+      "Z": "Enhanced international trade relationships with Western powers"
+    },
+    "user_question": "Did Japan's annexation of Korea in 1910 cause the increase in Japan's industrial output and economic growth?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it seems intuitive to attribute Japan's economic growth to its territorial expansion, specifically the annexation of Korea in 1910, this causal analysis must also consider the significant role played by enhanced international trade relationships with Western powers during the same period. These trade relationships, which included increased exports and technology transfers, likely acted as a major driver of economic growth, thereby confounding the direct causal link between Japan's annexation efforts and its economic performance.",
+    "wise_refusal": "The naive causal claim that Japan's annexation of Korea directly resulted in its economic boom ignores the critical role of enhanced international trade relationships. These relationships, acting as a mediator, complicate the causal pathway. It's crucial to analyze these confounding factors to avoid attributing the economic growth solely to the annexation, as this simplifies the complex interplay of multiple economic drivers in that era.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.38",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African politics",
+    "scenario": "In the early 1960s, shortly after gaining independence, a hypothetical African country introduced stringent export regulations aimed at controlling the prices of local agricultural products on the international market. Around the same time, there was a notable increase in the political stability of this country compared to its regional neighbors. Many of these neighboring countries did not implement similar economic policies. The head of state credited these regulations with enhancing political stability by ensuring economic prosperity and preventing unrest.",
+    "variables": {
+      "X": "Stringent export regulations",
+      "Y": "Increase in political stability",
+      "Z": "Economic prosperity"
+    },
+    "user_question": "Did the introduction of stringent export regulations cause an increase in political stability?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "It might seem intuitive to credit the stringent export regulations for the increase in political stability, as the head of state claimed. However, the apparent connection might instead be influenced by the economic prosperity that the country experienced, which is common during times of political stability and can also lead to implementation of such regulations. Therefore, while there is a correlation, the causation might not directly stem from the regulations themselves but rather from underlying economic factors that influence both policy and stability.",
+    "wise_refusal": "Rejecting the simple causal link between export regulations (X) and political stability (Y) is wise because economic prosperity (Z) acts as a collider here. Economic prosperity could both result from and cause the implementation of stringent regulations, while also independently affecting political stability. Analyzing this relationship without considering economic prosperity could lead us to incorrectly attribute changes in political stability directly to the regulations, overlooking deeper economic interactions.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 3,
+        "overall_quality": 3.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.39",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Non-causal correlation",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African politics",
+    "scenario": "In the early 1960s, shortly after gaining independence from British rule, the country of Zamunda implemented widespread educational reforms aimed at increasing literacy rates. These reforms were followed by a significant increase in democratic engagement, as measured by voter turnout in subsequent elections. A common interpretation is that the educational reforms caused an increase in democratic participation.",
+    "variables": {
+      "X": "Implementation of educational reforms in Zamunda",
+      "Y": "Increase in democratic participation (voter turnout)",
+      "Z": "General increase in national stability post-independence"
+    },
+    "user_question": "Did the educational reforms in Zamunda cause an increase in democratic participation?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might seem that educational reforms (X) caused an increase in democratic participation (Y), it is crucial to consider the role of national stability (Z) post-independence. This period was marked by greater political and social stability, which is likely to enhance both education and democratic engagement independently. Therefore, it's plausible that the observed increase in voter turnout was also significantly influenced by the improved stability during the same period, rather than directly by the educational reforms alone.",
+    "wise_refusal": "The naive causal claim that educational reforms directly increased democratic participation ignores the concurrent increase in national stability post-independence. This stability likely contributed independently to both higher literacy rates and increased voter turnout, thereby confounding the direct causal link between educational reforms and political engagement.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.40",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Pre-treatment Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Diplomacy",
+    "scenario": "During the late 1960s, amidst the Cold War, a significant diplomatic intervention involved a series of secret negotiations between the USA and USSR. These talks led to a substantial reduction in nuclear arms. Observers noted that the countries participating in these covert negotiations tended to have fewer military confrontations in subsequent years compared to those that did not participate.",
+    "variables": {
+      "X": "Participation in covert negotiations (treatment)",
+      "Y": "Reduction in military confrontations (outcome)",
+      "Z": "Pre-existing diplomatic engagement level (confounder)"
+    },
+    "user_question": "Did participation in the covert negotiations cause the reduction in military confrontations?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it may seem that participation in negotiations led to fewer military confrontations, this conclusion is potentially misleading without considering the confounding variable Z - the pre-existing level of diplomatic engagement. This variable could influence both the likelihood of a country participating in the negotiations and its tendency towards military confrontation, suggesting that the observed effect might not be directly causal.",
+    "wise_refusal": "The naive causal claim that participation in negotiations directly causes reduced military confrontations ignores the potential influence of pre-treatment confounders. Countries with a history of diplomatic engagement are more likely to participate in such negotiations and might naturally be predisposed to avoid military confrontations, regardless of their participation in this specific event.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.41",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Data-driven selection",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial Development",
+    "scenario": "In the late 20th century, several African nations received extensive international aid to bolster their economies post-independence. Country A, which implemented strict economic reforms and anti-corruption measures, showed significant economic growth following the aid intervention, as opposed to Country B, which received similar aid levels but did not implement such reforms and experienced less economic growth.",
+    "variables": {
+      "X": "Implementation of economic reforms and anti-corruption measures (treatment/event)",
+      "Y": "Significant economic growth (outcome)",
+      "Z": "Amount and type of international aid received (confounding variable)"
+    },
+    "user_question": "Did the implementation of economic reforms and anti-corruption measures directly cause significant economic growth in Country A?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "To determine the causal impact of economic reforms and anti-corruption measures on economic growth in Country A, it is essential to consider the role of international aid. Although Country A implemented reforms alongside receiving international aid, we must compare this scenario with similar contexts where aid was provided but reforms were not undertaken. A detailed comparative analysis would help isolate the effect of the reforms from the international aid.",
+    "wise_refusal": "The naive causal claim that reforms alone led to economic growth ignores the potential influence of international aid, which is a critical confounding factor. Both countries received aid, but only one implemented reforms, suggesting that the aid itself, independent of reforms, might also be a significant factor driving economic growth. This confounding factor must be addressed to accurately assess the causal effect of reforms on economic growth.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.42",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Geopolitical Events",
+    "scenario": "During the Cambodian-Vietnamese War (1977-1991), the Cambodian government decided to bolster its national defense by both improving diplomatic relations with western countries and significantly increasing military spending. Over the course of this period, there was a noticeable decrease in foreign investment in Cambodia, particularly from Western countries that were skeptical of the region's stability.",
+    "variables": {
+      "X": "Increase in military spending (treatment)",
+      "Y": "Decrease in foreign investment from Western countries (outcome)",
+      "Z": "Improvement in diplomatic relations with Western countries (confounding variable)"
+    },
+    "user_question": "Did the increase in military spending lead to a decrease in foreign investment from Western countries?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "It is plausible to consider that the increase in military spending, amid geopolitical tensions, might conventionally be seen as a deterrent to foreign investment due to perceived instability. However, this straightforward analysis omits the crucial role of the diplomatic efforts (Z) which also intensified during the same period. These efforts were intended to mitigate any negative perceptions and potentially encourage foreign investments by promoting a more stable and cooperative image of Cambodia.",
+    "wise_refusal": "The naive causal claim that increased military spending led directly to reduced foreign investment ignores the role of improved diplomatic relations. This variable is a collider, as it is influenced by both the increase in military spending and the decrease in foreign investment. Analyzing the impact of military spending without considering diplomatic relations introduces selection bias, mistakenly attributing all changes in foreign investment patterns directly to military actions without considering diplomatic influences.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.43",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Mediation",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial Africa",
+    "scenario": "In the early 1990s, following the end of apartheid, South Africa initiated several reforms aimed at increasing political participation among the black population. One significant intervention was the implementation of voter education programs, which were intended to empower the previously disenfranchised black South Africans. These programs coincided with a notable increase in political stability in the region. However, during the same period, international economic sanctions against South Africa were being lifted, which also significantly impacted the country's economy and political landscape.",
+    "variables": {
+      "X": "Implementation of voter education programs",
+      "Y": "Increase in political stability in South Africa",
+      "Z": "Lifting of international economic sanctions"
+    },
+    "user_question": "Did the implementation of voter education programs directly lead to the increase in political stability in South Africa?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it appears that the voter education programs may have directly contributed to the increased political stability, the lifting of international economic sanctions played a significant role as well. These sanctions had previously isolated South Africa economically and diplomatically, affecting its political climate. As sanctions were lifted, economic improvements likely facilitated a more stable political environment, which may have been further enhanced by increased political engagement through voter education. Therefore, the causal relationship between the voter education programs and the political stability is mediated by the economic effects of lifting sanctions.",
+    "wise_refusal": "It is essential to recognize that the causal claim that voter education programs directly led to increased political stability ignores the significant mediating role of economic factors driven by the lifting of international sanctions. This economic boost is likely a significant mediator that must be considered to understand the full causal dynamics at play.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.44",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Reverse Causation",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial Economic Policies",
+    "scenario": "In the early 1960s, following the attainment of independence, a certain African country implemented wide-ranging socialist economic policies. These policies included nationalization of key industries and land reform aimed at redistributing land from colonial proprietors to the native population. Over the subsequent decade, there was a significant increase in the country's GDP. Some analysts propose that these socialist policies were the cause of the economic growth observed during this period.",
+    "variables": {
+      "X": "Implementation of socialist economic policies",
+      "Y": "Economic growth (increase in GDP)",
+      "Z": "Initial economic conditions and international market trends"
+    },
+    "user_question": "Did the implementation of socialist policies in the 1960s cause the observed economic growth in that African country?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might seem intuitive that the socialist policies caused economic growth, a deeper analysis reveals that the initial economic conditions, such as underutilization of resources and low baseline GDP, combined with favorable international market trends at the time, played crucial roles. These factors created an environment where any reasonable policy change could have stimulated apparent growth. Therefore, the observed growth might not be a direct result of the socialist policies per se, but more due to the exploitation of existing underused capacities and external economic conditions.",
+    "wise_refusal": "The assumption that socialist policies directly caused economic growth neglects the possible reverse causation scenario where improving economic conditions, driven by external and initial factors, might have influenced the effectiveness and timing of policy implementation. This suggests a complex interplay between policy, initial conditions, and external influences, asserting that direct causation from X to Y is overly simplistic.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.45",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Berkson's Paradox",
+    "difficulty": "Medium",
+    "subdomain": "Cold War era conflicts",
+    "scenario": "During the Congo Crisis in the early 1960s, a complex geopolitical turmoil emerged as the Congo declared independence from Belgium. This period marked significant involvement from both the Soviet Union and the United States, each backing different factions and leaders to sway the newly independent state towards their respective ideological blocs. The presence of these superpowers not only influenced the political landscape but also significantly escalated the conflict within the region, leading to various armed factions forming alliances based on the perceived support from these major countries.",
+    "variables": {
+      "X": "Increased foreign intervention by superpowers",
+      "Y": "Escalation of conflict within the Congo",
+      "Z": "Formation of armed factions aligned with superpower ideologies"
+    },
+    "user_question": "Did the increase in foreign intervention by superpowers directly cause the escalation of conflict within the Congo?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it seems intuitive that increased foreign intervention by the superpowers directly led to the escalation of the conflict, the causal relationship is nuanced because of the collider variable, the formation of armed factions. The presence of these factions, aligning themselves with either the Soviet Union or the United States based on ideological support, created a scenario where both the intervention and the conflict's escalation are dependent on this common cause (armed faction formation). Thus, the escalation cannot be solely attributed directly to increased intervention without considering the role of these factions.",
+    "wise_refusal": "The naive causal claim that increased foreign intervention directly led to conflict escalation in the Congo overlooks the role of armed factions as a collider. These factions, which formed based on superpowers’ influence, create a scenario where analyzing the direct impact of intervention without accounting for this common cause (faction formation) would be misleading. Disentangling these relationships requires a more complex analysis that considers these intersecting influences.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.46",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African Economies",
+    "scenario": "In the early 1960s, a newly independent African nation implemented a series of agricultural reforms aimed at modernizing farming techniques (X). The expectation was that these reforms would significantly boost agricultural productivity (Y). However, the data collected showed that regions with high levels of educational attainment (Z) among the local populace reported the highest increase in productivity. Many concluded that the reforms were successful based on these outputs.",
+    "variables": {
+      "X": "Implementation of modern agricultural reforms",
+      "Y": "Increase in agricultural productivity",
+      "Z": "Educational attainment of the local populace"
+    },
+    "user_question": "Did the implementation of agricultural reforms directly lead to the increase in agricultural productivity?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might initially seem that the agricultural reforms directly caused the increase in productivity, a closer analysis considering the role of educational attainment (Z) is essential. The higher productivity in regions with more educated populations suggests that these areas might have been better equipped to utilize the new farming techniques effectively, leading to higher productivity. This indicates a possible colliding effect where regions with higher educational attainment were both more likely to see effective implementation of new techniques and also to report higher productivity, potentially misleading the direct effectiveness of the reforms.",
+    "wise_refusal": "The naive causal claim that agricultural reforms directly increased productivity ignores the colliding factor of educational attainment. This oversight can lead to mistakenly attributing the cause of increased productivity to the reforms alone, without accounting for the significant impact that the pre-existing educational levels might have had on the ability to implement and benefit from these reforms effectively.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.47",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Confounding due to selection",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African politics",
+    "scenario": "In the early 1960s, following the wave of decolonization, many African nations gained independence. During this period, an analysis was conducted to assess the impact of newly implemented democratic policies (X) in Country A on its economic growth (Y). However, the analysis failed to account for the variable of international aid (Z), which was significantly higher for Country A than for other nations due to its strategic geopolitical position and resources.",
+    "variables": {
+      "X": "Implementation of democratic policies in a newly independent African country",
+      "Y": "Economic growth following independence",
+      "Z": "International aid received"
+    },
+    "user_question": "Did the implementation of democratic policies in Country A cause the observed economic growth?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might seem that the implementation of democratic policies caused economic growth, this conclusion may be misleading without considering the role of international aid, which can significantly influence economic development. To accurately determine the effect of democratic policies, one would need to control for international aid, as this external financial support could confound the relationship between policy implementation and economic outcomes.",
+    "wise_refusal": "It would be incorrect to directly attribute the economic growth in Country A solely to the implementation of democratic policies without considering the significant confounding factor of international aid. This oversight exemplifies the selection trap, where without accounting for this variable, any causal inference drawn about the effect of democratic policies on economic growth might be biased and unreliable.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.48",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Unobserved Confounder",
+    "difficulty": "Hard",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1960s, newly independent nations in Africa adopted varying levels of economic policies aimed at rapid modernization. For example, Country A implemented extensive state-led industrial policies soon after gaining independence. By the late 1970s, Country A had an unusually high GDP growth rate compared to its neighbors. This period also saw an increase in foreign educational scholarships provided by the state to young citizens.",
+    "variables": {
+      "X": "Implementation of state-led industrial policies in newly independent African nations",
+      "Y": "High GDP growth rate in these nations",
+      "Z": "Increase in foreign educational scholarships"
+    },
+    "user_question": "Did the implementation of state-led industrial policies in newly independent countries like Country A cause the high GDP growth rate observed in the late 1970s?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might initially seem that the state-led industrial policies (X) directly caused the high GDP growth (Y), it's important to consider other factors such as the increase in foreign educational scholarships (Z). This increase could indicate a broader state investment in human capital, which might also contribute to or be responsible for the economic growth. Therefore, without controlling for this confounder (Z), it's difficult to conclusively attribute the GDP growth solely to the industrial policies.",
+    "wise_refusal": "A naive causal claim might directly link the industrial policies to the economic growth, overlooking the potential role of increased educational investment as a confounding factor. Thus, without more data to control for this and other variables, asserting a direct causation could misrepresent the true scenario.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.49",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Pre-treatment selection",
+    "difficulty": "Medium",
+    "subdomain": "Colonial interventions",
+    "scenario": "In the mid-19th century, the British Empire implemented administrative reforms in its colonies, focusing on the Eastern region of Africa. These reforms included the introduction of formal education systems and legal frameworks intended to improve governance. Over time, regions undergoing these reforms showed a significant increase in economic development compared to those that did not receive similar attention. However, the selection of regions for these reforms was not random but based on existing infrastructural developments established by local kingdoms, which could inherently drive economic outcomes.",
+    "variables": {
+      "X": "Implementation of administrative reforms by the British in their colonies",
+      "Y": "Economic development in the affected regions",
+      "Z": "Pre-existing infrastructural development in the regions"
+    },
+    "user_question": "Did the British administrative reforms directly cause the economic development observed in the Eastern African colonies?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "To assess the causal impact of the British administrative reforms on economic development, it is crucial to consider the role of pre-existing infrastructure in the regions selected for reforms. The regions that received reforms already had significant infrastructural developments, which are likely contributors to economic advancement independent of the colonial interventions. Therefore, the observed economic development could be primarily influenced by these prior conditions rather than the reforms alone.",
+    "wise_refusal": "The naive causal claim that British administrative reforms directly caused economic development overlooks the influence of pre-existing infrastructural conditions. These conditions likely predisposed selected regions to better economic outcomes, independently of the reforms, leading to a selection trap in causal assessment.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.50",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Simplistic Attribution",
+    "difficulty": "Hard",
+    "subdomain": "Postcolonial African Nations' Development",
+    "scenario": "In the early 1960s, a newly independent African nation, 'Country A', initiated a series of robust educational reforms aimed at rapidly improving literacy rates. These reforms included building new schools, training teachers, and implementing a national curriculum. Over the following decade, Country A witnessed a significant increase in its GDP. Observers noted that while Country A advanced these educational reforms, its neighbor, 'Country B', without similar educational investments, did not experience comparable economic growth.",
+    "variables": {
+      "X": "Implementation of robust educational reforms in Country A",
+      "Y": "Increase in Country A's GDP over the decade following the reforms",
+      "Z": "Economic policies contemporaneously adopted that favored foreign investment and trade"
+    },
+    "user_question": "Did the educational reforms in Country A cause the increase in GDP?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it is tempting to attribute the rise in GDP solely to educational reforms, it is crucial to consider the role of economic policies that were implemented alongside the educational reforms. These policies, which encouraged foreign investment and trade, were also a significant factor in boosting Country A's GDP. Distinguishing the impact of educational reforms from these economic policies is essential to understand their respective contributions to GDP growth.",
+    "wise_refusal": "Accepting the causal claim that educational reforms alone led to GDP growth neglects the simultaneous influence of economic policies that facilitated foreign investment and trade, acting as a confounding factor. A comprehensive causal analysis requires disentangling these intertwined influences to accurately assess their individual contributions.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.51",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Hard",
+    "subdomain": "Post-colonial State Formation",
+    "scenario": "In the mid-20th century, following the withdrawal of European colonial powers, many African nations embarked on nation-building projects. In Country X, the government implemented a robust educational reform (X) aimed at reducing ethnic tensions and fostering national unity (Y). At the same time, these educational reforms were particularly emphasized in regions with significant natural resources (Z), which the government prioritized for economic reasons.",
+    "variables": {
+      "X": "Implementation of educational reforms aimed at fostering national unity",
+      "Y": "Reduction of ethnic tensions",
+      "Z": "Regions with significant natural resources"
+    },
+    "user_question": "Did the implementation of educational reforms in Country X lead to a reduction in ethnic tensions?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "It might seem that educational reforms (X) led to a reduction in ethnic tensions (Y) because both were observed concurrently in resource-rich regions (Z). However, focusing only on these regions introduces a collider bias, as these areas might have unique characteristics, such as higher government focus and investment, which are not representative of the country as a whole. Therefore, the observed relationship between X and Y in these regions might not imply a causal effect.",
+    "wise_refusal": "The causal relationship between the educational reforms and the reduction of ethnic tensions should be scrutinized carefully. The focus on resource-rich regions as the main areas for the implementation of these reforms introduces a selection bias, making it problematic to generalize this effect across all regions. This scenario typifies a collider trap, where Z (resource-rich regions) correlates with both X and Y, potentially confounding their direct causal relationship.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.52",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Spurious Association due to Collider",
+    "difficulty": "Medium",
+    "subdomain": "Post-War European Politics",
+    "scenario": "In the late 1940s, several Western European countries experienced significant political turmoil. France and Italy saw the rise of both communist and nationalist movements. The economic instability after WWII was severe, leading both countries to receive aid under the Marshall Plan. A historian investigating this period might notice a strong correlation between the intensity of political unrest (demonstrations, strikes) and the effectiveness of economic recovery measures implemented by governments.",
+    "variables": {
+      "X": "Intensity of political unrest (demonstrations, strikes)",
+      "Y": "Effectiveness of economic recovery measures",
+      "Z": "Reception of Marshall Plan aid"
+    },
+    "user_question": "Does the intensity of political unrest increase the effectiveness of economic recovery measures in post-WWII France and Italy?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The observed correlation between intense political unrest and the effectiveness of recovery measures is likely spurious and driven by a common cause, rather than one directly influencing the other. Both are influenced by how much aid they received from the Marshall Plan. Countries with higher assistance probably had both more capacity to manage unrest and resources to implement effective recovery strategies.",
+    "wise_refusal": "The naive causal claim that political unrest directly increases economic recovery effectiveness is problematic because it ignores the influence of the Marshall Plan aid, which acts as a collider in this scenario. Evaluating the effectiveness of recovery measures without considering how external aid impacts both the capacity for political movement and economic policy would lead to spurious associations.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.53",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Confounding",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1980s, a small fictional African country, Zamboria, experienced rapid economic growth shortly after the establishment of a democratic government, replacing a long-standing autocratic regime. This period saw increased foreign investments, particularly in Zamboria's mineral resources, coinciding with the rise in global commodity prices.",
+    "variables": {
+      "X": "Establishment of a democratic government in Zamboria",
+      "Y": "Rapid economic growth in Zamboria",
+      "Z": "Increase in global commodity prices"
+    },
+    "user_question": "Did the establishment of a democratic government in Zamboria cause the rapid economic growth observed in the early 1980s?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it may appear that the transition to democracy led to economic growth, it is crucial to consider the role of global commodity prices, a significant confounder in this scenario. The boom in Zamboria's economy was largely facilitated by the hike in prices of its main exports, driven by global market trends independent of its political landscape. Thus, any analysis must control for this confounding variable to isolate the effect of the democratic transition on economic growth.",
+    "wise_refusal": "The naive causal claim that the installation of democracy directly led to economic growth ignores the critical influence of global commodity prices, which simultaneously boosted the economy. This overlooks the confounding effect of Z, leading to an erroneous attribution of causality.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.54",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Espionage",
+    "scenario": "During the Cold War, the correlation between the number of espionage activities and the increase in diplomatic expulsions was notable, particularly when an espionage activity was detected by a host nation, leading to the expulsion of diplomats suspected of espionage. Both espionage efforts (X) and the expulsion of diplomats (Y) could be influenced by heightened tensions between countries (Z), which might also drive both nations to engage more aggressively in espionage.",
+    "variables": {
+      "X": "The initiation of espionage activities by a country.",
+      "Y": "The action of expelling foreign diplomats.",
+      "Z": "Heightened geopolitical tensions between two countries."
+    },
+    "user_question": "Does initiating espionage activities directly cause the expulsion of foreign diplomats?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it might appear that initiating espionage activities (X) directly leads to the expulsion of diplomats (Y), this direct causation is confounded by the presence of heightened geopolitical tensions (Z). These tensions not only potentially increase espionage activities but also the likelihood of diplomatic expulsions as preventive or retaliatory measures. Hence, an intervention on X does not straightforwardly predict changes in Y without considering Z.",
+    "wise_refusal": "The naïve causal claim that increasing espionage activities leads directly to more expulsions of diplomats fails to account for the role of geopolitical tensions, which act as a collider. Ignoring this variable can lead to incorrect assumptions about causality, as the correlation between X and Y might actually be driven by changes in Z.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.55",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Colliding Paths",
+    "difficulty": "Medium",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the mid-20th century, following the decolonization of Africa, many new nations sought various economic reforms to stabilize their economies. In the fictional nation of Afrinova, the government implemented both agrarian reform (X) and invited foreign direct investment (FDI) (Z) in an attempt to enhance economic development. Despite these efforts, Afrinova experienced a significant increase in urban unemployment (Y) during this period.",
+    "variables": {
+      "X": "Implementation of agrarian reform intended to redistribute land and improve agricultural productivity.",
+      "Y": "Increase in urban unemployment, reflecting the number of jobless individuals in urban areas.",
+      "Z": "Increase of foreign direct investment (FDI), influenced by government policies to attract overseas capital."
+    },
+    "user_question": "Did the implementation of agrarian reform (X) directly cause the increase in urban unemployment (Y) in Afrinova?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "To address this query, we must consider the role of foreign direct investment (Z) in this scenario. Although it might seem that agrarian reform (X) led directly to increased urban unemployment (Y), we must account for the impact of increased FDI (Z). FDI likely influenced both the implementation of agrarian reform (X) and the rise in urban unemployment (Y). Intervening in agrarian reform alone without considering the influence of FDI might not provide an accurate understanding of its effect on unemployment.",
+    "wise_refusal": "A naive analysis might suggest a direct causal link between agrarian reform (X) and increased urban unemployment (Y); however, this overlooks the role of FDI (Z), which acts as a collider in this scenario. Ignoring the presence of FDI, which affects both the implementation of agricultural reform and urban employment rates, could lead to erroneous causal conclusions. Thus, establishing a direct causal link without considering this third variable (Z) leads to a misleading analysis.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.56",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Simplistic attribution",
+    "difficulty": "Medium",
+    "subdomain": "Late 20th Century Diplomacy",
+    "scenario": "During the 1980s, the global political landscape was heavily influenced by various diplomatic efforts between superpowers. Notably, the reduction of nuclear arsenals was a primary focus. The U.S.-Soviet Intermediate-Range Nuclear Forces Treaty of 1987 resulted in the elimination of a whole class of nuclear missiles. Following this treaty, there were recorded decreases in military confrontations between the US and USSR in subsequent years.",
+    "variables": {
+      "X": "The U.S.-Soviet Intermediate-Range Nuclear Forces Treaty of 1987",
+      "Y": "Decrease in military confrontations between US and USSR",
+      "Z": "End of the Cold War period marked by changes in Soviet leadership and economic struggles"
+    },
+    "user_question": "Did the U.S.-Soviet Intermediate-Range Nuclear Forces Treaty cause the decrease in military confrontations between the US and USSR?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it is tempting to attribute the decrease in military confrontations directly to the treaty, this overlooks the broader context. The end of the Cold War period, marked by transformative leadership in the USSR and economic difficulties, played a considerable role. These factors likely mediated the relationship between the treaty and the reduction in confrontations, indicating the treaty itself was not the sole or direct cause.",
+    "wise_refusal": "The causal claim that the treaty directly led to fewer confrontations without considering the broader geopolitical changes, including changes in Soviet leadership and economic conditions, commits a REVERSE trap. This simplistically attributes the effect (reduced confrontations) primarily to a preceding event (the treaty) without accounting for significant intervening factors (end of Cold War transformations).",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.57",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Unobserved Confounding",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Politics",
+    "scenario": "During the early 1980s, several Eastern European countries under Soviet influence showed varying degrees of economic growth. A notable observation was made between countries that implemented market-oriented reforms (such as Hungary) and those that adhered strictly to Soviet economic models (such as Albania). Economic analysts noted that the countries which embraced market reforms appeared to have higher GDP growth rates compared to those that did not.",
+    "variables": {
+      "X": "Implementation of market-oriented economic reforms",
+      "Y": "Higher GDP growth rates",
+      "Z": "Degree of political autonomy allowed by the Soviet Union"
+    },
+    "user_question": "Did the implementation of market-oriented reforms cause the higher GDP growth rates observed in Hungary compared to Albania in the 1980s?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "To analyze the causal relationship, one must consider not only the economic reforms (X) but also the degree of political autonomy (Z) granted by the Soviet Union to these countries. Political autonomy likely influenced both the ability to implement reforms and the economic performance outcomes. Countries with more autonomy may have had the freedom to implement policies that were more economically beneficial and tailored to their specific contexts.",
+    "wise_refusal": "The naive causal claim that implementing market-oriented reforms directly caused higher GDP growth fails to account for the critical confounding variable of political autonomy. This autonomy could have independently influenced both the implementation of reforms and the economic outcomes, thus confounding the observed relationship between X and Y.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.58",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Ignored Confounder",
+    "difficulty": "Medium",
+    "subdomain": "Post-colonial African Politics",
+    "scenario": "During the mid-20th century, after gaining independence, a fictional African country, 'Nambora', implemented significant agricultural reforms aimed at improving the national economy. The government initiated a large-scale land redistribution from colonial plantations to local small-scale farmers. Concurrently, Nambora experienced a significant drop in political violence which had been rampant during the colonial period. The government and various analysts attributed the reduction in violence directly to the success of the agricultural reforms.",
+    "variables": {
+      "X": "Implementation of large-scale agricultural reforms",
+      "Y": "Reduction in political violence",
+      "Z": "End of colonial rule"
+    },
+    "user_question": "Did the agricultural reforms (X) lead to the reduction in political violence (Y)?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "Though it appears that the agricultural reforms (X) may have led to the reduction in political violence (Y), this analysis must consider the end of colonial rule (Z) as a significant confounder. The transition from colonial rule to sovereignty often leads to major structural changes including changes in governance, which could independently influence political stability and reduce violence, regardless of the agricultural reforms.",
+    "wise_refusal": "Concluding that the agricultural reforms caused the reduction in political violence without accounting for the end of colonial rule would be an error. This period marked significant overall changes in Nambora’s political, social, and economic landscape, which are likely to influence such outcomes. Thus, attributing the decrease in violence directly to the agricultural reforms overlooks the broader context of post-colonial transition.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.59",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Sample Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Military Interventions",
+    "scenario": "During the Cold War, several developing countries faced significant political upheaval, often influenced by either Soviet or American intervention. In the late 1970s, Country A, which received substantial military aid from the USA, managed to successfully avert a coup attempt believed to be backed by Soviet-supported insurgents. Following this event, Country A experienced a period of unexpected political stability and economic improvement. The military aid included not just financial support, but also strategic military advice and intelligence support.",
+    "variables": {
+      "X": "Receiving military aid from the USA",
+      "Y": "Political stability and economic improvement in Country A",
+      "Z": "Presence of external threats or insurgents (potentially confounding due to varying intensity and origin)"
+    },
+    "user_question": "Did the military aid from the USA cause the political stability and economic improvement in Country A?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it appears that the military aid from the USA to Country A might be directly responsible for its subsequent political stability and economic improvement, this conclusion overlooks potential confounding factors. Specifically, the intensity and nature of external threats, which prompted the need for such aid, could themselves influence the country's stability and economic status, irrespective of the aid received.",
+    "wise_refusal": "The naive causal claim that military aid from the USA directly caused political stability and economic improvement in Country A fails to account for the presence and role of external threats. These threats could have influenced both the provision of aid and the outcome (stability and improvement), creating a selection bias in how we perceive the effectiveness of the aid. Without adjusting for this confounding variable (Z), attributing causality solely to the military aid (X) misrepresents the complexity of geopolitical impacts.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.60",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "CONF-MED",
+    "trap_subtype": "Confounding vs. Mediation",
+    "difficulty": "Hard",
+    "subdomain": "Colonial Influence in Asia",
+    "scenario": "In the late 19th century, European colonial powers were actively involved in various parts of Asia, including the Dutch in Indonesia. During this period, the Dutch implemented a series of agricultural reforms aimed at improving the efficiency of spice production, a lucrative aspect of their colonial economy. Historically, this period coincided with an increase in local economic prosperity in some parts of Indonesia. However, this was also the era when the Dutch intensified their administrative control over the Indonesian archipelago, which included imposing taxes and restructuring local governance.",
+    "variables": {
+      "X": "Implementation of Dutch agricultural reforms in Indonesia",
+      "Y": "Increase in local economic prosperity in some parts of Indonesia",
+      "Z": "Intensified Dutch administrative control including tax imposition and governance restructuring"
+    },
+    "user_question": "Did the implementation of Dutch agricultural reforms cause the increase in local economic prosperity in some parts of Indonesia?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "The relationship between the Dutch agricultural reforms (X) and the increase in local economic prosperity (Y) might seem causal at first glance. However, the intensified administrative control (Z), which includes both the reforms and governance measures, acts as a confounder. This control may have independently contributed to or facilitated economic changes regardless of the agricultural reforms specifically. Thus, while there may be a relationship, attributing the increase in prosperity solely to the agricultural reforms without accounting for the broader administrative changes provides an incomplete view of the causal dynamics.",
+    "wise_refusal": "It's crucial to refuse a simple causal interpretation between the Dutch agricultural reforms and the increase in local economic prosperity without considering the intensified administrative control as a confounder. This confounder may mediate the effect of the reforms or independently influence the economic outcomes, making it inappropriate to directly attribute changes in prosperity to the reforms alone.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.61",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "REVERSE",
+    "trap_subtype": "Common Effect",
+    "difficulty": "Medium",
+    "subdomain": "Colonial History",
+    "scenario": "In the early 20th century, during the colonization of East Africa, British colonial authorities implemented rigorous policies aimed at increasing cotton production to supply British industries. Concurrently, there was a significant increase in local economic growth in the regions where these policies were enforced. The colonial government also established infrastructure such as railways and administrative centers to facilitate the export of cotton, which coincided with the timing of increased economic activity.",
+    "variables": {
+      "X": "Implementation of cotton production policies by British colonial authorities",
+      "Y": "Increase in local economic growth in colonial regions",
+      "Z": "Establishment of infrastructure like railways and administrative centers"
+    },
+    "user_question": "Did the implementation of cotton production policies by British colonial authorities directly cause the increase in local economic growth in colonial regions?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "Although it appears that the implementation of cotton production policies (X) directly influenced the increase in local economic growth (Y), it's important to consider the role of Z, the establishment of infrastructure such as railways and administrative centers. These infrastructures facilitated both the export of cotton and other economic activities, thereby serving as a common effect that influences both X and Y. Thus, the observed correlation between X and Y might be spurious if not accounting for Z.",
+    "wise_refusal": "Accepting the direct causality between the implementation of cotton policies and economic growth without considering the influence of infrastructure development would be incorrect. The infrastructural developments likely played a significant independent role in economic growth, impacting various sectors, thereby making it a common effect that confounds the straightforward causal link from X to Y.",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.62",
+    "domain": "D2",
+    "pearl_level": "L2",
+    "trap_type": "COLLIDER",
+    "trap_subtype": "Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Cold War Era",
+    "scenario": "During the early stages of the Cold War, the U.S. government implemented a policy known as the containment strategy, aimed at preventing the spread of communism worldwide. This led to increased military and economic support to third-party countries that were deemed at risk of communist influence. One such case was the aid given to South Korea in the 1950s, which coincided with significant economic growth in the subsequent decades. Many political analysts from that period attribute this economic growth directly to the containment policy without considering the intense industrialization and economic reforms initiated by South Korea.",
+    "variables": {
+      "X": "U.S. containment policy during the Cold War",
+      "Y": "Economic growth in South Korea in the subsequent decades",
+      "Z": "South Korea's own industrialization and economic reforms"
+    },
+    "user_question": "Did the U.S. containment policy cause the economic growth in South Korea during the Cold War era?",
+    "expected_reasoning": "Intervention",
+    "reference_answer": "While it is true that the U.S. containment policy involved supporting South Korea, which might seem to suggest a causal link to its economic growth, this conclusion overlooks the internal factors within South Korea, notably its own industrialization and economic reforms. These factors played a more direct role in its development. The economic growth can be primarily attributed to these domestic changes rather than the external policy of containment.",
+    "wise_refusal": "This analysis refutes the naive causal claim because it fails to account for the role of South Korea's aggressive internal economic policies and reforms. By focusing solely on the U.S. containment policy, one risks falling into a COLLIDER trap, incorrectly attributing causation to an external factor while ignoring the crucial internal dynamics (Z) that were more directly responsible for the economic outcomes (Y).",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.63",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simplistic Attribution",
+    "difficulty": "Hard",
+    "subdomain": "Post-Cold War Economic Policies",
+    "scenario": "In the early 1990s, Russia transitioned from a centrally planned economy to a market-based economy. This shift included massive privatization and liberalization measures. Suppose, in this counterfactual scenario, these measures were delayed by a decade, coinciding with a global economic boom. Analysts are exploring how this delay might have influenced Russia's economic stability and growth.",
+    "variables": {
+      "X": "The delay of economic reforms (privatization and liberalization) in Russia until the early 2000s",
+      "Y": "Russia's economic stability and growth in the 2000s",
+      "Z": "Global economic conditions during the 2000s"
+    },
+    "user_question": "Would delaying economic reforms to the 2000s have resulted in better economic stability and growth for Russia?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "Considering this scenario, one must analyze not only the independent effect of delayed reforms on Russia's economic conditions but also how interaction with simultaneous global economic growth could influence outcomes. It's plausible that Russia might have experienced different levels of economic stability and growth due to this delay, but attributing improved outcomes solely to the timing of economic reforms ignores the critical role of global economic conditions. These global factors could either amplify or mitigate the effect of delayed reforms.",
+    "wise_refusal": "It is inappropriate to claim that merely delaying economic reforms would directly lead to better economic outcomes without considering the influence of global economic conditions at the time. This interaction between domestic policy changes (X) and global economic environment (Z) is crucial to understanding the actual impact on Russia's economic growth (Y). The scenario overlooks complexities introduced by Z, making any simplistic attribution to X alone misleading.",
+    "ground_truth": "VALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "YES"
+  },
+  {
+    "case_id": "F.64",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simple Counterfactuals",
+    "difficulty": "Hard",
+    "subdomain": "Cold War Political Dynamics",
+    "scenario": "During the Cold War, the United States and the Soviet Union were engaged in various forms of proxy warfare, diplomatic negotiations, and arms races, which collectively shaped international relations. A less discussed aspect of this period was the U.S.'s decision to increase its grain exports to the Soviet Union in the late 1970s. This move, while primarily economic, had subtle implications for détente—a period of increased diplomatic engagement between the two superpowers. Analyzing this move involves considering the complex interplay of economic leverage, diplomatic engagement, and the geopolitical balance of the era.",
+    "variables": {
+      "X": "U.S. decision to increase grain exports to the Soviet Union",
+      "Y": "Improvement in U.S.-Soviet relations during the détente period",
+      "Z": "Geopolitical strategies and the broader context of Cold War tensions"
+    },
+    "user_question": "Would U.S.-Soviet relations have worsened if the U.S. had not decided to increase its grain exports to the Soviet Union?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "It is tempting to directly associate the U.S. grain exports with improved bilateral relations; however, evaluating this counterfactual scenario requires consideration of broader geopolitical strategies and Cold War dynamics, which also played pivotal roles. The grain export was an element of diplomacy and economic interdependence, but the overall relationship between the two nations was influenced by a myriad of other factors, including nuclear arms negotiations and global military positions. Hence, while the reduction in grain exports could potentially have led to some tensions, it is overly simplistic to conclude it would have directly worsened U.S.-Soviet relations significantly in the absence of considering other simultaneous diplomatic and military engagements.",
+    "wise_refusal": "Given the multifaceted nature of geopolitical relations and the wide array of interacting variables (like arms races, proxy wars, and international alliances), it is unwise to isolate the increase in grain exports as a decisive causal factor for improved U.S.-Soviet relations without accounting for these other significant variables. This simplification risks falling into a counterfactual trap by assuming a direct causal link where the relationship is instead conditional and interdependent on multiple broader factors.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.65",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Imaginary Intervention",
+    "difficulty": "Hard",
+    "subdomain": "Cold War Dynamics",
+    "scenario": "In the early 1960s, during the height of the Cold War, the United States and the Soviet Union were engaged in intense espionage and diplomatic maneuvering. Imagine a scenario where the U.S. decided not to conduct the U-2 spy plane missions over Soviet territory, a notable real historical event that escalated tensions significantly. The absence of these missions might suggest reduced provocations, potentially altering the course of Cold War confrontations such as the Cuban Missile Crisis.",
+    "variables": {
+      "X": "The non-conduct of U-2 spy plane missions over Soviet territory",
+      "Y": "Reduction in Cold War confrontations",
+      "Z": "Underlying diplomatic relations and espionage activities"
+    },
+    "user_question": "Would avoiding the U-2 spy plane missions have led to a significant reduction in Cold War confrontations?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "While the non-conduct of U-2 missions could be seen as reducing direct provocations, it is essential to consider the broader context of Cold War dynamics, including ongoing espionage and complex diplomatic relations. These factors might have continued to provoke confrontations in other forms, regardless of the U-2 mission decision.",
+    "wise_refusal": "The causal claim that the absence of U-2 missions would lead to fewer Cold War confrontations assumes a direct causal link that overlooks other significant variables like espionage activities and deep-rooted geopolitical tensions. These factors could independently or in conjunction with other events influence Cold War dynamics. Thus, asserting a straightforward causation from not conducting U-2 missions directly to fewer confrontations is overly simplistic and potentially misleading.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.66",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simplicity",
+    "difficulty": "Hard",
+    "subdomain": "Colonial History",
+    "scenario": "In the early 19th century, the British Empire intensified its control over India, establishing institutions that radically altered its administrative and social structure. Suppose a situation where the British Empire decided against the implementation of the English Education Act of 1835, which was intended to promote Western education among the Indian elite. The Act not only introduced the English language but also Western concepts of law, morality, and governance.",
+    "variables": {
+      "X": "Non-implementation of the English Education Act of 1835",
+      "Y": "Levels of Western influence in modern Indian governance and legal systems",
+      "Z": "Other colonial interactions and policies, including economic exploitation and structural reforms"
+    },
+    "user_question": "Would the non-implementation of the English Education Act of 1835 significantly reduce the levels of Western influence in modern Indian governance and legal systems?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "It is unlikely that merely the non-implementation of the English Education Act of 1835 would have significantly reduced the levels of Western influence in modern Indian governance and legal systems. Other colonial policies and interactions, such as economic and administrative reforms imposed by the British, significantly contributed to the Westernization process. These included the introduction of the railways, telegraphs, and other infrastructural developments alongside legal and bureaucratic restructuring.",
+    "wise_refusal": "The naive causal claim fails to take into account the myriad of other colonial policies and reforms that played a significant role in shaping modern Indian governance and legal systems. Focusing solely on the English Education Act overlooks the broader spectrum of influential factors, including economic policies and administrative reforms. Therefore, the counterfactual scenario of not implementing this particular act would not sufficiently isolate the treatment effect due to these confounding variables.",
+    "ground_truth": "VALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "YES"
+  },
+  {
+    "case_id": "F.67",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Imaginary intervention",
+    "difficulty": "Hard",
+    "subdomain": "Cold War geopolitics",
+    "scenario": "During the early stages of the Cold War, the U.S. government implemented the Marshall Plan, which aimed to rebuild European economies to prevent the spread of Soviet influence. The plan was largely successful in Western Europe. However, consider a hypothetical scenario where the Marshall Plan was also aggressively pursued in the neutral territories in Europe, such as Switzerland and Austria, which maintained policies of neutrality and limited engagement with both the U.S. and the Soviet Union. In this counterfactual scenario, it's posited that the extensive economic aid would have swayed these regions to adopt a stance significantly more aligned with U.S. Cold War policies.",
+    "variables": {
+      "X": "Implementation of the Marshall Plan in neutral European territories",
+      "Y": "Shift of Switzerland and Austria from neutrality to a pro-U.S. stance",
+      "Z": "Existing political and public sentiment towards neutrality in Switzerland and Austria"
+    },
+    "user_question": "Would implementing the Marshall Plan in Switzerland and Austria have effectively shifted these countries from a neutral stance to a pro-U.S. stance during the Cold War?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "The extensive implementation of the Marshall Plan in Switzerland and Austria, which were staunchly neutral, might not have necessarily led to a shift towards a pro-U.S. stance due to the deeply ingrained neutral policies and public sentiment in these countries. The economic benefits alone might not suffice to alter the political orientation because the neutrality was based on longstanding, culturally and historically embedded values independent of economic conditions.",
+    "wise_refusal": "The claim fails to account for the influence of deeply ingrained national policies and cultural values towards neutrality in these countries, which could diminish the effectiveness of economic leverage in altering political alignments. Assuming that economic assistance alone can pivot national political stances overlooks the complexities of historical, cultural, and social forces that shape national policies.",
+    "ground_truth": "VALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "YES"
+  },
+  {
+    "case_id": "F.68",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Structural error",
+    "difficulty": "Hard",
+    "subdomain": "Colonial History",
+    "scenario": "In the early 19th century, the failed Venezuelan uprising of 1806 led by Francisco de Miranda, which sought to achieve independence from Spanish rule, accelerated the consolidation of Spanish forces in South America. This, in turn, paradoxically strengthened the resolve and coordination among various South American independence movements, eventually culminating in widespread revolutions across the continent from 1810 onwards.",
+    "variables": {
+      "X": "The failure of the 1806 Venezuelan uprising",
+      "Y": "Strengthening of independence movements across South America",
+      "Z": "Existing discontent and revolutionary fervor among colonized populations"
+    },
+    "user_question": "If the 1806 Venezuelan uprising had succeeded, would it have prevented the strengthening of independence movements across South America?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "The idea that the success of the 1806 Venezuelan uprising would have prevented the strengthening of other independence movements assumes that the failure was a necessary precursor to their success. However, the revolutionary fervor (Z) was already present and likely to find other catalysts. Independence movements might have been inspired or accelerated by different events or leaders, as opposition to colonial rule was widespread.",
+    "wise_refusal": "This counterfactual scenario inaccurately assumes that the failure of the uprising was the sole or primary catalyst for the subsequent independence movements, ignoring the widespread pre-existing discontent (Z) that could have led to alternative revolutionary triggers. Therefore, claiming that a successful uprising in 1806 would have prevented other movements is speculative and ignores the complex interplay of historical forces.",
+    "ground_truth": "INVALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.69",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Imaginary Intervention",
+    "difficulty": "Hard",
+    "subdomain": "Post-Colonial State Formation",
+    "scenario": "In 1960, shortly after gaining independence, the Democratic Republic of Congo was plunged into political and social chaos, partly due to the assassination of its first Prime Minister, Patrice Lumumba. This event led to significant internal conflict and instability, influencing the country's developmental trajectory for decades. Consider an alternative scenario where Lumumba was not assassinated but instead continued to lead the nation.",
+    "variables": {
+      "X": "The assassination of Patrice Lumumba",
+      "Y": "The subsequent decades of political instability and hindered development",
+      "Z": "Existing tribal divisions and international Cold War tensions"
+    },
+    "user_question": "Would the Democratic Republic of Congo have experienced a stable and prosperous development if Patrice Lumumba had not been assassinated?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "While it is tempting to conclude that without the assassination of Lumumba, Congo would have achieved political stability and economic prosperity, this ignores the complex interplay of existing tribal divisions and the influence of Cold War geopolitics. These factors would likely have continued to exert significant pressure on Lumumba's government, potentially leading to different forms of conflict and challenges.",
+    "wise_refusal": "This counterfactual scenario falls into the trap of assuming an oversimplified cause-and-effect relationship between Lumumba's assassination and the long-term state of Congo. It overlooks the profound and multifaceted influences of tribal divisions and global political tensions, which would likely have impacted Congo's trajectory in various ways regardless of Lumumba's leadership.",
+    "ground_truth": "INVALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 5,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.70",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simple Counterfactual",
+    "difficulty": "Hard",
+    "subdomain": "Fall of the Soviet Union",
+    "scenario": "In the late 1980s, the Soviet Union was undergoing significant economic challenges. Mikhail Gorbachev introduced policies such as Perestroika (restructuring) and Glasnost (openness) intended to revitalize the economy through liberalization and increased transparency. These reforms inadvertently accelerated the breakup of the Soviet Union. However, consider a scenario where Gorbachev had introduced only economic reforms without political openness (Glasnost).",
+    "variables": {
+      "X": "Introduction of economic reforms without political openness",
+      "Y": "Stability and longevity of the Soviet Union",
+      "Z": "Economic conditions of the Soviet Union in the late 1980s"
+    },
+    "user_question": "Would the Soviet Union have remained stable and avoided disintegration if Gorbachev had introduced only economic reforms without Glasnost?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "It is difficult to definitively affirm that omitting Glasnost would have prevented the Soviet Union's collapse. The economic crisis was severe, and without political openness, internal pressures could have manifested in other forms of dissent or rebellion. Counterfactually, withholding Glasnost might have either delayed the inevitable or changed the nature of the collapse, but it would not likely have resulted in the preservation of the Soviet Union indefinitely.",
+    "wise_refusal": "This question requires speculation into an alternate historical reality where only partial reforms were implemented. Economic stability was deeply intertwined with political, social, and international factors. Thus, a simple causal connection between omitting Glasnost and the sustained stability of the Soviet Union cannot be conclusively established.",
+    "ground_truth": "VALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "YES"
+  },
+  {
+    "case_id": "F.71",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simpson's Paradox",
+    "difficulty": "Hard",
+    "subdomain": "Postcolonial African Politics",
+    "scenario": "In the early 1960s, the newly independent country of Imaginaria in Sub-Saharan Africa faced a severe economic meltdown. To counteract this, President A initiated a large economic reform in 1965. The reform focused on liberalizing trade to boost economic growth. However, despite the initial positive forecasts, Imaginaria's economy faced unexpected stagnation by the end of the decade. Concurrently, Imaginaria was experiencing political instability involving ethnic conflict between major tribal groups which escalated after the economic reform.",
+    "variables": {
+      "X": "Implementation of economic reform by President A in 1965",
+      "Y": "Economic stagnation of Imaginaria at the end of the 1960s",
+      "Z": "Ethnic conflicts and political instability following economic reforms"
+    },
+    "user_question": "Would Imaginaria's economy have stabilized by the end of the 1960s if President A had not initiated the economic reform?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "Analyzing whether Imaginaria's economy would have stabilized without the economic reform requires examining the role of the rising ethnic conflicts, which also correlate with the period of economic reform. The ethnic conflicts, serving as a confounding variable (Z), might have independently contributed to the economic stagnation (Y), irrespective of the economic reforms (X). Hence, it's possible that the absence of economic reform might not have led to economic stabilization if ethnic conflicts persisted.",
+    "wise_refusal": "It's misleading to claim causation directly from X (economic reform) to Y (economic stagnation) without considering Z (ethnic conflicts). These conflicts, escalating simultaneously with the economic reform, could have played a significant role in the economic downturn, potentially invalidating a simple counterfactual that suggests the economy would have stabilized without the reform.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.33
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.72",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simpson's Paradox",
+    "difficulty": "Hard",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "Consider the case of economic reforms in Zimbabwe post-independence. In 1980, Zimbabwe gained independence from British rule, led by Prime Minister Robert Mugabe. Mugabe's government initiated a series of socialist economic policies aimed at redistributing wealth and improving the lives of the indigenous population. However, the 1990s saw a shift towards more market-oriented policies due to pressure from international financial institutions and internal economic challenges. Despite these efforts, Zimbabwe's economy experienced severe hyperinflation in the early 2000s, leading to widespread poverty and unemployment.",
+    "variables": {
+      "X": "Shift towards market-oriented policies in the 1990s",
+      "Y": "Economic decline observed as hyperinflation by the early 2000s",
+      "Z": "International financial pressure and internal economic challenges in the 1990s"
+    },
+    "user_question": "Would the economic decline in Zimbabwe have been prevented if the shift towards market-oriented policies had not occurred in the 1990s?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "The economic decline in Zimbabwe by the early 2000s was influenced by multiple factors including not just the shift towards market-oriented policies, but also significant pressures from international financial institutions and complex internal challenges. These included poor governance, corruption, and adverse climatic conditions impacting agriculture. Removing the shift in economic policy alone while holding other conditions constant likely would not have altered the outcome significantly, indicating that the shift was necessary but not solely sufficient to prevent or cause the economic decline.",
+    "wise_refusal": "The naive causal claim that merely avoiding the policy shift would have prevented economic decline is problematic as it ignores other critical factors like international pressures and internal challenges. These factors could independently or concurrently with the policy shift contribute to the economic outcomes observed. This reflects a counterfactual trap whereby focusing only on one variable without considering others leads to incorrect causal conclusions.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.73",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Over-simplified Scenario",
+    "difficulty": "Hard",
+    "subdomain": "Colonial Era Trade Policies",
+    "scenario": "Consider the economic policy known as 'Mercantilism' which was prevalent during the 17th century among European colonial powers. This policy heavily restricted colony trade, mandating that colonies could only trade with their respective mother countries. Specifically, let us focus on the British Navigation Acts enacted in 1651, which limited American colonies from trading with any entity other than England, aiming to benefit the English economy. Now, imagine a counterfactual scenario where the British Navigation Acts were never enacted.",
+    "variables": {
+      "X": "The enactment of the British Navigation Acts",
+      "Y": "Economic prosperity of the English economy in the latter half of the 17th century",
+      "Z": "Other economic policies and international trade conditions of the time"
+    },
+    "user_question": "Would the English economy not have prospered in the latter half of the 17th century if the British Navigation Acts had not been enacted?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "To evaluate whether the English economy would have prospered without the British Navigation Acts involves considering other confounding variables such as the general state of the European economy, other existing trade policies, and international trade relations at the time. The prosperity of the English economy can't be attributed to a single policy directly without factoring in these other broad economic policies and conditions.",
+    "wise_refusal": "Claiming that the English economy would not have prospered without the British Navigation Acts ignores other significant factors like England's overall economic strategies, the impacts of concurrent wars and treaties, and the global trade environment. Each of these could independently affect the outcome, and thus making a direct causal link from the non-enactment of these Acts to economic prosperity is not feasible without considering these confounders.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.74",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Ignorance of Underlying Factors",
+    "difficulty": "Hard",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1990s, following the end of the Cold War, external financial support from the Soviet Union to various African socialist governments dwindled. One of these governments was in Angola, where the ruling MPLA faced significant challenges from the UNITA opposition. The cessation of Soviet support coincided with an escalation of the civil war. A causal observer might consider the end of Soviet support as the pivotal factor worsened the conflict, neglecting the underlying dynamics and other external influences such as the changing policies of the United States and the involvement of multinational corporations in natural resource extraction.",
+    "variables": {
+      "X": "Cessation of Soviet financial and military support to Angola",
+      "Y": "Escalation of the civil war in Angola in the early 1990s",
+      "Z": "Involvement of other foreign powers and multinational corporations"
+    },
+    "user_question": "Did the cessation of Soviet support directly cause the escalation of the civil war in Angola?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "While the reduction of Soviet support is correlated with the escalation of the civil war in Angola, it is crucial to consider other influential factors such as the increased involvement of the United States, who adjusted their foreign policy post-Cold War, and multinational corporations that intensified their activities in resource-rich Angola. These factors acted as confounders, influencing the conflict independently of Soviet actions.",
+    "wise_refusal": "The naive assumption that a cessation of Soviet support directly led to the escalation of the civil war ignores critical confounding variables. The geopolitical landscape included multiple influential factors that independently contributed to the situation. Analyzing the causation merely through the lens of Soviet support suspension is an oversimplification of the complex dynamics involved.",
+    "ground_truth": "VALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "YES"
+  },
+  {
+    "case_id": "F.75",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simplistic Causal Attribution",
+    "difficulty": "Hard",
+    "subdomain": "Cold War Dynamics",
+    "scenario": "During the Cold War, specifically after the Cuban Missile Crisis in 1962, U.S. President Lyndon B. Johnson decided to initiate a series of diplomatic engagements with the Soviet Union, aiming to reduce nuclear arsenals. This move coincided with a period of reduced military confrontations between the superpowers. Economic sanctions were not introduced by the U.S. against the Soviet Union during this time, focusing instead on diplomacy.",
+    "variables": {
+      "X": "Initiation of U.S. diplomatic engagements with the Soviet Union",
+      "Y": "Reduction in military confrontations between the U.S. and the Soviet Union",
+      "Z": "Global geopolitical climate and tensions"
+    },
+    "user_question": "Would military confrontations between the U.S. and the Soviet Union have increased if the U.S. had not initiated diplomatic engagements after the Cuban Missile Crisis?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "It is not straightforward to claim that the lack of diplomatic engagements would have directly led to increased military confrontations. The global geopolitical climate and existing tensions, symbolizing variable Z, also played a significant role. These elements influenced both sides' readiness to militarily engage or seek diplomatic solutions. Additionally, other independent efforts from international bodies and different countries to ease tensions might have contributed to the observed outcome.",
+    "wise_refusal": "Attributing the reduction in military confrontations solely to the absence of U.S. diplomatic efforts simplifies the complex interplay of international relations and geopolitical strategies during the Cold War. It ignores other significant factors that were concurrently influencing global politics.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.76",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Ignorance of Context",
+    "difficulty": "Hard",
+    "subdomain": "Colonial Histories",
+    "scenario": "In the early 20th century, Dutch colonial administration in Indonesia attempted several agricultural reforms to increase rice production. These reforms included the implementation of new irrigation systems and the introduction of improved rice varieties. However, these measures were taken in regions already experiencing high levels of resistance against colonial rule, especially in Java and Sumatra, which were sites of frequent rebellions.",
+    "variables": {
+      "X": "Implementation of agricultural reforms by the Dutch in Indonesia",
+      "Y": "Increase in rice production",
+      "Z": "Pre-existing political unrest and resistance"
+    },
+    "user_question": "If the Dutch had not implemented agricultural reforms, would rice production in Indonesia have remained the same during the early 20th century?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "Considering the scenario, a direct causal link stating that the lack of reforms would have kept rice production static ignores the confounding impact of ongoing political unrest. The resistance could have independently influenced the stability and effectiveness of any agricultural activities, potentially reducing production regardless of the reforms.",
+    "wise_refusal": "The question assumes a straightforward causal relationship where none straightforwardly exists due to the confounding effect of the political unrest. Rice production could have been affected negatively by the unrest regardless of the reforms, thus invalidating a simple causal analysis.",
+    "ground_truth": "INVALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 4,
+        "overall_quality": 3.67
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.77",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simplistic Counterfactual",
+    "difficulty": "Hard",
+    "subdomain": "Post-Colonial African Politics",
+    "scenario": "In the early 1960s, shortly after gaining independence, the Republic of Katamia experienced a significant economic downturn. This period coincided with the assassination of its charismatic leader, President Anzara, who had been a unifying figure for the nation's diverse ethnic groups. Following his assassination, ethnic tensions surged, and political instability ensued, further exacerbating the economic challenges. Analysts often debate whether the continued leadership of Anzara could have steered Katamia through its economic and social crises.",
+    "variables": {
+      "X": "The assassination of President Anzara",
+      "Y": "Worsening of the economic situation and increase in ethnic tensions",
+      "Z": "Ethnic diversity and historical ethnic tensions"
+    },
+    "user_question": "Would the economic downturn and increase in ethnic tensions in Katamia have been avoided if President Anzara had not been assassinated?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "While it is tempting to attribute the worsening economic situation and ethnic tensions directly to the assassination of President Anzara, doing so simplifies the complex interplay of historical, economic, and social factors. The pre-existing ethnic tensions and economic vulnerabilities served as significant confounders. These underlying issues might still have led to similar outcomes, albeit perhaps with different dynamics or timelines.",
+    "wise_refusal": "Attributing the economic downturn and social unrest solely to President Anzara's assassination neglects the impact of pre-existing ethnic tensions and economic challenges. These factors likely would have exerted significant influence regardless of Anzara's leadership, making a direct causal link overly simplistic and potentially misleading.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.78",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simplistic Counterfactual",
+    "difficulty": "Hard",
+    "subdomain": "Post-World War European Politics",
+    "scenario": "In the aftermath of World War II, Yugoslavia emerged as a federation made up of six republics. By the early 1990s, nationalist tensions among the republics surged, leading to a series of wars that eventually resulted in the dissolution of Yugoslavia. In an alternative scenario, imagine if Josip Broz Tito, the long-time leader who maintained a strict but stabilizing rule over Yugoslavia, had lived longer, possibly averting the breakup until a different geopolitical climate emerged, such as the expansion of the European Union.",
+    "variables": {
+      "X": "Extended leadership of Josip Broz Tito",
+      "Y": "Prevention of Yugoslavian breakup during the early 1990s",
+      "Z": "Underlying nationalist tensions among Yugoslavian republics"
+    },
+    "user_question": "If Josip Tito had lived longer, would Yugoslavia have remained intact during the early 1990s?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "The causal link between Tito's extended leadership and the prevention of Yugoslavia’s breakup seems plausible but overlooks critical underlying factors. Tito's leadership style suppressed, but did not resolve, the nationalist tensions. Without addressing these root issues, it’s uncertain whether his longer leadership alone could have maintained unity indefinitely.",
+    "wise_refusal": "Asserting that Tito’s longer leadership would have definitely prevented Yugoslavia's breakup during the early 1990s fails to consider the complex interplay of nationalist tensions which continued to exist and might have erupted regardless of his presence. This naive causal claim simplifies the historical complexities and is therefore considered invalid.",
+    "ground_truth": "INVALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 5,
+        "structural_clarity": 4,
+        "pearl_alignment": 5,
+        "overall_quality": 4.67
+      }
+    },
+    "label": "NO"
+  },
+  {
+    "case_id": "F.79",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Simplistic Attribution",
+    "difficulty": "Hard",
+    "subdomain": "European Diplomacy",
+    "scenario": "In the early 20th century, amidst the escalating tensions in Europe that led to World War I, a lesser-known diplomatic effort known as the 'Heidelberg Conference' was proposed by neutral small nations to mediate among the powers. However, the assassination of Archduke Franz Ferdinand happened before the date set for the conference, which resulted in the conference being canceled due to the immediate escalation of conflict, leading to the full outbreak of World War I.",
+    "variables": {
+      "X": "Cancellation of the Heidelberg Conference",
+      "Y": "Outbreak of World War I",
+      "Z": "Assassination of Archduke Franz Ferdinand"
+    },
+    "user_question": "Would World War I have been avoided if the Heidelberg Conference had not been canceled?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "While it's tempting to assume that the conference could have prevented the war, it is important to consider that the assassination of the Archduke was a critical and immediate precipitating factor in accelerating the conflict. The tensions among major powers were already high, with complex alliances and militarism contributing to a volatile situation. Therefore, even if the conference had occurred, it is not certain that it could have stopped the inevitable clash resulting from broader geopolitical dynamics.",
+    "wise_refusal": "We must refuse the simplistic attribution that the cancellation directly led to the outbreak of World War I without considering the broader context of pre-existing inter-nation tensions and alliances, which were likely to erupt regardless of the conference's discussions.",
+    "ground_truth": "CONDITIONAL",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 4,
+        "pearl_alignment": 4,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "AMBIGUOUS"
+  },
+  {
+    "case_id": "F.80",
+    "domain": "D2",
+    "pearl_level": "L3",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "implausible alternate history",
+    "difficulty": "Hard",
+    "subdomain": "Modern European politics",
+    "scenario": "In 1989, amidst financial turmoil, the government of East Germany decides not to impose travel restrictions, contrary to what historically occurred. Instead, they adopted a more open policy which theoretically could have led to increased immigration rates and perhaps a faster integration with West Germany, avoiding the fall of the Berlin Wall.",
+    "variables": {
+      "X": "East German government's decision not to impose travel restrictions in 1989",
+      "Y": "Prevention of the fall of the Berlin Wall",
+      "Z": "Financial turmoil and political pressures within East Germany"
+    },
+    "user_question": "Would the decision by the East German government not to impose travel restrictions in 1989 have prevented the fall of the Berlin Wall?",
+    "expected_reasoning": "Counterfactual",
+    "reference_answer": "The fall of the Berlin Wall was influenced by numerous factors beyond the immediate control of the East German government, including widespread public discontent, economic instability, and the geopolitical shifts in Eastern Europe. Even if East Germany had not imposed travel restrictions, the external political pressures and the prevailing public unrest might still have led to the fall of the Berlin Wall.",
+    "wise_refusal": "It's invalid to assert that the non-imposition of travel restrictions would have single-handedly prevented the fall of the Berlin Wall. This counterfactual ignores the multicausal reality of historical geopolitical events where multiple, intertwined factors contribute to outcomes. The claim oversimplifies the complex interdependencies between political decisions, public sentiment, and international influences.",
+    "ground_truth": "INVALID",
+    "annotation": {
+      "author": "April Yang",
+      "verification_scores": {
+        "trap_purity": 4,
+        "structural_clarity": 3,
+        "pearl_alignment": 5,
+        "overall_quality": 4.0
+      }
+    },
+    "label": "NO"
+  }
+]

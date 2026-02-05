@@ -1,0 +1,1623 @@
+[
+  {
+    "case_id": "9.100",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "AVAILABILITY BIAS",
+    "trap_subtype": "Media Narrative",
+    "difficulty": "Easy",
+    "subdomain": "Tennis",
+    "causal_structure": "Media highlights X, ignores ~X",
+    "key_insight": "Memorable tantrums do not equate to frequent tantrums.",
+    "scenario": "A tennis player is known as 'The McEnroe of his generation' because viral clips of him breaking rackets circulate constantly on social media (X). A statistical analysis of all his matches shows he violates code of conduct less often than the tour average (Y).",
+    "variables": {
+      "X": "Viral Clips (Available Data)",
+      "Y": "Actual Code Violations (True Rate)",
+      "Z": "Social Media Algorithm (Selection Mechanism)"
+    },
+    "hidden_timestamp": "The viral clips are re-shared for years, distorting frequency perception.",
+    "conditional_answer": "If the question asks about public perception, X causes it. If asking about reality, Z biases X.",
+    "wise_refusal": "The reputation is based on Availability Bias. Algorithms (Z) select and amplify extreme behavior (X), making it feel frequent. The complete data (Y) shows the player is actually calmer than average."
+  },
+  {
+    "case_id": "9.101",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "CLUSTERING ILLUSION",
+    "trap_subtype": "Gambler's Fallacy",
+    "difficulty": "Medium",
+    "subdomain": "Basketball",
+    "causal_structure": "Independence Z ignored due to Streak X",
+    "key_insight": "A miss does not increase the probability of a make.",
+    "scenario": "A star shooter has missed 10 consecutive shots (X). The commentator claims he is 'due' to make the next one (Y) because of the law of averages.",
+    "variables": {
+      "X": "Streak of Misses",
+      "Y": "Next Shot Outcome",
+      "Z": "Independence of Events"
+    },
+    "hidden_timestamp": "Shots are independent trials given fixed skill.",
+    "conditional_answer": "If the player adjusts his mechanics due to the misses, X might influence Y. If mechanics stay the same, independence holds.",
+    "wise_refusal": "This is the Gambler's Fallacy. Shot outcomes are largely independent events (Z). A streak of misses (X) does not increase the statistical probability of a make (Y); the probability remains consistent with his underlying skill level."
+  },
+  {
+    "case_id": "9.102",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Observational",
+    "difficulty": "Easy",
+    "subdomain": "Golf",
+    "causal_structure": "Observation of outlier implies next observation < outlier",
+    "key_insight": "Record rounds are outliers.",
+    "scenario": "A golfer shoots a course record 61 on Thursday (X). On Friday, she shoots a 70 (Y). Commentators wonder if she is 'choking' under the pressure of the lead.",
+    "variables": {
+      "X": "Record Round (Outlier)",
+      "Y": "Subsequent Round (Regression)",
+      "Z": "Choking (Spurious)"
+    },
+    "hidden_timestamp": "Thursday was the peak performance distribution.",
+    "conditional_answer": "If an injury occurred, it provides a physical explanation for the decline (Y). However, attributing the decline solely to 'choking' (Z) ignores the statistical likelihood of regression after an outlier performance.",
+    "wise_refusal": "A course record (X) is a statistical outlier requiring perfect variance. The next round (Y) is overwhelmingly likely to be higher due to Regression to the Mean, regardless of psychological state (Z)."
+  },
+  {
+    "case_id": "9.103",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Fan Perception",
+    "difficulty": "Medium",
+    "subdomain": "General Sports",
+    "causal_structure": "We only see the winners.",
+    "key_insight": "The 'old days' had bad athletes too; we just forgot them.",
+    "scenario": "A fan watches classic games from the 1990s and remarks, 'Every player back then was a legend (X). Today's league is watered down.'",
+    "variables": {
+      "X": "Replayed Classic Games",
+      "Y": "Perceived Quality",
+      "Z": "Forgotten Mediocre Games"
+    },
+    "hidden_timestamp": "TV networks only replay the best games.",
+    "conditional_answer": "If the fan reviews a random sample of all games from the 1990s, the perception might change. If only watching highlights, X biases Y.",
+    "wise_refusal": "This is Survivorship Bias. We only replay the 'classic' games and remember the legends (X). The mediocre players and boring games from the 1990s (Z) are not re-broadcast, creating a false comparison with the full distribution of today's league."
+  },
+  {
+    "case_id": "9.104",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "SPURIOUS",
+    "trap_subtype": "Reverse Causality",
+    "difficulty": "Medium",
+    "subdomain": "Sports Marketing",
+    "causal_structure": "Z (Wins) -> X (Jersey Sales)",
+    "key_insight": "Sales don't cause wins; wins cause sales.",
+    "scenario": "A marketing team notices that whenever jersey sales increase (X), the team's winning percentage improves (Y). The intern suggests lowering jersey prices to help the team win more games.",
+    "variables": {
+      "X": "Jersey Sales",
+      "Y": "Winning Percentage",
+      "Z": "Team Success / Star Player Performance"
+    },
+    "hidden_timestamp": "Sales spike after big wins.",
+    "conditional_answer": "If revenue is immediately reinvested in better players, X could indirectly cause Y. Otherwise, Z causes X.",
+    "wise_refusal": "This is Reverse Causality or Common Cause. Fans buy more jerseys (X) because the team is winning (Y), or because a star player was signed (Z) who drives both wins and sales. Lowering prices (X) will not causally increase win rate (Y)."
+  },
+  {
+    "case_id": "9.105",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Sampling Bias",
+    "difficulty": "Medium",
+    "subdomain": "Running",
+    "causal_structure": "Sample X is not representative of Population",
+    "key_insight": "Forum users are enthusiasts, not average users.",
+    "scenario": "An online forum for 'Couch-to-5K' runners is analyzed. 90% of posts describe completing the program successfully (X). A new runner concludes the program has a 90% success rate (Y).",
+    "variables": {
+      "X": "Forum Posts",
+      "Y": "Success Rate Inference",
+      "Z": "Dropouts (Silent)"
+    },
+    "hidden_timestamp": "Users who quit usually stop posting.",
+    "conditional_answer": "If the forum requires verification of all starters (registry), the rate is accurate. If voluntary posting, selection bias applies.",
+    "wise_refusal": "This is Selection Bias. Users who fail the program (Z) typically stop posting or leave the forum. The observed posts (X) are a self-selected sample of survivors, inflating the perceived success rate."
+  },
+  {
+    "case_id": "9.106",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "CLUSTERING ILLUSION",
+    "trap_subtype": "Hot Hand",
+    "difficulty": "Medium",
+    "subdomain": "Baseball",
+    "causal_structure": "Randomness contains clusters",
+    "key_insight": "Luck looks like skill in small samples.",
+    "scenario": "A batter gets 3 hits in 3 at-bats (X), but all were 'bloop' singles that barely cleared the infield. The manager changes pitchers because the batter is 'locked in' (Y).",
+    "variables": {
+      "X": "3 Bloop Hits (Luck)",
+      "Y": "Manager Decision",
+      "Z": "Random Variance"
+    },
+    "hidden_timestamp": "Exit velocity was low.",
+    "conditional_answer": "If the hits were hard line drives, X might indicate skill/timing ('figuring him out'). If they were 'bloops' (luck), it is likely noise.",
+    "wise_refusal": "The hits were low-quality 'bloops' (X), indicating luck rather than skill. Attributing this to being 'locked in' is the Clustering Illusion. The batter's future performance is best predicted by his season average, not a lucky streak."
+  },
+  {
+    "case_id": "9.107",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Result vs Process",
+    "difficulty": "Hard",
+    "subdomain": "Soccer",
+    "causal_structure": "Outcome Y validates Process X inappropriately",
+    "key_insight": "A bad shot that goes in is still a bad shot.",
+    "scenario": "A striker takes a shot from 40 yards out (X) which deflects off two defenders and goes in (Y). The coach praises the decision to shoot.",
+    "variables": {
+      "X": "Low xG Shot",
+      "Y": "Goal",
+      "Z": "Luck/Deflection"
+    },
+    "hidden_timestamp": "The Expected Goal (xG) value was 0.02.",
+    "conditional_answer": "If the goalkeeper was out of position or the defense was disorganized, shooting (X) was the correct decision regardless of the deflection. If the defense was set, the decision was poor outcome bias.",
+    "wise_refusal": "Praising the decision based on the goal (Y) is Outcome Bias. The shot (X) had a very low probability of success and relied on luck (Z). A good process would likely discourage such low-percentage attempts."
+  },
+  {
+    "case_id": "9.108",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "AVAILABILITY BIAS",
+    "trap_subtype": "Recency",
+    "difficulty": "Easy",
+    "subdomain": "Football",
+    "causal_structure": "Recent X dominates memory",
+    "key_insight": "We overweight the last game.",
+    "scenario": "A quarterback throws 3 interceptions in the final game of the season (X). Despite an MVP-caliber season, fans demand he be traded (Y).",
+    "variables": {
+      "X": "Last Game Performance",
+      "Y": "Fan Demand",
+      "Z": "Season-Long Data"
+    },
+    "hidden_timestamp": "Evaluation happens immediately after Game 17.",
+    "conditional_answer": "If the 3 interceptions revealed a new, lasting injury, the trade demand might be valid. If they were random variance, Z (season data) is more predictive.",
+    "wise_refusal": "Fans are suffering from Recency Bias (Availability). The most recent event (X) is vivid, overshadowing the larger sample size of the full season (Z) which indicates high skill."
+  },
+  {
+    "case_id": "9.109",
+    "pearl_level": "L1",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Spring Training",
+    "difficulty": "Medium",
+    "subdomain": "Baseball",
+    "causal_structure": "Small sample X vs Long Season Y",
+    "key_insight": "Spring training stats are noise.",
+    "scenario": "A player hits .500 in Spring Training (X). Fans predict he will win the MVP in the regular season (Y).",
+    "variables": {
+      "X": "Spring Training Stats",
+      "Y": "Regular Season Performance",
+      "Z": "Competition Level/Sample Size"
+    },
+    "hidden_timestamp": "Spring training pitchers are often minor leaguers.",
+    "conditional_answer": "If the player changed his swing mechanics significantly, X might translate. Otherwise, regression is likely.",
+    "wise_refusal": "Spring training stats (X) have little correlation with regular season performance (Y) due to small sample size and lower competition level (Z). The .500 average is likely a product of variance and facing minor league pitching."
+  },
+  {
+    "case_id": "9.110",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Survivorship",
+    "difficulty": "Medium",
+    "subdomain": "Bodybuilding",
+    "causal_structure": "Only responders stay on the diet",
+    "key_insight": "You don't see the people who got sick and quit.",
+    "scenario": "A controversial 'carnivore' diet forum is full of people claiming it cured their autoimmune issues (X). A doctor points out that people who felt worse on the diet likely left the forum (Z).",
+    "variables": {
+      "X": "Success Stories",
+      "Y": "Perceived Efficacy",
+      "Z": "Silent Failures"
+    },
+    "hidden_timestamp": "The forum has no mechanism to track dropouts.",
+    "conditional_answer": "If the forum requires participants to register before starting and tracks dropouts, the data is valid. If it is voluntary posting, it is biased.",
+    "wise_refusal": "The forum suffers from Selection/Survivorship Bias. We only observe those who tolerated the diet well (X). Those who suffered adverse effects (Z) left the community and are not in the dataset."
+  },
+  {
+    "case_id": "9.111",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Intervention at Peak",
+    "difficulty": "Medium",
+    "subdomain": "Baseball",
+    "causal_structure": "Contract signed at Peak X -> Y (Regression)",
+    "key_insight": "Never pay for last year's stats.",
+    "scenario": "A free agent hits 50 home runs (X) in his contract year. The team signs him to a massive 10-year deal (I). Next year he hits 30 (Y). The GM is blamed for 'ruining' him.",
+    "variables": {
+      "X": "50 HR Season (Peak)",
+      "I": "Contract (Intervention)",
+      "Y": "30 HR Season (Outcome)",
+      "Z": "Natural Regression"
+    },
+    "hidden_timestamp": "The contract was signed immediately following the outlier season.",
+    "conditional_answer": "If the player demonstrated a sustainable change in launch angle and exit velocity, the decline might be failure. If 50 HR was just a variance spike, Y is expected.",
+    "wise_refusal": "The 50 HR season (X) was an outlier performance (Career Year). Signing him (I) at the peak guarantees he will produce less (Y) simply due to Regression to the Mean (Z). The contract didn't ruin him; statistics did."
+  },
+  {
+    "case_id": "9.112",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Risky Strategy",
+    "difficulty": "Hard",
+    "subdomain": "Formula 1",
+    "causal_structure": "Bad strategy X + Luck Z -> Good Outcome Y",
+    "key_insight": "Strategies that rely on 5% probability events are usually bad, even if they work.",
+    "scenario": "A driver is 20 seconds behind (X). The strategist keeps him out on old tires hoping for a Safety Car. A Safety Car happens (Z), closing the gap and allowing a cheap pit stop. Driver wins (Y). The strategist is hailed as a genius.",
+    "variables": {
+      "X": "Time Gap",
+      "Y": "Win",
+      "Z": "Lucky Event (Safety Car)"
+    },
+    "hidden_timestamp": "The probability of a Safety Car was 15%.",
+    "conditional_answer": "If the team had weather data or track data suggesting a Safety Car was highly probable (>40%), the strategy was sound. If they relied on a 15% chance, it was a lucky gamble.",
+    "wise_refusal": "This is Outcome Bias. The strategy (X) had a low expected value and relied on a lucky event (Z). Validating the process based on the lucky result (Y) reinforces bad decision-making."
+  },
+  {
+    "case_id": "9.113",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Survivorship",
+    "difficulty": "Medium",
+    "subdomain": "Baseball Pitching",
+    "causal_structure": "X (100mph) -> Y (Health) in survivors only",
+    "key_insight": "Survivorship Bias hides the injuries.",
+    "scenario": "A study shows that pitchers who consistently throw over 100mph in the majors (X) rarely have elbow surgery (Y). A coach encourages youth pitchers to throw max effort to protect their elbows.",
+    "variables": {
+      "X": "High Velocity Pitchers",
+      "Y": "Healthy Elbows",
+      "Z": "Injured Pitchers (Dropouts)"
+    },
+    "hidden_timestamp": "Pitchers who blow out their elbows don't make the majors.",
+    "conditional_answer": "If youth pitchers have the same elite connective tissue as the MLB survivors, X applies. If not, high velocity increases injury risk.",
+    "wise_refusal": "This is Survivorship Bias. Pitchers who threw 100mph and blew out their elbows (Z) are not in the 'majors' dataset. Only the genetic outliers who could withstand the stress (X) remained. Mimicking them will likely injure normal arms."
+  },
+  {
+    "case_id": "9.114",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "New Gear",
+    "difficulty": "Easy",
+    "subdomain": "Golf",
+    "causal_structure": "Switching putter at nadir",
+    "key_insight": "You change the putter when you can't putt.",
+    "scenario": "A golfer is putting terribly (X) and switches to a new brand of putter (I). His putting improves in the next tournament (Y). He claims the new putter is the cause.",
+    "variables": {
+      "X": "Putting Slump (Nadir)",
+      "I": "New Putter",
+      "Y": "Putting Improvement",
+      "Z": "Regression"
+    },
+    "hidden_timestamp": "The switch happened after the worst round of the year.",
+    "conditional_answer": "If the old putter was physically damaged or ill-fitted, the switch (I) caused Y. If the old putter was fine, Z (regression) caused Y.",
+    "wise_refusal": "Golfers switch putters (I) when their performance is at a trough (X). Improvement (Y) is expected due to Regression to the Mean (Z), regardless of the equipment change."
+  },
+  {
+    "case_id": "9.115",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Training Methods",
+    "difficulty": "Medium",
+    "subdomain": "Gymnastics",
+    "causal_structure": "Abusive training X selects for survivors Y",
+    "key_insight": "Harsh methods break the weak; only the strong remain.",
+    "scenario": "A strict coach uses harsh, abusive training methods (X). His gym produces several Olympic medalists (Y). Parents argue his methods are necessary for success.",
+    "variables": {
+      "X": "Abusive Training",
+      "Y": "Medalists",
+      "Z": "Injured/Burned Out Athletes"
+    },
+    "hidden_timestamp": "90% of students quit or get injured.",
+    "conditional_answer": "If the training method teaches specific technical skills achievable no other way, X causes Y. If it simply filters for durability, it is survivorship.",
+    "wise_refusal": "This is Survivorship Bias. The harsh methods (X) filter out everyone except the most resilient genetic outliers (Y). The many athletes broken by the system (Z) are ignored. Success might be despite the training, not because of it."
+  },
+  {
+    "case_id": "9.116",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Cover Jinx",
+    "difficulty": "Easy",
+    "subdomain": "Basketball",
+    "causal_structure": "Cover selection at Peak -> Regression",
+    "key_insight": "Being on the cover requires being an outlier.",
+    "scenario": "A player appears on the cover of a video game (X) after an MVP season. Next season he is plagued by minor injuries and stats drop (Y). Fans claim he is cursed.",
+    "variables": {
+      "X": "Cover Appearance (Post-Peak)",
+      "Y": "Performance Drop",
+      "Z": "Regression"
+    },
+    "hidden_timestamp": "Selection for cover requires peak performance.",
+    "conditional_answer": "If the player was concealing an injury at the time of selection, X predicts Y. Otherwise, it is standard regression.",
+    "wise_refusal": "The 'Curse' is Regression to the Mean. Only players with outlier seasons (X) are selected for covers. Outlier seasons usually involve good health luck, which normalizes (Y) in subsequent years."
+  },
+  {
+    "case_id": "9.117",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Volunteer Bias",
+    "difficulty": "Hard",
+    "subdomain": "Sports Science",
+    "causal_structure": "Volunteers for study X differ from population",
+    "key_insight": "Lazy people don't volunteer for exercise studies.",
+    "scenario": "A study on a new high-intensity workout recruits volunteers (X). The participants show massive fitness gains (Y). The gym markets the workout to the general public.",
+    "variables": {
+      "X": "Volunteers (Motivated)",
+      "Y": "Gains",
+      "Z": "General Public (Less Motivated)"
+    },
+    "hidden_timestamp": "The study required 6am attendance.",
+    "conditional_answer": "If the workout is tested on a random sample of the population, results might hold. With volunteers, motivation confounds the result.",
+    "wise_refusal": "The study suffers from Volunteer Bias/Selection. Volunteers (X) are inherently more motivated and disciplined than the general public (Z). The efficacy of the workout is confounded by the participants' drive."
+  },
+  {
+    "case_id": "9.118",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Draft Bust",
+    "difficulty": "Medium",
+    "subdomain": "NFL Draft",
+    "causal_structure": "Context Z explains Outcome Y",
+    "key_insight": "Stats don't tell the whole story for rookies.",
+    "scenario": "A GM drafts a highly touted QB (X). In his rookie season, he posts average stats (Y). Fans label him a 'bust'. The GM argues that given he had the worst offensive line in the league (Z), average performance is actually promising.",
+    "variables": {
+      "X": "Draft Choice",
+      "Y": "Average Stats",
+      "Z": "Terrible Offensive Line"
+    },
+    "hidden_timestamp": "QB was sacked 60 times.",
+    "conditional_answer": "If the QB held the ball too long causing the sacks, Y is on him. If the pressure was instantaneous, Y is a team failure, not a player bust.",
+    "wise_refusal": "This is Outcome Bias/Contextual Blindness. Judging the QB solely on raw stats (Y) ignores the confounding variable of the offensive line (Z). Producing 'average' stats under 'terrible' conditions often indicates above-average skill."
+  },
+  {
+    "case_id": "9.119",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Team Meeting",
+    "difficulty": "Easy",
+    "subdomain": "Soccer",
+    "causal_structure": "Meeting called at losing streak trough",
+    "key_insight": "Yelling at players works because they were going to win anyway.",
+    "scenario": "A team loses 4 games in a row (X). The captain holds a 'players only' meeting (I) to scream at everyone. They win the next game (Y). The captain credits the meeting.",
+    "variables": {
+      "X": "Losing Streak (Trough)",
+      "I": "Meeting (Intervention)",
+      "Y": "Win",
+      "Z": "Regression"
+    },
+    "hidden_timestamp": "Meetings only happen when things are bad.",
+    "conditional_answer": "If tactical changes were made during the meeting, I caused Y. If it was just emotional yelling, regression (Z) likely explains Y.",
+    "wise_refusal": "The meeting (I) was triggered by the losing streak (X). Since sports performance fluctuates, the team was statistically likely to win the next game (Y) anyway due to Regression to the Mean (Z)."
+  },
+  {
+    "case_id": "9.120",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "College Dropouts",
+    "difficulty": "Medium",
+    "subdomain": "Basketball",
+    "causal_structure": "Successful dropouts X visible; failed dropouts Z invisible",
+    "key_insight": "Kobe made it. Your neighbor didn't.",
+    "scenario": "A player skips college to go pro (X) citing Kobe Bryant and LeBron James as proof it works. His guidance counselor advises against it.",
+    "variables": {
+      "X": "Superstar Prep-to-Pro Players",
+      "Y": "Success Prediction",
+      "Z": "Failed Prep-to-Pro Players"
+    },
+    "hidden_timestamp": "Dataset includes only NBA All-Stars.",
+    "conditional_answer": "If the player has physical metrics comparable to Kobe/LeBron, X might work. If average, Z applies.",
+    "wise_refusal": "The player is relying on Survivorship Bias. He sees the superstars who succeeded (X) but ignores the many high schoolers who skipped college, failed to make the NBA, and are currently unemployed (Z)."
+  },
+  {
+    "case_id": "9.121",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Punishment vs Reward",
+    "difficulty": "Hard",
+    "subdomain": "Coaching Psychology",
+    "causal_structure": "Punish after bad (X) -> Better (Y); Reward after good (X') -> Worse (Y')",
+    "key_insight": "Kahneman's flight instructor example.",
+    "scenario": "A coach notices that when he praises a player for a great play (X), the player does worse next time. When he yells at a player for a bad play (X'), the player does better. He concludes punishment is better than praise.",
+    "variables": {
+      "X": "Great Play / Bad Play",
+      "Y": "Next Play",
+      "Z": "Regression"
+    },
+    "hidden_timestamp": "Performance oscillates around a mean.",
+    "conditional_answer": "If the player wasn't trying, punishment might work. If they were trying their best, regression explains the fluctuation.",
+    "wise_refusal": "This is the classic Regression to the Mean trap. A great play (X) is likely followed by a worse one, and a bad play (X') by a better one, regardless of the coach's feedback. The coach is mistaking statistical regression for the effect of his intervention."
+  },
+  {
+    "case_id": "9.122",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Equipment Selection",
+    "difficulty": "Medium",
+    "subdomain": "Cycling",
+    "causal_structure": "Rich/Serious people buy expensive bikes X",
+    "key_insight": "It's the rider, not the bike.",
+    "scenario": "Data shows that riders on \$10,000 bikes (X) average 5mph faster speeds than riders on \$500 bikes (Y). A beginner buys a \$10,000 bike expecting to ride 5mph faster.",
+    "variables": {
+      "X": "Expensive Bike Owner",
+      "Y": "Speed",
+      "Z": "Rider Fitness/Experience"
+    },
+    "hidden_timestamp": "Only fit, serious cyclists invest in X.",
+    "conditional_answer": "If the beginner is already at elite fitness, X helps. If not, Z (fitness) dominates.",
+    "wise_refusal": "This is Selection Bias. The group owning \$10,000 bikes (X) consists of serious, fit cyclists. The bike contributes marginally, but the speed difference is primarily caused by the rider's fitness (Z)."
+  },
+  {
+    "case_id": "9.123",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Most Improved Player",
+    "difficulty": "Easy",
+    "subdomain": "NBA",
+    "causal_structure": "Award selected on positive delta X -> Y Regression",
+    "key_insight": "Improvement is rarely linear.",
+    "scenario": "A player wins 'Most Improved Player' (X). The next season, his stats decline slightly (Y). Analysts say he 'rested on his laurels'.",
+    "variables": {
+      "X": "Most Improved (Positive Outlier)",
+      "Y": "Decline",
+      "Z": "Regression"
+    },
+    "hidden_timestamp": "The award captures the steepest ascent.",
+    "conditional_answer": "If the player is young and developing skills, the improvement might be sticky. If it was just a hot shooting year, regression occurs.",
+    "wise_refusal": "The 'Most Improved' award selects for a season where everything went right (X). It is statistically probable that the player will not sustain that rate of growth and will regress toward a more stable mean (Y) next season."
+  },
+  {
+    "case_id": "9.124",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Safety Gear",
+    "difficulty": "Medium",
+    "subdomain": "American Football",
+    "causal_structure": "Intervention X leads to riskier behavior Z -> Outcome Y",
+    "key_insight": "Peltzman Effect / Risk Compensation.",
+    "scenario": "The league introduces better helmets (X) to reduce concussions. The concussion rate does not drop (Y). Observers blame the helmet design.",
+    "variables": {
+      "X": "Better Helmets",
+      "Y": "Concussion Rate",
+      "Z": "Riskier Tackling (Behavior)"
+    },
+    "hidden_timestamp": "Players feel safer.",
+    "conditional_answer": "If player behavior (Z) remains constant, Y should drop. If risk compensation occurs, Y stays constant.",
+    "wise_refusal": "This may be Risk Compensation (The Peltzman Effect). Feeling safer due to better helmets (X), players may have adopted more dangerous tackling techniques (Z), offsetting the safety benefits."
+  },
+  {
+    "case_id": "9.125",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Height in Basketball",
+    "difficulty": "Hard",
+    "subdomain": "Basketball",
+    "causal_structure": "Collider bias on 'Being in NBA'",
+    "key_insight": "Short players in the NBA are insanely skilled.",
+    "scenario": "An analysis of NBA players shows that shorter players (X) have higher free throw percentages than taller players. A coach concludes that being short causes better shooting.",
+    "variables": {
+      "X": "Height",
+      "Y": "Shooting Skill",
+      "Z": "Entry into NBA (Collider)"
+    },
+    "hidden_timestamp": "Selection into the NBA requires either Height OR Skill.",
+    "conditional_answer": "If short stature mechanistically aids shooting form, X causes Y. If it's a collider, Z causes the correlation.",
+    "wise_refusal": "This is Collider Bias. To make the NBA (Z), you need to be either very tall OR very skilled. Short players in the NBA (X) must be exceptionally skilled (Y) to have made the cut, creating a negative correlation between height and skill within the selected sample."
+  },
+  {
+    "case_id": "9.126",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Scoring Drought",
+    "difficulty": "Medium",
+    "subdomain": "Soccer",
+    "causal_structure": "Extreme success X -> Regression Y",
+    "key_insight": "Streaks end.",
+    "scenario": "A striker scores 8 goals in 5 games (X). In the next 5 games, he scores 0 (Y). Fans claim he has 'lost his confidence'.",
+    "variables": {
+      "X": "Hot Streak (Outlier)",
+      "Y": "Cold Streak (Regression)",
+      "Z": "Variance"
+    },
+    "hidden_timestamp": "Sustain rate of 1.6 goals/game is impossible.",
+    "conditional_answer": "If he stopped taking shots, it's confidence. If he kept shooting but missed, it's likely variance/regression.",
+    "wise_refusal": "Regression to the Mean. 8 goals in 5 games (X) is unsustainable (outlier). Scoring 0 in the next 5 (Y) is a variation that brings his average back to a normal rate. It's variance, not psychology."
+  },
+  {
+    "case_id": "9.127",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Smoker's Paradox (Sports)",
+    "difficulty": "Hard",
+    "subdomain": "Old School Baseball",
+    "causal_structure": "Unhealthy habits X only visible in superstars Y",
+    "key_insight": "If you smoke and play, you must be Babe Ruth.",
+    "scenario": "A 1920s baseball star smoked cigars and ate hot dogs (X) yet played until 40. A modern player adopts this diet to improve longevity.",
+    "variables": {
+      "X": "Bad Diet",
+      "Y": "Longevity",
+      "Z": "Genetic Durability"
+    },
+    "hidden_timestamp": "Mediocre players with bad diets washed out early.",
+    "conditional_answer": "If the modern player shares the specific genetic mutations (Z) of the star, it might work. If not, X is harmful.",
+    "wise_refusal": "Survivorship Bias. The 1920s star (Y) had such elite genetics (Z) that he succeeded despite the bad diet (X). Lesser athletes with that diet failed and were forgotten."
+  },
+  {
+    "case_id": "9.128",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Manager of the Month",
+    "difficulty": "Easy",
+    "subdomain": "Premier League",
+    "causal_structure": "Award X given at peak -> Y Regression",
+    "key_insight": "The curse of the Manager of the Month.",
+    "scenario": "A manager wins 'Manager of the Month' (X) after a 5-game win streak. The team loses the very next game (Y). The media calls it a 'curse'.",
+    "variables": {
+      "X": "Award (Peak)",
+      "Y": "Loss (Regression)",
+      "Z": "Curse (Spurious)"
+    },
+    "hidden_timestamp": "Awards lag performance.",
+    "conditional_answer": "If the streak was due to weak opponents, Y is regression. If it was a tactical breakthrough, the streak might continue.",
+    "wise_refusal": "The 'Manager of the Month' award selects for a peak performance streak (X). It is statistically expected that the team will not sustain that win rate and will regress (Y) immediately after the award period."
+  },
+  {
+    "case_id": "9.129",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Geography",
+    "difficulty": "Medium",
+    "subdomain": "Hockey",
+    "causal_structure": "Birth month affects selection X",
+    "key_insight": "Relative Age Effect.",
+    "scenario": "A scout notices that 40% of NHL starters (elite players) are born in January-March (X). He decides to only draft players born in those months, believing they are genetically superior.",
+    "variables": {
+      "X": "Birth Month",
+      "Y": "NHL Success",
+      "Z": "Youth Age Cutoffs (Mechanism)"
+    },
+    "hidden_timestamp": "Youth hockey cutoff is Jan 1.",
+    "conditional_answer": "If the age cutoff changes, the bias shifts. If the cutoff remains Jan 1, the bias persists.",
+    "wise_refusal": "This is the Relative Age Effect (Selection). Players born in Q1 (X) were the oldest in their youth cohorts (Z), getting better coaching and selection. By draft age, the biological advantage is gone; selecting for it now is an error."
+  },
+  {
+    "case_id": "9.130",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Hail Mary",
+    "difficulty": "Easy",
+    "subdomain": "Football",
+    "causal_structure": "Low prob event X succeeds Y",
+    "key_insight": "Don't plan for miracles.",
+    "scenario": "A quarterback throws a desperation 'Hail Mary' pass (X) into triple coverage and it is caught for a touchdown (Y). The coach designs more plays throwing into triple coverage.",
+    "variables": {
+      "X": "Throw into Triple Coverage",
+      "Y": "Touchdown",
+      "Z": "Luck"
+    },
+    "hidden_timestamp": "Success rate is < 1%.",
+    "conditional_answer": "If the receiver is 7ft tall and opponents are 5ft, X might work. Otherwise, it is a negative expected value play.",
+    "wise_refusal": "Outcome Bias. The success of the Hail Mary (Y) was a high-variance lucky event (Z). Throwing into triple coverage (X) is generally a negative Expected Value strategy."
+  },
+  {
+    "case_id": "9.131",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Batting Title",
+    "difficulty": "Medium",
+    "subdomain": "Baseball",
+    "causal_structure": "Top performer X declines Y",
+    "key_insight": "The batting champion rarely repeats.",
+    "scenario": "The batting champion hits .360 (X) this year. Next year he hits .320 (Y). Fans claim he is distracted by his new fame.",
+    "variables": {
+      "X": "Batting Champion (Outlier)",
+      "Y": "High Average (Regressed)",
+      "Z": "Distraction"
+    },
+    "hidden_timestamp": "X requires variance in positive direction.",
+    "conditional_answer": "If his underlying exit velocity and contact rates dropped, X might be distraction. If his BABIP (luck) simply normalized, it is regression.",
+    "wise_refusal": "Winning a batting title (X) usually requires career-best luck on balls in play. A drop to .320 (Y) is a natural regression to the player's true talent level, not evidence of distraction (Z)."
+  },
+  {
+    "case_id": "9.132",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Conditioning",
+    "difficulty": "Medium",
+    "subdomain": "MMA",
+    "causal_structure": "Winners look fresh X",
+    "key_insight": "Winning makes you less tired.",
+    "scenario": "An analyst notes that fighters who win (Y) usually look less tired (X) in the post-fight interview. He advises fighters to 'look fresh' to convince judges to give them the win.",
+    "variables": {
+      "X": "Looking Fresh",
+      "Y": "Winning",
+      "Z": "Taking Less Damage (Common Cause)"
+    },
+    "hidden_timestamp": "The fight happens before the interview.",
+    "conditional_answer": "If looking fresh influences judges in close rounds, X causes Y. If X is purely a result of taking less damage, causality is reversed.",
+    "wise_refusal": "Reverse Causality/Common Cause. Fighters look fresh (X) because they dominated the fight and took less damage (Z), which is also why they won (Y). Faking freshness won't change the fight result."
+  },
+  {
+    "case_id": "9.133",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Turnover Margin",
+    "difficulty": "Hard",
+    "subdomain": "NFL",
+    "causal_structure": "Turnovers are lucky.",
+    "key_insight": "Defensive turnovers are not sticky.",
+    "scenario": "A defense forces 40 turnovers in a season (X), a league record. The next season, they force 20 (Y). The coordinator is fired for the decline.",
+    "variables": {
+      "X": "Record Turnovers",
+      "Y": "Average Turnovers",
+      "Z": "Luck of the Bounce"
+    },
+    "hidden_timestamp": "Turnovers have low year-to-year correlation.",
+    "conditional_answer": "If the scheme relied on specific players who left, the drop is causal. If personnel remained same, the drop is regression.",
+    "wise_refusal": "Turnover generation (X) is highly dependent on luck (fumble bounces, dropped interceptions). A record season is almost always followed by regression (Y). The decline was statistical gravity, not a coaching failure."
+  },
+  {
+    "case_id": "9.134",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Business of Sports",
+    "difficulty": "Medium",
+    "subdomain": "Ticket Sales",
+    "causal_structure": "We only hear from current season ticket holders.",
+    "key_insight": "Churned customers don't fill out surveys.",
+    "scenario": "A team surveys its season ticket holders (X) and finds 95% satisfaction. They decide no changes are needed to the stadium experience.",
+    "variables": {
+      "X": "Current Holders",
+      "Y": "Satisfaction",
+      "Z": "Cancelled Holders (Unhappy)"
+    },
+    "hidden_timestamp": "Survey sent with renewal packet.",
+    "conditional_answer": "If the survey included non-renewing customers (Z), the conclusion might hold. If only current holders, it is biased.",
+    "wise_refusal": "Survivorship Bias. The survey only captures those who stayed (X). The unhappy fans who cancelled their tickets (Z) are excluded, likely hiding major issues with the stadium experience."
+  },
+  {
+    "case_id": "9.135",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Interim Coach",
+    "difficulty": "Easy",
+    "subdomain": "Soccer",
+    "causal_structure": "Interim appointed at trough -> Bounce",
+    "key_insight": "New manager bounce is often regression.",
+    "scenario": "A team fires their manager after a losing streak (X) and appoints an interim coach. The team wins the next 3 games (Y). The board hires the interim coach permanently, but results immediately return to average.",
+    "variables": {
+      "X": "Losing Streak (Trough)",
+      "Y": "Winning Streak (Bounce)",
+      "Z": "Regression to Mean"
+    },
+    "hidden_timestamp": "Firing happens at the statistical bottom.",
+    "conditional_answer": "If the interim coach changed tactics significantly, X caused Y. If he played the same system, Y is regression.",
+    "wise_refusal": "The 'New Manager Bounce' is often Regression to the Mean. Managers are fired at the nadir of performance (X). Results naturally improve (Y) as bad luck normalizes, regardless of the new coach's ability."
+  },
+  {
+    "case_id": "9.136",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Going for Two",
+    "difficulty": "Medium",
+    "subdomain": "Football Strategy",
+    "causal_structure": "Decision X -> Fail Y",
+    "key_insight": "Process > Outcome.",
+    "scenario": "A coach goes for a 2-point conversion (X) to win the game and fails (Y). Fans say he should have kicked the extra point to tie.",
+    "variables": {
+      "X": "Go for 2 (Prob 55%)",
+      "Y": "Loss",
+      "Z": "Kick (Prob 95% to tie, 50% to win OT)"
+    },
+    "hidden_timestamp": "Win probability of X > Z.",
+    "conditional_answer": "If the team's short-yardage offense was decimated by injury, kicking might have been better. If standard conversion rates apply, going for 2 was correct.",
+    "wise_refusal": "Outcome Bias. If the 2-point conversion success rate is > 50%, going for the win (X) is the correct strategic play. Judging it as 'wrong' because it failed (Y) ignores the probabilities at the moment of decision."
+  },
+  {
+    "case_id": "9.137",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Scouting Combine",
+    "difficulty": "Medium",
+    "subdomain": "NFL",
+    "causal_structure": "Selection on raw athleticism X",
+    "key_insight": "Combine warriors often can't play football.",
+    "scenario": "A player breaks records at the Scouting Combine for speed and jumping (X). He is drafted high but fails in the NFL (Y). The GM is confused.",
+    "variables": {
+      "X": "Athletic Testing",
+      "Y": "Football Performance",
+      "Z": "Game IQ/Skill (Unmeasured)"
+    },
+    "hidden_timestamp": "Combine measures athleticism, not skill.",
+    "conditional_answer": "If the player also had elite college game tape, the bust was unpredictable. If tape was poor, X was a false signal.",
+    "wise_refusal": "Selection Bias/Proxy Error. The Combine (X) selects for raw athleticism, not football skill (Z). Selecting purely on physical outliers often misses the actual cause of performance (skill), leading to busts (Y)."
+  },
+  {
+    "case_id": "9.138",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Penalty Kick Save",
+    "difficulty": "Easy",
+    "subdomain": "Soccer",
+    "causal_structure": "Goalie saves 3 in a row X -> Saves 0 next time Y",
+    "key_insight": "Penalty saving is luck-heavy.",
+    "scenario": "A goalkeeper saves 3 penalties in a shootout (X). In the next shootout, he saves zero (Y). Fans claim he lost his focus.",
+    "variables": {
+      "X": "3 Saves (Outlier)",
+      "Y": "0 Saves (Regression)",
+      "Z": "Focus"
+    },
+    "hidden_timestamp": "Penalty save rate is ~20%.",
+    "conditional_answer": "If the goalkeeper has a read on the shooter's cues, the saves are skill. If he is guessing, it is variance.",
+    "wise_refusal": "Saving 3 penalties (X) is a massive statistical outlier. In the next shootout, the goalkeeper regressed to the expected save rate (Y). It is not a loss of focus (Z), but a return to probability."
+  },
+  {
+    "case_id": "9.139",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Tech Startups (Sports)",
+    "difficulty": "Medium",
+    "subdomain": "Sports Tech",
+    "causal_structure": "Successful wearables X vs Failed wearables Z",
+    "key_insight": "We copy the winner.",
+    "scenario": "A team adopts a GPS tracker (X) used by the league champions. They assume it caused the championship.",
+    "variables": {
+      "X": "Tracker adoption",
+      "Y": "Championship",
+      "Z": "Relegated teams using same tracker"
+    },
+    "hidden_timestamp": "Tech vendor sells to everyone.",
+    "conditional_answer": "If the tracker provides unique proprietary data only the champions could interpret, it might be causal. If everyone has it, it provides no relative advantage.",
+    "wise_refusal": "Survivorship Bias/Association. The team looks at the champions (Y) who use the tracker (X) but ignores the relegated teams (Z) who also used the same tracker. The tech is likely uncorrelated with winning."
+  },
+  {
+    "case_id": "9.140",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Winter Champion",
+    "difficulty": "Easy",
+    "subdomain": "Soccer",
+    "causal_structure": "Leading at Christmas X -> Not winning title Y",
+    "key_insight": "Early leaders often overperform xG.",
+    "scenario": "A mid-table team is leading the league at Christmas (X). They fade and finish 5th (Y). Pundits say they 'ran out of gas'.",
+    "variables": {
+      "X": "Mid-season Peak",
+      "Y": "Final Standing",
+      "Z": "Regression"
+    },
+    "hidden_timestamp": "Team outperformed xG by 15 goals in first half.",
+    "conditional_answer": "If the team suffered key injuries in the second half, 'running out of gas' might be true. If the squad was healthy, regression to expected goals (xG) is the likely cause.",
+    "wise_refusal": "The team likely outperformed their underlying metrics (xG) in the first half (X). The second half (Y) was a regression to their true quality level, not necessarily a physical collapse."
+  },
+  {
+    "case_id": "9.141",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Fan Polls",
+    "difficulty": "Easy",
+    "subdomain": "Media",
+    "causal_structure": "Who votes in polls?",
+    "key_insight": "Angry people vote.",
+    "scenario": "A TV poll asks 'Should the coach be fired?' 80% say Yes (X). The team fires the coach. Later polls show the silent majority supported him.",
+    "variables": {
+      "X": "TV Poll Respondents",
+      "Y": "Firing Decision",
+      "Z": "General Fanbase"
+    },
+    "hidden_timestamp": "Poll conducted after a loss.",
+    "conditional_answer": "If the poll was a random sample of season ticket holders, it is valid. If it was an open Twitter poll, it is selected for outrage.",
+    "wise_refusal": "Selection Bias. TV polls (X) attract the most motivated (angry) viewers, especially after a loss. They do not represent the entire fanbase (Z)."
+  },
+  {
+    "case_id": "9.142",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Running the Clock",
+    "difficulty": "Medium",
+    "subdomain": "Basketball",
+    "causal_structure": "Passivity X -> Loss Y",
+    "key_insight": "Playing not to lose is losing.",
+    "scenario": "A team leads by 20. They slow down to burn clock (X) and end up losing (Y). The coach says 'the strategy was sound, we just missed shots'.",
+    "variables": {
+      "X": "Prevent Offense",
+      "Y": "Loss",
+      "Z": "Change in Pace"
+    },
+    "hidden_timestamp": "Efficiency drops in slow pace.",
+    "conditional_answer": "If the team missed open layups, the coach is right. If the slow pace forced bad shots, the strategy (X) caused the loss.",
+    "wise_refusal": "Outcome/Strategy Bias. Switching to 'prevent' offense (X) often reduces offensive efficiency and rhythm. The loss (Y) was likely caused by the change in strategy, not just bad luck."
+  },
+  {
+    "case_id": "9.143",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "New Stadium",
+    "difficulty": "Medium",
+    "subdomain": "Economics",
+    "causal_structure": "Stadium built at economic peak X -> Recession Y",
+    "key_insight": "The skyscraper curse.",
+    "scenario": "A team builds a billion-dollar stadium (X). The next year, the local economy enters a recession (Y). Critics blame the stadium spending.",
+    "variables": {
+      "X": "Stadium Construction (Peak)",
+      "Y": "Recession",
+      "Z": "Economic Cycle"
+    },
+    "hidden_timestamp": "Major projects start at market tops.",
+    "conditional_answer": "If the stadium debt directly caused municipal bankruptcy, X caused Y. If the recession was national/global, Z caused Y.",
+    "wise_refusal": "Major construction projects (X) are usually greenlit at the peak of an economic cycle. A recession (Y) often follows the peak naturally (Z). The stadium didn't cause the recession; the cycle did."
+  },
+  {
+    "case_id": "9.144",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Crossfit",
+    "difficulty": "Medium",
+    "subdomain": "Fitness",
+    "causal_structure": "Only the fit survive X",
+    "key_insight": "You have to be fit to do Crossfit.",
+    "scenario": "An observer notes that everyone at the Crossfit gym is ripped (X). He concludes Crossfit guarantees getting ripped.",
+    "variables": {
+      "X": "Observed Members",
+      "Y": "Inference",
+      "Z": "Selection/Attrition"
+    },
+    "hidden_timestamp": "Unfit people quit within a month.",
+    "conditional_answer": "If the gym has a 0% churn rate, the conclusion is valid. If high churn (Z), it is survivorship bias.",
+    "wise_refusal": "Selection Bias. The observer sees only the survivors (X). People who don't get ripped or get injured (Z) quit the gym and disappear from the sample."
+  },
+  {
+    "case_id": "9.145",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Pre-Season Champion",
+    "difficulty": "Medium",
+    "subdomain": "NFL",
+    "causal_structure": "Pre-season performance X uncorrelated with Season Y",
+    "key_insight": "Winning when it doesn't count means nothing.",
+    "scenario": "A team goes undefeated 4-0 in the pre-season (X). Fans bet on them to win the Super Bowl. They start the regular season 0-4 (Y).",
+    "variables": {
+      "X": "Pre-season Record",
+      "Y": "Regular Season Record",
+      "Z": "Starter Playing Time"
+    },
+    "hidden_timestamp": "Starters played 1 series per game in X.",
+    "conditional_answer": "If the starters played the full pre-season games, X might predict Y. Since they didn't (Z), X is noise.",
+    "wise_refusal": "Pre-season games (X) are played primarily by reserves (Z). Success there often indicates depth but has zero correlation with regular season success (Y) where starters play. The 0-4 start is a regression to the true talent level of the starters."
+  },
+  {
+    "case_id": "9.146",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Advice from Winners",
+    "difficulty": "Medium",
+    "subdomain": "Tennis",
+    "causal_structure": "Winner says 'Just have fun' X",
+    "key_insight": "Losers also had fun.",
+    "scenario": "A Grand Slam winner says the secret to success is 'Just have fun' (X). A junior player decides to stop training hard and just have fun.",
+    "variables": {
+      "X": "Fun (Advice)",
+      "Y": "Success",
+      "Z": "Losers who had fun"
+    },
+    "hidden_timestamp": "Winner also trained 8 hours a day.",
+    "conditional_answer": "If 'having fun' is the only variable differing between winners and losers, the advice is valid. If losers also had fun (Z), the advice is survivorship bias.",
+    "wise_refusal": "Survivorship Bias. Many players who 'just had fun' (Z) never won and aren't interviewed. The winner (Y) succeeded due to talent and training, perhaps *despite* the attitude."
+  },
+  {
+    "case_id": "9.147",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "The Ill-Advised Shot",
+    "difficulty": "Medium",
+    "subdomain": "Basketball",
+    "causal_structure": "Bad process X -> Good outcome Y",
+    "key_insight": "Don't praise bad decisions just because they worked.",
+    "scenario": "A player heaves a desperation full-court shot with 20 seconds left on the shot clock (X). It miraculously goes in (Y). The coach applauds the player's 'confidence'.",
+    "variables": {
+      "X": "Bad Shot Selection",
+      "Y": "Made Basket",
+      "Z": "Luck"
+    },
+    "hidden_timestamp": "The expected value of the shot was 0.05 points.",
+    "conditional_answer": "If the shot clock was expiring, X was necessary. If plenty of time remained, X was a bad decision regardless of Y.",
+    "wise_refusal": "Outcome Bias. The shot (X) had negative Expected Value and succeeded only due to variance (Z). Praising the decision reinforces bad process that will lead to losses in the long run."
+  },
+  {
+    "case_id": "9.148",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "The Highlight Reel",
+    "difficulty": "Medium",
+    "subdomain": "Scouting",
+    "causal_structure": "Selected clips X -> False impression of skill Y",
+    "key_insight": "Highlights hide mistakes.",
+    "scenario": "A scout signs a player solely based on a 5-minute YouTube highlight reel (X). The player turns out to be terrible, constantly making defensive errors (Y). The scout is shocked.",
+    "variables": {
+      "X": "Highlights (Selected)",
+      "Y": "Actual Performance",
+      "Z": "Excluded Errors"
+    },
+    "hidden_timestamp": "The video excluded 90 minutes of errors.",
+    "conditional_answer": "If the video showed every touch (complete game), the assessment is valid. If edited clips, it is selection bias.",
+    "wise_refusal": "Selection Bias. Highlight reels (X) specifically select positive outcomes and exclude errors (Z). Evaluating a player without seeing their mistakes creates a skewed perception of ability (Y)."
+  },
+  {
+    "case_id": "9.149",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Undrafted Gems",
+    "difficulty": "Medium",
+    "subdomain": "NBA",
+    "causal_structure": "We notice the undrafted player who makes it.",
+    "key_insight": "Nobody talks about the 500 undrafted players who failed.",
+    "scenario": "An analyst highlights an undrafted player who became a star (X) and argues teams should trade their draft picks because 'talent can be found anywhere'.",
+    "variables": {
+      "X": "Undrafted Star",
+      "Y": "Draft Pick Value",
+      "Z": "Failed Undrafted Players"
+    },
+    "hidden_timestamp": "Success rate of undrafted is < 1%.",
+    "conditional_answer": "If the success rate of undrafted players equaled drafted players, the argument holds. Since it is <1%, it is selection bias.",
+    "wise_refusal": "Selection Bias / Anecdotal Fallacy. The analyst focuses on the rare anomaly (X) while ignoring the thousands of undrafted players who never play a minute (Z). Draft picks remain the most reliable source of talent."
+  },
+  {
+    "case_id": "9.150",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Olympic Host",
+    "difficulty": "Medium",
+    "subdomain": "Economics",
+    "causal_structure": "Host city selection X -> Debt Y",
+    "key_insight": "The winner's curse in auctions.",
+    "scenario": "A city wins the bid to host the Olympics (X) by promising the most lavish facilities. Ten years later, the city is in debt (Y).",
+    "variables": {
+      "X": "Winning Bid (Optimistic)",
+      "Y": "Debt",
+      "Z": "True Cost"
+    },
+    "hidden_timestamp": "The winner is the one who overestimates benefits most.",
+    "conditional_answer": "If the bid was fully privately funded with guarantees, Y might be avoided. If public funding with cost overruns, Y is the Winner's Curse.",
+    "wise_refusal": "The Winner's Curse. The city that wins the bid (X) is the one that most overestimated the benefits and underestimated the costs. Financial regression (Y) is the expected outcome of winning an auction with uncertain value."
+  },
+  {
+    "case_id": "9.151",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Defensive Player of Year",
+    "difficulty": "Easy",
+    "subdomain": "NFL",
+    "causal_structure": "DPOY X -> Regression Y",
+    "key_insight": "Interceptions are luck.",
+    "scenario": "A cornerback wins Defensive Player of the Year (X) with 10 interceptions. Next year he has 2 (Y). Fans say he is 'washed'.",
+    "variables": {
+      "X": "10 Interceptions (Outlier)",
+      "Y": "2 Interceptions (Mean)",
+      "Z": "Washed (Spurious)"
+    },
+    "hidden_timestamp": "Targets are random.",
+    "conditional_answer": "If the player lost speed/athleticism (Z), the claim is valid. If physical metrics are stable, Y is regression.",
+    "wise_refusal": "Interceptions are high-variance events. 10 interceptions (X) is a statistical outlier. Dropping to 2 (Y) is regression to the mean, not necessarily a loss of skill."
+  },
+  {
+    "case_id": "9.152",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Poker Bluff",
+    "difficulty": "Medium",
+    "subdomain": "Poker",
+    "causal_structure": "Bad bluff X -> Opponent folds Y",
+    "key_insight": "Don't bluff a calling station.",
+    "scenario": "A player makes a mathematically terrible bluff (X) but the opponent accidentally folds the winning hand (Y). The player thinks he played it perfectly.",
+    "variables": {
+      "X": "Bad Bluff",
+      "Y": "Win",
+      "Z": "Opponent Error"
+    },
+    "hidden_timestamp": "Opponent misread his own cards.",
+    "conditional_answer": "If the player had a read that the opponent would fold any hand, X is good. If playing Game Theory Optimal (GTO), X is a mistake.",
+    "wise_refusal": "Outcome Bias. The bluff (X) had negative Expected Value. The win (Y) was due to the opponent's mistake (Z), not the player's skill. Repeating this strategy will lead to losses."
+  },
+  {
+    "case_id": "9.153",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Transfer Portal",
+    "difficulty": "Medium",
+    "subdomain": "College Sports",
+    "causal_structure": "Transfers X are unhappy players",
+    "key_insight": "Happy players don't transfer.",
+    "scenario": "A coach builds his team entirely from the transfer portal (X). He is surprised when the team lacks chemistry and discipline (Y).",
+    "variables": {
+      "X": "Transfer Players",
+      "Y": "Chemistry Issues",
+      "Z": "Reason for Transfer (Unhappiness/Conflict)"
+    },
+    "hidden_timestamp": "Players enter portal because they didn't fit elsewhere.",
+    "conditional_answer": "If the coach vets for character, X can work. If he ignores the selection bias of why players leave (Z), Y occurs.",
+    "wise_refusal": "Adverse Selection. Players in the portal (X) often left their previous teams due to playing time issues or conflicts (Z). Aggregating them can concentrate these negative traits, leading to chemistry issues (Y)."
+  },
+  {
+    "case_id": "9.154",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Penalty Minutes",
+    "difficulty": "Easy",
+    "subdomain": "Hockey",
+    "causal_structure": "Most penalized team X -> Referees adjust Y",
+    "key_insight": "Refs even things up.",
+    "scenario": "A team leads the league in penalties (X) in the first half. In the second half, their penalties drop significantly (Y). The coach claims his discipline lectures worked.",
+    "variables": {
+      "X": "High Penalties",
+      "Y": "Lower Penalties",
+      "Z": "Regression / Suspension Caps"
+    },
+    "hidden_timestamp": "Outliers regress.",
+    "conditional_answer": "If the team changed its aggressive style, the lectures worked. If they played the same way, Y is regression/officiating balance.",
+    "wise_refusal": "Regression to the Mean and Incentives. Extreme penalty rates (X) are unsustainable due to regression and league suspension caps that force players to dial it back (Z). The drop (Y) is likely a natural statistical correction."
+  },
+  {
+    "case_id": "9.155",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Aggressive Goalkeeping",
+    "difficulty": "Medium",
+    "subdomain": "Soccer",
+    "causal_structure": "Sweeper Keepers X succeed Y",
+    "key_insight": "If you aren't Neuer, don't try it.",
+    "scenario": "A young goalkeeper copies the risky 'sweeper-keeper' style (X) of a World Cup winner. He concedes 5 goals (Y) and is benched.",
+    "variables": {
+      "X": "Risky Style",
+      "Y": "Failure",
+      "Z": "Skill Requirement"
+    },
+    "hidden_timestamp": "Only elite keepers survive playing X.",
+    "conditional_answer": "If the young keeper has the same elite footwork as the pro, X works. If not, Z prevents success.",
+    "wise_refusal": "Survivorship Bias. We only see the elite goalkeepers who successfully play the risky style (X). We forget the many who tried it, failed (Y), and were relegated. The style requires specific attributes the young keeper likely lacks."
+  },
+  {
+    "case_id": "9.156",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Weekly Awards",
+    "difficulty": "Easy",
+    "subdomain": "NFL",
+    "causal_structure": "Player of Week X -> Average Game Y",
+    "key_insight": "Don't chase the heat.",
+    "scenario": "A Running Back runs for 200 yards and wins Player of the Week (X). You bet on him to go Over 100 yards next week. He runs for 60 (Y).",
+    "variables": {
+      "X": "200 Yard Game (Outlier)",
+      "Y": "60 Yard Game (Regression)",
+      "Z": "Betting Line"
+    },
+    "hidden_timestamp": "Average is 80 yards.",
+    "conditional_answer": "If the opponent next week has a terrible defense, betting over might be valid. If standard conditions, expect regression from X.",
+    "wise_refusal": "Regression to the Mean. A 200-yard game (X) is a massive outlier. Betting on a repeat ignores that the player is statistically likely to return to his average (Y) immediately."
+  },
+  {
+    "case_id": "9.157",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Injured Player",
+    "difficulty": "Hard",
+    "subdomain": "Basketball",
+    "causal_structure": "Playing injured X -> Win Y",
+    "key_insight": "Heroism vs Stupid Risk.",
+    "scenario": "A star plays on a broken foot (X) and helps the team win (Y). The media glorifies his 'heart'. Doctors say he risked career-ending injury.",
+    "variables": {
+      "X": "Playing Injured",
+      "Y": "Win",
+      "Z": "Risk of Career End"
+    },
+    "hidden_timestamp": "Win probability increased by 5%, Risk by 50%.",
+    "conditional_answer": "If the win secured a championship, the risk (X) might be rational. If a regular season game, it was outcome-biased recklessness.",
+    "wise_refusal": "Outcome Bias. The win (Y) blinds observers to the catastrophic risk (Z) taken by playing (X). If he had suffered the career-ending injury, the decision would be viewed as reckless."
+  },
+  {
+    "case_id": "9.158",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Referees",
+    "difficulty": "Medium",
+    "subdomain": "Sports Officiating",
+    "causal_structure": "We only notice bad calls X",
+    "key_insight": "Nobody tweets 'Nice call ref'.",
+    "scenario": "Social media is full of clips of referees making mistakes (X). A fan concludes referees are worse today than 20 years ago (Y).",
+    "variables": {
+      "X": "Viral Mistake Clips",
+      "Y": "Perceived Competence",
+      "Z": "Correct Calls (Unshared)"
+    },
+    "hidden_timestamp": "HD cameras capture everything now.",
+    "conditional_answer": "If statistical analysis of all calls shows a decline in accuracy, Y is valid. If based only on viral clips (X), it is bias.",
+    "wise_refusal": "Selection/Availability Bias. Social media selects and amplifies mistakes (X) while ignoring the thousands of correct calls (Z). High-definition replay also makes errors more visible than in the past, creating an illusion of decline (Y)."
+  },
+  {
+    "case_id": "9.159",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "The 7-0 Drubbing",
+    "difficulty": "Easy",
+    "subdomain": "Soccer",
+    "causal_structure": "Extreme performance X -> Regression Y",
+    "key_insight": "Goals are not a finite resource, but variance is.",
+    "scenario": "A team wins a match 7-0 (X), scoring on every shot. The next week they play a 0-0 draw (Y). Fans joke 'they used up all their goals'.",
+    "variables": {
+      "X": "7-0 Win (Outlier Efficiency)",
+      "Y": "0-0 Draw (Regression)",
+      "Z": "Finishing Variance"
+    },
+    "hidden_timestamp": "XG in first game was only 2.5.",
+    "conditional_answer": "If the 7-0 was against a relegated team and the 0-0 against the champion, opponent strength explains Y. If opponents were equal, regression explains Y.",
+    "wise_refusal": "Regression to the Mean. The 7-0 win (X) likely involved unsustainable finishing luck (scoring on every chance). The 0-0 draw (Y) represents a return to normal finishing variance, not a mystical depletion of a goal quota."
+  },
+  {
+    "case_id": "9.160",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Hall of Fame",
+    "difficulty": "Medium",
+    "subdomain": "Baseball",
+    "causal_structure": "HoF players X had specific style",
+    "key_insight": "Don't teach kids to swing like Vlad Guerrero.",
+    "scenario": "A coach teaches kids to swing at bad pitches because a Hall of Famer (X) was famous for hitting bad pitches.",
+    "variables": {
+      "X": "Hall of Famer Style",
+      "Y": "Success",
+      "Z": "Failures with same style"
+    },
+    "hidden_timestamp": "X had superhuman hand-eye coordination.",
+    "conditional_answer": "If the kids have the same elite hand-eye coordination as X, it works. If not, Z (failure) is the result.",
+    "wise_refusal": "Survivorship Bias. The Hall of Famer (X) succeeded *despite* his bad pitch selection due to freakish hand-eye coordination. Most players who swing at bad pitches (Z) strike out and do not make the Hall of Fame."
+  },
+  {
+    "case_id": "9.161",
+    "pearl_level": "L2",
+    "domain": "D9",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Sack Leader",
+    "difficulty": "Medium",
+    "subdomain": "NFL",
+    "causal_structure": "Sack conversion rate X is unstable",
+    "key_insight": "Sacks are rarer than pressures.",
+    "scenario": "A player gets 20 sacks (X) but has a low pressure rate. Analysts predict he will regress next year. Fans call the analysts 'haters'. He gets 8 sacks next year (Y).",
+    "variables": {
+      "X": "20 Sacks (High Conversion)",
+      "Y": "8 Sacks (Regression)",
+      "Z": "Pressure Rate (Stable Metric)"
+    },
+    "hidden_timestamp": "Pressure rate predicts future sacks better than past sacks.",
+    "conditional_answer": "If the player improved his technique to win quickly, X might sustain. Since pressure rate (Z) was low, regression is expected.",
+    "wise_refusal": "Sack totals (X) are volatile and depend on finishing luck. Pressure rate (Z) is a more stable indicator of skill. The drop to 8 sacks (Y) is a predictable regression because his underlying pressure metrics did not support the 20-sack outlier."
+  },
+  {
+    "case_id": "9.162",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Draft What If",
+    "difficulty": "Medium",
+    "subdomain": "Basketball",
+    "causal_structure": "Drafting Jordan -> Dynasty",
+    "key_insight": "Butterfly effects in drafts.",
+    "scenario": "Portland drafted Sam Bowie instead of Michael Jordan (X). Fans ask: 'If we had drafted Jordan (X'), would we have won 6 championships (Y)?'",
+    "variables": {
+      "X": "Draft Bowie",
+      "X'": "Draft Jordan",
+      "Y": "6 Titles",
+      "Z": "Team Context/Health"
+    },
+    "hidden_timestamp": "Jordan flourished in Chicago's system.",
+    "conditional_answer": "If Jordan had the same coaching and support in Portland, VALID. If Portland's medical staff/coaching was worse, INVALID.",
+    "wise_refusal": "This counterfactual is Uncertain. While Jordan (X') would likely have been a superstar in Portland, winning 6 titles (Y) required a specific supporting cast (Pippen, Grant, Rodman) and coach (Phil Jackson) that existed in Chicago, not Portland. He might have won titles, but likely not the exact same 6."
+  },
+  {
+    "case_id": "9.163",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Injury Prevention",
+    "difficulty": "Hard",
+    "subdomain": "Football",
+    "causal_structure": "If not played X -> No injury Y",
+    "key_insight": "But-for causation vs Probability.",
+    "scenario": "A star QB tears his ACL in the 4th quarter of a blowout (X). Fans scream: 'If the coach had taken him out (X'), he wouldn't have been injured (Y)!'",
+    "variables": {
+      "X": "Play in Blowout",
+      "X'": "Bench",
+      "Y": "Injury",
+      "Z": "Deterministic Safety"
+    },
+    "hidden_timestamp": "Injury happened on non-contact play.",
+    "conditional_answer": "If the QB was on the bench (X'), the counterfactual is Valid. He cannot get injured on the field if he is not on it.",
+    "wise_refusal": "The counterfactual is VALID. If the QB is on the bench (X'), he is not exposed to the risk on the field. Therefore, the injury (Y) would not have happened at that moment. The coach's decision was a necessary condition for the injury."
+  },
+  {
+    "case_id": "9.164",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Referee Call",
+    "difficulty": "Medium",
+    "subdomain": "Soccer",
+    "causal_structure": "Goal disallowed X -> Loss Y",
+    "key_insight": "Goals change game states.",
+    "scenario": "A goal is wrongly disallowed for offside (X) in the 10th minute. The game ends 0-0. The team claims: 'If the goal stood (X'), we would have won 1-0 (Y).'",
+    "variables": {
+      "X": "Disallowed Goal",
+      "X'": "Goal Stands",
+      "Y": "1-0 Win",
+      "Z": "Game State Dynamics"
+    },
+    "hidden_timestamp": "80 minutes remained.",
+    "conditional_answer": "If the goal occurred in the 90th minute, VALID. Since it was the 10th minute, INVALID due to game state changes.",
+    "wise_refusal": "The counterfactual is INVALID. If the goal stands (X'), the game state changes completely. The opponent attacks differently, tactics shift, and the remaining 80 minutes play out in a diverging timeline. We cannot assume the rest of the game remains 0-0."
+  },
+  {
+    "case_id": "9.165",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Butterfly Effect",
+    "difficulty": "Hard",
+    "subdomain": "F1",
+    "causal_structure": "Pit stop delay X -> Traffic Z -> Loss Y",
+    "key_insight": "Deterministic chain reaction.",
+    "scenario": "A pit stop is delayed by 2 seconds (X). The driver exits behind a slow car (Z) and loses the race by 5 seconds (Y). The team says: 'Without the delay (X'), we win.'",
+    "variables": {
+      "X": "Bad Stop",
+      "X'": "Good Stop",
+      "Y": "Loss",
+      "Z": "Traffic Logic"
+    },
+    "hidden_timestamp": "Lap times show he was 1s/lap faster than the car he got stuck behind.",
+    "conditional_answer": "If the driver was significantly faster than the traffic (Z), VALID. If he would have been stuck anyway, INVALID.",
+    "wise_refusal": "The counterfactual is likely VALID. A 2-second gain (X') would have put the driver ahead of the slow car (Z). Since he was significantly faster in clear air, he would have avoided the time loss stuck in traffic and likely covered the 5-second margin."
+  },
+  {
+    "case_id": "9.166",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Genetic Determinism",
+    "difficulty": "Easy",
+    "subdomain": "Swimming",
+    "causal_structure": "If I trained harder X -> Would I be Phelps Y?",
+    "key_insight": "Training cannot fix wingspan.",
+    "scenario": "A swimmer with average height asks: 'If I had trained as hard as Michael Phelps (X'), would I have won 8 gold medals (Y)?'",
+    "variables": {
+      "X": "Normal Training",
+      "X'": "Phelps Training",
+      "Y": "Gold Medals",
+      "Z": "Anthropometry (Wingspan, etc.)"
+    },
+    "hidden_timestamp": "Phelps has a mutant body type.",
+    "conditional_answer": "If the swimmer had Phelps' genetics (Z), Valid. Without the genetics, Invalid.",
+    "wise_refusal": "The counterfactual is INVALID. Phelps' success (Y) was due to a combination of training (X') AND rare genetic anthropometry (Z). Training alone cannot replicate the physical advantages (wingspan, lactate recovery) required for 8 golds."
+  },
+  {
+    "case_id": "9.167",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Trade Reversal",
+    "difficulty": "Medium",
+    "subdomain": "Baseball",
+    "causal_structure": "Trade X -> Player blossoms Y",
+    "key_insight": "Maybe he blossomed *because* of the trade.",
+    "scenario": "Team A trades a prospect (X). He becomes a star on Team B (Y). Team A fans moan: 'If we kept him (X'), he would be a star for us.'",
+    "variables": {
+      "X": "Trade",
+      "X'": "Keep",
+      "Y": "Star Performance",
+      "Z": "Development Environment"
+    },
+    "hidden_timestamp": "Team B changed his swing mechanics.",
+    "conditional_answer": "If Team A used the same coaching techniques as Team B, Valid. If Team B's environment (Z) was the catalyst, Invalid.",
+    "wise_refusal": "This is CONDITIONAL. If the player's improvement was driven by Team B's specific coaching or swing changes (Z), he might not have developed the same way if kept by Team A (X')."
+  },
+  {
+    "case_id": "9.168",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Weather",
+    "difficulty": "Medium",
+    "subdomain": "Golf",
+    "causal_structure": "Wind X -> Ball in water Y",
+    "key_insight": "Physics is deterministic.",
+    "scenario": "A golfer hits a shot into the water (Y) during a gust of wind (X). He claims: 'Without that gust (X'), it was on the green.' Radar data confirms the ball trajectory and wind speed.",
+    "variables": {
+      "X": "Gust",
+      "X'": "No Gust",
+      "Y": "Water",
+      "Z": "Ball Flight Physics"
+    },
+    "hidden_timestamp": "Launch monitor data available.",
+    "conditional_answer": "If ball flight physics (Z) show the trajectory without wind lands on green, Valid. If the shot was offline anyway, Invalid.",
+    "wise_refusal": "The counterfactual is VALID. Launch monitor data allows us to strip out the wind vector (X). If the ball's initial velocity and spin would have carried it to the green in still air (X'), then the wind was the but-for cause of the water hazard (Y)."
+  },
+  {
+    "case_id": "9.169",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "The 4th Down Go",
+    "difficulty": "Medium",
+    "subdomain": "Football Strategy",
+    "causal_structure": "Go for it X -> Fail Y. Punt X' -> ?",
+    "key_insight": "Counterfactuals regarding game state.",
+    "scenario": "A coach goes for it on 4th down at midfield (X) and fails. The opponent scores a TD on the short field (Y). Fan says: 'If we punted (X'), they wouldn't have scored.'",
+    "variables": {
+      "X": "Go for it",
+      "X'": "Punt",
+      "Y": "Opponent TD",
+      "Z": "Field Position Math"
+    },
+    "hidden_timestamp": "Opponent drove 50 yards for TD.",
+    "conditional_answer": "If punting pins them deep and decreases scoring probability (Z), Valid. If they score from anywhere, Invalid.",
+    "wise_refusal": "The counterfactual is likely VALID. Punting (X') would have forced the opponent to drive 80+ yards instead of 50. Statistically, scoring probability decreases significantly with worse field position (Z). The decision to go for it (X) was a necessary condition for the short field."
+  },
+  {
+    "case_id": "9.170",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Salary Cap",
+    "difficulty": "Hard",
+    "subdomain": "General Manager",
+    "causal_structure": "If we didn't sign Player A -> We could sign Player B",
+    "key_insight": "Opportunity Cost.",
+    "scenario": "A team misses the playoffs. Fans say: 'If we hadn't paid Player A \$50M (X), we could have signed 3 solid starters (X') and made the playoffs (Y).'",
+    "variables": {
+      "X": "Max Contract",
+      "X'": "Depth Signings",
+      "Y": "Playoffs",
+      "Z": "Market Availability"
+    },
+    "hidden_timestamp": "Were 3 solid starters actually available?",
+    "conditional_answer": "If 3 starters were available in free agency (Z), Valid. If the market was empty, Invalid.",
+    "wise_refusal": "The counterfactual is CONDITIONAL. It assumes that (1) 3 solid starters were available (Z) and (2) they would have agreed to sign. If the market was empty, not paying Player A (X) would have just left the team with cap space and no talent."
+  },
+  {
+    "case_id": "9.171",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Coin Toss",
+    "difficulty": "Easy",
+    "subdomain": "NFL Overtime",
+    "causal_structure": "Win Toss X -> Win Game Y",
+    "key_insight": "Asymmetry of rules.",
+    "scenario": "Team A wins the OT coin toss (X) and scores a TD to win (Y). Team B claims: 'If we had won the toss (X'), we would have won.'",
+    "variables": {
+      "X": "Win Toss",
+      "X'": "Lose Toss",
+      "Y": "Win Game",
+      "Z": "Offensive Efficiency"
+    },
+    "hidden_timestamp": "Both defenses were tired.",
+    "conditional_answer": "If both offenses were dominating (Z), Valid. If it was a defensive struggle, Invalid/Uncertain.",
+    "wise_refusal": "Given that both offenses were scoring at will against tired defenses, the counterfactual is likely VALID. Winning the toss (X) provided the decisive positional advantage needed to win (Y)."
+  },
+  {
+    "case_id": "9.172",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "The Adjusted Era",
+    "difficulty": "Medium",
+    "subdomain": "Soccer History",
+    "causal_structure": "Era Context Z affects Outcome Y",
+    "key_insight": "Comparing across eras requires adjustment.",
+    "scenario": "Pele scored 1,000 goals in his era (Y). A critic claims: 'If Pele played today against modern defenses (X'), he wouldn't score 1,000 goals.'",
+    "variables": {
+      "X": "Old Era",
+      "X'": "Modern Era",
+      "Y": "1000 Goals",
+      "Z": "Defensive Organization/Fitness"
+    },
+    "hidden_timestamp": "Modern defenders are athletes.",
+    "conditional_answer": "If Pele also received modern training/nutrition, Uncertain. If Pele transports as-is, Valid.",
+    "wise_refusal": "The counterfactual is likely VALID but nuanced. Modern defensive organization and fitness (Z) make scoring harder. However, we must also adjust Pele's fitness (X') to modern standards. Even then, scoring 1,000 goals in the modern game is statistically nearly impossible."
+  },
+  {
+    "case_id": "9.173",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Preventable Accident",
+    "difficulty": "Easy",
+    "subdomain": "Motorsport",
+    "causal_structure": "Loose bolt X -> Crash Y",
+    "key_insight": "Mechanistic failure.",
+    "scenario": "A wheel comes off (Y) due to a loose nut (X). Team claims: 'If the mechanic tightened the nut (X'), we finish the race.'",
+    "variables": {
+      "X": "Loose Nut",
+      "X'": "Tight Nut",
+      "Y": "Crash",
+      "Z": "Physics"
+    },
+    "hidden_timestamp": "Car was otherwise healthy.",
+    "conditional_answer": "If the car had no other mechanical issues, Valid. If the engine was about to blow, Invalid.",
+    "wise_refusal": "The counterfactual is VALID. The loose nut (X) was the sufficient mechanical cause of the wheel detachment. Removing this cause (X') prevents the specific failure mode (Y)."
+  },
+  {
+    "case_id": "9.174",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Draft Lottery",
+    "difficulty": "Easy",
+    "subdomain": "NBA",
+    "causal_structure": "Ping pong ball X -> Draft Duncan Y",
+    "key_insight": "Randomization changes history.",
+    "scenario": "The Spurs won the lottery to draft Tim Duncan (Y). The Celtics had the best odds but lost (X). Celtics fans: 'If the ping pong ball bounced differently (X'), we would have had the dynasty.'",
+    "variables": {
+      "X": "Lottery Loss",
+      "X'": "Lottery Win",
+      "Y": "Spurs Dynasty",
+      "Z": "Duncan's Talent"
+    },
+    "hidden_timestamp": "Duncan was a franchise-altering talent.",
+    "conditional_answer": "If the Celtics had the coaching infrastructure (Rick Pitino era) to utilize Duncan, Valid. If organizational dysfunction prevailed, Uncertain.",
+    "wise_refusal": "The counterfactual is PLAUSIBLE but CONDITIONAL. Duncan (Z) was a singular talent. However, the Spurs had David Robinson and Popovich. The Celtics were in the Rick Pitino era. Duncan would have improved Boston, but the 'Dynasty' outcome relies on organizational competence, not just one player."
+  },
+  {
+    "case_id": "9.175",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Timeout Call",
+    "difficulty": "Medium",
+    "subdomain": "Basketball",
+    "causal_structure": "Timeout X -> Erases Play Y",
+    "key_insight": "Causal pre-emption.",
+    "scenario": "A player hits a buzzer beater (Y), but the coach had called timeout 1 second earlier (X). The basket doesn't count. Fans: 'If he hadn't called timeout (X'), we won.'",
+    "variables": {
+      "X": "Timeout",
+      "X'": "No Timeout",
+      "Y": "Made Shot (Nullified)",
+      "Z": "Defense Relaxation"
+    },
+    "hidden_timestamp": "Did defense stop playing because of whistle?",
+    "conditional_answer": "If the defense stopped playing due to the whistle/timeout signal, Invalid. If the defense contested the shot fully, Valid.",
+    "wise_refusal": "This is CONDITIONAL. If the whistle blew before the shot, the defenders may have stopped trying (Z). We cannot assume the shot would have been made (Y) in the counterfactual world where the defense was playing to the whistle."
+  },
+  {
+    "case_id": "9.176",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Injury Return",
+    "difficulty": "Medium",
+    "subdomain": "Hockey",
+    "causal_structure": "If played X -> Outcome Y?",
+    "key_insight": "Chemistry vs Talent.",
+    "scenario": "A team loses Game 7 (Y). Their star player was injured. Fans: 'If he was healthy (X'), we win.'",
+    "variables": {
+      "X": "Injured Star",
+      "X'": "Healthy Star",
+      "Y": "Loss",
+      "Z": "Replacement Player Performance"
+    },
+    "hidden_timestamp": "Replacement player scored 2 goals.",
+    "conditional_answer": "If the star player's Value Above Replacement (VAR) is positive relative to the specific game performance of the replacement, Valid. Since replacement played well, Invalid.",
+    "wise_refusal": "The counterfactual is weak/INVALID. The replacement player (Z) actually scored 2 goals and played a perfect game. It is unlikely the star (X') would have contributed more marginal value than the replacement provided."
+  },
+  {
+    "case_id": "9.177",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "The Safe Safety",
+    "difficulty": "Medium",
+    "subdomain": "Football",
+    "causal_structure": "Risk X -> Failure Y. Safe Play X' -> ?",
+    "key_insight": "Preventable catastrophe.",
+    "scenario": "A safety tries to intercept a pass (X) but misses, allowing the receiver to score a 90-yard TD (Y). Coach: 'If he just tackled him (X'), they don't score.'",
+    "variables": {
+      "X": "Interception Attempt",
+      "X'": "Tackle",
+      "Y": "TD",
+      "Z": "Field Position"
+    },
+    "hidden_timestamp": "Receiver had open field behind safety.",
+    "conditional_answer": "If the tackle was physically guaranteed (proper angle), Valid. If the receiver could have broken the tackle, Uncertain.",
+    "wise_refusal": "The counterfactual is likely VALID. By attempting the interception (X), the safety removed the last line of defense. A conservative tackle (X') would have conceded yards but prevented the immediate touchdown (Y)."
+  },
+  {
+    "case_id": "9.178",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "The Tyre Choice",
+    "difficulty": "Medium",
+    "subdomain": "F1",
+    "causal_structure": "Tyre Choice X -> Pace Y",
+    "key_insight": "Compound effects of grip.",
+    "scenario": "A driver starts on Hard tyres (X) and loses 3 positions at the start (Y). Team: 'If we started on Softs (X'), we would have held position.'",
+    "variables": {
+      "X": "Hard Tyres",
+      "X'": "Soft Tyres",
+      "Y": "Lost Position",
+      "Z": "Grip Differential"
+    },
+    "hidden_timestamp": "Soft tyres have 20% more grip off the line.",
+    "conditional_answer": "If the position loss was due to wheelspin/grip (Z), Valid. If it was due to driver reaction time, Invalid.",
+    "wise_refusal": "The counterfactual is VALID. Hard tyres (X) have significantly less grip off the line than Softs (X'). The grip differential (Z) is the primary cause of poor starts. Starting on Softs would have mitigated the launch deficit."
+  },
+  {
+    "case_id": "9.179",
+    "pearl_level": "L3",
+    "domain": "D9",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Rain Delay",
+    "difficulty": "Hard",
+    "subdomain": "Baseball",
+    "causal_structure": "Rain X -> Pitcher Cooldown Z -> Loss Y",
+    "key_insight": "External interruption.",
+    "scenario": "A pitcher is throwing a shutout. A rain delay (X) forces him out of the game. The bullpen blows the lead (Y). 'If it hadn't rained (X'), we win.'",
+    "variables": {
+      "X": "Rain",
+      "X'": "No Rain",
+      "Y": "Loss",
+      "Z": "Pitcher Stamina"
+    },
+    "hidden_timestamp": "Pitcher had low pitch count.",
+    "conditional_answer": "If the pitcher was not fatiguing (Z), Valid. If he was already tiring, Uncertain.",
+    "wise_refusal": "The counterfactual is likely VALID. The starter was dominant with stamina remaining (Z). The rain (X) forced the substitution to a weaker bullpen, which caused the loss. The rain was the but-for cause of the pitching change."
+  }
+]

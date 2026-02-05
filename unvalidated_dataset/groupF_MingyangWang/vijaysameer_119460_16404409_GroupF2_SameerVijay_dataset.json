@@ -1,0 +1,3505 @@
+[
+    {
+        "id": "T3-BucketF-0001",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L1",
+        "domain": "History",
+        "scenario": "Across medieval regions, ports with larger dockyards also report higher urban literacy rates in surviving tax records.",
+        "claim": "Larger dockyards cause higher literacy.",
+        "label": "NO",
+        "is_ambiguous": false,
+        "trap": {
+          "type": "CONFOUNDING",
+          "subtype": "Omitted_Variable"
+        },
+        "variables": {
+          "X": "Dockyard size",
+          "Y": "Urban literacy rate",
+          "Z": ["Regional prosperity", "Trade intensity"]
+        },
+        "gold_rationale": "Richer trading regions could both afford larger dockyards and fund schools/scribes. The observed association does not establish that expanding dockyards would raise literacy.",
+        "annotation": {
+          "author": "Sameer Vijay",
+          "num_annotators": 1,
+          "adjudicated": true
+        }
+    },
+    {
+        "id": "T3-BucketF-0002",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L1",
+        "domain": "History",
+        "scenario": "In an archive of famous philosophers, those who were exiled appear to have produced more influential works than those who were not exiled.",
+        "claim": "Exile makes philosophers more influential.",
+        "label": "AMBIGUOUS",
+        "is_ambiguous": true,
+        "trap": {
+            "type": "NONE",
+            "subtype": ""
+        },
+        "variables": {
+            "X": "Exiled status",
+            "Y": "Influence of works",
+            "Z": ["Being preserved/remembered in archives"]
+        },
+        "gold_rationale": "Philosophers who were exiled may have written more influential works, but we cannot determine if this is because they were exiled or because they were more influential to begin with.",
+        "annotation": {
+            "author": "Sameer Vijay",
+            "num_annotators": 1,
+            "adjudicated": true
+        }
+    },
+    {
+        "id": "T3-BucketF-0004",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L1",
+        "domain": "History",
+        "scenario": "Records show 65% of naval deaths in a war were sailors from the largest fleet. A commentator concludes that serving in the largest fleet was most dangerous.",
+        "claim": "Serving in the largest fleet was the most dangerous assignment.",
+        "label": "NO",
+        "is_ambiguous": false,
+        "trap": {
+            "type": "BASE_RATE_NEGLECT",
+            "subtype": "Denominator_Neglect"
+        },
+        "variables": {
+            "X": "Serving in largest fleet",
+            "Y": "Death count",
+            "Z": ["Fleet size"]
+        },
+        "gold_rationale": "Raw death counts ignore the denominator. If the largest fleet contained most sailors, it can account for most deaths even with a lower death rate than smaller fleets.",
+        "annotation": {
+            "author": "Sameer Vijay",
+            "num_annotators": 1,
+            "adjudicated": true
+        }
+    },
+    {
+        "id": "T3-BucketF-0005",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L1",
+        "domain": "History",
+        "scenario": "Provinces with higher cathedral density also show higher grain yields in regional summaries compiled centuries later.",
+        "claim": "Building more cathedrals increases grain yields.",
+        "label": "NO",
+        "is_ambiguous": false,
+        "trap": {
+            "type": "CONFOUNDING",
+            "subtype": "Omitted_Variable"
+        },
+        "variables": {
+            "X": "Cathedral density",
+            "Y": "Regional grain yield",
+            "Z": ["Fertile land", "Regional wealth"]
+        },
+        "gold_rationale": "The confounding variable is wealth. Wealthy regions can support both cathedral construction and high yields. The regional correlation does not show that cathedrals caused productivity improvements at the farm level.",
+        "annotation": {
+        "author": "Sameer Vijay",
+        "num_annotators": 1,
+        "adjudicated": true
+        }
+    },
+    {
+        "id": "T3-BucketF-0006",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L1",
+        "domain": "History",
+        "scenario": "States that historically minted silver coins are more likely to be high-income today.",
+        "claim": "Minting silver coins historically leads to modern prosperity.",
+        "label": "NO",
+        "is_ambiguous": false,
+        "trap": {
+            "type": "SELECTION",
+            "subtype": "Sampling_On_The_Outcome"
+        },
+        "variables": {
+            "X": "Historical silver coinage",
+            "Y": "Modern income level",
+            "Z": ["State survival to present"]
+        },
+        "gold_rationale": "States that were able to mint silver coins are more likely to be alive today because they were prosperous. The states that weren't able to mint silver coins don't exist today.",
+        "annotation": {
+            "author": "Sameer Vijay",
+            "num_annotators": 1,
+            "adjudicated": true
+        }
+    },
+    {
+        "id": "T3-BucketF-0007",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L2",
+        "domain": "History",
+        "scenario": "A city observes that whenever it raises emergency grain imports, famine deaths still rise that year. The council proposes banning emergency imports to reduce famine.",
+        "claim": "Banning emergency grain imports will reduce famine deaths.",
+        "label": "NO",
+        "is_ambiguous": false,
+        "trap": {
+            "type": "REVERSE",
+            "subtype": "Policy_Endogeneity"
+        },
+        "variables": {
+            "X": "Emergency grain imports",
+            "Y": "Famine deaths",
+            "Z": ["Harvest failure severity"]
+        },
+        "gold_rationale": "Imports are typically increased in response to worsening harvests. The harvest failure drives deaths and also triggers imports, so stopping imports would likely worsen outcomes rather than improve them.",
+        "annotation": {
+            "author": "Sameer Vijay",
+            "num_annotators": 1,
+            "adjudicated": true
+        }
+    },
+    {
+        "id": "T3-BucketF-0008",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L2",
+        "domain": "History",
+        "scenario": "A kingdom notices that provinces receiving the most plague relief funds also have the highest death rates. The king decides to stop sending relief to reduce deaths.",
+        "claim": "Stopping plague relief funds will reduce death rates.",
+        "label": "NO",
+        "is_ambiguous": false,
+        "trap": {
+          "type": "CONFOUNDING",
+          "subtype": "Confounding_by_Indication"
+        },
+        "variables": {
+          "X": "Relief funds allocation",
+          "Y": "Plague deaths",
+          "Z": ["Outbreak intensity"]
+        },
+        "gold_rationale": "Relief is directed toward the worst-hit provinces. Outbreak intensity drives both funding and deaths; withdrawing aid would not address the underlying severity and may increase mortality.",
+        "annotation": {
+          "author": "Sameer Vijay",
+          "num_annotators": 1,
+          "adjudicated": true
+        }
+    },
+    {
+        "id": "T3-BucketF-0009",
+        "bucket": "BucketLarge-F",
+        "pearl_level": "L2",
+        "domain": "History",
+        "scenario": "A ruler sees that regions with more pamphlet printing houses experience more sectarian conflict. He proposes shutting printing houses to end conflict.",
+        "claim": "Shutting printing houses will eliminate sectarian conflict.",
+        "label": "NO",
+        "is_ambiguous": false,
+        "trap": {
+          "type": "FEEDBACK",
+          "subtype": ""
+        },
+        "variables": {
+          "X": "Printing house presence",
+          "Y": "Sectarian conflict",
+          "Z": ["Underlying religious tensions"]
+        },
+        "gold_rationale": "Places with sectarian tensions will naturally have more pamphlet printing hosues becase there are more people who want to express their opinions. Having more pamphlets will also cause more sectarian conflict because more people are expressing their opinions.",
+        "annotation": {
+          "author": "Sameer Vijay",
+          "num_annotators": 1,
+          "adjudicated": true
+        }
+    },
+  {
+    "id": "T3-BucketF-0010",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A general argues that building a massive border wall causes empires to collapse, since many walls were completed shortly before collapses. He advises canceling the wall project to save the empire.",
+    "claim": "Canceling the wall project will prevent imperial collapse.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Wall building",
+      "Y": "Imperial collapse",
+      "Z": ["Existential external threat"]
+    },
+    "gold_rationale": "Walls are often built when threats are already existential. The threat drives both the construction decision and the heightened risk of collapse; canceling the wall does not remove the underlying danger.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0011",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A navy finds that admirals awarded gold epaulettes win more battles. Leadership mandates gold epaulettes for all captains to improve win rates.",
+    "claim": "Mandating gold epaulettes will increase battle win rates.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Gold epaulettes",
+      "Y": "Battle wins",
+      "Z": ["Experience/seniority"]
+    },
+    "gold_rationale": "Gold epaulettes likely signal seniority and proven competence, the omitted variable which drives winning. Changing uniforms does not create experience or strategic skill.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+
+  {
+    "id": "T3-BucketF-0012",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A parliament observes that crime spikes often happen after curfews are imposed. Legislators propose banning curfews to reduce crime.",
+    "claim": "Banning curfews will reduce crime.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive_Intervention"
+    },
+    "variables": {
+      "X": "Curfew imposition",
+      "Y": "Crime rate",
+      "Z": ["Unrest/riot escalation"]
+    },
+    "gold_rationale": "Curfews are typically imposed because unrest and crime are already escalating. The escalation drives both the policy response and observed crime levels. Banning the response does not address the cause.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0014",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A monarch notes that dynasties whose heirs adopted a specific auspicious title often had prosperous decades. She orders her heir to adopt the title to ensure prosperity.",
+    "claim": "Adopting the auspicious title will cause national prosperity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Adopting a title",
+      "Y": "National prosperity",
+      "Z": ["Historical coincidence", "Underlying institutions"]
+    },
+    "gold_rationale": "The association is likely confounded by underlying institutional strength or is a mere coincidence. A title change lacks a causal mechanism to drive economic prosperity.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0015",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A colonial governor observes that when he increases garrison size, rebellions still intensify. He concludes garrisons cause rebellion and proposes reducing troops.",
+    "claim": "Reducing troop garrisons will reduce rebellion intensity.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Garrison size",
+      "Y": "Rebellion intensity",
+      "Z": ["Local grievances", "Repression level"]
+    },
+    "gold_rationale": "A feedback loop exists: troop increases may be a reaction to rebellion, but large garrisons can also inflame grievances. The net effect of reducing troops is uncertain without knowing which direction dominates.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0017",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A reformer sees that provinces with the strictest anti-corruption edicts have the worst corruption indices. He proposes abolishing anti-corruption offices because they 'cause corruption.'",
+    "claim": "Abolishing anti-corruption offices will reduce corruption.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Confounding_By_Indication"
+    },
+    "variables": {
+      "X": "Anti-corruption offices",
+      "Y": "Measured corruption",
+      "Z": ["Baseline corruption severity"]
+    },
+    "gold_rationale": "The offices are assigned where the corruption problem is most severe. This 'indication' (baseline corruption) causes both the intervention and the high observed corruption levels.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0018",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ruler notices that regions receiving the most flood defenses still experience the most flood damage. He proposes stopping flood-defense spending.",
+    "claim": "Stopping flood-defense spending will reduce flood damage.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive_Intervention"
+    },
+    "variables": {
+      "X": "Flood-defense spending",
+      "Y": "Flood damage",
+      "Z": ["Flood exposure risk"]
+    },
+    "gold_rationale": "High-risk areas are 'indicated' for defenses. The underlying risk drives both the spending and the damage; stopping the spending would likely increase damage, not decrease it.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0019",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ministry mandates that all teachers focus on rote recitation to raise exam passage rates, because regions with more recitation drills have higher passage rates historically.",
+    "claim": "Mandating rote recitation will increase true learning.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Static_Metric_Gaming"
+    },
+    "variables": {
+      "X": "Rote recitation mandate",
+      "Y": "True learning",
+      "Z": ["Exam passage rate as proxy"]
+    },
+    "gold_rationale": "When a proxy (exam passage) becomes the target, it is gamed via rote drills, causing it to lose its relationship with the true objective (learning).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0020",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A government expands a draft to raise army size. After the draft, reported desertions rise. Officials claim the draft causes desertion and propose canceling the draft.",
+    "claim": "Canceling the draft will reduce desertion rates.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Draft expansion",
+      "Y": "Desertion rate",
+      "Z": ["Reporting intensity", "War severity"]
+    },
+    "gold_rationale": "The increase in reported desertions may be due to selective observation (increased monitoring) or external factors like war severity, rather than the draft itself.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0022",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A court notices that when it grants amnesties, political violence rises afterward. The king concludes amnesties cause violence and bans them.",
+    "claim": "Banning amnesties will reduce political violence.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive_Intervention"
+    },
+    "variables": {
+      "X": "Amnesty issuance",
+      "Y": "Political violence",
+      "Z": ["Escalating unrest"]
+    },
+    "gold_rationale": "Amnesties are reactive interventions to rising violence. The underlying unrest causes both the amnesty and the subsequent violence; banning the response won't stop the trend.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0023",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ruler subsidizes canal construction. Trade expands dramatically afterward. Critics argue the trade boom would have happened anyway because a new overseas colony began producing spices at scale.",
+    "claim": "The canal subsidy caused the trade boom.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Canal construction subsidy",
+      "Y": "Trade volume",
+      "Z": ["Spice supply expansion"]
+    },
+    "gold_rationale": "The trade boom is likely confounded by the spice supply shock. Without isolating these factors, the subsidy's causal role cannot be determined.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0024",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A kingdom bans taverns to reduce disorder. The next year, recorded assaults drop, but contemporaneous records show the police stopped patrolling tavern districts and moved to palace security.",
+    "claim": "The tavern ban reduced assaults.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Tavern ban",
+      "Y": "Recorded assaults",
+      "Z": ["Policing/recording intensity"]
+    },
+    "gold_rationale": "The drop in recorded assaults is likely due to selective observation (reduced patrols) rather than a true reduction in violence following the ban.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0025",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A province mandates Sunday schooling. Literacy rises afterward. A rival claims the true driver was the sudden availability of cheap paper from a new mill that lowered book prices.",
+    "claim": "The Sunday school mandate caused the literacy rise.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Sunday school mandate",
+      "Y": "Literacy rate",
+      "Z": ["Cheap paper availability"]
+    },
+    "gold_rationale": "It is unclear if the mandate or the technological shift was the primary driver of literacy gains.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0026",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An emperor reforms coinage to stabilize prices. Inflation continues because a war disrupted tax collection and forced emergency borrowing.",
+    "claim": "The coinage reform failed to stabilize prices, so coinage reforms are ineffective.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Coinage reform",
+      "Y": "Price stability",
+      "Z": ["War financing shock"]
+    },
+    "gold_rationale": "Inflation was driven by an omitted war financing shock. The failure of the reform in this specific context does not prove coinage reforms are generally ineffective.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0027",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state expands road building to integrate frontier regions. After roads, banditry reports increase. Ministers propose stopping road building to reduce banditry.",
+    "claim": "Stopping road building will reduce banditry.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy_Response_Loop"
+    },
+    "variables": {
+      "X": "Road building",
+      "Y": "Banditry",
+      "Z": ["Trade flows", "Policing reach"]
+    },
+    "gold_rationale": "Roads create a feedback loop: they increase commerce (attracting bandits) but also increase state reach. Stopping road building might reduce reports without addressing the trade dynamics.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0028",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A court censors dissident songs. Public unrest appears to fall in official reports, but private letters describe widespread hidden organizing.",
+    "claim": "Censoring dissident songs reduces unrest.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Song censorship",
+      "Y": "Reported unrest",
+      "Z": ["Unrest detection/reporting"]
+    },
+    "gold_rationale": "Censorship induces selective observation by suppressing signals of unrest. The reported drop is an artifact of the intervention, not a true reduction in underlying unrest.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0030",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A kingdom lowers tariffs during crises. Historical records show famines often follow tariff reductions. The king keeps tariffs high to avoid famine.",
+    "claim": "Keeping tariffs high will prevent famine.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Tariff reductions",
+      "Y": "Famine",
+      "Z": ["Crop failure"]
+    },
+    "gold_rationale": "An omitted variable (crop failure) causes both the tariff reduction (a response) and the famine. Keeping tariffs high would actually worsen the shortage caused by the failure.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0031",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An emperor promotes a moral campaign against bribery. Soon after, reported bribery cases rise. He concludes the campaign increased bribery and ends it.",
+    "claim": "Ending the anti-bribery campaign will reduce bribery.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Anti-bribery campaign",
+      "Y": "Reported bribery cases",
+      "Z": ["Detection/enforcement effort"]
+    },
+    "gold_rationale": "Increased detection (selective observation) creates the illusion of more bribery. Ending the campaign would reduce detection, not the underlying crime.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0033",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ruler institutes congestion tolls on a major bridge to reduce traffic. Drivers reroute to the other major bridge, and total travel time in the city increases. The ruler concludes tolls worsen congestion for the city.",
+    "claim": "Bridge tolls increase overall congestion citywide.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Bridge toll (intervention)",
+      "Y": "Citywide congestion/travel time",
+      "Z": ["Driver route adaptation"]
+    },
+    "gold_rationale": "In this scenario, the intervention successfully reveals a causal chain where adaptive rerouting increases travel time elsewhere. No trap is present; the effect follows the stated mechanism.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0034",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A kingdom introduces universal grain price caps. Merchants reduce shipments to avoid losses. Shortages worsen and riots increase.",
+    "claim": "Grain price caps can increase shortages and riots by reducing supply.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Grain price cap policy",
+      "Y": "Shortages and riots",
+      "Z": ["Merchant supply response"]
+    },
+    "gold_rationale": "The causal link from intervention to outcome is explicitly supported by merchant behavior described in the scenario. This is a valid interventional claim.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0035",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A republic mandates that historians only publish 'victory narratives' to raise morale. Over time, leaders make worse strategic decisions because losses are hidden.",
+    "claim": "Mandating only victory narratives can worsen decision quality by distorting information.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Censorship of losses",
+      "Y": "Strategic decision quality",
+      "Z": ["Information distortion"]
+    },
+    "gold_rationale": "Information distortion is a plausible causal mechanism linking censorship to poor decision outcomes. The scenario provides a consistent interventional logic.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0036",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A monarch increases taxes to fund irrigation. Harvests improve afterward, but climate records show rainfall also increased substantially that period.",
+    "claim": "The tax-funded irrigation caused the harvest improvement.",
+    "label": "NO",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Irrigation funding via taxes",
+      "Y": "Harvest yields",
+      "Z": ["Rainfall increase"]
+    },
+    "gold_rationale": "Harvest yields are confounded by the omitted variable of rainfall. The separate contributions of irrigation and weather cannot be disentangled without further comparison.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0037",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A capital launches an anti-plague quarantine. After implementation, deaths still climb for weeks because infections were already widespread. Critics claim quarantine increases deaths and demand repeal.",
+    "claim": "Repealing quarantine will reduce plague deaths.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive_Intervention"
+    },
+    "variables": {
+      "X": "Quarantine policy",
+      "Y": "Plague deaths",
+      "Z": ["Existing infection prevalence"]
+    },
+    "gold_rationale": "Quarantine is a reactive intervention to an already widespread outbreak. The trend in deaths is driven by existing infections; repealing the response will not reduce the death toll.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0038",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ruler mandates that all provinces submit weekly productivity reports. Reported productivity rises, but letters suggest officials falsified numbers to avoid punishment.",
+    "claim": "Weekly reporting mandates increase true productivity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Proxy_Drift"
+    },
+    "variables": {
+      "X": "Weekly reporting mandate",
+      "Y": "True productivity",
+      "Z": ["Reported productivity metric"]
+    },
+    "gold_rationale": "The productivity metric gamed by officials has drifted away from true productivity (Proxy Drift). Reporting increases while the underlying reality remains unchanged or worsened.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0040",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A republic outsources tax collection to private contractors. Revenues rise, but corruption scandals also rise because audits became more frequent and transparent.",
+    "claim": "Outsourcing tax collection increases corruption.",
+    "label": "NO",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Outsourcing tax collection",
+      "Y": "Recorded corruption scandals",
+      "Z": ["Audit frequency/transparency"]
+    },
+    "gold_rationale": "The rise in scandals is likely due to selective observation (better audits) rather than an increase in underlying corruption. Causal attribution is therefore ambiguous.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0041",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A kingdom funds a new port to expand trade. Trade rises, but only because a nearby rival port was destroyed by an earthquake the same year.",
+    "claim": "The new port funding caused the trade increase.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "New port funding",
+      "Y": "Trade volume",
+      "Z": ["Rival port destruction"]
+    },
+    "gold_rationale": "Trade shifted due to the omitted variable of the rival port's destruction. The port funding coincided with an external shock that drove the observed outcome.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0042",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state imposes harsh penalties for grain hoarding. After the law, hoarding reports drop, but black-market activity rises and shortages persist.",
+    "claim": "Harsh penalties eliminated hoarding and improved food availability.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Anti-hoarding penalties",
+      "Y": "Food availability",
+      "Z": ["Black-market substitution"]
+    },
+    "gold_rationale": "Selective observation shows a drop in reported hoarding while true behavior shifts to unobserved black markets. Food availability did not actually improve.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0043",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city increases public punishments to deter theft. Theft reports fall immediately, but merchant letters say victims stopped reporting due to fear of being questioned publicly.",
+    "claim": "Public punishments reduced theft.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Public punishment policy",
+      "Y": "Reported theft",
+      "Z": ["Willingness to report"]
+    },
+    "gold_rationale": "The drop in reports is due to selective observation (fear of reporting) rather than a true deterrent effect on theft.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0045",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ruler mandates standardized weights and measures. Market disputes decline sharply after the mandate.",
+    "claim": "Standardizing weights and measures reduces market disputes.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Standardization mandate",
+      "Y": "Market disputes",
+      "Z": ["Transaction ambiguity"]
+    },
+    "gold_rationale": "Standardization is a direct causal lever to reduce transaction ambiguity. No confounding or selection issues are indicated in this valid interventional claim.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0046",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city subsidizes shipbuilding. Naval power increases, but only wealthy merchant guilds capture the subsidies and expand private fleets that the state cannot command.",
+    "claim": "Shipbuilding subsidies increased state naval power.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Shipbuilding subsidies",
+      "Y": "State naval power",
+      "Z": ["Merchant wealth/political influence"]
+    },
+    "gold_rationale": "State power is confounded by the omitted variable of private capture. The subsidy increased private capacity but did not causally translate to state naval command.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0047",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state bans duel culture to reduce elite deaths. Elite deaths fall, but broader violence rises because grievances shift to factional assassinations.",
+    "claim": "Banning duels can reduce elite deaths but increase other forms of political violence.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Duel ban",
+      "Y": "Violence patterns",
+      "Z": ["Grievance displacement"]
+    },
+    "gold_rationale": "The scenario identifies a displacement effect that is a valid causal consequence of the intervention. The claim follows the interventional logic described.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0050",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A reformist leader is elected and detente follows. The state was also facing severe fiscal crisis and declining growth.",
+    "claim": "If the reformist leader had not been elected, detente would not have occurred.",
+    "label": "NO",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Late_Preemption"
+    },
+    "variables": {
+      "X": "Leader election",
+      "Y": "Detente",
+      "Z": ["Fiscal crisis/structural constraints"]
+    },
+    "gold_rationale": "Structural constraints (Late Preemption) might have made detente inevitable regardless of the leader's election. The causal necessity of the leader in the counterfactual world is uncertain.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+
+  {
+    "id": "T3-BucketF-0051",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Archaeological data shows that ancient civilizations with complex irrigation systems also had high rates of temple construction. A researcher suggests irrigation causes religious fervor.",
+    "claim": "Complex irrigation systems lead to increased religious fervor.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Irrigation complexity",
+      "Y": "Temple construction",
+      "Z": ["State administrative capacity"]
+    },
+    "gold_rationale": "High state administrative capacity (Z) is a common cause for both large-scale infrastructure like irrigation (X) and monumental architecture like temples (Y). The correlation is likely spurious.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0052",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In the 18th century, regions with high coffee consumption showed a higher frequency of political pamphlets.",
+    "claim": "Increasing coffee consumption in a region will cause more political pamphlets to be written.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Coffee consumption",
+      "Y": "Political pamphlet frequency",
+      "Z": ["Urbanization", "Literacy rates"]
+    },
+    "gold_rationale": "While coffee houses provided a venue for discourse, urbanization and literacy are significant confounders (Z). Without controlling for these, the causal impact of coffee (X) on pamphlet production (Y) is ambiguous.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0053",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Records show that years with unusually high pirate activity in the Caribbean coincided with high global temperatures.",
+    "claim": "Piracy in the Caribbean causes global cooling.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Pirate activity",
+      "Y": "Global temperature",
+      "Z": ["Historical coincidence", "Solar activity"]
+    },
+    "gold_rationale": "This is a classic spurious correlation. There is no plausible causal mechanism linking pirate activity (X) to global temperature changes (Y); both are likely driven by independent historical and natural cycles.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0054",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Data from the 19th century shows that cities with more chimneys had higher life expectancy than rural villages with no chimneys.",
+    "claim": "Installing more chimneys in a home increases the lifespan of the inhabitants.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Number of chimneys",
+      "Y": "Life expectancy",
+      "Z": ["Wealth/Industrialization level"]
+    },
+    "gold_rationale": "The number of chimneys (X) is a proxy for wealth and industrial development (Z). Wealthier cities had better sanitation and food security, which improved life expectancy (Y), regardless of chimney count.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0055",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Historical annals note that whenever a comet appeared in the sky, a major monarch died within the year.",
+    "claim": "The appearance of a comet predicts the death of a monarch.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Historical_Filtering"
+    },
+    "variables": {
+      "X": "Comet appearance",
+      "Y": "Monarch death",
+      "Z": ["Selective recording of events"]
+    },
+    "gold_rationale": "This is likely due to historical filtering/selective recording (Z). Chroniclers often recorded 'omens' (X) only when a significant event (Y) occurred to justify it post-hoc, ignoring comets that were not followed by deaths.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0056",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "States with high cavalry-to-infantry ratios often won battles in the 15th century. A military analyst claims cavalry ratio is the primary driver of victory.",
+    "claim": "Increasing the cavalry-to-infantry ratio will ensure victory in 15th-century warfare.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Cavalry ratio",
+      "Y": "Battle victory",
+      "Z": ["Terrain", "State wealth", "Logistics"]
+    },
+    "gold_rationale": "While cavalry (X) is effective, its success (Y) is highly dependent on terrain and the state's ability to maintain horses (Z). Without accounting for terrain suitability, the causal link is not guaranteed.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0057",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A revolutionary government bans all foreign newspapers to stop the spread of 'counter-revolutionary' ideas. Six months later, local protests increase.",
+    "claim": "Banning foreign newspapers increased local protests.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Newspaper ban",
+      "Y": "Protest frequency",
+      "Z": ["Economic sanctions", "Underground pamphlets"]
+    },
+    "gold_rationale": "It is unclear if the ban (X) caused the protests (Y) or if both were driven by worsening economic conditions or other unobserved factors (Z). The intervention's direct effect is confounded by the timing of other events.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0058",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city-state observes that whenever they raise taxes on grain, the city experiences a bread riot. They decide to lower taxes to zero to permanently eliminate riots.",
+    "claim": "A zero-tax policy on grain will permanently eliminate bread riots.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Grain tax",
+      "Y": "Bread riots",
+      "Z": ["Harvest failure", "Supply chain disruption"]
+    },
+    "gold_rationale": "Bread riots (Y) are primarily caused by grain scarcity (Z). While taxes (X) increase prices, eliminating them will not prevent riots if a harvest failure occurs, as the underlying cause of the shortage remains.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0059",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An empire mandates that all border regions build stone walls to prevent nomadic raids. Raids in those regions drop, but increase significantly in neighboring un-walled friendly territories.",
+    "claim": "Stone walls reduce the total number of raids against the empire's interests.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy_Response_Loop"
+    },
+    "variables": {
+      "X": "Wall construction",
+      "Y": "Total raid frequency",
+      "Z": ["Raider displacement"]
+    },
+    "gold_rationale": "The intervention (X) merely displaced the raids (Z) to softer targets rather than reducing the motivation or capacity of the raiders. Total security (Y) may not have improved.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0060",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A colonial power builds schools in provinces where literacy is already rising due to missionary activity. They claim their school-building program is the reason for the literacy boom.",
+    "claim": "The government school-building program caused the rise in literacy.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Confounding_By_Indication"
+    },
+    "variables": {
+      "X": "School building program",
+      "Y": "Literacy rate",
+      "Z": ["Existing missionary education"]
+    },
+    "gold_rationale": "The program (X) was 'indicated' by areas already seeing success. The existing missionary education (Z) drove both the literacy (Y) and the decision to build more schools in those successful areas.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0061",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A medieval king implements a law requiring all knights to own a specific high-quality shield. Mortality among knights in the next war drops. Chroniclers credit the shield law.",
+    "claim": "The shield mandate caused the reduction in knight mortality.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Shield mandate",
+      "Y": "Mortality rate",
+      "Z": ["Tactical shifts", "Enemy equipment quality"]
+    },
+    "gold_rationale": "It is unclear if the shields (X) were the cause or if the next war was simply less lethal (Y) due to different enemy tactics or a shift in how battles were fought (Z). More data on the wars is needed.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0062",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "To combat inflation, a state fixes the price of meat. Meat disappears from official markets but is widely available in secret 'back-alley' markets at five times the fixed price.",
+    "claim": "Fixing meat prices effectively reduces the cost of meat for the population.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Static_Metric_Gaming"
+    },
+    "variables": {
+      "X": "Price fixing policy",
+      "Y": "Real cost of meat",
+      "Z": ["Market displacement"]
+    },
+    "gold_rationale": "By targeting the 'official price' (static metric), the policy (X) caused a displacement where the actual cost for consumers (Y) rose due to scarcity and black-market premiums (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0063",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A general introduces a 'decimation' policy (punishing every 10th man) to stop desertion. Desertion reports fall. He concludes the policy worked perfectly.",
+    "claim": "The decimation policy reduced desertion rates.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Decimation policy",
+      "Y": "Reported desertion",
+      "Z": ["Fear of reporting"]
+    },
+    "gold_rationale": "The fall in reported desertion (Y) may be due to selective observation; commanders might stop reporting desertions to avoid the harsh group punishment (X), even if soldiers are still fleeing.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0064",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A region implements a mandatory vaccination program for smallpox. In the following decade, smallpox deaths drop to zero.",
+    "claim": "The mandatory vaccination program caused the elimination of smallpox deaths.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Mandatory vaccination",
+      "Y": "Smallpox mortality",
+      "Z": ["Natural immunity"]
+    },
+    "gold_rationale": "Vaccination (X) is a well-established direct causal intervention for reducing viral mortality (Y). In this scenario, the direct causal link from intervention to the expected outcome is logical and supported.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0065",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An emperor creates a 'Public Integrity Bureau' to investigate tax collectors. Reported embezzlement drops significantly. He claims the bureau successfully stopped corruption.",
+    "claim": "The Integrity Bureau reduced tax embezzlement.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Integrity Bureau creation",
+      "Y": "Embezzlement rates",
+      "Z": ["Better hiding of crimes", "Bribery of investigators"]
+    },
+    "gold_rationale": "It is ambiguous whether embezzlement (Y) actually decreased or if corrupt officials simply became more sophisticated at hiding it or bribing the new investigators (X/Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0066",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A kingdom increases patrols on the King's Highway to stop banditry. Bandit attacks on the highway drop. Simultaneously, attacks on secondary roads and trade paths double.",
+    "claim": "Increasing highway patrols reduced the total number of bandits in the kingdom.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive_Intervention"
+    },
+    "variables": {
+      "X": "Highway patrols",
+      "Y": "Total bandit numbers",
+      "Z": ["Route substitution"]
+    },
+    "gold_rationale": "The intervention (X) changed the location of the outcome (X causes Y-local) but did not address the source of the problem. Bandits simply substituted their targets (Z), leaving total numbers (Y) potentially unchanged.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0067",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "Historians note that empires that adopted 'Standard Calendar A' had longer periods of internal peace than those that didn't. A new kingdom adopts the calendar to ensure stability.",
+    "claim": "Adopting Standard Calendar A causes internal peace.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Calendar adoption",
+      "Y": "Internal peace",
+      "Z": ["Existing administrative cohesion"]
+    },
+    "gold_rationale": "Adopting a standardized calendar (X) is a symptom of existing administrative cohesion (Z). The calendar itself is a symbolic tool, not the causal driver of peace (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0068",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A province lowers property taxes to encourage farm development. Agricultural output rises, but a major new canal also opened in the province the same year.",
+    "claim": "The tax reduction caused the rise in agricultural output.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Tax reduction",
+      "Y": "Agricultural output",
+      "Z": ["Canal construction"]
+    },
+    "gold_rationale": "Both the tax cut (X) and the new canal (Z) could drive output (Y). Without controlling for the canal's impact, the causal effect of the tax reduction is ambiguous.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0069",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A naval commander changes the layout of ships to prioritize speed over armor. In the next three skirmishes, he wins all three. He claims speed is the deciding factor in naval combat.",
+    "claim": "Prioritizing speed over armor increases the probability of naval victory.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Ship layout change",
+      "Y": "Naval victory",
+      "Z": ["Weather conditions", "Enemy experience"]
+    },
+    "gold_rationale": "The victories (Y) could be due to favorable weather or inexperienced enemies in those specific skirmishes (Z). The causal link from ship speed (X) to victory requires broader testing.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0070",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state implements a policy of public execution for counterfeiters. After the law, the number of counterfeit coins found in the capital drops to nearly zero, but remains high in the provinces.",
+    "claim": "Public executions effectively deterred counterfeiting in the capital.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Public execution policy",
+      "Y": "Counterfeiting frequency",
+      "Z": ["Market migration"]
+    },
+    "gold_rationale": "It's unclear if counterfeiting (Y) stopped or if counterfeiters simply moved their operations to the provinces to avoid the capital's scrutiny (Z). The total volume of crime might be unchanged.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0071",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A country institutes a mandatory 'Day of Silence' to reduce social friction. Social friction indices rise because people feel isolated and unable to resolve minor disputes.",
+    "claim": "Mandatory silence can increase social friction by preventing dispute resolution.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Day of Silence policy",
+      "Y": "Social friction",
+      "Z": ["Lack of communication"]
+    },
+    "gold_rationale": "The scenario outlines a logical causal mechanism: removing communication (X) leads to unresolved and compounding friction (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0072",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A reformist king bans 'selling of offices.' Efficiency in the bureaucracy increases. He claims the ban caused the improvement.",
+    "claim": "Banning the sale of offices increases bureaucratic efficiency.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Ban on selling offices",
+      "Y": "Bureaucratic efficiency",
+      "Z": ["Introduction of merit exams"]
+    },
+    "gold_rationale": "If the king also introduced merit exams (Z) at the same time, the improvement (Y) might be due to the exams rather than just the ban (X). The two interventions are confounded.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0073",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A researcher finds that when ancient armies used 'Symbol X' on their shields, they were 20% more likely to win. He recommends a modern ceremonial unit adopt the symbol to improve performance.",
+    "claim": "Adopting Symbol X will improve unit performance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Shield symbol",
+      "Y": "Unit performance",
+      "Z": ["Elite status of the unit"]
+    },
+    "gold_rationale": "Historically, Symbol X (X) was likely reserved for elite, well-trained units (Z). The symbol is a marker of performance, not a cause of it (Y). Giving it to a non-elite unit won't change their skill.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0074",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city enacts a law banning the dumping of waste in the river. Disease rates fall dramatically within two years.",
+    "claim": "Banning river waste dumping reduces disease rates.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Waste dumping ban",
+      "Y": "Disease rate",
+      "Z": ["Water quality"]
+    },
+    "gold_rationale": "There is a direct and scientifically sound causal chain: reducing waste (X) improves water quality (Z), which reduces waterborne illness (Y). This is a valid interventional claim.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0075",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An official observes that the lowest-performing schools in the empire are the ones receiving the 'Special Educational Grant.' He proposes cutting the grant to improve performance.",
+    "claim": "Cutting the Special Educational Grant will improve school performance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Confounding_By_Indication"
+    },
+    "variables": {
+      "X": "Educational grant",
+      "Y": "School performance",
+      "Z": ["Baseline school struggle"]
+    },
+    "gold_rationale": "The grants (X) are given specifically to schools that are struggling (Z). The struggle (Z) causes the grant, not the other way around. Cutting it would likely make performance (Y) worse.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0076",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state begins paying bounties for the heads of 'poisonous snakes.' People start breeding snakes in their basements to collect more bounty money. The number of snakes in the city increases.",
+    "claim": "Paying snake bounties reduces the snake population.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Static_Metric_Gaming"
+    },
+    "variables": {
+      "X": "Snake bounty policy",
+      "Y": "Snake population",
+      "Z": ["Gaming the reward"]
+    },
+    "gold_rationale": "When a proxy (dead snakes) is targeted (X), individuals game the metric by breeding more snakes (Z). This leads to an outcome (Y) opposite to the intended one.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0077",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A province builds new granaries to protect against famine. A famine occurs anyway three years later due to an unprecedented five-year drought. The project is labeled a failure.",
+    "claim": "Granaries are ineffective at reducing famine risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Granary construction",
+      "Y": "Famine occurrence",
+      "Z": ["Drought severity"]
+    },
+    "gold_rationale": "A massive omitted variable (extreme drought, Z) overwhelmed the intervention (X). The failure in an outlier event does not mean the intervention is ineffective for standard risks (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0078",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ruler offers tax breaks to any family with more than five children to increase the population. Ten years later, the census shows a massive population boom. Critics point out that the borders were also opened to refugees that same decade.",
+    "claim": "The tax breaks caused the population boom.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Child tax breaks",
+      "Y": "Population growth",
+      "Z": ["Refugee influx"]
+    },
+    "gold_rationale": "The growth (Y) is confounded by the open-border policy (Z). It's impossible to tell if the tax breaks (X) had a greater impact without more detailed demographic data.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0079",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An army switches from bronze to iron weapons. In the next decade, they expand their borders significantly. Military historians claim iron weapons were the cause of expansion.",
+    "claim": "Iron weapons cause military expansion.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Iron weapons",
+      "Y": "Border expansion",
+      "Z": ["Weakened neighbors", "New leadership"]
+    },
+    "gold_rationale": "Expansion (Y) could be caused by iron weapons (X) or by the simultaneous decline of neighboring powers (Z). The causal attribution to the metal type alone is not definitive.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0080",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state subsidizes 'Alchemist Laboratories' to find a way to turn lead into gold. No gold is produced, but the chemists accidentally discover a new, more effective gunpowder formula.",
+    "claim": "Subsidizing alchemists can lead to military technology breakthroughs.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Research subsidies",
+      "Y": "Technological breakthrough",
+      "Z": ["Serendipity"]
+    },
+    "gold_rationale": "The scenario describes a valid interventional outcome where funding research (X) led to a breakthrough (Y), even if the breakthrough was not the intended one.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0081",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city installs street lamps to reduce night-time crime. Crime reports rise. The mayor claims the lamps invited more criminals.",
+    "claim": "Installing street lamps increases night-time crime.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Street lamp installation",
+      "Y": "Reported crime",
+      "Z": ["Visibility for detection"]
+    },
+    "gold_rationale": "The lamps (X) allow victims and patrols to see and report crimes that were previously hidden (Z). The rise in reports (Y) is due to better observation, not necessarily an increase in actual crime.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0082",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A tribe migrates from a fertile valley to a harsh desert. Within a generation, their mortality rate increases.",
+    "claim": "Migrating to a desert environment increases mortality.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Environmental migration",
+      "Y": "Mortality rate",
+      "Z": ["Resource scarcity"]
+    },
+    "gold_rationale": "Resource scarcity in deserts (Z) is a direct causal driver of health outcomes. The intervention (moving, X) directly leads to the outcome (Y) through established ecological mechanisms.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0083",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A merchant guild restricts membership to only those who have never lost a ship. They claim their training program makes merchants more successful.",
+    "claim": "The guild's training program prevents ship losses.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Outcome_Driven_Selection"
+    },
+    "variables": {
+      "X": "Guild training/membership",
+      "Y": "Low ship loss rate",
+      "Z": ["Selection on success"]
+    },
+    "gold_rationale": "The low loss rate (Y) is an artifact of the selection criteria (only successful people are allowed in, Z) rather than the causal result of the guild's training (X).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0084",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state begins paying bounties for the heads of 'poisonous snakes.' People start breeding snakes in their basements to collect more bounty money. The number of snakes in the city increases.",
+    "claim": "Paying snake bounties reduces the snake population.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Static_Metric_Gaming"
+    },
+    "variables": {
+      "X": "Snake bounty policy",
+      "Y": "Snake population",
+      "Z": ["Gaming the reward"]
+    },
+    "gold_rationale": "When a proxy (dead snakes) is targeted (X), individuals game the metric by breeding more snakes (Z). This leads to an outcome (Y) opposite to the intended one.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0085",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An ancient physician finds that all patients who survived a fever had eaten 'Herb Y.' He begins prescribing it to everyone with a fever. Mortality rates stay the same.",
+    "claim": "Prescribing Herb Y will reduce fever mortality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Sampling_On_The_Outcome"
+    },
+    "variables": {
+      "X": "Herb Y consumption",
+      "Y": "Fever survival",
+      "Z": ["Selection bias"]
+    },
+    "gold_rationale": "The physician only sampled the survivors (Outcome-Driven Selection, Z). If patients who died also ate the herb (X), it has no causal benefit on survival (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0086",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A king mandates that all laws be written in 'The Common Tongue' so people understand them better. Legal disputes increase because people now have access to the courts and can argue about wording.",
+    "claim": "Mandating a common tongue for laws increases legal transparency and access.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Language mandate",
+      "Y": "Legal disputes/access",
+      "Z": ["Literacy access"]
+    },
+    "gold_rationale": "The scenario identifies a logical outcome: more access (X) leading to more disputes (Y) as people utilize their new ability to interpret the law.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0087",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A reformer sets up 'Workhouses' to eliminate poverty. Poverty rates increase because the workhouses provide food, attracting the poor from surrounding regions.",
+    "claim": "Workhouses cause an increase in the local poor population.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Workhouse creation",
+      "Y": "Local poor population",
+      "Z": ["Migration"]
+    },
+    "gold_rationale": "The intervention (X) acted as a pull factor for migration (Z), which directly caused the increase in the measured outcome (Y). This is a consistent interventional effect.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0088",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A general orders his men to stop wearing heavy helmets after seeing that most wounded soldiers in the hospital have head injuries. He believes helmets are making them more vulnerable.",
+    "claim": "Removing helmets will reduce head injuries in battle.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Survivorship_Bias"
+    },
+    "variables": {
+      "X": "Helmet removal",
+      "Y": "Head injury rate",
+      "Z": ["Survival rate"]
+    },
+    "gold_rationale": "This is survivorship bias. Soldiers with helmets survive head wounds and end up in hospitals (Z). Those without helmets die on the field and are not counted among the 'wounded.' Removing helmets (X) will increase deaths.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0089",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city enacts a ban on theater performances to prevent 'moral decay.' A decade later, the city is sacked by a rival. Critics say the ban weakened the city's spirit and caused the defeat.",
+    "claim": "Banning theater caused the military defeat.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Theater ban",
+      "Y": "Military defeat",
+      "Z": ["Economic decline", "Rival military buildup"]
+    },
+    "gold_rationale": "A military defeat (Y) is a complex event driven by structural factors (Z). Attributing it to a cultural policy (X) is a stretch without a clear causal mechanism.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0090",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state establishes a 'Maritime Insurance Office.' Overseas trade increases. Officials claim the insurance office created the boom.",
+    "claim": "The creation of a Maritime Insurance Office causes trade expansion.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Insurance office creation",
+      "Y": "Trade volume",
+      "Z": ["Peace treaty", "Discovery of new routes"]
+    },
+    "gold_rationale": "It's unclear if the office (X) caused the boom or if the office was created because trade (Y) was already expanding due to external factors (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0091",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A historian argues that if the Archduke Ferdinand had not been assassinated in 1914, World War I would not have occurred.",
+    "claim": "If the assassination had failed, the Great War would have been avoided.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Assassination",
+      "Y": "World War I",
+      "Z": ["Alliance system", "Military buildup"]
+    },
+    "gold_rationale": "Historical structuralism suggests the alliance systems (Z) were so tense that any trigger might have caused the war (Y). It's ambiguous if the specific assassination (X) was necessary.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0092",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "The Great Library of Alexandria was destroyed. Modern scholars claim its preservation would have led to an industrial revolution 1000 years earlier.",
+    "claim": "If the Library of Alexandria hadn't been destroyed, the industrial revolution would have happened by 800 AD.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Early_Preemption"
+    },
+    "variables": {
+      "X": "Library destruction",
+      "Y": "Industrial revolution",
+      "Z": ["Economic/Labor conditions"]
+    },
+    "gold_rationale": "An industrial revolution (Y) requires specific economic and labor conditions (Z). These conditions 'preempted' the possibility of an early revolution, regardless of the library (X).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0093",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "In 1588, the Spanish Armada was hit by a massive storm. A historian claims that if the storm hadn't happened, Spain would have conquered England.",
+    "claim": "If the storm had not occurred, England would have been conquered by Spain.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "The 'Protestant Wind' storm",
+      "Y": "Spanish conquest of England",
+      "Z": ["English naval tactics", "Spanish logistical failures"]
+    },
+    "gold_rationale": "While the storm (X) was significant, England's navy was already outperforming Spain's (Z). Whether the Spanish could have successfully landed (Y) is counterfactually uncertain.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0094",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A bullet missed a revolutionary leader by an inch. If he had died, the revolution would have collapsed. He was the only one with the charisma to hold the factions together.",
+    "claim": "If the leader had died, the revolution would have failed.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Leader's survival",
+      "Y": "Revolution success",
+      "Z": ["Factionalism"]
+    },
+    "gold_rationale": "In a contingency-heavy scenario where a single person is the 'linchpin' (X) of a movement, their removal is logically sufficient to cause the collapse (Y) of the dependent outcome.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0095",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A king dies without an heir, leading to a civil war. If he had eaten a slightly different meal that didn't contain a specific pathogen, he would have lived to produce an heir.",
+    "claim": "If the king had not eaten that specific meal, the civil war would have been avoided.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Specific meal/pathogen",
+      "Y": "Civil war",
+      "Z": ["King's health", "Fertility issues"]
+    },
+    "gold_rationale": "Even if he lived, there is no guarantee he would have produced an heir (Z). The counterfactual 'avoidance' of war (Y) depends on several other uncertain future events.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0096",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A spy is caught carrying plans for an invasion. The invasion is canceled. A strategist claims that if the spy hadn't been caught, the invasion would have succeeded by surprise.",
+    "claim": "If the spy hadn't been caught, the invasion would have been a success.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Spy capture",
+      "Y": "Invasion success",
+      "Z": ["Defender preparedness", "Weather"]
+    },
+    "gold_rationale": "Surprise (X) is an advantage, but not a guarantee of success (Y). Other factors like defender strength and logistics (Z) could still have caused failure.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0097",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A scientist is about to publish a discovery but dies in a carriage accident. The discovery is not made for another fifty years.",
+    "claim": "If the carriage accident had not happened, the discovery would have been made fifty years earlier.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Carriage accident",
+      "Y": "Discovery timing",
+      "Z": ["Publication readiness"]
+    },
+    "gold_rationale": "Since the discovery was already complete and ready for publication (X), the accident is the only factor preempting the outcome (Y). Its removal logically restores the outcome.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0098",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "Napoleon lost at Waterloo. Some say if he had attacked two hours earlier, before the Prussians arrived, he would have won.",
+    "claim": "If Napoleon had attacked two hours earlier, he would have won the Battle of Waterloo.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Timing of attack",
+      "Y": "Battle victory",
+      "Z": ["Mud/terrain", "Prussian march speed"]
+    },
+    "gold_rationale": "Attacking earlier (X) might have prevented the Prussian link-up, but the terrain (Z) was too muddy for a quick victory (Y). The counterfactual remains a subject of intense debate.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0099",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A message for a general is intercepted by the enemy, leading to a trap. If the messenger had taken the forest path instead of the road, he wouldn't have been caught.",
+    "claim": "If the messenger had taken the forest path, the general would have received the message.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Path choice",
+      "Y": "Message delivery",
+      "Z": ["Enemy patrol locations"]
+    },
+    "gold_rationale": "The scenario assumes the enemy was only patrolling the road. If the forest path (X) was safe, the counterfactual removal of the 'interception' event leads directly to delivery (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0100",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "The Roman Empire collapsed. Some argue if lead pipes hadn't been used, the population would have been healthy enough to stop the barbarian invasions.",
+    "claim": "The use of lead pipes was the necessary cause of the Roman Empire's collapse.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Late_Preemption"
+    },
+    "variables": {
+      "X": "Lead pipe usage",
+      "Y": "Empire collapse",
+      "Z": ["Economic crisis", "Military overextension"]
+    },
+    "gold_rationale": "Structural issues like economic crisis (Z) were likely sufficient to cause the collapse (Y) regardless of lead poisoning (X). This is a case of Late Preemption.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+
+  {
+    "id": "T3-BucketF-0101",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Archaeologists observe that ancient settlements located near salt mines typically have much higher rates of adult literacy compared to those far from salt deposits.",
+    "claim": "The presence of salt mines in a region causes an increase in adult literacy.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Proximity to salt mines",
+      "Y": "Adult literacy rates",
+      "Z": ["Regional wealth and trade infrastructure"]
+    },
+    "gold_rationale": "Salt was a high-value commodity in antiquity. Salt mines (X) generated significant regional wealth (Z), which funded education and trade bureaucracies that required literacy (Y). The correlation is confounded by the underlying economic prosperity.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0102",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Records from a 14th-century parish show that years with the highest church attendance also saw the highest rainfall for crops.",
+    "claim": "Increased church attendance causes higher rainfall.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Spurious"
+    },
+    "variables": {
+      "X": "Church attendance",
+      "Y": "Annual rainfall",
+      "Z": ["Historical coincidence/Seasonal weather cycles"]
+    },
+    "gold_rationale": "There is no plausible causal link between human attendance at a building (X) and meteorological precipitation patterns (Y). The correlation is spurious or driven by independent environmental cycles (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0103",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "A study of 10th-century artifacts shows that cultures with highly sophisticated silk-weaving techniques also had more frequent military victories.",
+    "claim": "Developing sophisticated silk-weaving leads to military success.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted_Variable"
+    },
+    "variables": {
+      "X": "Silk-weaving sophistication",
+      "Y": "Military victory frequency",
+      "Z": ["State administrative capacity"]
+    },
+    "gold_rationale": "Strong state administrative capacity (Z) is required to manage both complex luxury industries like silk (X) and large, well-organized military campaigns (Y). (Z) is the common cause.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0104",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Maritime records suggest that ships featuring elaborate gold-leaf figureheads were 30% more likely to survive trans-oceanic voyages than those with simple wooden figureheads.",
+    "claim": "Elaborate gold-leaf figureheads provide a protective effect for ships at sea.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Figurehead material",
+      "Y": "Voyage survival",
+      "Z": ["Ship maintenance budget"]
+    },
+    "gold_rationale": "Ships with gold-leaf figureheads (X) belonged to wealthy fleets that could afford better-quality timber, professional crews, and regular maintenance (Z). It is the ship quality, not the figurehead, that drives survival (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0105",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "Data from the Han Dynasty shows that households owning more than three bronze mirrors had a significantly higher average life expectancy than those with none.",
+    "claim": "Owning bronze mirrors increases a person's lifespan.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Bronze mirror ownership",
+      "Y": "Life expectancy",
+      "Z": ["Household wealth and nutrition"]
+    },
+    "gold_rationale": "Bronze mirrors (X) were luxury items. Wealthy households (Z) had access to better food, sanitation, and physical security, which directly increased life expectancy (Y). (X) is merely a proxy for wealth.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0106",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L1",
+    "domain": "History",
+    "scenario": "In late medieval Europe, cities with a higher estimated population of domestic cats recorded fewer instances of plague-related deaths in specific years.",
+    "claim": "A high domestic cat population is a primary driver of reduced plague mortality.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Cat population",
+      "Y": "Plague mortality",
+      "Z": ["Rat population", "City sanitation"]
+    },
+    "gold_rationale": "While cats (X) prey on rats (Z) which carry the plague, it is unclear if the cat population alone was sufficient to impact mortality (Y) or if other factors like quarantine and sanitation (Z) were more decisive.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0107",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "To raise revenue without taxing the poor directly, a kingdom implements a 'Window Tax' based on the number of windows in a house. Consequently, new houses are built with almost no windows, and existing windows are bricked up.",
+    "claim": "The Window Tax successfully increases tax revenue while maintaining housing quality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Static_Metric_Gaming"
+    },
+    "variables": {
+      "X": "Window tax policy",
+      "Y": "Housing quality",
+      "Z": ["Behavioral adaptation"]
+    },
+    "gold_rationale": "The tax (X) targeted a specific metric (windows). Homeowners gamed the metric (Z) to avoid the tax, which directly degraded housing quality (Y) by removing light and ventilation.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0108",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A colonial governor offers a bounty for every wolf ear brought to the capital to eradicate wolves. Within two years, the number of ears submitted triples, but the wolf population in the wild remains unchanged.",
+    "claim": "The bounty program is an effective way to reduce the wild wolf population.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Static_Metric_Gaming"
+    },
+    "variables": {
+      "X": "Wolf ear bounty",
+      "Y": "Wild wolf population",
+      "Z": ["Wolf farming"]
+    },
+    "gold_rationale": "The policy (X) created an incentive for 'gaming.' People began breeding wolves in captivity (Z) to harvest ears for the bounty, meaning the wild population (Y) was never truly impacted.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0109",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An empire mandates that all applicants for the Imperial Bureaucracy must pass a rigorous exam in ancient Latin. They note that bureaucrats hired after this mandate have higher performance reviews.",
+    "claim": "Studying ancient Latin directly improves bureaucratic performance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Outcome_Driven_Selection"
+    },
+    "variables": {
+      "X": "Latin exam mandate",
+      "Y": "Bureaucratic performance",
+      "Z": ["General intelligence/Education background"]
+    },
+    "gold_rationale": "The exam (X) serves as a selection filter for highly educated and disciplined individuals (Z). These individuals would likely perform well (Y) regardless of the specific subject matter they were tested on.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0110",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A coastal nation builds twenty new lighthouses to aid navigation. Trade volume increases significantly in the following decade.",
+    "claim": "Building lighthouses caused the increase in trade volume.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Lighthouse construction",
+      "Y": "Trade volume",
+      "Z": ["Economic boom", "Naval peace"]
+    },
+    "gold_rationale": "While lighthouses (X) facilitate trade (Y), the boom could be due to a general period of economic growth or the end of a war (Z). Without accounting for these factors, the causal weight of (X) is ambiguous.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0111",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A king bans the practice of dueling among nobles to preserve his officer corps. In the following years, noble mortality in the officer corps drops by 15%.",
+    "claim": "The ban on dueling directly caused the reduction in noble mortality.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Dueling ban",
+      "Y": "Noble mortality",
+      "Z": ["Shift in warfare tactics", "Improved medicine"]
+    },
+    "gold_rationale": "The mortality drop (Y) might be caused by the ban (X), but it could also result from changes in how wars were fought or better medical care for battlefield wounds (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0112",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A central government takes over all private mints and issues a single, standardized currency. This eliminates the previous confusion caused by varying coin weights and values.",
+    "claim": "Centralizing coinage reduces market transaction costs and confusion.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Coinage centralization",
+      "Y": "Transaction costs/Confusion",
+      "Z": ["Standardization"]
+    },
+    "gold_rationale": "Standardization (X) directly removes the informational barrier (Z) that created high transaction costs (Y). This is a direct and logical interventional outcome.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0113",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A government begins heavily subsidizing domestic shipyards. Five years later, the nation's merchant marine has doubled in size.",
+    "claim": "Subsidizing shipyards caused the growth of the merchant marine.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Shipyard subsidies",
+      "Y": "Merchant marine size",
+      "Z": ["Increased foreign demand for goods"]
+    },
+    "gold_rationale": "It is unclear if the subsidies (X) drove the growth (Y) or if the growth was already occurring due to global demand (Z), prompting the government to support an already-expanding industry.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0114",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "During a plague outbreak, a city implements strict quarantine zones and mandatory hand-washing for merchants. The infection rate in the city remains lower than in neighboring un-quarantined cities.",
+    "claim": "Quarantine and sanitation measures reduce the spread of the plague.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Quarantine/Sanitation policy",
+      "Y": "Plague infection rate",
+      "Z": ["Pathogen transmission"]
+    },
+    "gold_rationale": "The intervention (X) physically disrupts the known transmission vectors (Z) of pathogens, leading to a direct and predictable reduction in the infection rate (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0115",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An emperor decides to pay soldiers in land rather than gold to ensure their long-term loyalty. However, the available land is in hostile frontier regions, and desertion rates increase.",
+    "claim": "Paying soldiers in land increases military desertion.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Payment in land",
+      "Y": "Desertion rate",
+      "Z": ["Frontier risk/Quality of payment"]
+    },
+    "gold_rationale": "The intervention (X) provided a payment that carried high risk and low immediate value (Z), which directly incentivized soldiers to abandon their service (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0116",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state prohibits the import of tea to favor domestic herbal infusions. The official tea trade drops to zero, but the number of arrests for smuggling tea on the coast increases tenfold.",
+    "claim": "Prohibiting tea imports eliminates tea consumption in the state.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive_Intervention"
+    },
+    "variables": {
+      "X": "Tea import ban",
+      "Y": "Tea consumption",
+      "Z": ["Black market substitution"]
+    },
+    "gold_rationale": "The ban (X) only targeted the 'official' channel. The outcome—actual consumption (Y)—likely persisted or increased via smuggling (Z), making the 'zero' official trade figure a misleading metric.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0117",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A kingdom establishes a national scientific society. In the following twenty years, the number of patents filed in the kingdom increases significantly.",
+    "claim": "The creation of the scientific society caused the rise in patent activity.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Scientific society creation",
+      "Y": "Patent filings",
+      "Z": ["Existing industrial growth"]
+    },
+    "gold_rationale": "It is unclear if the society (X) fostered the innovation (Y) or if the society was created in response to a pre-existing boom in invention and industrial growth (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0118",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "To better control a restive province, an empire builds high-quality paved roads connecting the provincial capital to military outposts. Rebellion frequency in the province remains high, but rebels are now much faster at moving between cities.",
+    "claim": "Building roads in a province reduces the frequency and effectiveness of rebellions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy_Response_Loop"
+    },
+    "variables": {
+      "X": "Road construction",
+      "Y": "Rebellion effectiveness",
+      "Z": ["Dual-use infrastructure"]
+    },
+    "gold_rationale": "The intervention (X) created infrastructure that was intended for control but was also usable by the insurgents (Z). This feedback loop meant the roads (X) potentially increased the effectiveness (Y) of the very thing they were built to stop.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0119",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city mandates that all wood-framed houses must have fire insurance. Following this, the number of reported house fires in the city increases by 40%.",
+    "claim": "Mandatory fire insurance increases the risk of fires in a city.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Mandatory fire insurance",
+      "Y": "Frequency of house fires",
+      "Z": ["Moral hazard", "Better reporting"]
+    },
+    "gold_rationale": "It is ambiguous whether the insurance (X) caused arson or carelessness (moral hazard, Z), or if owners simply became more diligent about reporting (Y) every minor fire now that they could claim benefits.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0120",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A nation abolishes serfdom. Over the next generation, industrial output triples. Supporters claim the liberation of labor drove the industrial revolution.",
+    "claim": "Abolishing serfdom is the primary cause of industrial growth.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Abolition of serfdom",
+      "Y": "Industrial output",
+      "Z": ["Introduction of steam power", "Foreign investment"]
+    },
+    "gold_rationale": "While freeing labor (X) is important, the boom (Y) might also be due to technological shifts or an influx of capital (Z) that happened concurrently. The specific contribution of (X) is hard to isolate.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0121",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A ruler establishes a single state religion to create social unity. Historical analysis shows that states with a single state religion often have fewer internal civil wars than multi-religious states.",
+    "claim": "Establishing a state religion causes an increase in social cohesion and peace.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "State religion establishment",
+      "Y": "Internal peace",
+      "Z": ["Pre-existing cultural homogeneity"]
+    },
+    "gold_rationale": "States that can successfully establish a single religion (X) usually already possess a high degree of cultural and ethnic homogeneity (Z). This existing homogeneity (Z) is the true cause of the peace (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0122",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An empire implements a national postal system with fixed routes. literacy rates in the provinces begin to climb shortly after.",
+    "claim": "Implementing a postal system causes literacy to rise.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Postal system implementation",
+      "Y": "Literacy rates",
+      "Z": ["Expansion of schools", "Economic incentive to write"]
+    },
+    "gold_rationale": "The postal system (X) provides a reason to be literate, but the rise in literacy (Y) might also be driven by concurrent school construction or economic changes (Z) that made writing necessary for business.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0123",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "To preserve timber for the navy, a kingdom limits the amount of forest land that can be cleared for farming. As a result, the price of timber stabilizes but the price of bread increases due to limited farmland.",
+    "claim": "Forest clearing restrictions successfully stabilized timber prices but negatively impacted food costs.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Clearing restrictions",
+      "Y": "Food prices",
+      "Z": ["Arable land scarcity"]
+    },
+    "gold_rationale": "The intervention (X) directly restricted the expansion of farmland (Z), which in turn reduced grain supply and raised bread prices (Y). This is a logical causal sequence.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0124",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A country bans child labor in factories. School enrollment rates for children under 12 increase by 50% in the following decade.",
+    "claim": "The ban on child labor caused the increase in school enrollment.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Child labor ban",
+      "Y": "School enrollment",
+      "Z": ["Increased family wages", "School construction"]
+    },
+    "gold_rationale": "The ban (X) certainly pushed children out of factories, but enrollment (Y) might only have been possible because adult wages rose or more schools were built (Z). Both factors are likely involved.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0125",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An army introduces the longbow as its primary infantry weapon. They win several major battles against heavily armored knights. The king credits the weapon's range for the victories.",
+    "claim": "Using longbows increases the probability of victory against heavy armor.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Outcome_Driven_Selection"
+    },
+    "variables": {
+      "X": "Longbow introduction",
+      "Y": "Battle victory",
+      "Z": ["Elite training time"]
+    },
+    "gold_rationale": "Longbows (X) require years of training to use effectively. The victories (Y) may be due to the fact that the army consisted of long-service, elite professionals (Z) rather than the weapon itself.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0126",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A monarch begins granting city charters that provide legal independence to merchant guilds. These cities soon become the wealthiest in the realm.",
+    "claim": "Granting city charters causes an increase in urban wealth.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "City charter grants",
+      "Y": "Urban wealth",
+      "Z": ["Proximity to trade routes"]
+    },
+    "gold_rationale": "It is unclear if the charters (X) created the wealth (Y) or if the monarch only granted charters to cities that were already becoming wealthy and powerful (Z) to secure their political support.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0127",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A revolutionary council mandates the use of the metric system for all commercial transactions to simplify trade. Market participants report that the time required to complete trades is reduced.",
+    "claim": "Standardizing measurements reduces transaction time in markets.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Metric system mandate",
+      "Y": "Transaction time",
+      "Z": ["Calculation simplicity"]
+    },
+    "gold_rationale": "Standardization (X) removes the need for complex conversions (Z) between varying local weights, directly lowering the time needed (Y) to finalize a sale.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0128",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state implements a heavy 'Bachelor Tax' on unmarried men over 25. Marriage rates rise, but the number of separations and family disputes also increases.",
+    "claim": "A bachelor tax effectively increases stable marriage rates.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Bachelor tax",
+      "Y": "Stable marriage frequency",
+      "Z": ["Incentivized shotgun marriages"]
+    },
+    "gold_rationale": "The tax (X) increased the number of marriages (Y-volume), but it also incentivized marriages for tax avoidance (Z). This might mean the 'stability' of the marriages (Y-quality) actually decreased.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0129",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city-state builds five new municipal hospitals with modern sanitation. Mortality from water-borne diseases in the city drops by half.",
+    "claim": "Building municipal hospitals reduces mortality from water-borne disease.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Hospital construction",
+      "Y": "Disease mortality",
+      "Z": ["Access to treatment/Sanitation"]
+    },
+    "gold_rationale": "Improved infrastructure (X) provides direct access to cleaner water and medical intervention (Z), which are known to causally reduce death rates (Y) from infection.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0130",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A religious authority bans the practice of usury (lending with interest). Capital for new business ventures becomes scarce in the official economy, but flourishing 'loan-pawn' shops appear.",
+    "claim": "Banning usury effectively stops interest-based lending.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Usury ban",
+      "Y": "Interest-based lending frequency",
+      "Z": ["Semantic re-labeling/Black market"]
+    },
+    "gold_rationale": "The ban (X) may not have stopped the practice (Y), but instead caused lenders to relabel interest as 'fees' or 'gift-back' structures (Z), making the actual effect on lending ambiguous.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0131",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A city-state funds the work of master painters and architects. A century later, it is hailed as the center of a cultural renaissance.",
+    "claim": "State subsidies for artists cause a cultural renaissance.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Art subsidies",
+      "Y": "Cultural renaissance",
+      "Z": ["Economic prosperity", "Intellectual freedom"]
+    },
+    "gold_rationale": "Subsidies (X) are a factor, but a renaissance (Y) usually requires a confluence of wealth, new ideas, and political stability (Z). Whether (X) alone is the cause is debatable.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0132",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A dictator establishes a pervasive secret police force to monitor dissent. The number of public protests drops to zero. He claims he has achieved total social harmony.",
+    "claim": "Secret police forces successfully eliminate political dissent.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Selective_Observation"
+    },
+    "variables": {
+      "X": "Secret police establishment",
+      "Y": "Political dissent",
+      "Z": ["Fear/Suppression of expression"]
+    },
+    "gold_rationale": "The 'zero protests' (Y) is a measure of public expression, not actual sentiment. The police (X) drove the dissent underground (Z), so the visible lack of it is due to selective observation of only 'public' spaces.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0133",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A nation raises tariffs on imported iron to protect its own mines. Local iron production increases, but the cost of building tools and machinery in the nation also rises sharply.",
+    "claim": "High tariffs on iron cause a rise in the cost of domestic industrial production.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Iron tariffs",
+      "Y": "Industrial production costs",
+      "Z": ["Internal resource quality", "Energy costs"]
+    },
+    "gold_rationale": "The tariff (X) contributed to the cost (Y), but the magnitude depends on whether local mines are efficient or if energy costs (Z) for smelting also rose independently.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0134",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A kingdom mandates that all children be vaccinated for smallpox. In the following twenty years, smallpox deaths vanish entirely from the records.",
+    "claim": "The mandatory vaccination program caused the elimination of smallpox deaths.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Mandatory vaccination",
+      "Y": "Smallpox deaths",
+      "Z": ["Herd immunity"]
+    },
+    "gold_rationale": "Vaccination (X) provides biological immunity, which directly prevents the disease (Y) through clear medical mechanisms. This is a strong interventional claim.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0135",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A state gives 40 acres of land to every veteran of the last war. Total agricultural acreage in the state increases by 20% over the next decade.",
+    "claim": "Giving land to veterans causes an increase in total agricultural output.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Land grants to veterans",
+      "Y": "Agricultural output",
+      "Z": ["Technological advances", "Available virgin land"]
+    },
+    "gold_rationale": "While the grants (X) increased the number of farmers, the rise in output (Y) might be due to better tools or the fact that they were farming newly available, high-quality land (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0136",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "To curb religious fervor, a governor bans all public display of religious icons. Within a month, the province erupts in the largest riots in its history.",
+    "claim": "Banning religious icons caused the riots.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Icon ban",
+      "Y": "Riot occurrence",
+      "Z": ["Social grievance"]
+    },
+    "gold_rationale": "The intervention (X) directly attacked a core social identity, which is a known causal trigger (Z) for civil unrest and rioting (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0137",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A country establishes a national bank with the power to regulate interest rates. Currency values stabilize for the next decade.",
+    "claim": "Establishing a national bank causes currency stability.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "National bank establishment",
+      "Y": "Currency stability",
+      "Z": ["Global trade peace", "Internal fiscal discipline"]
+    },
+    "gold_rationale": "It is unclear if the bank (X) was the cause, or if the stability (Y) was due to a peaceful global environment and the government's pre-existing decision to stop overspending (Z).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0138",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "A factory owner mandates that all workers wear steel helmets. After the mandate, the number of workers treated in the infirmary for head injuries goes up by 25%. He decides helmets are dangerous and bans them.",
+    "claim": "Helmets cause an increase in workplace head injuries.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Survivorship_Bias"
+    },
+    "variables": {
+      "X": "Helmet mandate",
+      "Y": "Treated head injuries",
+      "Z": ["Survival/Injury severity"]
+    },
+    "gold_rationale": "Without helmets (X), workers likely died from head impacts and weren't 'treated' (Y). With helmets, they survive and appear in the infirmary records (Z). The helmets (X) actually increased survival, not injury risk.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0139",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An autocratic king bans all coffee houses because he believes they are hotbeds of sedition. Three years later, his reign is still stable with no major conspiracies.",
+    "claim": "Banning coffee houses causes political stability.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Coffee house ban",
+      "Y": "Political stability",
+      "Z": ["Police repression", "Weak opposition"]
+    },
+    "gold_rationale": "Stability (Y) might be due to the ban (X), but it's just as likely due to general repression or a lack of competent opposition leaders (Z) during that period.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0140",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L2",
+    "domain": "History",
+    "scenario": "An empire conducts its first comprehensive census to track population and assets. Tax revenues double the following year despite no change in tax rates.",
+    "claim": "Conducting a census causes an increase in tax revenue collection.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Census implementation",
+      "Y": "Tax revenue",
+      "Z": ["Visibility of taxable assets"]
+    },
+    "gold_rationale": "The census (X) provides the state with information (Z) on previously hidden taxpayers and assets. This directly enables more comprehensive collection (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0141",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A historian argues that if the American colonies had not won the Revolutionary War, the French Revolution would never have occurred due to a lack of inspiration and a less bankrupt French crown.",
+    "claim": "The American Revolution was a necessary condition for the French Revolution.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "American Revolutionary victory",
+      "Y": "French Revolution",
+      "Z": ["Internal French economic failure"]
+    },
+    "gold_rationale": "While the American victory (X) was a trigger, the internal structural problems in France (Z) were so severe that a revolution (Y) might have happened regardless, driven by different triggers.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0142",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "The 1918 Spanish Flu killed millions. Some say if the flu had never happened, the peace negotiations for World War I would have been much more stable and less vindictive.",
+    "claim": "If the 1918 pandemic had been avoided, the post-WWI peace would have been stable.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Early_Preemption"
+    },
+    "variables": {
+      "X": "Spanish Flu pandemic",
+      "Y": "Stable peace",
+      "Z": ["Nationalist rivalries"]
+    },
+    "gold_rationale": "The deep-seated nationalist rivalries and territorial disputes (Z) were the primary drivers of the harsh peace terms. The pandemic (X) was an additional stressor, but its removal wouldn't have negated the fundamental causes of instability (Y).",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0143",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A specific telegram detailing an alliance between Germany and Mexico was intercepted. If it hadn't been, the US might not have entered WWI in 1917.",
+    "claim": "The interception of the Zimmerman Telegram caused the timing of US entry into WWI.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Telegram interception",
+      "Y": "US entry into WWI",
+      "Z": ["Public opinion shift"]
+    },
+    "gold_rationale": "The telegram (X) was the specific catalyst that shifted American public opinion (Z), leading directly to the declaration of war (Y). Removing it would have removed the immediate reason for the shift.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0144",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "If the Black Death had not killed a third of Europe's population, feudalism would have survived for another 300 years because labor would have remained cheap and plentiful.",
+    "claim": "The Black Death was the necessary cause of the end of feudalism.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Late_Preemption"
+    },
+    "variables": {
+      "X": "The Black Death",
+      "Y": "End of Feudalism",
+      "Z": ["Rise of trade and cities"]
+    },
+    "gold_rationale": "While the plague (X) accelerated it, the rise of merchant classes and urbanization (Z) was already beginning to undermine feudal structures (Y). (Z) would have eventually caused the same outcome.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0145",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "If the atomic bombs had not been used in 1945, a land invasion of Japan would have cost over a million lives.",
+    "claim": "The use of atomic bombs was necessary to prevent a million casualties in a land invasion.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Atomic bomb use",
+      "Y": "Land invasion casualties",
+      "Z": ["Japanese surrender terms", "Soviet entry"]
+    },
+    "gold_rationale": "It is counterfactually uncertain if Japan would have surrendered due to the Soviet entry or a blockade (Z) before a land invasion (Y) became necessary. The necessity of (X) is still debated by historians.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0146",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A specific hurricane in 1780 destroyed a fleet. If the hurricane hadn't happened, the naval balance in the Caribbean would have favored the opposing side during the war.",
+    "claim": "If the hurricane had not occurred, the opposing side would have won the naval campaign.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "The hurricane",
+      "Y": "Naval campaign outcome",
+      "Z": ["Fleet repairs", "Leadership quality"]
+    },
+    "gold_rationale": "While the storm (X) was a massive event, the outcome (Y) also depended on the competence of the admirals and the speed of repairs (Z) after smaller engagements. The victory is not guaranteed.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0147",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A reformist king was assassinated by a radical group. If he had lived, his historians claim he would have successfully modernized the state and avoided the revolution that happened 20 years later.",
+    "claim": "If the king had survived, the later revolution would have been avoided.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "King's survival",
+      "Y": "Avoidance of revolution",
+      "Z": ["Underlying economic crisis"]
+    },
+    "gold_rationale": "It is counterfactually uncertain if the king (X) could have solved the structural economic issues (Z) that eventually fueled the revolution (Y), even with more time.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0148",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A crucial bridge collapsed during a retreat, causing an entire army to be captured. If the bridge had been maintained properly, the army would have escaped.",
+    "claim": "If the bridge had not collapsed, the army would have successfully retreated.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Bridge collapse",
+      "Y": "Army capture",
+      "Z": ["Retreat route availability"]
+    },
+    "gold_rationale": "The bridge was the only exit (Z). Removing the collapse (X) restoring the path to safety, logically allowing the retreat (Y) to succeed in this contingent scenario.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0149",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A scientist discovered a vaccine but hid it for 20 years because of religious fear. If he had shared it immediately, thousands of lives would have been saved during the intervening two decades.",
+    "claim": "If the vaccine had been released early, thousands of deaths would have been prevented.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "Early vaccine release",
+      "Y": "Deaths prevented",
+      "Z": ["Immunity mechanism"]
+    },
+    "gold_rationale": "Since the technology existed (X), its application would have directly activated the immunity mechanism (Z) to save lives (Y). The counterfactual is logically sound.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  },
+  {
+    "id": "T3-BucketF-0150",
+    "bucket": "BucketLarge-F",
+    "pearl_level": "L3",
+    "domain": "History",
+    "scenario": "A major peace treaty was signed in 1900. Some argue if the negotiators had failed to reach an agreement, a continental war would have broken out ten years earlier than WWI.",
+    "claim": "If the 1900 treaty had failed, the Great War would have started in 1904.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "NONE",
+      "subtype": ""
+    },
+    "variables": {
+      "X": "1900 Treaty failure",
+      "Y": "War in 1904",
+      "Z": ["Alliance dynamics"]
+    },
+    "gold_rationale": "While tension was high, it is counterfactually uncertain if a specific failure (X) would lead to war (Y) at that exact time, as different alliances (Z) might have shifted to preserve a temporary peace.",
+    "annotation": {
+      "author": "Sameer Vijay",
+      "num_annotators": 1,
+      "adjudicated": true
+    }
+  }
+]

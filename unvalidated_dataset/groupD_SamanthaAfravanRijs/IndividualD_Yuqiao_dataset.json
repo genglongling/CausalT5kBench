@@ -1,0 +1,1151 @@
+{
+  "scenario": "A professional golfer shoots a course-record 63 in the first round of a major tournament, leading the field by 5 strokes (X). In the second round, under similar weather conditions, he shoots a 74 (Y). Media commentators claim that the pressure of holding the lead caused him to 'choke' mentally (Z).",
+  "claim": "The pressure of leading caused the significant decline in performance in the second round.",
+  "label": "NO",
+  "variables": {
+    "X": "Record First Round Score (Peak Performance)",
+    "Y": "Average Second Round Score (Regression)",
+    "Z": "Pressure / Choking (Spurious Attribution)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0047",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Peak Selection Regression",
+    "difficulty": "Easy",
+    "subdomain": "Golf Analytics",
+    "causal_structure": "Skill -> X; Positive_Variance -> X; Skill -> Y; Normal_Variance -> Y; No causal path X -> Y.",
+    "key_insight": "A record-breaking round requires unsustainable positive variance; regression is inevitable regardless of psychology.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "X represents a selected peak at t=1; Y represents the expected value at t=2.",
+  "wise_refusal": "The drop in performance is best explained by regression to the mean, not psychology. A course-record score (X) is an extreme outlier heavily influenced by positive variance (lucky bounces, long putts made). In the next round, variance is likely to be average or negative, resulting in a higher score (Y) regardless of the player's mental state. The 'choke' narrative (Z) is a fallacy of causal narration applied to random fluctuation."
+}
+
+{
+  "scenario": "A baseball shortstop is famous for his spectacular diving catches and jump-throws (X), leading fans to label him an 'Elite Defender' (Y). However, advanced metrics (UZR and Range Factor) rank him in the bottom 10% of the league, revealing that he reaches far fewer balls than the average player (Z).",
+  "claim": "The frequent diving catches prove that the player has elite defensive range and skill.",
+  "label": "NO",
+  "variables": {
+    "X": "Spectacular Diving Catches (Salient Observations)",
+    "Y": "Perception of Elite Defense (Inference)",
+    "Z": "Range Factor / Balls reached (Full Data)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0066",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "trap_type": "AVAILABILITY BIAS",
+    "trap_subtype": "Salience / Visibility Bias",
+    "difficulty": "Medium",
+    "subdomain": "Baseball Analytics",
+    "causal_structure": "Slow_Speed -> Necessity_to_Dive(X); X -> Y (Inference); Z (Full_Data) -> Poor_Defense.",
+    "key_insight": "Spectacular effort (X) is often a symptom of poor positioning or speed, not elite skill; invisible errors (balls not reached) are ignored.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "Fans form the belief (Y) based on a highlight reel of X accumulated over time, ignoring the non-events (balls not reached) in Z.",
+  "wise_refusal": "This inference commits the Availability Bias. Diving catches (X) are visually spectacular and memorable, leading observers to overestimate the player's skill (Y). However, the full data (Z) reveals that he dives because he lacks the speed to reach balls while standing up. He is actually a poor defender who turns routine plays into difficult highlights, while missing many other balls entirely."
+}
+
+{
+  "scenario": "A prestigious sports magazine features five 'Breakout Stars' on its cover after they averaged 35 points per game in the first month of the season (X). By the end of the season, all five players saw their averages drop significantly to 24 points (Y). Fans and media claim the 'Cover Curse' jinxed their performance (Z).",
+  "claim": "Appearing on the magazine cover caused the players' performance to decline.",
+  "label": "NO",
+  "variables": {
+    "X": "Magazine Cover Selection (Peak Performance)",
+    "Y": "End of Season Average (Regression)",
+    "Z": "\"Cover Curse\" (Spurious Attribution)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0067",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Peak Selection Regression",
+    "difficulty": "Easy",
+    "subdomain": "Sports Media / Superstition",
+    "causal_structure": "True_Skill -> X; Hot_Streak_Variance -> X; True_Skill -> Y; Variance_Normalizes -> Y; No causal link Cover(X) -> Performance_Drop(Y).",
+    "key_insight": "Magazine covers select players at their statistical peak; regression to the mean makes a decline in performance the most probable future outcome.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The selection for the cover (X) happens during a period of extreme positive variance. The subsequent performance (Y) is observed over a longer timeline where variance normalizes.",
+  "wise_refusal": "The 'Cover Curse' is a classic example of Regression to the Mean. Players are selected for the cover (X) specifically because they are performing at an unsustainable peak (an outlier event driven by skill plus a 'hot streak'). It is statistically inevitable that their performance will regress toward their career average (Y) in the following months. The magazine didn't cause the decline; it simply captured the peak before the natural fall."
+}
+
+{
+  "scenario": "In a Grand Slam final, a tennis player wins 15 consecutive points on their serve without making a single unforced error (X). Commentators declare the player has entered 'God Mode' (Z) and is visibly invincible. In the very next service game, the player double-faults twice and loses the game to love (Y).",
+  "claim": "The streak of 15 points indicates a shift in causal state ('God Mode') that guarantees continued dominance in the next game.",
+  "label": "NO",
+  "variables": {
+    "X": "15 Consecutive Points Won (Observed Streak)",
+    "Y": "Subsequent Service Game Loss (Future Outcome)",
+    "Z": "\"God Mode\" / Psychological Flow (Hypothesized State)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0049",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Hot Hand Fallacy / Clustering Illusion",
+    "difficulty": "Hard",
+    "subdomain": "Tennis Analytics",
+    "causal_structure": "Base_Skill -> Point_t(X); Base_Skill -> Point_t+1(Y); Points are largely independent; No causal link X -> Y.",
+    "key_insight": "In probabilistic domains, clusters of success (X) appear naturally and do not imply a persistent state shift (Z) that overrides variance.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The inference is made at the peak of the streak (X), assuming the state Z persists to time t+1 (Y).",
+  "wise_refusal": "The belief in 'God Mode' (Z) commits the Hot Hand Fallacy. While tennis involves psychological momentum, individual points are statistically independent events governed by the player's base skill level. A streak of 15 points (X) is a rare but expected cluster in a long match. It does not causally alter the physics or probability of the next serve. The subsequent loss (Y) demonstrates that the 'invincible state' was likely an illusion of variance."
+}
+
+{
+  "scenario": "In the Super Bowl, the NFC representative has won the pre-game coin toss for 5 consecutive years (X). A bettor places a large wager on the NFC team to win the coin toss again, arguing that 'the NFC has the momentum' in coin flips (Z).",
+  "claim": "The 5-year winning streak increases the probability that the NFC will win the next coin toss.",
+  "label": "NO",
+  "variables": {
+    "X": "5-Year Coin Toss Winning Streak (History)",
+    "Y": "Next Coin Toss Outcome (Future)",
+    "Z": "Physical Independence / Fair Coin (Mechanism)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0085",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "trap_type": "FALLACY",
+    "trap_subtype": "Gambler's Fallacy / Hot Hand",
+    "difficulty": "Easy",
+    "subdomain": "Sports Betting",
+    "causal_structure": "Coin_Flip_Year_t(X) _||_ Coin_Flip_Year_t+1(Y); Events are independent; No causal path X -> Y.",
+    "key_insight": "Past streaks in random processes do not influence future trials; the coin has no memory.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The streak (X) is observed over the past 5 years. The prediction (Y) is for the immediate future. There is no physical connection between the coins used in different years.",
+  "wise_refusal": "The historical streak (X) has no causal influence on the physics of the next coin toss (Y). Assuming the coin is fair, the events are independent (Z). Believing that a streak changes the underlying probability of a random binary event is a fallacy. The odds remain 50/50 regardless of the past outcomes."
+}
+
+{
+  "scenario": "A basketball analyst looks at a season's worth of shot chart data for a player and identifies three specific spots on the floor where made shots are tightly clustered (X). The analyst concludes these are the player's 'Sweet Spots' (Y) and advises the coach to design plays specifically for these locations. However, a spatial randomness test reveals the distribution of shots is statistically indistinguishable from a random scatter (Z).",
+  "claim": "The clusters of made shots on the chart indicate specialized skill or 'Sweet Spots' at those specific locations.",
+  "label": "NO",
+  "variables": {
+    "X": "Spatial Clusters of Made Shots (Observed Pattern)",
+    "Y": "Inference of \"Sweet Spots\" (Skill Attribution)",
+    "Z": "Random Spatial Distribution (Null Hypothesis)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0055",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "trap_type": "CLUSTERING ILLUSION",
+    "trap_subtype": "Spatial Pattern Perception",
+    "difficulty": "Medium",
+    "subdomain": "Basketball Analytics",
+    "causal_structure": "Random_Spatial_Process(Z) -> Spatial_Clusters(X); X -> Inference_of_Skill(Y); No causal link Special_Skill -> X.",
+    "key_insight": "Humans perceive clusters in random spatial data as meaningful signals; true skill requires deviation from random scatter.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The clusters (X) are observed retrospectively. The inference (Y) assumes these clusters predict future success at those spots better than the player's general average, which is false under Z.",
+  "wise_refusal": "The identification of 'Sweet Spots' here is likely a Clustering Illusion. Random spatial data naturally forms clumps or clusters (X) that the human eye interprets as meaningful patterns. Since the data is indistinguishable from random scatter (Z), these clusters do not represent a stable skill advantage (Y). Attributing special significance to these random coordinates ignores the nature of stochastic processes."
+}
+
+{
+  "scenario": "An indie game studio's debut release went viral and sold 10 million copies, winning 'Game of the Year' (X). Three years later, their highly anticipated sequel sold only 500,000 copies and received average reviews (Y). Gaming forums are flooded with comments claiming the developers 'sold out' and 'lost their passion' after getting rich (Z).",
+  "claim": "The developers 'lost their passion' or 'sold out' (Z), causing the decline in the sequel's performance.",
+  "label": "NO",
+  "variables": {
+    "X": "Viral Debut Hit (Peak Event)",
+    "Y": "Average Sequel Performance (Outcome)",
+    "Z": "\"Lost Passion\" / \"Sold Out\" (Attribution)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0056",
+    "pearl_level": "L1 (Association)",
+    "domain": "Business",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Viral Success Regression",
+    "difficulty": "Easy",
+    "subdomain": "Gaming Industry",
+    "causal_structure": "Dev_Skill -> X; Viral_Market_Timing -> X; Dev_Skill -> Y; Normal_Market_Timing -> Y; Z (Behavioral_Change) -> Y is spurious; No causal link X -> Y.",
+    "key_insight": "A viral hit is a statistical outlier combining quality with perfect timing; regression to the mean is the expected outcome for the next project.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The viral hit (X) creates a high baseline expectation at t=1. The sequel (Y) at t=2 faces independent market variance.",
+  "wise_refusal": "The decline in sales is a classic case of Regression to the Mean. The debut's massive success (X) was an outlier driven by skill combined with exceptional, non-repeatable viral luck (timing, streamer attention). The sequel's performance (Y) represents a return to the studio's realistic baseline. Claiming they 'lost passion' (Z) falsely attributes a statistical inevitability to a behavioral change."
+}
+
+{
+  "scenario": "A hedge fund manager achieved a 200% return in 2024, outperforming the market by a massive margin (X). Financial news outlets labeled him the next 'Oracle of Investing' (Z). In 2025, using the same strategy, the fund lost 40% of its value (Y).",
+  "claim": "The manager is an 'Oracle' (Z), so the 2025 loss must be due to external manipulation or a sudden loss of skill.",
+  "label": "NO",
+  "variables": {
+    "X": "200% Return in Year 1 (Single Data Point)",
+    "Y": "40% Loss in Year 2 (Regression/Outcome)",
+    "Z": "\"Oracle\" Status (Attributed Trait)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0057",
+    "pearl_level": "L1 (Association)",
+    "domain": "Finance",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Single Data Point Bias",
+    "difficulty": "Medium",
+    "subdomain": "Investment Management",
+    "causal_structure": "High_Risk_Taking -> X; Market_Tailwind -> X; High_Risk_Taking -> Y; Market_Headwind -> Y; Z (Skill) is over-inferred from X; No causal link X -> Y.",
+    "key_insight": "Extreme returns in a single year often reflect high risk exposure rather than skill; N=1 is not a valid sample size for evaluating an investor.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The label 'Oracle' (Z) is applied at t=1 based on X. The loss (Y) occurs at t=2.",
+  "wise_refusal": "Labeling the manager an 'Oracle' (Z) based on a single year of performance (X) is a Single Data Point fallacy. A 200% return is statistically likely to be the result of aggressive risk-taking combined with lucky market conditions. The subsequent crash (Y) is not a loss of skill, but the downside of that same risk profile manifesting when luck normalizes. One data point cannot distinguish genius from a gambler."
+}
+
+{
+  "scenario": "A large corporation identified the bottom 10% of its sales force based on last year's revenue (X) and mandated they attend a 'High Performance Bootcamp' (Z). In the following year, this group's average revenue increased by 20% (Y). The HR director concludes the bootcamp was a massive success.",
+  "claim": "The 'High Performance Bootcamp' caused the 20% increase in revenue for the low-performing salespeople.",
+  "label": "NO",
+  "variables": {
+    "X": "Bottom 10% Sales Performance (Selection Condition)",
+    "Y": "Revenue Increase (Outcome)",
+    "Z": "Bootcamp Intervention (Ambiguous Cause)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0058",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Bottom Selection / Trough Regression",
+    "difficulty": "Medium",
+    "subdomain": "Human Resources",
+    "causal_structure": "Sales_Skill -> X; Bad_Market_Luck -> X; Sales_Skill -> Y; Normal_Market_Luck -> Y; Bootcamp(Z) -> Y is confounded by selection on Low(X); E[Y|X=Low] > X.",
+    "key_insight": "Interventions targeting the bottom of a distribution will appear successful due to natural regression, even if the intervention is useless.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "Selection X occurs at t=1 (nadir). Outcome Y is measured at t=2.",
+  "wise_refusal": "The conclusion is flawed due to Regression to the Mean. By selecting the bottom 10% (X), the company isolated a group suffering from negative variance (bad territories, bad luck). Statistically, this group's performance would naturally improve (Y) in the next period as variance normalizes. Without a control group of similarly poor performers who *didn't* take the bootcamp, we cannot attribute the recovery to the training (Z)."
+}
+
+{
+  "scenario": "A professional soccer team suffered a humiliating 10-game losing streak, dropping to the bottom of the league table (Z). The board fired the manager and hired a 'turnaround specialist' (X). In the very next match, the team won 2-0 (Y). Fans credit the new manager's 'tactical genius' for the immediate victory.",
+  "claim": "The new manager's tactics caused the immediate victory in the next game.",
+  "label": "NO",
+  "variables": {
+    "X": "Hiring New Manager (Intervention)",
+    "Y": "Winning Next Game (Outcome)",
+    "Z": "10-Game Losing Streak (Performance Nadir)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0059",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Sports",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Consultant's Fallacy / New Coach Bounce",
+    "difficulty": "Medium",
+    "subdomain": "Sports Management",
+    "causal_structure": "Losing_Streak(Z) -> Fire_Hire_New(X); Losing_Streak(Z) -> Probability_of_Win_Regresses(Y); No strong causal link X -> Y in short term.",
+    "key_insight": "Interventions triggered by extreme failure (Z) often coincide with the natural end of a negative variance streak.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The intervention (X) occurs at t=1, immediately following the extreme outlier event (Z). The outcome (Y) is observed at t=2.",
+  "wise_refusal": "Attributing the win solely to the new manager (X) ignores Regression to the Mean. A 10-game losing streak (Z) is a statistical anomaly involving bad luck and negative variance. It is highly probable that the streak would end (Y) in the next game simply due to probability normalizing, regardless of who was sitting on the bench. The 'New Coach Bounce' is often just the natural regression of results."
+}
+
+{
+  "scenario": "A quantitative trading firm ran simulations for 10,000 different trading algorithms using historical market data. They identified the single algorithm with the highest return on investment (300% return) over the past year (X) and deployed it with live capital. Six months later, the algorithm performed no better than the market average (Y). The developers claim a sudden 'market regime shift' (Z) ruined the strategy.",
+  "claim": "A 'market regime shift' (Z) caused the algorithm's performance to drop significantly after deployment.",
+  "label": "NO",
+  "variables": {
+    "X": "Top Performing Algorithm in Simulation (Selection)",
+    "Y": "Average Live Performance (Outcome)",
+    "Z": "Market Regime Shift (Spurious Attribution)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0062",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Finance",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Winner's Curse / Overfitting",
+    "difficulty": "Hard",
+    "subdomain": "Algorithmic Trading",
+    "causal_structure": "True_Alpha -> X; Overfitting_Noise -> X; True_Alpha -> Y; Zero_Mean_Noise -> Y; Intervention(Select_Max_X) -> Maximizes Overfitting_Noise; No causal link X -> Y.",
+    "key_insight": "When selecting the 'best' from a large set of noisy candidates, the winner is usually the one with the most positive luck (overfitting), not the most skill.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The selection (X) is based on historical data (t=1). The live performance (Y) is observed in real-time (t=2).",
+  "wise_refusal": "This is the Winner's Curse (or Overfitting) in data mining. By selecting the single best algorithm out of 10,000 (X), the firm selected the one with the most extreme positive variance (luck/noise) in the historical data. In live trading, noise does not repeat, so performance regresses to the algorithm's true, likely average, ability (Y). No 'market shift' (Z) is needed to explain why an outlier in training fails in testing."
+}
+
+{
+  "scenario": "A university awarded 'Merit Scholarships' to all students who achieved a perfect 4.0 GPA in the fall semester (X). In the spring semester, the average GPA of these scholarship recipients dropped to 3.7 (Y). The Dean worries that the free money made the students 'lazy' or 'complacent' (Z).",
+  "claim": "The scholarship money caused the students to become lazy (Z), resulting in lower grades.",
+  "label": "NO",
+  "variables": {
+    "X": "Perfect 4.0 GPA (Selection/Intervention Target)",
+    "Y": "GPA Drop to 3.7 (Outcome)",
+    "Z": "Laziness / Complacency (Attribution)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0063",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Education",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Performance Rating Regression",
+    "difficulty": "Easy",
+    "subdomain": "Academic Performance",
+    "causal_structure": "Academic_Ability -> X; Perfect_Conditions(Luck) -> X; Academic_Ability -> Y; Normal_Conditions -> Y; Scholarship(Intervention) -> Y is confounded by selection on Max(X); No causal link Z -> Y.",
+    "key_insight": "A perfect score (4.0) is a statistical ceiling; the only direction for variance to move is down, regardless of financial incentives.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The scholarship is awarded based on t=1 performance (X). The regression is observed at t=2 (Y).",
+  "wise_refusal": "The drop in GPA is a classic example of Regression to the Mean. Achieving a perfect 4.0 (X) requires both ability and everything going right (no illness, favorable exams). In the next semester, conditions are likely to be normal rather than perfect, leading to a natural regression in scores (Y). Attributing this decline to 'laziness' caused by the scholarship (Z) is a fallacy; the decline would have likely occurred even without the money."
+}
+
+{
+  "scenario": "A star basketball player missed 20 consecutive shots over a span of three games, marking the worst slump of his career (X). The coach decided to 'bench' him for the next game to provide a 'mental reset' (Intervention). Upon returning to the starting lineup in the following game, the player shot 50% from the field (Y). The coach claims the benching was the cause of the performance recovery (Z).",
+  "claim": "The disciplinary benching (Intervention) caused the player's shooting percentage to recover.",
+  "label": "NO",
+  "variables": {
+    "X": "Performance Slump / Benching (Intervention at Nadir)",
+    "Y": "Shooting Recovery (Outcome)",
+    "Z": "\"Mental Reset\" (Attributed Cause)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0048",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Sports",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Trough Selection / Intervention at Nadir",
+    "difficulty": "Medium",
+    "subdomain": "Coaching Strategy",
+    "causal_structure": "Shooting_Slump(Nadir) -> Bench_Player(X); Shooting_Slump(Nadir) -> Probability_Regresses_to_Mean(Y); No causal link X -> Y.",
+    "key_insight": "Interventions applied during a performance trough often get credit for the natural normalization of variance that would have happened anyway.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The intervention (X) is applied exactly when the performance metric hits its minimum (t=1). The outcome (Y) captures the regression at t=2.",
+  "wise_refusal": "The coach's claim ignores Regression to the Mean. The player was benched specifically because he was at a statistical nadir (X). In a random process like shooting, an extreme slump is almost always followed by improvement (Y) as variance normalizes. The recovery likely would have occurred even if he had played through the slump, making the 'mental reset' (Z) a superfluous explanation."
+}
+{
+  "scenario": "Historical data shows that 80% of musicians who win the 'Best New Artist' award (X) see a significant drop in sales for their subsequent album (Y). A rising star's manager advises them to decline the nomination to avoid this 'curse' (Intervention).",
+  "claim": "Accepting the 'Best New Artist' award causes the subsequent decline in career success.",
+  "label": "NO",
+  "variables": {
+    "X": "Winning Best New Artist (Intervention/Event)",
+    "Y": "Second Album Flop (Outcome)",
+    "Z": "Viral Debut Success (Selection Criteria)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0064",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Arts",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Peak Selection Regression",
+    "difficulty": "Medium",
+    "subdomain": "Music Industry",
+    "causal_structure": "Talent -> Z; Viral_Luck -> Z; Z -> Win_Award(X); Talent -> Y; Normal_Luck -> Y; No causal link X -> Y.",
+    "key_insight": "Winning 'Best New Artist' implies the debut was a statistical outlier; the second album faces regression to the artist's true baseline.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The award (X) is given based on the debut performance Z (t=1). The second album (Y) is released at t=2.",
+  "wise_refusal": "The 'Best New Artist Curse' is a statistical artifact of Regression to the Mean. Artists win the award (X) because their debut (Z) was an extreme outlier, combining talent with perfect timing and viral luck. It is statistically probable that their next work (Y) will regress to a more normal level of success. Declining the award (Intervention) will not change the probability of this regression."
+}
+
+{
+  "scenario": "A crypto influencer on social media correctly predicted the price direction of Bitcoin for 10 consecutive weeks (X). Impressed by this perfect track record, a follower decides to subscribe to their premium signals and trades their entire portfolio based on the next prediction (Intervention). The next prediction turns out to be wrong, and the follower loses significant capital (Y).",
+  "claim": "The influencer's 10-week streak proves they have a predictive algorithm, ensuring the next trade will be profitable.",
+  "label": "NO",
+  "variables": {
+    "X": "10-Week Correct Prediction Streak (Selection Signal)",
+    "Y": "Loss on Next Trade (Outcome)",
+    "Z": "Random Chance / Survivor Selection (Mechanism)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0072",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Finance",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Survivorship Bias",
+    "difficulty": "Medium",
+    "subdomain": "Cryptocurrency / Social Media",
+    "causal_structure": "Random_Guessing -> X; Random_Market_Moves -> Y; Intervention(Trade) -> Selects Survivor(X); No causal link X -> Y.",
+    "key_insight": "Given thousands of influencers guessing randomly, one will inevitably have a 10-week streak by pure chance; investing in the 'survivor' creates a false expectation of skill.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The streak (X) is observed retrospectively over t=1 to t=10. The intervention occurs at t=11.",
+  "wise_refusal": "This is a classic case of Survivorship Bias. With thousands of accounts making binary predictions (up/down), it is statistically certain that someone will guess correctly 10 times in a row (X) purely by luck (Z). By intervening and following this 'survivor', you are betting on a streak that has no causal grounding. The probability of the next prediction being correct (Y) remains 50/50, unrelated to the past streak."
+}
+
+{
+  "scenario": "A tech company's stock price plummeted for six consecutive months, losing 40% of its value (X). Under pressure from the board, the CEO resigned (Z). In the month following the resignation, the stock price rebounded by 15% (Y). The board chairman claims the CEO's departure restored investor confidence and caused the rally.",
+  "claim": "The resignation of the CEO (Z) caused the stock price to rebound (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "6-Month Stock Crash (Nadir/Pre-condition)",
+    "Y": "Price Rebound (Outcome)",
+    "Z": "CEO Resignation (Intervention)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0073",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Finance",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Nadir Effect / Scapegoating",
+    "difficulty": "Hard",
+    "subdomain": "Corporate Governance",
+    "causal_structure": "Negative_Sentiment_Peak -> X; X -> Intervention(Z); Market_Correction -> Y; No strong causal link Z -> Y.",
+    "key_insight": "Interventions (resignations) are often timed at the bottom of a crash; a technical rebound (dead cat bounce) is statistically probable regardless of leadership change.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The resignation (Z) coincides with the price trough (X) at t=1. The rebound (Y) occurs at t=2.",
+  "wise_refusal": "The CEO resigned (Z) exactly when the stock was at its statistical nadir (X). After such a steep decline (40%), markets typically experience a technical rebound or 'correction' (Y) as sellers are exhausted and variance normalizes. Attributing the price rise solely to the resignation ignores the natural tendency of volatile markets to revert to the mean after extreme moves."
+}
+
+{
+  "scenario": "A young chef was awarded the prestigious 'Chef of the Year' title after a year of flawless reviews and zero mistakes (X). In the following year, while still excellent, the restaurant's average rating dropped from 5.0 to 4.7 (Y). Food critics claim the fame made the chef 'complacent' or 'arrogant' (Z).",
+  "claim": "The chef's complacency (Z) caused the decline in ratings (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "Winning 'Chef of the Year' (Peak Performance/Outlier)",
+    "Y": "Rating Drop to 4.7 (Regression/Outcome)",
+    "Z": "Complacency (Attributed Cause)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0074",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Peak Selection Regression",
+    "difficulty": "Easy",
+    "subdomain": "Hospitality / Culinary Arts",
+    "causal_structure": "Culinary_Skill -> X; Perfect_Luck -> X; Culinary_Skill -> Y; Normal_Luck -> Y; Z(Complacency) -> Y is spurious; High(X) implies E[Y] < X.",
+    "key_insight": "A flawless year (X) is an outlier event; maintaining perfection is statistically unlikely, regardless of the chef's attitude.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The award (X) is based on performance at t=1. The ratings drop (Y) is observed at t=2.",
+  "wise_refusal": "The decline in ratings is an example of Regression to the Mean. Winning 'Chef of the Year' (X) implies the chef had a year of maximum positive variance (everything went perfectly). In the subsequent year, variance normalizes, making a slight drop in ratings (Y) statistically inevitable. Attributing this natural fluctuation to 'complacency' (Z) is a narrative fallacy; perfection is simply hard to replicate continuously."
+}
+
+{
+  "scenario": "A small startup launched a mobile game that went viral overnight, reaching 50 million downloads in a month (X). Their next three game releases failed to crack the top 100 charts (Y). Tech bloggers claim the early success made the team 'lazy' and 'unfocused' (Z).",
+  "claim": "The early viral success (X) caused the team to become lazy (Z), leading to the failure of subsequent games (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "Viral Mobile Game (Extreme Outlier)",
+    "Y": "Subsequent Games Flop (Regression)",
+    "Z": "Laziness / Lack of Focus (Attributed Cause)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0075",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Lightning Strikes Twice",
+    "difficulty": "Easy",
+    "subdomain": "Tech Startups",
+    "causal_structure": "Dev_Skill -> X; Viral_Luck -> X; Dev_Skill -> Y; Normal_Luck -> Y; Z(Laziness) -> Y is spurious; X does not cause Y.",
+    "key_insight": "A viral hit is a rare combination of skill and luck (a 'black swan'); subsequent attempts regress to the team's average output.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The viral success (X) occurs at t=1. The subsequent releases (Y) occur at t=2, t=3.",
+  "wise_refusal": "The startup's trajectory is a clear case of Regression to the Mean. The first game (X) was a statistical outlier, likely driven by a 'lightning in a bottle' moment of viral luck. Subsequent games (Y) represent the team's baseline performance in a competitive market. Attributing the drop to 'laziness' (Z) falsely implies that extreme viral success is the sustainable norm for a small team."
+}
+
+{
+  "scenario": "Two Nobel Prize-winning physicists married and had a son (X). While the son is intelligent and holds a PhD, he works as a mid-level researcher with no major breakthroughs (Y). The parents believe that the 'unstructured' education system (Z) failed him.",
+  "claim": "The unstructured education system (Z) caused the son's failure to match his parents' achievements.",
+  "label": "NO",
+  "variables": {
+    "X": "Nobel Prize Parents (Extreme Outlier)",
+    "Y": "Average Researcher Son (Regressed Outcome)",
+    "Z": "Education System (Attributed Cause)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0076",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Science",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Galton's Regression",
+    "difficulty": "Hard",
+    "subdomain": "Genetics / Intelligence",
+    "causal_structure": "Genetics -> X; Perfect_Environment_Luck -> X; Genetics -> Y; Normal_Environment_Luck -> Y; Z(Education) -> Y is spurious; High(X) implies E[Y] < X.",
+    "key_insight": "Intelligence and achievement have a hereditary component but are subject to strong regression; two outliers mating usually produce less extreme offspring.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "Parents' achievement (X) is at t=1. Son's achievement (Y) is at t=2.",
+  "wise_refusal": "The son's career trajectory is an example of Galton's Regression to the Mean. Winning a Nobel Prize (X) requires not just high IQ (genetics) but also exceptional luck and timing (variance). While the son inherits the genetics, he likely did not inherit the extreme positive variance. It is statistically expected for the children of outliers to regress toward the population mean (Y), regardless of the education system (Z)."
+}
+
+{
+  "scenario": "A person starts a new diet and loses 8 pounds in the first week, a record start (X). In the second week, sticking to the same diet, they lose only 1 pound (Y). They conclude that they must have 'subconsciously cheated' on the diet or that the diet stopped working (Z).",
+  "claim": "Cheating on the diet or efficacy loss (Z) caused the drastic drop in weight loss rate (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "8 lbs Loss Week 1 (Peak/Outlier)",
+    "Y": "1 lb Loss Week 2 (Regression/Normal)",
+    "Z": "Cheating / Diet Failure (Attributed Cause)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0077",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Health",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Peak Selection Regression",
+    "difficulty": "Easy",
+    "subdomain": "Fitness / Biology",
+    "causal_structure": "Caloric_Deficit -> X; Water_Weight_Loss(Transient) -> X; Caloric_Deficit -> Y; Water_Weight_Stabilizes -> Y; Z(Cheating) -> Y is spurious; X does not cause Y.",
+    "key_insight": "Initial weight loss is often an outlier due to water depletion; the rate naturally regresses to the rate of fat loss.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "Week 1 loss (X) is observed at t=1. Week 2 loss (Y) is observed at t=2.",
+  "wise_refusal": "The drop in the rate of weight loss is a classic example of Regression to the Mean (specifically, physiological normalization). The first week's loss (X) is an outlier driven by water weight and glycogen depletion. The second week (Y) represents the true, sustainable rate of fat loss. Attributing the slowdown to 'cheating' (Z) is unnecessary; the extreme initial result simply could not be sustained."
+}
+
+{
+  "scenario": "A city government identified the five intersections with the highest number of traffic accidents recorded last year (X). In response, they installed expensive 'Smart Traffic Monitoring Systems' (Z) at these specific locations. The following year, accidents at these intersections dropped by 40% (Y). The mayor announced that the smart systems were highly effective.",
+  "claim": "The 'Smart Traffic Monitoring Systems' (Z) caused the 40% reduction in accidents.",
+  "label": "NO",
+  "variables": {
+    "X": "Top 5 High-Accident Intersections (Selection on Baseline)",
+    "Y": "Reduced Accident Count (Outcome)",
+    "Z": "Smart Monitoring System (Intervention)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0078",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Public Policy",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Selection on Baseline",
+    "difficulty": "Hard",
+    "subdomain": "Urban Planning / Traffic Safety",
+    "causal_structure": "Inherent_Risk -> X; Negative_Variance(Bad_Luck) -> X; Inherent_Risk -> Y; Normal_Variance -> Y; Intervention(Z) -> Y is confounded by Selection on Max(X); No causal link Z -> Y confirmed.",
+    "key_insight": "Interventions targeted at sites with record-high accident rates often claim credit for the natural decrease in accidents (regression) that follows a spike.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "Selection (X) is based on data from year t=1. Outcome (Y) is observed in year t=2.",
+  "wise_refusal": "The observed safety improvement is likely due to Regression to the Mean. By selecting intersections with the absolute highest accident counts (X), the city targeted sites that likely experienced an abnormal spike in 'bad luck' (negative variance) that year. Statistically, accident rates at these outlier sites would be expected to fall (Y) in the next year even without any intervention. Attributing the full drop to the smart systems (Z) is fallacious without a control group."
+}
+
+{
+  "scenario": "A quiet neighborhood experienced a record-breaking spike of 20 burglaries in a single month (X). In response, the Police Chief deployed a special tactical unit to patrol the area 24/7 (Z). The following month, burglaries dropped to 5 (Y). The Chief announced that the tactical unit successfully eradicated the crime wave.",
+  "claim": "The deployment of the tactical unit (Z) caused the significant drop in burglaries (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "Record Burglary Spike (Selection Trigger)",
+    "Y": "Drop in Crime (Outcome)",
+    "Z": "Special Tactical Unit (Intervention)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0079",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Public Policy",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Crime Variance / Selection on Baseline",
+    "difficulty": "Medium",
+    "subdomain": "Law Enforcement",
+    "causal_structure": "Base_Crime_Rate -> X; Temporal_Clustering(Bad_Luck) -> X; X -> Deploy_Unit(Z); Base_Crime_Rate -> Y; Normal_Variance -> Y; No proof Z -> Y > Natural_Regression.",
+    "key_insight": "Crime waves often represent temporary clusters (Poisson bursts); interventions deployed at the peak get credit for the natural return to baseline.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The spike (X) occurs at month t=1. The drop (Y) is observed at month t=2.",
+  "wise_refusal": "The drop in crime is a likely candidate for Regression to the Mean. The tactical unit (Z) was deployed specifically because of a statistical outlier event (X). Crime data often exhibits random clustering; a record spike is typically followed by a return to the average (Y) as the temporary factors causing the spike dissipate. Attributing the entire decline to the police presence ignores this natural statistical normalization."
+}
+
+{
+  "scenario": "A cloud server's CPU usage spiked to 99% (X), triggering a critical alert. The system administrator immediately ran a script to 'clear temporary log files' (Z). Five minutes later, the CPU usage dropped back to a normal 40% (Y). The administrator claims the log clearing script fixed the CPU overload.",
+  "claim": "The log clearing script (Z) caused the CPU usage to drop (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "CPU Usage Spike (99%) (Selection/Trigger)",
+    "Y": "Normal CPU Usage (Outcome)",
+    "Z": "Log Clearing Script (Intervention)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0080",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Computer Science",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "System Variance / Peak Selection",
+    "difficulty": "Medium",
+    "subdomain": "DevOps / Systems Engineering",
+    "causal_structure": "Traffic_Burst -> X; X -> Run_Script(Z); Traffic_Burst_Ends -> Y; Z -> Y is weak/spurious; High(X) implies E[Y] < X due to transient nature of bursts.",
+    "key_insight": "System resource spikes are often transient (bursty); interventions applied at the peak often get credit for the natural end of the burst.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The intervention (Z) is applied at the moment of peak load (X, t=1). The recovery (Y) is observed at t=2.",
+  "wise_refusal": "The drop in CPU usage is likely Regression to the Mean. The administrator intervened exactly when the load was at a peak (X). Server loads often exhibit 'bursty' behavior where spikes are transient. It is statistically probable that the load would have dropped (Y) as the traffic burst ended, regardless of the log clearing script (Z). Without evidence that logs were actually consuming CPU, the correlation is likely spurious."
+}
+
+{
+  "scenario": "A top-performing salesperson insists on using a specific, cheap blue ballpoint pen (X) to sign every contract. She claims that this pen is 'charmed' because every time she uses it, the deal closes successfully (Y). She refuses to go to client meetings without it.",
+  "claim": "Using the specific blue pen (X) causes the deals to close successfully (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "Using 'Lucky' Pen (Ritual/Intervention)",
+    "Y": "Closing the Deal (Outcome)",
+    "Z": "Sales Skill / Product Fit (True Causes)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0081",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "SPURIOUS",
+    "trap_subtype": "Superstition / Magical Thinking",
+    "difficulty": "Easy",
+    "subdomain": "Sales Psychology",
+    "causal_structure": "Pen_Choice(X) _||_ Client_Decision(Y); Sales_Skill(Z) -> Y; No causal path X -> Y.",
+    "key_insight": "Attributing success to an incidental object is a classic superstition; the object has no mechanistic power over the outcome.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The ritual usage (X) happens at the moment of signing (t=1). The deal confirmation (Y) happens at t=1 or t=2.",
+  "wise_refusal": "This is a case of Superstition or Magical Thinking. The choice of pen (X) is physically and logically independent of the client's decision to buy (Y), which is driven by product fit and negotiation skill (Z). While the ritual might boost the salesperson's confidence (placebo), the pen itself exerts no causal force on the deal's outcome."
+}
+
+{
+  "scenario": "A student observes that several of the world's richest tech moguls (e.g., Gates, Zuckerberg) dropped out of college (X) and achieved massive success (Y). Convinced that formal education holds people back, the student decides to drop out of university (Intervention) to maximize their chances of becoming a billionaire.",
+  "claim": "Dropping out of college (X) causes one to become a tech billionaire (Y) and is a recommended strategy.",
+  "label": "NO",
+  "variables": {
+    "X": "Dropping Out of College (Strategy)",
+    "Y": "Billionaire Status (Survivor Outcome)",
+    "Z": "Career Failure / Low Income (Unobserved Outcome)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0082",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Survivorship Bias",
+    "difficulty": "Medium",
+    "subdomain": "Career Advice",
+    "causal_structure": "Drop_Out(X) -> High_Career_Variance; High_Career_Variance -> Billionaire(Y); High_Career_Variance -> Failure(Z); Media selects Y; Intervention(Do X) ignores P(Z|X).",
+    "key_insight": "Visible successful dropouts are the rare survivors of a high-risk strategy; the vast majority of dropouts do not become billionaires.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The observation focuses on historical survivors (Y). The intervention (X) is applied to a new student who faces the full probability distribution (Y + Z).",
+  "wise_refusal": "This decision relies on Survivorship Bias. While it is true that some billionaires dropped out (X), you are only looking at the numerator of success (Y) and ignoring the vast denominator of dropouts who failed or struggled (Z). Dropping out increases the variance of outcomes, often removing the safety net of a degree. The probability of becoming a billionaire given you drop out is statistically lower than the probability of failure."
+}
+
+{
+  "scenario": "A subscription software company surveys its long-term active users (Y) to decide what features to build next. The most common request from these users is 'Dark Mode' (X). The CEO decides to prioritize Dark Mode to reduce the high cancellation rate of new users.",
+  "claim": "Building Dark Mode (X) will reduce the cancellation rate of new users.",
+  "label": "NO",
+  "variables": {
+    "X": "Request for 'Dark Mode' (Survivor Feedback)",
+    "Y": "Active Long-Term Users (Survivors)",
+    "Z": "Missing Core Feature / Fatal Flaws (Unobserved)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0083",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Wald's Survivorship Bias",
+    "difficulty": "Hard",
+    "subdomain": "Product Management",
+    "causal_structure": "Fatal_Flaw(Z) -> Churn(Non-Y); Minor_Annoyance(X) -> Retention(Y); Dataset includes only Y; Feedback(X)|Y ignores Z.",
+    "key_insight": "Feedback from happy survivors (active users) often focuses on optimization (polish), while the fatal flaws that cause churn (Z) are unobserved because those users have already left.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The survey (X) is taken by survivors (Y) at t=1. The intervention targets churners (who are not Y) at t=2.",
+  "wise_refusal": "This decision relies on Survivorship Bias. The active users (Y) are the ones who successfully navigated the product's core value proposition; they are complaining about minor preferences like Dark Mode (X). The users who cancelled (Z) likely left because of fundamental missing features or pricing issues that the survivors don't care about. Fixing X will please survivors but fail to save the non-survivors."
+}
+
+{
+  "scenario": "A local newspaper interviews a 105-year-old woman (Y). When asked for her secret to longevity, she credits her daily habit of drinking whiskey and smoking a cigar (X). A health-conscious reader decides to adopt this habit (Intervention) to live longer.",
+  "claim": "Drinking whiskey and smoking cigars (X) causes longevity (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "Whiskey and Cigars (Habit)",
+    "Y": "Living to 105 (Survivor Outcome)",
+    "Z": "Premature Deaths (Unobserved)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0084",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Health",
+    "trap_type": "SELECTION",
+    "trap_subtype": "Survivorship Bias",
+    "difficulty": "Medium",
+    "subdomain": "Lifestyle / Epidemiology",
+    "causal_structure": "Genetics -> Y; Genetics -> Tolerance_of_X; X -> Mortality_Risk(Z); Dataset selects Y; Observing X|Y implies X is safe, but ignores Z.",
+    "key_insight": "Survivors of risky behaviors often possess protective factors (genetics) that allow them to survive 'despite' the behavior, not 'because' of it.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The interview observes a survivor (Y) at t=1. The intervention (X) is applied to a general population member at t=2.",
+  "wise_refusal": "Adopting this habit is dangerous due to Survivorship Bias. The 105-year-old (Y) likely survived *despite* the smoking and drinking (X), thanks to exceptional genetics. Countless others who smoked and drank (Z) died prematurely and are not around to give interviews. Mistaking a survivor's resilience for a causal recipe is a fatal error."
+}
+
+{
+  "scenario": "A software company hires a 'Rockstar' salesperson who was the top performer at a competitor for three consecutive years (Z), paying them a massive signing bonus (X). In the first year at the new company, the salesperson's revenue is average, failing to meet the high quota (Y). The sales director is confused why the 'proven skill' didn't transfer.",
+  "claim": "Hiring the top performer (X) caused by past success (Z) ensures high revenue in the new role.",
+  "label": "NO",
+  "variables": {
+    "X": "Hiring 'Rockstar' Salesperson (Intervention)",
+    "Y": "Average Performance (Outcome)",
+    "Z": "Top Performer at Previous Job (Selection Criteria)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0050",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Contextual Selection Bias",
+    "difficulty": "Medium",
+    "subdomain": "Human Resources / Sales",
+    "causal_structure": "Territory_Quality + Luck -> Z; Z -> Hire(X); New_Territory + Normal_Luck -> Y; No causal link Z -> Y.",
+    "key_insight": "Top performance is often context-dependent (e.g., easy territory); selecting based on peak outcome (Z) ignores the environmental factors that enabled it.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The hiring (X) is based on performance at the previous company (Z, t=1). The new performance (Y) is observed at t=2.",
+  "wise_refusal": "This is a case of Attribution Error mixed with Regression to the Mean. The salesperson's past success (Z) was likely heavily influenced by situational factors (e.g., a ripe territory, a specific product-market fit) and luck. By selecting the 'top' performer, the company selected for these favorable contexts. In a new environment without those specific advantages, performance naturally regresses to the individual's true ability level (Y)."
+}
+
+{
+  "scenario": "A retail chain identified the 10 store locations with the lowest customer satisfaction scores in the previous quarter (Z). Corporate management mandated a strict 'Smile & Greet' training program (X) for all employees at these locations. In the following quarter, customer satisfaction scores at these stores improved by 15% (Y). The Regional Director concludes the training was a success.",
+  "claim": "The 'Smile & Greet' training (X) caused the 15% improvement in satisfaction scores (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "Smile & Greet Training (Intervention)",
+    "Y": "Score Improvement (Outcome)",
+    "Z": "Lowest Satisfaction Scores (Selection Criterion)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0052",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "REGRESSION TO MEAN",
+    "trap_subtype": "Bottom Selection / Nadir Effect",
+    "difficulty": "Hard",
+    "subdomain": "Retail Management",
+    "causal_structure": "Bad_Luck_Variance -> Low_Score(Z); Low_Score(Z) -> Mandate_Training(X); Luck_Normalizes -> Score_Improves(Y); No confirmed link X -> Y.",
+    "key_insight": "Stores at the bottom of the ranking (Z) are statistically the most likely to improve (Y) in the next period due to variance normalization, regardless of intervention.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "Selection (X) occurs at the performance nadir (Z, t=1). Recovery (Y) is observed at t=2.",
+  "wise_refusal": "The improvement is likely due to Regression to the Mean. By selecting the absolute worst-performing stores (Z), management targeted locations that likely suffered from temporary negative variance (e.g., staffing shortages, local construction, bad luck). Statistical theory predicts these stores would bounce back (Y) towards the average in the next quarter naturally. Attributing the entire gain to the 'Smile & Greet' training (X) without a control group is flawed."
+}
+
+{
+  "scenario": "A summer intern managed the company's social media account for one week and posted three memes that went viral, gaining millions of views (Z). Impressed by this 'perfect streak,' the CEO fired the external marketing agency and promoted the intern to Chief Marketing Officer (X). Over the next six months, the intern's marketing campaigns failed to generate any significant engagement (Y).",
+  "claim": "Promoting the intern (X) based on the viral streak (Z) ensures continued marketing success.",
+  "label": "NO",
+  "variables": {
+    "X": "Promotion to CMO (Intervention)",
+    "Y": "Campaign Failure / Regression (Outcome)",
+    "Z": "3 Viral Posts (Selection Criteria)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0053",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Business",
+    "trap_type": "SURVIVORSHIP",
+    "trap_subtype": "Small Sample Selection / Hot Hand",
+    "difficulty": "Easy",
+    "subdomain": "Marketing / HR",
+    "causal_structure": "High_Variance_Content -> Lucky_Streak(Z); Z -> Promotion(X); Normal_Variance -> Y; No causal link Z(Luck) -> Y(Skill).",
+    "key_insight": "A short streak of high-variance success (viral hits) is often due to luck; extrapolating this to long-term strategic skill is a selection error.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The promotion (X) is based on the short-term streak (Z) at t=1. The long-term performance (Y) is observed at t=2.",
+  "wise_refusal": "The CEO's decision fell victim to the Small Sample fallacy (or Hot Hand fallacy). Viral success on social media is highly stochastic (random). Hitting a streak of 3 viral posts (Z) in one week is likely a statistical anomaly or 'beginners luck' rather than proof of executive-level strategic competence. Promoting the intern to CMO (X) assumed a causal skill that likely didn't exist, leading to regression (Y)."
+}
+
+{
+  "scenario": "A venture capitalist invested $5 million in a tech startup (X) after due diligence showed strong fundamentals and an 80% probability of success. Six months later, an unforeseen geopolitical crisis destroyed the startup's supply chain, leading to bankruptcy (Y). The fund's investors label the decision 'amateurish' and 'blind' (Z).",
+  "claim": "The investment decision (X) was 'amateurish' (Z) because the startup went bankrupt (Y).",
+  "label": "NO",
+  "variables": {
+    "X": "Investment Decision (Action)",
+    "Y": "Bankruptcy (Bad Outcome)",
+    "Z": "\"Amateurish\" Label (Evaluation)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0054",
+    "pearl_level": "L2 (Intervention)",
+    "domain": "Finance",
+    "trap_type": "OUTCOME BIAS",
+    "trap_subtype": "Resulting / Process vs. Outcome",
+    "difficulty": "Medium",
+    "subdomain": "Venture Capital",
+    "causal_structure": "Decision(X) -> High_Prob_Success; Black_Swan_Event -> Y; Y -> Criticism(Z); Z ignores P(Success|X) at t=1.",
+    "key_insight": "In probabilistic fields like investing, a high-quality decision can still lead to a loss due to variance; judging the decision solely by the loss is fallacious.",
+    "author": "Yuqiao Zeng"
+  },
+  "hidden_timestamp": "The investment (X) occurs at t=1. The crisis and failure (Y) occur at t=2.",
+  "wise_refusal": "The investors are committing Outcome Bias (also known as 'Resulting' in poker). The quality of the investment decision (X) depends on the information available at the time, which showed an 80% chance of success. The bankruptcy (Y) was caused by an unforeseeable external event (low probability variance). Evaluating a probabilistic decision solely by its negative outcome ignores the sound logic that justified it."
+}
+
+{
+  "scenario": "A commuter ignores the GPS recommendation to take the highway (X) and instead takes a narrow backroad (X'), saving 30 minutes by avoiding a traffic jam (Z). The commuter wonders: 'If the GPS updated to route everyone through this backroad, would all drivers save 30 minutes?'",
+  "claim": "Routing everyone through the backroad (X') would result in time savings for all drivers.",
+  "label": "CONDITIONAL",
+  "variables": {
+    "X": "Taking Highway (Standard Route)",
+    "X_prime": "Taking Backroad (Counterfactual Strategy)",
+    "Y": "Commute Time (Outcome)",
+    "Z": "Traffic Volume / Road Capacity (Constraint)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0060",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Public Policy",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Fallacy of Composition / SUTVA Violation",
+    "difficulty": "Hard",
+    "subdomain": "Urban Planning / Traffic",
+    "causal_structure": "Congestion(Z) -> GPS_Route(X); Individual_Do(X') -> Avoids_Z -> Low_Y; Universal_Do(X') -> Moves_Z_to_Backroad -> High_Y.",
+    "key_insight": "A strategy that exploits system inefficiency (an empty road) works for an individual but fails if universalized due to capacity constraints.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Individual Driver (Marginal Change)",
+      "answer": "Yes / Saves Time",
+      "explanation": "One car taking the backroad does not impact the road's congestion level, so the time saving is realized."
+    },
+    {
+      "condition": "Universal Routing (Systemic Change)",
+      "answer": "No / Worse Outcome",
+      "explanation": "If everyone takes the backroad, its limited capacity will be instantly exceeded, likely causing a jam worse than the original highway traffic (Braess's Paradox)."
+    }
+  ],
+  "hidden_timestamp": "The observation of savings (Y) is based on the current state where most people do X. The counterfactual assumes X' for everyone.",
+  "wise_refusal": "This counterfactual works only for an individual, not for the population. The backroad is faster specifically because it is underutilized. If the GPS routed everyone there (Universal X'), the traffic volume (Z) would shift, overwhelming the narrow road and likely increasing travel time for everyone. What is true for the part is not true for the whole (Fallacy of Composition)."
+}
+
+{
+  "scenario": "A regional store manager led his branch to break all-time revenue records in 2025 (Z). Following this success, he was promoted to a corporate role in 2026 (X). The branch's revenue dropped significantly in 2026 (Y). Employees claim: 'If the manager had stayed (X'), the branch would have matched the 2025 record again.'",
+  "claim": "If the manager had stayed at the branch (X'), the revenue would have remained at the record peak (Y' = Z).",
+  "label": "INVALID",
+  "variables": {
+    "X": "Manager Promotion/Transfer (Intervention)",
+    "Y": "2026 Revenue Drop (Actual Outcome)",
+    "Y_prime": "Counterfactual Revenue if Manager Stayed",
+    "Z": "Record-Breaking 2025 Revenue (Peak Selection)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0062",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Business",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Unobservable Counterfactual / Regression",
+    "difficulty": "Medium",
+    "subdomain": "Management / Sales",
+    "causal_structure": "Record_Revenue(Z) = Manager_Skill + Market_Boom(Luck); Promotion(X) changes Leader; Counterfactual(Stay) keeps Leader; Market_Boom ends; Y' < Z due to Regression.",
+    "key_insight": "Attributing the entire drop to the manager's departure ignores that the record year was an outlier; maintaining an outlier year is probabilistically unlikely even for the same manager.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Assumption: Revenue is purely Manager-Dependent (Deterministic)",
+      "answer": "Yes / Valid",
+      "explanation": "If the record revenue was generated solely by the manager's unique system with no external variance, staying would preserve the result."
+    },
+    {
+      "condition": "Assumption: Revenue involves Market Variance (Stochastic / Reality)",
+      "answer": "No / Invalid",
+      "explanation": "Breaking a record (Z) usually implies a perfect alignment of skill and favorable market conditions (positive variance). In the counterfactual world where the manager stays, market conditions likely normalize. Thus, revenue would drop (regress) regardless of who is in charge (Y' < Z)."
+    }
+  ],
+  "hidden_timestamp": "The counterfactual compares the actual outcome at t=2 (Y) with a hypothetical t=2 (Y') that falsely assumes t=1's variance (Z) can be extended.",
+  "wise_refusal": "The claim is invalid because it ignores Regression to the Mean. The record-breaking year (Z) was likely an outlier driven by a combination of good management and exceptional market luck. In the counterfactual scenario where the manager stayed, the 'luck' component would naturally fade. Therefore, the revenue would likely have declined anyway (Y' < Z), making the promotion a convenient but incorrect scapegoat for the drop."
+}
+
+{
+  "scenario": "An app store gives the 'Editor's Choice' award exclusively to apps with a perfect 5.0 rating (X). After receiving the award and gaining mass users, these apps almost always drop to a 4.7 rating (Y). The editors wonder: 'If we had given the award to 4.5-rated apps (X') instead, would they have maintained their rating better?'",
+  "claim": "Apps with a 4.5 rating (X') would maintain their score better than the perfect 5.0 apps (X).",
+  "label": "CONDITIONAL",
+  "variables": {
+    "X": "Award to 5.0 Apps (Ceiling Selection)",
+    "X_prime": "Award to 4.5 Apps (Mid-range Selection)",
+    "Y": "Post-Award Rating (Outcome)",
+    "Z": "App Quality + Variance"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0064",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Technology",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Ceiling Counterfactual / Regression Asymmetry",
+    "difficulty": "Hard",
+    "subdomain": "Product Management",
+    "causal_structure": "Rating_5.0(X) = High_Quality + No_Negative_Variance (Capped); Rating_4.5(X') = High_Quality + Some_Negative_Variance; X can only regress Y < X; X' can regress Y > X' or Y < X'.",
+    "key_insight": "A perfect score implies the absence of negative variance; once sample size increases (award), negative variance inevitably appears, forcing the score down. A non-perfect score has room to improve.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Selection X (5.0 Rating)",
+      "answer": "Guaranteed Drop",
+      "explanation": "You are at the mathematical ceiling. Any new user review that is not 5 stars will lower the average. There is no direction to move but down."
+    },
+    {
+      "condition": "Selection X' (4.5 Rating)",
+      "answer": "Indeterminate (Can Rise or Fall)",
+      "explanation": "A 4.5 app might be a 4.0 app that got lucky, or a 5.0 app that got unlucky (trolls). With more exposure, it could regress upwards towards true quality or stay the same."
+    }
+  ],
+  "hidden_timestamp": "The counterfactual question compares a ceiling state (X) with a flexible state (X') assuming symmetric stability.",
+  "wise_refusal": "This counterfactual comparison is flawed due to Regression Asymmetry caused by the ceiling effect. Apps with a 5.0 rating (X) are at the mathematical limit; as user volume grows, statistical variance guarantees they can only move downwards (Y < 5.0). Apps with a 4.5 rating (X') have room to improve (move up to 5.0) or decline. You cannot conclude the 4.5 apps are 'more stable'; you are simply comparing a group that faces a mathematical gravity to one that does not."
+}
+
+{
+  "scenario": "An investor receives a free email newsletter from 'The Market Oracle' that correctly predicts the stock market's direction for 10 consecutive weeks (X). Convinced that the sender possesses insider information or a superior algorithm, the investor prepares to invest their life savings (Y). A skeptic asks: 'What if the sender started with a list of 1,000 people and split the predictions 50/50 each week?'",
+  "claim": "The 10-week perfect prediction record (X) proves the sender has predictive skill (Y).",
+  "label": "CONDITIONAL",
+  "variables": {
+    "X": "10-Week Correct Streak (Observation)",
+    "Y": "Predictive Skill (Hypothesis)",
+    "Z": "Hidden Mailing List Size (Context)",
+    "W": "Single Recipient (Counterfactual Condition)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0065",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Finance",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Pre-Registration / Survivorship Scam",
+    "difficulty": "Hard",
+    "subdomain": "Scams / Probability",
+    "causal_structure": "Split_Mailing_List(Z) -> Survivor(X); True_Skill -> X; Observing X (Survivor) creates spurious link to Skill; Counterfactual W (N=1) confirms Skill.",
+    "key_insight": "A perfect streak is meaningless if generated by a 'divide and conquer' survivorship algorithm; evidential value depends on the unobserved denominator.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "World A (Large Hidden List / The Scam)",
+      "answer": "No Evidence (Scam)",
+      "explanation": "If the sender started with 1,024 people and sent 'Up' to half and 'Down' to half each week, one person (you) is mathematically guaranteed to receive 10 correct predictions by pure chance. The streak proves nothing."
+    },
+    {
+      "condition": "World B (Single Pre-registered Recipient)",
+      "answer": "Strong Evidence (Skill)",
+      "explanation": "If the sender only sent emails to you (N=1) and still got 10 in a row correct, the probability of guessing by chance is (0.5)^10 ≈ 0.1%. This would strongly suggest actual skill or inside info."
+    }
+  ],
+  "hidden_timestamp": "The inference depends on the counterfactual knowledge of the sender's process (Z) which is unobserved by the receiver.",
+  "wise_refusal": "The credibility of the predictions (X) is conditional on the existence of a hidden population (Z). In a counterfactual world where you are the *only* recipient (World B), the streak implies skill. However, in a world where the sender uses a survivorship algorithm on a large list (World A), your 'perfect record' is a statistical inevitability of the scam, not evidence of the sender's ability. Without knowing the denominator, you cannot infer the numerator's quality."
+}
+
+{
+  "scenario": "A tech documentary claims: 'If Steve Jobs had not returned to Apple in 1997 (X), the modern touchscreen smartphone revolution (Y) would never have happened.' A tech historian argues that capacitive touchscreens, mobile internet, and battery technology (Z) were already maturing, making the form factor inevitable.",
+  "claim": "Steve Jobs' return (X) was a necessary condition for the invention of the modern smartphone (Y).",
+  "label": "CONDITIONAL",
+  "variables": {
+    "X": "Steve Jobs' Return (Individual Agency)",
+    "Y": "Smartphone Revolution (Outcome)",
+    "Z": "Technological Maturity (Zeitgeist)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0068",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Technology",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Great Man vs. Inevitability",
+    "difficulty": "Hard",
+    "subdomain": "Innovation Studies",
+    "causal_structure": "Visionary_Leader(X) -> Y; Tech_Convergence(Z) -> Y; Question: Is Y dependent solely on X, or is Z sufficient to cause Y via another agent?",
+    "key_insight": "Was the iPhone a 'black swan' unique to Jobs, or a 'multiple discovery' waiting to happen due to component availability?",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "\"Visionary\" Model (Great Man)",
+      "answer": "Yes / Different Future",
+      "explanation": "If you believe the specific integration of design and capacitive touch was a unique artistic vision of Jobs, then without him, we might still be using stylus-based or keyboard phones (e.g., BlackBerry) for much longer."
+    },
+    {
+      "condition": "\"Technological Determinism\" Model (Zeitgeist)",
+      "answer": "No / Inevitable Invention",
+      "explanation": "If you believe technology evolves linearly based on component availability (Z), then someone else (like Andy Rubin or competitors) would have inevitably combined the available tech into a similar form factor within a few years."
+    }
+  ],
+  "hidden_timestamp": "The counterfactual removes the key innovator (X) while keeping the technological substrate (Z) constant.",
+  "wise_refusal": "This counterfactual depends on whether you view innovation as driven by unique visionaries or technological convergence. Under the 'Visionary' model, Jobs was a necessary cause for the specific timing and form of the smartphone revolution. However, under 'Technological Determinism,' the convergence of 3G, touch panels, and processors (Z) made a smartphone-like device inevitable, meaning the revolution would have occurred eventually without him, though perhaps with a different design philosophy."
+}
+
+{
+  "scenario": "The Global Financial Crisis (Y) began shortly after the collapse of Lehman Brothers (X). A politician argues: 'If the regulators had bailed out Lehman Brothers (X'), the crisis would have been avoided.' An economist counters that the subprime mortgage bubble and systemic leverage (Z) were so massive that a crash was mathematically inevitable.",
+  "claim": "Bailing out Lehman Brothers (X') would have prevented the Financial Crisis (Y).",
+  "label": "CONDITIONAL",
+  "variables": {
+    "X": "Lehman Brothers Collapse (Trigger Event)",
+    "X_prime": "Bailout (Counterfactual Intervention)",
+    "Y": "Financial Crisis (Outcome)",
+    "Z": "Systemic Leverage / Housing Bubble (Structural Cause)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0069",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Finance",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Trigger vs. Structural Cause",
+    "difficulty": "Hard",
+    "subdomain": "Macroeconomics",
+    "causal_structure": "Housing_Bubble(Z) -> Crash_Probability(Y); Lehman_Collapse(X) -> Y (Specific Timing); Z implies P(Y) -> 1; Counterfactual X' delays Y but Z finds another trigger.",
+    "key_insight": "Preventing a specific trigger in a fragile system usually results in the system breaking at the next weakest link (replaceable triggers).",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Short-Term / Specific Timeline",
+      "answer": "Yes / Delayed",
+      "explanation": "A bailout might have calmed the markets temporarily, preventing the panic from starting that specific week in September 2008."
+    },
+    {
+      "condition": "Structural / Medium-Term",
+      "answer": "No / Inevitable",
+      "explanation": "The systemic toxicity (Z) meant the market had to correct. If Lehman survived, another highly leveraged institution (like AIG or Merrill Lynch) would likely have failed soon after, triggering the same cascade."
+    }
+  ],
+  "hidden_timestamp": "The counterfactual alters the specific spark (X) while ignoring the explosive material (Z) covering the floor.",
+  "wise_refusal": "The claim confuses a trigger with a root cause. While letting Lehman fail (X) sparked the panic, the crisis was structurally caused by the unsustainable subprime bubble and excessive leverage (Z). Bailing out Lehman (X') might have bought time, but the systemic fragility meant that a correction (Y) was inevitable. The crisis would likely have been triggered by the failure of a different bank shortly thereafter."
+}
+
+{
+  "scenario": "An e-commerce website crashed during a Black Friday sale (Y). An investigation reveals three factors: 1. The database architecture chosen a year ago was not scalable (Z). 2. The auto-scaling feature was disabled by a senior dev last week (W). 3. An intern uploaded a large promotional image one minute before the crash (X). The CEO blames the intern for the crash.",
+  "claim": "The intern's file upload (X) was the cause of the system crash (Y).",
+  "label": "CONDITIONAL",
+  "variables": {
+    "X": "Intern Uploading Image (Trigger / Recency)",
+    "Z": "Non-scalable Architecture (Root Cause 1)",
+    "W": "Disabled Auto-scaling (Root Cause 2)",
+    "Y": "System Crash (Outcome)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0070",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Computer Science",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Actual Cause Selection / Root Cause Analysis",
+    "difficulty": "Medium",
+    "subdomain": "Systems Engineering",
+    "causal_structure": "Z & W & X -> Y; Counterfactual(X') -> No_Crash; Counterfactual(Z') -> No_Crash; Counterfactual(W') -> No_Crash; X is selected due to proximity.",
+    "key_insight": "In complex systems, failures are often conjunctive (AND logic); blaming the final trigger ignores the systemic fragility that made the trigger fatal.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Trigger / Proximate Cause Analysis",
+      "answer": "Yes (But-For Cause)",
+      "explanation": "If the intern had not uploaded the image at that specific moment of high load, the system might have survived slightly longer. It is a necessary condition for the *timing* of the crash."
+    },
+    {
+      "condition": "Root Cause / Structural Analysis",
+      "answer": "No (Systemic Failure)",
+      "explanation": "The system was fragile due to Z (bad architecture) and W (no scaling). In a robust system, uploading an image (X) is a harmless action. Blaming X is scientifically shallow because X was only fatal conditional on Z and W."
+    }
+  ],
+  "hidden_timestamp": "The blame is assigned at t=3 based on the event at t=2 (X), ignoring t=0 (Z) and t=1 (W).",
+  "wise_refusal": "Blaming the intern (X) is a classic example of confusing a 'trigger' with a 'root cause' due to Recency Bias. While the upload was the final event, the crash was structurally caused by the non-scalable architecture (Z) and the disabled auto-scaling (W). All three were necessary conditions (NESS causes) for the specific failure, but the architectural decisions were far more significant. Focusing on the intern ignores the systemic fragility that made a simple file upload fatal."
+}
+
+{
+  "scenario": "A construction firm submitted a sealed bid of $1.2 million (X) for a government contract. They lost to a competitor who bid $1.1 million (Z). The CEO claims: 'If we had bid $1.05 million (X'), we would have won the contract (Y').'",
+  "claim": "Bidding $1.05 million (X') would have resulted in winning the contract.",
+  "label": "VALID",
+  "variables": {
+    "X": "Bid $1.2M (Actual Action)",
+    "X_prime": "Bid $1.05M (Counterfactual Action)",
+    "Y": "Lost Contract (Actual Outcome)",
+    "Z": "Competitor Bid $1.1M (State of Nature)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0086",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Business",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Game Theory / Sealed vs. Open",
+    "difficulty": "Medium",
+    "subdomain": "Auctions / Strategy",
+    "causal_structure": "Competitor_Bid(Z) is independent of X (Sealed); Outcome Y = (X < Z); Counterfactual X' < Z implies Win; Z is invariant to X'.",
+    "key_insight": "In a sealed-bid auction, the opponent's move is fixed and hidden; counterfactual changes to one's own bid do not retroactively alter the opponent's bid.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Sealed-Bid Auction (Independent)",
+      "answer": "Valid / Win",
+      "explanation": "Because the bids were sealed and submitted simultaneously, the competitor's bid of $1.1M (Z) is a fixed fact. It would not change if you had written a different number. Since $1.05M < $1.1M, you would have won."
+    },
+    {
+      "condition": "Open Cry Auction (Reactive)",
+      "answer": "Invalid / Uncertain",
+      "explanation": "In an open auction, bidding $1.05M might have triggered the competitor to react and bid $1.0M. You cannot assume the competitor's final price would remain fixed if your bidding behavior changed."
+    }
+  ],
+  "hidden_timestamp": "The validity depends on whether Z is determined independently of X (Sealed) or reactively to X (Open).",
+  "wise_refusal": "The counterfactual claim is VALID because this was a sealed-bid auction. The competitor's bid (Z) was determined independently of your decision and is invariant in the counterfactual scenario. Since their bid is 'frozen' at $1.1 million, a counterfactual bid of $1.05 million (X') would objectively lower your price below theirs, guaranteeing the win."
+}
+
+{
+  "scenario": "A student initially marked option 'A' on a multiple-choice test but erased it and marked 'B' (X) just before handing it in. The grading key reveals the correct answer was 'A' (Z). The student claims: 'If I had stuck with my original choice (X'), I would have gotten the question right (Y).'",
+  "claim": "If I had kept my original answer (X'), I would have answered correctly (Y).",
+  "label": "VALID",
+  "variables": {
+    "X": "Changed Answer to B (Actual Action)",
+    "X_prime": "Kept Answer A (Counterfactual Action)",
+    "Y": "Correct Score (Outcome)",
+    "Z": "Official Answer Key (State of Nature)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0087",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Education",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Deterministic Sequence / Independent State",
+    "difficulty": "Easy",
+    "subdomain": "Testing",
+    "causal_structure": "Answer_Key(Z) is fixed pre-exam; Z is independent of Student_Choice(X); Y = (Student_Choice == Z); Counterfactual X' matches Z.",
+    "key_insight": "The answer key is an invariant fact established before the student's action; changing the student's action in a counterfactual world does not retroactively change the answer key.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Standard Exam (Pre-set Key)",
+      "answer": "Valid / Correct",
+      "explanation": "The correct answer (Z=A) was determined by the teacher before the exam started. The student's action of erasing (X) has no causal influence on Z. Therefore, in the counterfactual world where the student keeps A (X'), Z remains A, resulting in a match."
+    },
+    {
+      "condition": "Adaptive/Oral Exam (Reactive)",
+      "answer": "Invalid / Uncertain",
+      "explanation": "If it were an interactive oral exam where the teacher chooses the 'correct' line of reasoning based on the student's initial confidence, the 'correctness' might shift based on the student's behavior."
+    }
+  ],
+  "hidden_timestamp": "The answer key (Z) is fixed at t=0. The student's change (X) occurs at t=1. Z is invariant to X.",
+  "wise_refusal": "The counterfactual claim is VALID. The correct answer (Z) is an objective fact determined by the answer key created before the test. The student's decision to change their answer (X) did not causally affect which answer was correct. Therefore, had they kept their original choice (X'), it would have matched the invariant key (Z)."
+}
+
+{
+  "scenario": "A bank has a strict policy of only approving loans for applicants with a Credit Score above 750 (Z=1). An internal study of the approved loans shows zero correlation between Credit Score (X) and Default Rate (Y). Based on this, the CEO proposes: 'If we lowered the requirement and lent to people with scores of 500 (counterfactual), they would likely repay at the same rate.'",
+  "claim": "Lending to applicants with low credit scores (counterfactual) would result in similar default rates to high-score applicants.",
+  "label": "CONDITIONAL",
+  "variables": {
+    "X": "Credit Score (Predictor)",
+    "Y": "Default Rate (Outcome)",
+    "Z": "Loan Approval (Selection Filter)"
+  },
+  "annotations": {
+    "case_id": "T3-BucketD-0051",
+    "pearl_level": "L3 (Counterfactual)",
+    "domain": "Finance",
+    "trap_type": "COUNTERFACTUAL",
+    "trap_subtype": "Unobserved Counterfactual / Range Restriction",
+    "difficulty": "Medium",
+    "subdomain": "Risk Management",
+    "causal_structure": "Credit_Score(X) -> Repayment(Y); Credit_Score(X) > 750 -> Approved(Z); Dataset = Z=1; Correlation(X,Y)|Z=1 approx 0 due to ceiling effect.",
+    "key_insight": "The lack of correlation among the 'cream of the crop' does not imply a lack of correlation in the general population. The filter removed the bad risks.",
+    "author": "Yuqiao Zeng"
+  },
+  "conditional_answers": [
+    {
+      "condition": "Hypothesis 1: Credit Scores are meaningless (Noise)",
+      "answer": "Yes / Low Risk",
+      "explanation": "If credit scores are actually random numbers with no predictive power, then lowering the threshold will not change the default rate."
+    },
+    {
+      "condition": "Hypothesis 2: Credit Scores are valid predictors (Range Restriction)",
+      "answer": "No / High Risk",
+      "explanation": "If credit scores are valid, the bank has successfully filtered out high-risk borrowers. The 'zero correlation' among the approved (750+) is because they are all low-risk. Approving 500-score applicants would introduce a group with a vastly higher probability of default."
+    }
+  ],
+  "hidden_timestamp": "The inference attempts to generalize statistics from a filtered survivor group (t=1) to the excluded population (t=0).",
+  "wise_refusal": "The CEO's proposal relies on a flaw known as Range Restriction. By observing only borrowers with scores above 750, the bank has looked at a sample with artificially low variance—they are all 'good' borrowers, so the score doesn't differentiate them further. The counterfactual—lending to 500-score applicants—involves a completely different segment of the risk curve. Without observing their performance, assuming they behave like the 750+ group is a dangerous gamble."
+}

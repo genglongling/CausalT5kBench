@@ -1,0 +1,2359 @@
+{
+  "metadata": {
+    "group": "F1",
+    "bucket": "Bucket-Assignment1-F1F",
+    "domain": "History",
+    "count": 90
+  },
+  "cases": [
+    {
+      "id": "F1-0001",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Historical records show that cities belonging to the Hanseatic League (X) in medieval Northern Europe accumulated significantly more wealth (Y) than non-member cities. A historian argues that League membership caused these cities to prosper.",
+      "claim": "Membership in the Hanseatic League caused medieval Northern European cities to become wealthy.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SPURIOUS",
+        "subtype": "Geographic_Confounding"
+      },
+      "variables": {
+        "X": "Hanseatic League membership",
+        "Y": "City wealth",
+        "Z": [
+          "Access to navigable waterways and natural harbors"
+        ]
+      },
+      "gold_rationale": "This is an associational claim. The correlation exists because cities with access to navigable rivers and natural harbors (Z) were both more likely to be invited into the Hanseatic League (X) and independently capable of generating wealth through trade (Y). The geographic advantages preceded and enabled both League membership and prosperity. The League did not create the wealth; both emerged from favorable maritime geography.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0002",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Records from the American Civil War show that 65% of all combat deaths were Union soldiers (X). A military historian concludes that serving in the Union army was more dangerous than serving in the Confederate army.",
+      "claim": "Union soldiers faced higher combat danger than Confederate soldiers in the Civil War.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "BASE_RATE",
+        "subtype": "Denominator_Neglect"
+      },
+      "variables": {
+        "X": "Army affiliation (Union)",
+        "Y": "Combat deaths",
+        "Z": [
+          "Army size (base rate)"
+        ]
+      },
+      "gold_rationale": "This is base rate neglect. The Union army was approximately twice the size of the Confederate army throughout most of the war. The relevant metric is deaths per soldier (mortality rate), not total deaths. When accounting for army size, Confederate soldiers actually faced comparable or higher mortality rates in many engagements.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0003",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Among ancient legal traditions that survived to influence modern law (Z), those with written codification (X) are associated with more complex commercial systems (Y). A legal historian argues that written legal codes caused commercial sophistication.",
+      "claim": "Written legal codification in ancient societies caused the development of complex commercial systems.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SELECTION",
+        "subtype": "Survivorship_Bias"
+      },
+      "variables": {
+        "X": "Written legal codification",
+        "Y": "Commercial complexity",
+        "Z": [
+          "Survival of legal tradition to modern era"
+        ]
+      },
+      "gold_rationale": "This correlation may be affected by survivorship bias. Both written codification and commercial complexity may independently increase a legal tradition's probability of surviving and being transmitted to the modern era. Societies with written codes were more likely to have their laws preserved, and commercially complex societies generated more records. The correlation among surviving traditions doesn't establish that codification caused commercial development.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0004",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Overall, European colonies that received more metropolitan investment (X) achieved higher post-independence GDP (Y). However, within each colonial region (Africa, Asia, Americas), colonies with less investment often developed faster after independence. An economist concludes that colonial investment boosted long-term development.",
+      "claim": "Greater colonial investment caused higher post-independence economic development.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SIMPSON",
+        "subtype": "Simpsons_Paradox"
+      },
+      "variables": {
+        "X": "Colonial investment level",
+        "Y": "Post-independence GDP",
+        "Z": [
+          "Colonial region and pre-existing resource endowment"
+        ]
+      },
+      "gold_rationale": "This is Simpson's Paradox. The aggregate correlation reverses within each colonial region. European powers invested more heavily in regions with better pre-existing conditions (resource-rich areas, temperate climates). Within any given region, heavily invested colonies often developed extractive institutions that hindered post-independence growth, while less-invested colonies sometimes built more autonomous economic foundations.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0005",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Regions of medieval Europe with more monasteries (X) had higher literacy rates (Y). A historian concludes that monasteries were the primary drivers of individual literacy.",
+      "claim": "The presence of monasteries caused individuals in medieval European regions to become literate.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "ECOLOGICAL",
+        "subtype": "Ecological_Fallacy"
+      },
+      "variables": {
+        "X": "Monastery density",
+        "Y": "Regional literacy rate",
+        "Z": [
+          "Regional wealth and urbanization"
+        ]
+      },
+      "gold_rationale": "While partially true, this is an ecological correlation. Wealthy and urbanized regions (Z) could independently support both more monasteries and more secular forms of education (cathedral schools, private tutors, merchant guilds). The regional correlation doesn't prove that monasteries taught most literate individuals - wealthy urban areas produced literacy through multiple channels, and monasteries may have simply clustered where literate populations already existed.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0006",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Data shows that 19th-century nations that adopted democratic reforms (X) subsequently experienced greater political stability (Y). A political scientist concludes that democratic reforms caused stability.",
+      "claim": "Adopting democratic reforms in the 19th century caused nations to become more politically stable.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REVERSE",
+        "subtype": "Policy_Endogeneity"
+      },
+      "variables": {
+        "X": "Adoption of democratic reforms",
+        "Y": "Political stability",
+        "Z": [
+          "Pre-existing stability enabling reform"
+        ]
+      },
+      "gold_rationale": "This is reverse causation. Nations that were already politically stable (or becoming so) were more likely to successfully implement democratic reforms. Unstable nations attempting reforms often failed or reversed them and thus don't appear in the 'reformed' category. The stability preceded and enabled the reforms, rather than reforms causing stability. The causal arrow likely runs from Y to X, not X to Y.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0007",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Among historical figures who have surviving biographies (Z), those born into nobility (X) appear to have achieved less remarkable accomplishments (Y) than those born as commoners. A historian concludes that noble birth hindered achievement.",
+      "claim": "Being born into nobility in pre-modern societies hindered individuals from achieving remarkable accomplishments.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER",
+        "subtype": "Conditioning_on_Participation"
+      },
+      "variables": {
+        "X": "Noble birth",
+        "Y": "Level of accomplishment",
+        "Z": [
+          "Having a surviving biography (collider)"
+        ]
+      },
+      "gold_rationale": "This is collider bias. Having a biography written and preserved (Z) is a common effect of both noble birth (X) and remarkable accomplishment (Y). Nobles received biographies regardless of achievement, while commoners needed exceptional accomplishments to merit one. By conditioning on having a biography, we create a spurious negative correlation: among those with biographies, nobles appear less accomplished because they didn't need accomplishments to be documented.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0008",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Dynasties that achieved the most dramatic initial rises to power (X) in the first generation experienced the steepest declines (Y) in subsequent generations. A historian concludes that rapid ascent destabilizes dynasties.",
+      "claim": "Rapid initial rise to power caused dynasties to experience steeper subsequent declines.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REGRESSION",
+        "subtype": "Extreme_Group_Selection"
+      },
+      "variables": {
+        "X": "Speed of initial rise to power",
+        "Y": "Magnitude of subsequent decline",
+        "Z": [
+          "Random favorable/unfavorable circumstances"
+        ]
+      },
+      "gold_rationale": "This is regression to the mean. Dynasties with the most dramatic initial rises benefited from an unusually favorable combination of circumstances (weak rivals, lucky timing, exceptional founder). These extreme positive conditions naturally cannot persist, so subsequent generations appear to 'decline' toward more typical performance. The pattern reflects statistical regression rather than rapid rise causing instability.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0009",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "Ancient Roman buildings (X) that survive today display remarkable engineering and durability (Y). An architect concludes that Roman construction techniques were universally superior to modern methods.",
+      "claim": "Ancient Roman construction techniques were superior to modern building methods.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SURVIVORSHIP",
+        "subtype": "Selective_Observation"
+      },
+      "variables": {
+        "X": "Roman construction",
+        "Y": "Building durability",
+        "Z": [
+          "Survival to present day (selection)"
+        ]
+      },
+      "gold_rationale": "This is survivorship bias. We only observe Roman buildings that survived 2000+ years - by definition, the most durable structures. The countless Roman buildings that collapsed, decayed, or were demolished are not in our sample. The surviving buildings represent the extreme upper tail of durability, not typical Roman construction. Modern buildings haven't yet faced the same temporal filter.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0010",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L1",
+      "domain": "History",
+      "scenario": "In Imperial China, officials who scored highest on the civil service examinations (X) were appointed to top administrative positions. Over time, examination scores became less predictive of administrative effectiveness (Y). Reformers concluded the examination system had degraded.",
+      "claim": "The degradation of China's imperial examination system caused declining administrative effectiveness.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "GOODHART",
+        "subtype": "Static_Metric_Gaming"
+      },
+      "variables": {
+        "X": "Examination scores",
+        "Y": "Administrative effectiveness",
+        "Z": [
+          "Gaming and optimization of exam content"
+        ]
+      },
+      "gold_rationale": "This is Goodhart's Law: when a measure becomes a target, it ceases to be a good measure. The examinations were originally a proxy for administrative ability. Once exam scores determined career advancement, candidates optimized specifically for exam performance - memorizing set texts, mastering formulaic essay structures - rather than developing actual administrative skills. The proxy was gamed, breaking its correlation with the underlying trait it was meant to measure.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0011",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The Peace of Westphalia (X) in 1648 is credited with establishing the modern system of sovereign nation-states (Y). Historical records show that the authority of the Holy Roman Emperor and the Pope over European affairs (Z) declined dramatically during this era.",
+      "claim": "The Peace of Westphalia caused the rise of the modern sovereign nation-state system.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Peace of Westphalia (Diplomatic Action)",
+        "Y": "Rise of sovereign nation-state system (Outcome)",
+        "Z": "Decline of Imperial/Papal central authority (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If central authority was already collapsing before 1648 (tZ < tX), then the weakening of Imperial/Papal power (Z) both made the peace negotiations possible and independently enabled states to assert sovereignty - Westphalia merely formalized an existing fragmentation. If the treaties actively dismantled central authority (tX < tZ), then diplomacy drove the political transformation. Without knowing whether authority decline preceded or followed Westphalia, the causal claim cannot be evaluated.",
+      "hidden_question": "Did Imperial and Papal authority over European states decline significantly before the Westphalia negotiations began, or primarily after?",
+      "answer_if_Z_before_X": "Pre-existing collapse of central authority (Z) made the peace possible and independently enabled sovereignty assertions. Westphalia recognized an existing reality of fragmented power rather than creating it.",
+      "answer_if_X_before_Z": "The Peace of Westphalia (X) formally ended Imperial/Papal claims to supremacy, which accelerated authority decline (Z), enabling full state sovereignty (Y). Diplomacy reshaped the political order.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0012",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Tokugawa Ieyasu (X) unified Japan and established the Tokugawa Shogunate, ending a century of civil war and ushering in 250 years of peace (Y). Records show that silver production at the Iwami Ginzan mine (Z) reached unprecedented levels during this period, filling shogunate coffers.",
+      "claim": "Tokugawa Ieyasu's unification caused Japan's 250-year peace.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Tokugawa unification (Political Action)",
+        "Y": "250-year Edo peace (Outcome)",
+        "Z": "Silver mining boom (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If the silver boom preceded Tokugawa consolidation (tZ < tX), the mineral wealth (Z) allowed whoever controlled the mines to buy off rivals and fund armies - any warlord controlling Iwami would have unified Japan. Ieyasu lucked into silver wealth. If Ieyasu's victory secured the mines and his policies maximized output (tX < tZ), then military-political skill caused both unification and the wealth that sustained peace.",
+      "hidden_question": "Did silver production surge before or after Tokugawa forces secured control of the mining regions?",
+      "answer_if_Z_before_X": "The silver windfall (Z) was the decisive factor. Control of the mines enabled victory; any competent general with those resources would have unified Japan. Ieyasu inherited a winning hand.",
+      "answer_if_X_before_Z": "Tokugawa victory (X) secured the mines and administrative reforms maximized output (Z), funding the peace. Political-military skill was the root cause.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0013",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Polynesian settlers arrived on New Zealand (X) and the moa bird population went extinct (Y). Paleoclimate records show significant environmental stress and habitat change (Z) occurred during this period.",
+      "claim": "Polynesian settlement caused the extinction of the moa.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Polynesian settlement (Human Arrival)",
+        "Y": "Moa extinction (Outcome)",
+        "Z": "Environmental stress and habitat change (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If environmental stress began before human arrival (tZ < tX), the moa population may have been declining toward extinction regardless, and settlers arrived to find an already-vulnerable ecosystem. If humans introduced environmental changes through fire and deforestation (tX < tZ), then settlement caused the habitat destruction that drove extinction.",
+      "hidden_question": "Did significant environmental stress and habitat degradation begin before or after Polynesian arrival?",
+      "answer_if_Z_before_X": "Environmental stress (Z) was already driving moa decline before humans arrived. Settlers encountered a collapsing ecosystem; climate and habitat change caused extinction.",
+      "answer_if_X_before_Z": "Polynesian settlers (X) introduced fire-based land clearing and hunting pressure, causing habitat destruction (Z), which drove extinction (Y). Human activity was the root cause.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0014",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The printing press spread across Europe (X) and the Protestant Reformation succeeded in breaking the Catholic Church's religious monopoly (Y). Records show that vernacular literacy and demand for religious texts in local languages (Z) surged during this period.",
+      "claim": "The printing press caused the Protestant Reformation's success.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Printing press proliferation (Technology)",
+        "Y": "Protestant Reformation success (Outcome)",
+        "Z": "Vernacular literacy and religious text demand (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If demand for vernacular religious texts was already rising before printing spread widely (tZ < tX), then pre-existing religious discontent (Z) both drove adoption of printing technology and independently fueled reformation movements. The press was a symptom of cultural change. If printing created mass literacy and access to scripture (tX < tZ), then technology drove the cultural transformation.",
+      "hidden_question": "Was demand for vernacular religious texts and rising literacy already evident before the printing press spread widely?",
+      "answer_if_Z_before_X": "Pre-existing demand for religious texts in local languages (Z) drove both printing adoption and Reformation sentiment. The press accelerated an existing movement; it did not create it.",
+      "answer_if_X_before_Z": "The printing press (X) democratized access to scripture, creating mass vernacular literacy (Z), which enabled the Reformation (Y). Technology was the root cause.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0015",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The city of Milan implemented strict quarantine measures (X) during a plague outbreak, and the epidemic subsequently ended (Y). Weather records show that an unusually cold winter (Z) arrived during this period, which would have killed the fleas that transmitted the disease.",
+      "claim": "Milan's quarantine measures caused the plague epidemic to end.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Quarantine implementation (Public Health Action)",
+        "Y": "End of plague epidemic (Outcome)",
+        "Z": "Arrival of cold winter (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If the cold weather arrived before quarantine measures could take effect (tZ < tX), the winter killed the disease vectors naturally (Z \u2192 Y), and the quarantine was coincidental - the epidemic would have ended regardless. If quarantine was implemented and began reducing transmission before the cold arrived (tX < tZ), the public health measures may have genuinely curtailed the outbreak.",
+      "hidden_question": "Did the unusually cold temperatures arrive before or after the quarantine measures had time to take effect?",
+      "answer_if_Z_before_X": "The cold winter (Z) killed the fleas transmitting plague before quarantine could work. The epidemic ended naturally; the quarantine was coincidental timing.",
+      "answer_if_X_before_Z": "The quarantine (X) reduced transmission before winter arrived. Public health measures genuinely curtailed the outbreak; the cold may have helped finish it.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0016",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The Soviet government launched a mass literacy campaign (X) in the 1920s-30s, and literacy rates rose dramatically (Y). During this period, rapid industrialization and urbanization (Z) created millions of factory jobs requiring basic reading skills.",
+      "claim": "The Soviet literacy campaign caused the dramatic rise in literacy rates.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Mass literacy campaign (Policy)",
+        "Y": "Rising literacy rates (Outcome)",
+        "Z": "Industrialization and urban job market (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If industrialization created demand for literate workers before the campaign took effect (tZ < tX), economic necessity (Z) drove workers to learn reading regardless of propaganda - the campaign rode a wave of self-interested skill acquisition. If the campaign created literacy before factory jobs required it (tX < tZ), ideological mobilization genuinely transformed the population.",
+      "hidden_question": "Did industrial job growth requiring literacy skills accelerate before or after the literacy campaign was fully implemented?",
+      "answer_if_Z_before_X": "Economic necessity (Z) drove literacy acquisition; workers learned to read because jobs required it. The campaign took credit for a market-driven transformation.",
+      "answer_if_X_before_Z": "The campaign (X) created a literate workforce before industry demanded it. Ideological mobilization genuinely transformed society; industrialization followed.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0017",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The Egyptian pyramids (X) were constructed, indicating a highly centralized pharaonic state (Y). Archaeological evidence shows that large-scale irrigation systems along the Nile (Z) were operational during this period.",
+      "claim": "Pyramid construction caused the emergence of Egypt's centralized state.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Pyramid construction (Monumental Architecture)",
+        "Y": "Centralized pharaonic state (Outcome)",
+        "Z": "Large-scale irrigation systems (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If irrigation infrastructure preceded pyramid construction (tZ < tX), the agricultural surplus from coordinated water management (Z) created the wealth and labor organization necessary for both state centralization and monument building. Energy preceded structure. If pyramid projects drove the creation of irrigation systems (tX < tZ), religious ideology mobilized the workforce that then built agricultural infrastructure.",
+      "hidden_question": "Do archaeological layers show irrigation canals were constructed before or after the earliest pyramid foundations?",
+      "answer_if_Z_before_X": "Irrigation surplus (Z) enabled both state formation and pyramid building. Agriculture created the hierarchy; pyramids are a symptom of existing centralization.",
+      "answer_if_X_before_Z": "Religious organization for pyramid construction (X) created the administrative capacity that then built irrigation systems (Z). Ideology drove material development.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0018",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Germanic tribes migrated into Roman territories (Y) during the late Empire. This occurred during an era of increasing raids and warfare (X). Pressure from Hunnic invasions from the east (Z) displaced populations across the steppes.",
+      "claim": "Germanic raiding culture caused the migration into Roman territories.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Germanic raiding and warfare (Activity)",
+        "Y": "Migration into Roman territories (Outcome)",
+        "Z": "Hunnic pressure from the east (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If Hunnic pressure displaced populations before Germanic raids intensified (tZ < tX), the migrations were 'push' driven - tribes fled westward from steppe invaders, and raiding was opportunistic behavior during displacement. If raiding culture developed independently before Hunnic pressure (tX < tZ), the migrations were 'pull' driven - attracted by Roman wealth.",
+      "hidden_question": "Did Hunnic westward expansion begin before or after Germanic raids on Roman territories intensified?",
+      "answer_if_Z_before_X": "Hunnic pressure (Z) pushed Germanic tribes westward; raiding was a survival strategy during forced migration. Demographic displacement, not cultural aggression, drove the movement.",
+      "answer_if_X_before_Z": "Germanic raiding culture (X) developed independently, pulling tribes toward Roman wealth. The Huns accelerated but did not cause the migration pattern.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0019",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Abraham Lincoln (X) led the Union to victory, and slavery was abolished in the United States (Y). Economic historians note that the slave economy was becoming increasingly inefficient compared to free labor (Z) in industrial settings.",
+      "claim": "Lincoln's leadership caused the abolition of slavery.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Lincoln's wartime leadership (Person)",
+        "Y": "Abolition of slavery (Outcome)",
+        "Z": "Economic inefficiency of slave labor (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If slavery's economic unviability was becoming apparent before Lincoln's election (tZ < tX), structural forces (Z) were already dooming the institution - Lincoln was elected to execute an economically inevitable transition. Materialism over Great Man Theory. If Lincoln's moral leadership drove abolition despite slavery's continued profitability (tX < tZ), individual agency shaped history.",
+      "hidden_question": "Was slavery's economic inefficiency widely recognized and affecting Southern competitiveness before Lincoln's election, or did it become apparent only after abolition?",
+      "answer_if_Z_before_X": "Economic forces (Z) were already undermining slavery; any Union president would have presided over its demise. Lincoln executed an inevitable historical transition.",
+      "answer_if_X_before_Z": "Lincoln's moral conviction (X) drove abolition despite slavery's continued economic viability in some sectors. Individual leadership changed history.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0020",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "India gained independence from Britain (Y) following Gandhi's non-violent resistance movement (X). Britain had been severely weakened economically and militarily by World War II (Z).",
+      "claim": "Gandhi's non-violent resistance caused Indian independence.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Gandhi's non-violent resistance (Political Action)",
+        "Y": "Indian independence (Outcome)",
+        "Z": "British post-war weakness (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If British imperial capacity was collapsing before Gandhi's movement reached critical mass (tZ < tX), structural weakness (Z) made decolonization inevitable - Gandhi's movement was the mechanism, but imperial overextension was the cause. If the resistance movement had already delegitimized colonial rule before WWII weakened Britain (tX < tZ), moral persuasion won independence.",
+      "hidden_question": "Had Gandhi's movement already made British rule politically untenable before WWII devastated British capacity to maintain the empire?",
+      "answer_if_Z_before_X": "British weakness (Z) made decolonization inevitable; Gandhi provided the orderly transition mechanism but did not cause independence. Any organized movement would have succeeded.",
+      "answer_if_X_before_Z": "Gandhi's movement (X) delegitimized colonial rule through moral force. Britain would have struggled to maintain India even without WWII. Ideology drove the change.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0021",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Millions of Irish emigrated to America (Y) in the 1840s-50s. This coincided with the expansion of affordable transatlantic steamship routes (X). A devastating potato blight (Z) destroyed the primary food source.",
+      "claim": "The availability of affordable transatlantic passage caused Irish mass emigration.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Affordable steamship passage (Infrastructure)",
+        "Y": "Mass emigration (Outcome)",
+        "Z": "Potato blight and famine (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If the potato blight destroyed food supplies before steamship routes became widely available (tZ < tX), famine (Z) pushed people to emigrate by any means necessary - the steamships just determined the destination. If affordable passage existed before the blight (tX < tZ), the pull of American opportunity may have been the primary driver.",
+      "hidden_question": "Did the potato blight cause widespread starvation before or after affordable transatlantic passage became available?",
+      "answer_if_Z_before_X": "Famine (Z) pushed emigration; people fled starvation by any available means. The steamships determined where they went, not that they left. Push migration.",
+      "answer_if_X_before_Z": "Affordable passage (X) created the pull of American opportunity. The blight may have accelerated but not caused the emigration wave. Pull migration.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0022",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The Taiping Rebellion (X) devastated southern China, and an estimated 20-30 million people died (Y). Climate records show catastrophic flooding of the Yellow River (Z) occurred during this period.",
+      "claim": "The Taiping Rebellion caused the massive death toll in mid-19th century China.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Taiping Rebellion (Political Event)",
+        "Y": "Massive death toll (Outcome)",
+        "Z": "Yellow River flooding (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If catastrophic flooding destroyed harvests before the rebellion gained momentum (tZ < tX), natural disaster (Z) caused both the deaths (through famine) and the social instability that fueled rebellion. The uprising did not cause the death toll; environmental catastrophe caused both. If the rebellion disrupted agriculture and governance before the floods (tX < tZ), political chaos caused the mortality.",
+      "hidden_question": "Did the Yellow River flooding cause crop failures and famine before or after the Taiping Rebellion disrupted governance?",
+      "answer_if_Z_before_X": "Flooding (Z) caused famine that both killed millions and triggered rebellion. The uprising channeled existing desperation; environmental disaster was the root cause.",
+      "answer_if_X_before_Z": "Rebellion (X) disrupted agriculture and flood control, causing deaths. The flooding may have been catastrophic partly because governance had collapsed.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0023",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Greek city-states built massive defensive walls (X) and maintained political independence from larger empires (Y). The Persian Empire repeatedly threatened invasion (Z) from the east.",
+      "claim": "Building defensive walls caused Greek city-states to maintain political independence.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Defensive wall construction (Action)",
+        "Y": "Political independence (Outcome)",
+        "Z": "Persian military threat (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If Persian threats materialized before major wall construction (tZ < tX), external danger (Z) forced defensive building for survival. These fortifications inadvertently gave cities the military capacity to resist both Persia and would-be Greek hegemons. Security infrastructure became political infrastructure. If walls were built to assert independence before Persian pressure (tX < tZ), autonomy drove defense.",
+      "hidden_question": "Did Persian military pressure threaten Greece before or after the major phase of city-wall construction?",
+      "answer_if_Z_before_X": "Persian threat (Z) necessitated walls for survival; independence was an unintended consequence of security infrastructure built against foreign invasion.",
+      "answer_if_X_before_Z": "Walls (X) were built to assert autonomy between Greek states, preventing unification into a larger empire. This fragmentation made Greece appear weak and inviting to Persian expansion (Z). The walls caused the disunity that attracted invasion.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0024",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Among ancient papyri that survived (Z) to the modern era, documents from Egypt (X) are far more likely to contain magical and astrological content (Y) than documents from other Mediterranean regions.",
+      "claim": "Egyptian culture produced more magical and astrological texts than other Mediterranean cultures.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER"
+      },
+      "variables": {
+        "X": "Egyptian origin (Exposure)",
+        "Y": "Magical/astrological content (Outcome)",
+        "Z": "Survived to modern era (Collider)"
+      },
+      "hidden_structure": "Both X (Egypt's dry climate and burial practices) and Y (magical content commonly used as grave goods) independently increase survival probability.",
+      "gold_rationale": "No causal relationship between Egyptian origin and magical content production. Egypt's arid climate preserved papyri, while humid Mediterranean climates destroyed most documents. Additionally, Egyptians commonly buried magical and funerary texts with the dead as grave goods - spells for protection in the afterlife. These tomb conditions were ideal for preservation. Greek and Roman cultures rarely buried texts, so their magical papyri were exposed to decay, fire, and urban destruction. Among survivors, Egypt appears 'more magical' because magical texts had two preservation advantages: climate AND burial practices.",
+      "correct_answer": "This is Berkson's Paradox. Egypt may not have produced more magical texts; they simply survived at higher rates because (1) Egypt's climate preserved papyrus, and (2) magical texts were commonly buried as grave goods, protecting them in sealed tombs.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0025",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Among entrepreneurs who became famous industrialists (Z), those who started with no inherited wealth (X) tend to have built larger business empires (Y) than those who inherited fortunes.",
+      "claim": "Starting without inherited wealth caused entrepreneurs to build larger business empires.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER"
+      },
+      "variables": {
+        "X": "No inherited wealth (Exposure)",
+        "Y": "Large business empire (Outcome)",
+        "Z": "Became famous industrialist (Collider)"
+      },
+      "hidden_structure": "Entrepreneurs become famous (Z) either by exceptional success despite poverty (X \u2229 Y) or by having wealthy origins that guarantee historical attention. Poor entrepreneurs who built modest businesses are forgotten.",
+      "gold_rationale": "No causal relationship between poverty and business success. The data is biased by fame selection: entrepreneurs who started poor needed to build exceptionally large empires to become historically notable, while wealthy heirs received attention regardless of achievement. The thousands who started poor and built modest or failed businesses are not in the historical record. This is survivorship bias in business historiography.",
+      "correct_answer": "This analysis conditions on historical fame, which is a collider. Poor entrepreneurs who didn't build massive empires are forgotten. The apparent correlation between humble origins and large empires is survivorship bias, not evidence that poverty drives success.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0026",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Among ancient civilizations that left extensive written records (Z), those with centralized bureaucracies (X) appear to have been more stable (Y) than those without.",
+      "claim": "Centralized bureaucracy caused ancient civilizations to be more stable.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER"
+      },
+      "variables": {
+        "X": "Centralized bureaucracy (Exposure)",
+        "Y": "Political stability (Outcome)",
+        "Z": "Left extensive written records (Collider)"
+      },
+      "hidden_structure": "Civilizations enter the historical record (Z) either through bureaucratic record-keeping (X) or through dramatic events during instability. Stable non-bureaucratic societies leave few traces; unstable bureaucracies leave crisis records.",
+      "gold_rationale": "No causal relationship between bureaucracy and stability. Centralized bureaucracies produce written records, so they appear in our dataset. Non-bureaucratic but stable societies (pastoral confederations, oral-tradition kingdoms) leave little trace and are underrepresented. We observe bureaucratic-stable and non-bureaucratic-unstable, missing the bureaucratic-unstable and non-bureaucratic-stable cases.",
+      "correct_answer": "Bureaucracies appear stable because stable bureaucracies produce the records we study. Non-bureaucratic stable societies are invisible to history; we only see non-bureaucratic societies during dramatic collapses that generated records.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0027",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The Ming Dynasty collapsed (Y) shortly after the Manchu armies breached the Great Wall (X). Records show the dynasty had been experiencing severe fiscal crisis and peasant rebellions (Z) for decades.",
+      "claim": "The Manchu invasion caused the fall of the Ming Dynasty.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "SELECTION"
+      },
+      "variables": {
+        "X": "Manchu invasion (Military Event)",
+        "Y": "Dynastic collapse (Outcome)",
+        "Z": "Fiscal crisis and internal rebellions (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If fiscal collapse and peasant wars had already made the dynasty ungovernable before the Manchu breakthrough (tZ < tX), internal rot was the root cause - the Manchus merely occupied a power vacuum. If the Manchu invasion disrupted revenue collection and triggered the rebellions (tX < tZ), external conquest caused the collapse.",
+      "hidden_question": "Had the Ming fiscal and military apparatus already collapsed due to internal rebellions before the Manchu armies broke through?",
+      "answer_if_Z_before_X": "Internal decay (Z) had already destroyed Ming authority; the Manchus walked into a power vacuum. Li Zicheng's rebel army actually captured Beijing before the Manchus arrived.",
+      "answer_if_X_before_Z": "Manchu military pressure (X) forced unsustainable defense spending that caused fiscal collapse and rebellions (Z). External invasion was the root cause.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0028",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The Dutch East India Company became massively profitable (Y) after receiving a royal charter granting trade monopoly (X). Explorers had recently discovered a direct sea route to the Spice Islands (Z).",
+      "claim": "The royal charter caused the Dutch East India Company's profitability.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Royal charter and monopoly (Policy)",
+        "Y": "Company profitability (Outcome)",
+        "Z": "Discovery of sea route to Spice Islands (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If the sea route was discovered before the charter was granted (tZ < tX), the geographic opportunity (Z) made the spice trade profitable regardless of corporate structure - the charter just determined who captured the profits. If the charter enabled the expeditions that discovered the route (tX < tZ), institutional organization caused the discovery.",
+      "hidden_question": "Was the profitable sea route to the Spice Islands discovered before or after the charter was granted?",
+      "answer_if_Z_before_X": "The sea route discovery (Z) created the profit opportunity; the charter just allocated monopoly rights. Any organization controlling that route would have profited.",
+      "answer_if_X_before_Z": "The charter (X) provided capital and coordination to mount the expeditions that discovered the route (Z). Institutional organization enabled the discovery.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0029",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Alexander the Great's phalanx tactics (X) achieved rapid conquest of the Persian Empire (Y). Historical sources indicate the Persian Empire was weakened by succession crises and satrap rebellions (Z).",
+      "claim": "Alexander's innovative tactics caused the rapid conquest of Persia.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "SELECTION"
+      },
+      "variables": {
+        "X": "Macedonian phalanx tactics (Military Innovation)",
+        "Y": "Rapid conquest (Outcome)",
+        "Z": "Persian internal weakness (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If Persian internal weakness had already fragmented the empire's defensive capacity before Alexander invaded (tZ < tX), the conquest was opportunistic - any competent army could have succeeded. Alexander's 'genius' would be overstated. If Alexander's campaigns caused the Persian system to collapse (tX < tZ), tactical innovation deserves credit.",
+      "hidden_question": "Had Persian military and administrative capacity already collapsed due to internal conflicts before Alexander's invasion began?",
+      "answer_if_Z_before_X": "Persian weakness (Z) had already made the empire hollow; Alexander walked through open doors. His tactics mattered less than Persian dysfunction.",
+      "answer_if_X_before_Z": "Alexander's tactics (X) shattered Persian armies, causing the subsequent internal collapse (Z). Military innovation was decisive.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0030",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Christianity spread rapidly across the Roman Empire (Y) following imperial edicts of toleration (X). The Roman road network (Z) connected all major population centers.",
+      "claim": "Imperial edicts of toleration caused the rapid spread of Christianity.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Edicts of toleration (Policy)",
+        "Y": "Rapid spread of Christianity (Outcome)",
+        "Z": "Roman road network (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If the road network had already enabled Christian communities to spread and connect before the edicts (tZ < tX), infrastructure drove evangelization - the edicts merely formalized an existing reality. If the edicts enabled missionaries to travel safely, leading to road network utilization (tX < tZ in terms of Christian usage), policy drove the spread.",
+      "hidden_question": "Had Christian communities already spread along the road network before the edicts of toleration?",
+      "answer_if_Z_before_X": "Infrastructure (Z) enabled Christian spread before official toleration; the religion was already empire-wide. The edicts recognized an existing reality.",
+      "answer_if_X_before_Z": "Edicts (X) enabled safe travel for missionaries who then utilized the roads (Z). Policy enabled the infrastructure's use for evangelization.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0031",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "The Dutch Republic experienced a Golden Age of art and commerce (Y) under policies of religious tolerance (X). Wealthy Sephardic Jews and Huguenots (Z) fled persecution in Spain and France.",
+      "claim": "Dutch religious tolerance caused the Golden Age.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Religious tolerance policies (Policy)",
+        "Y": "Golden Age prosperity (Outcome)",
+        "Z": "Refugee arrival with capital and skills (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If refugees were already fleeing persecution and seeking any safe haven before Dutch tolerance was notable (tZ < tX), the talent influx was exogenous - the Dutch happened to be geographically convenient. If Dutch tolerance actively attracted refugees who had other options (tX < tZ), policy deserves causal credit.",
+      "hidden_question": "Were refugees fleeing persecution regardless of Dutch policies, or did Dutch tolerance specifically attract them over other destinations?",
+      "answer_if_Z_before_X": "Refugees (Z) fled persecution and needed any safe harbor; the Dutch were geographically convenient. The Golden Age was an exogenous talent windfall.",
+      "answer_if_X_before_Z": "Dutch tolerance (X) specifically attracted refugees who had other options (England, Ottoman Empire). Policy created the welcoming environment that caused the brain gain.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0032",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Venice became the dominant Mediterranean trading power (Y) after establishing a formal treaty with Byzantium (X). The Crusades (Z) created massive demand for Eastern goods and transport services.",
+      "claim": "The Byzantine treaty caused Venice's trade dominance.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Byzantine treaty (Diplomatic Action)",
+        "Y": "Trade dominance (Outcome)",
+        "Z": "Crusade-driven demand (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If Crusade-driven demand was already creating massive trade opportunities before the treaty (tZ < tX), external demand drove Venice's rise - the treaty just secured access. If the treaty enabled Venetian participation in Crusade logistics (tX < tZ), diplomacy created the opportunity.",
+      "hidden_question": "Did Crusade-driven demand for Mediterranean shipping exist before or after Venice secured its Byzantine treaty?",
+      "answer_if_Z_before_X": "Crusade demand (Z) created the opportunity; any power with Byzantine access would have dominated. The treaty secured access but didn't create the market.",
+      "answer_if_X_before_Z": "The treaty (X) positioned Venice to capture Crusade logistics, which then generated the demand (Z). Diplomacy created the opportunity.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0033",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Agricultural productivity increased dramatically (Y) after Parliament passed the Enclosure Acts (X). Population growth (Z) had been accelerating for decades.",
+      "claim": "The Enclosure Acts caused the increase in agricultural productivity.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Enclosure Acts (Policy)",
+        "Y": "Agricultural productivity increase (Outcome)",
+        "Z": "Population growth (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If population growth was already driving demand for food and incentivizing agricultural innovation before the Enclosure Acts (tZ < tX), demographic pressure caused productivity gains - the Acts formalized land consolidation that was already happening. If the Acts enabled innovations that then supported population growth (tX < tZ), policy drove the transformation.",
+      "hidden_question": "Was population growth already driving agricultural innovation before the Enclosure Acts were passed?",
+      "answer_if_Z_before_X": "Population pressure (Z) forced productivity improvements; the Acts formalized and accelerated an existing trend. Demography drove innovation.",
+      "answer_if_X_before_Z": "The Acts (X) enabled land consolidation and investment that increased food production, which then supported population growth (Z). Policy drove the transformation.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0034",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Historians note that the Mayan civilization used extensive slash-and-burn agriculture (X) and eventually collapsed (Y). A modern environmental agency bans slash-and-burn farming to prevent societal collapse.",
+      "claim": "Banning slash-and-burn agriculture will prevent societal collapse.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Slash-and-burn agriculture (Exposure)",
+        "Y": "Societal collapse (Outcome)",
+        "Z": "Drought, warfare, political fragmentation (Confounders)"
+      },
+      "gold_rationale": "Banning slash-and-burn (X) addresses one environmental stressor but will not prevent societal collapse (Y). The Maya collapse was a multifactorial event involving prolonged drought, endemic warfare between city-states, and political fragmentation (Z). Agricultural practices contributed to environmental degradation, but attributing the entire collapse to farming technique is a monocausal fallacy.",
+      "correct_answer": "The collapse was multifactorial. While slash-and-burn may have caused environmental degradation, the civilization fell due to a confluence of drought, warfare, and political dysfunction. Banning one agricultural practice won't prevent collapse driven by other factors.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0035",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Every Byzantine Emperor named Constantine (X) presided over periods of imperial expansion (Y). The Empress names her son Constantine to ensure military success.",
+      "claim": "Naming an heir Constantine will cause imperial expansion.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SPURIOUS"
+      },
+      "variables": {
+        "X": "Name 'Constantine' (Intervention)",
+        "Y": "Imperial expansion (Outcome)",
+        "Z": "Dynastic prestige and legitimacy (Coincidence)"
+      },
+      "gold_rationale": "Naming a child Constantine (X) will not causally produce military success (Y). The historical correlation likely reflects that the name was chosen during periods of dynastic confidence, or that successful emperors retroactively adopted prestigious names. A name has no causal mechanism to influence military campaigns or territorial control.",
+      "correct_answer": "This is a spurious correlation. Names do not cause geopolitical outcomes. The correlation may reflect reverse causation (successful emperors adopted the name) or confounding (the name was popular during strong dynasties). The small sample size makes any pattern likely coincidental.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0036",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Roman generals who wore the purple cloak (X) won significantly more battles (Y) than those who wore standard military dress. The Senate mandates purple cloaks for all commanders to increase victory rates.",
+      "claim": "Mandating purple cloaks will increase military victory rates.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Purple cloak (Intervention)",
+        "Y": "Battle victory (Outcome)",
+        "Z": "Rank, experience, and resources (Confounder)"
+      },
+      "gold_rationale": "Mandating purple cloaks (X) will not improve victory rates (Y). The correlation exists because historically, only the most senior commanders with proven track records and the largest armies (Z) were permitted to wear purple. Their victories were caused by experience and resources, not fabric color. The cloak signals status; it doesn't grant competence.",
+      "correct_answer": "The purple cloak is a status symbol, not a cause of victory. Senior, experienced generals with large armies wore purple. Their success came from experience and resources, not the garment. Giving purple cloaks to inexperienced commanders won't transfer competence.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0037",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Regions with more universities (X) experienced more political revolutions (Y). A monarch bans universities to prevent revolutionary activity.",
+      "claim": "Banning universities will prevent political revolutions.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Universities (Intervention)",
+        "Y": "Political revolutions (Outcome)",
+        "Z": "Pre-existing intellectual ferment and grievances (Common Cause)"
+      },
+      "gold_rationale": "Banning universities (X) might slow information spread but won't prevent revolutions (Y). Universities were often established in regions where intellectual ferment and political grievances (Z) already existed. The institutions channeled and organized existing discontent; they didn't create it. Banning the symptom won't cure the disease.",
+      "correct_answer": "PARTIAL/NO. Universities concentrate and organize existing discontent but don't create revolutionary sentiment. They were often established where intellectual ferment already existed. Banning them might disperse activists but won't resolve underlying grievances driving revolution.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0038",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Royal dynasties that arranged marriages with the Habsburg family (X) subsequently became major European powers (Y). A minor duke arranges a Habsburg marriage to elevate his house to great power status.",
+      "claim": "Arranging a Habsburg marriage will cause a minor dynasty to become a major European power.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Habsburg marriage alliance (Intervention)",
+        "Y": "Great power status (Outcome)",
+        "Z": "Pre-existing dynastic importance (Confounder)"
+      },
+      "gold_rationale": "Arranging a Habsburg marriage (X) will not elevate a minor house to great power status (Y). Historically, the Habsburgs only accepted marriage alliances with dynasties that already controlled significant territories or held strategic importance (Z). The marriage reflected existing power; it did not create it. Minor houses were rejected or offered lesser matches.",
+      "correct_answer": "Marriage alliances are a result of power, not just a source. The Habsburgs married strategically important houses, not minor nobility hoping to rise. A minor duke cannot simply 'arrange' a Habsburg marriage - the Habsburgs must agree, and they only agreed when the match served their existing interests.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0039",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "States that relied heavily on mercenary armies (X) often suffered military catastrophes (Y). A king dismisses all mercenaries and relies solely on feudal levies to prevent military disaster.",
+      "claim": "Dismissing mercenaries will prevent military catastrophe.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Mercenary reliance (Intervention)",
+        "Y": "Military catastrophe (Outcome)",
+        "Z": "Insufficient native military capacity (Common Cause)"
+      },
+      "gold_rationale": "Dismissing mercenaries (X) won't prevent military catastrophe. States hire mercenaries when their native military capacity (Z) is insufficient - due to low population, poverty, or political fragmentation. The underlying weakness causes both mercenary reliance and eventual defeat. Dismissing mercenaries without addressing the root weakness leaves the state defenseless.",
+      "correct_answer": "Mercenaries are hired because native forces are insufficient. The underlying military weakness (Z) causes both the need for mercenaries and vulnerability to catastrophe. Firing mercenaries removes the symptom while worsening the disease - leaving the state with neither professional soldiers nor adequate native forces.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0040",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Historical records show that grain rationing (X) often preceded famines (Y). A king refuses to implement grain rationing to prevent famine.",
+      "claim": "Refusing to implement grain rationing will prevent famine.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Grain rationing (Intervention)",
+        "Y": "Famine (Outcome)",
+        "Z": "Harvest failure / supply shortage (Common Cause)"
+      },
+      "gold_rationale": "Refusing to ration (X) will not prevent famine (Y). Governments implement rationing in response to early signs of harvest failure or supply shortage (Z). The rationing is an attempt to manage scarcity, not its cause. Refusing to ration when supplies are short will worsen the famine, not prevent it.",
+      "correct_answer": "Rationing is a response to emerging scarcity, not a cause of famine. Governments ration because harvests have failed. Refusing to ration when supplies are short will cause uncontrolled distribution and worsen outcomes. The policy is reactive, not causal.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0041",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A land reform policy (X) redistributed estates to peasants, and agricultural output increased (Y). However, the wealthiest peasants (Z) received the best plots due to their ability to bribe officials.",
+      "claim": "The land reform policy caused agricultural output to increase.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONFOUNDING"
+      },
+      "variables": {
+        "X": "Land reform policy (Intervention)",
+        "Y": "Agricultural output increase (Outcome)",
+        "Z": "Pre-existing wealth enabling better land acquisition (Unblocked Confounder)"
+      },
+      "gold_rationale": "The intervention (X) failed to block the backdoor path through pre-existing wealth (Z). Wealthier peasants obtained better land regardless of the policy's intent. The output increase may reflect the productivity advantage of those who were already better-off, not the policy's effectiveness. Without randomized allocation blocking Z, causal attribution is uncertain.",
+      "hidden_question": "Did the reform's implementation successfully block the influence of pre-existing wealth on land allocation?",
+      "answer_if_Z_before_X": "Pre-existing wealth (Z) determined who got good land; the policy just formalized existing inequality. Output gains reflect wealth advantage, not policy effectiveness.",
+      "answer_if_X_before_Z": "If implementation truly randomized allocation, blocking wealth effects, then the policy deserves causal credit for output gains.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0042",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A military training reform (X) was implemented, and battlefield performance improved (Y). However, officers selected for the new training were disproportionately those with prior combat experience (Z).",
+      "claim": "The military training reform caused improved battlefield performance.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONFOUNDING"
+      },
+      "variables": {
+        "X": "Training reform (Intervention)",
+        "Y": "Improved performance (Outcome)",
+        "Z": "Prior combat experience (Unblocked Confounder)"
+      },
+      "gold_rationale": "The intervention failed to block the backdoor path through prior experience (Z). Veterans who were already skilled were selected for new training. Performance improvements may reflect their pre-existing competence rather than the training's value. Without controlling for selection into training, causal attribution is compromised.",
+      "hidden_question": "Were trainees selected randomly, or did prior experience determine who received the new training?",
+      "answer_if_Z_before_X": "Prior experience (Z) determined selection; veterans would have performed well regardless. The training takes credit for pre-existing skill.",
+      "answer_if_X_before_Z": "If training was randomly assigned blocking experience effects, the reform deserves causal credit.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0043",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "An imperial examination system (X) was introduced to select government officials by merit rather than birth, and the quality of administration improved (Y). However, only candidates from wealthy families (Z) could afford years of study, tutors, and examination fees.",
+      "claim": "The imperial examination system caused administrative quality to improve by selecting talented officials.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONFOUNDING"
+      },
+      "variables": {
+        "X": "Imperial examination system (Intervention)",
+        "Y": "Improved administrative quality (Outcome)",
+        "Z": "Family wealth enabling exam preparation (Unblocked Confounder)"
+      },
+      "gold_rationale": "The intervention blocked one backdoor path (direct nepotism) but failed to block another (wealth \u2192 exam success \u2192 appointment). Wealthy families still dominated because only they could afford the years of study required. Administrative improvement may reflect that wealthy, well-educated candidates performed well regardless of the exam's 'merit' function. The exam selected for wealth, not raw talent.",
+      "hidden_question": "Did the examination system select for merit, or did it merely formalize wealth-based selection?",
+      "answer_if_Z_before_X": "Wealth (Z) determined who could prepare for exams; the system selected wealthy candidates who would have been capable administrators anyway. Merit selection was illusory.",
+      "answer_if_X_before_Z": "If exam access was genuinely open (free preparation, no fees), the system may have selected talent across classes. Success depends on whether wealth barriers were blocked.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0044",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A vaccination campaign (X) was launched in a province, and disease mortality dropped (Y). A health minister claims the campaign saved lives and mandates similar campaigns elsewhere.",
+      "claim": "Mandating similar vaccination campaigns elsewhere will reduce disease mortality.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONFOUNDING"
+      },
+      "variables": {
+        "X": "Vaccination campaign (Intervention)",
+        "Y": "Mortality reduction (Outcome)",
+        "Z": "Pre-existing healthcare infrastructure (Unblocked Confounder)"
+      },
+      "gold_rationale": "The campaign (X) may not cause the same mortality reduction (Y) elsewhere because the original province likely had pre-existing healthcare infrastructure (Z) that enabled vaccine distribution and uptake. Provinces lacking roads, clinics, or trained personnel will not see the same results. The intervention's effectiveness depends on an unblocked confounder that varies by location.",
+      "correct_answer": "The campaign's success depended on infrastructure that other provinces may lack. Mandating campaigns without building infrastructure first will fail. The intervention doesn't block the backdoor path through healthcare access.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0045",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "An agricultural subsidy program (X) was piloted in fertile river valleys, and crop yields increased dramatically (Y). The government plans to expand the program to arid highlands.",
+      "claim": "Expanding the subsidy program to arid highlands will dramatically increase crop yields there.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONFOUNDING"
+      },
+      "variables": {
+        "X": "Agricultural subsidy (Intervention)",
+        "Y": "Yield increase (Outcome)",
+        "Z": "Soil quality and water availability (Unblocked Confounder)"
+      },
+      "gold_rationale": "The subsidy (X) did not block the confounding effect of natural fertility (Z). River valleys produced high yields due to inherent advantages that subsidies cannot replicate in arid regions. Expanding the program without controlling for environmental factors will produce disappointing results. Money cannot substitute for water and soil.",
+      "correct_answer": "The pilot's success reflected natural advantages, not subsidy effectiveness. Arid highlands lack the water and soil that drove valley yields. The intervention cannot block geographic confounders.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0046",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A medical reform (X) was implemented in military field hospitals, and overall soldier survival rates increased (Y). However, examining survival rates within each wound severity category (minor, moderate, severe) shows that survival rates decreased in every category after the reform.",
+      "claim": "The medical reform caused soldier survival rates to improve.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "SIMPSON"
+      },
+      "variables": {
+        "X": "Medical reform (Intervention)",
+        "Y": "Survival rates (Outcome)",
+        "Z": "Wound severity distribution (Stratifying Variable)"
+      },
+      "gold_rationale": "This is Simpson's Paradox. The reform expanded treatment to soldiers with minor wounds who previously weren't brought to hospitals. Overall survival rose because the patient mix shifted toward less severe cases, even though survival worsened within each severity category. The reform may have actually harmed outcomes while appearing successful in aggregate.",
+      "hidden_question": "Did the reform improve medical care, or did it just change who received care?",
+      "answer_if_Z_before_X": "The paradox reveals the reform's apparent success came from treating easier cases, not better medicine. Within each wound type, outcomes worsened. The aggregate improvement is misleading.",
+      "answer_if_X_before_Z": "If the reform genuinely improved care rather than just expanding access to mild cases, the improvement would appear within each severity category, not just in aggregate.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0047",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A trade liberalization policy (X) increased total export revenue (Y) for the kingdom. However, within each commodity category (grain, textiles, metals), export revenue decreased.",
+      "claim": "Trade liberalization caused export revenue to increase.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "SIMPSON"
+      },
+      "variables": {
+        "X": "Trade liberalization (Intervention)",
+        "Y": "Export revenue (Outcome)",
+        "Z": "Commodity mix shift (Stratifying Variable)"
+      },
+      "gold_rationale": "This is Simpson's Paradox. Liberalization shifted exports toward higher-value commodities (e.g., from grain to textiles), increasing total revenue even though revenue within each category fell due to competition. The aggregate gain masks losses in every product line. The policy's apparent success is compositional, not causal improvement.",
+      "hidden_question": "Did liberalization improve export performance, or just shift the commodity mix toward higher-value goods?",
+      "answer_if_Z_before_X": "The revenue increase reflects compositional shift, not genuine improvement. Each commodity suffered from liberalization; the aggregate gain is misleading.",
+      "answer_if_X_before_Z": "If liberalization genuinely improved competitiveness, it would show in each commodity, not just the aggregate.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0048",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A centralization reform (X) gave the Emperor direct control over provinces, and tax revenue increased overall (Y). However, within each province, tax collection efficiency decreased compared to local lords' previous performance.",
+      "claim": "Centralization reforms caused tax revenue to increase.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SIMPSON"
+      },
+      "variables": {
+        "X": "Centralization reform (Intervention)",
+        "Y": "Tax revenue (Outcome)",
+        "Z": "Provincial wealth distribution (Stratifying Variable)"
+      },
+      "gold_rationale": "This is Simpson's Paradox. Centralization eliminated local lords' tax exemptions, bringing wealthy regions into the tax base for the first time. Total revenue rose because more regions paid, not because collection improved. Within each province, imperial bureaucrats were less efficient than local lords who knew their territories. The policy worked by expansion, not improvement.",
+      "correct_answer": "The revenue increase came from taxing previously exempt regions, not from improved collection. Centralization actually reduced efficiency everywhere it was implemented. The aggregate masks stratified decline.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0049",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A religious conversion campaign (X) increased the total number of converts to the state religion (Y). However, in every individual region (urban, rural, frontier), conversion rates decreased compared to the previous voluntary approach.",
+      "claim": "The mandatory conversion campaign was more effective than voluntary conversion.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SIMPSON"
+      },
+      "variables": {
+        "X": "Mandatory conversion campaign (Intervention)",
+        "Y": "Number of converts (Outcome)",
+        "Z": "Regional composition of the population (Stratifying Variable)"
+      },
+      "gold_rationale": "This is Simpson's Paradox. The campaign expanded into regions with large non-converted populations, increasing total converts despite lower conversion rates everywhere. Voluntary efforts had focused on receptive areas with higher rates but smaller populations. The campaign 'succeeded' by scale, not effectiveness. Coercion reduced compliance rates in every subgroup.",
+      "correct_answer": "The campaign was less effective than voluntary conversion in every region. Total converts rose only because more regions were targeted. The aggregate success masks universal decline in conversion rates.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0050",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Military commanders were evaluated by enemy body counts (X), and reported enemy casualties increased dramatically (Y). The high command concludes the war is being won. However, civilian casualties and friendly fire incidents also increased (Z).",
+      "claim": "The high body counts indicate the war is being won.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "GOODHART"
+      },
+      "variables": {
+        "X": "Body count metric (Proxy)",
+        "Y": "Reported enemy casualties (Outcome)",
+        "Z": "Inflation, misattribution, civilian deaths (Gaming Behavior)"
+      },
+      "gold_rationale": "This is Goodhart's Law. Body counts were intended as a proxy for military progress, but once commanders were evaluated on this metric, they optimized for counts rather than victory. Counts were inflated by including civilians, double-counting, and prioritizing kill missions over strategic objectives. The metric stopped measuring what it was designed to measure.",
+      "hidden_question": "Do the body counts reflect genuine military progress, or gaming of the measurement system?",
+      "answer_if_Z_before_X": "If gaming behaviors (Z) emerged after the metric was imposed, the counts are unreliable. High numbers reflect optimization for the proxy, not the target.",
+      "answer_if_X_before_Z": "If counts accurately preceded gaming, early data might be valid, but later counts are corrupted by Goodhart effects.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0051",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Provincial governors were evaluated by census population counts (X), and reported populations grew dramatically (Y). The Emperor concludes the realm is prospering. A minister mandates census-based evaluation for all provinces.",
+      "claim": "Mandating census-based evaluation will cause population growth across all provinces.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "GOODHART"
+      },
+      "variables": {
+        "X": "Census counts (Proxy)",
+        "Y": "Reported population (Outcome)",
+        "Z": "Inflation, fabrication, boundary manipulation (Gaming Behavior)"
+      },
+      "gold_rationale": "This is Goodhart's Law. Census counts were intended to measure prosperity, but governors gaming the metric inflated numbers through fabrication, counting travelers, and redrawing boundaries. Mandating this evaluation will spread gaming behavior, not population growth. The metric will be optimized, not the underlying reality.",
+      "correct_answer": "Population counts rose because governors gamed the metric, not because populations grew. Mandating census evaluation will spread falsification, not prosperity. When a measure becomes a target, it ceases to be a good measure.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0052",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Tax collectors were given quotas (X) and evaluated by revenue collected (Y). Revenue increased initially, but long-term agricultural productivity collapsed as farmers fled or hid crops (Z).",
+      "claim": "The quota system caused revenue to increase sustainably.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "GOODHART"
+      },
+      "variables": {
+        "X": "Revenue quotas (Proxy)",
+        "Y": "Tax revenue (Outcome)",
+        "Z": "Farmer flight, hidden production, economic collapse (Gaming Response)"
+      },
+      "gold_rationale": "This is Goodhart's Law. Revenue quotas were intended to measure administrative effectiveness, but collectors optimized for the metric through extortion and confiscation. Short-term revenue rose while the productive base was destroyed. The proxy was maximized at the expense of the actual goal (sustainable taxation).",
+      "correct_answer": "The quota system optimized for short-term extraction, destroying the tax base. Initial revenue gains came from depleting capital, not improving collection. The measure became the target, breaking its correlation with genuine fiscal health.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0053",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Collective farms were evaluated by grain production quotas (X), and reported yields reached record highs (Y). Officials conclude the agricultural system is succeeding. However, seed grain was being consumed, livestock slaughtered, and fields exhausted (Z).",
+      "claim": "The record grain yields indicate agricultural success.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "GOODHART"
+      },
+      "variables": {
+        "X": "Production quotas (Proxy)",
+        "Y": "Reported yields (Outcome)",
+        "Z": "Consumption of seed stock, soil exhaustion, falsified reports (Gaming Behavior)"
+      },
+      "gold_rationale": "This is Goodhart's Law. Production quotas were intended to measure agricultural success, but farm managers optimized for the metric through unsustainable practices and falsification. They consumed seed grain (destroying future harvests), exhausted soil (destroying future fertility), and falsified reports. High yields today guaranteed famine tomorrow.",
+      "correct_answer": "Record yields were achieved by destroying future productive capacity. The quota system incentivized eating the seed corn. When the measure became the target, managers optimized for reported numbers rather than sustainable agriculture.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0054",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "An arms limitation treaty (X) was signed between two rival empires to reduce military spending (Y). However, each side suspected the other of cheating (Z), leading to secret rearmament, which triggered further suspicion and eventual treaty collapse, followed by an even larger arms buildup.",
+      "claim": "The arms limitation treaty caused reduced military spending.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "FEEDBACK"
+      },
+      "variables": {
+        "X": "Arms limitation treaty (Intervention)",
+        "Y": "Military spending (Outcome)",
+        "Z": "Mutual suspicion and secret rearmament (Feedback Behavior)"
+      },
+      "gold_rationale": "This is a bidirectional feedback loop. The treaty (X) initially reduced spending (Y), but suspicion (Z) led to secret rearmament by one side. Discovery of cheating increased the other side's suspicion, triggering their rearmament, which confirmed the first side's fears, accelerating the cycle. The policy's partial success created instability that fed back into policy failure.",
+      "hidden_question": "Did the treaty's initial success persist, or did the suspicion-rearmament cycle eventually dominate?",
+      "answer_if_Z_before_X": "The suspicion cycle dominated; each side's response to perceived cheating triggered the other's response, creating a self-fulfilling arms race worse than before the treaty.",
+      "answer_if_X_before_Z": "If verification mechanisms contained suspicion, the treaty might have sustained arms reduction. Success depends on whether the feedback loop was interrupted.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0055",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A currency debasement policy (X) was implemented to increase money supply and fund military campaigns (Y). However, merchants raised prices in response (Z), which reduced the currency's purchasing power, forcing the government to debase further to maintain spending, triggering more price increases in a spiral.",
+      "claim": "Currency debasement caused the government to fund its military campaigns.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "FEEDBACK"
+      },
+      "variables": {
+        "X": "Currency debasement (Intervention)",
+        "Y": "Government spending power (Outcome)",
+        "Z": "Price increases and inflation expectations (Feedback Behavior)"
+      },
+      "gold_rationale": "This is a bidirectional feedback loop. Debasement (X) initially increased spending (Y), but merchants raised prices (Z) anticipating further debasement. Higher prices required more debasement to maintain purchasing power, which confirmed merchant expectations, triggering further price increases. The policy created a self-reinforcing inflationary spiral.",
+      "hidden_question": "Did debasement provide lasting spending power, or did the inflation feedback loop eventually dominate?",
+      "answer_if_Z_before_X": "The inflation spiral dominated; each round of debasement triggered price increases that necessitated more debasement. The policy was self-defeating in the long run.",
+      "answer_if_X_before_Z": "If inflation expectations remained anchored, debasement might have provided sustained spending power. Success depends on whether the feedback loop was contained.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0056",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A fortification policy (X) was implemented to defend against nomadic raiders, improving border security (Y). However, the raiders developed siege techniques and organized larger coalitions (Z) to overcome the walls, which prompted even larger fortifications, which prompted even larger raider coalitions, escalating until the defense costs bankrupted the empire.",
+      "claim": "The fortification policy caused border security to improve.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "FEEDBACK"
+      },
+      "variables": {
+        "X": "Fortification policy (Intervention)",
+        "Y": "Border security (Outcome)",
+        "Z": "Raider adaptation and coalition-building (Feedback Behavior)"
+      },
+      "gold_rationale": "This is a bidirectional feedback loop. Fortifications (X) initially improved security (Y), but raiders adapted with new tactics (Z). Stronger walls prompted stronger raider coalitions, which required even stronger walls, creating an escalation spiral. Each defensive success fed back into greater offensive challenges, potentially leaving the empire worse off than before.",
+      "hidden_question": "Did fortifications provide lasting security, or did the escalation spiral eventually dominate?",
+      "answer_if_Z_before_X": "The escalation spiral dominated; each fortification improvement triggered raider adaptations that negated the gains. Security was not durably improved.",
+      "answer_if_X_before_Z": "If raiders couldn't adapt effectively, fortifications might have provided lasting security. Success depends on whether the feedback loop was contained.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0057",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A tariff policy (X) was imposed to protect domestic industries and improve the trade balance (Y). However, trading partners retaliated with their own tariffs (Z), which hurt export industries, prompting calls for more protection, which triggered more retaliation, escalating into a trade war that damaged both economies.",
+      "claim": "The tariff policy caused the trade balance to improve.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "FEEDBACK"
+      },
+      "variables": {
+        "X": "Tariff policy (Intervention)",
+        "Y": "Trade balance (Outcome)",
+        "Z": "Trading partner retaliation (Feedback Behavior)"
+      },
+      "gold_rationale": "This is a bidirectional feedback loop with net negative effect. Tariffs (X) initially protected domestic industries (Y), but trading partners retaliated (Z). Retaliation hurt export industries, creating political pressure for more tariffs to protect them, which triggered more retaliation. The escalation spiral left both sides worse off than free trade would have.",
+      "correct_answer": "The retaliation spiral dominated the intended protection. Each round of tariffs triggered counter-tariffs that negated the gains. The feedback loop created a trade war that damaged the overall economy more than the original trade deficit.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0058",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Among peace treaties that are historically documented (Z), those negotiated by queens (X) appear to have lasted longer (Y) than those negotiated by kings.",
+      "claim": "Having a queen negotiate treaties causes them to last longer.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER"
+      },
+      "variables": {
+        "X": "Queen as negotiator (Exposure)",
+        "Y": "Treaty longevity (Outcome)",
+        "Z": "Treaty being historically documented (Collider)"
+      },
+      "hidden_structure": "Treaties become documented (Z) either through unusual circumstances like female negotiators (X) or through exceptional longevity/importance (Y). Routine short-lived treaties by kings are forgotten; routine treaties by queens are noted for their novelty.",
+      "gold_rationale": "No causal relationship between negotiator gender and treaty duration. Queens negotiating was unusual enough to guarantee documentation regardless of outcome. King-negotiated treaties were only documented if exceptionally important or long-lasting. We observe remarkable queen treaties and only exceptional king treaties, creating spurious correlation.",
+      "correct_answer": "This is collider bias. Queen-negotiated treaties were documented for their novelty; king-negotiated treaties required exceptional longevity to be noted. Among documented treaties, queens appear more successful because the documentation threshold differed.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0059",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Among colonies that achieved lasting independence (Z), those founded by religious dissidents (X) appear to have developed stronger democratic institutions (Y) than those founded for commercial purposes.",
+      "claim": "Religious founding motivation caused colonies to develop stronger democratic institutions.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER"
+      },
+      "variables": {
+        "X": "Religious dissident founding (Exposure)",
+        "Y": "Strong democratic institutions (Outcome)",
+        "Z": "Achieved lasting independence (Collider)"
+      },
+      "hidden_structure": "Colonies achieved lasting independence (Z) through either strong institutions (Y) or other factors like strategic value or large populations (which correlated with commercial founding X). Commercial colonies with weak institutions survived through external factors; religious colonies needed strong institutions to survive.",
+      "gold_rationale": "No causal relationship between founding motivation and institutional quality. Religious colonies with weak institutions failed and disappeared from our sample. Commercial colonies survived through trade value regardless of institutions. Among survivors, religious colonies appear more democratic because only their institutionally strong members survived.",
+      "correct_answer": "This is collider/survivorship bias. Religious colonies without strong institutions didn't achieve lasting independence and aren't in our dataset. Commercial colonies survived via trade value regardless of institutions. Selection into 'successful colonies' creates the spurious correlation.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0060",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Among philosophers whose works survived to the modern era (Z), those who were exiled or persecuted (X) appear to have produced more influential ideas (Y) than those who lived peacefully.",
+      "claim": "Persecution caused philosophers to produce more influential ideas.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER"
+      },
+      "variables": {
+        "X": "Persecution/exile (Exposure)",
+        "Y": "Influential ideas (Outcome)",
+        "Z": "Works survived to modern era (Collider)"
+      },
+      "hidden_structure": "Philosophers' works survive (Z) either through exceptional influence (Y) or through the drama of persecution (X) generating interest. Unremarkable persecuted philosophers are remembered for their suffering; unremarkable peaceful philosophers are forgotten entirely.",
+      "gold_rationale": "No causal relationship between persecution and philosophical influence. Persecuted philosophers were documented for their dramatic lives regardless of idea quality. Peaceful philosophers needed exceptional ideas to be remembered. Among survivors, persecution correlates with influence because documentation thresholds differed.",
+      "correct_answer": "This is collider bias. Persecution guaranteed documentation regardless of intellectual merit. Peaceful philosophers required extraordinary ideas to be remembered. The apparent correlation reflects differential selection into the historical record, not causal influence of suffering on creativity.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0061",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Among artworks that survived from antiquity (Z), those depicting secular subjects (X) appear to be of higher artistic quality (Y) than those depicting religious subjects.",
+      "claim": "Secular subject matter caused ancient artists to produce higher quality work.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "COLLIDER"
+      },
+      "variables": {
+        "X": "Secular subject matter (Exposure)",
+        "Y": "Artistic quality (Outcome)",
+        "Z": "Survived from antiquity (Collider)"
+      },
+      "hidden_structure": "Artworks survive (Z) either through religious preservation in temples/churches (NOT X) or through exceptional quality attracting collectors (Y). Religious art was preserved regardless of quality; secular art required exceptional quality to be kept.",
+      "gold_rationale": "No causal relationship between secular content and artistic quality. This is Berkson's paradox. Religious art was preserved for its sanctity regardless of quality (both good and mediocre religious art survived). Secular art was preserved only if exceptionally valuable (only the best secular art survived). Among survivors, secular art appears higher quality not because secular subjects inspired better work, but because only the best secular art cleared the preservation threshold.",
+      "correct_answer": "This is collider bias. Among surviving art, secular pieces appear higher quality because they needed to be exceptional to survive, while religious art of all quality levels was preserved. The quality difference reflects selection mechanisms, not artistic inspiration from subject matter.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0062",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A resettlement program (X) moved peasants to new farmland, and those who remained in the program showed higher productivity (Y). However, many participants abandoned the program and returned home (Z).",
+      "claim": "The resettlement program caused increased agricultural productivity.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "SELECTION"
+      },
+      "variables": {
+        "X": "Resettlement program (Intervention)",
+        "Y": "Productivity increase (Outcome)",
+        "Z": "Program attrition/abandonment (Post-intervention Selection)"
+      },
+      "gold_rationale": "This is post-intervention selection bias. The program's apparent success (Y) reflects differential attrition - those who failed or struggled left the program (Z), leaving only successful participants to be measured. The remaining 'successes' may reflect selection of capable farmers rather than program effectiveness.",
+      "hidden_question": "Did productivity gains reflect program effectiveness or selection of capable farmers who stayed?",
+      "answer_if_Z_before_X": "High attrition means we only observe successful stayers. The program may have failed most participants while appearing successful among survivors.",
+      "answer_if_X_before_Z": "If attrition was minimal, the measured productivity reflects genuine program impact. Selection bias severity depends on dropout rates.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0063",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A military academy (X) was established, and graduates showed superior battlefield performance (Y). However, many cadets were expelled for poor performance before graduation (Z).",
+      "claim": "The military academy caused improved battlefield performance.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "SELECTION"
+      },
+      "variables": {
+        "X": "Military academy (Intervention)",
+        "Y": "Battlefield performance (Outcome)",
+        "Z": "Expulsion of poor performers (Post-intervention Selection)"
+      },
+      "gold_rationale": "This is post-intervention selection bias. By expelling poor performers (Z), the academy ensured that only capable officers graduated to be measured. Graduate success may reflect selection of talent rather than development of skill. Non-graduates' performance is unobserved.",
+      "hidden_question": "Did the academy develop talent or merely select for pre-existing ability?",
+      "answer_if_Z_before_X": "High expulsion rates mean graduates were pre-selected for ability. The academy may be a filter, not a developer, of military talent.",
+      "answer_if_X_before_Z": "If most cadets graduated, success reflects training impact. The answer depends on the severity of selection.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0064",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A debt relief program (X) was offered to struggling farmers, and participants showed improved economic outcomes (Y). However, only farmers who could navigate the bureaucratic application process received relief (Z).",
+      "claim": "The debt relief program caused farmers to achieve better economic outcomes.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "SELECTION"
+      },
+      "variables": {
+        "X": "Debt relief program (Intervention)",
+        "Y": "Economic improvement (Outcome)",
+        "Z": "Bureaucratic selection of capable applicants (Post-intervention Selection)"
+      },
+      "gold_rationale": "This is selection bias through compliance. Farmers who successfully applied (Z) demonstrated organizational capacity that predicts economic success regardless of debt relief. The program may have selected for capability rather than creating it. Those who needed relief most may have been least able to access it.",
+      "hidden_question": "Did relief cause improvement, or did the application process select farmers with traits predicting success?",
+      "answer_if_Z_before_X": "The application process selected capable farmers; their success reflects pre-existing traits, not program impact.",
+      "answer_if_X_before_Z": "If access was broad, outcomes reflect genuine program impact. Severity depends on how selective the process was.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0065",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "An apprenticeship guild (X) trained young craftsmen, and guild members earned higher wages (Y) than non-members. The guild only admitted applicants who passed a rigorous skills test (Z).",
+      "claim": "Guild apprenticeship caused craftsmen to earn higher wages.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SELECTION"
+      },
+      "variables": {
+        "X": "Guild apprenticeship (Intervention)",
+        "Y": "Higher wages (Outcome)",
+        "Z": "Pre-admission skills test (Selection Mechanism)"
+      },
+      "gold_rationale": "This is selection on pre-existing ability. The guild's admission test (Z) selected for skilled craftsmen who would have earned high wages regardless of membership. Guild membership signals pre-existing skill rather than causing skill development. The wage premium reflects selection, not training.",
+      "correct_answer": "The guild selected skilled craftsmen through testing; their success reflects pre-existing ability. Guild membership is a credential for pre-existing talent, not a cause of skill development. Non-members who would have passed the test but didn't apply are the missing counterfactual.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0066",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Religious tolerance edicts (X) were issued, and religious violence decreased (Y). Historical records indicate the edicts were issued in regions where violence had already begun declining (Z).",
+      "claim": "Tolerance edicts caused religious violence to decrease.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Tolerance edicts (Intervention)",
+        "Y": "Violence decrease (Outcome)",
+        "Z": "Pre-existing violence decline (Ambiguous Variable)"
+      },
+      "gold_rationale": "This may be reverse causation. Tolerance edicts (X) may have been issued because violence was already declining (Z \u2192 X), not vice versa. Rulers issue tolerance edicts when they perceive reconciliation is possible - i.e., when violence has already subsided enough for compromise. The edict may recognize an existing trend rather than create it.",
+      "hidden_question": "Were edicts issued proactively to reduce violence, or reactively because violence was already declining?",
+      "answer_if_Z_before_X": "Violence was already declining before the edicts; rulers formalized an existing peace. The edict followed the trend, not caused it.",
+      "answer_if_X_before_Z": "If edicts preceded violence reduction, the policy may have genuinely caused peace. Causal direction depends on timing.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0067",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Infrastructure investments (X) were made in certain provinces, and those provinces subsequently industrialized (Y). Records show investments were directed to provinces already showing early industrial activity (Z).",
+      "claim": "Infrastructure investment caused provincial industrialization.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Infrastructure investment (Intervention)",
+        "Y": "Industrialization (Outcome)",
+        "Z": "Pre-existing industrial activity (Ambiguous Variable)"
+      },
+      "gold_rationale": "This may be reverse causation. Infrastructure (X) may have been directed to provinces where industry was already emerging (Z \u2192 X). Governments invest where they see potential returns - i.e., where development is already occurring. The investment may have followed industrialization rather than causing it.",
+      "hidden_question": "Did investment target promising regions, or did investment create promise?",
+      "answer_if_Z_before_X": "Early industrial activity attracted investment; provinces were industrializing anyway. The investment followed opportunity, not created it.",
+      "answer_if_X_before_Z": "If investment preceded industrial activity, infrastructure may have genuinely enabled development. Causation depends on sequence.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0068",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "Banking regulations (X) were introduced, and financial stability improved (Y). A reformer proposes implementing the same regulations in unstable economies to stabilize them.",
+      "claim": "Implementing these banking regulations will stabilize currently unstable economies.",
+      "label": "NO",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REVERSE"
+      },
+      "variables": {
+        "X": "Banking regulations (Intervention)",
+        "Y": "Financial stability (Outcome)",
+        "Z": "Pre-existing institutional capacity (Confounder)"
+      },
+      "gold_rationale": "This is reverse causation combined with capacity confounding. Economies that successfully implemented complex regulations (X) were already institutionally mature (Z). Unstable economies lack the regulatory infrastructure to implement the same rules. The regulations work where stability enables them, not vice versa. Exporting the policy to unstable contexts will fail.",
+      "correct_answer": "Stable economies can implement complex regulations; unstable ones cannot. The regulations reflect institutional capacity, not create it. Mandating sophisticated rules in weak institutional environments will produce paper compliance, not genuine stability.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0069",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A currency reform (X) was implemented, and inflation stabilized (Y). Records show that a major silver mine discovery (Z) occurred around the same time.",
+      "claim": "The currency reform caused inflation to stabilize.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Currency reform (Intervention)",
+        "Y": "Inflation stabilization (Outcome)",
+        "Z": "Silver mine discovery (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If the silver discovery increased money supply stability before the reform (tZ < tX), the mine solved the problem regardless of policy. If the reform enabled exploitation of the mine (tX < tZ), policy deserves credit. Without knowing the sequence, causal attribution is impossible.",
+      "hidden_question": "Did the silver discovery precede or follow the currency reform?",
+      "answer_if_Z_before_X": "Silver discovery (Z) stabilized money supply before the reform; the policy took credit for a resource windfall.",
+      "answer_if_X_before_Z": "If the reform created conditions that enabled silver exploitation, policy deserves causal credit for the stabilization.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0070",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L2",
+      "domain": "History",
+      "scenario": "A diplomatic marriage alliance (X) was formed, and peace between the kingdoms lasted for generations (Y). Records indicate both kingdoms were exhausted from a recent devastating war (Z).",
+      "claim": "The diplomatic marriage caused the long peace between kingdoms.",
+      "label": "AMBIGUOUS",
+      "is_ambiguous": true,
+      "trap": {
+        "type": "CONF-MED"
+      },
+      "variables": {
+        "X": "Marriage alliance (Diplomatic Action)",
+        "Y": "Long peace (Outcome)",
+        "Z": "War exhaustion (Ambiguous Variable)"
+      },
+      "gold_rationale": "The causal structure depends on temporal ordering. If war exhaustion (Z) had already made conflict impossible before the marriage (tZ < tX), both sides would have remained at peace regardless. The marriage formalized an existing stalemate. If the marriage created new incentives for peace beyond mere exhaustion (tX < tZ), diplomacy deserves credit.",
+      "hidden_question": "Would peace have persisted without the marriage due to war exhaustion alone?",
+      "answer_if_Z_before_X": "War exhaustion (Z) made both sides incapable of further conflict; peace was inevitable. The marriage was ceremonial, not causal.",
+      "answer_if_X_before_Z": "If the marriage created lasting bonds beyond temporary exhaustion, diplomacy genuinely caused the peace. The answer depends on whether exhaustion alone explains the peace's duration.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0071",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Martin Luther posted his 95 Theses (X) after a papal indulgence seller arrived in a nearby town. The Protestant Reformation fragmented Western Christianity (Y). Claim: 'If Luther had not posted the 95 Theses, the Reformation would not have happened.'",
+      "claim": "If Luther had not posted the 95 Theses, the Protestant Reformation would not have happened.",
+      "label": "CONDITIONAL",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "PREEMPTION",
+        "subtype": "Late_Preemption"
+      },
+      "variables": {
+        "X": "Luther's 95 Theses (Trigger)",
+        "Y": "Protestant Reformation (Outcome)",
+        "Z": "Other potential reformers (Backup Cause)"
+      },
+      "gold_rationale": "The counterfactual claim is CONDITIONAL/DUBIOUS. This is late preemption: even if Luther (X) hadn't acted, backup causes (Z) would likely have produced the same outcome. Western Christianity was a 'powder keg' of discontent - prior reformers (Hus, Wycliffe) had laid groundwork, the printing press had democratized information, and rising nationalism resisted Roman authority. Another reformer would likely have ignited the same conflagration.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0072",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "The Mongols sacked Baghdad and destroyed the House of Wisdom (X) in 1258, ending the Islamic Golden Age. Claim: 'If the Mongols hadn't destroyed the House of Wisdom, the Islamic world would have developed electricity by 1700.'",
+      "claim": "If the House of Wisdom hadn't been destroyed, the Islamic world would have developed electricity by 1700.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONFOUNDING",
+        "subtype": "Cross-world_Confounder"
+      },
+      "variables": {
+        "X": "Destruction of House of Wisdom (Event)",
+        "Y": "Early electricity development (Outcome)",
+        "Z": "Material science, trade networks, economic conditions (Cross-world differences)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to cross-world confounding. The hypothetical world where the House of Wisdom survives differs from the actual world in many more ways than just preserved texts (Z). The Mongol invasion disrupted trade networks, political structures, and economic development. Scientific progress depends on material conditions and experimental methods that texts alone cannot provide. The counterfactual implicitly assumes only one variable changes when many would differ.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0073",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "A sudden fog lifted at the Battle of Salamis (X), revealing the Persian fleet's position to the Greeks. The Persians were decisively defeated (Y). Claim: 'If the fog had persisted, the Persians would have won at Salamis.'",
+      "claim": "If the fog had persisted at Salamis, the Persians would have won the battle.",
+      "label": "VALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "NONE",
+        "subtype": "Valid_Counterfactual"
+      },
+      "variables": {
+        "X": "Fog lifting (Weather Event)",
+        "Y": "Greek Victory (Outcome)",
+        "Z": "Persian numerical superiority (Context)"
+      },
+      "gold_rationale": "The counterfactual claim is VALID. The Persian fleet vastly outnumbered the Greeks and had already won several engagements. The Greeks' only advantage was their knowledge of the narrow straits and the element of surprise. The fog lifting at the crucial moment allowed Themistocles to execute his trap perfectly. In open water or with Persian awareness, the numerical advantage (Z) would likely have been decisive. This is a genuinely valid counterfactual.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0074",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Helen's beauty (X) allegedly caused Paris to abduct her, triggering the Trojan War (Y). Claim: 'If Helen had been less beautiful, the Trojan War would not have happened.'",
+      "claim": "If Helen had been less beautiful, the Trojan War would not have happened.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "PREEMPTION",
+        "subtype": "Late_Preemption"
+      },
+      "variables": {
+        "X": "Helen's Beauty (Trigger)",
+        "Y": "Trojan War (Outcome)",
+        "Z": "Other potential casus belli (Backup Cause)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to late preemption. Even if Helen (X) hadn't been the trigger, backup causes (Z) would likely have produced the same outcome. Archaeological evidence suggests deep structural tensions between Mycenaean Greeks and Troy over control of the strategically vital Dardanelles strait. Trade rivalries, territorial ambitions, and alliance systems made conflict highly probable. Another casus belli would have emerged.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0075",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Leonardo da Vinci designed flying machines (X) in the 15th century but never built working versions. Claim: 'If da Vinci had received proper funding, he would have achieved powered flight by 1520.'",
+      "claim": "If da Vinci had received proper funding, he would have achieved powered flight by 1520.",
+      "label": "CONDITIONAL",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONFOUNDING",
+        "subtype": "Cross-world_Confounder"
+      },
+      "variables": {
+        "X": "Da Vinci's designs and funding (Event)",
+        "Y": "Powered flight (Outcome)",
+        "Z": "Material science, engine technology (Cross-world differences)"
+      },
+      "gold_rationale": "The counterfactual claim is CONDITIONAL/DUBIOUS due to cross-world confounding. A world where da Vinci achieves powered flight differs from the actual world in more ways than just funding (Z). It would require aluminum alloys, internal combustion engines, and materials science that didn't exist. The counterfactual implicitly requires changing many variables, not just one. Even with unlimited resources, da Vinci could not conjure materials that wouldn't be invented for centuries.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0076",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Rising bread prices (X) triggered riots that escalated into the French Revolution (Y). Claim: 'If bread prices had remained stable, the French Revolution would never have happened.'",
+      "claim": "If bread prices had remained stable, the French Revolution would never have happened.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "PREEMPTION",
+        "subtype": "Late_Preemption"
+      },
+      "variables": {
+        "X": "Bread Price Spike (Trigger)",
+        "Y": "French Revolution (Outcome)",
+        "Z": "Other grievances (Backup Cause)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to late preemption. Even if bread prices (X) hadn't spiked, backup causes (Z) would likely have produced the same outcome. France faced a structural fiscal crisis, the Enlightenment had delegitimized absolute monarchy, the bourgeoisie demanded political power, and the aristocracy resisted reform. If bread prices had stabilized, the underlying constitutional crisis over taxation and representation would likely have triggered revolution over a different issue.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0077",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Wilhelm R\u00f6ntgen accidentally left a cathode ray tube running near photographic plates (X), discovering X-rays (Y) in 1895. Claim: 'If R\u00f6ntgen had turned off his equipment properly, X-rays would not have been discovered in 1895.'",
+      "claim": "If R\u00f6ntgen had turned off his equipment, X-rays would not have been discovered in 1895.",
+      "label": "VALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "NONE",
+        "subtype": "Valid_Counterfactual"
+      },
+      "variables": {
+        "X": "Equipment left running (Accident)",
+        "Y": "X-ray Discovery in 1895 (Outcome)",
+        "Z": "Photographic plate exposure (Mechanism)"
+      },
+      "gold_rationale": "The counterfactual claim is VALID. The discovery relied on the specific contingency of the cathode ray tube being left on near photographic materials (X). If R\u00f6ntgen had followed standard shutdown procedures, the plates would not have been exposed and the mysterious rays would not have been noticed that day. This is a genuinely valid counterfactual - the specific 1895 discovery event required this accident.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0078",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Hitler launched Operation Barbarossa in June 1941 (X), and the Wehrmacht was halted at Moscow by winter. Claim: 'If Hitler had invaded in April as originally planned, Germany would have conquered the Soviet Union.'",
+      "claim": "If Hitler had invaded in April 1941 as planned, Germany would have conquered the Soviet Union.",
+      "label": "CONDITIONAL",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONFOUNDING",
+        "subtype": "Cross-world_Confounder"
+      },
+      "variables": {
+        "X": "June invasion timing (Condition)",
+        "Y": "Failure to conquer USSR (Outcome)",
+        "Z": "Soviet response, logistics, industrial relocation (Cross-world differences)"
+      },
+      "gold_rationale": "The counterfactual claim is CONDITIONAL/DUBIOUS due to cross-world confounding. A world where Germany conquers the USSR differs from the actual world in many more ways than just invasion timing (Z). It would require different Soviet responses, different logistical constraints, and different industrial outcomes. The USSR's vast territory exceeded horse-drawn logistics capacity regardless of season - Charles XII, Napoleon, and Hitler all failed. The counterfactual oversimplifies a complex system.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0079",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "The Titanic struck an iceberg (X) and sank in 1912 (Y). Claim: 'If the lookouts had spotted the iceberg earlier, the Titanic would have completed its voyage safely.'",
+      "claim": "If the lookouts had spotted the iceberg earlier, the Titanic would have completed its voyage safely.",
+      "label": "VALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "NONE",
+        "subtype": "Valid_Counterfactual"
+      },
+      "variables": {
+        "X": "Iceberg collision (Event)",
+        "Y": "Sinking (Outcome)",
+        "Z": "Ship's structural integrity (Physical Fact)"
+      },
+      "gold_rationale": "The counterfactual claim is VALID. The Titanic was a seaworthy vessel that had successfully completed sea trials. Physics dictates that without the specific hull damage from the iceberg collision (X), the ship would have remained buoyant. Earlier detection would have allowed course correction. This is a genuinely valid counterfactual - the sinking was caused entirely by the collision damage.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0080",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Heavy rain the night before Waterloo (X) delayed Napoleon's attack, allowing Prussian reinforcements to arrive. Napoleon was defeated (Y). Claim: 'If it hadn't rained, Napoleon would have won at Waterloo.'",
+      "claim": "If it hadn't rained before Waterloo, Napoleon would have won the battle.",
+      "label": "CONDITIONAL",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONFOUNDING",
+        "subtype": "Cross-world_Confounder"
+      },
+      "variables": {
+        "X": "Rain delay (Weather Event)",
+        "Y": "Napoleon's Defeat (Outcome)",
+        "Z": "Coalition forces, French exhaustion, Wellington's position (Cross-world differences)"
+      },
+      "gold_rationale": "The counterfactual claim is CONDITIONAL due to cross-world confounding. A world where Napoleon wins Waterloo differs from the actual world in more ways than just weather (Z). It would require different coalition responses, different French army conditions, and different battlefield outcomes. Wellington's defensive position was formidable, the French army was exhausted, and even without Prussian arrival, the Anglo-Allied force was substantial. The counterfactual oversimplifies.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0081",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "A Roman soldier's sword struck Caesar first (X) during the assassination. Caesar died (Y). Meanwhile, Brutus and 22 other senators were also stabbing him (Z). Claim: 'If the first soldier hadn't struck, Caesar would have survived.'",
+      "claim": "If the first blow hadn't been struck, Caesar would have survived the Ides of March.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "PREEMPTION",
+        "subtype": "Early_Preemption"
+      },
+      "variables": {
+        "X": "First sword strike (Initial Cause)",
+        "Y": "Caesar's death (Outcome)",
+        "Z": "Other 23 conspirators' strikes (Preempted Causes)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to early preemption. The first blow (X) was not necessary for the outcome because the other 23 conspirators (Z) were simultaneously acting. Even if the first strike had missed, the other blows would have killed Caesar. The actual first cause preempted the backup causes from being the 'cause of death,' but those backup causes would have produced the same outcome. Caesar received 23 stab wounds - any subset would have been lethal.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0082",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "The first wave of plague ships arrived in Sicily in 1347 (X), spreading the Black Death across Europe (Y). Other infected ships from the same Genoese trading post were also en route (Z). Claim: 'If those first ships had been turned away, Europe would have been spared the Black Death.'",
+      "claim": "If the first plague ships had been turned away from Sicily, Europe would have been spared the Black Death.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "PREEMPTION",
+        "subtype": "Early_Preemption"
+      },
+      "variables": {
+        "X": "First plague ships landing (Initial Cause)",
+        "Y": "Black Death in Europe (Outcome)",
+        "Z": "Other infected ships and trade routes (Preempted Causes)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to early preemption. The first ships (X) were not the only vector - other infected ships (Z) were already sailing from Caffa to various Mediterranean ports. The plague was spreading along multiple trade routes simultaneously. Even if Sicily had turned away the first ships, the disease would have arrived via Marseille, Venice, or Constantinople. The first arrival preempted other routes from being the 'first,' but those routes would have spread the plague regardless.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0083",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Historians study Alexander the Great's early death (Y) and ask: 'What if Alexander had lived to old age (X)? Would the Hellenistic empires have remained unified?' This question is prompted by observing that his empire fragmented after his death.",
+      "claim": "If Alexander had lived longer, his empire would have remained unified.",
+      "label": "CONDITIONAL",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REVERSE",
+        "subtype": "Outcome-dependent_Worlds"
+      },
+      "variables": {
+        "X": "Alexander's longevity (Counterfactual)",
+        "Y": "Empire fragmentation (Observed Outcome)",
+        "Z": "Observation of fragmentation prompts the question"
+      },
+      "gold_rationale": "The counterfactual claim is CONDITIONAL due to outcome-dependent world selection. We only ask 'what if Alexander lived?' BECAUSE we observed that his empire fragmented (Y). This constrains our counterfactual reasoning - we're selecting the question based on the outcome. If the empire had remained unified under his generals, we wouldn't ask this counterfactual. The selection of which counterfactuals to consider is driven by observed outcomes, biasing our historical imagination.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0084",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "The Hindenburg disaster (Y) is famous, and historians ask: 'What if the Hindenburg hadn't crashed (X)? Would airships have dominated aviation?' We ask this because the disaster ended the airship era.",
+      "claim": "If the Hindenburg hadn't crashed, airships would have dominated 20th-century aviation.",
+      "label": "CONDITIONAL",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "REVERSE",
+        "subtype": "Outcome-dependent_Worlds"
+      },
+      "variables": {
+        "X": "Hindenburg survival (Counterfactual)",
+        "Y": "End of airship era (Observed Outcome)",
+        "Z": "Selection of counterfactual prompted by dramatic outcome"
+      },
+      "gold_rationale": "The counterfactual claim is CONDITIONAL due to outcome-dependent world selection. We only ask 'what if Hindenburg survived?' BECAUSE the disaster dramatically ended the airship era (Y). But airplanes were already proving faster and more practical. The R101 disaster had already damaged British airship programs. We selectively consider counterfactuals about dramatic failures while ignoring the structural trends (airplane superiority) that would have marginalized airships regardless. Our counterfactual imagination is constrained by what actually happened.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0085",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "A historian asks: 'Would the patient have survived (Y) if they hadn't received the experimental treatment (X)?' while holding constant that the patient showed signs of recovery (Z) before death.",
+      "claim": "The patient would have survived without the experimental treatment, given that recovery was beginning.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONF-MED",
+        "subtype": "Mediator_Fixing_Error"
+      },
+      "variables": {
+        "X": "Experimental treatment (Intervention)",
+        "Y": "Patient survival (Outcome)",
+        "Z": "Signs of recovery (Mediator)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to mediator fixing error. The question holds 'signs of recovery' (Z) constant while asking what would happen without treatment (X). But recovery signs may have been CAUSED by the treatment - you cannot logically hold the mediator constant while removing its cause. In the counterfactual world without treatment, recovery signs might not have appeared. This is a fundamental error in counterfactual reasoning: fixing a variable that is downstream of the intervention.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0086",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "An economist asks: 'Would the economy have grown (Y) without the New Deal (X)?' while holding constant the increased consumer confidence (Z) that emerged during the 1930s.",
+      "claim": "The economy would have recovered without the New Deal, given that consumer confidence was rising.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "CONF-MED",
+        "subtype": "Mediator_Fixing_Error"
+      },
+      "variables": {
+        "X": "New Deal policies (Intervention)",
+        "Y": "Economic recovery (Outcome)",
+        "Z": "Consumer confidence (Mediator)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to mediator fixing error. The question holds 'consumer confidence' (Z) constant while removing the New Deal (X). But consumer confidence may have been CAUSED by New Deal programs (bank guarantees, employment programs, social security). In a counterfactual world without the New Deal, confidence might have remained low. You cannot evaluate a policy's effect while holding constant variables that the policy itself may have changed.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0087",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "A small policy change in Roman grain subsidies (X) in 100 BCE is proposed. Claim: 'This minor adjustment would have prevented the fall of the Western Roman Empire (Y) 500 years later.'",
+      "claim": "A minor grain policy change in 100 BCE would have prevented Rome's fall in 476 CE.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "FEEDBACK",
+        "subtype": "Dynamic_World_Divergence"
+      },
+      "variables": {
+        "X": "Minor policy change (Small Intervention)",
+        "Y": "Empire's fate 500 years later (Outcome)",
+        "Z": "Centuries of complex interactions (Feedback System)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to dynamic world divergence. In a complex system with feedback loops (Z), a small change 500 years before the outcome would trigger cascading effects that make the counterfactual world radically unpredictable. The 'butterfly effect' means we cannot trace a minor 100 BCE policy change to 476 CE outcomes - too many intervening events, decisions, and feedback loops would have altered the trajectory in unknowable ways. Long-horizon counterfactuals in complex systems are epistemically intractable.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0088",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "A historian argues: 'If the Chinese had continued Zheng He's voyages (X) in 1433, China would have colonized the Americas before Columbus.' This involves a 60-year counterfactual projection.",
+      "claim": "If China had continued Zheng He's voyages, China would have colonized the Americas by 1492.",
+      "label": "CONDITIONAL",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "FEEDBACK",
+        "subtype": "Dynamic_World_Divergence"
+      },
+      "variables": {
+        "X": "Continued voyages (Counterfactual)",
+        "Y": "Chinese colonization of Americas (Outcome)",
+        "Z": "60 years of political, economic, technological changes (Feedback System)"
+      },
+      "gold_rationale": "The counterfactual claim is CONDITIONAL due to dynamic world divergence. The Ming dynasty's decision to end voyages was embedded in a complex political-economic system with feedback loops (Z). Continuing the voyages would have altered court politics, resource allocation, military priorities, and foreign relations in unpredictable ways over 60 years. We cannot simply extrapolate 'more voyages \u2192 colonization' because the system dynamics would have evolved differently. The claim oversimplifies a complex adaptive system.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0089",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Among soldiers who survived the Battle of the Somme (Z), historians ask: 'Would these survivors have lived (Y) if the battle tactics had been different (X)?'",
+      "claim": "If tactics had been different, these specific soldiers would have survived.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SELECTION",
+        "subtype": "Counterfactual_Conditioning"
+      },
+      "variables": {
+        "X": "Different tactics (Counterfactual)",
+        "Y": "Soldier survival (Outcome)",
+        "Z": "Conditioning on actual survivors (Selection)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to counterfactual conditioning. By asking 'would these survivors have lived?' we condition on who actually survived (Z). But in the counterfactual world with different tactics, a DIFFERENT set of soldiers might have survived. The soldiers who survived the actual battle might have died under different tactics, and vice versa. Conditioning on survival when asking counterfactuals about survival creates a logical error - we're asking about a fixed group whose membership would change in the counterfactual.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    },
+    {
+      "id": "F1-0090",
+      "bucket": "Bucket-Assignment1-F1F",
+      "pearl_level": "L3",
+      "domain": "History",
+      "scenario": "Among civilizations that survived to the modern era (Z), historians ask: 'Would these civilizations have developed democracy (Y) if they had been conquered by Rome (X)?'",
+      "claim": "If these surviving civilizations had been conquered by Rome, they would have developed democracy.",
+      "label": "INVALID",
+      "is_ambiguous": false,
+      "trap": {
+        "type": "SELECTION",
+        "subtype": "Counterfactual_Conditioning"
+      },
+      "variables": {
+        "X": "Roman conquest (Counterfactual)",
+        "Y": "Democratic development (Outcome)",
+        "Z": "Conditioning on civilizations that survived (Selection)"
+      },
+      "gold_rationale": "The counterfactual claim is INVALID due to counterfactual conditioning. By asking about 'civilizations that survived to the modern era' (Z), we condition on a selection criterion. But Roman conquest would have altered WHICH civilizations survived - some might have been absorbed, destroyed, or transformed beyond recognition. The set of 'surviving civilizations' would be different in the counterfactual world. We cannot ask counterfactuals about a fixed group when the group's composition depends on the counterfactual scenario.",
+      "annotation": {
+        "author": "Mingyang",
+        "num_annotators": 1,
+        "adjudicated": true
+      }
+    }
+  ]
+}

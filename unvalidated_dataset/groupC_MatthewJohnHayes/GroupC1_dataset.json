@@ -1,0 +1,2598 @@
+[
+  {
+    "id": "7.21-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A school district reports its highest ever bullying rates (X) in the 2024 academic year. In response, the board mandates a new 'Digital Citizenship' seminar (Y) for all students. The following year, reported bullying incidents drop by 15%. The board claims the seminar was a resounding success.",
+    "claim": "The Digital Citizenship seminar likely did not cause the 15% reduction in bullying, as the drop may be attributed to natural variance.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Regression to Mean",
+      "subtype": "Intervention at Peak"
+    },
+    "variables": {
+      "X": "Record high bullying rate",
+      "Y": "Digital Citizenship seminar",
+      "Z": [
+        "Natural variance",
+        "Regression to the mean"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Intervention at Peak' trap. Since the seminar was implemented during an extreme outlier year (X), a 15% drop is statistically expected due to regression toward the mean (Z) regardless of the seminar's effectiveness. Attributing the drop to the seminar without a control group ignores natural fluctuations in behavioral data.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.21-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A state experienced an unprecedented spike in forest fires (X) during a record-breaking drought year. The legislature passed an emergency 'Brush Clearing Act' (Y) the following spring. The next summer, forest fires decreased by 40%. Politicians credit the Act for the improvement.",
+    "claim": "The 40% reduction in forest fires likely reflects a regression toward the mean rather than the causal impact of the Brush Clearing Act.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Regression to Mean",
+      "subtype": "Intervention at Peak"
+    },
+    "variables": {
+      "X": "Record forest fire year",
+      "Y": "Brush Clearing Act",
+      "Z": [
+        "Climatic variance",
+        "Regression to the mean"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Intervention at Peak' fallacy. Since the Act (Y) was implemented immediately after a record-breaking outlier year (X), a significant decrease in fires is statistically expected as environmental conditions revert toward the long-term average (Z). Attributing the 40% drop primarily to the legislation ignores the role of natural climatic variance.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.22-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A study of high-profile medical malpractice settlements (X) shows that 95% of the physicians involved had received negative peer reviews (Y) in the months leading up to the settlement. A hospital administrator claims negative peer reviews are a near-certain predictor of legal liability.",
+    "claim": "Physicians with negative peer reviews are significantly more likely to face a malpractice settlement than physicians with positive reviews.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Selection Bias",
+      "subtype": "Sampling-on-the-Outcome"
+    },
+    "variables": {
+      "X": "Malpractice settlements",
+      "Y": "Negative peer reviews",
+      "Z": [
+        "Base rate of reviews",
+        "Selection on the dependent variable"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the study only provides the percentage of physicians with negative reviews who *reached a settlement* (sampling on the outcome). To determine if these reviews are a significant predictor of liability, we must also know the base rate of negative reviews among physicians who never face malpractice claims. Without this comparison group, we cannot determine if negative reviews are a unique signal or a common occurrence across the entire profession.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.22-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "In a corporate fraud investigation, investigators find that employees who confessed (X) were 90% likely to have attended 'ethics retraining' (Y) earlier that year. The CEO concludes that the ethics program is effectively causing employees to admit to wrongdoing.",
+    "claim": "The ethics retraining program causes employees to confess to fraud.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Selection Bias",
+      "subtype": "Post-Event Inflation"
+    },
+    "variables": {
+      "X": "Confession of fraud",
+      "Y": "Ethics retraining attendance",
+      "Z": ["Mandatory assignment based on suspicion"]
+    },
+    "gold_rationale": "The relationship is ambiguous because the selection criteria for the retraining are unknown. If the company targeted suspected employees for the training first, the high correlation is a result of selection bias rather than the program's efficacy. Without knowing if the training preceded the suspicion, causality cannot be established.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.23-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A law firm's algorithm predicts that 90% of contract disputes it takes on (X) will result in a favorable settlement (Y). The firm claims the algorithm is a superior tool for predicting legal outcomes across all possible cases.",
+    "claim": "The algorithm's 90% success rate would remain consistent if applied to the contract disputes that the firm currently rejects.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Selection Bias",
+      "subtype": "Selective Labels"
+    },
+    "variables": {
+      "X": "Cases accepted by the firm",
+      "Y": "Favorable settlement",
+      "Z": [
+        "Pre-screening by senior partners",
+        "Unobserved outcome data"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the dataset suffers from 'Selective Labels.' We only observe outcomes (Y) for cases that passed the pre-screening process (X), which usually filters for high-merit disputes. Without outcome data for the rejected cases, it is impossible to verify or deny if the algorithm's accuracy would hold for a broader, unselected population. The performance on the 'rejected' group remains an unobserved counterfactual.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.23-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "An AI tool used by a parole board shows an 80% success rate (Y) in predicting which inmates will not reoffend if granted early release (X). The tool was trained using data from a pilot program that only included inmates from minimum-security facilities.",
+    "claim": "The 80% success rate likely overstates the tool's effectiveness for the general prison population because the training data was limited to a pre-selected low-risk group.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection Bias",
+      "subtype": "Selective Labels"
+    },
+    "variables": {
+      "X": "Early release decision",
+      "Y": "No reoffending",
+      "Z": [
+        "Minimum-security status (low-risk baseline)"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it identifies the 'Selective Labels' trap. The AI's success rate (Y) is based on outcomes for minimum-security inmates, who represent a pre-screened low-risk baseline (Z). Since outcomes for high-security inmates were never observed in the training data, the tool's performance cannot be reliably extrapolated to the full population without accounting for this selection bias.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.24-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Counties with high property tax rates (X) often have the highest-funded public schools (Y). A policy advocate concludes that raising property taxes is the most effective way to improve school funding.",
+    "claim": "Raising property taxes (X) would result in a greater increase in school funding (Y) for a low-income county than receiving a federal grant of an equivalent dollar amount.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Reverse Causation",
+      "subtype": "Policy Response"
+    },
+    "variables": {
+      "X": "Property tax rate",
+      "Y": "Public school funding",
+      "Z": [
+        "High property values",
+        "Community demand"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario only establishes a cross-sectional correlation between existing tax rates and funding levels. It provides no data on the marginal impact of tax increases in low-income areas versus external grants. Without observing how different funding mechanisms perform in the same environment, the claim that tax hikes are 'more effective' than other interventions is underdetermined.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.24-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Cities with the most restrictive zoning laws (X) also tend to have the highest housing prices (Y). An urban planner claims that the zoning laws are the primary reason housing is expensive.",
+    "claim": "Restrictive zoning laws cause high housing prices.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Reverse Causation",
+      "subtype": "Policy Response"
+    },
+    "variables": {
+      "X": "Zoning law restrictiveness",
+      "Y": "Housing prices",
+      "Z": ["Pre-existing high demand"]
+    },
+    "gold_rationale": "Causality is ambiguous because of potential reverse causation: high-demand cities with soaring prices often adopt restrictive zoning to protect property values. Without a before-and-after analysis within a single city, it is unclear if the law caused the price hike or if the price hike led to the law's adoption.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.25-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Clients who complete a voluntary 'Financial Literacy' program (X) offered by a bank have 50% fewer loan defaults (Y) than those who don't. The bank claims the program is highly effective at reducing default risk.",
+    "claim": "The 50% reduction in loan defaults likely overstates the program's actual effectiveness because it conflates the training with the inherent financial responsibility of those who chose to participate.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection Bias",
+      "subtype": "Voluntary Participation"
+    },
+    "variables": {
+      "X": "Program completion",
+      "Y": "Lower loan defaults",
+      "Z": [
+        "Inherent financial responsibility",
+        "Motivation"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Voluntary Participation' trap. In a voluntary program, clients with high levels of inherent financial responsibility and motivation (Z) are more likely to self-select into the training (X). Since these traits independently predict lower default rates (Y), the 40% gap likely reflects these pre-existing participant characteristics rather than the pure causal effect of the program content.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.25-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L1",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Law students who attend optional 'Exam Prep' sessions (X) achieve a 30% higher passing rate on the bar exam (Y) than those who do not attend. The dean credits the sessions for student success.",
+    "claim": "The 30% higher passing rate likely overstates the causal impact of the Exam Prep sessions because students with superior study habits and higher motivation are more likely to self-select into the optional sessions.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection Bias",
+      "subtype": "Voluntary Participation"
+    },
+    "variables": {
+      "X": "Session attendance",
+      "Y": "Bar exam success",
+      "Z": [
+        "Study habits",
+        "Pre-existing knowledge",
+        "Motivation"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Voluntary Participation' trap. In an optional program, students with better study habits, higher motivation, or greater pre-existing knowledge (Z) are more likely to attend the sessions (X). Since these traits independently predict success on the bar exam (Y), the 30% gap conflates the actual benefit of the sessions with the favorable characteristics of the self-selected group.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.1-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A university implemented a mandatory 'Academic Integrity' software (X). Simultaneously, they doubled the number of teaching assistants (Z) to monitor exam halls. Plagiarism cases dropped by 25% (Y). The software provider claims the software is responsible for the drop.",
+    "claim": "The 25% drop in plagiarism is a compound effect that cannot be attributed solely to the Academic Integrity software because the increase in teaching assistants occurred simultaneously.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Bundled Intervention"
+    },
+    "variables": {
+      "X": "Academic Integrity software",
+      "Y": "Drop in plagiarism",
+      "Z": [
+        "Increased teaching assistants"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it identifies the 'Bundled Intervention' problem. When two interventions—the software (X) and human monitoring (Z)—are deployed at the same time, their individual effects on the outcome (Y) are confounded. Attributing the entire 25% drop to the software alone is statistically invalid, as both measures likely contributed to the deterrence effect.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.1-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A transportation department installed smart traffic lights (X) and reduced the speed limit (Z) on a major boulevard at the same time. Traffic accidents fell by 15% (Y). The city claims the smart lights made the road safer.",
+    "claim": "The installation of smart traffic lights contributed more significantly to the 15% reduction in accidents than the reduction in the speed limit.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Bundled Intervention"
+    },
+    "variables": {
+      "X": "Smart traffic lights",
+      "Y": "Accident reduction",
+      "Z": [
+        "Reduced speed limits"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario describes a 'Bundled Intervention' where both the lights (X) and the speed limit (Z) were changed simultaneously. Without additional data from a control environment where only one of these variables was modified, it is impossible to determine the relative weight of each intervention's contribution to the 15% reduction. The comparative impact remains an unobserved and underdetermined counterfactual.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.10-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A sales executive reported sexual harassment by a manager (X) and was put on a Performance Improvement Plan (Z) two days later, eventually leading to termination (Y). The executive had exceeded all sales targets for the previous five years.",
+    "claim": "The executive's objective performance remained at 'exceeds targets' levels during the period between the harassment report and the final termination.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Pretext / Temporal Proximity"
+    },
+    "variables": {
+      "X": "Harassment report",
+      "Y": "Termination",
+      "Z": [
+        "Alleged poor performance"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario only provides historical performance data (the previous five years). While the temporal proximity between the report (X) and the PIP (Z) strongly suggests pretext, we lack documented evidence of the executive's actual output during the specific terminal period. Without observing if performance actually declined or remained stable under the pressure of the PIP, the claim is an unverified assertion of fact.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.10-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "An accountant pointed out a tax discrepancy to the CFO (X). Within a week, the accountant was reassigned to a lower-level role (Y) for 'lack of team synergy' (Z). Prior reviews described the accountant as a 'collaborative leader.'",
+    "claim": "The 'lack of team synergy' is likely a pretextual reason for the reassignment, given the temporal proximity to the tax report and the accountant's history of collaboration.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Pretext / Temporal Proximity"
+    },
+    "variables": {
+      "X": "Tax discrepancy report",
+      "Y": "Demotion/Reassignment",
+      "Z": [
+        "Lack of team synergy"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Pretext' trap. When a negative employment action (Y) occurs immediately following a protected activity (X) and relies on a justification (Z) that directly contradicts the employee's documented performance history, the stated reason is legally and logically viewed as a pretext for retaliation. The proximity in time serves as a strong indicator of a causal link between the report and the demotion.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.11-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city observes that e-scooters (X) are involved in 3x more sidewalk accidents (Y) than bicycles. They ban e-scooters. Critics note that e-scooter companies target younger, more risk-prone riders (Z) who often ignore traffic laws regardless of the vehicle type.",
+    "claim": "The 3x higher accident rate for e-scooters likely reflects the behavior of the risk-prone demographics who choose to use them, rather than an inherent safety flaw in the vehicle itself.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Owner Selection Bias"
+    },
+    "variables": {
+      "X": "E-scooter usage",
+      "Y": "Sidewalk accidents",
+      "Z": [
+        "Risk-prone rider demographics"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it identifies the 'Owner Selection Bias' trap. In this scenario, the e-scooter (X) acts as a marker for a specific sub-population of risk-prone riders (Z). Since these individuals are predisposed to reckless behavior, the correlation between e-scooter use and accidents (Y) is confounded by rider intent. Simply banning the vehicle (X) may not eliminate the accidents if the same high-risk demographic shifts their behavior to other modes of transport.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.11-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Statistics show that owners of red sports cars (X) receive significantly more speeding tickets (Y) than owners of white sedans. An insurance company argues that the car color causes the speeding behavior.",
+    "claim": "Changing the car's color to white would reduce the owner's likelihood of speeding.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Selection Bias"
+    },
+    "variables": {
+      "X": "Car color/model",
+      "Y": "Speeding tickets",
+      "Z": ["Driver personality/preference for speed"]
+    },
+    "gold_rationale": "The driver's preference for speed (Z) causes both the selection of a red sports car (X) and the speeding behavior (Y). The car color is a marker for the driver's pre-existing disposition; changing the marker does not alter the underlying causal driver of the tickets.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.12-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "In a residential complex of 500 units, 4 children in the same building wing developed a rare allergy (Y). The parents sue the building management for recent carpet cleaning (X). The allergy rate in that wing is 20x the national average.",
+    "claim": "The carpet cleaning caused the allergy cluster.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Clustering",
+      "subtype": "Texas Sharpshooter Fallacy"
+    },
+    "variables": {
+      "X": "Carpet cleaning",
+      "Y": "Allergy cluster",
+      "Z": ["Random distribution / Small sample size"]
+    },
+    "gold_rationale": "In large populations with many subdivisions, clusters naturally occur by chance. Drawing a boundary around a single building wing after the cases are found is the 'Texas Sharpshooter Fallacy.' Without a biological mechanism, the cluster is statistically consistent with random variance.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.12-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A tech company notes that 8 out of 10 major server crashes (Y) occurred on a Tuesday. The IT manager concludes that Tuesday-specific maintenance (X) is the culprit, even though the same maintenance occurs daily.",
+    "claim": "Tuesday maintenance causes the server crashes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Clustering",
+      "subtype": "Texas Sharpshooter Fallacy"
+    },
+    "variables": {
+      "X": "Tuesday maintenance",
+      "Y": "Server crashes",
+      "Z": ["Statistical noise / Post-hoc grouping"]
+    },
+    "gold_rationale": "The manager is selecting a timeframe because the crashes happened to cluster there. In a random distribution of events, some days will appear more 'dangerous' than others by chance. Attributing causality without a distinct Tuesday-specific difference in the process is a failure to account for random clustering.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.13-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Public Defender A's clients are convicted 85% of the time (Y), while Public Defender B's clients are convicted 30% of the time. An auditor claims Defender A is incompetent. Records show Defender A is assigned to 'Serious Felony' dockets (Z), while B handles 'Traffic and Petty Crime.'",
+    "claim": "The difference in conviction rates between Defender A and Defender B likely reflects the disparity in case severity and evidence strength between their respective dockets.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Docket Selection"
+    },
+    "variables": {
+      "X": "Defender ID",
+      "Y": "Conviction rate",
+      "Z": [
+        "Case severity / Evidence strength"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it identifies the 'Docket Selection' trap. The conviction rates (Y) are heavily influenced by the nature of the assigned cases (Z). Since Defender A handles serious felonies where evidence is often more robust and the legal stakes are higher, a higher conviction rate is statistically expected compared to Defender B's traffic and petty crime cases. Attributing the 85% rate to incompetence without accounting for these confounding factors is causally flawed.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.13-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "An emergency room doctor (X) has a patient mortality rate (Y) of 12%, while a general practitioner has a rate of 0.01%. A regulator suggests the ER doctor is providing lower quality care.",
+    "claim": "If the ER doctor and the general practitioner were to treat the same group of patients with identical health conditions, their mortality rates would likely converge.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Case Mix / Severity Bias"
+    },
+    "variables": {
+      "X": "Doctor Type",
+      "Y": "Mortality rate",
+      "Z": [
+        "Patient severity at intake"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario only provides raw mortality data, which is heavily confounded by Case Mix Bias (Z). While we know the ER doctor treats more severe cases, we lack the data to determine if the 12% rate is 'good' or 'bad' for that specific patient population. Without observing how both doctors perform on a standardized, identical group of patients, the claim that their outcomes would converge is an underdetermined counterfactual.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.14-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A prestigious law firm recruits 50% of its associates from 'Tier 1' law schools (X) but only 5% from 'Tier 3' schools. The firm argues that Tier 1 graduates have higher class ranks (Z). Critics argue that Tier 1 admission and high class rank are both driven by pre-existing socio-economic advantages (Wealth).",
+    "claim": "Controlling for class rank (Z) fails to prove that hiring is unbiased because both school prestige (X) and academic rank (Z) are likely influenced by the same underlying socio-economic advantages.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Wealth Confounding"
+    },
+    "variables": {
+      "X": "Law school prestige",
+      "Y": "Hiring rate",
+      "Z": [
+        "Class rank / Academic performance"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Wealth Confounding' trap. When an underlying factor like socio-economic status (Wealth) influences both the intervention/predictor (X) and the mediator (Z), simply controlling for the mediator does not remove the original bias. Because wealth facilitates both entry into prestigious schools and the resources necessary to achieve high ranks, class rank is a confounded variable that cannot be used to prove the firm's hiring process is meritocratic and independent of socio-economic status.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.14-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A tech giant predominantly hires candidates who completed expensive 'Elite Coding Bootcamps' (X). The company claims these candidates perform better on technical interviews (Z). Advocacy groups point out that only wealthy individuals can afford both the bootcamps and the time off for intensive technical interview prep.",
+    "claim": "The technical interview score (Z) is a neutral meritocratic filter that justifies hiring bootcamp graduates (X).",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Wealth Confounding"
+    },
+    "variables": {
+      "X": "Bootcamp completion",
+      "Y": "Hiring decision",
+      "Z": ["Technical interview score"]
+    },
+    "gold_rationale": "The 'merit' variable (Z) is privilege-driven. Family wealth facilitates both the ability to attend the bootcamp (X) and the resources (time, private coaching) required to excel at the interview (Z). The company is selecting for socio-economic status disguised as technical merit; controlling for the interview score does not eliminate the advantage of wealth.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.15-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city mandated that all food inspectors use a digital logging app (X) to record safety violations. The number of reported health code violations (Y) increased by 40% the following year. The Mayor claims the restaurants have become less sanitary.",
+    "claim": "The digital logging app revealed that restaurants have become 40% less sanitary.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Detection Bias / Measurement Error"
+    },
+    "variables": {
+      "X": "Digital logging app",
+      "Y": "Recorded violations",
+      "Z": ["Reporting efficiency / Ease of use"]
+    },
+    "gold_rationale": "This is detection bias. The app (X) likely increased the ease and frequency of reporting (Z) rather than the actual number of health violations occurring. The rise in Y reflects the elimination of under-reporting from previous paper-based systems, not a decrease in restaurant sanitation.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.15-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "After a hospital installed advanced monitoring sensors (X) in patient rooms, the recorded frequency of 'minor heart rate anomalies' (Y) tripled. The board is concerned that the quality of nursing care has declined.",
+    "claim": "The decline in nursing care quality caused the triple increase in heart anomalies.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Detection Bias / Measurement Error"
+    },
+    "variables": {
+      "X": "Advanced sensors",
+      "Y": "Recorded heart anomalies",
+      "Z": ["Sensor sensitivity / Data capture rate"]
+    },
+    "gold_rationale": "Better sensors find more signals. The increase in recorded anomalies (Y) is a result of the increased sensitivity of the new equipment (X), which detects issues that previous monitors ignored or missed. The data reflects better measurement (Z), not a decline in actual patient health or nursing quality.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.16-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A state publishes the 'Success Rate' of public defenders based on case dismissals. Attorney D has the highest dismissal rate in the state. Colleagues claim D only takes on simple misdemeanor cases (Z) and refuses complex felonies to maintain a perfect score (Y).",
+    "claim": "Attorney D would maintain a significantly higher-than-average dismissal rate if they were required to accept a random selection of complex felony cases.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Goodhart",
+      "subtype": "Gaming the Metric"
+    },
+    "variables": {
+      "X": "Public dismissal scorecards",
+      "Y": "Attorney dismissal rate",
+      "Z": [
+        "Case cherry-picking"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the current dismissal rate (Y) is confounded by 'Gaming the Metric' (Z). Since Attorney D selectively chooses simple cases where dismissals are easier to obtain, we lack any data on their performance in the complex felony category. Without observing D's legal skill in a non-selected environment, it is impossible to determine if their high score is a result of superior ability or merely a result of the cherry-picking strategy.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.16-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A police department began ranking precincts by the number of 'successful arrests' (Y). Precinct P suddenly reported a 50% increase in arrests. However, internal audits found that officers were now arresting people for minor technicalities (Z) they previously handled with warnings.",
+    "claim": "The ranking system (X) successfully increased precinct efficiency in catching criminals.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Goodhart",
+      "subtype": "Gaming the Metric"
+    },
+    "variables": {
+      "X": "Arrest-based rankings",
+      "Y": "Successful arrest count",
+      "Z": ["Lowering threshold for arrest"]
+    },
+    "gold_rationale": "The ranking system induced a change in officer behavior (Z) to hit the metric target (Y). By arresting for minor issues that don't improve public safety, the metric no longer reflects 'efficiency' but rather 'strategic reporting.' The metric became the target and lost its value as an indicator of real performance.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.17-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city mandated that all bicyclists wear high-visibility vests (X). While cyclist injuries from cars fell, the number of cyclist-on-pedestrian collisions (Y) rose. Analysts suggest cyclists feel so safe they are now riding faster and more aggressively (Z) on sidewalks.",
+    "claim": "The vest mandate likely triggered risk compensation, where the perceived safety of the vests (X) led cyclists to adopt riskier riding behaviors (Z) that increased accidents with pedestrians (Y).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Feedback",
+      "subtype": "Peltzman Effect / Risk Compensation"
+    },
+    "variables": {
+      "X": "High-visibility vest mandate",
+      "Y": "Pedestrian collisions",
+      "Z": [
+        "Aggressive/Faster riding behavior"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Peltzman Effect' trap. When individuals feel more protected by a safety intervention (X), they often adjust their behavior (Z) to maintain their preferred level of risk, which can lead to new types of accidents (Y). The rise in pedestrian collisions following the decrease in car injuries suggests that the safety gain from the vests was at least partially offset by behavioral changes that externalized risk to more vulnerable sidewalk users.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.17-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A factory installed automated safety shut-offs (X) on its machines. Injury rates remained the same, but the machines broke down 40% more often. It was found that workers were taking fewer precautions (Z) because they relied on the auto-stop to save them.",
+    "claim": "The automated shut-offs (X) failed to make the workplace safer because they didn't reduce injuries.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Feedback",
+      "subtype": "Risk Compensation"
+    },
+    "variables": {
+      "X": "Automated safety shut-offs",
+      "Y": "Workplace injury rate",
+      "Z": ["Reduced worker precaution"]
+    },
+    "gold_rationale": "Safety interventions often induce behavioral changes that maintain a constant risk level (Risk Compensation). Workers responded to the new safety device (X) by taking more risks or being less careful (Z). The 'safety' of the device was traded for 'speed' or 'ease,' leaving the net injury rate (Y) unchanged but increasing mechanical stress.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.18-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A county's property tax assessments (Y) doubled in a single year. It was later revealed that the private assessment firm (Z) received a commission (X) based on the total value of the tax roll. The firm claims the increase reflects a sudden property boom.",
+    "claim": "The tax assessment increase (Y) was caused by a natural rise in property values.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Reverse",
+      "subtype": "Conflict of Interest / Corruption"
+    },
+    "variables": {
+      "X": "Commission-based incentives",
+      "Y": "Tax assessment rate",
+      "Z": ["Private assessment firm"]
+    },
+    "gold_rationale": "This is a corruption-driven result. The assessment rate (Y) was driven by the financial incentive (X) paid to the firm (Z), not by actual market conditions. Like the 'Kids for Cash' scandal, the profit motive (Z -> X) distorted the discretionary output (Y), making the 'property boom' a manufactured explanation.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.18-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A private contractor running a state's disability audit program (Z) reported a record 80% rejection rate (Y). It was discovered the state paid the contractor a 'bonus' (X) for every person removed from the rolls. The contractor argues the rejection rate reflects widespread fraud among applicants.",
+    "claim": "The 80% rejection rate would decrease to a statistically normal level if the per-rejection bonus (X) were removed.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Reverse",
+      "subtype": "Conflict of Interest / Corruption"
+    },
+    "variables": {
+      "X": "Per-rejection bonus",
+      "Y": "Disability rejection rate",
+      "Z": [
+        "Private auditing contractor"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario lacks a baseline measurement or a control group. While the per-rejection bonus (X) creates a clear conflict of interest that incentivizes a high rejection rate (Y), we cannot determine what the 'statistically normal' level is without observing the contractor's behavior in the absence of the incentive. It is possible that some portion of the rejection rate is driven by actual fraud, but the degree to which the rate would drop remains an unobserved and underdetermined counterfactual.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.19-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A hospital implemented an automated alarm system (X) to alert nurses whenever a patient's vitals dipped slightly. Afterward, the number of missed critical events (Y) actually increased. Analysts found that the constant alarms caused 'alarm fatigue' (Z), leading nurses to ignore them or turn them down.",
+    "claim": "The automated alarm system (X) contributed to the increase in missed critical events (Y) by inducing alarm fatigue (Z) among the staff.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Trade-off (Accident Type)"
+    },
+    "variables": {
+      "X": "Automated alarm system",
+      "Y": "Missed critical events",
+      "Z": [
+        "Alarm fatigue / Response desensitization"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the causal mechanism of the 'Trade-off' trap. While the system (X) was intended to increase safety, it introduced a mediator—alarm fatigue (Z)—that directly caused nurses to miss or ignore critical signals. This behavioral response explains why the intervention led to a higher rate of missed critical events (Y) rather than the intended reduction in risk, highlighting a failure to account for human-factor trade-offs in the system's design.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.19-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city installed speed bumps (X) on a residential street to protect children. While high-speed collisions decreased, the number of 'low-speed fender benders' (Y) increased as drivers braked suddenly. A local resident argues the speed bumps made the street more dangerous.",
+    "claim": "The net risk to public safety on the street has increased following the installation of the speed bumps.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Trade-off (Accident Type)"
+    },
+    "variables": {
+      "X": "Speed bumps",
+      "Y": "Low-speed collisions",
+      "Z": [
+        "Sudden braking / Driver distraction",
+        "Accident severity weighting"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because 'safety' is not a binary metric in this context. The intervention (X) created a trade-off: it reduced high-severity, high-speed collisions but increased the frequency of low-severity fender benders (Y). Without a predetermined weighting system to balance the reduction in potential fatalities against the increase in minor property damage, the total impact on public safety remains underdetermined and subject to different interpretations of risk.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.2-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A software company hires significantly fewer women (X) for senior engineering roles. Data shows that female applicants have fewer years of experience with 'Legacy System Alpha' (Z) than male applicants. The company claims this is a neutral technical requirement.",
+    "claim": "Experience with 'Legacy System Alpha' (Z) is a valid, non-discriminatory reason for the hiring gap.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Mediation (Business Necessity)"
+    },
+    "variables": {
+      "X": "Gender",
+      "Y": "Hiring rate",
+      "Z": ["Experience with specific legacy system"]
+    },
+    "gold_rationale": "The validity of the mediator (Z) depends on business necessity. If 'System Alpha' is critical to the job, the gap is explained by qualifications. However, if the system is rarely used or if men were historically given more opportunities to learn it, then Z is a proxy for bias or a discriminatory filter. Its predictive power must be validated first.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.2-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "An airline hires fewer pilots from a specific regional flight school (X). The airline shows that graduates from that school have a lower average 'Instrument Flight Hours' (Z) compared to other schools. They claim this is a safety-based hiring criterion.",
+    "claim": "The difference in instrument flight hours (Z) justifies the lower hiring rate for school X.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Mediation (Business Necessity)"
+    },
+    "variables": {
+      "X": "Flight school origin",
+      "Y": "Hiring rate",
+      "Z": ["Instrument flight hours"]
+    },
+    "gold_rationale": "In this context, Z (flight hours) is a direct, legally recognized measure of professional qualification and safety. If the airline applies the same hour requirement to all applicants, the lower hiring rate for school X is a mediated effect of qualification levels, not bias against the school itself. This constitutes a legitimate business necessity.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.20-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A resident developed a specific neurological condition (Y) after living near a power plant that leaked heavy metals (X). The national background rate for the condition is 2 per 100,000. In the area surrounding the plant, the rate is 12 per 100,000.",
+    "claim": "It is 'more likely than not' that the power plant caused the resident's condition.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Probability",
+      "subtype": "Doubling of Risk Standard"
+    },
+    "variables": {
+      "X": "Heavy metal exposure",
+      "Y": "Neurological condition",
+      "Z": ["Background risk"]
+    },
+    "gold_rationale": "Legal causation requires a 'more likely than not' (>50%) probability, which corresponds to a Relative Risk (RR) > 2.0. Here, the rate increased 6-fold (RR = 6), meaning the probability of causation is (6-1)/6 = 83.3%. This meets the legal burden of proof for toxic torts.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.20-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A factory worker developed a lung ailment (Y) after exposure to industrial dust (X). The background rate in the general population is 5%. Among workers at this specific factory, the rate is 8%. The worker sues for damages.",
+    "claim": "The statistical evidence provided is insufficient to prove that the factory exposure was the 'more likely than not' cause of the worker's ailment.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Probability",
+      "subtype": "Doubling of Risk Standard"
+    },
+    "variables": {
+      "X": "Industrial dust exposure",
+      "Y": "Lung ailment",
+      "Z": [
+        "Background risk"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly applies the 'Doubling of Risk' standard often used in toxic tort litigation. To establish that an exposure was the 'more likely than not' cause (>50% probability), the Relative Risk (RR) must exceed 2.0. Here, the RR is 1.6 (8% / 5%), which results in a probability of causation of only 37.5%—calculated as (RR-1)/RR. Since this is below the 50% threshold, the statistical evidence alone does not meet the legal burden of proof for individual causation.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.3-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A specialized 'Innocence Project' law clinic (X) has a much lower rate of successfully overturned convictions (Y) than general appellate firms. A journalist suggests the clinic is ineffective.",
+    "claim": "The low overturn rate (Y) proves the law clinic is providing poor legal representation.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Case Mix / Severity Bias"
+    },
+    "variables": {
+      "X": "Clinic type",
+      "Y": "Overturn rate",
+      "Z": ["Case difficulty / Legal complexity"]
+    },
+    "gold_rationale": "This is selection bias. The 'Innocence Project' specifically selects the most difficult, 'cold' cases that other firms have already rejected. High failure rates are expected due to the extreme legal barriers and the age of the evidence (Z). Comparing them to firms handling easier appellate cases penalizes them for taking the hardest cases.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.3-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A high-end 'Last Resort' veterinary hospital (X) has a 40% mortality rate (Y), while a local neighborhood vet has a 2% rate. A consumer group warns pet owners to avoid the high-end hospital.",
+    "claim": "The 40% mortality rate likely reflects the critical condition of the animals admitted to a 'Last Resort' facility rather than the quality of care provided.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Case Mix / Severity Bias"
+    },
+    "variables": {
+      "X": "Hospital type",
+      "Y": "Mortality rate",
+      "Z": [
+        "Animal severity / Terminal status"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Case Mix Bias' trap. As a 'Last Resort' hospital, facility X attracts a specific population of pets (Z) that are already terminal or in need of high-risk procedures. Because the mortality rate (Y) is highly dependent on the intake status of the animals, comparing it to a neighborhood vet—who treats a much healthier 'mix' of patients—is statistically invalid without rigorous risk adjustment.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.31-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Cities with more graffiti (X) have higher rates of petty theft (Y). A mayor initiates a 'Clean Walls' task force (X') to paint over all graffiti, believing this will mechanically stop the theft.",
+    "claim": "Painting over graffiti (X') is unlikely to eliminate petty theft because graffiti (X) acts more as an indicator of underlying social neglect (Z) rather than a direct cause of criminal behavior.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CAUSAL ORDER",
+      "subtype": "Indicator vs Cause"
+    },
+    "variables": {
+      "X": "Visible graffiti",
+      "Y": "Petty theft rate",
+      "Z": [
+        "Social neglect / Low police presence"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Indicator vs Cause' trap. In this scenario, graffiti (X) and petty theft (Y) are correlated because they both stem from a common cause (Z), such as a lack of community oversight or social neglect. Treating the visible symptom—the graffiti—does not alter the underlying environment that fosters theft. Therefore, the mayor's intervention (X') targets a proxy variable rather than the actual causal mechanism driving the crime rate.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.31-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Neighborhoods with unkept lawns (X) show lower levels of community trust (Y). A local HOA mandates professional landscaping (X') for all homes to increase social cohesion.",
+    "claim": "Mandating professional landscaping (X') is unlikely to increase community trust because unkept lawns (X) are more likely a symptom of underlying economic or social stressors (Z) rather than the cause of low trust.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CAUSAL ORDER",
+      "subtype": "Indicator vs Cause"
+    },
+    "variables": {
+      "X": "Unkept lawns",
+      "Y": "Community trust",
+      "Z": [
+        "Economic stress / Shared values"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Indicator vs Cause' trap. In this scenario, the condition of the lawn (X) and the level of community trust (Y) are correlated because they both likely stem from an underlying common cause (Z), such as economic hardship or a lack of shared community values. Forcing an aesthetic change (X') targets the visible indicator without addressing the root cause, meaning the intervention is unlikely to produce the intended shift in social cohesion.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.32-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Jurisdictions with strict 'Three Strikes' laws (X) have higher rates of violent crime (Y) than those with more lenient sentencing. An activist claims that the harshness of the law is actually inciting more violence in the community.",
+    "claim": "The 'Three Strikes' law causes an increase in violent crime.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Cultural Confounding"
+    },
+    "variables": {
+      "X": "Three Strikes law presence",
+      "Y": "Violent crime rate",
+      "Z": ["Historical regional violence", "Public demand for retribution"]
+    },
+    "gold_rationale": "The correlation is likely driven by cultural and historical confounders (Z). Jurisdictions with a history of high violence are more likely to enact severe retributive punishments like 'Three Strikes' laws (X). The law is a response to the crime level, not necessarily a cause of its increase.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.32-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Countries with mandatory national service (X) report higher levels of nationalist sentiment (Y) than those with volunteer militaries. A sociologist argues that the mandate is the primary driver of nationalism.",
+    "claim": "Mandatory national service causes an increase in nationalist sentiment.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Cultural Confounding"
+    },
+    "variables": {
+      "X": "Mandatory national service",
+      "Y": "Nationalist sentiment",
+      "Z": ["Pre-existing national identity", "Regional threats"]
+    },
+    "gold_rationale": "The causal direction is ambiguous. A strong pre-existing nationalist culture or external threats (Z) likely drive both the adoption of mandatory service (X) and the high sentiment (Y). Without comparing similar cultures that did or did not adopt the mandate, we cannot determine if X causes Y.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.33-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Law firms that offer 'Pro Bono' bonuses (X) have significantly higher associate retention rates (Y). A struggling firm introduces a pro bono bonus to stop associates from leaving.",
+    "claim": "Introducing a pro bono bonus will cause associate retention to increase.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Competence Confounding"
+    },
+    "variables": {
+      "X": "Pro bono bonus",
+      "Y": "Associate retention",
+      "Z": ["Firm culture", "Management quality"]
+    },
+    "gold_rationale": "High retention (Y) is likely the result of a healthy overall firm culture and strong management (Z), which also happens to implement pro bono incentives (X). Simply adding a bonus (X) in a firm with poor management or toxic culture (Z) will likely fail to fix the retention problem.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.33-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Courts that use electronic filing systems (X) process cases 20% faster (Y). A slow rural court installs the system, expecting immediate 20% efficiency gains.",
+    "claim": "Installing electronic filing will cause a 20% increase in case processing speed.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Competence Confounding"
+    },
+    "variables": {
+      "X": "Electronic filing system",
+      "Y": "Processing speed",
+      "Z": ["Administrative competence", "Staffing levels"]
+    },
+    "gold_rationale": "The efficiency (Y) observed in other courts may stem from generally high administrative competence and adequate staffing (Z), which also facilitates the adoption of new tech (X). If the rural court is slow due to understaffing or poor workflow management (Z), the tech (X) alone may not yield the expected speed.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.34-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "The number of active civil lawsuits (Y) grew significantly after a law allowed 'No-Win, No-Fee' contracts (X). A politician claims that banning these contracts will instantly clear the court backlogs.",
+    "claim": "Banning 'No-Win, No-Fee' contracts will immediately reduce the number of active lawsuits.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "DYNAMICS",
+      "subtype": "Stock vs Flow"
+    },
+    "variables": {
+      "X": "No-Win, No-Fee legality",
+      "Y": "Active lawsuit count",
+      "Z": ["Case duration / Adjudication time"]
+    },
+    "gold_rationale": "Changing the contract law (X) affects the inflow of *new* lawsuits, but it does not resolve the existing lawsuits already in the system (Y). Unless the ban is retroactive or existing cases are dismissed, the 'stock' of lawsuits will only decline as current cases are naturally adjudicated over time.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.34-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A state university's total enrollment (Y) spiked after it began offering free tuition for local students (X). The board argues that capping next year's 'free' admissions will immediately return enrollment to previous levels.",
+    "claim": "The total student enrollment (Y) in the upcoming academic year will be lower than the current year's enrollment if the university caps new admissions.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "DYNAMICS",
+      "subtype": "Stock vs Flow"
+    },
+    "variables": {
+      "X": "Tuition policy",
+      "Y": "Total student enrollment",
+      "Z": [
+        "Graduation rate",
+        "Retention rate"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because total enrollment (Y) is a 'stock' determined by the inflow of new students and the outflow of graduating or exiting students. While capping new admissions reduces the 'flow' into the system, the net change in Y depends on whether the number of graduating students in the upcoming year exceeds the number of new admits. Without observing the specific graduation and retention rates (Z) for the current student body, it is impossible to determine if the total enrollment will decrease, stay the same, or continue to grow.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.35-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Legislators reduced the statutory interest rate on unpaid judgments (X). Insurance companies subsequently lowered their liability reserves (Y). A lobbyist argues this proves that plaintiffs were previously making inflated, bad-faith claims.",
+    "claim": "The reduction in liability reserves (Y) was caused by a decrease in the volume of new claims filed rather than just the reduction in the interest rate (X).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "MECHANISM",
+      "subtype": "Direct Cost Reduction"
+    },
+    "variables": {
+      "X": "Judgment interest rate",
+      "Y": "Liability reserves",
+      "Z": [
+        "Total payout cost",
+        "Claim volume"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario only provides information about the total liability reserves (Y) and the interest rate (X). While we know that a lower interest rate mechanically reduces the cost per judgment (Z), we lack data on whether the actual frequency of claims has changed. Without observing the raw claim volume, it is impossible to determine if the drop in reserves reflects fewer plaintiffs or simply cheaper payouts for the same number of plaintiffs.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.35-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city capped the maximum payout for 'slip and fall' injuries on public property (X). The cost to the city's legal fund (Y) dropped by 30%. The City Attorney claims this reduction proves they have eliminated fraudulent lawsuits.",
+    "claim": "The 30% reduction in legal costs (Y) proves that the cap eliminated fraudulent claims.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "MECHANISM",
+      "subtype": "Direct Cost Reduction"
+    },
+    "variables": {
+      "X": "Payout cap",
+      "Y": "Legal fund expenditure",
+      "Z": ["Liability per case"]
+    },
+    "gold_rationale": "Capping damages (X) mechanically reduces the city's liability for every single case, including legitimate ones (Z). A 30% drop in total expenditure (Y) simply reflects that each claim is now 'cheaper' to resolve; it provides no evidence that the validity or 'fraudulence' of the claims has changed.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.36-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A police precinct increased patrols (X) at a subway station that had just seen a record-breaking weekend of robberies. The following weekend, robberies fell by 70% (Y). The precinct commander claims the extra patrols caused the massive drop.",
+    "claim": "The 70% drop in robberies likely reflects a regression toward the mean, as the patrols (X) were implemented immediately following an extreme statistical outlier.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Selection on Extremes"
+    },
+    "variables": {
+      "X": "Increased patrols",
+      "Y": "Robbery reduction",
+      "Z": [
+        "Regression to the Mean"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it identifies the 'Selection on Extremes' fallacy. Since the intervention (X) was triggered by a record-breaking weekend—an extreme outlier—a significant reduction in robberies (Y) is statistically probable regardless of the patrols' effectiveness. Attributing the entire 70% drop to the police presence ignores natural variance and the statistical tendency for data to return to its long-term average (Z) after a peak.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.36-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A law school's bottom 10% of students were placed in a mandatory intensive tutoring program (X). By the next semester, their average GPA improved significantly (Y). The school claims the program is a miracle cure for low performance.",
+    "claim": "The intensive tutoring program caused the improvement in GPA.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Selection on Extremes"
+    },
+    "variables": {
+      "X": "Intensive tutoring",
+      "Y": "GPA improvement",
+      "Z": ["Natural regression of low scorers"]
+    },
+    "gold_rationale": "The improvement is ambiguous because students selected for being at the extreme bottom of a distribution (the bottom 10%) are statistically likely to improve even without intervention. To validate the program (X), the school would need to compare these students to a control group of low scorers who did not receive tutoring.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.37-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "To prevent age discrimination, a new law prohibited employers from viewing graduation years (X) on resumes. Unexpectedly, the hiring rate for entry-level candidates over the age of 50 (Y) dropped further. Analysts suggest employers used other resume cues to guess age.",
+    "claim": "Hiding graduation years (X) successfully reduced age-based hiring bias.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BACKFIRE",
+      "subtype": "Information Asymmetry"
+    },
+    "variables": {
+      "X": "Information ban (graduation year)",
+      "Y": "Hiring rate for older candidates",
+      "Z": ["Statistical discrimination / Biased priors"]
+    },
+    "gold_rationale": "The law backfired due to statistical discrimination. Without specific information about a candidate's timeline (X), employers relied on noisy and biased demographic priors to guess age, often over-correcting and excluding older candidates even more than before. Removing the signal forced reliance on negative group stereotypes.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.37-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A state banned credit score checks (X) for rental applications to help low-income tenants. Subsequently, the average security deposit (Y) required for low-income applicants doubled as landlords sought to mitigate unquantified risk.",
+    "claim": "The ban on credit checks (X) likely created a backfire effect where landlords increased security deposits (Y) to compensate for the uncertainty regarding tenant risk.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BACKFIRE",
+      "subtype": "Information Asymmetry"
+    },
+    "variables": {
+      "X": "Information ban (credit scores)",
+      "Y": "Security deposit amounts",
+      "Z": [
+        "Risk aversion / Pricing for uncertainty"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Information Asymmetry' backfire effect. By removing a primary data point used to assess financial risk (X), the policy forced landlords into a state of higher uncertainty. To mitigate this unquantified risk (Z), landlords increased the financial barrier to entry (Y), effectively transferring the 'cost' of the information ban back onto the very low-income tenants the policy was designed to protect.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.38-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Country A has a 'Good Samaritan' law (X) and high rates of volunteerism (Y). Country Z introduces the same law, expecting its citizens to become more helpful. However, critics note that Country A has a long-standing culture of altruism (Z).",
+    "claim": "Adopting the 'Good Samaritan' law (X) will cause an increase in volunteerism (Y).",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Cultural Confounder"
+    },
+    "variables": {
+      "X": "Good Samaritan law",
+      "Y": "Volunteerism rate",
+      "Z": ["Altruistic political culture"]
+    },
+    "gold_rationale": "The correlation in Country A is likely driven by an underlying culture of altruism (Z) that supports both the passing of the law (X) and the high rate of volunteering (Y). Implementing the legal framework (X) in a society without that underlying culture (Z) will not mechanically generate the social behavior (Y).",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.38-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Universities with honor codes (X) report lower levels of cheating (Y). A college with a cheating crisis adopts an honor code. Critics argue that schools with lower cheating already have higher baseline student integrity (Z).",
+    "claim": "Adopting an honor code (X) will cause cheating (Y) to decrease.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Cultural Confounder"
+    },
+    "variables": {
+      "X": "Honor code adoption",
+      "Y": "Cheating rate",
+      "Z": ["Existing student integrity / Peer norms"]
+    },
+    "gold_rationale": "Causality is ambiguous because schools with strong existing peer norms of integrity (Z) are more likely to successfully implement honor codes (X). In an environment where the culture already tolerates cheating, the code might be ignored, serving as a hollow signal rather than a causal driver of behavior.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.39-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city mandated universal background checks (X) for all volunteers at public events to prevent theft. The cost of administering the checks ended up exceeding the total value of all thefts reported in the previous decade (Y).",
+    "claim": "The background check program (X) is a cost-effective safety measure.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BASE RATE",
+      "subtype": "Cost-Benefit Failure"
+    },
+    "variables": {
+      "X": "Universal background check program",
+      "Y": "Net fiscal impact",
+      "Z": ["Low base rate of theft"]
+    },
+    "gold_rationale": "The program failed due to Base Rate Neglect (Z). Because the occurrence of theft among volunteers was extremely low to begin with, the cumulative cost of screening the entire population (X) far outweighed any potential savings from the rare 'hits' identified. Low base rates make universal screening programs financially insolvent.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.39-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A health insurance company mandated genetic screening (X) for all policyholders for a rare condition. The program cost $50 million, while the total cost of treating the three identified cases was only $2 million.",
+    "claim": "The mandatory screening program (X) failed to reduce the insurer's financial liability because the implementation costs significantly outweighed the expenses of treating the condition.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BASE RATE",
+      "subtype": "Cost-Benefit Failure"
+    },
+    "variables": {
+      "X": "Mandatory genetic screening",
+      "Y": "Net savings",
+      "Z": [
+        "Condition rarity (Base rate)"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Cost-Benefit Failure' stemming from Base Rate Neglect (Z). Since the condition is rare, universal screening (X) incurs massive overhead costs that are not recovered by the relatively small savings from early treatment ($50m vs $2m). Consequently, the intervention increased rather than decreased the total financial burden, making the statement that the program failed to reduce liability factually and causally accurate.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.4-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A health inspector, Officer J, issues 5x more 'Critical Violations' (Y) than Officer K. A restaurant association claims J is overzealous (X). Records show J is assigned exclusively to 'High-Risk' processing plants (Z), while K inspects 'Low-Risk' coffee shops.",
+    "claim": "The disparity in violation rates between Officer J and Officer K is likely driven by the inherent risk differences of the facilities they are assigned to inspect.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Assignment Bias"
+    },
+    "variables": {
+      "X": "Inspector ID (J vs K)",
+      "Y": "Critical violation rate",
+      "Z": [
+        "Facility risk level / Baseline safety"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it identifies the 'Assignment Bias' trap. The violation rate (Y) is not a direct measure of an officer's personality (X), but is strongly influenced by the baseline safety of the environment (Z). Since Officer J is assigned to high-risk processing plants where critical hazards are more prevalent, their higher violation rate is a predictable outcome of the assignment rather than an indicator of an 'overzealous' style. Attributing the rate solely to style without accounting for the facility type is causally incorrect.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.4-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A bank's 'Fraud Unit A' flags 10% of transactions (Y), while 'Unit B' flags 0.5%. Unit A handles 'International Wire Transfers' (Z), while Unit B handles 'Local ATM Withdrawals.' The board claims Unit A is inefficient.",
+    "claim": "If Unit B were assigned to handle 'International Wire Transfers' (Z), their flagging rate would remain significantly lower than Unit A's current 10% rate.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Assignment Bias"
+    },
+    "variables": {
+      "X": "Fraud Unit ID (A vs B)",
+      "Y": "Transaction flag rate",
+      "Z": [
+        "Transaction risk profile"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because it presents an unobserved counterfactual. While we know that International Wire Transfers (Z) have a higher baseline risk than ATM withdrawals, we do not know if Unit A's 10% rate is strictly necessary or if it includes a high degree of 'false positives' due to over-flagging. Without observing how Unit B (the control group) performs when faced with the same high-risk data (Z), we cannot determine if the 10% rate is a function of the data itself or the specific operational style of Unit A.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.40-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city capped the maximum rent (X) landlords could charge for apartments. Total housing costs (Y) for tenants rose as landlords introduced massive 'amenity fees' and 'parking permits' (Z) to compensate for lost rent.",
+    "claim": "For the average low-income tenant, the savings from the rent cap (X) were completely offset by the introduction of the new unregulated fees (Z).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "HYDRA",
+      "subtype": "Substitution Effect"
+    },
+    "variables": {
+      "X": "Rent cap",
+      "Y": "Total housing expenditure",
+      "Z": [
+        "Unregulated fee substitution"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because while the scenario indicates that total housing costs (Y) rose generally due to fee substitution (Z), it does not provide a granular breakdown of how these costs were distributed. It is possible that some tenants (such as those without cars or those in buildings with fewer amenities) still saw a net decrease in total spending, while others saw a massive increase. Without observing the specific variance in fee application across the tenant population, the claim that the savings were 'completely offset' for the average tenant is underdetermined.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.40-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Legislation capped the tax deductibility of executive cash salaries (X). Total executive compensation (Y) skyrocketed the following year as boards shifted pay to massive stock option grants (Z).",
+    "claim": "The net after-tax expense for corporations decreased following the salary cap (X), despite the increase in total compensation (Y).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "HYDRA",
+      "subtype": "Substitution Effect"
+    },
+    "variables": {
+      "X": "Salary deductibility cap",
+      "Y": "Total compensation",
+      "Z": [
+        "Stock option substitution"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario only tracks 'Total Compensation' (Y) and the shift to stock options (Z). While we know the nominal pay increased, the 'net after-tax expense' depends on the specific tax treatment and valuation of the stock options (Z) compared to the now non-deductible cash salary (X). Without observing the corporation's internal tax filings and the specific strike prices of the grants, the actual financial impact on the company is underdetermined.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.41-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A program sends disruptive students to spend a weekend in a high-security youth detention center (X) to deter them from crime. Longitudinal data shows these students had 20% higher arrest rates (Y) than a control group. A judge argues we should expand the program to reach more kids.",
+    "claim": "The detention center experience (X) is an effective deterrent for disruptive students.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BACKFIRE",
+      "subtype": "Peer Contagion"
+    },
+    "variables": {
+      "X": "Detention center exposure",
+      "Y": "Future arrest rate",
+      "Z": ["Peer contagion / Delinquency normalization"]
+    },
+    "gold_rationale": "Evidence suggests 'Scared Straight' style programs often backfire. The mechanism is likely peer contagion or the normalization of criminal identity (Z), which socializes at-risk youth into a deviant subculture rather than deterring them. Expanding the program is likely to increase crime.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.41-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A boot camp for juvenile offenders (X) uses aggressive military-style discipline to 'break' criminal habits. Participants were found to be more likely to commit violent crimes (Y) after release compared to those in standard probation. Proponents argue the training just wasn't intense enough.",
+    "claim": "If the intensity of the military-style discipline (X) were doubled, the recidivism rate for violent crime (Y) would decrease toward the levels seen in standard probation.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "BACKFIRE",
+      "subtype": "Peer Contagion"
+    },
+    "variables": {
+      "X": "Aggressive boot camp discipline",
+      "Y": "Violent recidivism",
+      "Z": [
+        "Aggression modeling / Alienation",
+        "Intervention intensity"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario presents a conflict between observed data and a theoretical counter-claim. While current data shows the boot camp (X) correlates with higher recidivism (Y), proponents hypothesize that the relationship is non-linear and that 'more intensity' would solve the problem. Without observing a group subjected to even more extreme discipline, it is impossible to determine if the backfire effect would worsen or if the proponents' 'intensity' theory has any merit.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.42-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A university banned high-caffeine energy drinks (X) on campus. Student heart-palpitation reports (Y) fell by 50%. However, the decline began three years before the ban and matched a regional trend in health-conscious dieting (Z).",
+    "claim": "The energy drink ban (X) caused the 50% drop in heart palpitations.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SPURIOUS",
+      "subtype": "Secular Trend"
+    },
+    "variables": {
+      "X": "Energy drink ban",
+      "Y": "Palpitation report rate",
+      "Z": ["Health-conscious secular trend"]
+    },
+    "gold_rationale": "The correlation is spurious because the outcome (Y) and the policy (X) are decoupled. Since the murder rate—or in this case, palpitations—improved while the cause was not yet present and mirrored a broader secular trend (Z), the policy was likely not the cause of improvement.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.42-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city re-introduced a controversial 'Stop and Frisk' policy (X) during a decade where murder rates (Y) were falling nationwide. The mayor claims the policy is responsible for the city's safer streets.",
+    "claim": "The decline in the city's murder rate (Y) is likely a reflection of the broader national downward trend (Z) rather than a direct consequence of the 'Stop and Frisk' policy (X).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SPURIOUS",
+      "subtype": "Secular Trend"
+    },
+    "variables": {
+      "X": "Stop and Frisk policy",
+      "Y": "Murder rate",
+      "Z": [
+        "National crime trend"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it identifies the 'Secular Trend' trap. When a local outcome (Y) mirrors a widespread, long-term national movement (Z), it is causally fallacious to attribute that outcome to a specific local intervention (X). Since murder rates were falling across the country during the same period, the city's safer streets are likely part of this broader statistical shift, making the mayor's claim of local policy causation unproven and likely spurious.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.43-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "After installing highly sensitive pollution sensors (X) near a factory, the number of recorded 'air quality alerts' (Y) tripled. The town council claims the factory has significantly increased its emissions.",
+    "claim": "Increased factory emissions caused the triple rise in air quality alerts.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "MEASUREMENT",
+      "subtype": "Detection Bias"
+    },
+    "variables": {
+      "X": "Sensitive pollution sensors",
+      "Y": "Recorded air quality alerts",
+      "Z": ["Sensor sensitivity / Threshold reporting"]
+    },
+    "gold_rationale": "This is detection bias. Better measurement often looks like more problems. The new sensors (X) increase the detection of alerts (Y), not necessarily the actual frequency of pollution. Removing them would simply hide the data.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.43-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A department added more internal auditors (X). The number of reported 'expense policy violations' (Y) doubled. The CEO is concerned that employees are becoming less ethical.",
+    "claim": "The employees are becoming less ethical, leading to doubled violations.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "MEASUREMENT",
+      "subtype": "Detection Bias"
+    },
+    "variables": {
+      "X": "Increased auditing",
+      "Y": "Recorded policy violations",
+      "Z": ["Detection rate / Reporting bias"]
+    },
+    "gold_rationale": "The increase in reported incidents (Y) is likely an artifact of increased detection (X), not a change in employee behavior. Better measurement results in higher recorded rates. This is a measurement trap where improved monitoring (X) creates the appearance of a worsening problem (Y).",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.44-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Software companies claim that banning 'Non-Disclosure Agreements' (NDAs) (X) will cause a massive rise in trade secret theft (Y). Several states pass the ban. Two years later, trade secret litigation remains at pre-ban levels.",
+    "claim": "The stable litigation levels (Y) prove that the inherent risk of trade secret theft did not increase following the NDA ban (X).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "THEORETICAL",
+      "subtype": "Security Fallacy"
+    },
+    "variables": {
+      "X": "NDA ban",
+      "Y": "Trade secret theft litigation",
+      "Z": [
+        "Detection difficulty",
+        "Information silos"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because 'litigation levels' (Y) are an imperfect proxy for the 'inherent risk' of theft. It is possible that the risk increased, but the difficulty of detecting theft or the cost of pursuing litigation prevented the number of cases from rising. Alternatively, companies may have mitigated the risk by silo-ing information more aggressively (Z), which would hide the causal impact of the ban itself. Without observing the actual frequency of trade secret misappropriation—as opposed to just the lawsuits filed—the claim remains underdetermined.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.44-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A company claimed that allowing employees to work from home (X) would lead to a surge in data breaches (Y) due to unsecured home networks. They eventually legalized remote work, and breach rates remained stable.",
+    "claim": "The inherent security risk of a home network is significantly higher than that of a corporate office network, even when modern security protocols (Z) are in place.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "THEORETICAL",
+      "subtype": "Security Fallacy"
+    },
+    "variables": {
+      "X": "Work from home policy",
+      "Y": "Data breach rate",
+      "Z": [
+        "VPN encryption / Robust authentication"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario only provides the final outcome—stable breach rates (Y). It does not provide a comparative analysis of the 'inherent risk' of the two environments. While the stability of Y suggests that security protocols (Z) were effective at mitigating risks, we cannot observe whether the home environment was 'inherently' more dangerous or if the corporate environment merely had different, unmeasured vulnerabilities. Without more granular data on 'near-misses' or specific attack vectors, the relative inherent risk remains underdetermined.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.45-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "An insurance app requires users to scroll through a 50-page 'Safety Agreement' (X) before they can submit a claim. 98% of users 'Agree' (Y). The company claims this proves users are highly committed to the safety protocols.",
+    "claim": "The 98% agreement rate (Y) reflects a genuine user preference for safety protocols.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "DESIGN",
+      "subtype": "Dark Pattern"
+    },
+    "variables": {
+      "X": "Complex/Long safety agreement",
+      "Y": "Agreement rate",
+      "Z": ["UI Fatigue / Barrier removal"]
+    },
+    "gold_rationale": "The high consent rate (Y) is likely an artifact of UI design (X), specifically 'Dark Patterns' that make rejection difficult. Users are clicking 'Agree' to remove the barrier (Z), not because they genuinely prefer or even read the policy. Consent obtained via exhaustion is not true preference.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.45-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A social media platform changed its privacy settings menu (X) so that 'Opt-out' required five clicks, while 'Opt-in' took one. Participation (Y) rose to 99%. The platform claims users love the data-sharing feature.",
+    "claim": "Users genuinely prefer the data-sharing policy, as shown by the 99% rate.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "DESIGN",
+      "subtype": "Dark Pattern"
+    },
+    "variables": {
+      "X": "Biased UI design",
+      "Y": "Participation rate",
+      "Z": ["Friction / Dark pattern"]
+    },
+    "gold_rationale": "The outcome (Y) is caused by the design (X) via fatigue or friction (Z), not preference. Using a dark pattern (X) to obtain a desired result (Y) creates a decoupling between the metric and the user's actual intent. Consent obtained this way is an artifact, not evidence of genuine interest.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.5-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A digital fingerprint scan from a restricted server matches an employee (X). The vendor claims the software has a random match probability of 1 in 500,000. The security manager concludes there is a 99.9998% chance the employee accessed the server.",
+    "claim": "Based on the 1-in-500,000 random match probability, it is 'more likely than not' (probability > 50%) that the employee is the individual who accessed the server.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Probability",
+      "subtype": "Prosecutor's Fallacy"
+    },
+    "variables": {
+      "X": "Fingerprint match",
+      "Y": "Unauthorized access",
+      "Z": [
+        "Employee pool size",
+        "Prior probability"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the posterior probability—the probability of guilt given a match, $P(Guilt|Match)$—cannot be determined without knowing the size of the suspect pool ($N$) or the prior probability of guilt. If the employee was one of only 10 people with access to the building, the probability of guilt is extremely high. However, if the match was found by searching a database of 1,000,000 people, we would expect at least two random matches, making the probability of this specific employee's guilt roughly 33% or 50% depending on other factors. Without observing the search context, the claim is underdetermined.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.5-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A facial recognition match (X) is found between a suspect and a blurry security image. The developer claims the match has a 1-in-10,000 chance of being a false positive. The police argue there is a 99.99% chance the suspect is the person in the video.",
+    "claim": "There is a 99.99% probability that the suspect is the person in the video.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Probability",
+      "subtype": "Prosecutor's Fallacy"
+    },
+    "variables": {
+      "X": "Facial recognition match",
+      "Y": "Correct identification",
+      "Z": ["Population size", "Base rate of presence"]
+    },
+    "gold_rationale": "This follows the same inverse probability error as the DNA match reference. A 1-in-10,000 error rate does not mean a 99.99% guilt probability. In a city of 1 million people, there would be approximately 100 random matches. Without other evidence narrowing the suspect pool, the probability that this specific individual is the culprit is far lower than claimed.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.6-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A retail chain pays male managers (X) 10% more than female managers (Y). The chain argues the gap is due to males managing 'High-Volume Flagship Stores' (Z). Records show that internal promotion committees exclusively assign flagship stores to men.",
+    "claim": "Management of high-volume stores (Z) is a non-discriminatory justification for the pay gap.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Mediation vs. Discrimination"
+    },
+    "variables": {
+      "X": "Gender",
+      "Y": "Salary",
+      "Z": ["Store volume assignment"]
+    },
+    "gold_rationale": "The mediator (Z) is not neutral because the opportunity to manage high-volume stores is determined by the protected class (X). If the company selectively assigns men to the roles that carry higher pay, then the assignment process itself is the mechanism of discrimination. Controlling for Z does not remove the bias; it masks it.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.6-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A law firm pays associates from Ivy League schools (X) 15% more than associates from state schools (Y). The firm claims this is because Ivy League graduates bill 20% more 'High-Value Research' hours (Z). Associate records show only Ivy League graduates are assigned to cases that allow for research billing.",
+    "claim": "The difference in research hours (Z) is a non-discriminatory justification for the pay gap.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Mediation vs. Discrimination"
+    },
+    "variables": {
+      "X": "Law school origin",
+      "Y": "Salary/Bonus",
+      "Z": ["High-value research hours"]
+    },
+    "gold_rationale": "The mediator is tainted. Because the firm only assigns high-value tasks to a specific group, the difference in hours is the result of unequal opportunity rather than individual merit. The firm has created the conditions that justify the pay gap it claims is meritocratic, making Z a discriminatory filter.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.7-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A bank's mortgage algorithm denies loans to applicants from 'Zone 4' (X) at a 4x higher rate. The bank claims the decision is based on 'Local Property Value Volatility' (Z). Critics note Zone 4 is a historically marginalized minority neighborhood.",
+    "claim": "Property value volatility (Z) is an independent, non-discriminatory factor for loan denial.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Proxy Discrimination"
+    },
+    "variables": {
+      "X": "Neighborhood / Race",
+      "Y": "Loan denial rate",
+      "Z": ["Property value volatility"]
+    },
+    "gold_rationale": "Volatility (Z) acts as a proxy for the protected class (X) due to historical systemic under-investment. If the metric used to justify the denial is an outcome of past discrimination, it creates a feedback loop that reinforces biased results. The justification is endogenous to the system of discrimination it seeks to explain.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.7-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A credit card company uses 'Purchase History at Discount Stores' (Z) to lower credit limits for certain users. Data shows this predominantly affects minority cardholders (X). The company argues Z is a neutral predictor of default risk (Y).",
+    "claim": "Shopping at discount stores (Z) is a valid, neutral mediator of default risk.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Proxy Discrimination"
+    },
+    "variables": {
+      "X": "Race/Socioeconomic status",
+      "Y": "Credit limit reduction",
+      "Z": ["Discount store usage"]
+    },
+    "gold_rationale": "Z is a proxy for socioeconomic status and race. Using consumer habits that correlate heavily with protected classes allows for 'redlining' without explicitly mentioning race. This creates disparate impact where the 'neutral' variable simply masks the underlying discriminatory effect.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.8-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A new corporate wellness program claims to reduce employee burnout by 30% (Y). The study only analyzed employees who stayed in the program for the full 12 months, excluding those who quit because the program was too time-consuming (Z).",
+    "claim": "The reported 30% reduction in burnout is likely an overestimation because the study excluded employees who dropped out due to program-related stress (Z).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Attrition Bias / ITT Violation"
+    },
+    "variables": {
+      "X": "Wellness program",
+      "Y": "Burnout rate",
+      "Z": [
+        "Program dropout due to stress"
+      ]
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies 'Attrition Bias.' By excluding participants who quit (Z), the study performed a 'per-protocol' analysis rather than an 'Intention-to-Treat' (ITT) analysis. Since those who dropped out were likely the most stressed or time-constrained, removing them from the data set creates a 'survivor' group that isn't representative of the broader workforce. Consequently, the success rate (Y) is artificially inflated and does not reflect the program's true impact on the entire population.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.8-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A pilot 'Distance Learning' software (X) shows 90% student satisfaction (Y). However, students who lacked reliable internet access (Z) were removed from the dataset early because they could not complete the feedback survey.",
+    "claim": "The Distance Learning software causes high satisfaction across the student population.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Selection",
+      "subtype": "Attrition Bias / ITT Violation"
+    },
+    "variables": {
+      "X": "Learning software",
+      "Y": "Student satisfaction",
+      "Z": ["Technical dropout"]
+    },
+    "gold_rationale": "This violates the principle of including all randomized participants. By removing students who had technical barriers (Z), the study only measures satisfaction for those already equipped to succeed. The 90% figure reflects a selected sub-group, not the software's performance across the general population.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.9-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A city increased its minimum wage (X). Two years later, regional employment (Y) rose by 5%. The mayor credits the hike, but economists point out that a major tech headquarters opened in the city during the same period (Z).",
+    "claim": "The minimum wage increase (X) was a more significant driver of the 5% employment rise than the opening of the new tech headquarters (Z).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Macroeconomic Confounding"
+    },
+    "variables": {
+      "X": "Minimum wage hike",
+      "Y": "Employment rate",
+      "Z": [
+        "External economic stimulus"
+      ]
+    },
+    "gold_rationale": "The claim is ambiguous because the scenario describes a 'Bundled Intervention' where a policy change (X) and a massive external economic stimulus (Z) occurred in the same window. Because both factors are known to influence employment levels (Y), their individual effects are entangled. Without data from a control region—such as a city that received a tech headquarters but did not raise its wage—it is impossible to determine which factor contributed 'more significantly' to the observed 5% rise.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.9-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L2",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A state reduced environmental regulations (X) to attract industry. Revenue (Y) increased over the next five years. However, this period coincided with a global surge in the price of the state's primary natural resource export (Z).",
+    "claim": "Reducing environmental regulations (X) was the primary cause of increased state revenue.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Conf-Med",
+      "subtype": "Macroeconomic Confounding"
+    },
+    "variables": {
+      "X": "Regulatory reduction",
+      "Y": "State revenue",
+      "Z": ["Global resource price surge"]
+    },
+    "gold_rationale": "The global boom (Z) raised profits and revenue regardless of the regulatory environment. Revenue likely rose in spite of, or independently of, the policy change. To prove the cut 'paid for itself,' one must demonstrate that revenue growth exceeded what would have occurred under the old rates during the same boom.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.26-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A cyber-attacker (A) launches a virus (X) designed to delete a company's database at midnight. Simultaneously, a disgruntled IT employee (B) sets a logic bomb (Z) to wipe the same database at 12:05 AM. The virus (X) executes at midnight, successfully deleting all data (Y). Employee B argues they didn't cause the loss because the data was already gone.",
+    "claim": "The cyber-attacker (A) is the actual cause of the database deletion.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Overdetermination / Preemption"
+    },
+    "variables": {
+      "X": "Attacker A's virus",
+      "Y": "Database deletion",
+      "Z": "Employee B's logic bomb"
+    },
+    "gold_rationale": "This is a case of preemption. Although the database would have been destroyed five minutes later by Employee B (Z), Attacker A's virus (X) was the mechanism that actually operated and completed the harm. In counterfactual reasoning for overdetermined events, we identify the 'but-for' cause that was physically responsible for the actual sequence of events.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.26-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A demolition crew (A) triggers explosives (X) to bring down a condemned building at noon. At 11:55 AM, a massive earthquake (Z) occurs that would have leveled the building regardless. The building collapses at 12:00 PM precisely as the explosives (X) detonate. The insurance company argues the earthquake (Z) is the cause.",
+    "claim": "The demolition crew (A) is the actual cause of the building's collapse at noon.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Overdetermination / Preemption"
+    },
+    "variables": {
+      "X": "Demolition explosives",
+      "Y": "Building collapse",
+      "Z": "Earthquake"
+    },
+    "gold_rationale": "Causality is ambiguous due to the near-simultaneous timing of two sufficient causes. If the earthquake had already structurally compromised the building to the point of collapse before noon, then the explosives (X) may have merely 'shot a corpse.' However, if the explosives completed their mechanism at the exact moment of collapse, they are the preemptive actual cause. Detailed forensic timing is required to determine which force operated first.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.27-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A dam operator sees a massive flood approaching a city of 100,000 people. He opens an emergency spillway (X) that floods a small farming village, destroying 10 homes (Y). If he had not opened the spillway, the 10 homes would be safe, but the city would have been submerged (Z). A villager sues for the destruction of their home.",
+    "claim": "The dam operator's action (X) caused the destruction of the 10 homes (Y).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Action vs Omission"
+    },
+    "variables": {
+      "X": "Opening the spillway",
+      "Y": "Destruction of 10 homes",
+      "Z": "Flooding of the city"
+    },
+    "gold_rationale": "Causality is baseline-dependent. Relative to the 'do-nothing' baseline, the operator's active intervention (X) is the but-for cause of the destruction of the homes (Y). Even though the act was intended to prevent a much larger catastrophe (Z), the specific harm (Y) would not have occurred without the operator's physical intervention.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.27-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A forest fire is moving toward a historic town. A fire crew sets a 'backfire' (X)—a controlled burn to remove fuel. The backfire accidentally consumes a rare protected grove of ancient trees (Y). Without the backfire, the grove would be safe, but the entire town would have likely burned down (Z).",
+    "claim": "The fire crew is responsible for saving the town (Z) rather than causing the loss of the grove (Y).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Action vs Omission"
+    },
+    "variables": {
+      "X": "Setting a backfire",
+      "Y": "Loss of protected grove",
+      "Z": "Destruction of the town"
+    },
+    "gold_rationale": "The claim is ambiguous because responsibility depends on the legal or ethical framework applied. Causally, the crew's action (X) is the but-for cause of the grove's destruction (Y). However, from a consequentialist perspective, their action is the cause of the town's survival (Z). Causal attribution is split between the active harm created and the greater harm avoided.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.28-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A fertility clinic inadvertently switches embryos (X), resulting in the birth of a child (Y) who has a rare, painful condition inherited from the biological donors. The parents argue that the clinic harmed the child by allowing them to be born with such suffering. The clinic responds that if they had used the correct embryo, this specific child would never have been born at all.",
+    "claim": "The clinic's error (X) caused a legal harm to the child (Y) by bringing them into a life of pain.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Non-Identity Problem"
+    },
+    "variables": {
+      "X": "Embryo switch error",
+      "Y": "Birth of specific child with condition",
+      "Z": "Non-existence of that specific child"
+    },
+    "gold_rationale": "This case centers on the Non-Identity Problem. To establish harm, one must show the victim is worse off than they would have been in the counterfactual. However, the counterfactual here is non-existence. Because we cannot logically say it is 'better' for a person to never have existed, the standard 'but-for' test for harm breaks down. Jurisdictions are divided on whether this constitutes a compensable injury.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.28-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A state policy encouraged a specific toxic pesticide use (X) during a three-year period. Children born to families in that region during those years (Y) suffered high rates of developmental issues. It is argued that if the state had banned the pesticide, those children would have been born healthy. However, biologists note that the change in timing and environment means different children would have been conceived entirely.",
+    "claim": "The state's policy (X) harmed the specific children (Y) who were born during that period.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Non-Identity Problem"
+    },
+    "variables": {
+      "X": "Pesticide policy",
+      "Y": "Specific children born with issues",
+      "Z": "Different children born in a healthy environment"
+    },
+    "gold_rationale": "This is a classic Non-Identity Problem. If the policy (X) had been different, the conditions of conception would have changed, leading to the birth of entirely different individuals (Z). Therefore, the specific children (Y) cannot say they were harmed by the policy, because without that policy, they would never have existed to be healthy. The policy is the 'but-for' cause of their existence, not just their condition.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.29-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Two construction site managers (X) both fail to secure loose scaffolding equipment before a high-wind storm. At Manager A's site, a gust of wind knocks a steel beam onto a parked car, causing $50,000 in damages (Y). At Manager B's site, the wind is identical, but the loose beam falls harmlessly into a mud pit. Manager A is sued for negligence and damages, while Manager B receives only a minor safety citation.",
+    "claim": "Manager A is more morally and legally culpable than Manager B because A's negligence resulted in actual property destruction (Y).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Moral Luck"
+    },
+    "variables": {
+      "X": "Failure to secure equipment",
+      "Y": "Property damage",
+      "Z": "Random placement of car vs. mud pit"
+    },
+    "gold_rationale": "This illustrates Moral Luck. Both managers made the exact same negligent choice (X) and created the same level of risk. The divergent outcomes (Y vs. no damage) were determined by the random chance of where the beam happened to land (Z). Legal systems typically track the outcome, holding Manager A liable for the harm that actually occurred, even though their conduct was identical to Manager B's.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.29-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "Two distracted drivers (X) both look down at their phones for five seconds while driving through a residential neighborhood. Driver A's path is clear, and they look up without incident. Driver B's path happens to be crossed by a child chasing a ball during those five seconds, leading to a fatal collision (Y). Driver B is charged with vehicular homicide, while Driver A faces no legal consequences.",
+    "claim": "Driver B's legal responsibility (Y) is primarily a matter of 'moral luck' because their distracted behavior (X) was identical to Driver A's.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Moral Luck"
+    },
+    "variables": {
+      "X": "Distracted driving",
+      "Y": "Fatal collision",
+      "Z": "Presence of a child in the road"
+    },
+    "gold_rationale": "Both drivers made the same reckless choice (X) and exhibited the same level of disregard for safety. The difference in their legal worlds is entirely due to an external factor—the presence of a child (Z)—which was outside of their control at the moment of the distraction. This is a classic case where the law punishes based on the causal outcome (Y) rather than the dangerous act itself.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.30-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A corporate spy (A) hacks into and destroys a startup's proprietary server (X), causing the company to go bankrupt. Later, it is discovered that the startup's CEO was secretly using the server to orchestrate a massive Ponzi scheme (Z) that would have eventually defrauded thousands of people. The spy argues they should not be liable for damages because they effectively stopped a major financial crime (Y).",
+    "claim": "The spy's argument for immunity is invalid because the prevention of the Ponzi scheme (Y) is a speculative downstream benefit that does not negate the certain and actual harm of destroying the server (X).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Downstream / Speculative Benefit"
+    },
+    "variables": {
+      "X": "Destruction of server",
+      "Y": "Prevention of Ponzi scheme fraud",
+      "Z": "CEO's secret plan to defraud investors"
+    },
+    "gold_rationale": "The claim is valid because it correctly identifies the 'Downstream / Speculative Benefit' trap. In both legal and causal logic, an actor cannot justify an actual, immediate harm (X) by pointing to the accidental prevention of a potential future harm (Y) that was speculative and unknown at the time of the act. Because there is no certainty that the Ponzi scheme would have succeeded or remained undetected by authorities, the benefit (Y) exists only as a speculative counterfactual and cannot serve as a valid defense for the commission of a crime.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.30-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "An arsonist (A) burns down an abandoned warehouse (X). It is later revealed that a group of smugglers was planning to use that specific warehouse as a hub for a human trafficking ring (Z) starting the following week. The arsonist claims that by destroying the hub, they saved potential victims (Y) and should receive a reduced sentence.",
+    "claim": "The arsonist's (A) criminal responsibility is mitigated because the destruction of the warehouse (X) prevented a hypothetical future crime (Z).",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Downstream / Speculative Benefit"
+    },
+    "variables": {
+      "X": "Arson of warehouse",
+      "Y": "Prevention of trafficking hub",
+      "Z": "Smugglers' secret plan to use the site"
+    },
+    "gold_rationale": "Criminal liability is based on actual conduct and intent. The arson (X) is an actual harm. The prevention of the trafficking ring (Y) is a speculative counterfactual benefit based on a future plan (Z) that might have been thwarted by other means. Offsetting actual harm with unknown, speculative benefits is legally invalid, as it would allow individuals to justify crimes through post-hoc coincidences.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.46-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A credit-scoring algorithm flags a small business owner (X) as 'likely to default' based on industry trends. As a result, the bank drastically reduces the owner's credit limit (Z). The lack of liquidity causes the business to fail and the owner to eventually default on the remaining loan (Y). The owner argues that the default was caused by the bank's reaction to the score, not their actual financial management.",
+    "claim": "The algorithmic flag (X) caused the default (Y) by triggering the credit reduction (Z).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Self-Fulfilling Prophecy"
+    },
+    "variables": {
+      "X": "Default risk flag",
+      "Y": "Actual loan default",
+      "Z": "Credit limit reduction"
+    },
+    "gold_rationale": "This case illustrates a self-fulfilling prophecy. If the business was solvent but failed specifically due to the liquidity crisis created by the credit reduction (Z), then the prediction (X) caused the outcome (Y). However, if the business was already failing due to the industry trends the algorithm detected, the flag was merely predictive. The counterfactual—whether the owner would have defaulted without the credit cut—is underdetermined without internal financial records.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.46-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A high-school early-warning system labels a student (X) as 'at risk of dropping out.' In response, teachers lower their expectations and the student is placed in less challenging remedial tracks (Z). The student becomes disengaged and eventually drops out of school (Y). The student's parents claim the label itself created the path to failure.",
+    "claim": "The 'at risk' label (X) was a primary cause of the student dropping out (Y).",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Self-Fulfilling Prophecy"
+    },
+    "variables": {
+      "X": "'At risk' label",
+      "Y": "Dropping out",
+      "Z": "Lowered academic expectations/tracking"
+    },
+    "gold_rationale": "This raises the self-fulfilling prophecy problem. If the intervention (Z)—meant to help but resulting in lower engagement—caused the dropout (Y), then the prediction (X) created the future it predicted. To evaluate the counterfactual, one must determine if the student's performance was declining independently or if the change in educational environment (Z) was the decisive factor.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.47-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A structural engineer (A) discovers that a major bridge was built with substandard steel (Z) and reports it to the authorities (X). The bridge is immediately closed for repairs (Y), causing a year of massive traffic congestion. The city council argues that if the engineer had not spoken up, the city would have avoided the economic loss caused by the closure.",
+    "claim": "The structural engineer's report (X) is the cause of the city's economic loss (Y).",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Revelation vs Causation"
+    },
+    "variables": {
+      "X": "Engineer's report",
+      "Y": "Economic loss from closure",
+      "Z": "Substandard steel construction"
+    },
+    "gold_rationale": "The city council is confusing the revelation of a danger with the cause of the loss. The substandard construction (Z) created a state where the bridge was unsafe to use. In the counterfactual where the engineer remained silent, the bridge would have eventually suffered a catastrophic failure, likely resulting in loss of life and even greater economic damage. The engineer (X) merely revealed the pre-existing necessity for closure.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.47-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "An investigative journalist (A) exposes that a popular health supplement contains a banned stimulant (Z). The product is recalled (Y), and the company's stock value drops 80%. The company sues the journalist, claiming that if the article (X) had never been published, the company would still be profitable and the stock would be stable.",
+    "claim": "The journalist's article (X) caused the company's financial ruin.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Revelation vs Causation"
+    },
+    "variables": {
+      "X": "Investigative article",
+      "Y": "Financial ruin/recall",
+      "Z": "Use of banned stimulants"
+    },
+    "gold_rationale": "The company confuses the exposure of a violation with the violation itself. The use of illegal ingredients (Z) made the company's business model legally and ethically unsustainable. In the counterfactual where the journalist stayed silent, the truth would likely have surfaced through regulatory testing or consumer illness reports, leading to even higher liability. The article (X) only accelerated the inevitable discovery of the pre-existing fraud.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.48-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A professional athlete is accused of using banned substances and accepts a one-year suspension (X) as part of a settlement. Later, the athlete claims that if they had gone to an independent arbitration hearing, they would have been fully exonerated. League data shows that 95% of athletes who go to arbitration lose their cases and receive maximum penalties.",
+    "claim": "The athlete's claim of exoneration is likely false because 95% of arbitration cases result in a loss.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Selection into Plea"
+    },
+    "variables": {
+      "X": "Settlement acceptance",
+      "Y": "Arbitration outcome",
+      "Z": "Private evidence of innocence"
+    },
+    "gold_rationale": "The counterfactual is underdetermined due to selection bias. Athletes who accept settlements often have weaker evidence or higher risk of a maximum penalty. Conversely, the 5% who win in arbitration may be those with the strongest evidence of innocence. Without observing the athlete's specific private evidence (Z), we cannot determine if they would have fallen into the 5% success bracket or the 95% failure bracket.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.48-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A software developer settles a patent infringement lawsuit (X) by paying a licensing fee. The developer later insists that if the case had gone to a jury trial, the patent would have been ruled invalid. Historical records show that 80% of patents challenged in court by similar small developers are upheld by juries.",
+    "claim": "The developer would have lost at trial because 80% of similar patent challenges fail.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Selection into Plea"
+    },
+    "variables": {
+      "X": "Settlement payment",
+      "Y": "Jury trial verdict",
+      "Z": "Confidential prior art evidence"
+    },
+    "gold_rationale": "This case involves selection into settlement. Developers with weak cases or 'smoking gun' evidence against them are highly incentivized to settle. Those who go to trial may possess unique 'prior art' evidence (Z) that makes their case stronger than average. General statistics (80% failure) do not account for the specific merits of a case that was settled before the evidence could be tested in court.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.49-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A medical board reinstates the license of a surgeon (X) who underwent years of successful treatment for substance abuse. Two years later, the surgeon performs a surgery while impaired, resulting in a patient's death (Y). The patient's family claims that if the board had not reinstated the license, the death would never have occurred.",
+    "claim": "The medical board's decision to reinstate the license (X) is the but-for cause of the patient's death (Y).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "But-For with Uncertainty"
+    },
+    "variables": {
+      "X": "Reinstatement of medical license",
+      "Y": "Patient death due to surgeon impairment",
+      "Z": "Hidden relapse risk"
+    },
+    "gold_rationale": "The but-for counterfactual is technically valid: if the license had remained revoked, the surgeon would not have been in the operating room to cause the harm. However, this is a case of outcome bias. The decision to reinstate was based on ex ante evidence of rehabilitation. While the causal chain is clear, the moral and legal responsibility depends on whether the board followed standard risk-assessment protocols at the time of the decision.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.49-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A bank approves a high-value loan (X) for a developer with a clean credit history. The developer uses the funds to start a construction project but later embezzles the money (Y) and flees the country. Shareholders argue that if the bank had denied the loan, the loss would have been prevented.",
+    "claim": "The bank's approval of the loan (X) is the but-for cause of the financial loss (Y).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "But-For with Uncertainty"
+    },
+    "variables": {
+      "X": "Loan approval",
+      "Y": "Financial loss via embezzlement",
+      "Z": "Latent criminal intent"
+    },
+    "gold_rationale": "Technically, the counterfactual holds: without the loan (X), the developer would not have had the capital to embezzle (Y). However, this highlights the tension between but-for causation and reasonable decision-making. The bank relied on observable ex ante data (clean credit). Judging the 'cause' of the loss as the loan approval is a result of outcome bias, as the criminal act was an uncertain future event at the time of the intervention.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.50-NC1",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A homeowner discovered a significant construction defect (X) in their foundation ten years after the house was built. The state’s 'Statute of Repose' for construction litigation (Z) strictly expires after eight years, regardless of when the defect is found. The homeowner claims that if they had noticed the cracks just two years earlier, they would have been able to sue the builder for the full repair cost (Y).",
+    "claim": "The timing of the discovery (X) is the but-for cause of the homeowner's inability to seek legal compensation (Y).",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Temporal Constraint"
+    },
+    "variables": {
+      "X": "Timing of defect discovery",
+      "Y": "Legal eligibility for compensation",
+      "Z": "Statute of Repose deadline"
+    },
+    "gold_rationale": "The counterfactual is technically valid. In the hypothetical world where the discovery (X) occurred within the eight-year window, the legal barrier (Z) would not have been triggered, and the outcome (Y) would have been different. The interaction between the temporal variable (X) and the rigid legal deadline (Z) is the decisive causal factor in the current world.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  },
+  {
+    "id": "7.50-NC2",
+    "bucket": "BucketLarge-C",
+    "pearl_level": "L3",
+    "domain": "Law & Ethics (D7)",
+    "scenario": "A whistleblower attempted to file a 'Qui Tam' lawsuit (Y) against a government contractor for fraud that occurred in 2015. However, the statute of limitations for the specific claim (Z) is six years. Because the whistleblower only gathered the necessary documentation (X) in 2023, the court dismissed the case. The whistleblower argues that the delay in gathering evidence caused the failure of the justice process.",
+    "claim": "If the documentation (X) had been secured before 2021, the fraud case (Y) would have proceeded to trial.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "Counterfactual",
+      "subtype": "Temporal Constraint"
+    },
+    "variables": {
+      "X": "Timing of evidence gathering",
+      "Y": "Trial proceedings",
+      "Z": "Six-year statute of limitations"
+    },
+    "gold_rationale": "The counterfactual is logically sound. The failure of the case to go to trial (Y) is directly attributable to the timing of the evidence acquisition (X) relative to the legal expiration date (Z). Had the evidence been secured earlier, the legal constraint would not have barred the prosecution. This highlights the causal power of temporal deadlines in legal systems.",
+    "annotation": {
+      "author": "Andy Ouyang",
+      "num_annotators": 1,
+      "adjudicated": false
+    }
+  }
+]

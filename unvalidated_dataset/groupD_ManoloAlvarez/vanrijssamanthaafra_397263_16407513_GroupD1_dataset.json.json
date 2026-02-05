@@ -1,0 +1,3362 @@
+[
+  {
+    "id": "T3-BucketD-0047",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Health",
+    "scenario": "A company survey finds that employees who drink more coffee report higher stress levels than those who drink less coffee.",
+    "claim": "Drinking coffee causes employees to become more stressed.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted Variable"
+    },
+    "variables": {
+      "X": "Coffee consumption",
+      "Y": "Self-reported stress",
+      "Z": [
+        "Workload intensity"
+      ]
+    },
+    "gold_rationale": "Higher workload can increase stress and also lead employees to drink more coffee to stay alert. The association does not establish that coffee causes stress without controlling for workload or other common causes.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0048",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Public Policy",
+    "scenario": "Cities with more police officers per capita tend to have higher recorded crime rates.",
+    "claim": "Hiring more police causes crime to increase.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-driven Selection"
+    },
+    "variables": {
+      "X": "Police officers per capita",
+      "Y": "Recorded crime rate",
+      "Z": [
+        "Underlying crime pressure"
+      ]
+    },
+    "gold_rationale": "Cities often hire more police in response to higher crime (or its drivers). The direction of influence is plausibly from crime pressure to staffing, so the observed association does not justify the causal claim that police hiring increases crime.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0049",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Education",
+    "scenario": "In a school district, students who attend after-school tutoring have higher GPAs than students who do not.",
+    "claim": "Tutoring causes students to have higher GPAs.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Tutoring attendance",
+      "Y": "GPA",
+      "Z": [
+        "Family resources and support"
+      ]
+    },
+    "gold_rationale": "Students who attend tutoring may differ systematically in family resources, baseline preparedness, or parental support, which can also affect GPA. Without information on selection into tutoring or controls for these factors, the causal claim is underdetermined.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0050",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "scenario": "A soccer striker scores 4 goals in one match. In the next match, he scores 0 goals. Commentators say he got overconfident after the big game.",
+    "claim": "Scoring many goals in one match causes worse performance in the next match due to overconfidence.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Noise-Induced Extremes"
+    },
+    "variables": {
+      "X": "Exceptional single-match goal count",
+      "Y": "Next-match goal count",
+      "Z": [
+        "Match-to-match variance (opponents, chances, randomness)"
+      ]
+    },
+    "gold_rationale": "An extreme performance is partly skill and partly variance. Subsequent performances are expected to be less extreme on average, even with unchanged ability or mindset, so the overconfidence explanation is not needed.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0051",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Business",
+    "scenario": "A business blog profiles only the fastest-growing startups from the past decade and finds that most founders dropped out of college.",
+    "claim": "Dropping out of college increases the chance that a startup will grow rapidly.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SURVIVORSHIP",
+      "subtype": "Selective Observation"
+    },
+    "variables": {
+      "X": "Founder dropout status",
+      "Y": "Startup growth",
+      "Z": [
+        "Unobserved failed startups with similar founder traits"
+      ]
+    },
+    "gold_rationale": "The dataset includes only highly successful companies and omits the many failed startups. If dropouts are common among both successes and failures, observing only survivors can create a misleading pattern.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0052",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Psychology",
+    "scenario": "A person notices that whenever they carry an umbrella, it rains later that day.",
+    "claim": "Carrying an umbrella causes it to rain.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted Variable"
+    },
+    "variables": {
+      "X": "Carrying an umbrella",
+      "Y": "Rain occurrence",
+      "Z": [
+        "Weather forecast or dark clouds"
+      ]
+    },
+    "gold_rationale": "People tend to carry umbrellas when rain is already likely based on forecasts or visible weather cues. Those cues predict rain and also influence umbrella-carrying, so the observed correlation is not causal.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0053",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Media",
+    "scenario": "A social media account posts at 3 a.m. twice, and both posts go viral. The creator concludes 3 a.m. is their lucky posting time.",
+    "claim": "Posting at 3 a.m. increases the probability that a post will go viral.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Noise-Induced Extremes"
+    },
+    "variables": {
+      "X": "Posting at 3 a.m.",
+      "Y": "Virality of posts",
+      "Z": [
+        "Content quality and platform randomness"
+      ]
+    },
+    "gold_rationale": "Two viral events are an extremely small sample, and viral outcomes have high variance. The observed pattern may be coincidence or may reflect confounding (e.g., different content). Without broader data comparing times and controlling for content, the causal claim is underdetermined.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0054",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Transportation",
+    "scenario": "A city report shows that roads with more bicycle lanes have more bicycle accidents than roads without bicycle lanes.",
+    "claim": "Building bicycle lanes causes more bicycle accidents.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted Variable"
+    },
+    "variables": {
+      "X": "Presence of bicycle lanes",
+      "Y": "Number of bicycle accidents",
+      "Z": [
+        "Bicycle traffic volume"
+      ]
+    },
+    "gold_rationale": "Bicycle lanes are often installed on routes with heavy cycling demand. Higher cycling volume increases exposure and thus accident counts. Without adjusting for volume (risk per cyclist), accident totals cannot be attributed causally to the lanes.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0055",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Finance",
+    "scenario": "An investor notices that after three consecutive up-days in a stock, the next day is often down, and concludes the stock is due to fall after a streak.",
+    "claim": "A short streak of up-days causes the stock to drop the next day.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Extreme-Group Selection"
+    },
+    "variables": {
+      "X": "Recent up-day streak",
+      "Y": "Next-day return",
+      "Z": [
+        "Market noise and mean reversion dynamics"
+      ]
+    },
+    "gold_rationale": "Short-term returns are noisy and streaks occur naturally. Some assets may exhibit mean reversion, but without specifying the asset class, time horizon, and statistical evidence beyond anecdote, the causal claim is not determined by the scenario alone.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0056",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "scenario": "A tennis player wins a tournament after switching to a new racket. Fans attribute the win to the racket change.",
+    "claim": "Switching to the new racket caused the player to win the tournament.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted Variable"
+    },
+    "variables": {
+      "X": "Using a new racket",
+      "Y": "Tournament win",
+      "Z": [
+        "Training, health, opponents, and match variance"
+      ]
+    },
+    "gold_rationale": "A tournament win depends on many factors including fitness, preparation, opponents, and randomness. The win occurring after a racket change does not isolate the racket as the cause without controlled comparison or repeated evidence.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0057",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "After a cohort performs extremely poorly on a standardized test, the school introduces an intensive test-prep program. Scores rise the following year.",
+    "claim": "The test-prep program caused the score improvement.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Extreme-Group Selection"
+    },
+    "variables": {
+      "X": "Test-prep program",
+      "Y": "Subsequent test scores",
+      "Z": [
+        "Random score variance"
+      ]
+    },
+    "gold_rationale": "The intervention was applied after an extreme low. Scores would be expected to improve on average due to regression to the mean even without the program.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0058",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Healthcare",
+    "scenario": "A hospital introduces a new treatment protocol, but wealthier patients are more likely to receive it and also have better outcomes.",
+    "claim": "The new treatment protocol caused better patient outcomes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Unblocked Backdoor"
+    },
+    "variables": {
+      "X": "New treatment protocol",
+      "Y": "Patient outcomes",
+      "Z": [
+        "Socioeconomic status"
+      ]
+    },
+    "gold_rationale": "Socioeconomic status influences both treatment access and outcomes. Because this backdoor path is not blocked, the observed improvement cannot be attributed causally to the protocol.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0059",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A city raises taxes after budget deficits worsen. Revenues increase the following year.",
+    "claim": "Raising taxes caused the increase in revenue.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive Intervention"
+    },
+    "variables": {
+      "X": "Tax increase",
+      "Y": "City revenue",
+      "Z": [
+        "Economic recovery"
+      ]
+    },
+    "gold_rationale": "The policy was enacted in response to worsening fiscal conditions. Improving economic conditions may have driven revenue increases independently of the tax change.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0060",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Medicine",
+    "scenario": "Only patients who completed a full treatment course are analyzed, and they show strong recovery.",
+    "claim": "The treatment is highly effective.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Post-intervention Selection"
+    },
+    "variables": {
+      "X": "Treatment completion",
+      "Y": "Recovery",
+      "Z": [
+        "Dropout patients with worse outcomes"
+      ]
+    },
+    "gold_rationale": "Restricting analysis to patients who completed treatment conditions on a post-intervention selection variable, excluding those who dropped out due to poor outcomes.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0061",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Healthcare",
+    "scenario": "Researchers analyze only patients who adhered to a medication regimen and find better outcomes than non-adherers.",
+    "claim": "The medication caused the improved outcomes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning on Compliance"
+    },
+    "variables": {
+      "X": "Medication",
+      "Y": "Health outcomes",
+      "Z": [
+        "Patient adherence"
+      ]
+    },
+    "gold_rationale": "Conditioning on compliance introduces collider bias, since adherence is affected by both treatment assignment and patient health characteristics.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0062",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A nationwide policy reduces overall pollution levels, but pollution rises in every individual region after implementation.",
+    "claim": "The policy reduced pollution everywhere.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Stratified Intervention Reversal"
+    },
+    "variables": {
+      "X": "Environmental policy",
+      "Y": "Pollution levels",
+      "Z": [
+        "Regional composition shifts"
+      ]
+    },
+    "gold_rationale": "Aggregate improvements mask subgroup-level reversals. The policy appears effective overall due to changing composition, but harms every region individually.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0063",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Healthcare",
+    "scenario": "A hospital introduces a policy to minimize patient wait times. Wait times fall, but patient outcomes worsen.",
+    "claim": "The policy improved healthcare quality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Wait-time reduction policy",
+      "Y": "Healthcare quality",
+      "Z": [
+        "Staff behavior changes"
+      ]
+    },
+    "gold_rationale": "Optimizing the wait-time metric caused staff to prioritize speed over care quality, breaking the proxy’s link to the true target.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0064",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Transportation",
+    "scenario": "A city introduces congestion pricing. Drivers reroute, shifting congestion to nearby streets.",
+    "claim": "Congestion pricing reduced overall traffic congestion.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Congestion pricing",
+      "Y": "Traffic congestion",
+      "Z": [
+        "Driver behavioral adaptation"
+      ]
+    },
+    "gold_rationale": "Driver responses alter traffic patterns dynamically. The net effect on congestion depends on system-wide feedback, making the causal impact unclear without broader measurement.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0065",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "A company adjusts bonuses based on last quarter’s performance. Employees change effort in anticipation of future bonuses.",
+    "claim": "The bonus policy directly caused higher productivity.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Bonus policy",
+      "Y": "Productivity",
+      "Z": [
+        "Strategic employee behavior"
+      ]
+    },
+    "gold_rationale": "Productivity and incentives interact dynamically. Anticipatory behavior changes the environment, complicating causal attribution without a dynamic model.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0066",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Healthcare",
+    "scenario": "Researchers control for blood pressure measured after administering a drug and find no treatment effect.",
+    "claim": "The drug has no effect on patient outcomes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDER_MEDIATOR",
+      "subtype": "Mediator Adjustment Error"
+    },
+    "variables": {
+      "X": "Drug administration",
+      "Y": "Health outcomes",
+      "Z": [
+        "Post-treatment blood pressure"
+      ]
+    },
+    "gold_rationale": "Controlling for a mediator blocks part of the causal pathway from treatment to outcome, biasing the estimated effect toward zero.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0067",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Sports",
+    "scenario": "After a professional basketball team suffers its worst losing streak in a decade, management fires the head coach midseason. Over the next ten games, the team’s win rate improves.",
+    "claim": "Firing the coach caused the team’s improved performance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Trough Selection"
+    },
+    "variables": {
+      "X": "Coach firing",
+      "Y": "Subsequent team performance",
+      "Z": [
+        "Game-to-game performance variance"
+      ]
+    },
+    "gold_rationale": "Coaches are typically fired when performance reaches an extreme low. Because performance naturally fluctuates, improvement is statistically likely even without a coaching change.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0068",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "A company introduces a new productivity app in departments that recently missed their performance targets. The following quarter, output increases.",
+    "claim": "The productivity app caused the increase in output.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Extreme-Group Selection"
+    },
+    "variables": {
+      "X": "Productivity app rollout",
+      "Y": "Department output",
+      "Z": [
+        "Natural performance fluctuation"
+      ]
+    },
+    "gold_rationale": "The app was deployed after departments performed unusually poorly. Output would be expected to rebound toward typical levels even without the intervention.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0069",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "Following a sharp rise in traffic fatalities, a city lowers the speed limit on major roads. Fatalities decrease the following year.",
+    "claim": "Lowering the speed limit caused the reduction in traffic fatalities.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive Intervention"
+    },
+    "variables": {
+      "X": "Speed limit reduction",
+      "Y": "Traffic fatalities",
+      "Z": [
+        "Regression after an anomalous spike"
+      ]
+    },
+    "gold_rationale": "The policy was enacted in response to an unusually high fatality period. Fatalities may have declined due to natural regression or other concurrent changes, making the causal effect unclear without controls.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0070",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "A university offers intensive mentoring only to students who voluntarily sign up. These students graduate at higher rates.",
+    "claim": "The mentoring program caused higher graduation rates.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Unblocked Backdoor"
+    },
+    "variables": {
+      "X": "Mentoring participation",
+      "Y": "Graduation rate",
+      "Z": [
+        "Student motivation"
+      ]
+    },
+    "gold_rationale": "Motivation influences both participation in mentoring and likelihood of graduation. Because this confounder is not blocked, the causal effect of mentoring cannot be isolated.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0071",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Psychology",
+    "scenario": "A therapy study analyzes only patients who complete all sessions and finds strong symptom improvement among them.",
+    "claim": "Completing the therapy caused the observed symptom improvement.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Post-intervention Selection"
+    },
+    "variables": {
+      "X": "Therapy completion",
+      "Y": "Symptom improvement",
+      "Z": [
+        "Dropout due to lack of progress"
+      ]
+    },
+    "gold_rationale": "Conditioning analysis on therapy completion excludes patients who dropped out due to poor outcomes, biasing the estimated effect upward.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0072",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Sports",
+    "scenario": "Analysts compare only players who followed a new offseason training program and find they improved more than those who did not.",
+    "claim": "The training program caused superior performance gains.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning on Compliance"
+    },
+    "variables": {
+      "X": "Training program",
+      "Y": "Performance improvement",
+      "Z": [
+        "Player compliance"
+      ]
+    },
+    "gold_rationale": "Conditioning on compliance introduces collider bias, since compliance is influenced by motivation and baseline fitness, both of which also affect performance.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0073",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Arts",
+    "scenario": "A cultural grant program appears to increase average gallery attendance, even though attendance falls at every individual gallery receiving funding.",
+    "claim": "The grant program increased gallery attendance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Stratified Intervention Reversal"
+    },
+    "variables": {
+      "X": "Arts grant program",
+      "Y": "Gallery attendance",
+      "Z": [
+        "Shift in funding toward larger venues"
+      ]
+    },
+    "gold_rationale": "Aggregate attendance rose due to a compositional shift toward larger venues, while attendance declined at each funded gallery, producing a Simpson’s paradox.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0074",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A government evaluates police departments using arrest counts. Departments increase arrests but community trust declines.",
+    "claim": "The evaluation policy improved public safety.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Arrest-based evaluation policy",
+      "Y": "Public safety",
+      "Z": [
+        "Strategic policing behavior"
+      ]
+    },
+    "gold_rationale": "Optimizing arrest counts incentivized behavior that increased arrests without improving—and possibly harming—true public safety.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0075",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "A firm ties executive compensation to quarterly revenue growth. Executives accelerate sales and delay costs, altering future performance patterns.",
+    "claim": "The compensation policy caused sustainable revenue growth.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Revenue-based compensation policy",
+      "Y": "Reported revenue growth",
+      "Z": [
+        "Executive strategic behavior"
+      ]
+    },
+    "gold_rationale": "The policy alters incentives and behavior, which in turn changes future outcomes. Dynamic feedback makes the long-term causal effect unclear without extended analysis.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0076",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "A school district evaluates teachers based on student test scores. Scores rise, but broader learning outcomes stagnate.",
+    "claim": "The evaluation policy improved educational quality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Test-score-based evaluation",
+      "Y": "Educational quality",
+      "Z": [
+        "Teaching to the test"
+      ]
+    },
+    "gold_rationale": "Optimizing test scores incentivized teaching strategies that improve the metric without improving underlying learning, breaking the proxy-target relationship.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0077",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Sports",
+    "scenario": "A professional cycling team introduces a nutrition program midway through the season. Riders selected for the program are those already showing strong endurance metrics, and average race placements improve.",
+    "claim": "The nutrition program caused the improvement in race performance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Unblocked Backdoor"
+    },
+    "variables": {
+      "X": "Nutrition program",
+      "Y": "Race performance",
+      "Z": [
+        "Baseline athlete fitness"
+      ]
+    },
+    "gold_rationale": "Athletes with higher baseline fitness were more likely to receive the program and also more likely to perform well, leaving a confounding path unblocked.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0078",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "After customer complaints rise sharply, a company launches a new customer service script. Complaint volume declines over the next quarter.",
+    "claim": "The new script caused the reduction in complaints.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive Intervention"
+    },
+    "variables": {
+      "X": "Customer service script rollout",
+      "Y": "Complaint volume",
+      "Z": [
+        "Temporary demand shock"
+      ]
+    },
+    "gold_rationale": "The intervention was introduced in response to worsening complaints, which may have subsided naturally as demand normalized.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0079",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "A school evaluates a new grading policy but analyzes only classrooms where teachers fully complied with the policy.",
+    "claim": "The grading policy caused higher student achievement.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Post-intervention Selection"
+    },
+    "variables": {
+      "X": "Grading policy",
+      "Y": "Student achievement",
+      "Z": [
+        "Teacher compliance"
+      ]
+    },
+    "gold_rationale": "Restricting analysis to compliant classrooms conditions on a post-intervention variable, biasing the estimated effect upward.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0080",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Psychology",
+    "scenario": "Researchers study a stress-reduction app and report strong effects after excluding participants who stopped using the app early.",
+    "claim": "The app effectively reduces stress.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning on Compliance"
+    },
+    "variables": {
+      "X": "Stress-reduction app",
+      "Y": "Stress levels",
+      "Z": [
+        "User persistence"
+      ]
+    },
+    "gold_rationale": "Conditioning on continued use introduces collider bias, since persistence depends on motivation and baseline stress.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0081",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Arts",
+    "scenario": "A city funds public art projects and reports increased average attendance, even though attendance drops at every funded venue.",
+    "claim": "Public art funding increased attendance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Stratified Intervention Reversal"
+    },
+    "variables": {
+      "X": "Public art funding",
+      "Y": "Attendance",
+      "Z": [
+        "Shift toward larger festivals"
+      ]
+    },
+    "gold_rationale": "Aggregate attendance rises due to compositional shifts, while attendance declines within every funded venue, producing a Simpson’s paradox.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0082",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A government ranks schools based on graduation rates. Schools respond by lowering graduation requirements, and graduation rates rise.",
+    "claim": "The ranking policy improved educational outcomes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Graduation-rate ranking policy",
+      "Y": "Educational outcomes",
+      "Z": [
+        "Strategic school behavior"
+      ]
+    },
+    "gold_rationale": "Optimizing a proxy metric incentivized behavior that improved the metric without improving true educational quality.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0083",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "A company introduces dynamic pricing software. Customers alter purchasing behavior, affecting demand patterns over time.",
+    "claim": "Dynamic pricing increased long-term revenue.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Dynamic pricing software",
+      "Y": "Revenue",
+      "Z": [
+        "Customer behavioral adaptation"
+      ]
+    },
+    "gold_rationale": "Customer responses change the demand environment dynamically, making the net causal effect on long-term revenue unclear.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0084",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "Researchers evaluate a new teaching method but control for post-course exam scores when estimating its effect.",
+    "claim": "The teaching method has no effect on learning.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDER_MEDIATOR",
+      "subtype": "Mediator Adjustment Error"
+    },
+    "variables": {
+      "X": "Teaching method",
+      "Y": "Learning outcomes",
+      "Z": [
+        "Post-instruction exam score"
+      ]
+    },
+    "gold_rationale": "Controlling for a mediator blocks the causal pathway from teaching to learning, biasing the estimated effect toward zero.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0085",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Psychology",
+    "scenario": "A workplace introduces a mindfulness break policy. Employees adjust workloads and reporting behavior in response.",
+    "claim": "Mindfulness breaks improved employee well-being.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Mindfulness break policy",
+      "Y": "Employee well-being",
+      "Z": [
+        "Behavioral adaptation"
+      ]
+    },
+    "gold_rationale": "Behavioral responses alter the work environment dynamically, making the net causal effect on well-being unclear without longitudinal analysis.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0086",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Sports",
+    "scenario": "A league introduces performance-based fines. Teams change play style to avoid penalties, altering competitive dynamics.",
+    "claim": "The fines policy improved fair play.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Performance-based fines",
+      "Y": "Fair play",
+      "Z": [
+        "Strategic adaptation by teams"
+      ]
+    },
+    "gold_rationale": "Strategic responses to the policy reshape behavior and incentives, complicating causal attribution without system-wide evaluation.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0087",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Sports",
+    "scenario": "After a series of public controversies involving aggressive play, a professional sports league introduces stricter penalties for fouls and unsportsmanlike conduct. Teams quickly adjust their strategies to avoid fines and suspensions, leading to a noticeable drop in recorded fouls during games. League officials point to the lower foul counts as evidence that the new penalty policy improved sportsmanship across the league.",
+    "claim": "The stricter penalty policy caused an improvement in sportsmanship.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Stricter penalty policy",
+      "Y": "Sportsmanship",
+      "Z": [
+        "Strategic adjustment of play styles"
+      ]
+    },
+    "gold_rationale": "By targeting foul counts, the policy incentivized teams to alter visible behaviors without necessarily improving underlying sportsmanship, breaking the link between the metric and the true concept of fair play.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0088",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "Following several quarters of declining profits, a corporation introduces a company-wide cost-cutting initiative that includes layoffs and reduced investment spending. In the next quarter, reported profits increase, and executives credit the initiative for the turnaround. At the same time, broader market conditions improve and consumer demand rises across the industry.",
+    "claim": "The cost-cutting initiative caused the increase in profits.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive Intervention"
+    },
+    "variables": {
+      "X": "Cost-cutting initiative",
+      "Y": "Corporate profits",
+      "Z": [
+        "Industry-wide demand recovery"
+      ]
+    },
+    "gold_rationale": "The intervention was introduced in response to poor financial performance, and profits may have increased due to external market recovery rather than the cost-cutting measures themselves.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0089",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "A university launches an optional honors seminar aimed at improving critical thinking skills. Students who enroll tend to be highly motivated, attend classes regularly, and already perform well academically. At the end of the year, participants score higher on comprehensive assessments than non-participants.",
+    "claim": "The honors seminar caused higher assessment scores.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Unblocked Backdoor"
+    },
+    "variables": {
+      "X": "Honors seminar participation",
+      "Y": "Assessment scores",
+      "Z": [
+        "Student motivation"
+      ]
+    },
+    "gold_rationale": "Motivation affects both the likelihood of enrolling in the seminar and academic performance, leaving a confounding path unblocked and invalidating the causal claim.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0090",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Psychology",
+    "scenario": "Researchers test a new cognitive-behavioral intervention for anxiety and allow participants to drop out at any time. When analyzing results, the researchers include only participants who completed the full program. Among these participants, anxiety scores improve substantially over the study period.",
+    "claim": "The intervention caused the reduction in anxiety.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Post-intervention Selection"
+    },
+    "variables": {
+      "X": "Cognitive-behavioral intervention",
+      "Y": "Anxiety levels",
+      "Z": [
+        "Participant dropout"
+      ]
+    },
+    "gold_rationale": "Conditioning analysis on program completion excludes participants who may have experienced less improvement or worsening symptoms, biasing the estimated treatment effect.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0091",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Arts",
+    "scenario": "A national arts council introduces a new funding program intended to boost attendance at cultural events. Large, already-popular festivals are prioritized for funding because they can quickly demonstrate reach. After funding begins, average national attendance increases even though attendance declines at every funded local theater.",
+    "claim": "The funding program increased attendance at cultural events.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Stratified Intervention Reversal"
+    },
+    "variables": {
+      "X": "Arts funding program",
+      "Y": "Event attendance",
+      "Z": [
+        "Shift toward large festivals"
+      ]
+    },
+    "gold_rationale": "Aggregate attendance rose due to compositional shifts toward large venues, while attendance fell within every funded subgroup, producing a Simpson’s paradox.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0092",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A government evaluates local agencies using a single performance score based on case throughput. Agencies respond by closing cases more quickly, often by narrowing eligibility or reducing follow-up. Reported performance scores rise sharply after the policy is implemented.",
+    "claim": "The evaluation policy improved agency effectiveness.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Performance-score evaluation policy",
+      "Y": "Agency effectiveness",
+      "Z": [
+        "Strategic case handling"
+      ]
+    },
+    "gold_rationale": "Optimizing a proxy metric incentivized behavior that improved the score without improving—and potentially harming—true effectiveness.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0093",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "A company introduces a real-time sales leaderboard to motivate employees. Sales staff begin timing promotions and delaying deals to coincide with reporting periods, changing customer interaction patterns. Short-term sales increase, but longer-term customer retention becomes unclear.",
+    "claim": "The leaderboard policy caused a sustainable increase in sales performance.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Sales leaderboard policy",
+      "Y": "Sales performance",
+      "Z": [
+        "Employee strategic behavior"
+      ]
+    },
+    "gold_rationale": "Employee behavior adapts dynamically to the policy, altering the environment and making the long-term causal effect uncertain without extended observation.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0094",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "Researchers assess a new teaching approach but control for post-course test scores when estimating its effect on learning. After adjustment, the estimated effect of the teaching method disappears. The researchers conclude that the method had no impact.",
+    "claim": "The teaching approach does not affect learning outcomes.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDER_MEDIATOR",
+      "subtype": "Mediator Adjustment Error"
+    },
+    "variables": {
+      "X": "Teaching approach",
+      "Y": "Learning outcomes",
+      "Z": [
+        "Post-instruction test scores"
+      ]
+    },
+    "gold_rationale": "Adjusting for a mediator blocks part of the causal pathway from teaching to learning, biasing the estimated effect toward zero.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0095",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Psychology",
+    "scenario": "A workplace introduces an optional wellness program. Employees who stick with the program for several months report improved mental health and lower burnout. Researchers analyze only these persistent participants when estimating the program’s effect.",
+    "claim": "The wellness program caused improvements in mental health.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning on Compliance"
+    },
+    "variables": {
+      "X": "Wellness program",
+      "Y": "Mental health outcomes",
+      "Z": [
+        "Employee persistence"
+      ]
+    },
+    "gold_rationale": "Conditioning on persistence introduces collider bias, since persistence is influenced by motivation and baseline mental health.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0096",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A city introduces congestion pricing to reduce downtown traffic. Drivers respond by changing routes and travel times, shifting congestion to surrounding neighborhoods. Officials report mixed evidence on overall congestion levels.",
+    "claim": "Congestion pricing reduced overall traffic congestion.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Congestion pricing policy",
+      "Y": "Traffic congestion",
+      "Z": [
+        "Driver route adaptation"
+      ]
+    },
+    "gold_rationale": "Driver responses alter traffic patterns dynamically, making the net causal effect on congestion unclear without system-wide measurement.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0097",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Sports",
+    "scenario": "A professional football league introduces a new concussion protocol requiring players to sit out longer after head injuries. Teams begin reporting fewer diagnosed concussions during games, and league officials highlight the decline as evidence of improved player safety. At the same time, medical staff face incentives to classify injuries differently to avoid extended player absences.",
+    "claim": "The new concussion protocol improved player safety.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Concussion protocol",
+      "Y": "Player safety",
+      "Z": [
+        "Injury reporting incentives"
+      ]
+    },
+    "gold_rationale": "Targeting reported concussion counts incentivizes changes in reporting behavior rather than genuine improvements in underlying safety, breaking the link between the metric and the true outcome.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0098",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "After a sharp drop in customer satisfaction scores, a retail chain rolls out a new employee training program across selected stores. Customer satisfaction improves over the next few months, and executives attribute the recovery to the training. However, the rollout coincides with the end of a major supply disruption that had previously affected product availability.",
+    "claim": "The employee training program caused the increase in customer satisfaction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Reactive Intervention"
+    },
+    "variables": {
+      "X": "Employee training program",
+      "Y": "Customer satisfaction",
+      "Z": [
+        "Supply chain normalization"
+      ]
+    },
+    "gold_rationale": "The training was introduced in response to worsening satisfaction, and improvements may reflect the resolution of external problems rather than the causal effect of the program.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0099",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "A school district launches an optional digital learning platform designed to improve math achievement. Students who opt in tend to have strong parental support and reliable internet access at home. At the end of the year, participating students outperform non-participants on standardized math tests.",
+    "claim": "The digital learning platform caused higher math achievement.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Unblocked Backdoor"
+    },
+    "variables": {
+      "X": "Digital learning platform participation",
+      "Y": "Math achievement",
+      "Z": [
+        "Parental support and home resources"
+      ]
+    },
+    "gold_rationale": "Family support and resources influence both platform participation and academic performance, leaving a confounding path unblocked and invalidating the causal claim.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0100",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Psychology",
+    "scenario": "A research team studies a new stress-management workshop offered at a corporate office. Employees are free to leave the program at any time, and many do so after a few sessions. The final analysis includes only those who completed the full workshop, among whom stress levels are substantially lower.",
+    "claim": "The workshop caused the reduction in employee stress.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Post-intervention Selection"
+    },
+    "variables": {
+      "X": "Stress-management workshop",
+      "Y": "Employee stress levels",
+      "Z": [
+        "Program dropout"
+      ]
+    },
+    "gold_rationale": "Conditioning the analysis on completion excludes participants who may not have benefited, biasing the estimated effect of the intervention.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0101",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Arts",
+    "scenario": "A national film board introduces performance-based grants tied to box office revenue. Filmmakers respond by focusing on commercially safe projects while reducing experimentation and niche storytelling. Overall revenue increases, and the board claims the grants improved the health of the film industry.",
+    "claim": "The grant policy improved the overall health of the film industry.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Revenue-based grant policy",
+      "Y": "Industry health",
+      "Z": [
+        "Filmmaker strategic choices"
+      ]
+    },
+    "gold_rationale": "Optimizing revenue incentivized behavior that improved the metric while potentially harming broader artistic diversity and long-term industry health.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0102",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A government introduces stricter eligibility rules for welfare programs to reduce fraud. The number of reported fraud cases declines sharply after implementation. Advocacy groups report that many eligible individuals also stop applying due to increased administrative complexity.",
+    "claim": "The new eligibility rules reduced welfare fraud.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Stricter eligibility rules",
+      "Y": "Fraud incidence",
+      "Z": [
+        "Application deterrence"
+      ]
+    },
+    "gold_rationale": "Reducing reported fraud by discouraging applications conflates true fraud reduction with reduced program access, breaking the proxy-target relationship.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0103",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Business",
+    "scenario": "A company introduces an algorithmic scheduling system to optimize labor costs. Employees respond by swapping shifts and changing availability patterns to minimize undesirable hours. Short-term cost savings appear, but employee turnover begins to rise.",
+    "claim": "The scheduling system improved workforce efficiency.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Policy–Response Loop"
+    },
+    "variables": {
+      "X": "Algorithmic scheduling system",
+      "Y": "Workforce efficiency",
+      "Z": [
+        "Employee behavioral adaptation"
+      ]
+    },
+    "gold_rationale": "Employee responses alter the labor environment dynamically, making the net causal effect on efficiency unclear without longer-term system-wide analysis.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0104",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Education",
+    "scenario": "Researchers evaluate a new instructional approach and statistically control for post-course grades when estimating its effect on learning. After adjustment, the estimated impact of the approach is close to zero. The researchers conclude the approach is ineffective.",
+    "claim": "The instructional approach has no effect on learning.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDER_MEDIATOR",
+      "subtype": "Mediator Adjustment Error"
+    },
+    "variables": {
+      "X": "Instructional approach",
+      "Y": "Learning outcomes",
+      "Z": [
+        "Post-instruction grades"
+      ]
+    },
+    "gold_rationale": "Controlling for a mediator blocks the causal pathway from instruction to learning, biasing the estimated effect toward zero.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0105",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Psychology",
+    "scenario": "A university offers an optional resilience training program to students. Those who consistently attend sessions report higher well-being at the end of the semester. The analysis excludes students who stopped attending early in the program.",
+    "claim": "The resilience training program caused higher student well-being.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning on Compliance"
+    },
+    "variables": {
+      "X": "Resilience training program",
+      "Y": "Student well-being",
+      "Z": [
+        "Attendance persistence"
+      ]
+    },
+    "gold_rationale": "Conditioning on attendance persistence introduces collider bias, as persistence depends on motivation and baseline well-being.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0106",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L2",
+    "domain": "Public Policy",
+    "scenario": "A city introduces a performance ranking system for sanitation departments based on complaint resolution speed. Departments respond by closing complaints more quickly, sometimes without fully resolving issues. Resolution metrics improve, but citizen satisfaction remains flat.",
+    "claim": "The ranking system improved sanitation services.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "GOODHART",
+      "subtype": "Policy Target Gaming"
+    },
+    "variables": {
+      "X": "Complaint-resolution ranking system",
+      "Y": "Service quality",
+      "Z": [
+        "Strategic complaint handling"
+      ]
+    },
+    "gold_rationale": "Optimizing resolution speed incentivized superficial fixes that improved the metric without improving underlying service quality.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0107",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Sports",
+    "scenario": "A basketball team wins a championship after a star player hits a last-second shot in Game 7. Commentators argue that if the shot had missed, the team would certainly have lost the series. However, the game was tied before the shot, and either team could have scored in overtime under different circumstances.",
+    "claim": "Had the final shot missed, the team would have lost the championship.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Early Preemption"
+    },
+    "variables": {
+      "X": "Final shot made",
+      "Y": "Championship outcome",
+      "Z": [
+        "Overtime scoring opportunities"
+      ]
+    },
+    "gold_rationale": "The made shot preempted other possible causes of victory or defeat, such as overtime play. In the counterfactual world where the shot misses, the outcome is not uniquely determined.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0108",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "A startup becomes highly successful after launching its product during a sudden surge in market demand. Investors claim that even without the surge, the company would still have succeeded due to the founders’ skill. However, founder behavior, hiring decisions, and investor interest would likely differ in a market without the surge.",
+    "claim": "The startup would have succeeded even without the market demand surge.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Cross-world Confounder"
+    },
+    "variables": {
+      "X": "Market demand surge",
+      "Y": "Startup success",
+      "Z": [
+        "Founder decisions and effort"
+      ]
+    },
+    "gold_rationale": "Founder behavior and business outcomes depend on market conditions, which differ across the actual and counterfactual worlds. Holding these factors fixed violates counterfactual consistency.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0109",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A city implements a housing policy after rents rise sharply. In the following year, rent growth slows, and officials argue that without the policy, rents would have continued to rise rapidly. At the same time, several large housing developments are completed in the region.",
+    "claim": "Without the housing policy, rents would have continued rising rapidly.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-dependent Worlds"
+    },
+    "variables": {
+      "X": "Housing policy",
+      "Y": "Rent levels",
+      "Z": [
+        "Increase in housing supply"
+      ]
+    },
+    "gold_rationale": "The policy was enacted in response to rising rents, and the counterfactual world ignores other concurrent factors that independently affect rent trends.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0110",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "A student receives additional tutoring after failing a major exam and later passes the course. The student claims that without tutoring, they would have failed again. However, their motivation, study habits, and instructor support might have changed even without tutoring.",
+    "claim": "Without tutoring, the student would have failed the course.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Cross-world Confounder"
+    },
+    "variables": {
+      "X": "Tutoring",
+      "Y": "Course outcome",
+      "Z": [
+        "Student motivation"
+      ]
+    },
+    "gold_rationale": "Motivation and study behavior may differ across the actual and counterfactual worlds. Without specifying how these factors change, the counterfactual outcome cannot be uniquely determined.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0111",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Psychology",
+    "scenario": "A patient’s symptoms improve after completing a therapy program. The therapist claims that without therapy, the patient’s symptoms would have remained severe. However, spontaneous recovery and life changes could have occurred differently in the absence of therapy.",
+    "claim": "Without therapy, the patient’s symptoms would not have improved.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Cross-world Confounder"
+    },
+    "variables": {
+      "X": "Therapy",
+      "Y": "Symptom severity",
+      "Z": [
+        "Life events and coping changes"
+      ]
+    },
+    "gold_rationale": "Unobserved recovery processes may evolve differently in the counterfactual world, preventing a definitive causal conclusion.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0112",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Arts",
+    "scenario": "A musician gains international recognition after a viral social media post leads to widespread exposure. Critics argue that even without the viral moment, the artist would eventually have been discovered. The counterfactual assumes alternative discovery pathways would unfold similarly without the viral event.",
+    "claim": "Without the viral post, the artist would have achieved the same level of recognition.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Late Preemption"
+    },
+    "variables": {
+      "X": "Viral social media exposure",
+      "Y": "Artistic recognition",
+      "Z": [
+        "Alternative discovery channels"
+      ]
+    },
+    "gold_rationale": "The viral exposure preempted other possible discovery mechanisms, and the counterfactual world cannot assume those mechanisms would activate in the same way or timeframe.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0113",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "A company avoids bankruptcy after receiving an emergency loan. Executives claim that without the loan, the company would have collapsed immediately. However, alternative financing, restructuring, or cost reductions might have occurred in the absence of the loan.",
+    "claim": "Without the emergency loan, the company would have gone bankrupt.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Early Preemption"
+    },
+    "variables": {
+      "X": "Emergency loan",
+      "Y": "Company survival",
+      "Z": [
+        "Alternative survival strategies"
+      ]
+    },
+    "gold_rationale": "The loan preempted other potential survival paths, so the counterfactual outcome of bankruptcy is not uniquely determined.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0114",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "A school district introduces a new curriculum after graduation rates begin to fall. Graduation rates later stabilize, and officials claim that without the curriculum change, rates would have continued to decline. Demographic shifts and funding changes occur during the same period.",
+    "claim": "Without the curriculum change, graduation rates would have continued to fall.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-dependent Worlds"
+    },
+    "variables": {
+      "X": "Curriculum change",
+      "Y": "Graduation rates",
+      "Z": [
+        "Demographic and funding changes"
+      ]
+    },
+    "gold_rationale": "The counterfactual world assumes outcomes without properly accounting for concurrent changes that independently affect graduation rates.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0115",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A country avoids a recession after passing a stimulus bill. Policymakers argue that without the bill, a recession would have occurred. However, global economic conditions improved rapidly during the same period.",
+    "claim": "Without the stimulus bill, the country would have entered a recession.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Cross-world Confounder"
+    },
+    "variables": {
+      "X": "Stimulus bill",
+      "Y": "Economic outcome",
+      "Z": [
+        "Global economic recovery"
+      ]
+    },
+    "gold_rationale": "Global recovery affects outcomes differently across worlds, preventing isolation of the stimulus bill’s counterfactual effect.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0116",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Psychology",
+    "scenario": "A student reports higher confidence after attending a leadership workshop. The student claims that without the workshop, their confidence would not have improved. Other social experiences and academic successes occurred during the same semester.",
+    "claim": "Without the leadership workshop, the student’s confidence would not have improved.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Cross-world Confounder"
+    },
+    "variables": {
+      "X": "Leadership workshop",
+      "Y": "Confidence level",
+      "Z": [
+        "Concurrent social experiences"
+      ]
+    },
+    "gold_rationale": "Confidence may be influenced by multiple evolving factors that differ across the actual and counterfactual worlds, making the claim dependent on untestable assumptions.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0117",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Sports",
+    "scenario": "A soccer team wins a match after scoring an early goal and then adding a late goal in stoppage time. Commentators claim that if the late goal had not been scored, the team would have lost the match. However, the team was already ahead by one goal when the late goal occurred, and the opponent had no remaining time to score.",
+    "claim": "Without the late goal, the team would have lost the match.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Early Preemption"
+    },
+    "variables": {
+      "X": "Late goal",
+      "Y": "Match outcome",
+      "Z": [
+        "Early goal advantage"
+      ]
+    },
+    "gold_rationale": "The early goal was already sufficient to secure victory. The late goal preempted no necessary cause of winning, so removing it does not imply a loss.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0118",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "A company avoids a system outage after its primary server remains operational during a power fluctuation. Executives claim that if the primary server had failed, the backup server would have failed as well, causing a total outage. However, the backup system was designed to activate only if the primary failed.",
+    "claim": "If the primary server had failed, the system would still have gone offline.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Late Preemption"
+    },
+    "variables": {
+      "X": "Primary server operation",
+      "Y": "System availability",
+      "Z": [
+        "Backup server activation"
+      ]
+    },
+    "gold_rationale": "The functioning primary server preempted the backup from activating. The counterfactual world cannot assume the backup would have failed without evidence.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0119",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "A student passes a course after receiving tutoring and increasing their study time. The student claims that without tutoring, they would have failed the course. However, tutoring also increased the student’s motivation and time spent studying, which may differ in the counterfactual world.",
+    "claim": "Without tutoring, the student would have failed the course.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Cross-world Confounder"
+    },
+    "variables": {
+      "X": "Tutoring",
+      "Y": "Course outcome",
+      "Z": [
+        "Motivation and study time"
+      ]
+    },
+    "gold_rationale": "Motivation and effort differ between the actual and counterfactual worlds. Without specifying how these evolve, the outcome cannot be uniquely determined.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0120",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A city introduces a curfew after crime spikes sharply. Crime decreases the following month, and officials claim that without the curfew, crime would have continued rising. The curfew was enacted precisely because crime had already begun to decline due to increased police presence.",
+    "claim": "Without the curfew, crime would have continued to rise.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-dependent Worlds"
+    },
+    "variables": {
+      "X": "Curfew policy",
+      "Y": "Crime rate",
+      "Z": [
+        "Police deployment"
+      ]
+    },
+    "gold_rationale": "The intervention was triggered by outcome trends. The counterfactual world improperly constrains crime to rise without accounting for prior changes.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0121",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Psychology",
+    "scenario": "A patient recovers after completing therapy, and researchers assess what would have happened without treatment. In their analysis, they hold recovery constant while imagining the absence of therapy. This assumes recovery would still occur identically without treatment.",
+    "claim": "The patient would have recovered even without therapy.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDER_MEDIATOR",
+      "subtype": "Mediator Fixing Error"
+    },
+    "variables": {
+      "X": "Therapy",
+      "Y": "Recovery",
+      "Z": [
+        "Symptom improvement"
+      ]
+    },
+    "gold_rationale": "Holding recovery fixed while removing therapy blocks the causal pathway and violates counterfactual logic.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0122",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "A company introduces a pricing change that alters customer behavior over several months. Analysts ask what profits would have been without the change, assuming customers would behave the same way. In reality, purchasing patterns evolve dynamically in response to prices.",
+    "claim": "Without the pricing change, profits would have followed the same trajectory.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Dynamic World Divergence"
+    },
+    "variables": {
+      "X": "Pricing change",
+      "Y": "Profit trajectory",
+      "Z": [
+        "Customer adaptation"
+      ]
+    },
+    "gold_rationale": "Small changes in policy alter long-term system dynamics. The counterfactual world cannot assume identical evolution.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0123",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Arts",
+    "scenario": "An artist becomes famous after being featured in a major gallery. Critics claim that without the feature, the artist would still have been discovered eventually. The gallery feature occurred before other discovery channels had a chance to operate.",
+    "claim": "Without the gallery feature, the artist would still have become famous.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Late Preemption"
+    },
+    "variables": {
+      "X": "Gallery feature",
+      "Y": "Artistic fame",
+      "Z": [
+        "Alternative discovery paths"
+      ]
+    },
+    "gold_rationale": "The feature preempted other possible discovery mechanisms, and the counterfactual world cannot assume they would have occurred.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0124",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "Researchers study only students who graduated and ask what would have happened to them without a scholarship. Students who dropped out are excluded from the counterfactual analysis. Graduation status is therefore conditioned on when reasoning counterfactually.",
+    "claim": "Without the scholarship, the same students would still have graduated.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Scholarship",
+      "Y": "Graduation",
+      "Z": [
+        "Selection on graduates"
+      ]
+    },
+    "gold_rationale": "Conditioning on survival or graduation biases counterfactual inference by excluding those who would not persist without treatment.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0125",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A government avoids unrest after implementing a subsidy program. Analysts ask what would have happened without the subsidy, assuming public sentiment would remain unchanged. In reality, sentiment evolves in response to both policy and expectations.",
+    "claim": "Without the subsidy, public unrest would have remained unchanged.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Dynamic World Divergence"
+    },
+    "variables": {
+      "X": "Subsidy policy",
+      "Y": "Public unrest",
+      "Z": [
+        "Expectation dynamics"
+      ]
+    },
+    "gold_rationale": "Feedback between policy and public behavior means the counterfactual world cannot mirror the actual trajectory.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0126",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Psychology",
+    "scenario": "A study examines only individuals who recovered from burnout and asks what their stress levels would have been without therapy. Those who did not recover are excluded from the analysis. Recovery status is therefore fixed when reasoning counterfactually.",
+    "claim": "Without therapy, these individuals would still have recovered.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Therapy",
+      "Y": "Recovery",
+      "Z": [
+        "Conditioning on recovery"
+      ]
+    },
+    "gold_rationale": "Fixing recovery status while changing treatment violates counterfactual principles and introduces selection bias.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Hard"
+  },
+  {
+    "id": "T3-BucketD-0127",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "A university awards degrees only to students who complete all required courses. A student failed to graduate because they were missing exactly one required course. The graduation system applies rules mechanically with no exceptions.",
+    "claim": "If the student had completed the missing course, they would have graduated.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Course completion",
+      "Y": "Graduation outcome",
+      "Z": [
+        "Graduation eligibility rules"
+      ]
+    },
+    "gold_rationale": "Graduation status is deterministically conditioned on course completion. Changing completion status uniquely determines the outcome.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0128",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Sports",
+    "scenario": "In a tennis match, a player loses after committing a double fault on match point. Match rules state that a double fault immediately ends the point and the match. There is no opportunity for replay or continuation.",
+    "claim": "If the player had not double faulted, the match would not have ended at that moment.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Early Preemption"
+    },
+    "variables": {
+      "X": "Double fault",
+      "Y": "Match termination",
+      "Z": [
+        "Match rules"
+      ]
+    },
+    "gold_rationale": "The double fault directly and deterministically caused the match to end. Removing it prevents immediate termination.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Easy"
+  },
+  {
+    "id": "T3-BucketD-0129",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "A transaction was rejected because a customer entered an incorrect authentication code. The payment system approves transactions if and only if the correct code is provided. No manual review or fallback mechanism exists.",
+    "claim": "If the customer had entered the correct code, the transaction would have been approved.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDER_MEDIATOR",
+      "subtype": "Mediator Fixing Error"
+    },
+    "variables": {
+      "X": "Authentication code entry",
+      "Y": "Transaction approval",
+      "Z": [
+        "Verification mechanism"
+      ]
+    },
+    "gold_rationale": "The authentication step fully mediates approval. Changing the code value uniquely determines approval.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0130",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A speeding ticket is issued automatically when a radar system detects a vehicle exceeding the speed limit. The enforcement system is fully automated and does not involve discretion. The driver exceeded the limit and received a ticket.",
+    "claim": "If the driver had not exceeded the speed limit, they would not have received a ticket.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Speeding behavior",
+      "Y": "Ticket issuance",
+      "Z": [
+        "Automated enforcement rule"
+      ]
+    },
+    "gold_rationale": "Ticket issuance is deterministically conditioned on speeding. Removing speeding uniquely prevents the ticket.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0131",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Psychology",
+    "scenario": "In a laboratory task, participants receive a reward only if they press a button within a strict time window. One participant pressed too late and did not receive the reward. The reward mechanism is fixed and does not adapt.",
+    "claim": "If the participant had pressed the button within the time window, they would have received the reward.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Reaction time",
+      "Y": "Reward receipt",
+      "Z": [
+        "Fixed timing rule"
+      ]
+    },
+    "gold_rationale": "Reward receipt is deterministically conditioned on timing. Changing the reaction time uniquely changes the outcome.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0132",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Arts",
+    "scenario": "An art competition selects winners solely based on numerical scores assigned by judges. An artist narrowly missed the cutoff score and was not selected. The scoring system does not include randomness or subjective overrides.",
+    "claim": "If the artist’s score had been higher, the artwork would have been selected.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Artwork score",
+      "Y": "Selection outcome",
+      "Z": [
+        "Fixed cutoff rule"
+      ]
+    },
+    "gold_rationale": "Selection is deterministically conditioned on score. Increasing the score uniquely implies selection.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0133",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Sports",
+    "scenario": "A football team is eliminated after failing to convert a mandatory fourth-down attempt late in the game. League rules state that failure to convert results in immediate turnover and loss when time expires. No additional plays are possible.",
+    "claim": "If the team had converted the fourth-down attempt, they would not have been eliminated at that moment.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "PREEMPTION",
+      "subtype": "Late Preemption"
+    },
+    "variables": {
+      "X": "Fourth-down conversion",
+      "Y": "Elimination outcome",
+      "Z": [
+        "Game clock and rules"
+      ]
+    },
+    "gold_rationale": "The failed conversion directly caused elimination under deterministic rules. Removing it prevents immediate elimination.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0134",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "A company’s system automatically shuts down when internal temperature exceeds a fixed threshold. Logs show the shutdown occurred immediately after the threshold was crossed. The system has no adaptive behavior.",
+    "claim": "If the temperature had not exceeded the threshold, the system would not have shut down.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Dynamic World Divergence"
+    },
+    "variables": {
+      "X": "Temperature threshold crossing",
+      "Y": "System shutdown",
+      "Z": [
+        "Automated control rule"
+      ]
+    },
+    "gold_rationale": "The control system operates deterministically. Preventing the trigger uniquely prevents shutdown.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0135",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "A student is barred from sitting an exam because attendance fell below the required minimum. Attendance rules are enforced mechanically without discretion. The student’s attendance was just below the cutoff.",
+    "claim": "If the student had met the attendance requirement, they would have been allowed to sit the exam.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Attendance level",
+      "Y": "Exam eligibility",
+      "Z": [
+        "Attendance policy"
+      ]
+    },
+    "gold_rationale": "Eligibility is deterministically conditioned on attendance. Changing attendance uniquely determines eligibility.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0136",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A subsidy is granted only to households below a fixed income threshold. A household slightly exceeded the threshold and did not receive assistance. The policy does not allow exceptions or discretion.",
+    "claim": "If the household’s income had been below the threshold, it would have received the subsidy.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Household income",
+      "Y": "Subsidy receipt",
+      "Z": [
+        "Eligibility threshold"
+      ]
+    },
+    "gold_rationale": "Subsidy receipt is deterministically conditioned on income. Lowering income uniquely implies receipt.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0137",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "An online platform automatically bans accounts that violate its terms of service by posting prohibited content. A user was banned immediately after posting such content. The moderation system is fully automated and does not consider context or intent.",
+    "claim": "If the user had not posted the prohibited content, the account would not have been banned.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Policy-violating content",
+      "Y": "Account ban",
+      "Z": [
+        "Automated moderation rule"
+      ]
+    },
+    "gold_rationale": "The ban is deterministically conditioned on the violation. Removing the violation uniquely prevents the ban.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0138",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "A student fails a course because their final average falls below the minimum passing threshold. The grading system computes final grades mechanically using a fixed formula. No discretionary adjustments or curves are applied.",
+    "claim": "If the student’s final average had exceeded the threshold, they would have passed the course.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Final grade average",
+      "Y": "Course outcome",
+      "Z": [
+        "Passing threshold rule"
+      ]
+    },
+    "gold_rationale": "Passing status is deterministically conditioned on the final average. Raising the average uniquely implies passing.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0139",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A household was denied housing assistance because its income exceeded a strict eligibility limit by a small amount. The assistance program uses an automated system that applies eligibility rules without discretion. Appeals are not permitted under the policy.",
+    "claim": "If the household’s income had been below the eligibility limit, it would have received housing assistance.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Household income",
+      "Y": "Assistance receipt",
+      "Z": [
+        "Eligibility cutoff"
+      ]
+    },
+    "gold_rationale": "Assistance receipt is mechanically conditioned on income. Lowering income uniquely implies receipt.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0140",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Sports",
+    "scenario": "A runner is disqualified after stepping outside the track lane, which is detected by an automated sensor. Competition rules state that any lane violation results in immediate disqualification. No human judgment is involved.",
+    "claim": "If the runner had stayed within the lane, they would not have been disqualified.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Lane violation",
+      "Y": "Disqualification",
+      "Z": [
+        "Automated enforcement rule"
+      ]
+    },
+    "gold_rationale": "Disqualification is deterministically conditioned on lane violations. Removing the violation uniquely prevents disqualification.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Easy"
+  },
+  {
+    "id": "T3-BucketD-0141",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Psychology",
+    "scenario": "In a conditioning experiment, participants receive a stimulus only if they press a button within a fixed time window. One participant pressed outside the window and did not receive the stimulus. The timing rule is fixed and known in advance.",
+    "claim": "If the participant had pressed the button within the time window, they would have received the stimulus.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Button press timing",
+      "Y": "Stimulus delivery",
+      "Z": [
+        "Timing threshold"
+      ]
+    },
+    "gold_rationale": "Stimulus delivery is deterministically conditioned on timing. Adjusting timing uniquely determines delivery.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0142",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Arts",
+    "scenario": "A music competition advances contestants strictly based on numerical scores. A performer narrowly missed the cutoff and was eliminated. The scoring and advancement process is automated and rule-based.",
+    "claim": "If the performer’s score had been higher, they would have advanced to the next round.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Performance score",
+      "Y": "Advancement",
+      "Z": [
+        "Fixed cutoff rule"
+      ]
+    },
+    "gold_rationale": "Advancement is deterministically conditioned on score. Increasing the score uniquely implies advancement.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0143",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Business",
+    "scenario": "A software deployment was rolled back automatically when error rates exceeded a predefined threshold. The rollback system does not consider contextual factors or manual overrides. Logs show the threshold was exceeded immediately before rollback.",
+    "claim": "If the error rate had not exceeded the threshold, the deployment would not have been rolled back.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "FEEDBACK",
+      "subtype": "Dynamic World Divergence"
+    },
+    "variables": {
+      "X": "Error rate threshold crossing",
+      "Y": "Deployment rollback",
+      "Z": [
+        "Automated control system"
+      ]
+    },
+    "gold_rationale": "The rollback mechanism is rule-based and deterministic at the trigger point. Preventing the trigger uniquely prevents rollback.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0144",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Public Policy",
+    "scenario": "A vehicle inspection program automatically revokes registration if emissions exceed legal limits. A car failed inspection and had its registration revoked. The inspection process is mechanical and does not allow discretion.",
+    "claim": "If the vehicle’s emissions had been within legal limits, its registration would not have been revoked.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Emissions level",
+      "Y": "Registration status",
+      "Z": [
+        "Legal emission threshold"
+      ]
+    },
+    "gold_rationale": "Registration status is deterministically conditioned on emissions. Lowering emissions uniquely implies retention.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0145",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Education",
+    "scenario": "A student was not admitted to a program because their test score was below the published cutoff. The admissions system applies the cutoff automatically without holistic review. No exceptions are granted.",
+    "claim": "If the student’s test score had exceeded the cutoff, they would have been admitted.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Test score",
+      "Y": "Admission decision",
+      "Z": [
+        "Fixed cutoff policy"
+      ]
+    },
+    "gold_rationale": "Admission is deterministically conditioned on score. Raising the score uniquely implies admission.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Easy"
+  },
+  {
+    "id": "T3-BucketD-0146",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L3",
+    "domain": "Psychology",
+    "scenario": "A participant in a study did not receive a bonus because they failed to complete a required task. The experiment protocol specifies that the bonus is awarded only if the task is completed. The protocol is enforced uniformly.",
+    "claim": "If the participant had completed the required task, they would have received the bonus.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Counterfactual Conditioning"
+    },
+    "variables": {
+      "X": "Task completion",
+      "Y": "Bonus receipt",
+      "Z": [
+        "Experimental protocol"
+      ]
+    },
+    "gold_rationale": "Bonus receipt is mechanically conditioned on task completion. Completing the task uniquely implies receipt.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0147",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Public Policy",
+    "scenario": "A report finds that neighborhoods with more police patrols have higher recorded crime rates. The same report notes that the city increased patrols specifically in areas where residents had complained about recent crime spikes. Commentators conclude that police patrols increase crime.",
+    "claim": "Increasing police patrols causes crime to increase.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-driven Selection"
+    },
+    "variables": {
+      "X": "Police patrol intensity",
+      "Y": "Recorded crime rate",
+      "Z": [
+        "Prior crime conditions driving patrol deployment"
+      ]
+    },
+    "gold_rationale": "Patrols are deployed because crime is already high or rising, so the outcome (or its causes) influences exposure. The observed association does not support the claimed causal direction.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0148",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Education",
+    "scenario": "Students who attend private tutoring tend to have higher standardized test scores. In the same dataset, families who purchase tutoring also report higher household income and greater access to educational resources. Some parents conclude that tutoring itself is the reason for the higher scores.",
+    "claim": "Tutoring causes students to score higher on standardized tests.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Tutoring attendance",
+      "Y": "Test scores",
+      "Z": [
+        "Socioeconomic status"
+      ]
+    },
+    "gold_rationale": "Socioeconomic status affects both the likelihood of receiving tutoring and test performance. The association can be explained without attributing a causal effect to tutoring.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0149",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "scenario": "A team’s social media account posts more highlight videos during weeks when the team wins games. Fans notice that weeks with more highlight videos are also weeks with higher ticket interest and claim the videos are driving the interest. In reality, winning weeks generate more highlights and more public excitement simultaneously.",
+    "claim": "Posting more highlight videos causes greater ticket interest.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Omitted Variable"
+    },
+    "variables": {
+      "X": "Number of highlight videos posted",
+      "Y": "Ticket interest",
+      "Z": [
+        "Team performance (wins)"
+      ]
+    },
+    "gold_rationale": "Team performance is an omitted common cause that increases both highlight posting and ticket interest. The correlation does not identify a causal effect of posting.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0150",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Business",
+    "scenario": "A blog analyzes only startups that reached an IPO and finds that founders who worked with famous accelerators are overrepresented. The author concludes that joining a famous accelerator causes startup success. Failed startups that also joined accelerators are not included in the analysis.",
+    "claim": "Joining a famous accelerator causes startups to succeed.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Sampling-on-the-Outcome"
+    },
+    "variables": {
+      "X": "Accelerator participation",
+      "Y": "Startup success",
+      "Z": [
+        "Selection of only IPO startups"
+      ]
+    },
+    "gold_rationale": "The dataset is conditioned on success, so the observed association is distorted by outcome-based sampling. You cannot infer causation from a sample that excludes failures.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0151",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Psychology",
+    "scenario": "A stress-reduction study begins with 200 participants and measures stress after 8 weeks. Many highly stressed participants stop responding to follow-up surveys, while lower-stress participants are more likely to complete the final questionnaire. The final report claims the program reduced stress because the remaining sample shows lower stress.",
+    "claim": "The stress-reduction program caused stress to decrease.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Attrition Bias"
+    },
+    "variables": {
+      "X": "Participation in the program",
+      "Y": "Measured stress at 8 weeks",
+      "Z": [
+        "Dropout correlated with baseline stress"
+      ]
+    },
+    "gold_rationale": "Because dropout is not random, the observed reduction can be explained by selective attrition rather than a true effect of the program.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0152",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Education",
+    "scenario": "A university looks only at admitted students and finds that among admits, higher test scores are associated with slightly weaker personal essays. Admissions officers argue this shows test scores and essay quality trade off naturally. However, admission depends on both test scores and essay strength.",
+    "claim": "Higher test scores cause weaker personal essays.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning on Participation"
+    },
+    "variables": {
+      "X": "Test score",
+      "Y": "Essay strength",
+      "Z": [
+        "Admission decision (selected sample)"
+      ]
+    },
+    "gold_rationale": "Conditioning on admission (a common effect of test scores and essays) induces a spurious association between them. The observed pattern does not reflect a causal relationship.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0153",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Public Policy",
+    "scenario": "A national dataset shows that a job training program appears harmful overall, with participants having lower average earnings than non-participants. When analysts split the data by age group, the program appears beneficial within every age bracket. A headline concludes the program reduces earnings.",
+    "claim": "Participating in the job training program reduces earnings.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Aggregation Bias"
+    },
+    "variables": {
+      "X": "Training participation",
+      "Y": "Earnings",
+      "Z": [
+        "Age group (lurking stratifier)"
+      ]
+    },
+    "gold_rationale": "The aggregate association reverses compared to each subgroup due to differing group proportions. The overall conclusion is an artifact of aggregation.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0154",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "scenario": "A coach selects the worst-performing players from the first half of the season for a special extra-practice group. In the second half, those players improve on average, while top performers from the first half decline slightly. The coach claims the extra practice caused the improvement.",
+    "claim": "Extra practice caused the initially worst players to improve.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Extreme-Group Selection"
+    },
+    "variables": {
+      "X": "Selection into extra practice (extreme low performers)",
+      "Y": "Second-half performance",
+      "Z": [
+        "Random performance variation"
+      ]
+    },
+    "gold_rationale": "The group was selected for extreme low performance, which includes negative noise. Subsequent performance naturally regresses toward true ability even without any causal effect from practice.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0155",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Business",
+    "scenario": "A study examines only companies that survived a major recession and finds that firms with aggressive expansion strategies had higher long-run market share. Analysts conclude aggressive expansion is the reason those firms succeeded. Companies that used aggressive expansion but failed during the recession are missing from the data.",
+    "claim": "Aggressive expansion causes higher long-run market share.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SURVIVORSHIP",
+      "subtype": "Selective Observation"
+    },
+    "variables": {
+      "X": "Aggressive expansion strategy",
+      "Y": "Long-run market share",
+      "Z": [
+        "Survival through recession (filtering failures out)"
+      ]
+    },
+    "gold_rationale": "Because failed firms are systematically unobserved, the observed association is biased. Survivors are not representative of all firms that pursued the strategy.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0156",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Psychology",
+    "scenario": "A mental health screening test has a 95% true positive rate and a 95% true negative rate for a rare condition affecting 1 in 1,000 people. A person tests positive, and a friend confidently says the person almost certainly has the condition. The friend ignores how rare the condition is in the first place.",
+    "claim": "Because the test is 95% accurate and the result is positive, the person almost certainly has the condition.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BASE_RATE",
+      "subtype": "Prior Ignorance"
+    },
+    "variables": {
+      "X": "Positive test result",
+      "Y": "Having the condition",
+      "Z": [
+        "Low base rate of the condition"
+      ]
+    },
+    "gold_rationale": "With a very low base rate, false positives can outnumber true positives even for accurate tests. Ignoring the prior probability leads to an invalid inference.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0157",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Education",
+    "scenario": "Students who own personal laptops tend to have higher GPAs. These students also disproportionately come from higher-income households with more academic support at home. Observers conclude that owning a laptop improves academic performance.",
+    "claim": "Owning a laptop causes students to earn higher GPAs.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "CONFOUNDING",
+      "subtype": "Socioeconomic"
+    },
+    "variables": {
+      "X": "Laptop ownership",
+      "Y": "GPA",
+      "Z": [
+        "Household income"
+      ]
+    },
+    "gold_rationale": "Socioeconomic status affects both access to laptops and academic performance, explaining the association without a causal effect.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0158",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Public Policy",
+    "scenario": "Cities with more homeless shelters report higher homelessness counts. These shelters are typically built in cities where homelessness is already severe. Commentators argue that shelters cause homelessness to increase.",
+    "claim": "Building homeless shelters increases homelessness.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-driven Selection"
+    },
+    "variables": {
+      "X": "Number of shelters",
+      "Y": "Homelessness count",
+      "Z": [
+        "Pre-existing homelessness levels"
+      ]
+    },
+    "gold_rationale": "Shelters are built in response to homelessness, not the cause of it.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0159",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Business",
+    "scenario": "An analysis of successful startups finds that many founders dropped out of college. Failed startups founded by dropouts are excluded from the dataset. The report concludes that dropping out of college leads to startup success.",
+    "claim": "Dropping out of college causes startup success.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SURVIVORSHIP",
+      "subtype": "Selective Observation"
+    },
+    "variables": {
+      "X": "Founder dropout status",
+      "Y": "Startup success",
+      "Z": [
+        "Observation limited to surviving firms"
+      ]
+    },
+    "gold_rationale": "Only successful firms are observed, hiding the many dropout-founded startups that failed.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0160",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Sports",
+    "scenario": "A coach selects the top-performing athletes for a special elite training group. In the following season, their performance declines slightly toward the league average. Critics argue the elite training program harmed performance.",
+    "claim": "Elite training caused top athletes to perform worse.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REGRESSION",
+      "subtype": "Extreme-Group Selection"
+    },
+    "variables": {
+      "X": "Selection into elite group",
+      "Y": "Subsequent performance",
+      "Z": [
+        "Random performance fluctuation"
+      ]
+    },
+    "gold_rationale": "Top performers were selected based on extreme results that naturally regress toward the mean.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0161",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Psychology",
+    "scenario": "A mental health program reports lower anxiety levels among participants at the end of the study. However, many participants with severe anxiety stopped responding to surveys before the final measurement. Researchers claim the program reduced anxiety.",
+    "claim": "The mental health program reduced anxiety.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Attrition Bias"
+    },
+    "variables": {
+      "X": "Program participation",
+      "Y": "Measured anxiety",
+      "Z": [
+        "Non-random dropout"
+      ]
+    },
+    "gold_rationale": "Selective dropout of highly anxious participants biases the observed outcomes.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0162",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Education",
+    "scenario": "A university examines only admitted students and finds that higher recommendation scores are associated with lower test scores. Admissions officers argue that strong recommendations compensate for weaker academics.",
+    "claim": "Strong recommendations cause lower test scores.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "COLLIDER",
+      "subtype": "Conditioning on Participation"
+    },
+    "variables": {
+      "X": "Recommendation strength",
+      "Y": "Test scores",
+      "Z": [
+        "Admission decision"
+      ]
+    },
+    "gold_rationale": "Conditioning on admission induces a spurious association between recommendations and test scores.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0163",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Public Policy",
+    "scenario": "A nationwide dataset shows that a health program appears ineffective overall. When analysts split the data by region, the program is beneficial in every region. A report concludes the program does not work.",
+    "claim": "The health program is ineffective.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SIMPSONS",
+      "subtype": "Aggregation Bias"
+    },
+    "variables": {
+      "X": "Program participation",
+      "Y": "Health outcomes",
+      "Z": [
+        "Region"
+      ]
+    },
+    "gold_rationale": "The aggregate association reverses compared to all subgroups due to different group weights.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0164",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Arts",
+    "scenario": "Well-known artists receive more gallery invitations than lesser-known artists. Observers argue that gallery invitations increase artistic reputation. In reality, reputation determines who is invited.",
+    "claim": "Gallery invitations cause artists to become well known.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "REVERSE",
+      "subtype": "Outcome-driven Selection"
+    },
+    "variables": {
+      "X": "Gallery invitations",
+      "Y": "Artist reputation",
+      "Z": [
+        "Existing fame"
+      ]
+    },
+    "gold_rationale": "Artists are invited because they are already well known, reversing the causal direction.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0165",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Business",
+    "scenario": "A study examines only companies that achieved long-term profitability and finds many adopted aggressive marketing strategies early on. Companies that used aggressive marketing but failed are excluded. The study concludes aggressive marketing causes profitability.",
+    "claim": "Aggressive marketing causes long-term profitability.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "SELECTION",
+      "subtype": "Sampling-on-the-Outcome"
+    },
+    "variables": {
+      "X": "Marketing strategy",
+      "Y": "Profitability",
+      "Z": [
+        "Selection on profitable firms"
+      ]
+    },
+    "gold_rationale": "Conditioning on profitability distorts the observed association by excluding failed firms.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  },
+  {
+    "id": "T3-BucketD-0166",
+    "bucket": "BucketLarge-D",
+    "pearl_level": "L1",
+    "domain": "Psychology",
+    "scenario": "A diagnostic test for a rare disorder has high accuracy. A person tests positive, and a clinician assumes the disorder is almost certain. The disorder affects fewer than 1 in 10,000 people.",
+    "claim": "Because the test is accurate and positive, the person almost certainly has the disorder.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "trap": {
+      "type": "BASE_RATE",
+      "subtype": "Prior Ignorance"
+    },
+    "variables": {
+      "X": "Positive test result",
+      "Y": "Having the disorder",
+      "Z": [
+        "Low base rate"
+      ]
+    },
+    "gold_rationale": "Ignoring the rarity of the condition leads to a severe overestimate of the probability.",
+    "annotation": {
+      "author": "Samantha van Rijs",
+      "num_annotators": 1,
+      "adjudicated": false
+    },
+    "difficulty": "Medium"
+  }
+]
