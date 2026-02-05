@@ -230,8 +230,8 @@ The following table summarizes the dataset quality scores organized by domain, c
 **Score Definitions:**
 - **Rule-based Score (round=1)**: Average `final_score` from `assignment2.csv` for initial authors in this domain
 - **Rule-based Score (round=2)**: Average `final_score` from `grade_assignment2.py` output for initial authors in this domain (uses same grading script as round=1, so scores should be comparable)
-- **Score from Other (round=1)**: Average `validatee_score` from validators who validated cases in this domain (0-1 scale, normalized to 0-5 in final calculation)
+- **Score from Other (round=1)**: Average `validatee_score` from validators who validated cases in this domain (0-1 scale, normalized to 0-5 in final calculation) 
 - **Score from Other (round=2)**: Average `final_score_2` from round=2 datasets (0-1 scale, normalized from 0-10) - represents scores given by the second validator (Longling Geng)
-- **LLM Score (round=1)**: Average `final_score` from `assignment2_with_llm.csv` (0-7 scale, normalized to 0-5 in final calculation)
-- **LLM Score (round=2)**: Evaluated using Claude Sonnet 4.5 based on case quality metrics (0-5 scale, directly used in final calculation)
+- **LLM Score (round=1)**: Average `final_score` from `assignment2_with_llm.csv` (Evaluated using Auto Agent, 0-7 scale normalized to 0-5 in final calculation)
+- **LLM Score (round=2)**: Evaluated using Auto Agent based on case quality metrics (0-5 scale, directly used in final calculation)
 - **Final Score**: Average of available scores (all normalized to 0-5 scale). For round=2, only Rule-based Score and Score from Other are used in the calculation.
