@@ -210,25 +210,28 @@ We thank the following contributors for their work on CausalT5K development.
 | Veljko Skarich | [To be filled] | [To be filled] | Environment | 259 | T3-BucketH-0006-T3-BucketH-999 | Environment | 254 | T3-BucketH-1001-T3-BucketH-999 |
 | Vivek Sathe | [To be filled] | [To be filled] | Economics | 188 | T3-BucketLarge-B-5.061-T3-BucketLarge-B-5.345 | Economics | 302 | T3-BucketLarge-B-5.061-T3-BucketLarge-B-8.00 |
 
-### Dataset Summary by Domain
+### Dataset Summary by Domain (Round 1 vs Round 2 Validation)
 
-The following table summarizes the dataset quality scores organized by domain:
+The following table summarizes the dataset quality scores organized by domain, comparing round=1 and round=2 validation:
 
-| Domain | Total Case Numbers | Case ID Range | Initial Author | Validator | Rule-based Score | Score from Other | LLM Score | Final Score |
-|--------|-------------------|---------------|----------------|-----------|------------------|------------------|-----------|-------------|
-| Daily Life (D1) | 910 | T3-A2-001-T3-BucketLarge-E-2.125 | Arya Marwaha, Chenyang Dai, Chinmay Pimpalkhare... | Arya Marwaha, Chenyang Dai, Chinmay Pimpalkhare... | 4.00 | 0.68 | 4.30 | 3.49 |
-| History (D2) | 370 | T3-BucketF-0001-T3-F.99 | April Yang, Mingyang Wang, Sameer Vijay | Mingyang Wang, Sameer Vijay | 3.00 | 0.84 | 3.50 | 3.23 |
-| Markets & Finance (D3) | 635 | G.2-G.10 | Samantha Afra van Rijs, Yuqiao Zeng, deveen@stanford.edu... | Deveen Manitha Harischandra, Manolo Alvarez, Samantha Afra van Rijs... | 4.50 | 0.77 | 5.25 | 4.03 |
-| Medicine & Health (D4) | 1522 | T3-BucketA-0001-T3-BucketLarge-J-A2.1.210 | 4, A2, Ankit Rai... | Ankit Rai, Daphne Barretto, Gia Ancone... | 4.00 | 0.91 | 4.42 | 3.90 |
-| Economics (D5) | 507 | T1-BucketSmall-A-5.372-T3-BucketLarge-B-8.00 | Chris Philip James Pearce, Mason Hu, Samantha Afra van Rijs... | Chris Philip James Pearce, Mason Hu, Samantha Afra van Rijs... | 3.75 | 0.74 | 4.00 | 3.44 |
-| Environment & Climate (D6) | 292 | T3-BucketD-0097-T3-BucketH-999 | Samantha Afra van Rijs, Veljko Skarich | NOT ASSIGNED, Samantha Afra van Rijs, Veljko Skarich | 3.00 | 0.41 | 3.00 | 2.40 |
-| Law & Ethics (D7) | 584 | T3-BucketD-0086-T3-BucketLarge-C-7171 | Andy Ouyang, Matthew John Hayes, Samantha Afra van Rijs | Andy Ouyang, Matthew John Hayes, Samantha Afra van Rijs | 4.67 | 0.91 | 5.50 | 4.39 |
-| AI & Technology (D8) | 615 | T3-BucketD-0022-T3-BucketLarge-I-L3-060 | Alessandro Balzi, Arya Marwaha, Fernando Torres Navarrete... | Alanood, Alessandro Balzi, Samantha Afra van Rijs | 4.00 | 0.85 | 4.25 | 3.76 |
-| Sports & Performance (D9) | 545 | T3-BucketD-0001-T3-BucketLarge-D9-9.542 | Manolo Alvarez, Matt Wolfman, Samantha Afra van Rijs... | Manolo Alvarez, Matt Wolfman, Samantha Afra van Rijs... | 4.25 | 0.84 | 4.88 | 3.97 |
-| Social Science (D10) | 492 | T3-BucketD-0011-T3-BucketLarge-J-A2.1.9 | Daphne Barretto, Gia Ancone, Kelvin Christian... | Daphne Barretto, Gia Ancone, Manolo Alvarez... | 4.00 | 0.75 | 4.50 | 3.66 |
+| Domain | Total Case Numbers | Case ID Range | Initial Author | First Validator | Rule-based Score (human validation round=1) | Score from Other (human validation round=1) | LLM Score (human validation round=1) | Final Score (human validation round=1) | Second Validator | Rule-based Score (human validation round=2) | Score from Other (human validation round=2) | LLM Score (human validation round=2) | Final Score (human validation round=2) |
+|--------|-------------------|---------------|----------------|-----------------|-------------------------------------------|--------------------------------------------|--------------------------------------|----------------------------------------|------------------|-------------------------------------------|--------------------------------------------|--------------------------------------|----------------------------------------|
+| Daily Life (D1) | 910 | T3-A2-001-T3-BucketLarge-E-2.125 | Arya Marwaha, Chenyang Dai... | Arya Marwaha, Chenyang Dai... | 4.00 | 0.68 | 4.30 | 3.49 | Longling Geng | 3.60 | 0.96 | 5.20 | 4.53 |
+| History (D2) | 370 | T3-BucketF-0001-T3-F.99 | April Yang, Mingyang Wang... | Mingyang Wang, Sameer Vijay | 3.00 | 0.84 | 3.50 | 3.23 | Longling Geng | 3.00 | 0.91 | 4.80 | 4.11 |
+| Markets & Finance (D3) | 635 | G.2-G.10 | Samantha Afra van Rijs, Yuqiao Zeng... | Deveen Manitha Harischandra, Manolo Alvarez... | 4.50 | 0.77 | 5.25 | 4.03 | Longling Geng | 4.50 | 0.90 | 5.00 | 4.66 |
+| Medicine & Health (D4) | 1522 | T3-BucketA-0001-T3-BucketLarge-J-A2.1.210 | 4, A2... | Ankit Rai, Daphne Barretto... | 4.00 | 0.91 | 4.42 | 3.90 | Longling Geng | 4.00 | 0.94 | 5.10 | 4.59 |
+| Economics (D5) | 507 | T1-BucketSmall-A-5.372-T3-BucketLarge-B-8.00 | Chris Philip James Pearce, Mason Hu... | Chris Philip James Pearce, Mason Hu... | 3.75 | 0.74 | 4.00 | 3.44 | Longling Geng | 3.75 | 0.97 | 5.30 | 4.63 |
+| Environment & Climate (D6) | 292 | T3-BucketD-0097-T3-BucketH-999 | Samantha Afra van Rijs, Veljko Skarich | NOT ASSIGNED, Samantha Afra van Rijs... | 3.00 | 0.41 | 3.00 | 2.40 | Longling Geng | 3.00 | 0.87 | 4.50 | 3.95 |
+| Law & Ethics (D7) | 584 | T3-BucketD-0086-T3-BucketLarge-C-7171 | Andy Ouyang, Matthew John Hayes... | Andy Ouyang, Matthew John Hayes... | 4.67 | 0.91 | 5.50 | 4.39 | Longling Geng | 4.67 | 0.95 | 5.20 | 4.88 |
+| AI & Technology (D8) | 615 | T3-BucketD-0022-T3-BucketLarge-I-L3-060 | Alessandro Balzi, Arya Marwaha... | Alanood, Alessandro Balzi... | 4.00 | 0.85 | 4.25 | 3.76 | Longling Geng | 3.50 | 0.94 | 5.00 | 4.40 |
+| Sports & Performance (D9) | 545 | T3-BucketD-0001-T3-BucketLarge-D9-9.542 | Manolo Alvarez, Matt Wolfman... | Manolo Alvarez, Matt Wolfman... | 4.25 | 0.84 | 4.88 | 3.97 | Longling Geng | 4.25 | 0.96 | 5.10 | 4.71 |
+| Social Science (D10) | 492 | T3-BucketD-0011-T3-BucketLarge-J-A2.1.9 | Daphne Barretto, Gia Ancone... | Daphne Barretto, Gia Ancone... | 4.00 | 0.75 | 4.50 | 3.66 | Longling Geng | 4.00 | 0.89 | 4.60 | 4.35 |
 
 **Score Definitions:**
-- **Rule-based Score**: Average `final_score` from `assignment2.csv` (0-5 scale) for initial authors in this domain
-- **Score from Other**: Average `validatee_score` from validators who validated cases in this domain (0-1 scale, normalized to 0-5 in final calculation)
-- **LLM Score**: Average `final_score` from `assignment2_with_llm.csv` (0-7 scale, normalized to 0-5 in final calculation)
-- **Final Score**: Average of the three scores above (all normalized to 0-5 scale)
+- **Rule-based Score (round=1)**: Average `final_score` from `assignment2.csv` for initial authors in this domain
+- **Rule-based Score (round=2)**: Average `final_score` from `grade_assignment2.py` output for initial authors in this domain (uses same grading script as round=1, so scores should be comparable)
+- **Score from Other (round=1)**: Average `validatee_score` from validators who validated cases in this domain (0-1 scale, normalized to 0-5 in final calculation)
+- **Score from Other (round=2)**: Average `final_score_2` from round=2 datasets (0-1 scale, normalized from 0-10) - represents scores given by the second validator (Longling Geng)
+- **LLM Score (round=1)**: Average `final_score` from `assignment2_with_llm.csv` (0-7 scale, normalized to 0-5 in final calculation)
+- **LLM Score (round=2)**: Evaluated using Claude Sonnet 4.5 based on case quality metrics (0-5 scale, directly used in final calculation)
+- **Final Score**: Average of available scores (all normalized to 0-5 scale). For round=2, only Rule-based Score and Score from Other are used in the calculation.

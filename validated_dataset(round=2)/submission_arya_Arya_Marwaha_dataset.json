@@ -1,0 +1,4602 @@
+[
+  {
+    "id": "T3-A2-001",
+    "case_id": "A2-001",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Beverages",
+    "scenario": "People who drink green tea daily report lower stress levels.",
+    "claim": "Green tea reduces stress.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Green tea consumption",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Stress level",
+        "role": "outcome"
+      },
+      "Z": [
+        "Health-conscious lifestyle"
+      ]
+    },
+    "trap": {
+      "type": "W3",
+      "type_name": "Healthy User Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Health-conscious individuals both drink green tea and manage stress better.",
+    "key_insight": "Lifestyle confounding explains the association.",
+    "hidden_timestamp": "Were stress levels lower before green tea habits formed?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If stress was already low before green tea, the relationship is confounded.",
+      "answer_if_condition_2": "If stress dropped only after starting tea, a causal effect is more plausible."
+    },
+    "wise_refusal": "We cannot conclude causation because stress differences may reflect pre-existing lifestyle differences.",
+    "gold_rationale": "Health-conscious individuals cause both green tea consumption and lower stress.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-002",
+    "case_id": "A2-002",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Fitness",
+    "scenario": "People who own fitness trackers have lower resting heart rates.",
+    "claim": "Fitness trackers improve heart health.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Fitness tracker ownership",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Resting heart rate",
+        "role": "outcome"
+      },
+      "Z": [
+        "Pre-existing fitness habits"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "People already committed to fitness buy trackers and also have better heart health.",
+    "key_insight": "Pre-existing fitness confounds the relationship.",
+    "hidden_timestamp": "Did fitness habits start before or after buying the tracker?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If habits predate the tracker, no causal effect is shown.",
+      "answer_if_condition_2": "If heart rate improved only after tracker use, effect is more plausible."
+    },
+    "wise_refusal": "Tracker ownership may just signal existing healthy behavior.",
+    "gold_rationale": "Fitness habits drive both tracker ownership and heart rate. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-003",
+    "case_id": "A2-003",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Sleep",
+    "scenario": "People who use blackout curtains report better sleep quality.",
+    "claim": "Blackout curtains improve sleep.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Blackout curtain use",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Sleep quality",
+        "role": "outcome"
+      },
+      "Z": [
+        "Noise levels",
+        "Work schedule"
+      ]
+    },
+    "trap": {
+      "type": "A"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Curtains may help, but other environmental factors also affect sleep.",
+    "key_insight": "Multiple environmental confounders.",
+    "hidden_timestamp": "Did sleep improve immediately after curtain installation?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If sleep improved right after installation, a causal link is plausible.",
+      "answer_if_condition_2": "If other lifestyle changes occurred, causation is unclear."
+    },
+    "wise_refusal": "Sleep changes may reflect multiple environmental or behavioral factors.",
+    "gold_rationale": "Curtains might help, but noise or schedule confounders exist. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-004",
+    "case_id": "A2-004",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Diet",
+    "scenario": "People who take multivitamins report fewer colds.",
+    "claim": "Multivitamins prevent colds.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Multivitamin use",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Cold frequency",
+        "role": "outcome"
+      },
+      "Z": [
+        "Overall health behavior"
+      ]
+    },
+    "trap": {
+      "type": "W3",
+      "type_name": "Healthy User Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Health-conscious individuals take vitamins and also avoid illness.",
+    "key_insight": "Healthy user bias.",
+    "hidden_timestamp": "Were vitamin users already healthier?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If users were already healthier, effect is confounded.",
+      "answer_if_condition_2": "If illness dropped only after starting vitamins, effect is plausible."
+    },
+    "wise_refusal": "Vitamin use may signal broader healthy behaviors.",
+    "gold_rationale": "Health behavior confounds the relationship.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-005",
+    "case_id": "A2-005",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "Employees who work from home report higher productivity.",
+    "claim": "Working from home increases productivity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Remote work",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Productivity",
+        "role": "outcome"
+      },
+      "Z": [
+        "Job type",
+        "Autonomy"
+      ]
+    },
+    "trap": {
+      "type": "W1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Jobs suitable for remote work differ systematically.",
+    "key_insight": "Selection bias in job types. This highlights the importance of distinguishing correlation from causation.",
+    "hidden_timestamp": "Were these workers already in higher-autonomy roles?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If only certain job types went remote, the effect is selection bias.",
+      "answer_if_condition_2": "If the same roles switched to remote and improved, effect is plausible."
+    },
+    "wise_refusal": "Remote work effects may reflect job selection rather than causation.",
+    "gold_rationale": "Job type confounds productivity differences. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-006",
+    "case_id": "A2-006",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "Students who sit in the front row get higher grades.",
+    "claim": "Sitting in the front row improves academic performance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Front row seating",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Grades",
+        "role": "outcome"
+      },
+      "Z": [
+        "Student motivation"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "More motivated students choose front seats and also perform better.",
+    "key_insight": "Motivation drives both seating choice and grades.",
+    "hidden_timestamp": "Were these students already high achievers before choosing seats?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If they were already strong students, seating is not causal.",
+      "answer_if_condition_2": "If grades improved after moving seats, a causal effect is possible."
+    },
+    "wise_refusal": "Seating may reflect motivation rather than cause performance.",
+    "gold_rationale": "Motivation confounds the association.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-007",
+    "case_id": "A2-007",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Pets",
+    "scenario": "Dog owners walk more steps per day than non-dog owners.",
+    "claim": "Owning a dog increases daily exercise.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Dog ownership",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Daily step count",
+        "role": "outcome"
+      },
+      "Z": [
+        "Active lifestyle preference"
+      ]
+    },
+    "trap": {
+      "type": "A"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Active people may be more likely to own dogs.",
+    "key_insight": "Direction of causality unclear.",
+    "hidden_timestamp": "Did exercise levels change after adopting the dog?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If exercise increased after adoption, effect is plausible.",
+      "answer_if_condition_2": "If owners were already active, no causal effect is shown."
+    },
+    "wise_refusal": "Dog ownership may reflect pre-existing activity preferences.",
+    "gold_rationale": "Lifestyle preference confounds the relationship. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-008",
+    "case_id": "A2-008",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Music",
+    "scenario": "People who listen to classical music score higher on IQ tests.",
+    "claim": "Classical music increases intelligence.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Listening to classical music",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "IQ score",
+        "role": "outcome"
+      },
+      "Z": [
+        "Socioeconomic status"
+      ]
+    },
+    "trap": {
+      "type": "W5",
+      "type_name": "Ecological Fallacy"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Higher socioeconomic status leads to both classical music exposure and higher test scores.",
+    "key_insight": "SES confounds the relationship.",
+    "hidden_timestamp": "Did IQ scores rise after starting classical music exposure?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If SES explains both, music is not causal.",
+      "answer_if_condition_2": "If IQ improved only after exposure, effect is more plausible."
+    },
+    "wise_refusal": "Music preference may reflect socioeconomic background.",
+    "gold_rationale": "SES drives both variables. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-009",
+    "case_id": "A2-009",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Weather",
+    "scenario": "Ice cream sales rise on days with more drownings.",
+    "claim": "Eating ice cream causes drowning.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Ice cream sales",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Drowning incidents",
+        "role": "outcome"
+      },
+      "Z": [
+        "Hot weather"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Hot weather increases both swimming and ice cream consumption.",
+    "key_insight": "Common cause confounding.",
+    "hidden_timestamp": "Were drownings higher on hot days regardless of ice cream?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If drownings correlate with heat not ice cream, no causation.",
+      "answer_if_condition_2": "If drownings occur independent of weather, effect is unclear."
+    },
+    "wise_refusal": "The correlation is explained by hot weather.",
+    "gold_rationale": "Weather is the confounder.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-010",
+    "case_id": "A2-010",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Sleep",
+    "scenario": "People who sleep 8 hours perform better at work.",
+    "claim": "Sleeping 8 hours increases productivity.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "8 hours of sleep",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Work productivity",
+        "role": "outcome"
+      },
+      "Z": [
+        "Random sleep intervention study"
+      ]
+    },
+    "trap": {
+      "type": "S1",
+      "type_name": "Randomized Controlled Trial"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Participants were randomly assigned to sleep duration groups.",
+    "key_insight": "Random assignment supports causality.",
+    "hidden_timestamp": "Were participants randomly assigned sleep schedules?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If assignment was random, the causal claim is valid.",
+      "answer_if_condition_2": "If sleep duration was self-selected, confounding remains."
+    },
+    "wise_refusal": "If sleep duration was randomized, the evidence supports a causal claim.",
+    "gold_rationale": "Randomization eliminates confounding.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.5
+  },
+  {
+    "id": "T3-A2-011",
+    "case_id": "A2-011",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Nutrition",
+    "scenario": "People who eat breakfast every day report having more energy throughout the morning.",
+    "claim": "Eating breakfast increases morning energy.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Daily breakfast consumption",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Morning energy level",
+        "role": "outcome"
+      },
+      "Z": [
+        "Sleep duration",
+        "Overall diet quality"
+      ]
+    },
+    "trap": {
+      "type": "A"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Energy may depend on sleep and diet quality, which also correlate with breakfast habits.",
+    "key_insight": "Breakfast effect is plausible but not isolated.",
+    "hidden_timestamp": "Did energy improve after starting a consistent breakfast routine, holding sleep constant?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If sleep and diet stayed the same and energy increased after breakfast, causality is plausible.",
+      "answer_if_condition_2": "If breakfast coincided with better sleep/diet, the relationship is confounded."
+    },
+    "wise_refusal": "Without controlling for sleep and overall diet, we cannot attribute energy changes to breakfast alone.",
+    "gold_rationale": "The association could be causal, but confounding from sleep and diet quality makes it uncertain. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-012",
+    "case_id": "A2-012",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Transportation",
+    "scenario": "Drivers who take a defensive driving course have fewer accidents in the following year than drivers who do not.",
+    "claim": "Defensive driving courses reduce accidents.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Defensive driving course (assigned by lottery)",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Accident rate over next 12 months",
+        "role": "outcome"
+      },
+      "Z": [
+        "Lottery assignment among applicants"
+      ]
+    },
+    "trap": {
+      "type": "S3",
+      "type_name": "Lottery/Quasi-Random"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "A lottery among oversubscribed applicants quasi-randomly assigns course access, reducing confounding.",
+    "key_insight": "Quasi-random assignment supports causality.",
+    "hidden_timestamp": "Was course participation determined by a lottery among similar applicants?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If assignment was lottery-based, the causal claim is supported.",
+      "answer_if_condition_2": "If safer drivers self-selected into the course, the association is confounded."
+    },
+    "wise_refusal": "If access was quasi-random (lottery), it supports a causal effect; otherwise selection bias may explain it.",
+    "gold_rationale": "Lottery assignment approximates randomization, making accident differences attributable to the course.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.2
+  },
+  {
+    "id": "T3-A2-013",
+    "case_id": "A2-013",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Social Media",
+    "scenario": "People who delete Instagram report feeling less anxious one month later.",
+    "claim": "Deleting Instagram reduces anxiety.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Deleting Instagram",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Anxiety level",
+        "role": "outcome"
+      },
+      "Z": [
+        "Initial anxiety spike prompting deletion",
+        "Therapy/behavior changes"
+      ]
+    },
+    "trap": {
+      "type": "W4",
+      "type_name": "Regression to the Mean"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "People may delete Instagram during a peak anxiety period; anxiety may naturally decline afterward regardless.",
+    "key_insight": "A temporary spike can create a misleading “improvement” effect.",
+    "hidden_timestamp": "Did people delete Instagram specifically after an unusually anxious week?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If deletion followed an anxiety peak, the drop may be regression to the mean.",
+      "answer_if_condition_2": "If deletion timing was unrelated to anxiety peaks and anxiety decreased, causality is more plausible."
+    },
+    "wise_refusal": "If deletion happens during anxiety peaks, later improvement may reflect regression to the mean rather than a causal effect.",
+    "gold_rationale": "Selection into deletion at extreme anxiety values can produce apparent improvement without causation.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.3,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.05
+  },
+  {
+    "id": "T3-A2-014",
+    "case_id": "A2-014",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Finance",
+    "scenario": "People who use budgeting apps have higher savings balances than people who do not.",
+    "claim": "Budgeting apps increase savings.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Budgeting app usage",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Savings balance",
+        "role": "outcome"
+      },
+      "Z": [
+        "Financial discipline",
+        "Income level"
+      ]
+    },
+    "trap": {
+      "type": "W3",
+      "type_name": "Healthy User Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "More financially disciplined or higher-income individuals adopt apps and also save more.",
+    "key_insight": "Self-selection drives the association.",
+    "hidden_timestamp": "Were users already saving more before they started using the app?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If they were already saving more, the relationship is confounded.",
+      "answer_if_condition_2": "If savings increased only after app adoption with stable income, a causal effect is more plausible."
+    },
+    "wise_refusal": "App use may reflect pre-existing discipline or income differences rather than causing higher savings.",
+    "gold_rationale": "Discipline/income (Z) influences both app adoption (X) and savings (Y).",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-015",
+    "case_id": "A2-015",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Studying",
+    "scenario": "A university unexpectedly changed its library hours from 10pm to 2am during finals week for staffing reasons, while a similar university nearby did not. Students at the first university studied longer on average and had slightly higher final exam scores.",
+    "claim": "Extending library hours increases exam performance.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Extended library hours (exogenous change)",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Final exam scores",
+        "role": "outcome"
+      },
+      "Z": [
+        "Exogenous staffing policy change",
+        "Comparison campus"
+      ]
+    },
+    "trap": {
+      "type": "S2",
+      "type_name": "Natural Experiment"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "An exogenous policy change provides a comparison between affected and unaffected students.",
+    "key_insight": "Exogenous shock + comparison group supports causality.",
+    "hidden_timestamp": "Was the change unrelated to student performance trends and only due to staffing?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If the hours change was exogenous and the campuses were comparable, the causal claim is supported.",
+      "answer_if_condition_2": "If the change happened because of performance issues or other concurrent interventions, confounding remains."
+    },
+    "wise_refusal": "If the policy change was truly exogenous and there is a valid comparison group, the evidence supports causality.",
+    "gold_rationale": "The unexpected hours extension acts like a natural experiment, reducing selection bias.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-016",
+    "case_id": "A2-016",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Health",
+    "scenario": "People who start wearing a mask during flu season report fewer colds over the next two months.",
+    "claim": "Wearing a mask prevents colds.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Mask wearing",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Cold incidence",
+        "role": "outcome"
+      },
+      "Z": [
+        "Risk aversion",
+        "Avoiding crowded places"
+      ]
+    },
+    "trap": {
+      "type": "W3",
+      "type_name": "Healthy User Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Risk-averse people both wear masks and avoid exposure in other ways.",
+    "key_insight": "Masking is bundled with other protective behaviors.",
+    "hidden_timestamp": "Did people also change other behaviors (avoiding crowds) when they started masking?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If masking coincided with avoiding crowds, the relationship is confounded.",
+      "answer_if_condition_2": "If masking changed while other behaviors stayed constant, a causal effect is more plausible."
+    },
+    "wise_refusal": "Masking may correlate with other protective behaviors that also reduce colds.",
+    "gold_rationale": "Risk aversion and exposure avoidance (Z) influence both masking (X) and cold incidence (Y). This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-017",
+    "case_id": "A2-017",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L1",
+    "domain": "Daily Life",
+    "subdomain": "Consumer Tech",
+    "scenario": "Shoppers who use price-comparison browser extensions pay less on average per online purchase.",
+    "claim": "Price-comparison extensions reduce purchase prices.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Price-comparison extension use",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Price paid per purchase",
+        "role": "outcome"
+      },
+      "Z": [
+        "Frugality",
+        "Time spent searching"
+      ]
+    },
+    "trap": {
+      "type": "W7",
+      "type_name": "Confounding"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "More frugal consumers use extensions and also search more before buying, lowering prices.",
+    "key_insight": "User traits confound the association.",
+    "hidden_timestamp": "Were these shoppers already paying less before installing the extension?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If they were already paying less, the extension is not shown to be causal.",
+      "answer_if_condition_2": "If prices dropped after installation with similar shopping patterns, causality is more plausible."
+    },
+    "wise_refusal": "Lower prices may reflect frugality and shopping effort rather than the extension itself.",
+    "gold_rationale": "Frugality/search effort (Z) affects both extension use (X) and price paid (Y).",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-018",
+    "case_id": "A2-018",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Exercise",
+    "scenario": "People who start a home workout program report feeling more energetic after two weeks.",
+    "claim": "The workout program caused the energy increase.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Home workout program",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Energy level",
+        "role": "outcome"
+      },
+      "Z": [
+        "Improved sleep",
+        "Diet changes"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "People adopting workouts often change sleep and diet simultaneously.",
+    "key_insight": "Bundled lifestyle improvements confound the effect.",
+    "hidden_timestamp": "Did sleep or diet change at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If sleep/diet changed too, workouts alone are not causal.",
+      "answer_if_condition_2": "If only exercise changed, effect is more plausible."
+    },
+    "wise_refusal": "Energy gains may result from multiple simultaneous lifestyle changes.",
+    "gold_rationale": "Sleep and diet confound the observed energy increase.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-019",
+    "case_id": "A2-019",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Productivity",
+    "scenario": "Workers who switch to standing desks complete more tasks per day.",
+    "claim": "Standing desks increased productivity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Standing desk",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Tasks completed",
+        "role": "outcome"
+      },
+      "Z": [
+        "Motivation to improve work habits"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "More motivated workers choose ergonomic improvements.",
+    "key_insight": "Self-selection into productivity habits.",
+    "hidden_timestamp": "Were these workers already more productive before switching?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If they were already productive, desk change is not causal.",
+      "answer_if_condition_2": "If output rose only after switching, causality is more plausible."
+    },
+    "wise_refusal": "Standing desk adoption may reflect pre-existing motivation.",
+    "gold_rationale": "Selection bias explains productivity differences.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.1
+  },
+  {
+    "id": "T3-A2-020",
+    "case_id": "A2-020",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Diet",
+    "scenario": "People who switch to decaf coffee report less anxiety.",
+    "claim": "Decaf coffee reduced anxiety.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Decaf coffee",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Anxiety level",
+        "role": "outcome"
+      },
+      "Z": [
+        "Stress management efforts"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Switching to decaf often coincides with broader stress reduction efforts.",
+    "key_insight": "Other stress-reducing behaviors confound the result.",
+    "hidden_timestamp": "Did other lifestyle stress changes occur?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If broader stress efforts occurred, decaf alone is not causal.",
+      "answer_if_condition_2": "If nothing else changed, effect is more plausible."
+    },
+    "wise_refusal": "Reduced anxiety may reflect broader stress management, not just coffee choice.",
+    "gold_rationale": "Lifestyle changes confound the association. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.9,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.65
+  },
+  {
+    "id": "T3-A2-021",
+    "case_id": "A2-021",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Sleep",
+    "scenario": "People who start using a sleep tracking app report better sleep quality.",
+    "claim": "The app caused better sleep.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Sleep tracking app",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Sleep quality",
+        "role": "outcome"
+      },
+      "Z": [
+        "Improved bedtime routine"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "App users also adopt healthier sleep routines.",
+    "key_insight": "Behavior changes accompany tracking.",
+    "hidden_timestamp": "Did bedtime routines change when the app was adopted?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If routines improved, app alone is not causal.",
+      "answer_if_condition_2": "If nothing else changed, effect is more plausible."
+    },
+    "wise_refusal": "Tracking may correlate with better sleep habits rather than cause them.",
+    "gold_rationale": "Routine improvements confound the relationship.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-022",
+    "case_id": "A2-022",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Learning",
+    "scenario": "Students who form study groups score higher on exams.",
+    "claim": "Study groups caused higher scores.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Study group participation",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Exam score",
+        "role": "outcome"
+      },
+      "Z": [
+        "Academic motivation"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Motivated students self-select into study groups.",
+    "key_insight": "Motivation confounds the effect.",
+    "hidden_timestamp": "Were these students already performing well?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If they were already strong students, groups are not causal.",
+      "answer_if_condition_2": "If performance rose only after joining, effect is more plausible."
+    },
+    "wise_refusal": "Study groups may simply reflect higher motivation.",
+    "gold_rationale": "Selection bias explains higher performance.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.1
+  },
+  {
+    "id": "T3-A2-023",
+    "case_id": "A2-023",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Fitness",
+    "scenario": "People who buy new running shoes start running more miles per week.",
+    "claim": "Buying new shoes caused increased running.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Buying running shoes",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Miles run per week",
+        "role": "outcome"
+      },
+      "Z": [
+        "Pre-existing motivation to train"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "People buy shoes because they already plan to run more.",
+    "key_insight": "Intent to train precedes shoe purchase.",
+    "hidden_timestamp": "Did mileage increase before the shoes were purchased?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If people planned mileage increases before buying shoes, purchase is not causal.",
+      "answer_if_condition_2": "If mileage jumped only after the purchase without prior intent change, causality is more plausible."
+    },
+    "wise_refusal": "Shoe purchases may reflect pre-existing training plans.",
+    "gold_rationale": "Training motivation drives both shoe purchase and running mileage. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.8,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.55
+  },
+  {
+    "id": "T3-A2-024",
+    "case_id": "A2-024",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Diet",
+    "scenario": "People who start meal-prepping on Sundays lose weight over the next month.",
+    "claim": "Meal prepping caused the weight loss.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Meal prepping",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Weight loss",
+        "role": "outcome"
+      },
+      "Z": [
+        "Starting a diet",
+        "Exercise increase"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Meal prep often happens alongside diet and exercise changes.",
+    "key_insight": "Bundled behavior change. This highlights the importance of distinguishing correlation from causation.",
+    "hidden_timestamp": "Did calorie intake or exercise change simultaneously?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If diet/exercise also changed, meal prep alone is not causal.",
+      "answer_if_condition_2": "If only prep changed, causality is more plausible."
+    },
+    "wise_refusal": "Weight loss may be driven by multiple simultaneous changes.",
+    "gold_rationale": "Diet and exercise confound the relationship. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.9,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.65
+  },
+  {
+    "id": "T3-A2-025",
+    "case_id": "A2-025",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "Teams that adopt a new project management tool report faster task completion.",
+    "claim": "The tool caused faster completion.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "New project tool",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Task completion time",
+        "role": "outcome"
+      },
+      "Z": [
+        "Process overhaul",
+        "New leadership focus"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Tool adoption often coincides with broader process changes.",
+    "key_insight": "Multiple simultaneous productivity initiatives.",
+    "hidden_timestamp": "Were workflows or incentives changed at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If broader process changes occurred, the tool is not isolated.",
+      "answer_if_condition_2": "If only the tool changed, causality is more plausible."
+    },
+    "wise_refusal": "Faster work may reflect broader operational changes.",
+    "gold_rationale": "Process reform confounds tool adoption. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-026",
+    "case_id": "A2-026",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "Students who attend optional review sessions score higher on the final exam.",
+    "claim": "Review sessions caused higher scores.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Review session attendance",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Final exam score",
+        "role": "outcome"
+      },
+      "Z": [
+        "Motivation",
+        "Prior performance"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Stronger or more motivated students choose to attend.",
+    "key_insight": "Self-selection.",
+    "hidden_timestamp": "Were attendees already higher-performing?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If attendees were already stronger, sessions are not causal.",
+      "answer_if_condition_2": "If scores rose only after attendance, effect is more plausible."
+    },
+    "wise_refusal": "Attendance reflects motivation, not necessarily session impact.",
+    "gold_rationale": "Motivation drives both attendance and performance.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.0
+  },
+  {
+    "id": "T3-A2-027",
+    "case_id": "A2-027",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Health",
+    "scenario": "People who start wearing blue-light glasses report fewer headaches.",
+    "claim": "Blue-light glasses reduce headaches.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Blue-light glasses",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Headache frequency",
+        "role": "outcome"
+      },
+      "Z": [
+        "Reduced screen time",
+        "Posture improvements"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "People may also change screen habits or ergonomics.",
+    "key_insight": "Multiple changes after symptom onset.",
+    "hidden_timestamp": "Did screen time or posture change simultaneously?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If other habits changed, glasses alone are not causal.",
+      "answer_if_condition_2": "If only glasses changed, effect is more plausible."
+    },
+    "wise_refusal": "Headache reduction may reflect broader behavior changes.",
+    "gold_rationale": "Ergonomic and screen-time adjustments confound results. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-028",
+    "case_id": "A2-028",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Finance",
+    "scenario": "Investors who subscribe to a premium newsletter outperform the market.",
+    "claim": "The newsletter caused higher returns.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Newsletter subscription",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Investment returns",
+        "role": "outcome"
+      },
+      "Z": [
+        "Experience level",
+        "Capital to invest"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "More sophisticated investors self-select into paid advice.",
+    "key_insight": "Investor skill confounding. This highlights the importance of distinguishing correlation from causation.",
+    "hidden_timestamp": "Were subscribers already outperforming before subscribing?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If prior performance was higher, subscription is not causal.",
+      "answer_if_condition_2": "If returns improved only after subscribing, causality is more plausible."
+    },
+    "wise_refusal": "Subscribers may already be more skilled investors.",
+    "gold_rationale": "Investor sophistication confounds the association. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.7,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.45
+  },
+  {
+    "id": "T3-A2-029",
+    "case_id": "A2-029",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Sleep",
+    "scenario": "People who buy a new mattress report less back pain after two weeks.",
+    "claim": "A new mattress caused the back pain reduction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "New mattress purchase/use",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Back pain level",
+        "role": "outcome"
+      },
+      "Z": [
+        "Regression from pain flare-up",
+        "Physical therapy / stretching start"
+      ]
+    },
+    "trap": {
+      "type": "T5",
+      "type_name": "Regression to the Mean"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "People often buy mattresses during a pain spike; pain may naturally improve regardless and/or with concurrent therapy.",
+    "key_insight": "Peak-triggered adoption can mimic treatment effects.",
+    "hidden_timestamp": "Was the mattress purchased right after an unusually bad back-pain week?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If purchased during a flare-up, improvement may be regression to the mean or co-interventions.",
+      "answer_if_condition_2": "If purchase timing is unrelated to flares and pain drops vs. a control, causality is more plausible."
+    },
+    "wise_refusal": "If people buy a mattress when pain is worst, later improvement doesn’t prove the mattress caused it.",
+    "gold_rationale": "Regression to the mean and concurrent therapy can explain the pain decrease. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-030",
+    "case_id": "A2-030",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Transportation",
+    "scenario": "Commuters who start biking to work report better mood after one month.",
+    "claim": "Biking to work caused improved mood.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Biking commute",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Mood",
+        "role": "outcome"
+      },
+      "Z": [
+        "Seasonal weather improvements",
+        "Job change / reduced workload",
+        "Exercise increase beyond commute"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Post Hoc"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Mood can improve due to seasonality or unrelated life changes occurring around the same time as switching commutes.",
+    "key_insight": "Before/after narratives need a counterfactual.",
+    "hidden_timestamp": "Did the commute switch coincide with better weather or other life changes?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If other mood drivers changed at the same time, the biking effect isn’t identified.",
+      "answer_if_condition_2": "If the switch is exogenous (e.g., parking removed) or randomized and mood improves, causality is more plausible."
+    },
+    "wise_refusal": "Mood improvement after a commute change could be driven by other simultaneous changes.",
+    "gold_rationale": "Time-varying factors and co-interventions can explain the observed improvement. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-031",
+    "case_id": "A2-031",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Consumer Tech",
+    "scenario": "Users who enable 'dark mode' on their phone report less eye strain.",
+    "claim": "Dark mode caused less eye strain.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Dark mode enabled",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Eye strain",
+        "role": "outcome"
+      },
+      "Z": [
+        "Reduced screen time",
+        "Brightness lowering",
+        "Placebo/expectation"
+      ]
+    },
+    "trap": {
+      "type": "T14",
+      "type_name": "Recall Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "People who enable dark mode may also change brightness/screen time and may report improvement due to expectations.",
+    "key_insight": "Self-reported outcomes + co-changes confound the claim.",
+    "hidden_timestamp": "Did screen time or brightness change when dark mode was enabled?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If other screen behaviors changed, dark mode alone isn’t identified as causal.",
+      "answer_if_condition_2": "If objective measures improve holding screen time constant, causality is more plausible."
+    },
+    "wise_refusal": "Self-reported eye strain changes don’t isolate dark mode from other screen habit changes.",
+    "gold_rationale": "Behavior changes and expectation effects confound the association. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.7,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.45
+  },
+  {
+    "id": "T3-A2-032",
+    "case_id": "A2-032",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A tutoring center reports students who attend 10+ sessions improve more than students who attend fewer sessions.",
+    "claim": "Attending 10+ sessions caused more improvement.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Attending 10+ tutoring sessions",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Score improvement",
+        "role": "outcome"
+      },
+      "Z": [
+        "Motivation/persistence",
+        "Parent support",
+        "Baseline severity"
+      ]
+    },
+    "trap": {
+      "type": "T2",
+      "type_name": "Survivorship Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Only students who stick with tutoring (often the most motivated/supported) reach 10+ sessions.",
+    "key_insight": "Conditioning on adherence biases effects upward.",
+    "hidden_timestamp": "Do struggling or unmotivated students drop out before reaching 10 sessions?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If dropout is related to motivation/results, the 10+ estimate is biased.",
+      "answer_if_condition_2": "If assignment to 10 sessions is randomized/encouraged and analyzed intent-to-treat, causality is more plausible."
+    },
+    "wise_refusal": "Comparing heavy attenders to light attenders is confounded by persistence and support.",
+    "gold_rationale": "Adherence is a post-treatment selection variable correlated with outcomes. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-033",
+    "case_id": "A2-033",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "A company offers a wellness stipend; employees who use it have fewer sick days.",
+    "claim": "Using the wellness stipend caused fewer sick days.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Wellness stipend use",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Sick days",
+        "role": "outcome"
+      },
+      "Z": [
+        "Healthy user bias",
+        "Higher engagement employees"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Healthier, more engaged employees are more likely to use the stipend and also have fewer sick days.",
+    "key_insight": "User type drives both stipend use and outcomes.",
+    "hidden_timestamp": "Were stipend users already taking fewer sick days before the benefit started?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If users were healthier beforehand, the relationship is confounded.",
+      "answer_if_condition_2": "If usage was randomized or encouraged exogenously and sick days fell, causality is more plausible."
+    },
+    "wise_refusal": "Stipend use may just identify healthier, more engaged employees.",
+    "gold_rationale": "Healthy user/engagement confounds stipend use and sick days. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.3,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.05
+  },
+  {
+    "id": "T3-A2-034",
+    "case_id": "A2-034",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Healthcare",
+    "scenario": "A hospital compares mortality for patients who received a new drug vs. those who did not, but the drug is given only to patients who arrive early enough to be eligible.",
+    "claim": "The new drug caused lower mortality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Receiving new drug",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Mortality",
+        "role": "outcome"
+      },
+      "Z": [
+        "Immortal time / eligibility window",
+        "Earlier arrival / lower severity"
+      ]
+    },
+    "trap": {
+      "type": "T4",
+      "type_name": "Immortal Time Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "To receive the drug, patients must survive/stay eligible long enough and arrive early, biasing the treated group toward better outcomes.",
+    "key_insight": "Eligibility windows create non-comparable groups.",
+    "hidden_timestamp": "Is treatment defined by being alive/eligible at a later time point?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If eligibility requires surviving to treatment time, treated outcomes are biased by immortal time.",
+      "answer_if_condition_2": "If analyzed with time-varying treatment or randomized assignment, bias is reduced."
+    },
+    "wise_refusal": "If patients must remain eligible long enough to get the drug, lower mortality may reflect immortal time, not the drug.",
+    "gold_rationale": "Post-baseline eligibility requirements bias comparisons in favor of treated patients. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-035",
+    "case_id": "A2-035",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Fitness",
+    "scenario": "People who join a boutique gym lose more weight than people who keep their regular gym membership.",
+    "claim": "The boutique gym caused more weight loss.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Boutique gym membership",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Weight loss",
+        "role": "outcome"
+      },
+      "Z": [
+        "Higher motivation",
+        "Higher income",
+        "More coaching/support"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "People willing to pay for boutique gyms differ systematically (motivation/resources).",
+    "key_insight": "Willingness to pay and motivation confound.",
+    "hidden_timestamp": "Were boutique-joiners already increasing training or dieting before joining?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If joiners were already more motivated, the difference is confounded.",
+      "answer_if_condition_2": "If assignment is randomized/encouraged and results improve, causality is more plausible."
+    },
+    "wise_refusal": "Paying for a boutique gym may reflect motivation and resources, not a causal effect.",
+    "gold_rationale": "Selection into boutique gyms confounds weight outcomes. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-036",
+    "case_id": "A2-036",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Apps",
+    "scenario": "A language learning app reports that users who maintain a 14-day streak learn faster.",
+    "claim": "A 14-day streak caused faster learning.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Maintaining a 14-day streak",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Learning progress",
+        "role": "outcome"
+      },
+      "Z": [
+        "Motivation",
+        "Free time",
+        "Prior language ability"
+      ]
+    },
+    "trap": {
+      "type": "T2",
+      "type_name": "Survivorship Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Only users who persist (often the most motivated/able) achieve streaks; comparing streakers to others biases effects.",
+    "key_insight": "Streak is a post-treatment adherence metric.",
+    "hidden_timestamp": "Do users who struggle or get busy drop out before reaching 14 days?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If dropout is related to difficulty/time, streak-based comparisons are biased.",
+      "answer_if_condition_2": "If streak is induced randomly (nudges) and learning improves, causality is more plausible."
+    },
+    "wise_refusal": "Streak status reflects persistence and time, not necessarily a causal mechanism.",
+    "gold_rationale": "Adherence-based selection confounds streaks and progress. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-037",
+    "case_id": "A2-037",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "E-commerce",
+    "scenario": "A website shows free shipping only to users with carts above $75; those users end up with higher conversion rates.",
+    "claim": "Free shipping caused higher conversion.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Free shipping offer shown",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Conversion",
+        "role": "outcome"
+      },
+      "Z": [
+        "Cart value threshold",
+        "Purchase intent"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Users with higher intent/cart size are more likely to convert and are also the ones shown free shipping.",
+    "key_insight": "Treatment is targeted by intent.",
+    "hidden_timestamp": "Is free shipping triggered by a cart threshold or other intent signals?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If triggered by cart value, conversion differences are confounded by intent.",
+      "answer_if_condition_2": "If randomized A/B at the same cart value, causality is supported."
+    },
+    "wise_refusal": "If free shipping is shown only to high-intent carts, conversion uplift isn’t identified.",
+    "gold_rationale": "Intent threshold confounds offer exposure and conversion. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-038",
+    "case_id": "A2-038",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Public Health",
+    "scenario": "A city adds more bike lanes and cycling increases while car collisions drop over the next year.",
+    "claim": "Bike lanes caused fewer car collisions.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Bike lane expansion",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Car collisions",
+        "role": "outcome"
+      },
+      "Z": [
+        "Traffic volume changes",
+        "Enforcement changes",
+        "Weather/seasonality",
+        "Concurrent road redesigns"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Post Hoc"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Collision rates can change due to traffic volume, enforcement, or other redesigns happening around rollout.",
+    "key_insight": "Needs a clean counterfactual and parallel trends.",
+    "hidden_timestamp": "Were there other safety interventions or traffic changes during the same period?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If other interventions/traffic shifts occurred, attribution to bike lanes is unclear.",
+      "answer_if_condition_2": "If there’s a credible control area with parallel pre-trends and only lanes changed, causality is more plausible."
+    },
+    "wise_refusal": "Before/after citywide trends don’t isolate bike lanes from other changes.",
+    "gold_rationale": "Time-varying confounders and non-parallel trends make the effect uncertain. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-039",
+    "case_id": "A2-039",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Workplace",
+    "scenario": "Employees who attend leadership training report higher job satisfaction in an internal survey.",
+    "claim": "Leadership training caused higher satisfaction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Leadership training attendance",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Job satisfaction",
+        "role": "outcome"
+      },
+      "Z": [
+        "High-potential selection",
+        "Manager nomination",
+        "Response bias"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Training seats are often given to high-potential employees who already have better experiences and may respond more positively.",
+    "key_insight": "Targeted enrollment + subjective outcome measurement.",
+    "hidden_timestamp": "Were attendees nominated/selected based on performance or engagement?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If selected as high-potential, satisfaction differences are confounded.",
+      "answer_if_condition_2": "If training access is randomized and satisfaction improves, causality is more plausible."
+    },
+    "wise_refusal": "If only high-potential employees attend, survey differences don’t prove training caused satisfaction.",
+    "gold_rationale": "Selection into training and survey response confound the relationship. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.3,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.05
+  },
+  {
+    "id": "T3-A2-040",
+    "case_id": "A2-040",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Healthcare",
+    "scenario": "Patients who receive a follow-up text reminder are more likely to take their medication, but the reminder is sent only to patients who missed a refill in the past.",
+    "claim": "The reminder caused better adherence.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Receiving reminder text",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Medication adherence",
+        "role": "outcome"
+      },
+      "Z": [
+        "Targeting to historically non-adherent patients",
+        "Regression/improvement after a miss"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "The reminder group is selected based on past non-adherence; their adherence may rebound naturally or differ systematically.",
+    "key_insight": "Targeting breaks comparability; could even bias toward underestimating or overestimating.",
+    "hidden_timestamp": "Is reminder assignment determined by prior non-adherence rather than randomization?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If targeted by past misses, comparisons to non-reminded patients are confounded.",
+      "answer_if_condition_2": "If reminders are randomized within similar adherence history strata, causality is supported."
+    },
+    "wise_refusal": "Targeted reminders don’t give a clean causal estimate without proper randomization or matching.",
+    "gold_rationale": "Selection on prior behavior confounds reminder exposure and future adherence. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-041",
+    "case_id": "A2-041",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Nutrition",
+    "scenario": "People who start drinking electrolyte packets daily report fewer headaches.",
+    "claim": "Electrolyte packets caused fewer headaches.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Daily electrolyte packets",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Headache frequency",
+        "role": "outcome"
+      },
+      "Z": [
+        "Increased water intake",
+        "Reduced alcohol",
+        "Better sleep"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "People often add electrolytes as part of broader hydration/health changes that also reduce headaches.",
+    "key_insight": "Hydration and lifestyle changes confound.",
+    "hidden_timestamp": "Did water intake or alcohol consumption change at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If hydration/other habits changed, electrolytes alone aren’t identified.",
+      "answer_if_condition_2": "If only electrolytes changed and other factors stayed stable, causality is more plausible."
+    },
+    "wise_refusal": "Headache improvements may reflect hydration and other behavior changes, not the packets.",
+    "gold_rationale": "Hydration and lifestyle confound the association. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.9,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.65
+  },
+  {
+    "id": "T3-A2-042",
+    "case_id": "A2-042",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A school rolls out a new reading curriculum only in classrooms where teachers volunteered to pilot it; those classrooms show larger test score gains.",
+    "claim": "The new curriculum caused the higher gains.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "New reading curriculum",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Reading test score gains",
+        "role": "outcome"
+      },
+      "Z": [
+        "Teacher enthusiasm/quality",
+        "Pilot classroom selection"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "More enthusiastic/effective teachers volunteered and would likely produce better gains regardless of curriculum.",
+    "key_insight": "Teacher self-selection confounds the curriculum effect.",
+    "hidden_timestamp": "Were volunteer teachers already outperforming before the pilot?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If volunteer teachers were stronger at baseline, gains aren’t causal evidence of curriculum.",
+      "answer_if_condition_2": "If classrooms were randomized to curriculum, causality is more plausible."
+    },
+    "wise_refusal": "Volunteer pilots confound curriculum effects with teacher differences.",
+    "gold_rationale": "Teacher quality affects both curriculum adoption and student gains. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-043",
+    "case_id": "A2-043",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "A company gives bonuses to departments that exceed quarterly targets; those departments later have higher employee retention.",
+    "claim": "Bonuses caused higher retention.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Department bonus eligibility",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Employee retention",
+        "role": "outcome"
+      },
+      "Z": [
+        "High-performing departments",
+        "Better managers",
+        "Lower workload"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Bonuses are conditional on performance, and strong departments also retain better for many reasons.",
+    "key_insight": "Eligibility is endogenous to department quality.",
+    "hidden_timestamp": "Were bonuses granted based on hitting targets rather than random assignment?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If only high-performing departments get bonuses, retention differences are confounded.",
+      "answer_if_condition_2": "If bonuses are randomized or rolled out broadly with a control group, causality is more plausible."
+    },
+    "wise_refusal": "If bonuses are given to already-strong departments, retention may reflect department quality, not bonuses.",
+    "gold_rationale": "Department performance/management confounds bonus receipt and retention. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-044",
+    "case_id": "A2-044",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Healthcare",
+    "scenario": "A wearable company reports users who get low heart-rate variability (HRV) alerts reduce alcohol intake and later have higher HRV.",
+    "claim": "The HRV alerts caused improved HRV.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Receiving low-HRV alert",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "HRV later",
+        "role": "outcome"
+      },
+      "Z": [
+        "Regression from unusually low HRV days",
+        "Concurrent behavior changes (sleep/exercise)"
+      ]
+    },
+    "trap": {
+      "type": "T5",
+      "type_name": "Regression to the Mean"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Alerts occur on unusually low HRV days; HRV tends to revert upward even without intervention.",
+    "key_insight": "Triggered interventions on extremes can create apparent improvements.",
+    "hidden_timestamp": "Are alerts triggered specifically when HRV is at an extreme low?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If alerts occur on extreme lows, improvement may be regression to the mean.",
+      "answer_if_condition_2": "If alerts are randomized (or compared to similar low-HRV days without alerts), causality is more plausible."
+    },
+    "wise_refusal": "If alerts trigger on extreme lows, HRV rebound doesn’t prove alerts caused the change.",
+    "gold_rationale": "Regression to the mean can explain HRV increases after low-alert days. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-045",
+    "case_id": "A2-045",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Housing",
+    "scenario": "Residents who install smart thermostats have lower utility bills the following month.",
+    "claim": "Smart thermostats caused lower bills.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Smart thermostat installation",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Utility bill",
+        "role": "outcome"
+      },
+      "Z": [
+        "Seasonal temperature changes",
+        "Energy-conscious residents"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Energy-conscious households adopt thermostats; bills also fluctuate with weather.",
+    "key_insight": "User type + seasonality confound the effect.",
+    "hidden_timestamp": "Did installation coincide with a warmer/cooler month compared to baseline?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If weather changed or adopters are energy-conscious, the effect is confounded.",
+      "answer_if_condition_2": "If randomized rollout or weather-adjusted comparisons show a drop, causality is more plausible."
+    },
+    "wise_refusal": "Bills change with weather and adopter behavior, so a simple before/after isn’t causal.",
+    "gold_rationale": "Seasonality and energy-conscious selection confound the association. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.3,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.05
+  },
+  {
+    "id": "T3-A2-046",
+    "case_id": "A2-046",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Social Media",
+    "scenario": "Accounts that post at peak hours get more engagement, so a creator starts posting at peak hours and sees engagement rise.",
+    "claim": "Posting at peak hours caused the engagement increase.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Posting at peak hours",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Engagement",
+        "role": "outcome"
+      },
+      "Z": [
+        "Content quality changes",
+        "Algorithm shifts",
+        "Audience growth over time"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Post Hoc"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Engagement can increase due to content improvements, growth, or algorithm changes happening at the same time.",
+    "key_insight": "Need randomized timing or stable counterfactual.",
+    "hidden_timestamp": "Did content quality or audience size change during the same window?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If other factors changed, the timing shift isn’t identified as causal.",
+      "answer_if_condition_2": "If posting times are randomized across similar content and engagement rises, causality is more plausible."
+    },
+    "wise_refusal": "A single before/after change in posting time doesn’t isolate timing effects from other changes.",
+    "gold_rationale": "Time-varying confounders can explain engagement increases. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-047",
+    "case_id": "A2-047",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A college offers a scholarship lottery among eligible applicants; winners enroll full-time more often the next semester.",
+    "claim": "Winning the scholarship caused higher full-time enrollment.",
+    "label": "YES",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Scholarship lottery win",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Full-time enrollment next semester",
+        "role": "outcome"
+      },
+      "Z": [
+        "Lottery assignment among eligible applicants"
+      ]
+    },
+    "trap": {
+      "type": "S3",
+      "type_name": "Lottery/Quasi-Random"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Lottery assignment creates comparable groups among eligible applicants.",
+    "key_insight": "Quasi-random assignment supports causality.",
+    "hidden_timestamp": "Was the scholarship allocated by lottery among similar eligible applicants?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If assignment was lottery-based, the causal claim is supported.",
+      "answer_if_condition_2": "If winners were selected by merit/need in a non-random way, confounding remains."
+    },
+    "wise_refusal": "If it’s a true lottery among eligible applicants, differences can be attributed to the scholarship.",
+    "gold_rationale": "Lottery-based assignment approximates randomization and reduces confounding.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 9.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.2
+  },
+  {
+    "id": "T3-A2-048",
+    "case_id": "A2-048",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Consumer Tech",
+    "scenario": "A streaming service tests a new recommendation algorithm only on power users first; those users watch more minutes per day.",
+    "claim": "The new algorithm caused higher watch time.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Exposure to new recommender",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Minutes watched per day",
+        "role": "outcome"
+      },
+      "Z": [
+        "Power-user targeting",
+        "Baseline engagement"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Power users already watch more; targeting them for rollout confounds the estimated effect.",
+    "key_insight": "Rollout targeting breaks comparability.",
+    "hidden_timestamp": "Were test users selected for high baseline watch time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If targeted to power users, the uplift is confounded by baseline engagement.",
+      "answer_if_condition_2": "If randomized A/B across the same user segments, causality is supported."
+    },
+    "wise_refusal": "Targeted rollout to power users doesn’t identify a causal effect on watch time.",
+    "gold_rationale": "Baseline engagement drives both rollout assignment and watch time. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-049",
+    "case_id": "A2-049",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Workplace",
+    "scenario": "Among employees who stayed through the year-end review cycle, those who took mental health days report lower burnout.",
+    "claim": "Taking mental health days caused lower burnout.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Taking mental health days",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Burnout",
+        "role": "outcome"
+      },
+      "Z": [
+        "Conditioning on staying employed (collider)",
+        "Manager support",
+        "Baseline burnout"
+      ]
+    },
+    "trap": {
+      "type": "T3",
+      "type_name": "Collider Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Restricting to those who stayed can induce spurious links because staying depends on burnout and supportive policies.",
+    "key_insight": "Conditioning on retention can open non-causal paths.",
+    "hidden_timestamp": "Was the analysis restricted to employees who remained employed through year-end?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If restricted to stayers, the mental-health-day effect may be collider bias.",
+      "answer_if_condition_2": "If analyzed on the full cohort with appropriate methods, causality is more plausible."
+    },
+    "wise_refusal": "Restricting analysis to employees who stayed can bias the estimated effect of mental health days.",
+    "gold_rationale": "Retention is influenced by both burnout and workplace support; conditioning on it creates bias. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-051",
+    "case_id": "A2-051",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Productivity",
+    "scenario": "A company gave noise-canceling headphones to employees and noticed productivity rose over the next month.",
+    "claim": "Noise-canceling headphones caused the productivity increase.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Headphone distribution",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Productivity",
+        "role": "outcome"
+      },
+      "Z": [
+        "Deadline pressure",
+        "Seasonal workload"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Productivity may have increased due to workload cycles or deadlines rather than the headphones.",
+    "key_insight": "Concurrent changes confound the intervention.",
+    "hidden_timestamp": "Did productivity trends already rise before headphone distribution?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If productivity was already rising, the headphones are not shown to be causal.",
+      "answer_if_condition_2": "If no other changes occurred and productivity rose only after distribution, causality is more plausible."
+    },
+    "wise_refusal": "Without ruling out workload or seasonal factors, we cannot attribute productivity gains to headphones.",
+    "gold_rationale": "External workload trends (Z) may explain productivity changes independent of the intervention. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-052",
+    "case_id": "A2-052",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A teacher introduced background music during study time, and test scores improved that semester.",
+    "claim": "Background music improved student test scores.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Background music during study",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Test scores",
+        "role": "outcome"
+      },
+      "Z": [
+        "Extra tutoring",
+        "Easier exam version"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Score improvements may be due to easier tests or added tutoring, not music.",
+    "key_insight": "Measurement or concurrent changes distort the conclusion.",
+    "hidden_timestamp": "Was the exam difficulty the same as prior semesters?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If exams were easier or tutoring increased, the music is not shown to be causal.",
+      "answer_if_condition_2": "If all else stayed constant and only music changed, causality is more plausible."
+    },
+    "wise_refusal": "Without consistent testing conditions, the improvement cannot be attributed to music.",
+    "gold_rationale": "Differences in test difficulty or instruction (Z) confound the observed improvement. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-053",
+    "case_id": "A2-053",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Health",
+    "scenario": "A wellness app sent daily step reminders, and users reported losing weight over 3 months.",
+    "claim": "Step reminders caused weight loss.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Daily step reminders",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Weight loss",
+        "role": "outcome"
+      },
+      "Z": [
+        "Diet changes",
+        "Seasonal activity increase"
+      ]
+    },
+    "trap": {
+      "type": "T9",
+      "type_name": "Confounding-Mediation"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Users may have changed diet or activity seasonally, independent of reminders.",
+    "key_insight": "Other health behaviors mediate or confound effects.",
+    "hidden_timestamp": "Did diet or exercise routines change at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If diet/exercise changed, weight loss cannot be attributed to reminders.",
+      "answer_if_condition_2": "If no other behavior changed and weight fell after reminders, causality is more plausible."
+    },
+    "wise_refusal": "Weight change may result from broader lifestyle adjustments, not just reminders.",
+    "gold_rationale": "Concurrent lifestyle changes (Z) confound the effect of the app intervention. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.7,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.45
+  },
+  {
+    "id": "T3-A2-054",
+    "case_id": "A2-054",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Finance",
+    "scenario": "A bank introduced push notifications encouraging savings, and account balances increased.",
+    "claim": "Push notifications caused higher savings.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Savings reminders",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Account balance",
+        "role": "outcome"
+      },
+      "Z": [
+        "Bonus season",
+        "Reduced spending due to recession"
+      ]
+    },
+    "trap": {
+      "type": "T10",
+      "type_name": "Reverse Direction"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Balances may have risen due to external financial conditions, not reminders.",
+    "key_insight": "Macro factors confound intervention effect.",
+    "hidden_timestamp": "Did external income or spending patterns change during the same period?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If income rose or spending dropped for other reasons, notifications are not causal.",
+      "answer_if_condition_2": "If financial behavior stayed stable except for reminders, causality is more plausible."
+    },
+    "wise_refusal": "Broader financial conditions may explain increased savings.",
+    "gold_rationale": "External economic factors (Z) may drive savings independent of notifications. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-055",
+    "case_id": "A2-055",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Sleep",
+    "scenario": "A company installed blue-light filters on all office computers, and employees reported better sleep.",
+    "claim": "Blue-light filters improved sleep.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Blue-light filter installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Sleep quality",
+        "role": "outcome"
+      },
+      "Z": [
+        "Work-from-home policy",
+        "Reduced overtime"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Sleep may have improved due to reduced hours or remote work.",
+    "key_insight": "Concurrent workplace changes confound the effect.",
+    "hidden_timestamp": "Did working hours change at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If work schedules improved, sleep gains may not be due to filters.",
+      "answer_if_condition_2": "If only filters changed, causality is more plausible."
+    },
+    "wise_refusal": "Sleep improvements could stem from schedule changes rather than screen filters.",
+    "gold_rationale": "Work pattern changes (Z) may explain sleep differences. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-056",
+    "case_id": "A2-056",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Nutrition",
+    "scenario": "A cafeteria labeled healthy foods with green stickers, and vegetable purchases increased.",
+    "claim": "Green labels caused healthier eating.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Green labeling",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Vegetable purchases",
+        "role": "outcome"
+      },
+      "Z": [
+        "Price discounts",
+        "Health campaign"
+      ]
+    },
+    "trap": {
+      "type": "T15",
+      "type_name": "Mechanism Error"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Purchases may have risen due to discounts or broader campaigns.",
+    "key_insight": "Multiple simultaneous nudges confound the result.",
+    "hidden_timestamp": "Were there pricing or campaign changes alongside labels?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If discounts or campaigns ran simultaneously, labeling alone is not causal.",
+      "answer_if_condition_2": "If only labeling changed, causality is more plausible."
+    },
+    "wise_refusal": "Without isolating labeling from other nudges, causation cannot be established.",
+    "gold_rationale": "Other incentives (Z) may drive purchasing changes. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-057",
+    "case_id": "A2-057",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Fitness",
+    "scenario": "A gym introduced a new motivational poster campaign, and average attendance increased the following month.",
+    "claim": "The poster campaign caused the increase in gym attendance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Poster campaign",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Gym attendance",
+        "role": "outcome"
+      },
+      "Z": [
+        "New Year fitness season",
+        "Membership discounts"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Attendance may have risen due to seasonal motivation or pricing changes.",
+    "key_insight": "Seasonality and promotions confound the intervention.",
+    "hidden_timestamp": "Did attendance trends already rise seasonally before the campaign?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If attendance rises every January, posters are not causal.",
+      "answer_if_condition_2": "If no seasonal trend existed and only posters changed, causality is more plausible."
+    },
+    "wise_refusal": "Seasonal trends and pricing changes may explain attendance increases.",
+    "gold_rationale": "External seasonal and pricing factors (Z) may drive attendance rather than posters. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-058",
+    "case_id": "A2-058",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "An office added standing desks, and reports of back pain declined over the quarter.",
+    "claim": "Standing desks reduced back pain.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Standing desk installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Reported back pain",
+        "role": "outcome"
+      },
+      "Z": [
+        "Ergonomics training",
+        "New office chairs"
+      ]
+    },
+    "trap": {
+      "type": "T9",
+      "type_name": "Confounding-Mediation"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Pain may have decreased due to training or better chairs rather than desks.",
+    "key_insight": "Multiple ergonomic changes confound attribution.",
+    "hidden_timestamp": "Were other ergonomic improvements introduced simultaneously?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If training or chairs changed too, desks are not isolated as causal.",
+      "answer_if_condition_2": "If desks were the only change, causality is more plausible."
+    },
+    "wise_refusal": "Other ergonomic improvements may explain reduced pain.",
+    "gold_rationale": "Concurrent ergonomic changes (Z) confound the effect of desks. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-059",
+    "case_id": "A2-059",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Nutrition",
+    "scenario": "A city banned sugary drinks in public buildings, and average soda consumption fell afterward.",
+    "claim": "The ban caused the reduction in soda consumption.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Sugary drink ban",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Soda consumption",
+        "role": "outcome"
+      },
+      "Z": [
+        "Public health campaign",
+        "Price increases"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Consumption may have declined due to broader health campaigns or price changes.",
+    "key_insight": "Timing alone does not prove causation.",
+    "hidden_timestamp": "Did soda consumption trends decline before the ban?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If decline began earlier, the ban is not clearly causal.",
+      "answer_if_condition_2": "If no prior trend existed, causality is more plausible but still uncertain."
+    },
+    "wise_refusal": "Other simultaneous policies or price changes may explain reduced consumption.",
+    "gold_rationale": "Concurrent public health efforts (Z) confound the apparent effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-060",
+    "case_id": "A2-060",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Technology",
+    "scenario": "A school gave students tablets for homework, and homework completion rates increased.",
+    "claim": "Providing tablets increased homework completion.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Tablet distribution",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Homework completion",
+        "role": "outcome"
+      },
+      "Z": [
+        "Parental involvement",
+        "Homework policy changes"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Completion may rise due to policy or parent engagement, not tablets.",
+    "key_insight": "Other educational changes confound the intervention.",
+    "hidden_timestamp": "Were homework requirements changed when tablets were introduced?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If policies changed, tablets are not isolated as causal.",
+      "answer_if_condition_2": "If tablets were the only change, causality is more plausible."
+    },
+    "wise_refusal": "Homework improvements could stem from policy or family engagement changes.",
+    "gold_rationale": "Other concurrent educational shifts (Z) confound the effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-061",
+    "case_id": "A2-061",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Safety",
+    "scenario": "A town installed more streetlights, and reported crime dropped the next year.",
+    "claim": "The new streetlights caused crime reduction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Streetlight installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Crime rate",
+        "role": "outcome"
+      },
+      "Z": [
+        "Police funding increase",
+        "Economic improvement"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Crime may have fallen due to policing or economic trends.",
+    "key_insight": "Multiple public safety factors confound attribution.",
+    "hidden_timestamp": "Did policing levels change during the same period?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If policing increased, lights alone are not causal.",
+      "answer_if_condition_2": "If no other changes occurred, causality is more plausible."
+    },
+    "wise_refusal": "Other public safety measures may explain crime reduction.",
+    "gold_rationale": "Concurrent policy and economic changes (Z) confound the result. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.7,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.45
+  },
+  {
+    "id": "T3-A2-062",
+    "case_id": "A2-062",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Mental Health",
+    "scenario": "A workplace offered meditation sessions, and employee stress levels declined.",
+    "claim": "Meditation sessions caused the stress reduction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Meditation sessions",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Stress level",
+        "role": "outcome"
+      },
+      "Z": [
+        "Workload reduction",
+        "Holiday season"
+      ]
+    },
+    "trap": {
+      "type": "T5",
+      "type_name": "Regression"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Stress may decline naturally after peak periods.",
+    "key_insight": "Regression to the mean may explain improvement.",
+    "hidden_timestamp": "Were stress levels unusually high before meditation began?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If stress was at a peak, natural decline may explain changes.",
+      "answer_if_condition_2": "If no prior spike existed, meditation could play a role but still uncertain."
+    },
+    "wise_refusal": "Stress declines may reflect natural cycles rather than meditation.",
+    "gold_rationale": "Regression effects and workload shifts (Z) confound causal inference. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-063",
+    "case_id": "A2-063",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Transport",
+    "scenario": "A city introduced bike lanes, and bicycle commuting increased.",
+    "claim": "Bike lanes caused the increase in bicycle commuting.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Bike lane construction",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Bike commuting rate",
+        "role": "outcome"
+      },
+      "Z": [
+        "Fuel price increase",
+        "Environmental campaign"
+      ]
+    },
+    "trap": {
+      "type": "T6",
+      "type_name": "Ecological"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Commuting trends may shift due to cost or environmental awareness.",
+    "key_insight": "Macro trends confound local intervention effects.",
+    "hidden_timestamp": "Did fuel prices or campaigns change at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If commuting rose due to fuel costs or campaigns, lanes alone are not causal.",
+      "answer_if_condition_2": "If no other changes occurred, causality is more plausible."
+    },
+    "wise_refusal": "Other societal trends may explain increased cycling.",
+    "gold_rationale": "Concurrent economic and awareness factors (Z) confound interpretation. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-064",
+    "case_id": "A2-064",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "A company introduced free lunches, and employee retention improved.",
+    "claim": "Free lunches caused higher employee retention.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Free lunch program",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Employee retention",
+        "role": "outcome"
+      },
+      "Z": [
+        "Salary raises",
+        "Improved management"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Retention may improve due to compensation or management changes.",
+    "key_insight": "Multiple HR changes confound attribution.",
+    "hidden_timestamp": "Were raises or management changes implemented at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If raises or leadership changes occurred, lunches alone are not causal.",
+      "answer_if_condition_2": "If lunches were the only change, causality is more plausible."
+    },
+    "wise_refusal": "Retention may be influenced by broader workplace improvements.",
+    "gold_rationale": "Concurrent HR interventions (Z) confound the relationship. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-065",
+    "case_id": "A2-065",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Health",
+    "scenario": "A company offered flu shots on-site, and sick days declined.",
+    "claim": "The flu shot program caused fewer sick days.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "On-site flu shots",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Sick days taken",
+        "role": "outcome"
+      },
+      "Z": [
+        "Mild flu season",
+        "Remote work policy"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Sick days may decline due to milder flu season or remote work.",
+    "key_insight": "External health conditions confound intervention.",
+    "hidden_timestamp": "Was the flu season milder that year?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If flu season was mild, the program is not clearly causal.",
+      "answer_if_condition_2": "If flu severity stayed constant and sick days dropped, causality is more plausible."
+    },
+    "wise_refusal": "Seasonal flu variation or remote policies may explain reduced sick days.",
+    "gold_rationale": "External health conditions (Z) confound attribution. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-066",
+    "case_id": "A2-066",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Retail",
+    "scenario": "A store rearranged product placement, and sales of healthy snacks increased.",
+    "claim": "The new product layout caused higher healthy snack sales.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Product layout change",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Healthy snack sales",
+        "role": "outcome"
+      },
+      "Z": [
+        "Promotions",
+        "New health trend"
+      ]
+    },
+    "trap": {
+      "type": "T15",
+      "type_name": "Mechanism Error"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Sales may rise due to promotions or broader health trends.",
+    "key_insight": "Multiple marketing factors confound the intervention.",
+    "hidden_timestamp": "Were promotions introduced alongside the layout change?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If promotions ran, layout is not clearly causal.",
+      "answer_if_condition_2": "If only layout changed, causality is more plausible."
+    },
+    "wise_refusal": "Sales increases may stem from promotions or trends rather than layout.",
+    "gold_rationale": "Other marketing and cultural shifts (Z) confound attribution. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-067",
+    "case_id": "A2-067",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Sleep",
+    "scenario": "A sleep app added relaxing sounds, and user sleep duration increased.",
+    "claim": "Relaxing sounds caused longer sleep duration.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Relaxing sound feature",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Sleep duration",
+        "role": "outcome"
+      },
+      "Z": [
+        "Weekend timing",
+        "Reduced work stress"
+      ]
+    },
+    "trap": {
+      "type": "T5",
+      "type_name": "Regression"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Sleep duration may increase naturally during low-stress periods.",
+    "key_insight": "Regression to mean or seasonal relaxation confounds results.",
+    "hidden_timestamp": "Did the feature launch coincide with a vacation period?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If stress naturally declined, sleep increases may not be causal.",
+      "answer_if_condition_2": "If no other changes occurred, causality is more plausible."
+    },
+    "wise_refusal": "Changes in stress or routine may explain longer sleep.",
+    "gold_rationale": "External life changes (Z) confound the effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-068",
+    "case_id": "A2-068",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Environment",
+    "scenario": "A building installed air purifiers, and employee sick leave declined.",
+    "claim": "Air purifiers caused reduced sick leave.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Air purifier installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Sick leave days",
+        "role": "outcome"
+      },
+      "Z": [
+        "Flu season severity",
+        "Hybrid work schedule"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Illness may drop due to milder flu season or fewer office days.",
+    "key_insight": "External illness patterns confound results.",
+    "hidden_timestamp": "Did remote work increase at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If office attendance declined, purifiers are not isolated as causal.",
+      "answer_if_condition_2": "If attendance remained constant, causality is more plausible."
+    },
+    "wise_refusal": "Work schedule or seasonal illness may explain reduced sick leave.",
+    "gold_rationale": "External exposure patterns (Z) confound attribution. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-069",
+    "case_id": "A2-069",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Retail",
+    "scenario": "A store played slower music, and customers spent more time shopping.",
+    "claim": "Slower music caused customers to shop longer.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Slower background music",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Time spent in store",
+        "role": "outcome"
+      },
+      "Z": [
+        "Holiday season",
+        "Store renovations"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal Bias"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Shopping time may increase during holidays or after renovations.",
+    "key_insight": "Time trends confound attribution.",
+    "hidden_timestamp": "Did the change coincide with a holiday shopping period?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If holiday season began, music is not clearly causal.",
+      "answer_if_condition_2": "If no seasonal changes occurred, causality is more plausible."
+    },
+    "wise_refusal": "Seasonal shopping behavior may explain longer visits.",
+    "gold_rationale": "Holiday and store environment changes (Z) confound the effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-070",
+    "case_id": "A2-070",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A school introduced a mindfulness break, and disciplinary incidents declined.",
+    "claim": "Mindfulness breaks caused fewer disciplinary incidents.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Mindfulness break",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Disciplinary incidents",
+        "role": "outcome"
+      },
+      "Z": [
+        "New school policy",
+        "Different student cohort"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Behavior may change due to policy or cohort differences.",
+    "key_insight": "Student population changes confound effects.",
+    "hidden_timestamp": "Did the student cohort change that year?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If policies or students changed, mindfulness is not isolated as causal.",
+      "answer_if_condition_2": "If no other changes occurred, causality is more plausible."
+    },
+    "wise_refusal": "Other school changes may explain improved behavior.",
+    "gold_rationale": "Concurrent policy or demographic shifts (Z) confound the intervention. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-071",
+    "case_id": "A2-071",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Technology",
+    "scenario": "A company limited after-hours email notifications, and employee burnout scores declined.",
+    "claim": "Limiting notifications caused lower burnout.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Notification limits",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Burnout score",
+        "role": "outcome"
+      },
+      "Z": [
+        "Reduced workload",
+        "New vacation policy"
+      ]
+    },
+    "trap": {
+      "type": "T9",
+      "type_name": "Confounding-Mediation"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Burnout may drop due to reduced workload or policy changes.",
+    "key_insight": "Multiple well-being initiatives confound attribution.",
+    "hidden_timestamp": "Were workload or leave policies changed simultaneously?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If workload or vacation policies changed, notifications are not isolated as causal.",
+      "answer_if_condition_2": "If notification limits were the only change, causality is more plausible."
+    },
+    "wise_refusal": "Burnout reduction may reflect broader organizational changes.",
+    "gold_rationale": "Other workplace policy changes (Z) confound the observed effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-072",
+    "case_id": "A2-072",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Retail",
+    "scenario": "A grocery store widened aisles, and customer satisfaction scores increased.",
+    "claim": "Wider aisles caused higher customer satisfaction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Aisle widening",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Customer satisfaction",
+        "role": "outcome"
+      },
+      "Z": [
+        "New store layout",
+        "Improved lighting"
+      ]
+    },
+    "trap": {
+      "type": "T15",
+      "type_name": "Mechanism Error"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Satisfaction may increase due to multiple renovation factors.",
+    "key_insight": "Multiple store upgrades confound attribution.",
+    "hidden_timestamp": "Were other renovations completed simultaneously?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If lighting or layout changed too, aisle width is not isolated as causal.",
+      "answer_if_condition_2": "If aisle width was the only change, causality is more plausible."
+    },
+    "wise_refusal": "Other store improvements may explain higher satisfaction.",
+    "gold_rationale": "Concurrent renovation changes (Z) confound the result. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-073",
+    "case_id": "A2-073",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Health",
+    "scenario": "A hospital introduced new hand sanitizer stations, and infection rates declined.",
+    "claim": "Sanitizer stations caused the infection reduction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Sanitizer station installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Infection rate",
+        "role": "outcome"
+      },
+      "Z": [
+        "Improved cleaning protocol",
+        "Seasonal infection trends"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Infections may fall due to broader cleaning or seasonal decline.",
+    "key_insight": "Multiple infection-control measures confound attribution.",
+    "hidden_timestamp": "Did cleaning protocols change at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If cleaning improved, sanitizer stations are not isolated as causal.",
+      "answer_if_condition_2": "If no other infection-control changes occurred, causality is more plausible."
+    },
+    "wise_refusal": "Infection reductions may reflect broader hospital policies.",
+    "gold_rationale": "Other infection-control interventions (Z) confound the effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.7,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.45
+  },
+  {
+    "id": "T3-A2-074",
+    "case_id": "A2-074",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A school introduced a later start time, and student attendance improved.",
+    "claim": "Later start times caused higher attendance.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Later start time",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Attendance rate",
+        "role": "outcome"
+      },
+      "Z": [
+        "Transportation changes",
+        "Policy incentives"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Attendance may improve due to transport or incentive changes.",
+    "key_insight": "Timing alone does not prove causality.",
+    "hidden_timestamp": "Were transportation schedules changed simultaneously?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If transportation or incentives changed, start time is not isolated as causal.",
+      "answer_if_condition_2": "If start time was the only change, causality is more plausible."
+    },
+    "wise_refusal": "Other school policy changes may explain attendance improvements.",
+    "gold_rationale": "Concurrent logistical changes (Z) confound the effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-075",
+    "case_id": "A2-075",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Energy",
+    "scenario": "A home installed smart thermostats, and energy bills declined.",
+    "claim": "Smart thermostats caused the reduction in energy bills.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Smart thermostat installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Energy bill",
+        "role": "outcome"
+      },
+      "Z": [
+        "Milder weather",
+        "Behavioral conservation"
+      ]
+    },
+    "trap": {
+      "type": "T5",
+      "type_name": "Regression"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Energy use may decline due to weather or conservation efforts.",
+    "key_insight": "External conditions confound results.",
+    "hidden_timestamp": "Was the season milder than usual?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If weather was mild, thermostats are not clearly causal.",
+      "answer_if_condition_2": "If conditions were constant, causality is more plausible."
+    },
+    "wise_refusal": "Energy savings may reflect weather or behavioral shifts.",
+    "gold_rationale": "External climate and behavior changes (Z) confound the effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-076",
+    "case_id": "A2-076",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Nutrition",
+    "scenario": "People who start drinking a protein shake daily report gaining muscle after one month.",
+    "claim": "Protein shakes caused the muscle gain.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Daily protein shake",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Muscle gain",
+        "role": "outcome"
+      },
+      "Z": [
+        "Starting a new lifting program",
+        "Higher total calories/protein"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "People often add shakes when they also start lifting and eating more, which drives muscle gain.",
+    "key_insight": "Shakes are bundled with training and diet changes.",
+    "hidden_timestamp": "Did lifting volume or total protein intake change at the same time as shakes?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If training/diet changed too, shakes aren’t isolated as the cause.",
+      "answer_if_condition_2": "If training stayed constant and only shakes changed, causality is more plausible."
+    },
+    "wise_refusal": "Without separating the shake from training/diet changes, you can’t attribute muscle gain to the shake.",
+    "gold_rationale": "Training and total intake confound the shake–muscle association. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.8,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.55
+  },
+  {
+    "id": "T3-A2-077",
+    "case_id": "A2-077",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "Employees who join a new 'high-visibility' project are promoted more often within 6 months.",
+    "claim": "Joining the project caused promotions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Joining high-visibility project",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Promotion within 6 months",
+        "role": "outcome"
+      },
+      "Z": [
+        "Manager selection of top performers",
+        "Prior performance ratings"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Managers staff high-visibility projects with people already on a promotion track.",
+    "key_insight": "Assignment is targeted, not random.",
+    "hidden_timestamp": "Were participants already top-rated or flagged as high potential before project assignment?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If selected based on prior performance, the project isn’t identified as causal.",
+      "answer_if_condition_2": "If assignment is lottery-based or rotation-based among similar employees, causality is more plausible."
+    },
+    "wise_refusal": "If managers pick likely-promote candidates for the project, promotions don’t show the project caused them.",
+    "gold_rationale": "Targeted staffing confounds project participation and promotion probability. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-078",
+    "case_id": "A2-078",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Healthcare",
+    "scenario": "A clinic reports patients who receive a 'care coordinator call' have fewer ER visits, but the call is only made after patients remain enrolled for 60 days.",
+    "claim": "The care coordinator call caused fewer ER visits.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Care coordinator call",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "ER visits",
+        "role": "outcome"
+      },
+      "Z": [
+        "Immortal time: must stay enrolled 60 days to receive the call"
+      ]
+    },
+    "trap": {
+      "type": "T4",
+      "type_name": "Immortal Time Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "To be 'treated', patients must survive/remain enrolled long enough, biasing the treated group toward better outcomes.",
+    "key_insight": "Eligibility window creates guaranteed time without the event (or with lower risk).",
+    "hidden_timestamp": "Is the call delivered at a fixed time after enrollment, excluding early dropouts/events?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If treatment requires surviving/enrollment to day 60, the comparison is biased by immortal time.",
+      "answer_if_condition_2": "If treatment is assigned at enrollment (or analyzed with time-varying methods), bias is reduced."
+    },
+    "wise_refusal": "If patients must remain enrolled long enough to get the call, lower ER use may reflect immortal time, not the call.",
+    "gold_rationale": "Defining treatment by a post-baseline time condition biases outcomes in favor of treated patients. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-079",
+    "case_id": "A2-079",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "Students who use an AI homework helper report higher grades, according to a voluntary in-app survey.",
+    "claim": "The AI helper caused higher grades.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Using AI homework helper",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Self-reported grade improvement",
+        "role": "outcome"
+      },
+      "Z": [
+        "Self-reporting bias",
+        "Motivation/effort",
+        "Survey response selection"
+      ]
+    },
+    "trap": {
+      "type": "T14",
+      "type_name": "Recall Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Motivated users may both use the tool and report improvement; self-reports are noisy and biased.",
+    "key_insight": "Outcome measurement is biased and correlated with user type.",
+    "hidden_timestamp": "Are grades objectively verified, or only self-reported by users who choose to respond?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If grades are self-reported and responders are selected, the association can be pure bias.",
+      "answer_if_condition_2": "If grades are verified (e.g., LMS) and exposure is exogenous, causality is more plausible."
+    },
+    "wise_refusal": "Self-reported grade gains from a voluntary survey don’t identify a causal effect.",
+    "gold_rationale": "Recall/response bias + motivation confound the relationship. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-080",
+    "case_id": "A2-080",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Public Policy",
+    "scenario": "A city introduces free public transit on weekends and ridership rises; downtown traffic also decreases compared to nearby cities without the policy.",
+    "claim": "Free weekend transit caused traffic to decrease.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Free weekend transit policy",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Downtown traffic",
+        "role": "outcome"
+      },
+      "Z": [
+        "Concurrent road construction",
+        "Events/seasonality",
+        "Comparison city differences"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Post Hoc"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Before/after + cross-city comparisons can be confounded by concurrent changes and non-parallel trends.",
+    "key_insight": "Needs parallel trends / clean counterfactual.",
+    "hidden_timestamp": "Were there simultaneous changes (construction, policing, events) affecting traffic during rollout?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If other traffic determinants changed, the causal claim isn’t identified.",
+      "answer_if_condition_2": "If treated and control cities had parallel pre-trends and no co-interventions, causality is more plausible."
+    },
+    "wise_refusal": "Traffic changes could be driven by other simultaneous factors, not the free-transit policy alone.",
+    "gold_rationale": "Temporal confounding and potential non-parallel trends make the effect uncertain. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-081",
+    "case_id": "A2-081",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Fitness",
+    "scenario": "A fitness app reports that users who complete the 30-day program have lower body fat at day 30.",
+    "claim": "The program caused lower body fat.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Completing 30-day program",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Body fat at day 30",
+        "role": "outcome"
+      },
+      "Z": [
+        "Dropout related to difficulty/results",
+        "Motivation/persistence"
+      ]
+    },
+    "trap": {
+      "type": "T2",
+      "type_name": "Survivorship Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Only completers are analyzed; those who fail or disengage are excluded.",
+    "key_insight": "Conditioning on completion biases results upward.",
+    "hidden_timestamp": "Do users who aren’t seeing results drop out before day 30?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If dropout depends on results or difficulty, completer-only estimates are biased.",
+      "answer_if_condition_2": "If all assigned users are analyzed regardless of completion, causality is more plausible."
+    },
+    "wise_refusal": "Looking only at completers can make ineffective programs look effective.",
+    "gold_rationale": "Completion is a post-treatment selection variable correlated with outcomes. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.3,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.05
+  },
+  {
+    "id": "T3-A2-082",
+    "case_id": "A2-082",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "Among employees who stayed at the company for 2 years, those who received mentorship were more likely to be promoted.",
+    "claim": "Mentorship caused promotions.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Receiving mentorship",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Promotion",
+        "role": "outcome"
+      },
+      "Z": [
+        "Conditioning on staying 2 years (collider)",
+        "Performance",
+        "Manager support"
+      ]
+    },
+    "trap": {
+      "type": "T3",
+      "type_name": "Collider Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Restricting to 2-year stayers conditions on retention, which is influenced by mentorship and by other factors tied to promotion.",
+    "key_insight": "Conditioning on a post-treatment variable can induce spurious associations.",
+    "hidden_timestamp": "Was the analysis restricted to 'stayers' or other post-baseline filters?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If conditioning on staying is used, the mentorship–promotion link may be collider bias.",
+      "answer_if_condition_2": "If analyzed on the full cohort with appropriate methods, causality is more plausible."
+    },
+    "wise_refusal": "Restricting to long-tenure employees can bias the mentorship effect estimate.",
+    "gold_rationale": "Retention is affected by multiple causes; conditioning on it opens non-causal paths. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-083",
+    "case_id": "A2-083",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Consumer Tech",
+    "scenario": "Users who turn on 'ad blocker' report faster browsing speeds in a survey.",
+    "claim": "Turning on an ad blocker caused faster browsing.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Ad blocker enabled",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Perceived browsing speed",
+        "role": "outcome"
+      },
+      "Z": [
+        "Device/browser differences",
+        "Expectation/placebo",
+        "Self-report bias"
+      ]
+    },
+    "trap": {
+      "type": "T14",
+      "type_name": "Recall Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Perceived speed may reflect expectations or device differences; without objective timing, causality is unclear.",
+    "key_insight": "Need objective performance measurement or randomization.",
+    "hidden_timestamp": "Is speed measured objectively (page load times) or just self-reported?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If self-reported and device/browser differ, the effect isn’t identified.",
+      "answer_if_condition_2": "If objective timings drop after enablement on the same device, causality is more plausible."
+    },
+    "wise_refusal": "Self-reported speed gains can reflect expectations and device differences.",
+    "gold_rationale": "Measurement bias + device confounding make the association non-causal. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-084",
+    "case_id": "A2-084",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Healthcare",
+    "scenario": "Patients who start a new sleep medication report better sleep the following week; many started the medication during an unusually bad insomnia week.",
+    "claim": "The medication caused better sleep.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Starting sleep medication",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Sleep quality next week",
+        "role": "outcome"
+      },
+      "Z": [
+        "Regression from insomnia flare-ups",
+        "Concurrent sleep hygiene changes"
+      ]
+    },
+    "trap": {
+      "type": "T5",
+      "type_name": "Regression to the Mean"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Starting medication at symptom peaks makes later improvement likely even without efficacy.",
+    "key_insight": "Peak-to-normal reversion can mimic treatment effect.",
+    "hidden_timestamp": "Was medication initiated right after a particularly severe insomnia episode?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If started at a peak, improvement may be regression to the mean.",
+      "answer_if_condition_2": "If initiation timing is unrelated to flare-ups (or randomized), causality is more plausible."
+    },
+    "wise_refusal": "If treatment begins during a flare-up, later improvement doesn’t prove causation.",
+    "gold_rationale": "Regression to the mean + co-interventions can explain the change. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-085",
+    "case_id": "A2-085",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A school reports that students assigned to 'advanced math' have higher graduation rates than those in regular math.",
+    "claim": "Advanced math placement causes higher graduation rates.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Advanced math placement",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Graduation",
+        "role": "outcome"
+      },
+      "Z": [
+        "Prior achievement",
+        "Counselor selection",
+        "Family support"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Higher-achieving, better-supported students are selected into advanced math and also graduate more.",
+    "key_insight": "Placement is not random. This highlights the importance of distinguishing correlation from causation.",
+    "hidden_timestamp": "What were test scores/grades before placement?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If baseline achievement differs, the placement effect is confounded.",
+      "answer_if_condition_2": "If placement is quasi-random near a cutoff (RD), causality is more plausible."
+    },
+    "wise_refusal": "Without a cutoff/lottery, advanced placement differences don’t identify a causal effect.",
+    "gold_rationale": "Prior achievement/support influence both placement and graduation outcomes. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-086",
+    "case_id": "A2-086",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "E-commerce",
+    "scenario": "A retailer compares average order value in sessions that saw a personalized upsell widget vs. sessions that did not and finds higher order value with the widget.",
+    "claim": "The upsell widget caused higher order value.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Upsell widget shown",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Order value",
+        "role": "outcome"
+      },
+      "Z": [
+        "Targeting based on cart size/intent signals",
+        "Returning shopper status"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Widget exposure is targeted to high-intent sessions where order values are already higher.",
+    "key_insight": "Personalization creates selection into treatment.",
+    "hidden_timestamp": "Was the widget randomly assigned, or triggered by cart/intent thresholds?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If triggered by intent/cart size, the uplift is confounded.",
+      "answer_if_condition_2": "If randomized A/B, causal effect is supported."
+    },
+    "wise_refusal": "If the widget is targeted, higher order value isn’t causal evidence.",
+    "gold_rationale": "Intent signals influence both widget exposure and order value. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.7,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.45
+  },
+  {
+    "id": "T3-A2-087",
+    "case_id": "A2-087",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Transportation",
+    "scenario": "Drivers who switch to an electric car report spending less on transportation overall after 6 months.",
+    "claim": "Switching to an EV caused lower transportation spending.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Switching to electric car",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Transportation spending",
+        "role": "outcome"
+      },
+      "Z": [
+        "Change in driving mileage",
+        "Charging access",
+        "Fuel price changes",
+        "Insurance differences"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Post Hoc"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Spending shifts can be driven by mileage changes and external price changes, not the car itself.",
+    "key_insight": "Need to isolate mileage and price environment.",
+    "hidden_timestamp": "Did driving habits (miles driven) change after the switch, or did gas prices change during the period?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If miles/gas prices changed, the spending drop isn’t identified as EV-caused.",
+      "answer_if_condition_2": "If mileage is stable and prices controlled, causality is more plausible."
+    },
+    "wise_refusal": "Lower spending could reflect changes in miles driven or fuel prices, not the EV switch itself.",
+    "gold_rationale": "Time-varying factors (prices, mileage) confound before/after spending comparisons. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-088",
+    "case_id": "A2-088",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Social Media",
+    "scenario": "A creator reports that after they started posting daily, their follower count increased quickly.",
+    "claim": "Posting daily caused the follower growth.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Posting daily",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Follower growth",
+        "role": "outcome"
+      },
+      "Z": [
+        "Algorithm change",
+        "One viral post",
+        "Seasonality/events"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Post Hoc"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Growth can be driven by platform dynamics or a viral event coincident with daily posting.",
+    "key_insight": "Single before/after narrative isn’t causal.",
+    "hidden_timestamp": "Was there a viral post or platform recommendation change during the same period?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If a viral event occurred, it can explain growth independent of posting frequency.",
+      "answer_if_condition_2": "If growth systematically increases with randomized posting cadence, causality is more plausible."
+    },
+    "wise_refusal": "Follower growth after a behavior change doesn’t prove that behavior caused it.",
+    "gold_rationale": "Time-varying shocks (viral content, algorithm) can explain the increase. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.3,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.05
+  },
+  {
+    "id": "T3-A2-089",
+    "case_id": "A2-089",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Medicine",
+    "scenario": "Among patients with chronic pain, those who take an 'as-needed' medication report lower pain at their next appointment; the appointment dates vary widely by patient.",
+    "claim": "The medication caused lower pain.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "As-needed medication use",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Pain at next appointment",
+        "role": "outcome"
+      },
+      "Z": [
+        "Time between visits",
+        "Baseline pain severity",
+        "Natural symptom cycles"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Timing Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Different follow-up windows and baseline severity make comparisons invalid; pain fluctuates over time.",
+    "key_insight": "Outcome timing + baseline mismatch break causal inference.",
+    "hidden_timestamp": "Are medicated and unmedicated patients compared at different time horizons or severities?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If time-to-follow-up and baseline pain differ, the comparison is confounded.",
+      "answer_if_condition_2": "If timing and baseline severity are matched (or randomized), causality is more plausible."
+    },
+    "wise_refusal": "Without aligning baseline severity and follow-up timing, you can’t attribute pain differences to the medication.",
+    "gold_rationale": "Timing heterogeneity and baseline severity confound the observed association. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-090",
+    "case_id": "A2-090",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Workplace",
+    "scenario": "A company offers flexible hours only to teams that hit performance targets; those teams later report lower burnout.",
+    "claim": "Flexible hours caused lower burnout.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Flexible hours policy",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Burnout",
+        "role": "outcome"
+      },
+      "Z": [
+        "High-performing teams",
+        "Better managers",
+        "Lower baseline workload"
+      ]
+    },
+    "trap": {
+      "type": "T13",
+      "type_name": "Measurement / Targeting Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Policy access depends on team performance/management quality that also affects burnout.",
+    "key_insight": "Eligibility is endogenous to team quality.",
+    "hidden_timestamp": "Was flexibility granted conditional on hitting targets (or manager discretion)?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If eligibility depends on performance/management, the effect is confounded.",
+      "answer_if_condition_2": "If flexibility is randomized/rolled out broadly with a control group, causality is more plausible."
+    },
+    "wise_refusal": "If only high-performing teams get flexibility, lower burnout may reflect team quality, not the policy.",
+    "gold_rationale": "Targeting/selection into flexibility biases the burnout comparison. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-091",
+    "case_id": "A2-091",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A test-prep company claims students who buy the 'premium' plan improve more than students on the basic plan.",
+    "claim": "Premium plan caused more improvement.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Premium plan purchase",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Score improvement",
+        "role": "outcome"
+      },
+      "Z": [
+        "Willingness to pay",
+        "Higher motivation",
+        "More study time"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Premium purchasers differ in motivation and resources, which drive improvement.",
+    "key_insight": "Plan choice is endogenous. This highlights the importance of distinguishing correlation from causation.",
+    "hidden_timestamp": "Were premium users already studying more or scoring higher at baseline?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If baseline motivation/resources differ, the premium effect is confounded.",
+      "answer_if_condition_2": "If plans are randomly assigned (or near-random upsell), causality is more plausible."
+    },
+    "wise_refusal": "Paying for premium often correlates with motivation and time, so it’s not causal evidence.",
+    "gold_rationale": "WTP and motivation affect both plan choice and outcomes. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-092",
+    "case_id": "A2-092",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Finance",
+    "scenario": "People who check their portfolio daily are more likely to sell during market dips.",
+    "claim": "Checking daily causes panic selling.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Daily portfolio checking",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Selling during dips",
+        "role": "outcome"
+      },
+      "Z": [
+        "Baseline anxiety/risk tolerance",
+        "Trading experience",
+        "Market news consumption"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "More anxious or inexperienced investors may both check more and sell more.",
+    "key_insight": "Direction + confounding unclear.",
+    "hidden_timestamp": "Did anxious investors start checking more before the selling behavior, or was checking induced exogenously?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If anxiety/inexperience drives both, causality isn’t identified.",
+      "answer_if_condition_2": "If checking frequency is randomized (nudges) and selling rises, causality is more plausible."
+    },
+    "wise_refusal": "Frequent checking may reflect investor type rather than cause panic selling.",
+    "gold_rationale": "Risk tolerance and anxiety confound the checking–selling relationship. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-093",
+    "case_id": "A2-093",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Healthcare",
+    "scenario": "A study finds people who take a daily supplement have fewer sick days, but supplement adherence is measured only via self-report at the end of the month.",
+    "claim": "The supplement caused fewer sick days.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Supplement adherence (self-reported)",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Sick days",
+        "role": "outcome"
+      },
+      "Z": [
+        "Misreporting/recall bias",
+        "Health-conscious behavior"
+      ]
+    },
+    "trap": {
+      "type": "T14",
+      "type_name": "Recall Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Health-conscious people may both be healthier and over-report adherence; exposure measurement is biased.",
+    "key_insight": "Biased measurement can create associations without true effects.",
+    "hidden_timestamp": "Is adherence objectively tracked (pill bottle/app) or only end-of-month recall?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If adherence is self-reported, correlated misreporting can explain the association.",
+      "answer_if_condition_2": "If adherence is objectively measured and randomized, causality is more plausible."
+    },
+    "wise_refusal": "Self-reported adherence can be biased and correlated with health behaviors, so it’s not causal evidence.",
+    "gold_rationale": "Recall bias + healthy-user confounding can generate the pattern. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-094",
+    "case_id": "A2-094",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A teacher says students who do the optional 'extra credit' packet improve the most, and the teacher highlights only the top improvers in a write-up.",
+    "claim": "Extra credit packets caused the biggest improvements.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Completing extra credit packet",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Improvement",
+        "role": "outcome"
+      },
+      "Z": [
+        "Selection of top improvers",
+        "Motivation",
+        "Baseline score"
+      ]
+    },
+    "trap": {
+      "type": "T2",
+      "type_name": "Survivorship Bias"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Focusing on top improvers (and optional participation) excludes non-improvers and biases conclusions.",
+    "key_insight": "Highlighting successes is not evidence of causation.",
+    "hidden_timestamp": "Are non-completers or non-improvers omitted from the analysis/story?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If only top improvers are shown, conclusions are survivorship/selection bias.",
+      "answer_if_condition_2": "If all students are analyzed with baseline adjustment or random assignment, causality is more plausible."
+    },
+    "wise_refusal": "Showcasing only the biggest improvers doesn’t show the packet caused improvement.",
+    "gold_rationale": "Survivorship/selection plus motivation confound the observed pattern. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.4,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.15
+  },
+  {
+    "id": "T3-A2-095",
+    "case_id": "A2-095",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Public Health",
+    "scenario": "After a city runs a big anti-smoking campaign, smoking rates drop over the next year.",
+    "claim": "The campaign caused smoking rates to drop.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Anti-smoking campaign",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Smoking rate",
+        "role": "outcome"
+      },
+      "Z": [
+        "Tax changes",
+        "National trends",
+        "Policy enforcement"
+      ]
+    },
+    "trap": {
+      "type": "T12",
+      "type_name": "Temporal / Post Hoc"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Rates could decline due to broader trends or simultaneous policy changes.",
+    "key_insight": "Need a counterfactual (control city / synthetic control).",
+    "hidden_timestamp": "Did taxes, enforcement, or national trends shift during the same window?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If other policies/trends changed, campaign effect isn’t identified.",
+      "answer_if_condition_2": "If there’s a strong control group with parallel trends, causality is more plausible."
+    },
+    "wise_refusal": "A before/after city trend can’t isolate the campaign from other simultaneous changes.",
+    "gold_rationale": "Time-varying confounders and secular trends make attribution uncertain. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-096",
+    "case_id": "A2-096",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Apps",
+    "scenario": "A productivity app claims that users who hit 'inbox zero' each day feel less stressed, and the app starts optimizing notifications to maximize 'inbox zero' days.",
+    "claim": "Maximizing inbox zero causes lower stress.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Incentivized inbox zero behavior",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Stress",
+        "role": "outcome"
+      },
+      "Z": [
+        "Goodharting: superficial clearing vs. real workload reduction",
+        "Self-report bias"
+      ]
+    },
+    "trap": {
+      "type": "T16",
+      "type_name": "Goodhart's Law"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Optimizing a proxy (inbox zero) can change behavior (archiving/ignoring) without reducing actual stressors.",
+    "key_insight": "Proxy optimization can decouple metric from true outcome.",
+    "hidden_timestamp": "Did behavior shift to ‘clear’ inbox without reducing workload (e.g., auto-archive)?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If users game the metric, inbox zero isn’t causally tied to real stress reduction.",
+      "answer_if_condition_2": "If workload truly drops and stress drops with objective measures, causality is more plausible."
+    },
+    "wise_refusal": "If the app pushes people to game inbox zero, the metric can’t support causal claims about stress.",
+    "gold_rationale": "Goodharting breaks the interpretation of inbox zero as a causal driver of lower stress. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.1,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.85
+  },
+  {
+    "id": "T3-A2-097",
+    "case_id": "A2-097",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Healthcare",
+    "scenario": "A hospital reports that patients who receive surgery have lower mortality, but only patients stable enough are approved by anesthesia for surgery.",
+    "claim": "Surgery caused lower mortality.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Receiving surgery",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Mortality",
+        "role": "outcome"
+      },
+      "Z": [
+        "Eligibility/stability screening",
+        "Baseline severity"
+      ]
+    },
+    "trap": {
+      "type": "T1",
+      "type_name": "Selection Bias"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Stability determines treatment eligibility and also predicts survival, making groups incomparable.",
+    "key_insight": "Clinical eligibility is a strong confounder.",
+    "hidden_timestamp": "Was surgery approval contingent on baseline stability measures?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If only stable patients get surgery, lower mortality can reflect selection, not causation.",
+      "answer_if_condition_2": "If assignment is near-random (e.g., cutoff) or properly adjusted, causality is more plausible."
+    },
+    "wise_refusal": "If surgery is offered only to stable patients, the mortality difference isn’t causal evidence.",
+    "gold_rationale": "Eligibility/stability affects both treatment and outcome, biasing the comparison. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-098",
+    "case_id": "A2-098",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Work",
+    "scenario": "Teams that do more retrospectives per quarter ship more features, so leadership increases the retro count target.",
+    "claim": "More retrospectives cause higher shipping velocity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Number of retrospectives",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Features shipped",
+        "role": "outcome"
+      },
+      "Z": [
+        "Team maturity",
+        "Project complexity",
+        "Goodharting: retro frequency vs. quality"
+      ]
+    },
+    "trap": {
+      "type": "T16",
+      "type_name": "Goodhart's Law"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "High-performing teams may do more retros; increasing retro count can create low-quality meetings without improving shipping.",
+    "key_insight": "Metric increases don’t necessarily cause outcome improvements.",
+    "hidden_timestamp": "Did teams add low-quality retros to hit targets (without changing process quality)?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If retro count is gamed, it’s not a causal driver of shipping.",
+      "answer_if_condition_2": "If structured retro quality improves and velocity rises in randomized rollout, causality is more plausible."
+    },
+    "wise_refusal": "More retros can be a proxy for team quality, and retro-count targeting can be gamed.",
+    "gold_rationale": "Selection + Goodhart effects break causal interpretation of retro frequency. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.0,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.75
+  },
+  {
+    "id": "T3-A2-099",
+    "case_id": "A2-099",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Housing",
+    "scenario": "People who buy air purifiers report fewer allergy symptoms, but many purchased them right after a severe allergy flare.",
+    "claim": "Air purifiers caused fewer allergy symptoms.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Buying/using air purifier",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Allergy symptoms",
+        "role": "outcome"
+      },
+      "Z": [
+        "Regression from flare-ups",
+        "Seasonal pollen decline",
+        "Concurrent medication"
+      ]
+    },
+    "trap": {
+      "type": "T5",
+      "type_name": "Regression to the Mean"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "Symptoms often improve after peaks due to natural cycles or season changes; purchases occur at peaks.",
+    "key_insight": "Peak-triggered adoption biases before/after comparisons.",
+    "hidden_timestamp": "Did purchases coincide with a symptom peak or seasonal peak that later declined?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If bought at a flare peak or season peak, improvement may be regression/seasonality.",
+      "answer_if_condition_2": "If adoption timing is unrelated to peaks and symptoms drop vs. a control, causality is more plausible."
+    },
+    "wise_refusal": "If the purifier is bought during a flare or pollen peak, symptom drops don’t prove causation.",
+    "gold_rationale": "Regression/seasonality and co-medication can explain symptom reductions. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.2,
+    "validator_2": "Longling Geng",
+    "final_score_2": 8.95
+  },
+  {
+    "id": "T3-A2-100",
+    "case_id": "A2-100",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Education",
+    "scenario": "A university gives scholarships to students with GPAs above 3.8; scholarship recipients later have higher graduation rates than non-recipients.",
+    "claim": "Receiving the scholarship caused higher graduation rates.",
+    "label": "AMBIGUOUS",
+    "is_ambiguous": true,
+    "variables": {
+      "X": {
+        "name": "Scholarship receipt",
+        "role": "exposure"
+      },
+      "Y": {
+        "name": "Graduation",
+        "role": "outcome"
+      },
+      "Z": [
+        "GPA cutoff (assignment rule)",
+        "Baseline academic strength",
+        "Financial stress reduction"
+      ]
+    },
+    "trap": {
+      "type": "S4",
+      "type_name": "Regression Discontinuity / Cutoff"
+    },
+    "difficulty": "Hard",
+    "causal_structure": "If compared broadly, recipients differ in baseline GPA. Near the cutoff, assignment may be quasi-random and can support causality.",
+    "key_insight": "Only near-threshold comparisons support causal inference.",
+    "hidden_timestamp": "Is the analysis using a narrow window around the 3.8 cutoff (RD), or a broad recipient vs. non-recipient comparison?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If it’s a broad comparison, baseline GPA confounds the effect (NO).",
+      "answer_if_condition_2": "If it’s RD near the cutoff with smooth covariates, a causal effect is plausible (YES/AMBIGUOUS depending on validity checks)."
+    },
+    "wise_refusal": "Unless you compare students right around the GPA cutoff, scholarship recipients aren’t comparable to others.",
+    "gold_rationale": "Cutoff-based assignment can identify causality locally; broad comparisons are confounded by baseline GPA.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.3,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.05
+  },
+  {
+    "id": "T3-A2-100",
+    "case_id": "A2-100",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Workplace",
+    "scenario": "A company introduced standing desks and employee back pain complaints decreased over the next quarter.",
+    "claim": "Standing desks reduced back pain.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Standing desk installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Back pain complaints",
+        "role": "outcome"
+      },
+      "Z": [
+        "Ergonomics training",
+        "Reduced workload"
+      ]
+    },
+    "trap": {
+      "type": "T7",
+      "type_name": "Confounder"
+    },
+    "difficulty": "Easy",
+    "causal_structure": "Back pain may have decreased due to ergonomics education or lighter workloads.",
+    "key_insight": "Multiple workplace changes confound the intervention.",
+    "hidden_timestamp": "Were ergonomics workshops introduced at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If training or workload changed, desks alone are not causal.",
+      "answer_if_condition_2": "If only desks changed, causality is more plausible."
+    },
+    "wise_refusal": "Without isolating desk installation from other changes, we cannot attribute reduced pain to desks.",
+    "gold_rationale": "Concurrent ergonomic improvements (Z) may explain pain reduction. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.6,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.35
+  },
+  {
+    "id": "T3-A2-101",
+    "case_id": "A2-101",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Diet",
+    "scenario": "A school replaced soda machines with water dispensers and students’ BMI decreased that year.",
+    "claim": "Removing soda machines caused BMI reduction.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Removal of soda machines",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Student BMI",
+        "role": "outcome"
+      },
+      "Z": [
+        "PE program expansion",
+        "Health education"
+      ]
+    },
+    "trap": {
+      "type": "T15",
+      "type_name": "Mechanism Error"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "BMI may have dropped due to increased physical activity or education.",
+    "key_insight": "Other health initiatives confound the intervention.",
+    "hidden_timestamp": "Did PE hours increase the same year?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If exercise programs expanded, soda removal is not shown causal.",
+      "answer_if_condition_2": "If no other health changes occurred, causality is more plausible."
+    },
+    "wise_refusal": "BMI changes could reflect broader school health programs.",
+    "gold_rationale": "Concurrent exercise or education programs (Z) confound the effect. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.5,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.25
+  },
+  {
+    "id": "T3-A2-102",
+    "case_id": "A2-102",
+    "bucket": "Bucket-A2",
+    "pearl_level": "L2",
+    "domain": "Daily Life",
+    "subdomain": "Technology",
+    "scenario": "After installing a productivity tracking app, employee output metrics rose.",
+    "claim": "The tracking app increased productivity.",
+    "label": "NO",
+    "is_ambiguous": false,
+    "variables": {
+      "X": {
+        "name": "Productivity app installation",
+        "role": "intervention"
+      },
+      "Y": {
+        "name": "Output metrics",
+        "role": "outcome"
+      },
+      "Z": [
+        "Management pressure",
+        "Deadline changes"
+      ]
+    },
+    "trap": {
+      "type": "T10",
+      "type_name": "Reverse Direction"
+    },
+    "difficulty": "Medium",
+    "causal_structure": "Output may have risen because deadlines tightened, not because of the app.",
+    "key_insight": "Management changes confound intervention effects.",
+    "hidden_timestamp": "Were new deadlines or quotas introduced at the same time?",
+    "conditional_answers": {
+      "answer_if_condition_1": "If deadlines increased, productivity rise is not attributable to the app.",
+      "answer_if_condition_2": "If only the app changed, causality is more plausible."
+    },
+    "wise_refusal": "Without controlling for managerial changes, causation cannot be assigned to the app.",
+    "gold_rationale": "Work pressure (Z) may drive output independent of tracking. This case demonstrates a clear causal reasoning pattern that requires careful analysis of the underlying mechanisms.",
+    "initial_author": "Arya Marwaha",
+    "validator": "Arya Marwaha",
+    "final_score": 8.7,
+    "validator_2": "Longling Geng",
+    "final_score_2": 9.45
+  }
+]
