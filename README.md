@@ -172,11 +172,11 @@ The appendix provides detailed definitions and explanations for all tables, maki
 If you use CausalT5K in your research, please cite:
 
 ```bibtex
-@article{causalt5k2024,
+@article{causalt5k2026,
   title={CausalT5K: Diagnosing Sycophancy, Rung Collapse, and Informed Refusal for Trustworthy Causal Reasoning},
   author={Geng, Longling and Ouyang, Andy and Wu, Theodore and Cooper, Rachael and Zeng, Yuqiao and Hayes, Matthew John and Barretto, Daphne and Vijay, Sameer and Ancone, Gia and Rai, Ankit and Wolfman, Matthew and Flanagan, Patrick and Chang, Edward Y},
-  journal={...},
-  year={2024}
+  journal={under review},
+  year={2026}
 }
 ```
 
