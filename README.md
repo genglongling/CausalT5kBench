@@ -1,12 +1,16 @@
-# CausalT5K: Diagnosing Sycophancy, Rung Collapse, and Informed Refusal for Trustworthy Causal Reasoning
+# CausalT5K: Diagnosing and Informing Refusal for Trustworthy Causal Reasoning of Skepticism, Sycophancy, Detection-Correction, and Rung Collapse
 
 ## Overview
 
-CausalT5K is a comprehensive benchmark dataset designed to evaluate and diagnose critical failure modes in large language models' causal reasoning capabilities. This dataset focuses on three key diagnostic dimensions:
+CausalT5K is a comprehensive benchmark dataset designed to evaluate and diagnose critical failure modes in large language models' causal reasoning capabilities. This dataset focuses on four key diagnostic problems:
 
-1. **Sycophancy**: The tendency of models to agree with user claims even when they are causally invalid
-2. **Rung Collapse**: The failure to properly distinguish between Pearl's three levels of causal reasoning (Association, Intervention, Counterfactual)
-3. **Informed Refusal**: The ability to appropriately refuse to answer when causal claims cannot be reliably evaluated
+1. **P1-The Skepticism Trap**: The Skepticism Trap occurs when a model systematically prioritizes safety over correctness, rejecting a large fraction of valid causal claims even when sufficient evidence is available. In this regime, high safety scores coexist with severely degraded utility.
+
+2. **P2-Inverse Scaling of Sycophancy**: Inverse Scaling of Sycophancy refers to the phenomenon where more capable or higher-capacity models become more, not less, susceptible to endorsing incorrect causal claims under social or rhetorical pressure.
+
+3. **P3-The Detection-Correction Gap**: The Detection-Correction Gap arises when a model correctly identifies the presence of a causal trap or insufficiency but fails to act on that recognition by revising its final answer.
+
+4. **P4-Rung Collapse**: Rung Collapse occurs when a model answers higher-order causal queries (diagnostic or counterfactual) using only lower-rung associative evidence, effectively ignoring the epistemic requirements of the task.
 
 ## Dataset Structure
 
@@ -18,17 +22,46 @@ The dataset is organized into 10 main domains (D1-D10) with the following Pearl 
 
 | # | Domain | Pearl Levels | Cases |
 |---|--------|--------------|-------|
-| 1 | Daily Life (D1) | L1: 131, L2: 558, L3: 221 | 910 |
-| 2 | History (D2) | L1: 37, L2: 222, L3: 111 | 370 |
-| 3 | Markets & Finance (D3) | L1: 88, L2: 349, L3: 183 | 635 |
+| 1 | Daily Life (D1) | L1: 131, L2: 558, L3: 223 | 912 |
+| 2 | History (D2) | L1: 60, L2: 361, L3: 152 | 573 |
+| 3 | Markets & Finance (D3) | L1: 88, L2: 349, L3: 183 | 620 |
 | 4 | Medicine & Health (D4) | L1: 180, L2: 1001, L3: 341 | 1522 |
 | 5 | Economics (D5) | L1: 119, L2: 568, L3: 233 | 920 |
-| 6 | Environment & Climate (D6) | L1: 14, L2: 251, L3: 26 | 292 |
+| 6 | Environment & Climate (D6) | L1: 14, L2: 251, L3: 26 | 291 |
 | 7 | Law & Ethics (D7) | L1: 113, L2: 346, L3: 125 | 584 |
-| 8 | AI & Technology (D8) | L1: 61, L2: 368, L3: 186 | 615 |
-| 9 | Sports & Performance (D9) | L1: 70, L2: 322, L3: 153 | 545 |
-| 10 | Social Science (D10) | L1: 68, L2: 303, L3: 121 | 492 |
-| **Grand Total** | | **L1: 881, L2: 4288, L3: 1700** | **6885** |
+| 8 | AI & Technology (D8) | L1: 62, L2: 368, L3: 188 | 618 |
+| 9 | Sports & Performance (D9) | L1: 71, L2: 323, L3: 154 | 548 |
+| 10 | Social Science (D10) | L1: 120, L2: 609, L3: 275 | 1004 |
+| **Grand Total** | | **L1: 958, L2: 4734, L3: 1900** | **7592** |
+
+**LaTeX Table:**
+
+```latex
+\begin{table}[t]
+\centering
+\caption{Dataset composition by domain.}
+\label{tab:dataset_composition}
+\small
+\begin{tabular}{lrrrr}
+\toprule
+\textbf{Domain} & \textbf{L1} & \textbf{L2} & \textbf{L3} & \textbf{Total} \\
+\midrule
+Daily Life (D1) & 131 & 558 & 223 & 912 \\
+History (D2) & 60 & 361 & 152 & 573 \\
+Markets \& Finance (D3) & 88 & 349 & 183 & 620 \\
+Medicine \& Health (D4) & 180 & 1,001 & 341 & 1,522 \\
+Economics (D5) & 119 & 568 & 233 & 920 \\
+Environment \& Climate (D6) & 14 & 251 & 26 & 291 \\
+Law \& Ethics (D7) & 113 & 346 & 125 & 584 \\
+AI \& Technology (D8) & 62 & 368 & 188 & 618 \\
+Sports \& Performance (D9) & 71 & 323 & 154 & 548 \\
+Social Science (D10) & 120 & 609 & 275 & 1,004 \\
+\midrule
+\textbf{Total} & \textbf{958} & \textbf{4,734} & \textbf{1,900} & \textbf{7,592} \\
+\bottomrule
+\end{tabular}
+\end{table}
+```
 
 ### Pearl Hierarchy Levels
 - **L1 (Association)**: Observational data and correlations
@@ -47,7 +80,11 @@ The dataset includes various causal reasoning pitfalls:
 ### Dataset Organization
 
 - **`validated_dataset(round=1)/`**: Contains validated datasets from the first validation round
+- **`validated_dataset(round=2)/`**: Contains datasets from the second validation round with additional revisions and second validator scores
+- **`final_dataset/`**: Contains the final curated dataset organized by domain (D1-D10), with separate JSON files for each Pearl level (L1, L2, L3)
 - **`unvalidated_dataset/`**: Contains unvalidated submissions organized by contributor groups
+- **`experiment/`**: Contains experimental results and analysis for each domain (D1-D10), including model predictions, evaluation metrics, and domain-specific writeups
+- **`Full_Experiments.tex`**: LaTeX appendix document with complete experimental results, domain-specific tables, and cross-domain aggregation
 
 ### Data Format
 
@@ -116,7 +153,7 @@ Cases include scenarios where:
 
 ### Loading the Dataset
 
-The validated datasets are available in JSON format in the `validated_dataset(round=1)/` directory. Each file contains an array of causal reasoning cases.
+The validated datasets are available in JSON format in the `validated_dataset(round=1)/` and `validated_dataset(round=2)/` directories. The final curated dataset is organized in the `final_dataset/` directory with subdirectories for each domain (D1-D10), containing separate JSON files for each Pearl level (L1, L2, L3).
 
 ### Evaluation Metrics
 
@@ -127,6 +164,36 @@ When evaluating models on CausalT5K, consider:
 3. **Rung Accuracy**: Performance breakdown by Pearl level (L1/L2/L3)
 4. **Refusal Quality**: Whether models appropriately refuse when they should
 5. **Trap-Specific Performance**: Accuracy across different causal trap types
+
+### Full Experiments Appendix
+
+The `Full_Experiments.tex` file provides comprehensive experimental results across all domains. This appendix includes:
+
+**Models Evaluated:**
+- Two closed-source models: Llama-3-8b, Llama-3-70b
+- Two open-source models: Deepseek-R1, GPT-4o-2024-08
+
+**Structure:**
+- **Domain-Specific Results (D1-D10)**: For each domain, Tables 1-7 (corresponding to Tables A.1-A.7 in the main paper) present:
+  - Table 1 (A.1): Rung-wise Performance across L1/L2/L3
+  - Table 2 (A.2): Wise Refusal Score by Trap Family
+  - Table 3 (A.3): Model Comparison (Utility, Safety, WRS)
+  - Table 4 (A.4): Prompt Ablation (Direct, CoT, Structured)
+  - Table 5 (A.5): Inter-Annotator Agreement
+  - Table 6 (A.6): Error Analysis by Rung and Error Type
+  - Table 7 (A.7): Domain Summary Statistics
+  - Domain-specific analysis and insights
+
+- **Cross-Domain Aggregation (Tables 9-15)**: Aggregated results across all domains:
+  - Table 9: Dataset Composition by Domain
+  - Table 10: Rung-wise Results by Domain
+  - Table 11: Wise Refusal Score by Domain
+  - Table 12: Model Comparison by Domain
+  - Table 13: Prompt Ablation by Domain
+  - Table 14: Inter-Annotator Agreement by Domain
+  - Table 15: Qualitative Error Cases
+
+The appendix provides detailed definitions and explanations for all tables, making it a comprehensive reference for understanding model performance across the CausalT5K benchmark.
 
 
 ## Citation
