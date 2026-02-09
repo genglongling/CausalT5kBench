@@ -1,7 +1,7 @@
 # CausalT5K: Diagnosing and Informing Refusal for Trustworthy Causal Reasoning of Skepticism, Sycophancy, Detection-Correction, and Rung Collapse
 
 ```
-How can LLM know what they know and what they don't know?
+How to test LLM for what they know and what they don't know?
 
 --- CausalT5K Authors
 ```
