@@ -18,50 +18,21 @@ The dataset contains over 6,000 causal reasoning cases organized across multiple
 
 ### Dataset Summary by Domain
 
-The dataset is organized into 10 main domains (D1-D10) with the following Pearl level distribution:
+The dataset is organized into 10 main domains (D1-D10) with the following Pearl level distribution. Unique Total refers to the number of unique case ids. Valid Total refers to the number where a final score of each dataset example ≥ 9.0.
 
-| # | Domain | Pearl Levels | Cases |
-|---|--------|--------------|-------|
-| 1 | Daily Life (D1) | L1: 131, L2: 558, L3: 223 | 912 |
-| 2 | History (D2) | L1: 60, L2: 361, L3: 152 | 573 |
-| 3 | Markets & Finance (D3) | L1: 88, L2: 349, L3: 183 | 620 |
-| 4 | Medicine & Health (D4) | L1: 180, L2: 1001, L3: 341 | 1522 |
-| 5 | Economics (D5) | L1: 119, L2: 568, L3: 233 | 920 |
-| 6 | Environment & Climate (D6) | L1: 14, L2: 251, L3: 26 | 291 |
-| 7 | Law & Ethics (D7) | L1: 113, L2: 346, L3: 125 | 584 |
-| 8 | AI & Technology (D8) | L1: 62, L2: 368, L3: 188 | 618 |
-| 9 | Sports & Performance (D9) | L1: 71, L2: 323, L3: 154 | 548 |
-| 10 | Social Science (D10) | L1: 120, L2: 609, L3: 275 | 1004 |
-| **Grand Total** | | **L1: 958, L2: 4734, L3: 1900** | **7592** |
-
-**LaTeX Table:**
-
-```latex
-\begin{table}[t]
-\centering
-\caption{Dataset composition by domain.}
-\label{tab:dataset_composition}
-\small
-\begin{tabular}{lrrrr}
-\toprule
-\textbf{Domain} & \textbf{L1} & \textbf{L2} & \textbf{L3} & \textbf{Total} \\
-\midrule
-Daily Life (D1) & 131 & 558 & 223 & 912 \\
-History (D2) & 60 & 361 & 152 & 573 \\
-Markets \& Finance (D3) & 88 & 349 & 183 & 620 \\
-Medicine \& Health (D4) & 180 & 1,001 & 341 & 1,522 \\
-Economics (D5) & 119 & 568 & 233 & 920 \\
-Environment \& Climate (D6) & 14 & 251 & 26 & 291 \\
-Law \& Ethics (D7) & 113 & 346 & 125 & 584 \\
-AI \& Technology (D8) & 62 & 368 & 188 & 618 \\
-Sports \& Performance (D9) & 71 & 323 & 154 & 548 \\
-Social Science (D10) & 120 & 609 & 275 & 1,004 \\
-\midrule
-\textbf{Total} & \textbf{958} & \textbf{4,734} & \textbf{1,900} & \textbf{7,592} \\
-\bottomrule
-\end{tabular}
-\end{table}
-```
+| Domain | L1 | L2 | L3 | Unique Total | Valid Total |
+|--------|----|----|----|--------------|-------------|
+| Daily Life (D1) | 131 | 558 | 221 | 910 | 771 |
+| History (D2) | 51 | 309 | 134 | 494 | 437 |
+| Markets & Finance (D3) | 88 | 349 | 183 | 620 | 422 |
+| Medicine & Health (D4) | 180 | 1,000 | 341 | 1,521 | 1,233 |
+| Economics (D5) | 80 | 310 | 117 | 507 | 498 |
+| Environment & Climate (D6) | 14 | 251 | 26 | 291 | 239 |
+| Law & Ethics (D7) | 113 | 345 | 125 | 583 | 532 |
+| AI & Technology (D8) | 60 | 368 | 185 | 613 | 611 |
+| Sports & Performance (D9) | 38 | 120 | 48 | 206 | 204 |
+| Social Science (D10) | 50 | 257 | 99 | 406 | 200 |
+| **Total** | **805** | **3,867** | **1,479** | **6,151** | **5,147** |
 
 ### Pearl Hierarchy Levels
 - **L1 (Association)**: Observational data and correlations
