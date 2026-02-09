@@ -1,5 +1,16 @@
 # CausalT5K: Diagnosing and Informing Refusal for Trustworthy Causal Reasoning of Skepticism, Sycophancy, Detection-Correction, and Rung Collapse
 
+```
+How can LLM know what they know and what they don't know?
+
+--- SagaLLM Authors
+```
+<p align="center">
+  ⬇️ <a href="https://github.com/genglongling/CausalT5kBench">Github</a>  
+  📃 <a href="https://arxiv.org/abs/2502.18836">Paper</a>  
+  🌐 <a href="https://example.com/project">Project Page</a>
+</p>
+
 ## Overview
 
 CausalT5K is a comprehensive benchmark dataset designed to evaluate and diagnose critical failure modes in large language models' causal reasoning capabilities. This dataset focuses on four key diagnostic problems:
